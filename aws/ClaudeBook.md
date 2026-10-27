@@ -3124,4 +3124,1374 @@ Analogia: transitive = "przyjaciel mojego przyjaciela jest moim przyjacielem". N
 - [AD trusts (Microsoft)](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-trust-relationships)
 
 ---
+
+# 🔐 PAM, faillog, faillock — Uwierzytelnianie w Linuksie i kontekst OpenVPN/Viscosity
+
+> **Cel rozdziału:** Zrozumieć jak Linux zarządza uwierzytelnianiem przez PAM, jak działa blokowanie kont (faillog/faillock), oraz jak OpenVPN i klient Viscosity wpisują się w ten mechanizm.
+
+---
+
+## 1. Czym jest PAM?
+
+### 🧠 Proste wprowadzenie
+
+Wyobraź sobie PAM jako **ochroniarza budynku** — przed wejściem sprawdza tożsamość, uprawnienia i rejestruje wejście. Każda usługa (SSH, VPN, sudo, login) korzysta z tego samego ochroniarza, ale może mu dać inne instrukcje.
+
+PAM = **Pluggable Authentication Modules** — framework uwierzytelniania w Linuksie. Zamiast każda aplikacja implementować własne logowanie, wszystkie delegują to zadanie do PAM. Dzięki temu zmiana polityki haseł w jednym miejscu działa dla wszystkich usług.
+
+### 🔧 Szczegóły techniczne
+
+PAM działa przez **stos modułów** — listę kroków, które są wykonywane sekwencyjnie podczas uwierzytelniania. Każdy moduł to osobna biblioteka `.so` w `/lib/security/` lub `/lib64/security/`.
+
+**4 typy modułów PAM:**
+
+| Typ | Cel | Przykład |
+|-----|-----|---------|
+| `auth` | Weryfikacja tożsamości (hasło, token) | `pam_unix.so`, `pam_faillock.so` |
+| `account` | Czy konto jest aktywne/uprawnione? | `pam_nologin.so`, `pam_time.so` |
+| `password` | Zmiana hasła, polityka złożoności | `pam_pwquality.so`, `pam_unix.so` |
+| `session` | Setup/teardown sesji (home dir, env) | `pam_limits.so`, `pam_systemd.so` |
+
+**Control flags (flagi sterujące):**
+
+| Flaga | Znaczenie |
+|-------|-----------|
+| `required` | Musi przejść. Jeśli nie — auth fail, ale reszta stosu dalej wykonywana |
+| `requisite` | Musi przejść. Jeśli nie — natychmiastowy fail, reszta stosu pominięta |
+| `sufficient` | Jeśli przejdzie i wcześniej nie było `required` fail → auth OK, reszta pominięta |
+| `optional` | Wynik ignorowany (chyba że jedyny moduł) |
+| `include` | Dołącz inny plik PAM |
+| `substack` | Jak include, ale fail nie propaguje się wyżej |
+
+### 📊 Diagram przepływu PAM
+
+```mermaid
+flowchart TD
+    A[Aplikacja: ssh, sudo, openvpn] --> B[PAM API call]
+    B --> C{/etc/pam.d/service}
+    C --> D[Module 1: pam_faillock.so preauth]
+    D --> E[Module 2: pam_unix.so auth]
+    E --> F[Module 3: pam_faillock.so authfail/authsucc]
+    F --> G{Wszystkie required OK?}
+    G -->|TAK| H[✅ Auth SUCCESS]
+    G -->|NIE| I[❌ Auth FAILED]
+    H --> J[account stack]
+    J --> K[session stack]
+    K --> L[Sesja otwarta]
+    I --> M[Loguj failure do /run/faillock/]
+```
+
+---
+
+## 2. Struktura /etc/pam.d/
+
+### 📁 Katalog i kluczowe pliki
+
+```
+/etc/pam.d/
+├── system-auth          # Główny plik auth dla systemu (RHEL/Fedora)
+├── password-auth        # Auth przez hasło (często include system-auth)
+├── login                # Logowanie konsolowe
+├── sshd                 # SSH daemon
+├── sudo                 # sudo command
+├── su                   # su command  
+├── openvpn              # OpenVPN PAM (jeśli używa PAM auth)
+└── other                # Default fallback dla nieznanych serwisów
+```
+
+Na **Debianie/Ubuntu** zamiast `system-auth` → `common-auth`, `common-account`, `common-password`, `common-session`.
+
+### 📝 Przykład: /etc/pam.d/system-auth (RHEL/Fedora)
+
+```
+# /etc/pam.d/system-auth
+# Typ    Flaga       Moduł + argumenty
+auth     required    pam_env.so                          # Ustaw zmienne środowiskowe
+auth     required    pam_faillock.so preauth             # Sprawdź czy konto nie zablokowane
+auth     sufficient  pam_unix.so nullok                  # Sprawdź hasło z /etc/shadow
+auth     required    pam_faillock.so authfail            # Zapisz nieudaną próbę
+auth     required    pam_deny.so                         # Domyślny deny (fallback)
+
+account  required    pam_unix.so                         # Sprawdź czy konto aktywne
+account  required    pam_faillock.so                     # Sprawdź blokadę faillock
+account  sufficient  pam_localuser.so                    # Lokalny użytkownik?
+account  required    pam_permit.so
+
+password required    pam_pwquality.so try_first_pass local_users_only # Polityka haseł
+password sufficient  pam_unix.so sha512 shadow nullok use_authtok
+password required    pam_deny.so
+
+session  optional    pam_keyinit.so revoke
+session  required    pam_limits.so                       # Limity zasobów (/etc/security/limits.conf)
+session  required    pam_unix.so
+session  optional    pam_systemd.so                      # Rejestruj sesję w systemd
+```
+
+---
+
+## 3. faillog — stary mechanizm
+
+### 📖 Czym jest faillog?
+
+`faillog` to **stary mechanizm** śledzenia nieudanych prób logowania, oparty na module `pam_tally` i binarnym pliku `/var/log/faillog`. Każdy użytkownik ma swój rekord z licznikiem nieudanych prób.
+
+**Gdzie trzyma dane:** `/var/log/faillog` (binarny plik, nie tekstowy!)
+
+### 🛠️ Komendy faillog
+
+```bash
+# Pokaż statystyki wszystkich użytkowników
+faillog -a
+
+# Pokaż tylko konkretnego użytkownika
+faillog -u username
+
+# Reset licznika (odblokuj konto)
+faillog -r -u username
+
+# Ustaw maksymalną liczbę prób (po której blokada)
+faillog -m 5 -u username
+
+# Pokaż ostatnie N nieudanych prób
+faillog -l 10
+```
+
+### ⚠️ Dlaczego faillog zniknął z nowych systemów?
+
+| System | Status faillog |
+|--------|---------------|
+| RHEL/CentOS 7 | ✅ Dostępny |
+| RHEL/Rocky/Alma 8+ | ❌ Brak (zastąpiony przez faillock) |
+| Fedora 28+ | ❌ Brak |
+| Debian/Ubuntu | ✅ Nadal dostępny (pakiet `login`) |
+
+RHEL 8 całkowicie usunął `pam_tally2` i `faillog` na rzecz `pam_faillock`. Jeśli widzisz błąd `Cannot open /var/log/faillog: No such file or directory` → jesteś na RHEL/Fedora 8+, użyj `faillock`.
+
+---
+
+## 4. faillock — nowoczesny mechanizm
+
+### 📖 Czym jest faillock?
+
+`faillock` (moduł `pam_faillock.so`) to **nowoczesny mechanizm** blokowania kont po zbyt wielu nieudanych próbach logowania. Używany domyślnie na RHEL 8+, Fedora, Rocky Linux, AlmaLinux.
+
+**Gdzie trzyma dane:** `/run/faillock/` — jeden plik per użytkownik (format binarny).
+
+```bash
+ls -la /run/faillock/
+# -rw------- 1 john john  64 Oct 27 10:23 john
+# -rw------- 1 alice alice 64 Oct 27 09:15 alice
+```
+
+### ⚙️ Konfiguracja: /etc/security/faillock.conf
+
+```ini
+# /etc/security/faillock.conf
+
+# Liczba nieudanych prób przed blokadą
+deny = 3
+
+# Czas (sekundy) przez który liczymy nieudane próby
+fail_interval = 900
+
+# Czas blokady w sekundach (0 = permanentna, wymaga ręcznego reset)
+unlock_time = 600
+
+# Blokuj też root? (domyślnie nie)
+even_deny_root = false
+
+# Czas blokady roota (jeśli even_deny_root = true)
+root_unlock_time = 60
+
+# Katalog z plikami faillock (można zmienić)
+dir = /run/faillock
+
+# Loguj do syslog
+silent = false
+audit = false
+```
+
+### 🛠️ Komendy faillock
+
+```bash
+# Pokaż wszystkich zablokowanych użytkowników
+faillock
+
+# Pokaż konkretnego użytkownika
+faillock --user john
+
+# Output przykładowy:
+# john:
+# When                Type  Source                                           Valid
+# 2024-10-27 10:20:15 RHOST 192.168.1.100                                    V
+# 2024-10-27 10:20:45 RHOST 192.168.1.100                                    V
+# 2024-10-27 10:21:02 RHOST 192.168.1.100                                    V
+
+# Reset (odblokuj) konkretnego użytkownika
+faillock --user john --reset
+
+# Reset wszystkich
+for user in $(ls /run/faillock/); do faillock --user $user --reset; done
+```
+
+### 🔗 Integracja PAM — przykład system-auth
+
+```
+# /etc/pam.d/system-auth (RHEL 8+)
+
+# PRZED sprawdzeniem hasła — czy konto zablokowane?
+auth        required      pam_faillock.so preauth silent audit deny=3 unlock_time=600
+
+# Sprawdzenie hasła
+auth        sufficient    pam_unix.so nullok try_first_pass
+
+# Po NIEUDANEJ próbie — zwiększ licznik
+auth        [default=die] pam_faillock.so authfail audit deny=3 unlock_time=600
+
+# Domyślny deny
+auth        required      pam_deny.so
+
+account     required      pam_faillock.so
+account     required      pam_unix.so
+```
+
+### 📊 Diagram: przepływ auth z faillock
+
+```mermaid
+flowchart TD
+    A[Próba logowania] --> B[pam_faillock preauth]
+    B --> C{Konto zablokowane?}
+    C -->|TAK - deny osiągnięty| D[❌ ODMOWA - unlock_time nie minął]
+    C -->|NIE| E[pam_unix.so - sprawdź hasło]
+    E --> F{Hasło poprawne?}
+    F -->|TAK| G[pam_faillock authsucc - reset licznika]
+    G --> H[✅ Logowanie OK]
+    F -->|NIE| I[pam_faillock authfail - licznik +1]
+    I --> J{Licznik >= deny?}
+    J -->|TAK| K[🔒 Konto zablokowane na unlock_time sekund]
+    J -->|NIE| L[❌ Auth failed - spróbuj ponownie]
+```
+
+---
+
+## 5. OpenVPN i PAM
+
+### 🔌 Jak OpenVPN używa PAM
+
+OpenVPN może uwierzytelniać użytkowników na dwa sposoby:
+1. **Certyfikaty** (domyślne) — klient ma certyfikat X.509, serwer weryfikuje przez CA
+2. **Username/Password przez PAM** — użytkownik podaje login/hasło, serwer sprawdza przez PAM
+
+Dla auth przez PAM, OpenVPN używa **pluginu**:
+
+```bash
+# /etc/openvpn/server.conf
+plugin /usr/lib64/openvpn/plugin/lib/openvpn-plugin-auth-pam.so login
+# lub na Ubuntu/Debian:
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
+# "login" = użyj /etc/pam.d/login jako konfiguracji PAM
+# możesz podać inną nazwę np. "openvpn" → /etc/pam.d/openvpn
+```
+
+### 📝 /etc/pam.d/openvpn — dedykowany plik
+
+```
+# /etc/pam.d/openvpn
+# Własna konfiguracja PAM dla OpenVPN
+
+auth    required    pam_unix.so    shadow nodelay
+# shadow = użyj /etc/shadow do weryfikacji
+# nodelay = nie czekaj po błędnym haśle (anti-timing-attack delay)
+
+account required    pam_unix.so
+```
+
+Lub z faillock:
+```
+# /etc/pam.d/openvpn (z faillock)
+auth    required    pam_faillock.so preauth silent
+auth    required    pam_unix.so shadow nodelay
+auth    [default=die] pam_faillock.so authfail
+auth    required    pam_deny.so
+
+account required    pam_faillock.so
+account required    pam_unix.so
+```
+
+### ⚠️ Dlaczego nieudane logowania VPN blokują konto w faillock?
+
+```
+Użytkownik → Viscosity client → OpenVPN server
+                                      │
+                                      ▼
+                              PAM plugin wywołuje
+                              /etc/pam.d/openvpn
+                                      │
+                                      ▼
+                              pam_faillock.so authfail
+                                      │
+                                      ▼
+                              /run/faillock/username  (+1 próba)
+                                      │
+                              Jeśli >= deny → KONTO ZABLOKOWANE
+                              Zablokowane dla WSZYSTKICH usług (SSH, sudo, login!)
+```
+
+> ⚠️ **Ważne:** Blokada przez faillock jest **globalna** — zablokowanie przez VPN blokuje też SSH i konsolę!
+
+### 🔍 Sprawdź zablokowanych użytkowników po błędach VPN
+
+```bash
+# Sprawdź wszystkich zablokowanych
+faillock
+
+# Sprawdź konkretnego
+faillock --user john
+
+# Sprawdź logi OpenVPN
+tail -f /var/log/openvpn/openvpn.log
+grep "AUTH_FAILED" /var/log/openvpn/openvpn.log
+
+# Sprawdź syslog
+journalctl -u openvpn@server --since "1 hour ago"
+grep "pam_faillock" /var/log/secure
+grep "pam_unix" /var/log/secure
+```
+
+### 🔓 Reset zablokowanych kont
+
+```bash
+# Reset jednego użytkownika
+faillock --user john --reset
+
+# Reset wszystkich (po incydencie)
+for user in $(ls /run/faillock/); do
+    faillock --user "$user" --reset
+    echo "Reset: $user"
+done
+```
+
+---
+
+## 6. Viscosity i OpenVPN
+
+### 🖥️ Czym jest Viscosity?
+
+**Viscosity** = komercyjny klient OpenVPN z GUI dla macOS i Windows (Spark Labs). Nie jest serwerem — to tylko **interfejs graficzny** nakładający się na OpenVPN. Użytkownik nie musi znać komend CLI.
+
+- **Cena:** ~$14 USD (jednorazowo)
+- **Alternatywy:** Tunnelblick (darmowy, macOS), OpenVPN Connect (oficjalny, darmowy)
+
+### 📁 Gdzie Viscosity trzyma konfigurację (macOS)
+
+```
+~/Library/Application Support/Viscosity/OpenVPN/
+├── 1/                          # Każdy profil = osobny folder
+│   ├── config.conf             # Główny plik konfiguracji OpenVPN
+│   ├── ca.crt                  # Certyfikat CA
+│   ├── client.crt              # Certyfikat klienta (jeśli cert auth)
+│   ├── client.key              # Klucz prywatny klienta
+│   └── ta.key                  # TLS Auth key (opcjonalny)
+└── 2/
+    └── config.conf
+```
+
+### 📝 Przykład config.conf (Viscosity → OpenVPN server z PAM auth)
+
+```
+# config.conf — profil Viscosity
+
+client
+dev tun
+proto udp
+remote vpn.example.com 1194
+
+# Certyfikat CA serwera (weryfikacja serwera)
+ca ca.crt
+
+# Jeśli auth przez username/password (PAM):
+auth-user-pass
+# Viscosity wyświetli popup z polami login/hasło
+
+# Jeśli auth przez certyfikat klienta:
+# cert client.crt
+# key client.key
+
+# TLS authentication
+tls-auth ta.key 1
+# lub nowszy:
+# tls-crypt ta.key
+
+cipher AES-256-GCM
+auth SHA256
+
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+
+verb 3
+```
+
+### 🔄 Przepływ: Viscosity → OpenVPN → PAM → faillock
+
+```mermaid
+sequenceDiagram
+    participant U as Użytkownik
+    participant V as Viscosity (macOS)
+    participant O as OpenVPN Server
+    participant P as PAM (/etc/pam.d/openvpn)
+    participant F as faillock (/run/faillock/)
+    participant S as /etc/shadow
+
+    U->>V: Kliknij Connect, wpisz hasło
+    V->>O: TLS handshake + username/password
+    O->>P: pam_authenticate(username, password)
+    P->>F: preauth - sprawdź czy zablokowany
+    F-->>P: konto OK (nie zablokowane)
+    P->>S: pam_unix - sprawdź hasło
+    S-->>P: hasło niepoprawne
+    P->>F: authfail - licznik +1 (teraz: 1/3)
+    P-->>O: PAM_AUTH_ERR
+    O-->>V: AUTH_FAILED
+    V-->>U: "Authentication failed"
+    Note over F: Po 3 próbach → konto zablokowane<br/>unlock_time=600s (10 min)
+```
+
+### 🔐 Certificate auth vs Password auth (PAM)
+
+| Cecha | Certificate Auth | Password/PAM Auth |
+|-------|-----------------|-------------------|
+| Bezpieczeństwo | ✅ Wyższe (klucz prywatny) | ⚠️ Zależy od jakości hasła |
+| Wygoda | ⚠️ Wymaga dystrybucji certyfikatów | ✅ Użytkownik zna swoje hasło |
+| Faillock trigger | ❌ Nie (nie używa PAM) | ✅ Tak (przez PAM) |
+| Revoke | Przez CRL/OCSP | Przez `usermod -L` lub zmiana hasła |
+| MFA | Wymaga dodatkowego pluginu | Łatwe przez PAM (pam_oath, pam_google_authenticator) |
+
+---
+
+## 7. Tabela porównawcza: faillog vs faillock
+
+| Cecha | faillog (stary) | faillock (nowy) |
+|-------|----------------|-----------------|
+| Moduł PAM | `pam_tally`, `pam_tally2` | `pam_faillock` |
+| Plik danych | `/var/log/faillog` (binarny, jeden plik) | `/run/faillock/username` (per-user) |
+| RHEL/Fedora 8+ | ❌ Usunięty | ✅ Domyślny |
+| Debian/Ubuntu | ✅ Dostępny | ✅ Dostępny |
+| Komendy | `faillog`, `pam_tally2` | `faillock` |
+| Config | Argumenty w PAM | `/etc/security/faillock.conf` |
+| Root blokada | Opcjonalna | Opcjonalna (`even_deny_root`) |
+| Przeżywa reboot | ✅ Tak (`/var/log/`) | ❌ Nie (domyślnie `/run/`, tmpfs) |
+| Audyt/syslog | Podstawowy | Rozbudowany |
+| Granularność | Per-user globalnie | Per-user + per-source IP |
+
+> ℹ️ **Uwaga:** Katalog `/run/faillock/` to tmpfs — po reboocie dane znikają, konta automatycznie odblokowane. Można zmienić `dir =` w `faillock.conf` na `/var/run/faillock/` lub inny persistent path.
+
+---
+
+## 8. Typowe problemy i rozwiązania
+
+| Problem | Przyczyna | Rozwiązanie |
+|---------|-----------|-------------|
+| `Cannot open /var/log/faillog` | System RHEL/Fedora 8+, brak pam_tally | Użyj `faillock` zamiast `faillog` |
+| Użytkownik zablokowany po błędnych hasłach VPN | pam_faillock zlicza błędy z OpenVPN PAM | `faillock --user X --reset` |
+| Konto odblokowane samo po reboocie | `/run/faillock/` = tmpfs | Zmień `dir = /var/run/faillock` w faillock.conf |
+| VPN blokuje konto, SSH też nie działa | faillock blokada jest globalna | Zwiększ `deny` lub `unlock_time`, lub oddzielny PAM dla VPN |
+| `plugin not found` w OpenVPN | Zła ścieżka do pluginu PAM | Sprawdź `find / -name "openvpn-plugin-auth-pam.so"` |
+| Viscosity pyta o hasło przy każdym connect | `auth-user-pass` bez zapisu | Użyj `auth-user-pass credentials.txt` (⚠️ bezpieczeństwo!) |
+| PAM auth działa ale faillock nie loguje | Brakuje `pam_faillock.so` w `/etc/pam.d/openvpn` | Dodaj preauth + authfail do pliku PAM |
+| `pam_unix(openvpn:auth): authentication failure` | Zły użytkownik lub hasło | Sprawdź `/var/log/secure` lub `journalctl` |
+
+---
+
+## 9. Dokumentacja
+
+- [PAM Linux — The Linux-PAM Guide](http://www.linux-pam.org/Linux-PAM-html/)
+- [pam_faillock man page](https://man7.org/linux/man-pages/man8/pam_faillock.8.html)
+- [pam_unix man page](https://man7.org/linux/man-pages/man8/pam_unix.8.html)
+- [faillock(8) man page](https://man7.org/linux/man-pages/man8/faillock.8.html)
+- [OpenVPN PAM auth plugin](https://openvpn.net/community-resources/using-alternative-authentication-methods/)
+- [Red Hat: Configuring lockout policy](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/configuring-the-system-for-pam-based-user-account-locking_securing-networks)
+- [Viscosity dokumentacja](https://www.sparklabs.com/viscosity/docs/)
+- [pam_faillock(8) — RHEL 8](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/securing_networks/configuring-the-system-for-pam-based-user-account-locking_securing-networks)
+
+---
+
+# 🔑 pam-u2f — OpenVPN Plugin, U2F i YubiKey
+
+> **Cel rozdziału:** Zrozumieć co to jest U2F, jak działa `pam-u2f`, jak OpenVPN ładuje pluginy `.so`, oraz jak linia `plugin /usr/share/openvpn/pam-u2f/auth-pam-u2f.so ovpn` łączy to wszystko razem.
+
+---
+
+## 1. Co to jest U2F?
+
+### 🧠 Proste wprowadzenie
+
+Wyobraź sobie, że oprócz hasła do banku musisz przyłożyć fizyczny klucz do czytnika. Nawet jeśli ktoś ukradnie twoje hasło — bez fizycznego klucza nic nie zrobi. To właśnie U2F.
+
+**U2F (Universal 2nd Factor)** = standard uwierzytelniania dwuskładnikowego oparty na kryptografii klucza publicznego. Opracowany przez **FIDO Alliance** (Google, Yubico, Microsoft). Następca: **FIDO2/WebAuthn**.
+
+### 🔧 Jak działa technicznie
+
+```
+1. Serwer generuje losowy challenge (nonce)
+2. Hardware token (YubiKey) podpisuje challenge kluczem prywatnym
+3. Serwer weryfikuje podpis kluczem publicznym zarejestrowanym wcześniej
+4. Bez fizycznego tokenu → niemożliwe podrobienie podpisu
+```
+
+**Typy U2F tokenów:**
+| Token | Interface | Przykład |
+|-------|-----------|---------|
+| USB-A / USB-C | HID protocol | YubiKey 5, Solo |
+| NFC | Wireless | YubiKey 5 NFC |
+| Bluetooth | BLE | Feitian BLE |
+| Built-in | Platform authenticator | Windows Hello, Touch ID |
+
+**Zalety U2F nad TOTP (Google Authenticator):**
+| | U2F | TOTP |
+|--|-----|------|
+| Phishing odporność | ✅ Tak (origin-bound) | ❌ Nie |
+| Wymaga sieci | ❌ Nie | ❌ Nie |
+| Wymaga hardware | ✅ Tak | ❌ Nie |
+| Łatwość użycia | ✅ Dotknij | ⚠️ Wpisz 6 cyfr |
+
+---
+
+## 2. Co to jest pam-u2f?
+
+**pam-u2f** = moduł PAM od **Yubico** integrujący U2F hardware tokens z Linux PAM stack. Biblioteka: `pam_u2f.so`.
+
+Gdy użytkownik loguje się przez SSH, VPN, sudo — PAM wywołuje `pam_u2f.so`, który wymaga dotknięcia YubiKey. Bez fizycznego tokenu → auth fail.
+
+**Instalacja:**
+```bash
+# RHEL/Fedora
+dnf install pam-u2f
+
+# Ubuntu/Debian
+apt install libpam-u2f
+
+# Plik PAM module
+ls /lib64/security/pam_u2f.so
+```
+
+**Rejestracja tokenu dla użytkownika:**
+```bash
+# Wygeneruj klucze i zapisz
+pamu2fcfg -u username >> /etc/openvpn/u2f_keys
+# lub per-user:
+pamu2fcfg >> ~/.config/Yubico/u2f_keys
+```
+
+**Format pliku `u2f_keys`:**
+```
+username:keyHandle1,publicKey1:keyHandle2,publicKey2
+```
+
+---
+
+## 3. OpenVPN Plugin Architektura
+
+### Jak OpenVPN ładuje pluginy
+
+OpenVPN obsługuje zewnętrzne pluginy przez **shared libraries** (`.so` na Linux, `.dll` na Windows). Plugin to biblioteka implementująca określony interfejs C — OpenVPN ładuje ją przy starcie przez `dlopen()`.
+
+**Dyrektywa `plugin` w `server.conf`:**
+```
+plugin <ścieżka_do_pliku.so> [argumenty...]
+```
+
+### Rozbicie konkretnej linii
+
+```
+plugin /usr/share/openvpn/pam-u2f/auth-pam-u2f.so ovpn
+│       │                                            │
+│       │                                            └─ argument przekazany do pluginu
+│       │                                               = nazwa serwisu PAM
+│       │                                               = plik /etc/pam.d/ovpn
+│       └─ ścieżka do shared library (.so)
+│          auth-pam-u2f.so = plugin łączący OpenVPN z PAM + U2F
+└─ dyrektywa OpenVPN: załaduj i aktywuj plugin
+```
+
+**Co robi `auth-pam-u2f.so`:**
+1. Przechwytuje credentials od klienta (username + password)
+2. Wywołuje PAM stack wskazany przez argument (`ovpn` → `/etc/pam.d/ovpn`)
+3. PAM stack może sprawdzić hasło Unix + U2F token
+4. Zwraca wynik do OpenVPN: auth OK lub FAIL
+
+### 📊 Sequence Diagram — pełny flow auth
+
+```mermaid
+sequenceDiagram
+    participant V as Viscosity (Mac)
+    participant O as OpenVPN Server
+    participant P as auth-pam-u2f.so
+    participant PAM as /etc/pam.d/ovpn
+    participant U as pam_unix.so
+    participant Y as pam_u2f.so
+    participant FL as pam_faillock.so
+    participant YK as YubiKey Hardware
+
+    V->>O: Connect + username + password
+    O->>P: Invoke plugin with credentials
+    P->>PAM: PAM authenticate(username, password)
+    PAM->>FL: preauth check (is user locked?)
+    FL-->>PAM: not locked, proceed
+    PAM->>U: verify password (pam_unix)
+    U-->>PAM: password OK
+    PAM->>Y: require U2F token (pam_u2f)
+    Y->>YK: send challenge
+    YK-->>Y: signed response (user touched key)
+    Y-->>PAM: U2F OK
+    PAM->>FL: authsucc (reset fail counter)
+    PAM-->>P: auth SUCCESS
+    P-->>O: auth SUCCESS
+    O-->>V: VPN tunnel established
+```
+
+---
+
+## 4. /etc/pam.d/ovpn — Konfiguracja
+
+Plik `/etc/pam.d/ovpn` to instrukcja dla PAM — co sprawdzić przy logowaniu przez OpenVPN.
+
+**Typowa konfiguracja z faillock + u2f:**
+```
+# /etc/pam.d/ovpn
+
+# Sprawdź czy konto nie jest zablokowane (przed auth)
+auth    required    pam_faillock.so preauth
+
+# Sprawdź hasło Linuksowe
+auth    required    pam_unix.so
+
+# Wymagaj dotyku YubiKey (U2F)
+auth    required    pam_u2f.so authfile=/etc/openvpn/u2f_keys
+
+# Zapisz wynik — sukces lub fail (dla faillock)
+auth    [default=die] pam_faillock.so authfail
+auth    sufficient  pam_faillock.so authsucc
+
+# Sprawdź czy konto jest aktywne (nie wygasłe, nie zablokowane)
+account required    pam_unix.so
+account required    pam_faillock.so
+```
+
+**Wyjaśnienie każdej linii:**
+
+| Linia | Co robi |
+|-------|---------|
+| `pam_faillock.so preauth` | Sprawdza czy user nie przekroczył limitu błędów — jeśli tak, odrzuca natychmiast |
+| `pam_unix.so` (auth) | Weryfikuje hasło w `/etc/shadow` |
+| `pam_u2f.so authfile=...` | Wymaga U2F challenge-response z YubiKey |
+| `pam_faillock.so authfail` | Przy błędzie — inkrementuje licznik niepowodzeń |
+| `pam_faillock.so authsucc` | Przy sukcesie — resetuje licznik |
+| `pam_unix.so` (account) | Sprawdza wygaśnięcie konta, czy konto istnieje |
+| `pam_faillock.so` (account) | Sprawdza blokadę konta na poziomie account management |
+
+---
+
+## 5. auth-gen-token — Co to?
+
+### Problem bez auth-gen-token
+
+OpenVPN domyślnie periodycznie re-uwierzytelnia klientów (`reneg-sec`, domyślnie 3600s). Bez `auth-gen-token` user musiałby co godzinę dotykać YubiKey — bardzo uciążliwe.
+
+### Rozwiązanie: auth-gen-token
+
+```
+# /etc/openvpn/server.conf
+auth-gen-token
+```
+
+**Jak działa:**
+1. Po pierwszym sukcesie auth → serwer generuje losowy token (HMAC)
+2. Token wysyłany do klienta przez control channel
+3. Przy re-auth → klient wysyła token zamiast hasła + U2F
+4. Serwer weryfikuje HMAC token → nie wymaga ponownego dotyku YubiKey
+5. Token ważny przez czas sesji VPN
+
+```mermaid
+sequenceDiagram
+    participant C as Klient (Viscosity)
+    participant S as OpenVPN Server
+
+    C->>S: Pierwsze połączenie: user+pass+U2F
+    S-->>C: Auth OK + wygenerowany token XYZ
+    Note over C,S: Po reneg-sec (np. 3600s)
+    C->>S: Re-auth: user + token XYZ
+    S-->>C: Token OK, sesja kontynuowana
+    Note over C: Brak ponownego dotyku YubiKey!
+```
+
+**Parametry:**
+```
+auth-gen-token 86400        # token ważny 86400 sekund (24h)
+auth-gen-token-secret /etc/openvpn/token.secret  # własny HMAC secret
+```
+
+---
+
+## 6. tls-auth vs tls-crypt
+
+| | `tls-auth` | `tls-crypt` |
+|--|------------|-------------|
+| Funkcja | HMAC podpis pakietów TLS | HMAC + szyfrowanie pakietów TLS |
+| Ochrona przed | DDoS, port scanning | DDoS + packet inspection |
+| Klucz | Wspólny (ta.key) | Wspólny (tc.key) |
+| OpenVPN wersja | Wszystkie | 2.4+ |
+| Ukrywa payload | ❌ Nie | ✅ Tak |
+| Zalecane | Legacy | ✅ Tak (nowsze) |
+
+**W configu:**
+```
+tls-auth /etc/openvpn/keys/ta.key 0   # 0 = serwer, 1 = klient
+# lub nowszy:
+tls-crypt /etc/openvpn/keys/tc.key
+```
+
+---
+
+## 7. Porównanie Metod Auth w OpenVPN
+
+| Metoda | Certyfikat | Hasło | U2F Token | Bezpieczeństwo | Wygoda |
+|--------|-----------|-------|-----------|----------------|--------|
+| Cert only | ✅ | ❌ | ❌ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Cert + password | ✅ | ✅ | ❌ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Cert + PAM (hasło) | ✅ | ✅ (PAM) | ❌ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Cert + PAM + U2F | ✅ | ✅ (PAM) | ✅ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| PAM + U2F (bez cert) | ❌ | ✅ (PAM) | ✅ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+
+**Konfiguracja Viscosity (klient) dla cert + PAM + U2F:**
+```
+# Fragment config.conf w Viscosity
+auth-user-pass          # żąda username+password od usera
+tls-auth ta.key 1       # 1 = strona klienta
+```
+
+---
+
+## 8. Bezpieczeństwo
+
+### Dlaczego U2F + PAM jest silne
+
+```mermaid
+flowchart LR
+    A[Atakujący] -->|Skradzione hasło| B{PAM + U2F}
+    B -->|Brak YubiKey| C[❌ AUTH FAIL]
+    B -->|Ma YubiKey| D[✅ AUTH OK]
+    
+    E[Legalny user] -->|Hasło + YubiKey| B
+```
+
+**Warstwy ochrony:**
+| Warstwa | Mechanizm | Co chroni |
+|---------|-----------|-----------|
+| TLS | `tls-auth` / `tls-crypt` | Ruch VPN, DDoS protection |
+| Certyfikat klienta | PKI | Tożsamość urządzenia |
+| Hasło | `pam_unix.so` | Tożsamość użytkownika |
+| U2F Token | `pam_u2f.so` | Fizyczna obecność |
+| Faillock | `pam_faillock.so` | Brute-force protection |
+
+### Potencjalne słabości i mitigacje
+
+| Ryzyko | Mitigacja |
+|--------|-----------|
+| Skradziony YubiKey | `deny=3` w faillock, monitoring logów |
+| Zgubiony YubiKey | Backup klucz w `u2f_keys`, procedura recovery |
+| Replay attack | Challenge jest jednorazowy (counter-based) |
+| Phishing | U2F jest origin-bound — nie działa na fałszywym serwerze |
+| Token w pamięci klienta | `auth-gen-token` wygasa z sesją |
+
+### Monitoring i logi
+
+```bash
+# Sprawdź próby auth OpenVPN
+journalctl -u openvpn@openvpn_udp_1194 | grep -i "auth\|failed\|error"
+
+# Status połączeń
+cat /etc/openvpn/status-openvpn_udp_1194.log
+
+# Zablokowane konta
+faillock
+
+# Logi PAM
+journalctl | grep "pam_u2f\|pam_unix\|pam_faillock" | tail -50
+```
+
+---
+
+## 9. Dokumentacja
+
+- [pam-u2f — Yubico](https://developers.yubico.com/pam-u2f/)
+- [OpenVPN Reference Manual 2.6](https://openvpn.net/community-resources/reference-manual-for-openvpn-2-6/)
+- [FIDO U2F Specification](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/)
+- [pam_u2f man page](https://developers.yubico.com/pam-u2f/Manuals/pam_u2f.8.html)
+- [OpenVPN auth-pam plugin](https://openvpn.net/community-resources/using-alternative-authentication-methods/)
+- [auth-gen-token OpenVPN docs](https://openvpn.net/community-resources/reference-manual-for-openvpn-2-6/#auth-gen-token)
+- `man pam_u2f`
+- `man openvpn`
+
+---
+
+# 🔀 PAM Jump Logic — `success=N`, `pam_faillock` i Analiza Rzeczywistego Stacku
+
+> Jak PAM podejmuje decyzje o uwierzytelnianiu — mechanizm skoków, logika OR i prawidłowa integracja faillock.
+
+---
+
+## 1. PAM Control Flags — Podstawy
+
+PAM control flags określają co dzieje się z wynikiem modułu. Wyobraź sobie listę kontrolerów bezpieczeństwa — każdy może powiedzieć "ok", "nie" lub "nieważne". Flagi mówią jak interpretować ich odpowiedzi.
+
+| Flag | Znaczenie | Przy FAIL | Przy SUCCESS |
+|------|-----------|-----------|--------------|
+| `required` | Musi się udać | Kontynuuj stack, na końcu DENY | Kontynuuj |
+| `requisite` | Musi się udać | **STOP natychmiast** → DENY | Kontynuuj |
+| `sufficient` | Wystarczy sukces | Kontynuuj (ignoruj) | **STOP** → ALLOW |
+| `optional` | Nieobowiązkowy | Ignoruj | Ignoruj |
+| `[success=N default=ignore]` | Złożona reguła | Ignoruj (kontynuuj) | Przeskocz N linii |
+
+---
+
+## 2. PAM Jump Logic — `[success=N default=ignore]`
+
+To najważniejszy mechanizm do zrozumienia. Pozwala implementować logikę **OR** w PAM stacku.
+
+**`success=N`** = jeśli moduł się uda, przeskocz N następnych linii
+**`default=ignore`** = jeśli moduł się nie uda, zignoruj wynik i idź dalej
+
+### Przykład — logika OR (unix LUB sss):
+
+```
+Linia 1: auth [success=2 default=ignore] pam_unix.so    ← unix OK → skocz o 2 (przeskocz linie 2,3)
+Linia 2: auth [success=1 default=ignore] pam_sss.so     ← sss OK  → skocz o 1 (przeskocz linię 3)
+Linia 3: auth requisite                  pam_deny.so    ← dotarłeś tu = OBA failed → DENY
+Linia 4: auth required                   pam_permit.so  ← zawsze po sukcesie (bookmark)
+```
+
+```mermaid
+flowchart TD
+    A[Próba logowania] --> B{pam_unix.so\nhasło systemowe}
+    B -->|SUCCESS| E[skip 2 linie → pam_permit]
+    B -->|FAIL ignore| C{pam_sss.so\nSSSD/LDAP/AD}
+    C -->|SUCCESS| F[skip 1 linię → pam_permit]
+    C -->|FAIL ignore| D[pam_deny.so\nrequisite]
+    D --> G[❌ AUTH DENIED]
+    E --> H[pam_permit.so]
+    F --> H
+    H --> I[✅ AUTH OK]
+```
+
+---
+
+## 3. `pam_faillock` — Prawidłowy Stack
+
+Faillock musi być w **trzech miejscach** w stacku żeby działał poprawnie:
+
+```
+# /etc/pam.d/common-auth — PRAWIDŁOWA konfiguracja z faillock
+
+auth    required                        pam_faillock.so preauth   # ← 1. CHECK przed hasłem
+auth    [success=2 default=ignore]      pam_unix.so nullok
+auth    [success=1 default=ignore]      pam_sss.so use_first_pass
+auth    requisite                       pam_deny.so
+auth    required                        pam_permit.so
+auth    sufficient                      pam_faillock.so authsucc  # ← 2. SUKCES: reset licznika
+auth    required                        pam_faillock.so authfail  # ← 3. FAIL: zwiększ licznik
+```
+
+| Miejsce | Argument | Rola |
+|---------|----------|------|
+| Przed hasłem | `preauth` | Sprawdza czy konto już zablokowane. Jeśli tak → DENY bez pytania o hasło |
+| Po sukcesie | `authsucc` | Resetuje licznik nieudanych prób |
+| Po porażce | `authfail` | Inkrementuje licznik, ewentualnie blokuje konto |
+
+---
+
+## 4. Analiza Rzeczywistego Stacku — Co Jest Nie Tak
+
+Rzeczywisty `/etc/pam.d/common-auth` z serwera:
+
+```
+auth    [success=2 default=ignore]      pam_unix.so nullok
+auth    [success=1 default=ignore]      pam_sss.so use_first_pass
+auth    requisite                       pam_deny.so
+auth    required                        pam_permit.so
+auth    optional                        pam_cap.so
+auth    [success=3 default=ignore]      pam_pkcs11.so
+auth    sufficient                      pam_faillock.so authsucc
+auth    required                        pam_faildelay.so delay=4000000
+```
+
+### Problemy:
+
+| Problem | Lokalizacja | Efekt |
+|---------|-------------|-------|
+| Brak `pam_faillock.so preauth` | Początek stacku | Konta zablokowane przez faillock i tak mogą próbować auth — nie są blokowane z góry |
+| Brak `pam_faillock.so authfail` | Po pam_deny | Nieudane próby logowania **nie są zliczane** → faillock nigdy nie zablokuje konta |
+| `authsucc` na końcu jako `sufficient` | Linia 7 | Tylko rejestruje sukcesy (reset licznika) — ale licznik nigdy nie rośnie, więc zbędne |
+| `pam_faildelay.so` na końcu | Ostatnia linia | Opóźnienie stosuje się tylko po przebyciu całego stacku — może nie działać jak oczekiwano |
+
+> ⚠️ **Faillock na tym systemie NIE blokuje kont po nieudanych próbach VPN.** Konfiguracja jest niekompletna.
+
+---
+
+## 5. `pam_sss` — SSSD Authentication
+
+**SSSD** (System Security Services Daemon) = demon łączący Linux z zewnętrznymi katalogami użytkowników.
+
+```mermaid
+flowchart LR
+    A[pam_sss.so] --> B[sssd daemon]
+    B --> C{Backend}
+    C --> D[LDAP]
+    C --> E[Active Directory / Kerberos]
+    C --> F[FreeIPA]
+    C --> G[Azure AD DS]
+```
+
+| Cecha | Opis |
+|-------|------|
+| Config | `/etc/sssd/sssd.conf` |
+| Logi | `journalctl -u sssd` |
+| Cache | `/var/lib/sss/db/` — lokalny cache użytkowników |
+| `use_first_pass` | Użyj hasła z poprzedniego modułu (pam_unix) — nie pytaj dwa razy |
+
+**Azure odpowiednik:** Azure AD Domain Services (AADDS) działa jako managed AD, SSSD łączy się przez LDAP/Kerberos.
+
+---
+
+## 6. `pam_pkcs11` — Smart Card / HSM Authentication
+
+**PKCS#11** = standard kryptograficzny dla hardware tokenów (smart cards, HSM, PIV cards).
+
+```
+auth [success=3 default=ignore] pam_pkcs11.so
+```
+
+`success=3` = jeśli smart card auth się uda, przeskocz 3 kolejne linie (unix, sss, deny).
+
+| | `pam_u2f` (FIDO/U2F) | `pam_pkcs11` (PKCS#11) |
+|--|----------------------|------------------------|
+| Standard | FIDO Alliance U2F/FIDO2 | RSA PKCS#11 |
+| Token | YubiKey (FIDO mode) | Smart card, PIV, HSM |
+| Protokół | Challenge-response (ECDSA) | X.509 certyfikat |
+| Użycie | Web auth, SSH, PAM | PKI, rządowe systemy, CAC |
+| Config | `~/.config/Yubico/u2f_keys` | `/etc/pam_pkcs11/pam_pkcs11.conf` |
+
+---
+
+## 7. `pam_cap` — Linux Capabilities
+
+**Linux Capabilities** = granularne uprawnienia zamiast pełnego root.
+
+`pam_cap.so` przypisuje capabilities do użytkownika przy logowaniu na podstawie `/etc/security/capability.conf`.
+
+Przykład — daj użytkownikowi `vpnuser` możliwość bindowania portów < 1024:
+```
+cap_net_bind_service    vpnuser
+```
+
+W kontekście OpenVPN: rzadko potrzebne, moduł `optional` — nie wpływa na auth flow.
+
+---
+
+## 8. Tabela — Wszystkie Moduły PAM z Tego Stacku
+
+| Moduł | Typ | Rola | Config |
+|-------|-----|------|--------|
+| `pam_unix.so` | auth/account/password/session | Lokalne konta Linux (`/etc/passwd`, `/etc/shadow`) | wbudowany |
+| `pam_sss.so` | auth/account/session | SSSD — LDAP/AD/Kerberos | `/etc/sssd/sssd.conf` |
+| `pam_faillock.so` | auth/account | Blokowanie po failed attempts | `/etc/security/faillock.conf` |
+| `pam_faildelay.so` | auth | Opóźnienie po nieudanym logowaniu | `delay=N` (mikrosekundy) |
+| `pam_deny.so` | auth | Zawsze DENY — catch-all | brak |
+| `pam_permit.so` | auth | Zawsze ALLOW — bookmark/placeholder | brak |
+| `pam_cap.so` | auth | Linux capabilities assignment | `/etc/security/capability.conf` |
+| `pam_pkcs11.so` | auth | Smart card / PKI token | `/etc/pam_pkcs11/pam_pkcs11.conf` |
+| `pam_nologin.so` | auth | Blokada gdy `/etc/nologin` istnieje | plik `/etc/nologin` |
+| `pam_selinux.so` | session | SELinux context setup | SELinux policy |
+| `pam_loginuid.so` | session | Audit UID dla procesu | kernel audit |
+| `pam_motd.so` | session | Message of the Day | `/etc/motd`, `/run/motd.dynamic` |
+| `pam_env.so` | session | Zmienne środowiskowe | `/etc/environment`, `/etc/default/locale` |
+| `pam_limits.so` | session | ulimits (max procesy, pliki) | `/etc/security/limits.conf` |
+| `pam_lastlog.so` | session | Last login info + failed logins | `/var/log/lastlog` |
+| `pam_keyinit.so` | session | Kernel keyring init/revoke | kernel |
+| `pam_mail.so` | session | Mail notification | `/var/mail/` |
+| `pam_listfile.so` | auth | Allow/deny na podstawie pliku | `file=`, `item=`, `sense=` |
+| `pam_group.so` | auth | Dynamiczne przypisanie grup | `/etc/security/group.conf` |
+| `pam_u2f.so` | auth | FIDO U2F / YubiKey | `authfile=` |
+
+---
+
+## 9. Dokumentacja
+
+- [`man pam.d`](https://linux.die.net/man/5/pam.d) — format plików PAM
+- [`man pam_unix`](https://linux.die.net/man/8/pam_unix) — lokalny auth
+- [`man pam_sss`](https://linux.die.net/man/8/pam_sss) — SSSD PAM module
+- [`man pam_faillock`](https://linux.die.net/man/8/pam_faillock) — faillock module
+- [`man pam_pkcs11`](https://linux.die.net/man/8/pam_pkcs11) — smart card
+- [`man pam_cap`](https://linux.die.net/man/8/pam_cap) — capabilities
+- [SSSD Documentation](https://sssd.io/docs/introduction.html)
+- [Linux PAM Guide](http://www.linux-pam.org/Linux-PAM-html/)
+
+---
 *Ostatnia aktualizacja: 2026-10-26*
+
+# 🔐 YubiKey + Viscosity na macOS — Diagnostyka problemów
+
+> Dodano: 2026-10-27
+
+## Co to jest YubiKey?
+
+YubiKey to fizyczny klucz bezpieczeństwa (hardware token) firmy Yubico. Działa jako drugi składnik uwierzytelniania (2FA/MFA). Viscosity to klient VPN na macOS oparty na OpenVPN.
+
+## Łańcuch komponentów
+
+```
+YubiKey (hardware) → PCSC daemon → OpenSC / pkcs11 → Viscosity → OpenVPN
+```
+
+Każde ogniwo może być źródłem problemu.
+
+---
+
+## 🔍 Diagnostyka krok po kroku
+
+### 1. Czy macOS widzi YubiKey?
+
+```bash
+system_profiler SPUSBDataType | grep -A 10 -i "yubikey\|yubico"
+ykman list
+```
+
+Instalacja: `brew install ykman`
+
+### 2. PCSC daemon
+
+```bash
+ps aux | grep pcscd
+sudo /usr/sbin/pcscd --foreground --debug 2>&1 | head -50
+```
+
+### 3. PKCS#11
+
+```bash
+brew install opensc
+pkcs11-tool --list-slots
+pkcs11-tool --list-tokens
+pkcs11-tool --list-objects --login
+```
+
+### 4. Logi Viscosity
+
+```bash
+tail -f ~/Library/Application\ Support/Viscosity/OpenVPN/*/log/*.log
+```
+
+Szukaj: `PKCS11: Could not find slot`, `certificate verify failed`, `private key password failure`
+
+### 5. Znajdź pkcs11-id
+
+```bash
+openvpn --show-pkcs11-ids /usr/local/lib/opensc-pkcs11.so
+```
+
+### 6. Certyfikat na YubiKey
+
+```bash
+ykman piv info
+yubico-piv-tool -a status
+```
+
+### 7. Konflikty z GPG/SSH agent
+
+```bash
+ps aux | grep -E "gpg-agent|ssh-agent|pcscd"
+gpgconf --kill gpg-agent
+sudo pkill pcscd && sudo pcscd
+```
+
+---
+
+## 🗺️ Diagram diagnostyki
+
+```mermaid
+flowchart TD
+    A[Problem z YubiKey + Viscosity] --> B{system_profiler widzi YubiKey?}
+    B -->|NIE| C[Problem sprzętowy / USB]
+    B -->|TAK| D{ykman list działa?}
+    D -->|NIE| E[Zainstaluj ykman / sprawdź pcscd]
+    D -->|TAK| F{pkcs11-tool --list-slots działa?}
+    F -->|NIE| G[Problem z OpenSC / PKCS11]
+    F -->|TAK| H{Viscosity logi pokazują błąd?}
+    H -->|PKCS11 slot| I[Zły pkcs11-id w konfiguracji]
+    H -->|cert verify| J[Certyfikat wygasł lub nieważny CA]
+    H -->|PIN fail| K[Zły PIN do YubiKey]
+    H -->|brak błędu| L[Problem z siecią / serwerem VPN]
+```
+
+---
+
+## 🛠️ Najczęstsze problemy
+
+| Problem | Objaw | Rozwiązanie |
+|---|---|---|
+| pcscd nie działa | pkcs11-tool crash | `sudo pkill pcscd && sudo pcscd` |
+| Zły pkcs11-id | Could not find slot | `openvpn --show-pkcs11-ids` |
+| Wygasły certyfikat | cert verify failed | `ykman piv info` |
+| Zablokowany PIN | PIN locked | `ykman piv access change-pin` |
+| Konflikt z GPG | PCSC timeout | `gpgconf --kill gpg-agent` |
+| Zła ścieżka .so | Cannot load module | `find /opt/homebrew -name "*pkcs11*"` |
+
+---
+
+## 📦 Narzędzia
+
+```bash
+brew install ykman
+brew install opensc
+brew install yubico-piv-tool
+```
+
+## 🔗 Linki
+
+- [Yubico PIV docs](https://developers.yubico.com/PIV/)
+- [OpenSC PKCS11](https://github.com/OpenSC/OpenSC/wiki)
+- [Viscosity manual](https://www.sparklabs.com/viscosity/docs/)
+
+---
+
+## 📎 Co to jest pcsctest?
+
+**pcsctest** = narzędzie diagnostyczne dla stosu PC/SC (Personal Computer/Smart Card).
+
+### Stos PC/SC
+
+```
+Aplikacja (Viscosity/OpenVPN)
+        ↓
+    PC/SC API
+        ↓
+   pcscd daemon
+        ↓
+  sterownik USB
+        ↓
+  YubiKey (CCID mode)
+```
+
+### Co testuje pcsctest?
+
+| Krok | Co sprawdza |
+|---|---|
+| `SCardEstablishContext` | Czy pcscd działa i odpowiada |
+| `SCardGetStatusChange` | Czy wykrywa podłączenie czytnika/karty |
+| `SCardListReaders` | Czy widzi dostępne czytniki |
+| `SCardConnect` | Czy może się połączyć z kartą |
+| `SCardTransmit` | Czy może wysyłać komendy APDU do karty |
+
+Wynik `Reader 01: Yubico YubiKey OTP+FIDO+CCID` = warstwy sprzętowa i pcscd działają. Problem leży wyżej (PKCS#11 / konfiguracja Viscosity).
+
+
+---
+
+# 💳 Smart Cards — co to jest i przykłady
+
+> Dodano: 2026-10-27
+
+Karta inteligentna = mały komputer w formacie karty. Procesor, pamięć, operacje kryptograficzne **wewnątrz** karty — klucz prywatny **nigdy nie opuszcza karty**.
+
+## Przykłady
+
+| Urządzenie | Użycie |
+|---|---|
+| **e-dowód (PL)** | Podpisywanie dokumentów elektronicznych |
+| **Karta bankowa** | Chip EMV — PIN weryfikowany na karcie |
+| **Karta SIM** | Klucze sieci GSM |
+| **YubiKey** | USB smart card — certyfikaty, SSH, VPN |
+| **Karta dostępowa** | HID, MIFARE — otwieranie drzwi |
+| **Passport** | Chip RFID z danymi biometrycznymi |
+| **PIV card (US Gov)** | Personal Identity Verification |
+
+## Stos standardów
+
+```
+ISO 7816  ← fizyczny standard karty
+    ↓
+PC/SC     ← API systemu operacyjnego
+    ↓
+PKCS#11   ← standard biblioteki kryptograficznej
+    ↓
+Aplikacja ← OpenVPN, SSH, Firefox
+```
+
+## Cross-platform
+
+| System | pcscd | Narzędzia |
+|---|---|---|
+| macOS | CryptoTokenKit (wbudowany) | `pcsctest`, `opensc` |
+| Linux | `pcsc-lite` (apt/dnf) | `pcsc_scan`, `opensc` |
+| Windows | SCard API (wbudowany) | `certutil`, `opensc` |
+
+```bash
+# Linux
+sudo apt install pcscd pcsc-tools opensc
+pcsc_scan
+
+# macOS
+brew install opensc pcsc-tools
+pcsctest
+```
+
+## Tryby YubiKey
+
+```
+YubiKey
+├── OTP     ← jednorazowe hasło (dotknięcie)
+├── FIDO2   ← WebAuthn (logowanie bez hasła)
+├── CCID    ← Smart Card (PIV, OpenPGP)
+│   ├── PIV   ← certyfikaty X.509, SSH, VPN
+│   └── OpenPGP ← klucze GPG
+└── OATH    ← TOTP/HOTP (jak Google Authenticator)
+```
+
+## Diagram — VPN z YubiKey
+
+```mermaid
+sequenceDiagram
+    participant V as Viscosity
+    participant P as pcscd
+    participant Y as YubiKey (PIV)
+    participant S as VPN Server
+
+    V->>P: Znajdź token PKCS11
+    P->>Y: Połącz przez CCID
+    Y-->>P: Token gotowy
+    P-->>V: Slot ID zwrócony
+    V->>S: TLS Handshake
+    S-->>V: Challenge do podpisania
+    V->>P: Podpisz challenge
+    P->>Y: Wyślij dane do podpisania
+    Y-->>P: Podpisano (klucz nie wyszedł z karty!)
+    P-->>V: Podpis gotowy
+    V->>S: Podpis + certyfikat
+    S-->>V: Połączenie VPN aktywne ✓
+```
+
+
+---
+
+# 🔑 YubiKey — tryby szczegółowo: OTP, FIDO2, CCID, PIV, OpenPGP, OATH
+
+> Dodano: 2026-10-27
+
+## OTP (One Time Password)
+
+Dotknięcie = 44-znakowy jednorazowy token wpisany jak klawiatura.
+
+```
+ccccccibgedjdfrkklfhidgiiehcnbkechejjidcgjlhf
+└──────┘└──────────────────────────────────────┘
+ ID klucza        jednorazowe hasło (AES)
+```
+
+Alternatywy: Google Authenticator (soft TOTP), RSA SecurID (hardware), SMS (słaby).
+
+---
+
+## FIDO2 / WebAuthn
+
+Logowanie bez hasła. Challenge-response z kluczem publicznym.
+
+```mermaid
+sequenceDiagram
+    participant B as Przeglądarka
+    participant S as Serwer
+    participant Y as YubiKey
+    S->>B: Challenge
+    B->>Y: Podpisz
+    Y-->>B: Podpis
+    B->>S: Podpis + klucz publiczny
+    S-->>B: Zalogowano ✓
+```
+
+Użycie: Google, GitHub, Microsoft bez hasła. Passkeys = FIDO2 w telefonie/laptopie.
+Alternatywy: Google Titan Key, Apple Passkeys, Windows Hello.
+
+---
+
+## CCID
+
+Sterownik USB — mówi systemowi "jestem czytnikiem kart". Warstwa transportowa dla PIV i OpenPGP. Nie robi nic sam — umożliwia pcscd rozmowę z kartą.
+
+---
+
+## PIV (Personal Identity Verification)
+
+Standard rządu USA (NIST). Certyfikaty X.509, klucze RSA/ECC.
+
+| Slot | Użycie |
+|---|---|
+| `9a` | Authentication — VPN, SSH, login |
+| `9c` | Digital Signature — dokumenty |
+| `9d` | Key Management — szyfrowanie |
+| `9e` | Card Authentication — dostęp fizyczny |
+
+```bash
+ykman piv info
+ykman piv keys generate --algorithm ECCP256 9a pubkey.pem
+ykman piv certificates import 9a cert.pem
+openvpn --show-pkcs11-ids /opt/homebrew/lib/opensc-pkcs11.so
+```
+
+Alternatywy: Smartcard HSM, AWS CloudHSM, TPM, macOS Secure Enclave.
+
+---
+
+## OpenPGP
+
+Klucze GPG na hardware. Sloty: Signature, Encryption, Authentication.
+
+```bash
+git commit -S -m "podpisany commit"
+gpg --encrypt --recipient osoba@firma.com plik.txt
+gpg --decrypt plik.txt.gpg
+```
+
+### PIV vs OpenPGP
+
+| Cecha | PIV | OpenPGP |
+|---|---|---|
+| Standard | NIST (rządowy) | RFC 4880 (open) |
+| Certyfikaty | X.509 | PGP web of trust |
+| Użycie | VPN, AD, login | e-mail, git signing |
+
+---
+
+## OATH (TOTP/HOTP)
+
+32 konta TOTP w hardware — jak Google Authenticator ale bezpieczniejszy.
+
+```bash
+ykman oath accounts list
+ykman oath accounts code github
+ykman oath accounts add -t nazwa "otpauth://totp/..."
+```
+
+---
+
+## Podsumowanie — kiedy co
+
+| Scenariusz | Tryb |
+|---|---|
+| Logowanie bez hasła (Google/GitHub) | FIDO2 |
+| VPN firmowy (Viscosity) | PIV slot 9a |
+| SSH do serwerów | PIV lub OpenPGP |
+| Podpisywanie git commitów | OpenPGP |
+| 2FA do aplikacji webowych | OATH lub FIDO2 |
+| Legacy systemy | OTP |
+| Szyfrowanie e-mail S/MIME | PIV |
+| Szyfrowanie e-mail PGP | OpenPGP |
+

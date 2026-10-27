@@ -97,6 +97,169 @@
   - [8.12 Well-Architected Framework](#812-well-architected-framework)
   - [8.13 4 Domeny egzaminacyjne](#813-4-domeny-egzaminacyjne)
   - [8.14 Checks — 60 pytań z odpowiedziami](#814-checks--60-pytań-z-odpowiedziami)
+- [9. VPC — Architektura, VPC Peering i Rozwiązania VPN w AWS](#9-vpc--architektura-vpc-peering-i-rozwiązania-vpn-w-aws)
+  - [9.1 VPC — Fundament Sieci AWS](#91-vpc--fundament-sieci-aws)
+  - [9.2 VPC Peering — Połączenie Bezpośrednie między VPC](#92-vpc-peering--połączenie-bezpośrednie-między-vpc)
+  - [9.3 AWS Site-to-Site VPN](#93-aws-site-to-site-vpn)
+  - [9.4 AWS Client VPN](#94-aws-client-vpn)
+  - [9.5 VPN CloudHub](#95-vpn-cloudhub)
+  - [9.6 VPN i Direct Connect — Wybór i Porównanie](#96-vpn-i-direct-connect--wybór-i-porównanie)
+  - [9.7 Well-Architected Framework — VPC, Peering, VPN](#97-well-architected-framework--vpc-peering-vpn)
+  - [9.8 4 Domeny Egzaminacyjne SAP-C02](#98-4-domeny-egzaminacyjne-sap-c02)
+  - [9.9 Checks — 60 Pytań z Odpowiedziami](#99-checks--60-pytań-z-odpowiedziami)
+- [10. Amazon EC2 — Rodziny Instancji, Zasoby, Koszty i Modele Zakupu](#10-amazon-ec2--rodziny-instancji-zasoby-koszty-i-modele-zakupu)
+  - [10.1 Co to jest EC2 i z czego się składa?](#101-co-to-jest-ec2-i-z-czego-się-składa)
+  - [10.2 Nomenklatura Instancji EC2 — Jak Czytać Nazwę](#102-nomenklatura-instancji-ec2--jak-czytać-nazwę)
+  - [10.3 Rodziny Instancji EC2 — Przegląd](#103-rodziny-instancji-ec2--przegląd)
+  - [10.4 Tabela Porównawcza Rodzin — Quick Reference](#104-tabela-porównawcza-rodzin--quick-reference)
+  - [10.5 Modele Zakupu EC2 — Koszty i Optymalizacja](#105-modele-zakupu-ec2--koszty-i-optymalizacja)
+  - [10.6 Porównanie Wszystkich Modeli Cenowych](#106-porównanie-wszystkich-modeli-cenowych)
+  - [10.7 Storage dla EC2](#107-storage-dla-ec2)
+  - [10.8 Sieć EC2 — ENI, Enhanced Networking, Placement Groups](#108-sieć-ec2--eni-enhanced-networking-placement-groups)
+  - [10.9 EC2 — Limity i Ograniczenia](#109-ec2--limity-i-ograniczenia)
+  - [10.10 Well-Architected Framework — EC2](#1010-well-architected-framework--ec2)
+  - [10.11 4 Domeny Egzaminacyjne SAP-C02](#1011-4-domeny-egzaminacyjne-sap-c02)
+  - [10.12 Checks — 60 Pytań z Odpowiedziami](#1012-checks--60-pytań-z-odpowiedziami)
+- [11. Elastic Load Balancing — ALB, NLB, GWLB, CLB](#11-elastic-load-balancing--alb-nlb-gwlb-clb)
+  - [11.1 Co to jest ELB i po co istnieje?](#111-co-to-jest-elb-i-po-co-istnieje)
+  - [11.2 Cztery Typy Load Balancerów — Przegląd](#112-cztery-typy-load-balancerów--przegląd)
+  - [11.3 ALB — Application Load Balancer](#113-alb--application-load-balancer)
+  - [11.4 NLB — Network Load Balancer](#114-nlb--network-load-balancer)
+  - [11.5 GWLB — Gateway Load Balancer](#115-gwlb--gateway-load-balancer)
+  - [11.6 CLB — Classic Load Balancer (Legacy)](#116-clb--classic-load-balancer-legacy)
+  - [11.7 Health Checks — Szczegóły](#117-health-checks--szczegóły)
+  - [11.8 ELB + Auto Scaling Group — Integracja](#118-elb--auto-scaling-group--integracja)
+  - [11.9 SSL/TLS — Tryby i Polityki](#119-ssltls--tryby-i-polityki)
+  - [11.10 ELB — Zaawansowane Funkcje](#1110-elb--zaawansowane-funkcje)
+  - [11.11 ELB — Koszty](#1111-elb--koszty)
+  - [11.12 ELB — Monitoring i Metryki](#1112-elb--monitoring-i-metryki)
+  - [11.13 Well-Architected Framework — ELB](#1113-well-architected-framework--elb)
+  - [11.14 4 Domeny Egzaminacyjne SAP-C02](#1114-4-domeny-egzaminacyjne-sap-c02)
+  - [11.15 Checks — 60 Pytań z Odpowiedziami](#1115-checks--60-pytań-z-odpowiedziami)
+- [12. HA, Redundancja i Skalowalność — EC2, ELB, ASG i Integracje](#12-ha-redundancja-i-skalowalność--ec2-elb-asg-i-integracje)
+  - [12.1 Fundamenty HA i Redundancji w AWS](#121-fundamenty-ha-i-redundancji-w-aws)
+  - [12.2 Auto Scaling Group (ASG) — Fundament Skalowania EC2](#122-auto-scaling-group-asg--fundament-skalowania-ec2)
+  - [12.3 Polityki Skalowania ASG](#123-polityki-skalowania-asg)
+  - [12.4 ASG — Mixed Instances Policy (Spot + On-Demand)](#124-asg--mixed-instances-policy-spot--on-demand)
+  - [12.5 Warmup, Cooldown i Instance Refresh](#125-warmup-cooldown-i-instance-refresh)
+  - [12.6 ELB HA — Jak ELB Zapewnia Wysoką Dostępność](#126-elb-ha--jak-elb-zapewnia-wysoką-dostępność)
+  - [12.7 ELB + EC2 — Pełna Integracja](#127-elb--ec2--pełna-integracja)
+  - [12.8 ELB + ECS/Fargate — Kontenery](#128-elb--ecsfargate--kontenery)
+  - [12.9 ELB + Lambda — Serverless Backend](#129-elb--lambda--serverless-backend)
+  - [12.10 ELB + On-Premises (Hybrid) — Target Type IP](#1210-elb--on-premises-hybrid--target-type-ip)
+  - [12.11 ELB + Multi-VPC (Cross-VPC)](#1211-elb--multi-vpc-cross-vpc)
+  - [12.12 ELB + Global Accelerator — Ultra-HA Multi-Region](#1212-elb--global-accelerator--ultra-ha-multi-region)
+  - [12.13 Wzorce Redundancji — Active-Active vs Active-Passive](#1213-wzorce-redundancji--active-active-vs-active-passive)
+  - [12.14 Termination Policies ASG — Która Instancja Usunąć](#1214-termination-policies-asg--która-instancja-usunąć)
+  - [12.15 Scale-In Protection](#1215-scale-in-protection)
+  - [12.16 Troubleshooting — Częste Problemy ASG + ELB](#1216-troubleshooting--częste-problemy-asg--elb)
+  - [12.17 Well-Architected Framework — HA i Skalowalność](#1217-well-architected-framework--ha-i-skalowalność)
+  - [12.18 4 Domeny Egzaminacyjne SAP-C02](#1218-4-domeny-egzaminacyjne-sap-c02)
+  - [12.19 Warm Pools — Skrócenie Czasu Scale-Out](#1219-warm-pools--skrócenie-czasu-scale-out)
+  - [12.20 Checks — 60 Pytań z Odpowiedziami](#1220-checks--60-pytań-z-odpowiedziami)
+
+- [13. TUN/TAP — Wirtualne Interfejsy Sieciowe, OpenVPN i AWS VPN](#13-tuntap--wirtualne-interfejsy-sieciowe-openvpn-i-aws-vpn)
+  - [13.1 Czym są TUN i TAP?](#131-czym-są-tun-i-tap)
+  - [13.2 Architektura Jądra — Jak TUN/TAP Istnieje w Systemie](#132-architektura-jądra--jak-tuntap-istnieje-w-systemie)
+  - [13.3 TUN — Warstwa 3 (IP Tunnel)](#133-tun--warstwa-3-ip-tunnel)
+  - [13.4 TAP — Warstwa 2 (Ethernet Bridge)](#134-tap--warstwa-2-ethernet-bridge)
+  - [13.5 TUN vs TAP — Kiedy Co Używać](#135-tun-vs-tap--kiedy-co-używać)
+  - [13.6 Tworzenie TUN/TAP — Konfiguracja Ręczna](#136-tworzenie-tuntap--konfiguracja-ręczna)
+  - [13.7 OpenVPN — Jak Używa TUN/TAP](#137-openvpn--jak-używa-tuntap)
+  - [13.8 Viscosity — macOS/Windows TUN/TAP](#138-viscosity--macoswindows-tuntap)
+  - [13.9 Szyfrowanie w TUN — Warstwy Ochrony OpenVPN](#139-szyfrowanie-w-tun--warstwy-ochrony-openvpn)
+  - [13.10 MTU — Krytyczny Problem TUN/TAP](#1310-mtu--krytyczny-problem-tuntap)
+  - [13.11 AWS Client VPN — TUN Pod Spodem](#1311-aws-client-vpn--tun-pod-spodem)
+  - [13.12 AWS Site-to-Site VPN — IPsec, nie OpenVPN](#1312-aws-site-to-site-vpn--ipsec-nie-openvpn)
+  - [13.13 WireGuard — Nowoczesna Alternatywa dla TUN](#1313-wireguard--nowoczesna-alternatywa-dla-tun)
+  - [13.14 Diagnostyka TUN/TAP — Narzędzia](#1314-diagnostyka-tuntap--narzędzia)
+  - [13.15 Bezpieczeństwo TUN/TAP — Zagrożenia i Ochrona](#1315-bezpieczeństwo-tuntap--zagrożenia-i-ochrona)
+  - [13.16 TUN/TAP w Kontekście AWS — Mapa Powiązań](#1316-tuntap-w-kontekście-aws--mapa-powiązań)
+  - [13.17 Well-Architected Framework — TUN/TAP i VPN](#1317-well-architected-framework--tuntap-i-vpn)
+  - [13.18 Checks — 60 Pytań z Odpowiedziami](#1318-checks--60-pytań-z-odpowiedziami)
+
+- [14. Security Groups — Deep Dive: ENI, EC2, VPC, Reguły](#14-security-groups--deep-dive-eni-ec2-vpc-reguły)
+  - [14.1 Czym Jest Security Group — Fundament](#141-czym-jest-security-group--fundament)
+  - [14.2 ENI — Elastic Network Interface](#142-eni--elastic-network-interface)
+  - [14.3 Jak SG Działa — Hypervisor Level](#143-jak-sg-działa--hypervisor-level)
+  - [14.4 Stateful — Co To Naprawdę Oznacza](#144-stateful--co-to-naprawdę-oznacza)
+  - [14.5 Reguły SG — Anatomia](#145-reguły-sg--anatomia)
+  - [14.6 SG Source = Security Group ID — Magia AWS](#146-sg-source--security-group-id--magia-aws)
+  - [14.7 Self-Referencing Security Group](#147-self-referencing-security-group)
+  - [14.8 Wiele SG na ENI — Jak Działa Union](#148-wiele-sg-na-eni--jak-działa-union)
+  - [14.9 Default Security Group vs Custom Security Group](#149-default-security-group-vs-custom-security-group)
+  - [14.10 SG na Poziomie VPC vs Subnet vs ENI](#1410-sg-na-poziomie-vpc-vs-subnet-vs-eni)
+  - [14.11 SG vs NACL — Kluczowe Różnice](#1411-sg-vs-nacl--kluczowe-różnice)
+  - [14.12 Outbound Rules — Kiedy Ograniczać](#1412-outbound-rules--kiedy-ograniczać)
+  - [14.13 Jak Dodać / Zmodyfikować SG — AWS CLI](#1413-jak-dodać--zmodyfikować-sg--aws-cli)
+  - [14.14 SG i VPC Peering / Transit Gateway](#1414-sg-i-vpc-peering--transit-gateway)
+  - [14.15 SG i Services — ELB, RDS, Lambda, ECS](#1415-sg-i-services--elb-rds-lambda-ecs)
+  - [14.16 Troubleshooting SG — Najczęstsze Problemy](#1416-troubleshooting-sg--najczęstsze-problemy)
+  - [14.17 Limity Security Groups](#1417-limity-security-groups)
+  - [14.18 Well-Architected Framework — Security Groups](#1418-well-architected-framework--security-groups)
+  - [14.19 4 Domeny Egzaminacyjne SAP-C02](#1419-4-domeny-egzaminacyjne-sap-c02)
+  - [14.20 VPC Flow Logs — Debug SG przez Logi](#1420-vpc-flow-logs--debug-sg-przez-logi)
+  - [14.21 Checks — 60 Pytań z Odpowiedziami](#1421-checks--60-pytań-z-odpowiedziami)
+- [15. Launch Templates, AMI, Instance Types, Placement Groups](#15-launch-templates-ami-instance-types-placement-groups)
+  - [15.1 Launch Templates vs Launch Configurations](#151-launch-templates-vs-launch-configurations)
+  - [15.2 Anatomia Launch Template](#152-anatomia-launch-template)
+  - [15.3 Instance Types — Rodziny EC2 Deep Dive](#153-instance-types--rodziny-ec2-deep-dive)
+  - [15.4 AMI — Amazon Machine Image Deep Dive](#154-ami--amazon-machine-image-deep-dive)
+  - [15.5 EC2 Image Builder](#155-ec2-image-builder)
+  - [15.6 AMI Catalog — AWS Marketplace i SSM Parameter Store](#156-ami-catalog--aws-marketplace-i-ssm-parameter-store)
+  - [15.7 Placement Groups — Cluster, Spread, Partition](#157-placement-groups--cluster-spread-partition)
+  - [15.8 Well-Architected Framework — LT, AMI, Placement Groups](#158-well-architected-framework--lt-ami-placement-groups)
+  - [15.9 Checks — 60 Pytań z Odpowiedziami](#159-checks--60-pytań-z-odpowiedziami)
+- [16. Spot, Savings Plans, Reserved Instances, Dedicated Hosts, Capacity](#16-spot-savings-plans-reserved-instances-dedicated-hosts-capacity)
+  - [16.1 Spot Instances — Deep Dive](#161-spot-instances--deep-dive)
+  - [16.2 Spot Fleet i EC2 Fleet](#162-spot-fleet-i-ec2-fleet)
+  - [16.3 Savings Plans](#163-savings-plans)
+  - [16.4 Reserved Instances](#164-reserved-instances)
+  - [16.5 Dedicated Hosts vs Dedicated Instances](#165-dedicated-hosts-vs-dedicated-instances)
+  - [16.6 On-Demand Capacity Reservations](#166-on-demand-capacity-reservations)
+  - [16.7 Capacity Block for ML](#167-capacity-block-for-ml)
+  - [16.8 UltraServers / EC2 UltraCluster](#168-ultraservers--ec2-ultracluster)
+  - [16.9 Well-Architected Framework — Modele Zakupu](#169-well-architected-framework--modele-zakupu)
+  - [16.10 Checks — 60 Pytań z Odpowiedziami](#1610-checks--60-pytań-z-odpowiedziami)
+- [17. EBS Volumes, Snapshots, Lifecycle Manager, Instance Store](#17-ebs-volumes-snapshots-lifecycle-manager-instance-store)
+  - [17.1 EBS — Fundamenty](#171-ebs--fundamenty)
+  - [17.2 Typy EBS Volumes](#172-typy-ebs-volumes)
+  - [17.3 EBS Multi-Attach](#173-ebs-multi-attach)
+  - [17.4 EBS Encryption](#174-ebs-encryption)
+  - [17.5 Hot Volume Modification](#175-hot-volume-modification)
+  - [17.6 EBS Snapshots — Mechanizm Inkrementalny](#176-ebs-snapshots--mechanizm-inkrementalny)
+  - [17.7 Amazon Data Lifecycle Manager (DLM)](#177-amazon-data-lifecycle-manager-dlm)
+  - [17.8 EBS Recycle Bin](#178-ebs-recycle-bin)
+  - [17.9 Instance Store vs EBS](#179-instance-store-vs-ebs)
+  - [17.10 Well-Architected Framework — EBS](#1710-well-architected-framework--ebs)
+  - [17.11 Checks — 60 Pytań z Odpowiedziami](#1711-checks--60-pytań-z-odpowiedziami)
+- [18. Target Groups, Trust Stores, Auto Scaling Groups — Deep Dive](#18-target-groups-trust-stores-auto-scaling-groups--deep-dive)
+- [24. AWS Snow Family — Snowcone, Snowball Edge, Snowmobile](#24-aws-snow-family--snowcone-snowball-edge-snowmobile)
+  - [24.1 Przegląd i Kontekst](#241-przegląd-i-kontekst)
+  - [24.2 AWS Snowcone](#242-aws-snowcone)
+  - [24.3 AWS Snowball Edge](#243-aws-snowball-edge)
+  - [24.4 AWS Snowmobile](#244-aws-snowmobile)
+  - [24.5 Tabela Porównawcza](#245-tabela-porównawcza)
+  - [24.6 Edge Computing na Snow](#246-edge-computing-na-snow)
+  - [24.7 Proces Transferu Danych](#247-proces-transferu-danych)
+  - [24.8 OpsHub](#248-opshub)
+  - [24.9 Szyfrowanie i Bezpieczeństwo](#249-szyfrowanie-i-bezpieczeństwo)
+  - [24.10 Snow vs Direct Connect vs DataSync](#2410-snow-vs-direct-connect-vs-datasync)
+  - [24.11 Azure — Data Box Family](#2411-azure--data-box-family)
+  - [24.12 Well-Architected Framework](#2412-well-architected-framework)
+  - [24.13 4 Domeny Egzaminacyjne SAP-C02](#2413-4-domeny-egzaminacyjne-sap-c02)
+  - [24.14 Checks — 60 Pytań z Odpowiedziami](#2414-checks--60-pytań-z-odpowiedziami)
+  - [18.1 Target Groups — Czym Są](#181-target-groups--czym-są)
+  - [18.2 Typy Targetów w Target Group](#182-typy-targetów-w-target-group)
+  - [18.3 Health Checks w Target Group](#183-health-checks-w-target-group)
+  - [18.4 Target Group Attributes — Konfiguracja](#184-target-group-attributes--konfiguracja)
+  - [18.5 Trust Stores — Mutual TLS (mTLS) dla ALB](#185-trust-stores--mutual-tls-mtls-dla-alb)
+  - [18.6 Auto Scaling Groups — Deep Dive](#186-auto-scaling-groups--deep-dive)
+  - [18.7 ASG Mixed Instances — Advanced](#187-asg-mixed-instances--advanced)
+  - [18.8 ASG Health Checks — Typy](#188-asg-health-checks--typy)
+  - [18.9 ASG Scaling Cooldown i Warmup](#189-asg-scaling-cooldown-i-warmup)
+  - [18.10 Well-Architected Framework — TG, Trust Stores, ASG](#1810-well-architected-framework--tg-trust-stores-asg)
+  - [18.11 Checks — 60 Pytań z Odpowiedziami](#1811-checks--60-pytań-z-odpowiedziami)
 
 ---
 
@@ -10084,3 +10247,18770 @@ Monitoring:
 
 *Ostatnia aktualizacja: 2026-10-26 | Tematy: Hyperplane, Direct Connect, Last Mile, X-Connect, DX Connection, VIF, DX Gateway, Transit Gateway, TGW Attachments, TGW Route Tables, TGW RAM, Multicast, TGW Peering, TGW vs Azure Virtual Hub/vWAN*
 
+
+---
+
+# 9. VPC — Architektura, VPC Peering i Rozwiązania VPN w AWS
+
+> **Zakres:** Kompletny przegląd VPC jako fundament sieci AWS, mechanizmy połączeń VPC-to-VPC (Peering), oraz wszystkie opcje VPN: Site-to-Site VPN, Client VPN, VPN CloudHub, i ich integracja z Transit Gateway.
+
+---
+
+## 9.1 VPC — Fundament Sieci AWS
+
+### Co to jest VPC?
+
+**Amazon VPC (Virtual Private Cloud)** to logicznie izolowana sieć wirtualna w chmurze AWS. Możesz o niej myśleć jak o własnym centrum danych w AWS — masz pełną kontrolę nad przestrzenią adresową IP, podsieciami, tabelami routingu, bramami sieciowymi i ustawieniami bezpieczeństwa.
+
+**Analogia z życia:** VPC to jak wydzielona działka w parku technologicznym. Masz ogrodzony teren (izolacja sieciowa), możesz budować budynki (EC2, RDS), układać wewnętrzne drogi (routing), stawiać bramy wjazdowe (IGW, VGW) i systemy alarmowe (Security Groups, NACL).
+
+**Odpowiednik w Azure:** Azure Virtual Network (VNet). Różnice:
+- AWS VPC: Regional resource, ale subnety są **Availability Zone-specific**
+- Azure VNet: Regional resource, subnety są **regionalne** (nie AZ-specific)
+- AWS: explict ENI model (każdy zasób dostaje Elastic Network Interface)
+- Azure: NIC-based model — podobny, ale z innymi ograniczeniami
+
+### Kluczowe właściwości VPC
+
+| Właściwość | Wartość | Uwaga |
+|---|---|---|
+| **Zakres** | Regionalny | Obejmuje wszystkie AZ w regionie |
+| **Subnety** | Zonal (per-AZ) | Jeden subnet = jedna AZ |
+| **Max VPC per region** | 5 (soft limit) | Można zwiększyć do 100+ |
+| **Max subnets per VPC** | 200 (soft limit) | |
+| **CIDR block** | /16 – /28 | Minimum /28 = 16 IP (11 użytecznych) |
+| **Reserved IPs per subnet** | 5 | .0 (network), .1 (router), .2 (DNS), .3 (future), .255 (broadcast) |
+| **Domyślny DNS** | VPC CIDR + 2 | np. `10.0.0.2` dla `10.0.0.0/16` |
+| **IPv6** | /56 per VPC, /64 per subnet | AWS przydziela, nie możesz wybrać |
+
+### Komponenty VPC — mapa zależności
+
+```mermaid
+graph TB
+    subgraph VPC["VPC 10.0.0.0/16 (Regional)"]
+        subgraph AZ1["Availability Zone A"]
+            PubA["Public Subnet\n10.0.1.0/24"]
+            PrivA["Private Subnet\n10.0.2.0/24"]
+        end
+        subgraph AZ2["Availability Zone B"]
+            PubB["Public Subnet\n10.0.3.0/24"]
+            PrivB["Private Subnet\n10.0.4.0/24"]
+        end
+        
+        ROUTER["VPC Router\n(implicit, każdy subnet)"]
+        RT_PUB["Route Table: Public\n0.0.0.0/0 → IGW"]
+        RT_PRIV["Route Table: Private\n0.0.0.0/0 → NAT GW"]
+        
+        IGW["Internet Gateway"]
+        NATGW["NAT Gateway\n(w Public Subnet)"]
+        VGW["Virtual Private Gateway\n(dla VPN/DX)"]
+        TGWA["TGW Attachment"]
+    end
+    
+    IGW --> INTERNET["Internet"]
+    VGW --> ONPREM["On-premises"]
+    TGWA --> TGW["Transit Gateway"]
+    
+    PubA & PubB --> RT_PUB
+    PrivA & PrivB --> RT_PRIV
+    RT_PUB --> IGW
+    RT_PRIV --> NATGW
+    NATGW --> IGW
+```
+
+### Secondary CIDR Blocks
+
+VPC może mieć wiele bloków CIDR:
+- **Primary CIDR:** ustalony przy tworzeniu VPC, nie można zmienić
+- **Secondary CIDRs:** do 5 dodatkowych bloków IPv4, do 5 bloków IPv6
+
+```bash
+# Dodaj secondary CIDR do VPC
+aws ec2 associate-vpc-cidr-block \
+  --vpc-id vpc-12345678 \
+  --cidr-block 100.64.0.0/16
+
+# Kiedy przydatne?
+# - VPC zbliża się do wyczerpania przestrzeni IP
+# - Migracja do nowego CIDR (overlay)
+# - Obejście dla overlapping CIDR z Private NAT Gateway
+```
+
+> ⚠️ **Egzamin:** Nie można USUNĄĆ primary CIDR. Secondary CIDR można usunąć (jeśli brak zasobów w tej przestrzeni). Secondary CIDR musi być z tych samych RFC 1918 lub innych dozwolonych zakresów.
+
+---
+
+## 9.2 VPC Peering — Połączenie Bezpośrednie między VPC
+
+### Czym jest VPC Peering?
+
+**VPC Peering** to prywatne połączenie sieciowe między dwoma VPC — ruch przepływa przez **wewnętrzną sieć AWS** (nie przez Internet). Oba VPC zachowują swoją izolację; połączenie jest punktowe (1:1).
+
+**Analogia:** VPC Peering to jak prywatna kładka łącząca dwa ogrodzony parki technologiczne. Mieszkańcy obu parków mogą się odwiedzać, ale nikt z zewnątrz nie widzi tej kładki.
+
+**Odpowiednik Azure:** Azure VNet Peering (bardzo zbliżony model, ale różnice w transitivity i cenach).
+
+### Kluczowe cechy i ograniczenia
+
+```
+VPC A ←──── Peering ────→ VPC B
+       (prywatna sieć AWS, bez IGW)
+```
+
+| Cecha | Wartość |
+|---|---|
+| **Typ połączenia** | Point-to-point, non-transitive |
+| **Cross-account** | ✅ Tak |
+| **Cross-region** | ✅ Tak (Inter-Region Peering) |
+| **Szyfrowanie** | ✅ Automatyczne (AES-256 dla cross-region) |
+| **Bandwidth** | Brak limitu (ograniczony przez EC2 instance type) |
+| **Overlapping CIDR** | ❌ Niemożliwe — CIDR muszą być unikalne |
+| **Transitive routing** | ❌ Niemożliwe (patrz poniżej) |
+| **Latency** | Bardzo niska (przez AWS backbone) |
+| **Koszt** | Brak opłat za setup/hour; DATA TRANSFER: $0.01/GB (same region), cross-region — jak standard inter-region |
+
+### Non-Transitive Routing — dlaczego VPC Peering nie jest "hub"
+
+```
+    VPC A ←──── Peering ────→ VPC B
+                                  ↕ Peering
+                              VPC C
+
+❌ VPC A NIE może komunikować się z VPC C przez VPC B
+   (Packet: A→B→C jest blokowany przez AWS)
+
+✅ Rozwiązanie: osobny Peering A↔C  LUB  Transit Gateway
+```
+
+**Dlaczego?** AWS blokuje "packet forwarding" przez Peering na poziomie hypervisora — bezpieczeństwo i uproszczenie topologii. VPC B nie może być "routerem" dla A↔C.
+
+### Konfiguracja VPC Peering krok po kroku
+
+```bash
+# Krok 1: Utwórz Peering Connection (z konta właściciela VPC A)
+aws ec2 create-vpc-peering-connection \
+  --vpc-id vpc-aaa111 \         # Requester VPC
+  --peer-vpc-id vpc-bbb222 \    # Accepter VPC
+  --peer-owner-id 123456789012 \ # Inne konto (opcjonalne)
+  --peer-region eu-west-1        # Inny region (opcjonalne)
+
+# Krok 2: Akceptuj z konta właściciela VPC B
+aws ec2 accept-vpc-peering-connection \
+  --vpc-peering-connection-id pcx-12345678
+
+# Krok 3: Dodaj Route w VPC A (Route Table)
+aws ec2 create-route \
+  --route-table-id rtb-aaaa1111 \
+  --destination-cidr-block 10.1.0.0/16 \   # CIDR VPC B
+  --vpc-peering-connection-id pcx-12345678
+
+# Krok 4: Dodaj Route w VPC B (Route Table) — OBUSTRONNIE!
+aws ec2 create-route \
+  --route-table-id rtb-bbbb2222 \
+  --destination-cidr-block 10.0.0.0/16 \   # CIDR VPC A
+  --vpc-peering-connection-id pcx-12345678
+
+# Krok 5: Zaktualizuj Security Groups w obu VPC
+# (Zezwól na ruch z CIDR drugiego VPC lub referencja do SG)
+```
+
+> ⚠️ **Egzamin:** Route tables trzeba zaktualizować **w OBU VPC**. Peering bez tras = brak komunikacji mimo aktywnego Peering.
+
+### VPC Peering — Security Groups cross-VPC
+
+```bash
+# Security Group w VPC A może referencjonować SG z VPC B (przez Peering)
+# Wymaga: Peering aktywny, Same region
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-aaa111 \
+  --ip-permissions '[{
+    "IpProtocol": "tcp",
+    "FromPort": 443,
+    "ToPort": 443,
+    "UserIdGroupPairs": [{
+      "GroupId": "sg-bbb222",
+      "VpcId": "vpc-bbb222",
+      "VpcPeeringConnectionId": "pcx-12345678",
+      "UserId": "123456789012"
+    }]
+  }]'
+
+# ❌ Cross-region Peering: SG reference NIE działa — użyj CIDR
+```
+
+### Skalowanie: Problem N*(N-1)/2
+
+```
+Liczba VPC  | Peerings potrzebnych (full mesh)
+4           | 6
+10          | 45
+50          | 1225
+100         | 4950
+
+→ Dla >4-5 VPC: Transit Gateway jest lepszym rozwiązaniem
+```
+
+### VPC Peering vs Azure VNet Peering
+
+| Cecha | AWS VPC Peering | Azure VNet Peering |
+|---|---|---|
+| **Transitive** | ❌ | ❌ (domyślnie, ale można z NVA) |
+| **Cross-region** | ✅ | ✅ (Global VNet Peering) |
+| **Cross-tenant** | ✅ | ✅ |
+| **Gateway Transit** | ❌ | ✅ (UseRemoteGateways) |
+| **Koszt data** | $0.01/GB (same-region) | Zależy od regionu, porównywalne |
+| **DNS** | Ręczna konfiguracja PHZ | Automatyczna opcja |
+| **SG/NSG reference** | ✅ (same region) | ❌ |
+
+> 🔵 **Azure różnica:** Azure VNet Peering ma opcję `UseRemoteGateways` — pozwala na VNet spoke używać VPN GW z VNet hub (transitive!). AWS VPC Peering tego nie ma — potrzebujesz TGW.
+
+---
+
+## 9.3 AWS Site-to-Site VPN
+
+### Czym jest Site-to-Site VPN?
+
+Połączenie **IPsec VPN** między siecią on-premises (lub inną lokalizacją) a AWS VPC. Ruch przechodzi przez publiczny Internet, ale jest **szyfrowany**.
+
+**Analogia:** Bezpieczny tunel w szybie między Twoim biurem a parkiem technologicznym AWS. Z zewnątrz widać tylko zaszyfrowany ruch, treść jest niewidoczna.
+
+**Odpowiednik Azure:** Azure VPN Gateway (Site-to-Site).
+
+### Architektura
+
+```
+On-premises                    AWS
+┌─────────────────┐            ┌──────────────────────────┐
+│  Customer       │            │ Virtual Private Gateway  │
+│  Gateway (CGW)  │            │ (VGW) lub TGW            │
+│  Router/FW      │◄──IPsec───►│                          │
+│  BGP lub Static │   VPN      │  VPC                     │
+└─────────────────┘  Tunnel    └──────────────────────────┘
+  - Twój publiczny IP            - 2 tunele (HA)
+  - Twoje urządzenie VPN         - Dwa publiczne IP (AWS)
+```
+
+### Komponenty
+
+**Customer Gateway (CGW):**
+- AWS resource reprezentujący Twoje urządzenie VPN on-prem
+- Wymagane: publiczny IP CGW, opcjonalnie ASN dla BGP
+
+```bash
+aws ec2 create-customer-gateway \
+  --type ipsec.1 \
+  --public-ip 203.0.113.1 \      # Twój publiczny IP on-prem
+  --bgp-asn 65000                # Twój ASN dla BGP (lub 65000 domyślnie)
+```
+
+**Virtual Private Gateway (VGW):**
+- Attachuje się do VPC
+- Terminuje VPN tunnele
+- Ma dwa endpointy (HA) w różnych AZ
+
+```bash
+aws ec2 create-vpn-gateway \
+  --type ipsec.1 \
+  --amazon-side-asn 64512        # AWS ASN
+
+aws ec2 attach-vpn-gateway \
+  --vpc-id vpc-12345678 \
+  --vpn-gateway-id vgw-12345678
+```
+
+**VPN Connection:**
+- Łączy CGW z VGW (lub TGW)
+- **ZAWSZE 2 tunele** (dwa publiczne IP po stronie AWS) dla HA
+- Każdy tunel: inne IP, inne klucze
+
+```bash
+aws ec2 create-vpn-connection \
+  --type ipsec.1 \
+  --customer-gateway-id cgw-12345678 \
+  --vpn-gateway-id vgw-12345678 \
+  --options '{"StaticRoutesOnly": false}' # false = BGP
+
+# Download konfiguracji dla Cisco/Juniper/Palo Alto etc.
+aws ec2 describe-vpn-connections \
+  --vpn-connection-ids vpn-12345678 \
+  --query 'VpnConnections[0].CustomerGatewayConfiguration'
+```
+
+### BGP vs Static Routing
+
+| | BGP (Dynamic) | Static |
+|---|---|---|
+| **Konfiguracja** | Bardziej złożona | Prostsze |
+| **Failover** | Automatyczny | Ręczny |
+| **Scalability** | ✅ Dobre | ❌ Ograniczone |
+| **Route propagation** | ✅ Automatyczna | ❌ Ręczna |
+| **Wymagania** | BGP-capable router | Dowolny router |
+| **Zalecane dla SAP-C02** | Tak (best practice) | Legacy/simple |
+
+> ⚠️ **Egzamin:** BGP używa **eBGP** (External BGP). AWS ASN: 7224 (default) lub dowolny 64512-65534 (private ASN). CGW ASN: dowolny, najczęściej 65000.
+
+### Route Propagation do VPC Route Table
+
+```bash
+# Włącz Route Propagation — VGW automatycznie wstrzykuje trasy BGP do RT
+aws ec2 enable-vgw-route-propagation \
+  --route-table-id rtb-12345678 \
+  --gateway-id vgw-12345678
+
+# Bez tego: musisz ręcznie dodać statyczne trasy do RT
+```
+
+### HA i Redundancja VPN
+
+```
+Pattern 1: Single CGW, 2 tunnele (basic HA)
+  CGW ─── Tunnel 1 (AWS IP #1) ─── VGW
+  CGW ─── Tunnel 2 (AWS IP #2) ─── VGW
+  
+  Odporność na: awaria jednego AWS endpoint
+  NIE odporny na: awaria CGW, awaria łącza internetowego
+
+Pattern 2: 2x CGW + VGW (redundant CGW)
+  CGW-1 ─── Tunnels 1,2 ─── VGW
+  CGW-2 ─── Tunnels 3,4 ─── VGW
+  
+  Odporność na: awaria urządzenia CGW lub łącza
+
+Pattern 3: VPN + Direct Connect (best practice)
+  CGW ─── VPN ─── VGW   (backup)
+  On-prem ─── DX ─── VGW (primary)
+  
+  BGP LOCAL_PREF lub MED kontroluje failover
+```
+
+### VPN przez Transit Gateway zamiast VGW
+
+```bash
+# Nowy VPN Connection do TGW (zalecane dla enterprise)
+aws ec2 create-vpn-connection \
+  --type ipsec.1 \
+  --customer-gateway-id cgw-12345678 \
+  --transit-gateway-id tgw-12345678 \
+  --options '{"StaticRoutesOnly": false}'
+
+# Zalety TGW vs VGW:
+# - ECMP: wiele VPN do TGW = load balancing (max 1.25 Gbps per tunel → wiele tuneli)
+# - Jeden punkt centralny dla wielu VPC
+# - VGW: max ~1.25 Gbps per VPN Connection
+```
+
+### Parametry IPsec
+
+```
+Phase 1 (IKE — konfiguracja tunelu):
+  - IKEv1 lub IKEv2 (rekomendowane IKEv2)
+  - Encryption: AES-128, AES-256
+  - Integrity: SHA-1, SHA-256
+  - DH Group: 2, 14, 15, 16, 17, 18, 22, 23, 24
+  - Lifetime: 28800s (8h)
+
+Phase 2 (IPsec — szyfrowanie danych):
+  - Encryption: AES-128, AES-256, AES-128-GCM, AES-256-GCM
+  - Integrity: SHA-1, SHA-256, SHA-384, SHA-512
+  - PFS: Groups 2, 5, 14-24
+  - Lifetime: 3600s (1h)
+  
+DPD (Dead Peer Detection): dostępne
+```
+
+### Koszty Site-to-Site VPN
+
+| Składnik | Koszt (eu-west-1) |
+|---|---|
+| VPN Connection | **$0.05/h** ≈ $36/mc |
+| Data Transfer In | $0.00 |
+| Data Transfer Out | Standard EC2 rates |
+| VGW hour | $0.05/h (jeśli nie TGW) |
+
+---
+
+## 9.4 AWS Client VPN
+
+### Czym jest Client VPN?
+
+**AWS Client VPN** to zarządzany VPN oparty na **OpenVPN** dla użytkowników końcowych (laptopy, urządzenia mobilne). Umożliwia zdalne połączenie do zasobów AWS lub on-premises.
+
+**Analogia:** Client VPN to jak odznaka z kartą dostępu dla pracownika — każdy pracownik ma swoją kartę i może wejść do chronionego obiektu (VPC) z dowolnego miejsca na świecie.
+
+**Odpowiednik Azure:** Azure Point-to-Site VPN Gateway.
+
+### Architektura
+
+```
+Laptop pracownika
+    │
+    │ OpenVPN Client
+    │ (AWS-provided lub compatible OpenVPN)
+    ▼
+Client VPN Endpoint
+(ENI w wybranych subnetach VPC)
+    │
+    ├──→ VPC (bezpośredni dostęp do EC2, RDS, etc.)
+    ├──→ On-premises (przez VPN lub DX — jeśli skonfigurowane)
+    └──→ Internet (jeśli full tunnel — opcja)
+```
+
+### Konfiguracja
+
+```bash
+# 1. Utwórz Client VPN Endpoint
+aws ec2 create-client-vpn-endpoint \
+  --client-cidr-block 192.168.100.0/22 \   # Zakres IP dla klientów
+  --server-certificate-arn arn:aws:acm:... \
+  --authentication-options '[{
+    "Type": "certificate-authentication",
+    "MutualAuthentication": {
+      "ClientRootCertificateChainArn": "arn:aws:acm:..."
+    }
+  }]' \
+  --connection-log-options '{"Enabled": true, "CloudwatchLogGroup": "/aws/client-vpn"}' \
+  --split-tunnel                             # Split tunnel mode
+
+# 2. Associate z subnetem VPC
+aws ec2 associate-client-vpn-target-network \
+  --client-vpn-endpoint-id cvpn-endpoint-... \
+  --subnet-id subnet-12345678
+
+# 3. Dodaj Authorization Rule
+aws ec2 authorize-client-vpn-ingress \
+  --client-vpn-endpoint-id cvpn-endpoint-... \
+  --target-network-cidr 10.0.0.0/16 \      # VPC CIDR
+  --authorize-all-groups                    # Wszyscy użytkownicy
+```
+
+### Metody Autentykacji
+
+| Metoda | Opis | Kiedy używać |
+|---|---|---|
+| **Mutual TLS (certyfikaty)** | Klient + serwer certyfikat X.509 | Najprostsza, bez zewnętrznego IdP |
+| **Active Directory (AWS Managed AD)** | Username/Password przez AD | Integracja korporacyjna |
+| **SAML 2.0 (SSO)** | IAM Identity Center, Okta, Azure AD | SSO z MFA |
+| **Kombination** | np. SAML + certyfikat | Wysoki poziom bezpieczeństwa |
+
+### Split Tunnel vs Full Tunnel
+
+```
+Split Tunnel (zalecane):
+  - Tylko ruch do VPC CIDR → przez VPN
+  - Ruch do Internetu → bezpośrednio z laptop
+  - Zalety: mniejsza latency, mniej kosztów, mniej obciążenia
+
+Full Tunnel:
+  - CAŁY ruch → przez VPN → przez VPC
+  - Ruch do Internetu: laptop → VPN → VPC → NAT GW → Internet
+  - Zalety: pełna inspekcja ruchu (compliance), blokada direct Internet
+  - Wady: wyższe koszty, wyższa latency
+```
+
+### Koszty Client VPN
+
+| Składnik | Koszt |
+|---|---|
+| Endpoint association (per subnet/h) | $0.10/h ≈ $72/mc per subnet |
+| Active connections | $0.05/h per połączenie |
+| Data Transfer | Standardowe stawki EC2 |
+
+> ⚠️ Koszty Client VPN mogą być znaczne przy wielu użytkownikach. Dla >200 użytkowników rozważ third-party VPN lub architektury alternatywne.
+
+---
+
+## 9.5 VPN CloudHub
+
+### Czym jest VPN CloudHub?
+
+**AWS VPN CloudHub** to architektura (nie osobna usługa!) która pozwala na połączenie **wielu lokalizacji on-premises** przez wspólny **Virtual Private Gateway** (VGW) lub **Transit Gateway**. Lokalizacje mogą komunikować się ze sobą **przez AWS backbone**.
+
+**Analogia:** CloudHub to jak centrum logistyczne — każde biuro wysyła paczki do centrum (AWS), centrum przekierowuje do właściwego adresata. Biura nie muszą mieć bezpośrednich połączeń między sobą.
+
+### Architektura CloudHub
+
+```
+Biuro Warsaw ─── VPN ──┐
+                        │
+Biuro Berlin ─── VPN ──┼──── Virtual Private Gateway ──── VPC
+                        │         (hub)
+Biuro London ─── VPN ──┘
+
+Komunikacja Warsaw → Berlin:
+Warsaw → AWS VGW → Berlin (przez AWS backbone, przez Internet)
+```
+
+### Konfiguracja (VGW-based)
+
+```bash
+# Każde biuro dostaje własny CGW
+aws ec2 create-customer-gateway --public-ip 203.0.113.10 --bgp-asn 65001  # Warsaw
+aws ec2 create-customer-gateway --public-ip 203.0.113.20 --bgp-asn 65002  # Berlin
+aws ec2 create-customer-gateway --public-ip 203.0.113.30 --bgp-asn 65003  # London
+
+# VPN Connection dla każdego biura → ten sam VGW
+aws ec2 create-vpn-connection --customer-gateway-id cgw-warsaw --vpn-gateway-id vgw-hub
+aws ec2 create-vpn-connection --customer-gateway-id cgw-berlin --vpn-gateway-id vgw-hub
+aws ec2 create-vpn-connection --customer-gateway-id cgw-london --vpn-gateway-id vgw-hub
+
+# Każde biuro ogłasza przez BGP swoje prefiksy
+# VGW redystrybuuje trasy między CGW → site-to-site routing
+```
+
+> ⚠️ **Wymaganie:** BGP jest **konieczny** dla CloudHub (dynamiczne ogłaszanie tras). Statyczne VPN nie obsługuje CloudHub routing między lokalizacjami.
+
+### CloudHub vs Transit Gateway (TGW)
+
+| Cecha | VPN CloudHub (VGW) | TGW CloudHub |
+|---|---|---|
+| **Max lokalizacje** | 10 CGW per VGW | 5000 attachments per TGW |
+| **Bandwidth** | ~1.25 Gbps per tunel | ECMP — wiele tuneli |
+| **VPC routing** | 1 VPC (per VGW) | Wiele VPC |
+| **Segmentacja** | Brak | TGW RT segmentacja |
+| **Koszt** | $0.05/h per VPN | $0.05/h per attachment |
+| **Złożoność** | Prosta | Bardziej złożona |
+| **Zalecane** | ≤10 lokalizacji, 1 VPC | Enterprise, >10 lokalizacji |
+
+### DX SiteLink — "CloudHub przez Direct Connect"
+
+```
+DX SiteLink to routing między on-prem lokalizacjami przez AWS backbone 
+przez DX Connections (nie przez Internet).
+
+Lokalizacja A ── DX ──┐
+                       ├── DX Gateway ── sieć AWS backbone
+Lokalizacja B ── DX ──┘
+
+A → B: przez AWS backbone (niskie latency, wysoka bandwidth)
+vs CloudHub: przez Internet (wyższe latency, zmienna bandwidth)
+```
+
+---
+
+## 9.6 VPN i Direct Connect — Wybór i Porównanie
+
+### Decision Tree — VPN vs DX
+
+```mermaid
+flowchart TD
+    START["Potrzebujesz\npołączenia on-prem → AWS?"] --> Q1{"Wymagana\nbandwidth?"}
+    
+    Q1 -->|"< 1.25 Gbps\nlub nieregularne"| Q2{"Czas\nwdrożenia?"}
+    Q1 -->|"> 1 Gbps\nlub konsystentne"| DX["Direct Connect\n(1G/10G/100G)"]
+    
+    Q2 -->|"Szybko\n(dni/tygodnie)"| VPN["Site-to-Site VPN\n$0.05/h\nGotowe w godzinach"]
+    Q2 -->|"Wolno\n(miesiące OK)"| DX
+    
+    DX --> Q3{"HA requirement?"}
+    Q3 -->|"Critical"| DXHA["DX + VPN Backup\n(best practice)"]
+    Q3 -->|"Standard"| Q4{"Ruch między\nregionami?"}
+    Q4 -->|"Tak"| DXSL["DX SiteLink"]
+    Q4 -->|"Nie"| DX2["Single DX"]
+    
+    VPN --> Q5{"Wielu użytkowników\nzdalnych?"}
+    Q5 -->|"Tak"| CVPN["Client VPN\n(OpenVPN)"]
+    Q5 -->|"Nie"| VPN2["Site-to-Site VPN"]
+```
+
+### Pełne Porównanie
+
+| | Site-to-Site VPN | Client VPN | VPN CloudHub | Direct Connect |
+|---|---|---|---|---|
+| **Use case** | Biuro/DC → VPC | Użytkownik → VPC | Wiele biur → VPC | Biuro/DC → VPC |
+| **Szyfrowanie** | ✅ IPsec | ✅ TLS/OpenVPN | ✅ IPsec | ❌ (opcjonalnie MACsec) |
+| **Bandwidth** | ~1.25 Gbps/tunel | 10 Mbps/użytkownik | ~1.25 Gbps/tunel | 1G/10G/100G |
+| **Latency** | Zmienne (Internet) | Zmienne (Internet) | Zmienne (Internet) | Przewidywalne, niskie |
+| **Setup time** | Godziny | Godziny | Godziny | Tygodnie-miesiące |
+| **Koszt** | $0.05/h | $0.05/h/user + $0.10/subnet | $0.05/h per tunel | $1600+/mc (10G) |
+| **HA** | 2 tunele built-in | Multi-AZ | 2 tunele per CGW | Wymaga 2x DX |
+| **BGP** | Opcjonalny | N/A | Wymagany | Wymagany |
+
+---
+
+## 9.7 Well-Architected Framework — VPC, Peering, VPN
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | VPC Flow Logs dla visibility, CloudWatch alarms na VPN tunnel state, centralny monitoring przez TGW Network Manager |
+| **Security** | Security Groups + NACL layered defense, VPC Peering SG reference (nie CIDR gdzie możliwe), szyfrowanie VPN end-to-end, PrivateLink zamiast Peering dla 3rd party services |
+| **Reliability** | VPN: zawsze 2 tunele (built-in HA), DX + VPN backup, Multi-AZ VPC subnets, Client VPN: multi-subnet association |
+| **Performance Efficiency** | VPC Peering dla niskiej latency VPC-to-VPC (vs TGW overhead), Direct Connect dla consistent throughput, ECMP na TGW VPN dla bandwidth agregacji |
+| **Cost Optimization** | VPN vs DX breakeven (~23 TB/mc), Client VPN split-tunnel (mniej danych przez VPN), VPC Peering free (same-region, brak /h), CloudHub dla wielu biur (1 VGW = oszczędność) |
+| **Sustainability** | Konsolidacja ruchu przez TGW (mniej duplikacji), right-sizing Client VPN (brak idle endpoint hours) |
+
+---
+
+## 9.8 4 Domeny Egzaminacyjne SAP-C02
+
+### Domena 1: Design Solutions for Organizational Complexity
+
+- **Multi-account VPC sharing:** RAM share VPC subnets między kontami (nie VPC Peering potrzebny)
+- **TGW + VPC Peering trade-off:** Peering dla prostych 2-VPC, TGW dla enterprise multi-VPC
+- **VPN CloudHub dla multi-site:** Jeden VGW zamiast mesh VPN między biurami
+- **Centralized security:** Inspection VPC przez TGW, Network Firewall
+
+### Domena 2: Design for New Solutions
+
+- **Wybór VPN vs DX:** Bandwidth, latency, cost, setup time
+- **Client VPN authentication:** SAML+MFA dla zero-trust remote access
+- **VPC CIDR planning:** Nie nakładać się (Peering, TGW), zostawić miejsce
+- **Overlapping CIDR workaround:** Private NAT GW + Secondary CIDR + TGW
+
+### Domena 3: Continuous Improvement for Existing Solutions
+
+- **Peering → TGW migration:** Gdy topologia rośnie powyżej 4-5 VPC
+- **Static VPN → BGP:** Automatyczny failover, route propagation
+- **Single VPN → DX + VPN backup:** Gdy SLA wymaga wyższej dostępności
+- **Route Propagation:** Automatyzacja zamiast manualnych tras w RT
+
+### Domena 4: Accelerate Workload Migration and Modernization
+
+- **VPN jako pierwszy krok:** Szybkie połączenie on-prem → AWS podczas migracji
+- **DX po migracji:** Gdy ruch stabilny i duży, przejście na DX
+- **Client VPN dla adminów:** Zdalny dostęp do zasobów migrowanych
+- **VPC Peering dla lift-and-shift:** Istniejące aplikacje cross-VPC bez refaktoru
+
+---
+
+## 9.9 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Ile adresów IP jest zarezerwowanych przez AWS w każdym subnecie VPC?
+
+> **Odpowiedź:** **5 adresów** — `.0` (adres sieci), `.1` (VPC router), `.2` (DNS resolver), `.3` (future use), `.255` (broadcast). Subnet /28 = 16 IP − 5 = 11 użytecznych.
+
+---
+
+**Pytanie 2:** Firma ma VPC `10.0.0.0/16` i chce dodać nowy subnet. Wolne miejsce: `10.0.100.0/24`. W której AZ będzie subnet?
+
+> **Odpowiedź:** Decydujesz przy tworzeniu subnetu. Subnet należy do **dokładnie jednej AZ**. VPC obejmuje wszystkie AZ w regionie, ale każdy subnet jest zonal. Możesz stworzyć `10.0.100.0/24` w dowolnej dostępnej AZ w regionie.
+
+---
+
+**Pytanie 3:** Czy można zmienić CIDR block VPC po jego utworzeniu?
+
+> **Odpowiedź:** **Nie** — Primary CIDR jest niezmienialny. Możesz dodać **Secondary CIDR** (do 5 dodatkowych bloków IPv4). Jeśli potrzebujesz innego primary CIDR: utwórz nowy VPC i migruj zasoby.
+
+---
+
+**Pytanie 4:** VPC Peering jest aktywny między VPC A i VPC B. Ruch z EC2 w VPC A do EC2 w VPC B nie działa. Co sprawdzić?
+
+> **Odpowiedź:** Checklist:
+> 1. **Route Table w VPC A** — czy jest wpis `CIDR-VPC-B → pcx-xxx`?
+> 2. **Route Table w VPC B** — czy jest wpis `CIDR-VPC-A → pcx-xxx`?
+> 3. **Security Groups** w VPC B — czy dopuszczają ruch z CIDR VPC A lub SG VPC A?
+> 4. **NACL** w obu VPC — stateful wymagany (inbound i outbound)?
+> 5. **Peering status** — czy jest "active" (nie pending)?
+
+---
+
+**Pytanie 5:** Czy VPC Peering obsługuje transitive routing?
+
+> **Odpowiedź:** **Nie.** Jeśli VPC A ↔ VPC B i VPC B ↔ VPC C, VPC A **nie może** komunikować się z VPC C przez VPC B. AWS blokuje forwardowanie przez Peering. Rozwiązanie: osobny Peering A↔C lub Transit Gateway.
+
+---
+
+**Pytanie 6:** Kiedy VPC Peering jest lepszy od Transit Gateway?
+
+> **Odpowiedź:** VPC Peering jest lepszy gdy: (1) łączysz ≤3 VPC (prostsza topologia), (2) wymagana minimalna latency (Peering niższy overhead niż TGW), (3) nie planujesz rozrostu, (4) koszty priorytetowe (brak hourly fee dla Peering w same region). TGW lepszy dla ≥4 VPC, segmentacji, on-prem routing.
+
+---
+
+**Pytanie 7:** Firma ma 3 biura (Warsaw, Berlin, London) i chce je połączyć z VPC AWS oraz ze sobą nawzajem. Najefektywniejsze rozwiązanie?
+
+> **Odpowiedź:** **VPN CloudHub** — jeden VGW (lub TGW), każde biuro ma osobną VPN Connection (CGW). BGP ogłasza trasy. Biura komunikują się ze sobą przez AWS (Warsaw → VGW → Berlin). Koszt: 3 × $36/mc zamiast 3 osobnych VGW lub mesh VPN.
+
+---
+
+**Pytanie 8:** Ile tuneli VPN tworzy AWS dla jednej VPN Connection?
+
+> **Odpowiedź:** **Zawsze 2 tunele** — każdy z innym publicznym IP po stronie AWS, w różnych AZ. To wbudowana HA. Tunel aktywny/standby lub active/active (zależy od konfiguracji CGW). Zaleca się konfigurację obu.
+
+---
+
+**Pytanie 9:** Firma potrzebuje VPN dla 500 zdalnych pracowników. Jaka usługa AWS?
+
+> **Odpowiedź:** **AWS Client VPN** — zarządzany OpenVPN endpoint. Autoryzacja przez SAML 2.0 (SSO) lub Active Directory. Każdy pracownik używa kompatybilnego klienta OpenVPN. Dla 500 users: wiele subnet associations (dla HA i load balancing).
+
+---
+
+**Pytanie 10:** Różnica między VGW (Virtual Private Gateway) a CGW (Customer Gateway)?
+
+> **Odpowiedź:** **VGW** = zasób AWS — terminuje VPN tunnel po stronie AWS, attachuje do VPC. **CGW** = zasób AWS **reprezentujący** fizyczne urządzenie on-prem (router/firewall). CGW przechowuje publiczny IP i ASN Twojego urządzenia. VPN Connection łączy CGW z VGW.
+
+---
+
+**Pytanie 11:** Firma używa Site-to-Site VPN z statycznym routingiem. Zmienili CIDR on-prem sieci. Co muszą zaktualizować?
+
+> **Odpowiedź:** (1) **Static routes w VPN Connection** — nowe CIDR on-prem, (2) **Route Tables w VPC** — jeśli trasy były ręczne (nie Route Propagation). Przy BGP: wystarczy ogłosić nowy prefix przez BGP — propagacja automatyczna.
+
+---
+
+**Pytanie 12:** Co to jest Route Propagation w kontekście VGW?
+
+> **Odpowiedź:** Funkcja która pozwala VGW automatycznie wstrzykiwać trasy BGP-learned (z on-prem) do Route Table VPC. Zamiast ręcznie dodawać `10.0.0.0/8 → vgw-xxx`, VGW robi to automatycznie gdy BGP ogłosi ten prefix. Włącza się per-Route Table.
+
+---
+
+**Pytanie 13:** Firma chce zaszyfrować ruch na Direct Connect. Jakie opcje?
+
+> **Odpowiedź:** (1) **MACsec (L2 encryption)** — natywne dla DX 10G/100G Dedicated Connections, szyfrowanie layer 2. (2) **IPsec over DX** — Site-to-Site VPN skonfigurowane tak, że tunel IPsec biegnie przez DX zamiast Internetu (dual protection). MACsec prostsze, IPsec bardziej kontrolowane.
+
+---
+
+**Pytanie 14:** VPC A i VPC B mają overlapping CIDR (`10.0.0.0/16` oba). Czy mogą komunikować się ze sobą?
+
+> **Odpowiedź:** **VPC Peering: Nie** — wymaga non-overlapping CIDR. **Alternatywy:** (1) Private NAT Gateway + TGW (complex workaround), (2) PrivateLink (ekspozycja konkretnego service, nie całego VPC), (3) zmiana CIDR jednego VPC (secondary CIDR + migracja). Exam: zawsze sprawdź CIDR overlap przy Peering pytaniach.
+
+---
+
+**Pytanie 15:** Ile VPC Peering Connections maksymalnie może mieć jeden VPC?
+
+> **Odpowiedź:** **125 Peering Connections** per VPC (soft limit, można zwiększyć). Ale praktycznie — przy >10 VPC używaj TGW dla management uproszczenia.
+
+---
+
+**Pytanie 16:** Różnica między Split Tunnel a Full Tunnel w Client VPN?
+
+> **Odpowiedź:** **Split Tunnel:** tylko ruch do VPC CIDR/zdefiniowanych tras → przez VPN; Internet bezpośrednio z laptopa. **Full Tunnel:** CAŁY ruch → przez VPN → VPC → dalej. Split: tańsze, szybsze. Full: pełna inspekcja, compliance (np. rząd), blokada direct Internet.
+
+---
+
+**Pytanie 17:** Firma ma VPN Site-to-Site z BGP. Jak zapewnić że Direct Connect jest preferowany jako primary, VPN jako backup?
+
+> **Odpowiedź:** BGP attributes: (1) **LOCAL_PREF** po stronie on-prem — wyższy LOCAL_PREF dla trasy przez DX = DX preferowany. (2) **AS PATH prepending** po stronie AWS (przez BGP community) — dłuższy AS PATH dla VPN trasy = VPN mniej preferowany. DX: active, VPN: standby. Failover automatyczny przez BGP.
+
+---
+
+**Pytanie 18:** Czy VPC Peering Cross-Region obsługuje IPv6?
+
+> **Odpowiedź:** **Tak** — Cross-Region VPC Peering obsługuje zarówno IPv4 jak i IPv6 (od 2021). Wymagane: IPv6 CIDR w obu VPC, Route Table z IPv6 destination → pcx-xxx.
+
+---
+
+**Pytanie 19:** Co to jest "Accelerated VPN" i kiedy używać?
+
+> **Odpowiedź:** **Accelerated Site-to-Site VPN** używa **AWS Global Accelerator** do routowania ruchu VPN przez AWS sieć backbone zamiast publicznego Internetu. Niższe latency, lepsza stabilność. Wymaga TGW attachment (nie VGW). Dodatkowy koszt: $0.035/h per accelerator + data transfer. Używaj gdy: wysoka latency przez Internet, niestabilne połączenie, latency-sensitive workloads.
+
+---
+
+**Pytanie 20:** Firma ma VPC Peering cross-account. Chcą zezwolić na DNS resolution — EC2 w VPC A powinny resolvować private DNS VPC B. Co skonfigurować?
+
+> **Odpowiedź:** W Peering Connection: włącz opcje **DNS resolution**:
+> - `EnableDnsResolutionFromRemoteVpc=true` (w VPC A — aby resolver VPC A wysyłał zapytania do VPC B)
+> - `AllowDnsResolutionFromRemoteVpc=true` (w VPC B — aby VPC B odpowiadało)
+> Obie opcje muszą być włączone na obu stronach Peering.
+
+---
+
+**Pytanie 21:** Firma chce żeby pracownicy mogli łączyć się przez Client VPN tylko jeśli używają urządzeń z zainstalowanym certyfikatem firmowym. Jaką metodę autentykacji wybrać?
+
+> **Odpowiedź:** **Mutual TLS (certificate-based authentication)** — zarówno serwer jak i klient przedstawiają certyfikaty. Certyfikaty klientów wydawane przez firmowe CA i instalowane na zarządzanych urządzeniach. Urządzenia bez certyfikatu = brak dostępu. Można połączyć z SAML dla MFA (dual auth).
+
+---
+
+**Pytanie 22:** VPN CloudHub wymaga BGP — dlaczego?
+
+> **Odpowiedź:** BGP jest wymagany żeby VGW mógł **redistrybuować trasy** między Customer Gateways. Warsaw ogłasza `172.16.1.0/24`, Berlin ogłasza `172.16.2.0/24` — VGW uczy się obu i wysyła je do drugiego. Statyczne routing nie obsługuje tej dynamiki (nie może automatycznie przekazać tras między CGW).
+
+---
+
+**Pytanie 23:** Ile Customer Gateways może być połączonych z jednym VGW?
+
+> **Odpowiedź:** **Maks. 10 CGW** per VGW (limit sprzętowy). Dla >10 lokalizacji: Transit Gateway (5000 attachments).
+
+---
+
+**Pytanie 24:** Security Group w VPC A referencjonuje SG z VPC B przez Peering. Działać będzie czy nie?
+
+> **Odpowiedź:** **Tak — ale tylko same region Peering.** Cross-region Peering nie obsługuje SG reference — używaj CIDR zamiast SG reference dla cross-region. Same-region: pełne wsparcie dla SG cross-VPC reference.
+
+---
+
+**Pytanie 25:** Firma planuje migrację i potrzebuje szybkiego połączenia on-prem → AWS. Priorytety: szybki setup, niski koszt. Jakie rozwiązanie?
+
+> **Odpowiedź:** **Site-to-Site VPN** — gotowe w godzinach, $36/mc. Direct Connect: tygodnie-miesiące, $1600+/mc. VPN to standardowy "first step" przy migracji. Po migracji — jeśli ruch > ~23 TB/mc, rozważ Direct Connect.
+
+---
+
+**Pytanie 26:** Jak VPC Peering wygląda na warstwie sieciowej — co faktycznie się dzieje z pakietem?
+
+> **Odpowiedź:** Pakiet z EC2 w VPC A → VPC Router (implied) → sprawdza Route Table → route `VPC-B-CIDR via pcx-xxx` → AWS hypervisor forward pakiet bezpośrednio do ENI EC2 w VPC B przez AWS backbone. Żadnego dodatkowego hop, NAT, ani enkapsulacji — to prosty routing na warstwie 3.
+
+---
+
+**Pytanie 27:** Firma ma 10 VPC. Ile Peering Connections potrzeba dla full-mesh?
+
+> **Odpowiedź:** **N×(N-1)/2 = 10×9/2 = 45 połączeń.** Każde wymaga aktualizacji route table w obu VPC. Dla 10 VPC = 45 Peeringów = 90 wpisów w route tables minimum. Rekomendacja: przy >4-5 VPC przejdź na TGW (1 attachment per VPC = 10 attachments zamiast 45 Peeringów).
+
+---
+
+**Pytanie 28:** Różnica między VPC Peering a AWS PrivateLink?
+
+> **Odpowiedź:** **VPC Peering:** pełna łączność sieciowa (wszystkie porty, wszystkie IP), wymaga non-overlapping CIDR. **PrivateLink:** ekspozycja konkretnego **service endpoint** (NLB) przez Interface Endpoint (ENI w subnecie). Działa z overlapping CIDR. Używaj Peering dla VPC-to-VPC, PrivateLink dla vendor/SaaS API exposure.
+
+---
+
+**Pytanie 29:** Co to jest "Inter-Region VPC Peering" i jak różni się od intra-region?
+
+> **Odpowiedź:** Inter-Region Peering łączy VPC w różnych regionach AWS przez **encrypted** połączenie przez AWS global backbone. Różnice: (1) **koszt**: inter-region = standard inter-region data transfer rates (wyższe niż intra-region $0.01/GB), (2) **brak SG reference** cross-region, (3) **szyfrowanie AES-256** automatyczne, (4) wyższe latency niż intra-region.
+
+---
+
+**Pytanie 30:** Firma chce żeby on-prem serwer rozwiązywał DNS nazwy hostów w VPC (np. `db.internal`). Jakie rozwiązanie?
+
+> **Odpowiedź:** Route 53 Resolver **Inbound Endpoint** — ENI w VPC z prywatnym IP, on-prem DNS forwarduje zapytania dla `*.internal` do tego IP. On-prem → DX/VPN → VPC Inbound Endpoint → Route 53 Resolver → Private Hosted Zone. Wymagane: DX lub VPN (nie przez Internet).
+
+---
+
+**Pytanie 31:** Czy istnieje limit na data transfer przez VPN Connection?
+
+> **Odpowiedź:** **Teoretycznie:** ~1.25 Gbps per VPN tunel (soft limit, zależy od CPP — crypto processing power). W praktyce: ~1 Gbps aggregate per VPN Connection (2 tunele). Aby osiągnąć więcej: wiele VPN Connections do TGW + ECMP (4 tunele × 1.25 Gbps = do 5 Gbps).
+
+---
+
+**Pytanie 32:** Firma używa Client VPN. Pracownicy skarżą się na wolny dostęp do Internetu przez VPN. Jak naprawić bez wyłączania VPN?
+
+> **Odpowiedź:** Włącz **Split Tunnel** — ruch do VPC CIDR przez VPN, ruch do Internetu bezpośrednio z laptopa (omija VPC i NAT GW). Edytuj Client VPN Endpoint: `--split-tunnel`. Dodaj route: tylko `VPC CIDR → tunnel` w konfiguracji klienta.
+
+---
+
+**Pytanie 33:** VPC ma `enableDnsHostnames=true` i `enableDnsSupport=true`. Co to znaczy?
+
+> **Odpowiedź:** `enableDnsSupport=true`: VPC ma resolver DNS na `VPC+2` IP (np. `10.0.0.2`). `enableDnsHostnames=true`: EC2 z publicznym IP dostają publiczną nazwę DNS (np. `ec2-12-34-56-78.eu-west-1.compute.amazonaws.com`). Oba wymagane dla: Route 53 Private Hosted Zones, interface VPC endpoints, VPN DNS propagation.
+
+---
+
+**Pytanie 34:** Co to jest "Shared VPC" (VPC Sharing)?
+
+> **Odpowiedź:** Właściciel VPC (account A) **shareuje subnety** przez **AWS RAM** do kont uczestników (account B, C). Uczestnicy tworzą zasoby (EC2, RDS) w shareowanych subnetach, ale **nie zarządzają VPC** (route tables, NACL = właściciel). Alternatywa dla VPC Peering — jeden VPC, wiele kont, bez potrzeby routingu między VPC.
+
+---
+
+**Pytanie 35:** Firma ma VPN Site-to-Site i VPC Peering. Czy on-prem może komunikować się z peerowanym VPC przez środkowy VPC?
+
+> **Odpowiedź:** **Nie** — to "transitive VPN routing" przez Peering, które jest blokowane. On-prem → VPN → VPC A ↛ VPC B (przez Peering z VPC A). Rozwiązanie: (1) osobna VPN/DX do VPC B, (2) Transit Gateway (centralizuje routing).
+
+---
+
+**Pytanie 36:** Jak sprawdzić stan tuneli VPN w CLI?
+
+```bash
+# Lista VPN Connections i stan tuneli
+aws ec2 describe-vpn-connections \
+  --query 'VpnConnections[].{
+    ID:VpnConnectionId,
+    State:State,
+    Tunnels:VgwTelemetry[*].{
+      IP:OutsideIpAddress,
+      Status:Status,
+      BGP:AcceptedRouteCount
+    }
+  }' \
+  --output table
+
+# CloudWatch metric dla VPN
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/VPN \
+  --metric-name TunnelState \
+  --dimensions Name=VpnId,Value=vpn-12345678 \
+  --period 60 \
+  --statistics Average
+```
+
+> **Odpowiedź:** Tunel `Status: UP` = aktywny. `TunnelState` metric: 1 = UP, 0 = DOWN. Monitoruj oba tunele — przynajmniej jeden musi być UP.
+
+---
+
+**Pytanie 37:** Firma ma 2 regiony: us-east-1 i eu-west-1. Każdy ma VPC. Jak połączyć je z minimalnym kosztem?
+
+> **Odpowiedź:** **Inter-Region VPC Peering** — bezpośrednie peering cross-region przez AWS backbone. Koszt: standard inter-region data transfer + brak hourly fee. Alternatywa: TGW Peering ($0.05/h per attachment + data), droższe ale ze standaryzacją routingu. Przy prostym 2-VPC scenariuszu: Peering tańszy.
+
+---
+
+**Pytanie 38:** Co to jest AWS Private IP VPN?
+
+> **Odpowiedź:** **Private IP Site-to-Site VPN** — VPN tunnel używa **prywatnych adresów IP** (zamiast publicznych) dla tunelu. Używane gdy: VPN przez Direct Connect (nie przez Internet), on-prem nie ma publicznych IP dostępnych. Wymaga: TGW attachment, połączenie przez DX Transit VIF lub DX Private VIF.
+
+---
+
+**Pytanie 39:** Firma chce żeby EC2 w private subnet komunikowały się z S3 bez Internetu i bez NAT. Jak?
+
+> **Odpowiedź:** **VPC Gateway Endpoint dla S3** — wpis w Route Table kieruje ruch `pl-xxx` (prefix list S3) do `vpce-xxx` (endpoint). Ruch do S3 przez AWS private network (nie przez Internet, nie przez NAT GW). Darmowe. Route Table: `pl-xxxxxxx (S3) → vpce-xxx`.
+
+---
+
+**Pytanie 40:** VPC Peering — czy mogę mieć peering między VPC w tym samym regionie ale różnych partitionach AWS?
+
+> **Odpowiedź:** **Nie** — VPC Peering nie obsługuje cross-partition (np. `aws` ↔ `aws-cn` ↔ `aws-gov`). Rozwiązanie dla cross-partition: VPN lub architektura z publicznymi endpointami.
+
+---
+
+**Pytanie 41:** Co to jest "Dedicated" vs "Default" tenancy dla VPC?
+
+> **Odpowiedź:** **Default tenancy:** EC2 w VPC mogą być na shared lub dedicated hardware (zależy od instance tenancy). **Dedicated VPC tenancy:** WSZYSTKIE EC2 w tym VPC działają na Dedicated hosts/instances (physical isolation). Droższe. Compliance requirement (np. HIPAA, PCI w specyficznych przypadkach). Nie można zmienić tenancy VPC po utworzeniu.
+
+---
+
+**Pytanie 42:** Firma ma VPC z IPv6. EC2 ma adres IPv6 i chce wychodzić do Internetu przez IPv6 bez możliwości inicjowania połączeń z Internetu. Jak?
+
+> **Odpowiedź:** **Egress-Only Internet Gateway** — wyłącznie dla IPv6 outbound. Analogia do NAT Gateway ale dla IPv6 (IPv6 jest publiczne, ale EOIGW blokuje przychodzące). Route Table: `::/0 → eigw-xxx`. Inbound IPv6 blokowany (nie jak IGW który pozwala obu kierunkom).
+
+---
+
+**Pytanie 43:** Ile VPN Connections można mieć per VGW?
+
+> **Odpowiedź:** Do **10 VPN Connections** per VGW (soft limit). Dla większej liczby: użyj TGW (5000 attachments).
+
+---
+
+**Pytanie 44:** Firma używa Site-to-Site VPN i chce zwiększyć bandwidth powyżej 1.25 Gbps. Co zrobić?
+
+> **Odpowiedź:** Użyj **Transit Gateway z ECMP (Equal-Cost Multi-Path)** — wiele VPN Connections do TGW z tymi samymi BGP-advertised prefiksami. TGW rozkłada ruch przez wszystkie tunele. 4 tunele × 1.25 Gbps = do 5 Gbps. VGW nie obsługuje ECMP.
+
+---
+
+**Pytanie 45:** Co to jest Client VPN "authorization rule" i po co jest potrzebna?
+
+> **Odpowiedź:** **Authorization Rule** w Client VPN = ACL który definiuje **kto** (Active Directory group, wszyscy) ma dostęp do **jakich zasobów** (destination CIDR). Bez authorization rule: użytkownik połączonego z Client VPN nie ma dostępu do niczego. Rule: `destination=10.0.0.0/16, group=all` = wszyscy podłączeni mają dostęp do VPC.
+
+---
+
+**Pytanie 46:** Firma ma VPN CloudHub przez TGW. Biuro Warsaw chce komunikować się z biurem Berlin przez AWS. Jak ruch przepływa?
+
+> **Odpowiedź:** Warsaw CGW → VPN → TGW → VPN → Berlin CGW. Trasa: BGP Warsaw ogłasza `172.16.1.0/24` do TGW; TGW propaguje do RT; Berlin ma route `172.16.1.0/24 → TGW → Warsaw VPN attachment`. Ruch przez AWS backbone (prywatna sieć), nie przez Internet.
+
+---
+
+**Pytanie 47:** Czy VPC Peering obsługuje traffic do Gateway Endpoint (S3, DynamoDB) przez Peering?
+
+> **Odpowiedź:** **Nie** — Gateway Endpoints nie mogą być używane przez Peering (ani przez VPN, ani DX). EC2 w VPC A przez Peering do VPC B nie może używać Gateway Endpoint VPC B. Rozwiązanie: własny Gateway Endpoint w VPC A, lub Interface Endpoint (PrivateLink) który działa cross-VPC.
+
+---
+
+**Pytanie 48:** Firma chce monitorować wszystkie połączenia VPN w jednym dashboardzie. Jakie narzędzie AWS?
+
+> **Odpowiedź:** **TGW Network Manager** — centralny dashboard dla globalnej sieci: TGW, VPN Connections, Direct Connect, SD-WAN. Topologia sieci jako mapa. CloudWatch Insights dla sieci. Alternatywa: CloudWatch dashboards z metrykami `AWS/VPN` i `AWS/TransitGateway`.
+
+---
+
+**Pytanie 49:** Różnica między VPC NACL a Security Group w kontekście Peering?
+
+> **Odpowiedź:** **Security Group:** Stateful, referencja do SG cross-VPC działa (same region). Lepsze dla fine-grained control. **NACL:** Stateless, bazuje na CIDR (nie SG reference), musi mieć reguły dla obu kierunków (inbound i outbound). Przy Peering: pamiętaj o NACL ephemeral ports (1024-65535) dla odpowiedzi na inicjowane połączenia.
+
+---
+
+**Pytanie 50:** Firma decyduje się na Accelerated VPN. Jakie są wymagania?
+
+> **Odpowiedź:** Wymagania: (1) **Transit Gateway** — Accelerated VPN działa tylko z TGW (nie z VGW), (2) opcja `EnableAcceleration=true` przy tworzeniu VPN Connection, (3) dodatkowy koszt: AWS Global Accelerator hourly fee + data processing fee. Benefit: niższe latency przez AWS backbone zamiast publicznego Internetu.
+
+---
+
+**Pytanie 51:** Co sprawdzić jeśli VPN tunel jest UP ale ruch nie przechodzi?
+
+> **Odpowiedź:** Checklist: (1) **Route Table VPC** — czy trasa on-prem CIDR via VGW/TGW? (2) **Route Propagation** — włączona dla VGW? (3) **Security Groups** — pozwalają na ruch z on-prem CIDR? (4) **NACL** — reguły inbound i outbound dla on-prem CIDR? (5) **On-prem routing** — czy on-prem router ma trasę do VPC CIDR przez tunel? (6) **BGP** — czy trasy są poprawnie ogłaszane i przyjmowane?
+
+---
+
+**Pytanie 52:** Firma używa VPC Peering między VPC Dev i VPC Prod. Admin przez pomyłkę usunął route table entry. Jak to wpłynie na połączenie?
+
+> **Odpowiedź:** Ruch przestanie działać w kierunku gdzie usunięto trasę. Peering Connection pozostaje "Active" — problem jest w routingu, nie w połączeniu. Naprawa: ponownie dodaj `Route: dest=VPC-Prod-CIDR, target=pcx-xxx` w VPC Dev route table. Peering sam w sobie nie jest zerwany.
+
+---
+
+**Pytanie 53:** Czy można tworzyć VPC Peering między regionami GovCloud a standardowym regionem?
+
+> **Odpowiedź:** **Nie** — VPC Peering między partycjami (aws, aws-gov, aws-cn) nie jest obsługiwany. GovCloud (us-gov-east-1, us-gov-west-1) to osobna partycja AWS z ograniczeniami compliance.
+
+---
+
+**Pytanie 54:** Firma chce połączyć on-prem Active Directory z AWS. AD Connector wymaga połączenia sieciowego. Jakie opcje połączenia?
+
+> **Odpowiedź:** **Site-to-Site VPN** lub **Direct Connect** — AD Connector jest "proxy" który przekierowuje zapytania do on-prem AD. Wymaga aktywnego, niskiego-latency połączenia sieciowego. VPN przez Internet: wystarczające dla mniejszych deploymentów. DX: wymagane jeśli AD używane intensywnie (login thousands of users) lub latency-sensitive.
+
+---
+
+**Pytanie 55:** Co to jest "VPN Connection redundancy" i co oznaczają poszczególne konfiguracje?
+
+> **Odpowiedź:**
+> - **Single VPN (1 CGW, 1 VGW):** 2 tunele do AWS, ale 1 CGW = brak CGW redundancy. Minimalna HA.
+> - **Redundant CGW (2 CGW, 1 VGW):** 4 tunele, 2 CGW. HA jeśli jeden CGW lub Internet link padnie. Rekomendowane.
+> - **Full redundancy (2 CGW, 2 VGW):** Theoretical — ale VGW jest managed by AWS (HA built-in), nie potrzeba 2 VGW.
+> - **VPN + DX:** Best practice — DX primary, VPN backup.
+
+---
+
+**Pytanie 56:** Firma chce zablokować pracownikom Client VPN dostęp do produkcji (VPC Prod) ale dać dostęp do VPC Dev. Jak?
+
+> **Odpowiedź:** **Authorization Rules** z group-based access: `dest=10.0.0.0/16 (Dev VPC), allow-group=AllEmployees` + `dest=10.1.0.0/16 (Prod VPC), allow-group=DevOpsTeam`. Grupy z Active Directory lub Cognito User Pool. Pracownicy spoza DevOpsTeam — dostęp do Prod zablokowany mimo aktywnego VPN.
+
+---
+
+**Pytanie 57:** Firma planuje VPN przez Internet jako backup dla Direct Connect. Jak skonfigurować failover?
+
+> **Odpowiedź:** VGW lub TGW: oba DX i VPN podłączone do tego samego terminatora. BGP: DX advertised z wyższym LOCAL_PREF (lub krótszym AS PATH) = DX preferowany. VPN advertised z niższym LOCAL_PREF = backup. Gdy DX padnie: BGP withdraw trasy DX → VPN routes stają się najlepszą ścieżką → automatyczny failover.
+
+---
+
+**Pytanie 58:** Co to jest "Elastic IP" dla VPN i kiedy jest potrzebny?
+
+> **Odpowiedź:** VGW i TGW po stronie AWS mają własne managed publiczne IP (przydzielone przez AWS, nie EIP). **EIP** potrzebne dla CGW (on-prem router) — musisz podać stały publiczny IP do konfiguracji CGW resource w AWS. Jeśli on-prem IP jest dynamiczne: użyj Dynamic VPN (IKE aggressive mode) lub zaktualizuj CGW resource przy zmianie IP.
+
+---
+
+**Pytanie 59:** Firma ma VPC z subnetami w 3 AZ. Chcą HA dla Client VPN. Co zrobić?
+
+> **Odpowiedź:** **Associate Client VPN Endpoint z subnetami we wszystkich 3 AZ.** Każda association tworzy ENI w danej AZ. Gdy jedna AZ niedostępna: klienci mogą połączyć się przez ENI w pozostałych AZ. Dodatkowy koszt: $0.10/h per subnet association (3 subnety = $0.30/h).
+
+---
+
+**Pytanie 60:** Opisz pełną architekturę enterprise VPN dla firmy z 3 biurami, 10 VPC w 2 regionach, i wymogiem HA.
+
+> **Odpowiedź:**
+> ```
+> Network Account (centralized):
+> 
+> Region 1 (eu-west-1):
+>   TGW-EU (RAM shared do wszystkich kont)
+>   ├── VPN Connections (ECMP enabled):
+>   │   ├── CGW Warsaw: VPN-1 + VPN-2 (2 CGW redundancy)
+>   │   ├── CGW Berlin: VPN-1 + VPN-2
+>   │   └── CGW London: VPN-1 + VPN-2
+>   ├── 8 VPC Attachments (eu-west-1 VPCs)
+>   └── DX Attachment (primary, przez DX GW)
+>       + VPN backup (przez Internet, automatic BGP failover)
+> 
+> Region 2 (us-east-1):
+>   TGW-US (RAM shared)
+>   ├── 2 VPC Attachments (us-east-1 VPCs)
+>   └── VPN Connection do biur US (jeśli dotyczy)
+> 
+> TGW Peering: TGW-EU ↔ TGW-US (cross-region)
+> 
+> Client VPN:
+>   Endpoint w Shared Services VPC (eu-west-1)
+>   3 subnet associations (3 AZ HA)
+>   Auth: SAML 2.0 via IAM Identity Center + MFA
+>   Split tunnel: tylko VPC CIDR przez VPN
+> 
+> Monitoring:
+>   TGW Network Manager (globalny widok)
+>   CloudWatch: TunnelState alarms per VPN
+>   VPC Flow Logs → S3 centralized
+> ```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: VPC, VPC Peering, Site-to-Site VPN, Client VPN, VPN CloudHub, Accelerated VPN, BGP routing, HA patterns*
+
+---
+
+# 10. Amazon EC2 — Rodziny Instancji, Zasoby, Koszty i Modele Zakupu
+
+> **Zakres:** Pełny przegląd typów instancji EC2, ich zasobów (CPU/RAM/Storage/Network), modeli cenowych (On-Demand, Reserved, Spot, Savings Plans, Dedicated), oraz kiedy używać której rodziny dla konkretnego workload.
+
+---
+
+## 10.1 Co to jest EC2 i z czego się składa?
+
+**Amazon EC2 (Elastic Compute Cloud)** to usługa wirtualnych maszyn (VM) w AWS. Każda instancja to izolowany serwer wirtualny działający na fizycznym hoście w centrum danych AWS.
+
+**Analogia z życia:** EC2 to jak wynajem biurka w centrum coworkingowym — wynajmujesz określoną ilość zasobów (biurko = vCPU, przestrzeń = RAM, szafka = storage) na wybrany czas, płacąc za faktyczne użycie.
+
+**Odpowiednik Azure:** Azure Virtual Machines (VMs). Odpowiednik Linux/Open-source: KVM/QEMU, VMware ESXi.
+
+### Zasoby składowe każdej instancji EC2
+
+```
+┌─────────────────────────────────────────────────────┐
+│                  Instancja EC2                       │
+│                                                     │
+│  ┌───────────┐  ┌───────────┐  ┌─────────────────┐ │
+│  │  vCPU     │  │  RAM      │  │  Network        │ │
+│  │ (virtual  │  │ (GiB)     │  │ Bandwidth       │ │
+│  │  core)    │  │           │  │ (Gbps)          │ │
+│  └───────────┘  └───────────┘  └─────────────────┘ │
+│                                                     │
+│  ┌───────────┐  ┌───────────┐  ┌─────────────────┐ │
+│  │  Storage  │  │  GPU/FPGA │  │  ENA / EFA      │ │
+│  │ (EBS/NVMe │  │ (opcjonal)│  │  (sieć wys.     │ │
+│  │  /S3)     │  │           │  │  wydajności)    │ │
+│  └───────────┘  └───────────┘  └─────────────────┘ │
+└─────────────────────────────────────────────────────┘
+```
+
+| Zasób | Opis | Uwaga |
+|---|---|---|
+| **vCPU** | Virtual CPU — fragment fizycznego rdzenia (lub cały rdzeń na dedicated) | 1 vCPU ≈ 1 hardware thread (Intel HT / AMD SMT) |
+| **RAM** | Pamięć operacyjna (GiB) | Nie można zmienić bez zatrzymania instancji |
+| **Network bandwidth** | Przepustowość sieci (Gbps) | Baseline + burst dla mniejszych; gwarantowane dla większych |
+| **EBS bandwidth** | Przepustowość dla dysków EBS | Wyrażona w MB/s i IOPS |
+| **Local NVMe SSD** | Lokalny fizyczny dysk (Instance Store) | Efemeryczny — dane tracone po stop/terminate |
+| **GPU** | NVIDIA/AMD/AWS Trainium/Inferentia | Dla ML, renderingu, HPC |
+| **FPGA** | Field-Programmable Gate Array | Dla custom hardware acceleration |
+| **ENA** | Elastic Network Adapter — high-performance networking | Wymagany dla Enhanced Networking |
+| **EFA** | Elastic Fabric Adapter — MPI/HPC networking | Dla klastrów HPC (low-latency, high bandwidth) |
+
+---
+
+## 10.2 Nomenklatura Instancji EC2 — Jak Czytać Nazwę
+
+```
+m  7  g  .  2  x  l  a  r  g  e
+│  │  │     │  │  │  │  │  │  │
+│  │  │     │  │  │  │  │  └──┴─ rozmiar: nano/micro/small/medium/large/xlarge/2xlarge...
+│  │  │     │  │  │  │  └──────── a = AMD EPYC
+│  │  │     │  │  │  └─────────── r = burst (nie w tym przypadku — to część rozmiaru)
+│  │  │     │  │  └────────────── x = extra large modifier
+│  │  │     │  └───────────────── 2 = mnożnik rozmiaru
+│  │  │     └──────────────────── . = separator
+│  │  └────────────────────────── g = Graviton (AWS ARM)
+│  └───────────────────────────── 7 = generacja (7. generacja)
+└──────────────────────────────── m = rodzina (General Purpose)
+```
+
+### Sufiksy — co oznaczają litery po generacji
+
+| Sufiks | Znaczenie | Przykład |
+|---|---|---|
+| `a` | AMD EPYC processor | `m6a`, `c6a` |
+| `g` | AWS Graviton (ARM) | `m7g`, `c7g`, `r7g` |
+| `i` | Intel processor (explicit) | `m6i`, `c6i` |
+| `n` | Higher network bandwidth | `m5n`, `c5n` |
+| `d` | Local NVMe SSD (instance store) | `m5d`, `r5d`, `c5d` |
+| `z` | High frequency (Intel, 4 GHz+) | `z1d` |
+| `e` | Extra storage or memory | `r5e` (extra RAM) |
+| `b` | Block storage optimized | `im4gn`, `is4gen` |
+| `q` | Qualcomm inference | (rzadkie) |
+| `flex` | Flex instance (burstable) | (nowość) |
+
+### Rozmiary — skala mocy
+
+```
+nano → micro → small → medium → large → xlarge → 2xlarge → 4xlarge → 8xlarge → 12xlarge → 16xlarge → 24xlarge → 32xlarge → 48xlarge → metal
+```
+
+Każde podwojenie `xlarge` = 2× vCPU + 2× RAM (generalnie).
+
+---
+
+## 10.3 Rodziny Instancji EC2 — Przegląd
+
+### 🟢 General Purpose (t, m)
+
+**Zbalansowane CPU/RAM** — do większości standardowych workloadów.
+
+#### Rodzina T — Burstable Performance
+
+```
+T3, T3a, T4g (Graviton), T2 (legacy)
+Przykłady: t3.micro, t3.small, t3.medium, t3.large, t3.xlarge, t3.2xlarge
+```
+
+**Mechanizm CPU Credits:**
+
+```
+CPU Credits accumulate gdy idle → spend gdy potrzebujesz burst
+                                        
+Baseline: t3.micro = 10% CPU, t3.large = 30% CPU
+Burst:    do 100% CPU (dopóki masz kredyty)
+Earn:     t3.micro zarabia 6 kredytów/h przy 0% użycia
+Spend:    1 kredyt = 1 vCPU × 1 min @ 100%
+
+Tryby:
+  Standard:    kredyty przepadają po 7 dniach nieużycia
+  Unlimited:   nieograniczony burst → opłata za surplus credits ($0.05/vCPU-h ponad baseline)
+```
+
+```bash
+# Sprawdź CPU credit balance
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/EC2 \
+  --metric-name CPUCreditBalance \
+  --dimensions Name=InstanceId,Value=i-12345678 \
+  --period 3600 --statistics Average \
+  --start-time 2024-01-01T00:00:00Z \
+  --end-time 2024-01-02T00:00:00Z
+```
+
+**Kiedy używać T:** Dev/test, małe webapps, idle-with-spikes workloady, microservices. **Kiedy nie:** Sustained high CPU (CI/CD heavy builds, video encoding) — użyj M lub C.
+
+#### Rodzina M — General Purpose (produkcja)
+
+```
+M5, M5a, M5n, M6i, M6a, M6g (Graviton), M7i, M7a, M7g
+Przykłady: m6i.large (2 vCPU, 8 GiB), m6i.4xlarge (16 vCPU, 64 GiB)
+```
+
+Proporcja CPU:RAM = **1:4** (1 vCPU = 4 GiB RAM).
+
+**Kiedy używać M:** Web serwery, aplikacje enterprise (SAP, Oracle), bazy danych średnich rozmiarów, gaming, dev/prod balanced.
+
+---
+
+### 🔵 Compute Optimized (c)
+
+**Wysoki CPU, mało RAM** — proporcja CPU:RAM = **1:2**.
+
+```
+C5, C5a, C5n, C6i, C6a, C6g (Graviton), C7i, C7a, C7g
+Przykłady: c6i.xlarge (4 vCPU, 8 GiB), c6i.8xlarge (32 vCPU, 64 GiB)
+```
+
+**Cechy szczególne:**
+- Najwyższy CPU clock speed w standardowych rodzinach
+- `C5n`: zwiększony network bandwidth (do 100 Gbps)
+- `C7g`: Graviton3 — najlepsza wydajność na watt
+
+**Kiedy używać C:** Batch processing, web serving (nginx, Apache), scientific computing, gaming serwery, HFT (High-Frequency Trading), media transcoding. **NIE dla:** baz danych z dużym RAM, ML inference (użyj G/Inf).
+
+---
+
+### 🔴 Memory Optimized (r, x, u, z)
+
+**Dużo RAM** — dla in-memory baz danych i cache.
+
+#### Rodzina R — Memory Optimized (most popular)
+
+```
+R5, R5a, R5b (EBS optimized), R6i, R6a, R6g, R7i, R7a, R7g
+Proporcja: 1 vCPU : 8 GiB RAM
+Przykłady: r6i.xlarge (4 vCPU, 32 GiB), r6i.32xlarge (128 vCPU, 1024 GiB)
+```
+
+#### Rodzina X — High Memory
+
+```
+X1, X1e, X2idn, X2iedn, X2iezn
+Proporcja: nawet 1:32 (x1e.xlarge: 4 vCPU, 122 GiB RAM!)
+Max RAM: x2iedn.metal = 128 vCPU, 4096 GiB (4 TB!) RAM
+```
+
+**Kiedy używać X:** SAP HANA (In-Memory), Apache Spark, in-memory analytics, massive databases.
+
+#### Rodzina U — High Memory (bare metal)
+
+```
+u-6tb1.metal (448 vCPU, 6 TB RAM)
+u-9tb1.metal (448 vCPU, 9 TB RAM)
+u-12tb1.metal (448 vCPU, 12 TB RAM)
+u-18tb1.metal (896 vCPU, 18 TB RAM)
+u-24tb1.metal (896 vCPU, 24 TB RAM)
+```
+
+> ⚠️ **Egzamin:** SAP HANA wymaga certyfikowanych instancji (X1, X2, U rodziny). U-series to dedykowane bare-metal dla SAP HANA na AWS.
+
+#### Rodzina Z — High Frequency
+
+```
+z1d.large → z1d.metal
+1 vCPU : 4 GiB RAM, ale CPU @4 GHz+ (najwyższy zegar w EC2)
+```
+
+**Kiedy używać Z:** Elektroniczne symulacje (EDA), CAD, single-threaded workloady z premium na zegar.
+
+---
+
+### 🟡 Storage Optimized (i, d, h, im, is)
+
+**Wysoki IOPS lub wysoka przepustowość lokalnego storage.**
+
+#### Rodzina I — NVMe SSD (wysoki IOPS)
+
+```
+I3, I3en, I4i, I4g (Graviton)
+i3.large: 2 vCPU, 15.25 GiB, 1× 475 GB NVMe SSD, 425K IOPS
+i3en.24xlarge: 96 vCPU, 768 GiB, 8× 7500 GB NVMe SSD, 4.2M IOPS
+```
+
+**Kiedy używać I:** NoSQL bazy danych (Cassandra, MongoDB), Elasticsearch, in-memory cache (Redis), high IOPS transactional databases.
+
+#### Rodzina D — Dense HDD (wysoka przepustowość)
+
+```
+D2, D3, D3en
+d3.xlarge: 4 vCPU, 32 GiB, 3× 2 TB HDD
+d3.8xlarge: 32 vCPU, 256 GiB, 24× 2 TB HDD = 48 TB local storage!
+```
+
+**Kiedy używać D:** Hadoop/MapReduce, data warehousing, distributed file systems (Lustre), log processing.
+
+#### Rodzina H — High Throughput HDD
+
+```
+H1: duże dyski HDD, throughput-focused
+```
+
+#### Rodzina IM/IS — Storage Optimized z Graviton
+
+```
+im4gn, is4gen — Graviton2 + NVMe SSD
+Dobry stosunek ceny do wydajności storage
+```
+
+---
+
+### 🟣 Accelerated Computing (p, g, trn, inf, f, vt)
+
+**GPU, FPGA, AWS custom chips** — dla ML, AI, grafiki, wideo.
+
+#### Rodzina P — GPU (Training ML)
+
+```
+P2 (NVIDIA K80, legacy)
+P3 (NVIDIA V100): p3.2xlarge (1 GPU), p3.16xlarge (8× V100)
+P4d (NVIDIA A100): p4d.24xlarge (8× A100 40GB, 400 Gbps NVLink+EFA)
+P5 (NVIDIA H100): p5.48xlarge (8× H100 80GB, 3200 Gbps NVLink+EFA)
+```
+
+**Kiedy używać P:** Deep learning training, scientific HPC, molecular dynamics.
+
+#### Rodzina G — GPU (Inference + Graphics)
+
+```
+G3 (NVIDIA M60, legacy — wirtualizacja grafiki)
+G4dn (NVIDIA T4): g4dn.xlarge (1× T4), g4dn.12xlarge (4× T4)
+G4ad (AMD Radeon Pro V520): tańsza alternatywa
+G5 (NVIDIA A10G): g5.xlarge (1× A10G), g5.48xlarge (8× A10G)
+G6 (NVIDIA L4): najnowsza, cost-effective inference
+```
+
+**Kiedy używać G:** ML inference, game streaming (GameLift), 3D visualization, video transcoding.
+
+#### Rodzina Trn — AWS Trainium (Training)
+
+```
+trn1.2xlarge (2× Trainium chips)
+trn1.32xlarge (16× Trainium chips + 800 Gbps EFA)
+trn1n.32xlarge (16× Trainium + higher network)
+```
+
+**AWS Trainium** to custom ASIC zoptymalizowany pod deep learning training. Do 50% tańszy niż P3 dla tego samego workloadu.
+
+#### Rodzina Inf — AWS Inferentia (Inference)
+
+```
+inf1.xlarge (1× Inferentia chip)
+inf1.6xlarge (4× Inferentia)
+inf1.24xlarge (16× Inferentia)
+inf2 (Inferentia2): inf2.xlarge → inf2.48xlarge
+```
+
+**AWS Inferentia** = custom ASIC dla inference. Do 70% taniej niż GPU instancje dla inference workloadów.
+
+#### Rodzina F — FPGA
+
+```
+f1.2xlarge (1× FPGA Xilinx VU9P)
+f1.16xlarge (8× FPGA)
+```
+
+**Kiedy używać F:** Genomics acceleration, financial analytics, video processing, custom hardware logic.
+
+#### Rodzina VT — Video Transcoding
+
+```
+vt1.3xlarge, vt1.6xlarge, vt1.24xlarge
+Xilinx Alveo U30 media accelerators
+```
+
+**Kiedy używać VT:** Live video transcoding (H.264, H.265), media workflows.
+
+---
+
+### ⚫ High Performance Computing (hpc)
+
+```
+hpc6a.48xlarge (96 vCPU AMD EPYC, 384 GiB, 100 Gbps EFA)
+hpc7g.16xlarge (64 vCPU Graviton3E, 128 GiB, 200 Gbps EFA)
+```
+
+**Kiedy używać HPC:** CFD (Computational Fluid Dynamics), weather modeling, molecular dynamics, seismic analysis.
+
+---
+
+## 10.4 Tabela Porównawcza Rodzin — Quick Reference
+
+| Rodzina | CPU:RAM | Przypadek użycia | Przykład |
+|---|---|---|---|
+| **t** (burstable) | 1:2–1:4 | Dev/test, low-traffic web | t3.micro |
+| **m** (general) | 1:4 | Web serwery, app serwery | m6i.xlarge |
+| **c** (compute) | 1:2 | Batch, HPC light, web | c6i.xlarge |
+| **r** (memory) | 1:8 | Redis, Memcached, in-mem DB | r6i.xlarge |
+| **x** (high mem) | 1:16–1:32 | SAP HANA, Apache Spark | x2iedn.xlarge |
+| **u** (ultra mem) | 1:16 | SAP HANA 6-24 TB | u-6tb1.metal |
+| **z** (high freq) | 1:4 @4GHz | EDA, single-thread perf | z1d.xlarge |
+| **i** (NVMe SSD) | 1:4+NVMe | Cassandra, Elasticsearch | i3.xlarge |
+| **d** (dense HDD) | 1:4+HDD | Hadoop, data warehouse | d3.xlarge |
+| **p** (GPU train) | 1:4+GPU | DL training | p4d.24xlarge |
+| **g** (GPU infer) | 1:4+GPU | ML inference, gaming | g5.xlarge |
+| **trn** (Trainium) | custom | DL training (AWS chip) | trn1.2xlarge |
+| **inf** (Inferentia) | custom | DL inference (AWS chip) | inf2.xlarge |
+| **f** (FPGA) | 1:4+FPGA | Custom acceleration | f1.2xlarge |
+| **hpc** (HPC) | 1:4+EFA | CFD, molecular dynamics | hpc7g.16xlarge |
+
+---
+
+## 10.5 Modele Zakupu EC2 — Koszty i Optymalizacja
+
+### On-Demand
+
+**Płacisz za sekundę** (minimum 60 sekund) bez zobowiązań. Najwyższe ceny, maksymalna elastyczność.
+
+```bash
+# Cena On-Demand (eu-west-1, Linux)
+aws pricing get-products \
+  --service-code AmazonEC2 \
+  --filters \
+    "Type=TERM_MATCH,Field=instanceType,Value=m6i.xlarge" \
+    "Type=TERM_MATCH,Field=location,Value=EU (Ireland)" \
+    "Type=TERM_MATCH,Field=tenancy,Value=Shared" \
+    "Type=TERM_MATCH,Field=operatingSystem,Value=Linux" \
+    "Type=TERM_MATCH,Field=preInstalledSw,Value=NA" \
+  --query 'PriceList[0]'
+
+# Przykładowe ceny (eu-west-1, Linux On-Demand):
+# t3.micro:    $0.0116/h   ≈ $8/mc
+# m6i.xlarge:  $0.214/h    ≈ $155/mc
+# c6i.4xlarge: $0.736/h    ≈ $532/mc
+# r6i.2xlarge: $0.672/h    ≈ $485/mc
+# p3.2xlarge:  $3.823/h    ≈ $2754/mc
+```
+
+**Kiedy używać:** Nieregularne workloady, dev/test, krótkie eksperymenty, baseline dla porównania.
+
+---
+
+### Reserved Instances (RI)
+
+**Zobowiązanie 1 lub 3 lata** w zamian za rabat 30–72%.
+
+```
+Typy RI:
+  Standard RI:     do 72% taniej, MOŻNA sprzedać na Marketplace
+  Convertible RI:  do 66% taniej, MOŻNA zmienić rodzinę/OS/tenancy
+  
+Opcje płatności:
+  All Upfront:     Najwyższy rabat (płacisz wszystko z góry)
+  Partial Upfront: Średni rabat (część z góry + miesięczna rata)
+  No Upfront:      Najniższy rabat (tylko miesięczna rata)
+```
+
+| | 1 rok All Upfront | 1 rok No Upfront | 3 lata All Upfront |
+|---|---|---|---|
+| **Rabat vs On-Demand** | ~40% | ~35% | ~60-72% |
+| **Elastyczność** | Niska | Średnia | Najniższa |
+| **Gdy opłacalne** | Przewidywalny workload | Cashflow ważny | Długoterminowy, stabilny |
+
+```bash
+# Kup Reserved Instance
+aws ec2 purchase-reserved-instances-offering \
+  --reserved-instances-offering-id abc123 \
+  --instance-count 2
+
+# Sprawdź dostępne oferty RI
+aws ec2 describe-reserved-instances-offerings \
+  --instance-type m6i.xlarge \
+  --product-description "Linux/UNIX" \
+  --offering-class standard \
+  --filters "Name=duration,Values=31536000"  # 1 rok w sekundach
+```
+
+> ⚠️ **Egzamin:** RI **nie przypisuje się** do konkretnej instancji — AWS automatycznie stosuje rabat do pasującej uruchomionej instancji. Standard RI można sprzedać na **Reserved Instance Marketplace**. Convertible RI — nie można sprzedać, ale można zmienić.
+
+---
+
+### Savings Plans
+
+**Nowszy i elastyczniejszy zamiennik RI** — zobowiązujesz się do wydatku w dolarach/godzinę ($X/h), nie do konkretnego type.
+
+```
+Compute Savings Plans:
+  - Najszersze pokrycie: EC2 dowolna rodzina/region/OS + Fargate + Lambda
+  - Rabat: do 66%
+  - Najlepsza elastyczność
+
+EC2 Instance Savings Plans:
+  - Konkretna rodzina + region (np. M w eu-west-1)
+  - Rabat: do 72%
+  - Możesz zmieniać rozmiar, OS, AZ wewnątrz rodziny
+
+SageMaker Savings Plans:
+  - Tylko dla SageMaker
+```
+
+```bash
+# Rekomendacje Savings Plans (AWS Cost Explorer)
+aws ce get-savings-plans-purchase-recommendation \
+  --savings-plans-type COMPUTE_SP \
+  --term-in-years ONE_YEAR \
+  --payment-option ALL_UPFRONT \
+  --lookback-period-in-days THIRTY_DAYS
+```
+
+**Compute Savings Plans vs Reserved Instances:**
+
+| | Savings Plans (Compute) | Reserved Instances (Standard) |
+|---|---|---|
+| **Pokrycie** | EC2 + Fargate + Lambda | Tylko EC2 |
+| **Elastyczność** | Dowolna rodzina/region | Konkretny typ/region |
+| **Rabat** | do 66% | do 72% |
+| **Zmiana** | Automatyczna (zmień workload) | Wymaga sprzedaży/exchange |
+| **Zalecane** | Nowe projekty, dynamic | Legacy, przewidywalne |
+
+---
+
+### Spot Instances
+
+**Nieużywana pojemność AWS** sprzedawana ze zniżką **60–90% vs On-Demand**. AWS może przerwać instancję z 2-minutowym ostrzeżeniem.
+
+```bash
+# Sprawdź aktualne ceny Spot
+aws ec2 describe-spot-price-history \
+  --instance-types c6i.xlarge m6i.xlarge r6i.xlarge \
+  --product-descriptions "Linux/UNIX" \
+  --start-time 2024-01-01T00:00:00Z \
+  --query 'SpotPriceHistory[*].{Type:InstanceType,Price:SpotPrice,AZ:AvailabilityZone}'
+
+# Launch Spot Instance
+aws ec2 run-instances \
+  --image-id ami-12345678 \
+  --instance-type c6i.xlarge \
+  --instance-market-options '{"MarketType":"spot","SpotOptions":{"MaxPrice":"0.10","SpotInstanceType":"one-time"}}'
+```
+
+**Typy Spot:**
+
+| Typ | Opis |
+|---|---|
+| **One-time** | Uruchamia się gdy cena ≤ max, kończy gdy cena przekroczy lub gdy terminacja |
+| **Persistent** | Automatycznie się restartuje gdy znowu dostępna |
+
+**Spot Interruption (2-min warning):**
+
+```bash
+# Zapis na instancji — sprawdź czy będzie terminated
+curl -s http://169.254.169.254/latest/meta-data/spot/termination-time
+# Jeśli odpowiedź = 404: brak zaplanowanej terminacji
+# Jeśli odpowiedź = timestamp: za ~2 min terminacja
+
+# CloudWatch Event dla Spot Interruption
+aws events put-rule \
+  --name "SpotInterruptionRule" \
+  --event-pattern '{"source":["aws.ec2"],"detail-type":["EC2 Spot Instance Interruption Warning"]}'
+```
+
+**Spot Fleet i EC2 Fleet:**
+
+```bash
+# Spot Fleet — wiele typów instancji dla elastyczności
+aws ec2 request-spot-fleet \
+  --spot-fleet-request-config '{
+    "IamFleetRole": "arn:aws:iam::123456789012:role/aws-ec2-spot-fleet-role",
+    "AllocationStrategy": "capacityOptimized",
+    "TargetCapacity": 10,
+    "LaunchSpecifications": [
+      {"InstanceType": "c6i.xlarge", "ImageId": "ami-xxx"},
+      {"InstanceType": "c5.xlarge", "ImageId": "ami-xxx"},
+      {"InstanceType": "c5a.xlarge", "ImageId": "ami-xxx"}
+    ]
+  }'
+
+# Strategie alokacji:
+# lowestPrice:         najtańsze (ryzyko interruption)
+# capacityOptimized:   największa dostępna pojemność (mniej interruptions)
+# priceCapacityOptimized: balans ceny i pojemności (zalecane)
+# diversified:         rozłóż po pulach
+```
+
+**Kiedy używać Spot:** Batch processing, big data (EMR), CI/CD workers, fault-tolerant distributed apps, ML training (Spot + checkpointing), rendering.
+
+**Kiedy NIE używać Spot:** Bazy danych, stany sesji, krytyczne serwisy produkcyjne bez HA.
+
+---
+
+### Dedicated Hosts
+
+**Fizyczny serwer wyłącznie dla Ciebie** — pełna kontrola nad socket/core placement.
+
+```bash
+# Allocate Dedicated Host
+aws ec2 allocate-hosts \
+  --availability-zone eu-west-1a \
+  --instance-type m6i.xlarge \
+  --quantity 1 \
+  --auto-placement on
+
+# On-Demand: $4.624/h dla m6i Dedicated Host (eu-west-1)
+# Mieści np. 32× m6i.xlarge lub 1× m6i.metal
+```
+
+**Kiedy używać Dedicated Hosts:**
+- **BYOL (Bring Your Own License)** — Windows Server, SQL Server, RHEL licencjonowane per-socket/per-core
+- Compliance (PCI DSS, HIPAA) wymagający fizycznej izolacji
+- Regulatory requirements
+
+---
+
+### Dedicated Instances
+
+**Instancje na dedykowanym hardwarze** (shared tylko z Twoim kontem), ale bez kontroli nad socket placement.
+
+| | Dedicated Host | Dedicated Instance |
+|---|---|---|
+| **Fizyczna izolacja** | ✅ Per host | ✅ Per account |
+| **Socket/core visibility** | ✅ Pełna | ❌ |
+| **BYOL support** | ✅ | ❌ (nie wszystkie licencje) |
+| **Koszt** | Hourly per host | Dodatkowa opłata per-instance + $2/h per region fee |
+| **Kontrola placement** | ✅ | ❌ |
+
+---
+
+### Capacity Reservations
+
+**Zarezerwowana pojemność** w konkretnej AZ — bez zobowiązania cenowego (płacisz On-Demand rate).
+
+```bash
+# Zarezerwuj pojemność — gwarantuje dostępność instancji
+aws ec2 create-capacity-reservation \
+  --availability-zone eu-west-1a \
+  --instance-type m6i.xlarge \
+  --instance-platform Linux/UNIX \
+  --instance-count 10 \
+  --instance-match-criteria targeted  # tylko explicit requests
+
+# Łącz z Savings Plans lub RI dla rabatu + pojemności
+```
+
+**Kiedy:** Disaster recovery, gwarantowana pojemność dla krytycznych aplikacji podczas AWS capacity crunches.
+
+---
+
+## 10.6 Porównanie Wszystkich Modeli Cenowych
+
+```mermaid
+graph LR
+    START["Jaki workload?"] --> Q1{"Przewidywalny\nczas pracy?"}
+    
+    Q1 -->|Tak, ciągły| Q2{"Elastyczność\nważna?"}
+    Q1 -->|Nie, sporadyczny| Q3{"Fault\ntolerant?"}
+    
+    Q2 -->|Elastyczność| SP["Savings Plans\nCompute\ndo 66% rabat"]
+    Q2 -->|Stabilny typ| RI["Reserved Instances\nStandard\ndo 72% rabat"]
+    
+    Q3 -->|Tak| SPOT["Spot Instances\ndo 90% rabat"]
+    Q3 -->|Nie| OD["On-Demand\npłać za sekundę"]
+    
+    RI --> BYOL{"BYOL lub\nCompliance?"}
+    BYOL -->|Tak| DH["Dedicated Host\npłać za host"]
+    BYOL -->|Nie| RI
+```
+
+| Model | Rabat | Zobowiązanie | Przerwanie | Najlepszy dla |
+|---|---|---|---|---|
+| **On-Demand** | 0% | Brak | Nie | Dev/test, nieregularne |
+| **Savings Plans** | 66% | 1 lub 3 lata ($) | Nie | Elastyczny steady-state |
+| **RI Standard** | 72% | 1 lub 3 lata (typ) | Nie | Stabilny, znany typ |
+| **RI Convertible** | 66% | 1 lub 3 lata | Nie | Stabilny, zmienne typy |
+| **Spot** | 90% | Brak | ✅ 2 min warning | Fault-tolerant, batch |
+| **Dedicated Host** | ~30-40% (RI) | Opcjonalne | Nie | BYOL, compliance |
+| **Capacity Reservation** | 0% | Brak | Nie | Guaranteed capacity |
+
+---
+
+## 10.7 Storage dla EC2
+
+### EBS — Elastic Block Store
+
+**Sieciowy dysk blokowy** — persystentny, niezależny od czasu życia instancji.
+
+| Typ EBS | Użycie | Max IOPS | Max throughput | Cena |
+|---|---|---|---|---|
+| **gp3** (General Purpose SSD) | Domyślny, boot, apps | 16 000 | 1 000 MB/s | $0.08/GB-mc |
+| **gp2** (legacy) | Stary domyślny | 16 000 | 250 MB/s | $0.10/GB-mc |
+| **io1** (Provisioned IOPS SSD) | Bazy danych | 64 000 | 1 000 MB/s | $0.125/GB + $0.065/IOPS |
+| **io2 Block Express** | Mission-critical DB | 256 000 | 4 000 MB/s | $0.125/GB + $0.065/IOPS |
+| **st1** (Throughput HDD) | Big data, log | 500 | 500 MB/s | $0.045/GB-mc |
+| **sc1** (Cold HDD) | Archiwum, rzadki dostęp | 250 | 250 MB/s | $0.025/GB-mc |
+
+> ⚠️ **Egzamin:** `gp3` oddzielnie ustawia IOPS i throughput (niezależnie od rozmiaru). `gp2` IOPS = 3× GB (max 16000). `io2 Block Express` obsługuje multi-attach (wiele EC2 → jeden wolumen).
+
+### Instance Store
+
+**Fizyczny dysk NVMe SSD** wbudowany w host. Efemeryczny.
+
+```
+Zalety:   Bardzo niski latency (brak sieci), bezpłatny (wliczony w cenę instancji)
+Wady:     Dane tracone przy: stop, terminate, awaria hosta
+Użycie:   Cache, tymczasowe dane, swap, Hadoop HDFS tmp
+```
+
+### EFS — Elastic File System
+
+**Sieciowy shared filesystem** (NFS) — wiele EC2 może montować ten sam filesystem.
+
+```bash
+# Mount EFS na EC2
+sudo mount -t efs -o tls fs-12345678:/ /mnt/efs
+```
+
+| | EBS | EFS | S3 |
+|---|---|---|---|
+| **Typ** | Block | File (NFS) | Object |
+| **Dostęp** | 1 EC2 (io2: multi-attach) | Wiele EC2 | HTTP API |
+| **Scope** | AZ | Regional | Global |
+| **Persystencja** | ✅ | ✅ | ✅ |
+| **Cena** | $0.08-0.125/GB | $0.30/GB | $0.023/GB |
+
+---
+
+## 10.8 Sieć EC2 — ENI, Enhanced Networking, Placement Groups
+
+### ENI (Elastic Network Interface)
+
+```bash
+# EC2 może mieć wiele ENI (np. dla multi-homed routing)
+aws ec2 create-network-interface \
+  --subnet-id subnet-12345678 \
+  --groups sg-12345678 \
+  --description "Secondary ENI"
+
+aws ec2 attach-network-interface \
+  --instance-id i-12345678 \
+  --network-interface-id eni-12345678 \
+  --device-index 1
+```
+
+### Enhanced Networking (ENA/SR-IOV)
+
+- **ENA (Elastic Network Adapter):** Do 100 Gbps, niski latency, low CPU overhead — domyślnie na wszystkich nowszych instancjach
+- **SR-IOV:** Hardware virtualization dla sieci — mniej overhead vs software emulation
+- **EFA (Elastic Fabric Adapter):** MPI-capable network dla HPC klastrów, RDMA
+
+### Placement Groups
+
+```
+Cluster Placement Group:
+  - Wszystkie instancje w jednej AZ, blisko siebie (niski latency)
+  - Do 100 Gbps między instancjami
+  - Ryzyko: awaria AZ = wszystkie instancje
+  - Użycie: HPC, ML distributed training, low-latency apps
+
+Spread Placement Group:
+  - Każda instancja na INNYM rack (różne zasilanie i sieć)
+  - Max 7 instancji per AZ per group
+  - Maksymalna odporność na hardware failure
+  - Użycie: HA dla małych grup (np. ZooKeeper, Kafka brokers)
+
+Partition Placement Group:
+  - Instancje w partycjach (każda partycja = osobny rack)
+  - Do 7 partycji per AZ
+  - Skalowanie przy zachowaniu izolacji fault domains
+  - Użycie: Hadoop, Cassandra, Kafka (duże clustry)
+```
+
+```bash
+# Utwórz Cluster Placement Group
+aws ec2 create-placement-group \
+  --group-name MyHPCCluster \
+  --strategy cluster
+
+# Launch instancji w PG
+aws ec2 run-instances \
+  --placement '{"GroupName":"MyHPCCluster"}' \
+  --instance-type c6in.32xlarge \
+  --image-id ami-12345678
+```
+
+---
+
+## 10.9 EC2 — Limity i Ograniczenia
+
+| Limit | Wartość domyślna | Notatka |
+|---|---|---|
+| **Running On-Demand vCPU** (Standard) | 32 vCPU | Soft limit — można zwiększyć |
+| **Running On-Demand vCPU** (per family) | Osobny limit per A/C/D/F/G/I/M/P/R/T/X | Sprawdź Service Quotas |
+| **Spot Requests** | 640 vCPU | Per region, per type |
+| **EBS volumes per instance** | 40 | |
+| **ENI per instance** | Zależy od typu (np. m6i.xlarge = 4) | |
+| **Elastic IPs** | 5 per region | |
+| **Max EBS volume size** | 64 TiB (io2 Block Express) | |
+| **AMI per region** | 1000 private AMI | |
+
+```bash
+# Sprawdź aktualne limity
+aws service-quotas list-service-quotas \
+  --service-code ec2 \
+  --query 'Quotas[?contains(QuotaName, `vCPU`)].{Name:QuotaName,Value:Value}'
+```
+
+---
+
+## 10.10 Well-Architected Framework — EC2
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | AMI golden images (standard baseline), SSM Session Manager zamiast SSH, CloudWatch agent dla metryk, EC2 Instance Connect, automatyzacja przez Launch Templates |
+| **Security** | IMDSv2 (nie IMDSv1) dla metadata access, Security Groups least-privilege, IAM Instance Profile (nie access keys na instancji), EBS encryption domyślne, VPC private subnets dla EC2 |
+| **Reliability** | Multi-AZ deployment (ASG), Spot Fleet z wieloma typami, Placement Groups dla HA (Spread), EBS Multi-Attach dla shared storage, Capacity Reservations dla krytycznych workloadów |
+| **Performance Efficiency** | Graviton3 (do 40% lepszy stosunek ceny do wydajności), Instance Store dla ephemeral cache, Enhanced Networking (ENA), właściwa rodzina instancji (C dla CPU, R dla RAM, I dla IOPS), ECMP dla sieciowych workloadów |
+| **Cost Optimization** | Savings Plans lub RI dla steady-state, Spot dla batch/fault-tolerant, T3 Unlimited tylko gdy potrzebny burst (nie domyślnie), AWS Compute Optimizer (zalecenia typów), Graviton gdzie kompatybilny |
+| **Sustainability** | Graviton (lepszy PUE), right-sizing (Compute Optimizer), Spot zmniejsza waste (używa idle capacity), konsolidacja małych instancji w duże (gdzie możliwe) |
+
+---
+
+## 10.11 4 Domeny Egzaminacyjne SAP-C02
+
+### Domena 1: Design Solutions for Organizational Complexity
+
+- **Multi-account EC2 governance:** Service Control Policies (SCP) limitujące typy instancji, AWS Config rules dla `ec2-instance-no-public-ip`, Tagging policies dla kosztów
+- **Reserved Instance sharing:** RI zakupione w AWS Organizations Management Account automatycznie shareowane do member accounts
+- **Savings Plans**: zarządzanie z management account, apply do całej organizacji
+
+### Domena 2: Design for New Solutions
+
+- **Wybór rodziny instancji:** T dla dev/test, M dla produkcja general, C dla CPU-intensive, R dla in-memory DB, G/Trn/Inf dla AI/ML
+- **Graviton3 jako default:** 40% taniejszy per performance, ale sprawdź kompatybilność oprogramowania (ARM vs x86)
+- **EFA dla HPC/ML:** Gdy potrzebujesz >100 Gbps między instancjami lub MPI
+- **Placement Groups:** Cluster dla latency, Spread dla HA
+
+### Domena 3: Continuous Improvement for Existing Solutions
+
+- **Compute Optimizer:** Automatyczne zalecenia right-sizing (na podstawie 14-dniowych metryk CloudWatch)
+- **Migration t2 → t3:** t3 tańszy, lepszy, Unlimited stabilniejszy, brak opłaty za ENA
+- **gp2 → gp3:** gp3 tańszy ($0.08 vs $0.10/GB) i lepszy (niezależny IOPS config)
+- **Spot migration pattern:** Użyj ASG Mixed Instances Policy (On-Demand baseline + Spot dla scale)
+
+### Domena 4: Accelerate Workload Migration and Modernization
+
+- **AWS Migration Hub + AWS Application Migration Service (MGN):** Lift-and-shift EC2 z on-prem
+- **Instance type matching:** Użyj `vmimport/export` lub MGN — automatycznie dobiera EC2 type
+- **Modernization:** Lift to EC2 → refactor do ECS/Fargate lub Lambda (gdzie możliwe)
+- **Graviton migration:** Kompiluj aplikację dla ARM, testuj kompatybilność, oszczędź ~40%
+
+---
+
+## 10.12 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Co oznacza sufiks `g` w nazwie instancji `m7g.xlarge`?
+
+> **Odpowiedź:** `g` = **AWS Graviton** — procesor ARM zaprojektowany przez Amazon. `m7g.xlarge` = General Purpose, 7. generacja, Graviton, rozmiar xlarge. Nie mylić z rodziną `G` (GPU) — tam `G` to pierwsza litera rodziny.
+
+---
+
+**Pytanie 2:** Firma ma aplikację webową z bardzo nieregularnym ruchem — spokojna przez 80% dnia, spike 5x przez 20%. Jaki typ instancji?
+
+> **Odpowiedź:** **T3 (burstable)** z CPU Credits. Przez 80% dnia zbiera kredyty (idle), przez 20% spędza na burst. Tańsze niż `m` (pełna moc cały czas). Jeśli burst jest dłuższy niż kredyty pozwalają — `T3 Unlimited` lub zmień na `m6i`.
+
+---
+
+**Pytanie 3:** Jaka jest proporcja vCPU:RAM dla rodziny R?
+
+> **Odpowiedź:** **1:8** (1 vCPU = 8 GiB RAM). `r6i.xlarge` = 4 vCPU, 32 GiB. Używaj R dla memory-intensive workloadów: Redis, Memcached, SAP HANA (mniejsze), in-memory analytics.
+
+---
+
+**Pytanie 4:** Różnica między Spot `one-time` a `persistent`?
+
+> **Odpowiedź:** **One-time:** AWS uruchamia gdy cena ≤ max i Spot dostępna; gdy AWS przerwie (capacity/price) — instancja jest terminated i request wygasa. **Persistent:** po przerwaniu AWS automatycznie próbuje ponownie uruchomić gdy warunki się poprawią. Użyj persistent dla długich batch jobów.
+
+---
+
+**Pytanie 5:** Firma płaci za Windows Server On-Demand. Mają już licencje z Software Assurance. Jak zoptymalizować koszty?
+
+> **Odpowiedź:** **Dedicated Hosts + BYOL (Bring Your Own License)**. Licencje Windows Server z SA pozwalają na BYOL na AWS Dedicated Hosts. Opłata: tylko za host (nie za Windows licensing overhead w cenie EC2). Oszczędność: do 40-50% vs On-Demand z Microsoft licencją.
+
+---
+
+**Pytanie 6:** Co to jest EC2 Instance Profile i dlaczego lepszy od access keys?
+
+> **Odpowiedź:** **Instance Profile** = kontener IAM Role dla EC2 — instancja automatycznie dostaje temporary credentials przez metadata service (rotowane co godzinę). Aplikacja używa AWS SDK który automatycznie pobiera credentials z `http://169.254.254.169/latest/meta-data/iam/...`. Brak hardcoded access keys = brak ryzyka wycieku w kodzie/logach.
+
+---
+
+**Pytanie 7:** Różnica między `gp3` a `gp2` EBS?
+
+> **Odpowiedź:** **gp3** tańszy ($0.08 vs $0.10/GB) i lepszy: IOPS i throughput konfigurowane **niezależnie** od rozmiaru (do 16K IOPS + 1000 MB/s). **gp2**: IOPS = 3 × GB (max 16000), max throughput 250 MB/s. Migracja gp2→gp3: zero downtime (hot migration), zazwyczaj tańsza i lepsza. Zawsze używaj gp3.
+
+---
+
+**Pytanie 8:** Firma chce uruchomić Hadoop cluster z dużą ilością lokalnego storage. Jaka rodzina?
+
+> **Odpowiedź:** **Rodzina D (Dense Storage)** — `d3.8xlarge` = 32 vCPU, 256 GiB RAM, 24× 2 TB HDD = 48 TB lokalnego storage. Hadoop/HDFS działa najlepiej z dużą ilością taniego storage i wysoką throughput. Alternatywnie rodzina I dla wysokiego IOPS + mniejszy storage.
+
+---
+
+**Pytanie 9:** Co to jest IMDSv2 i dlaczego jest ważny dla bezpieczeństwa?
+
+> **Odpowiedź:** **IMDSv2 (Instance Metadata Service v2)** = session-oriented API dla metadata. Wymaga PUT request (token) przed GET → chroni przed SSRF (Server-Side Request Forgery) atakami gdzie złośliwy kod w aplikacji pobiera credentials z metadata. **IMDSv1** = prosty GET bez tokenu = podatny na SSRF. Wymuszaj IMDSv2: `HttpTokens=required` przy launch lub aws cli.
+
+```bash
+aws ec2 modify-instance-metadata-options \
+  --instance-id i-12345678 \
+  --http-tokens required
+```
+
+---
+
+**Pytanie 10:** Firma ma 100 EC2 o różnych typach. Jak dowiedzieć się które są przewymiarowane?
+
+> **Odpowiedź:** **AWS Compute Optimizer** — analizuje metryki CloudWatch z ostatnich 14 dni (CPU, memory, network) i rekomenduje optymalne typy. Dostępne przez konsole lub CLI. Może zidentyfikować instancje używające <10% CPU i zaproponować mniejszy/tańszy typ. Bezpłatna usługa.
+
+---
+
+**Pytanie 11:** Różnica między Dedicated Host a Dedicated Instance?
+
+> **Odpowiedź:** **Dedicated Host:** Wynajem całego fizycznego serwera, widoczność socket/core, BYOL support. **Dedicated Instance:** Instancje na sprzęcie dedykowanym Twojemu kontu, ale bez widoczności fizycznej, nie obsługuje wszystkich BYOL. DH: droższy ale pełna kontrola. DI: tańszy, mniej kontroli.
+
+---
+
+**Pytanie 12:** Co to jest `io2 Block Express` i kiedy go używać?
+
+> **Odpowiedź:** Najwyższa klasa EBS — do **256 000 IOPS** i 4 000 MB/s throughput. Multi-attach: ten sam wolumin podłączony do wielu EC2 (dla clustered filesystems). Używaj dla: Oracle RAC, SQL Server, SAP HANA, mission-critical databases wymagających maksymalnego I/O. Cena najwyższa.
+
+---
+
+**Pytanie 13:** Firma potrzebuje EC2 na 3 lata dla stabilnego workloadu. Jak zaoszczędzić maksymalnie?
+
+> **Odpowiedź:** **Reserved Instance Standard, 3 lata, All Upfront** — do 72% taniej vs On-Demand. Alternatywnie **EC2 Instance Savings Plans, 3 lata** — nieco mniej (do 72%) ale z możliwością zmiany rozmiaru w rodzinie. Przy pewności co do rodziny i regionu: RI Standard All Upfront = maksymalne oszczędności.
+
+---
+
+**Pytanie 14:** Co to jest Spot Fleet `capacityOptimized` i dlaczego zalecane?
+
+> **Odpowiedź:** Strategia alokacji która wybiera pule Spot z **największą dostępną pojemnością** (nie najtańsze). Instancje z największą pojemnością mają mniejsze prawdopodobieństwo przerwania. Lepsze dla workloadów gdzie stabilność ważniejsza niż koszt. `lowestPrice` daje najtańsze ale najbardziej niestabilne instancje.
+
+---
+
+**Pytanie 15:** Firma chce zagwarantować że ma 10 instancji `m6i.xlarge` w eu-west-1a zawsze dostępnych. Jak?
+
+> **Odpowiedź:** **Capacity Reservation** — rezerwuje pojemność (nie płaci za rabat, płaci On-Demand rate). Gwarantuje że instancje można uruchomić gdy potrzebne. Połącz z Savings Plans lub RI żeby płacić mniej za zarezerwowaną pojemność.
+
+---
+
+**Pytanie 16:** Jaka jest różnica między `c6i` a `c6g`?
+
+> **Odpowiedź:** **c6i** = Intel Xeon (x86_64). **c6g** = AWS Graviton2 (ARM/AArch64). c6g jest zazwyczaj ~20% tańszy i ~20% lepszy energy-efficiency. Ale: wymagana kompatybilność oprogramowania z ARM. Jeśli masz gotowy ARM binary lub Dockerimage multi-arch: używaj c6g/c7g. Jeśli software tylko x86: c6i.
+
+---
+
+**Pytanie 17:** Co to jest `p5.48xlarge` i do czego służy?
+
+> **Odpowiedź:** `p5.48xlarge` = 8× NVIDIA H100 GPU (80 GB HBM3 każdy), 192 vCPU, 2 TB RAM, 3200 Gbps EFA networking, NVLink dla GPU interconnect. Flagowa instancja dla **large-scale deep learning training** (LLM training, foundation models). Droga: ~$98/h On-Demand.
+
+---
+
+**Pytanie 18:** Firma ma ML inference workload 24/7. Chcą najniższy koszt. GPU czy CPU?
+
+> **Odpowiedź:** Rozważ **AWS Inferentia** (`inf2.xlarge` itd.) — AWS custom chip dla inference, do **70% taniej** niż GPU instancje (G4/G5) dla porównywalnych inference workloadów. Wymaga: model skompilowany przez **AWS Neuron SDK** (obsługuje PyTorch, TensorFlow). Jeśli Neuron kompatybilny: inf2 > g5 kosztowo.
+
+---
+
+**Pytanie 19:** Co to jest Placement Group `Spread` i jakie ma ograniczenia?
+
+> **Odpowiedź:** Spread Placement Group = każda instancja na **innym rack** (inne zasilanie, sieć). Max **7 instancji per AZ** per group. Najwyższa izolacja hardware failures. Dla małych HA setups (np. 3 Zookeeper nodes, 3 Kafka brokers). Ograniczenie: max 7/AZ wyklucza duże clustry.
+
+---
+
+**Pytanie 20:** Firma chce uruchomić 1000 instancji Spot dla batch job. Jak zminimalizować ryzyko przerwania wszystkich naraz?
+
+> **Odpowiedź:** **Spot Fleet z `diversified` strategy** — rozkłada instancje po wielu pulach (kombinacje typ+AZ). Nawet jeśli jedna pula zostanie przerwana, inne działają. Dodaj `capacityOptimized` dla pul z największą pojemnością. Używaj wielu typów instancji (c5, c5a, c6i, m5 itd.) — wzajemnie wymienne.
+
+---
+
+**Pytanie 21:** Ile ENI może mieć `m6i.xlarge`?
+
+> **Odpowiedź:** `m6i.xlarge` = **4 ENI** (Network Interfaces). Każde ENI może mieć wiele prywatnych IP (dla m6i.xlarge: do 15 IP per ENI). Liczne ENI używane dla: multi-homed instances, NVA (Network Virtual Appliance), lub split-traffic architektura.
+
+---
+
+**Pytanie 22:** Różnica między `io1` a `io2`?
+
+> **Odpowiedź:** **io1**: do 64K IOPS, max 1000 MB/s, max 50 IOPS/GB. **io2**: do 64K IOPS (io2 Block Express: 256K), 4000 MB/s, 500 IOPS/GB, **Multi-Attach** support, **99.999% durability** (vs io1 99.8%). io2 taka sama cena jak io1 — zawsze używaj io2.
+
+---
+
+**Pytanie 23:** Co to jest `Launch Template` i czym różni się od `Launch Configuration`?
+
+> **Odpowiedź:** **Launch Template:** Nowszy, obsługuje wersjonowanie, Mixed Instances Policy (On-Demand + Spot), T2/T3 Unlimited config, Capacity Reservations. **Launch Configuration:** Legacy (deprecated), bez wersjonowania. AWS rekomenduje migrację do Launch Templates. ASG nowe — zawsze Launch Template.
+
+---
+
+**Pytanie 24:** Firma ma Reserved Instance `m5.xlarge` ale uruchomiła `m6i.xlarge`. Czy RI applies?
+
+> **Odpowiedź:** **Nie** dla Standard RI — RI `m5.xlarge` stosuje się tylko do `m5.xlarge`. **Tak** dla Convertible RI — można go "exchange" na RI dla `m6i.xlarge`. Alternatywnie: Compute Savings Plans — stosuje się do dowolnej rodziny EC2 (m5, m6i, c6i itd.).
+
+---
+
+**Pytanie 25:** Co to jest EC2 Hibernate?
+
+> **Odpowiedź:** EC2 Hibernate = **stop ale z zachowaniem RAM na EBS**. Przy hibernacji: RAM zapisywany na root EBS volume, instancja stopowana. Przy starcie: RAM przywrócony, procesy kontynuują. Szybszy start niż cold boot. Wymagania: instancja musi mieć encrypted root EBS, max 150 GB RAM, nie wszystkie typy obsługują.
+
+---
+
+**Pytanie 26:** Firma używa `t2.micro` na Free Tier. Aplikacja zaczyna rosnąć. Kiedy przenieść na `t3`?
+
+> **Odpowiedź:** Natychmiast gdy wychodzimy poza Free Tier. `t3.micro` jest tańszy od `t2.micro` (On-Demand), ma lepsze CPU (Nitro), wyższy baseline i lepszy burst. Migracja: stop → change instance type → start. Zero downtime możliwe przez Blue-Green deploy.
+
+---
+
+**Pytanie 27:** Co to jest Nitro System?
+
+> **Odpowiedź:** **AWS Nitro System** = własna platforma wirtualizacji AWS (hypervisor + karta sieciowa + storage). Zalety: (1) prawie 100% zasobów hosta → instancja (vs starsze gdzie hypervisor zabierał ~30%), (2) hardware isolation security, (3) Bare Metal możliwe bez overhead wirtualizacji. Wszystkie nowoczesne instancje (5. generacja+) używają Nitro.
+
+---
+
+**Pytanie 28:** Firma chce uruchomić SAP HANA w AWS. Jakie typy instancji?
+
+> **Odpowiedź:** **X1, X2, U rodziny** — certyfikowane przez SAP dla HANA. `x2iedn.metal` (896 vCPU, 1 TB RAM) lub `u-12tb1.metal` (448 vCPU, 12 TB RAM). SAP publikuje listę certyfikowanych AWS instancji. Nie można używać dowolnej instancji — SAP Support wymaga certyfikowanego sprzętu/wirtualizacji.
+
+---
+
+**Pytanie 29:** Co to jest `ec2:RunInstances` condition key `ec2:InstanceType`?
+
+> **Odpowiedź:** IAM condition pozwalająca ograniczyć jakie typy instancji użytkownik może uruchamiać:
+```json
+{
+  "Effect": "Allow",
+  "Action": "ec2:RunInstances",
+  "Resource": "arn:aws:ec2:*:*:instance/*",
+  "Condition": {
+    "StringLike": {"ec2:InstanceType": ["t3.*", "m6i.*"]}
+  }
+}
+```
+Używane w Service Control Policies dla organizacji lub w team-specific IAM policies.
+
+---
+
+**Pytanie 30:** Różnica między `stop` a `terminate` dla EC2?
+
+> **Odpowiedź:** **Stop:** Instancja zatrzymana (jak wyłącz PC). EBS root volume zachowany. Możesz wystartować ponownie. Nadal płacisz za EBS. Zmiana type możliwa gdy stopped. **Terminate:** Instancja usunięta na zawsze. Root EBS usunięty (domyślnie, `DeleteOnTermination=true`). Dodatkowe EBS volumes: domyślnie zachowane. Nie można cofnąć.
+
+---
+
+**Pytanie 31:** Co to jest EC2 Auto Recovery?
+
+> **Odpowiedź:** **CloudWatch Alarm → Auto Recovery** — gdy instancja straci connectivity (hardware failure, network), AWS automatycznie przenosi ją na nowy host z zachowaniem IP, metadata, EBS volumes. Konfiguracja: CloudWatch alarm na `StatusCheckFailed_System` metric → action `recover`. Ograniczenie: nie działa z Instance Store volumes.
+
+---
+
+**Pytanie 32:** Firma ma Mixed Instances Policy w ASG. Jak AWS dobiera typy instancji?
+
+> **Odpowiedź:** Konfiguracja: `OnDemandBaseCapacity` (minimum On-Demand instancji) + `OnDemandPercentageAboveBaseCapacity` (% On-Demand powyżej bazy, reszta Spot) + lista typów instancji (np. m6i.xlarge, m5.xlarge, m5a.xlarge). AWS używa `capacityOptimized` lub innej strategii alokacji Spot. ASG zastępuje terminated Spot z innym typem z listy automatycznie.
+
+---
+
+**Pytanie 33:** Co to jest `ec2-instance-connect` i jak różni się od SSH?
+
+> **Odpowiedź:** **EC2 Instance Connect** = tymczasowy klucz SSH wgrywany przez AWS na 60 sekund przez API. Użytkownik nie potrzebuje permanentnego klucza SSH. IAM kontroluje dostęp (nie plik `.authorized_keys`). Przez AWS Console (browser SSH) lub CLI. Bezpieczniejsze: klucz jednorazowy + IAM audit trail.
+
+---
+
+**Pytanie 34:** Firma chce sprawdzić ile kosztuje zmiana wszystkich EC2 na Graviton. Jak?
+
+> **Odpowiedź:** **AWS Compute Optimizer** z ustawionym filtrem Graviton — rekomenduje Graviton-equivalent typ i szacuje oszczędności. Lub ręcznie: każda x86 rodzina ma ARM odpowiednik (m6i → m7g, c6i → c7g, r6i → r7g). AWS Pricing Calculator dla porównania.
+
+---
+
+**Pytanie 35:** Jaka jest różnica między `t3.unlimited` a `t3.standard`?
+
+> **Odpowiedź:** **Standard:** CPU kredyty mogą się wyczerpać → CPU throttled do baseline (np. 10% dla t3.micro). Nie ma dopłat. **Unlimited:** Brak throttlingu — zawsze może burst. Gdy wyczerpie kredyty: opłata **$0.05/vCPU-h** powyżej baseline. Domyślnie: t3/t4g = Unlimited. Zmień na Standard jeśli chcesz predictable koszty.
+
+---
+
+**Pytanie 36:** Firma ma EC2 z 100% CPU przez 24/7 od 6 miesięcy. Jaka rekomendacja?
+
+> **Odpowiedź:** Typ jest za mały — scale up. Jeśli to C/M rodzina: switch do większego rozmiaru lub więcej instancji za ASG. Jeśli to T instancja: zdecydowanie zmień na C lub M (burstable nie dla sustained 100% CPU). Dodatkowo: Reserved Instance lub Savings Plans dla 60-72% rabatu na nowy, właściwy typ.
+
+---
+
+**Pytanie 37:** Co to jest `ec2:InstanceMarketType` condition key?
+
+> **Odpowiedź:** IAM condition do kontroli czy użytkownik może uruchamiać Spot:
+```json
+{
+  "Effect": "Deny",
+  "Action": "ec2:RunInstances",
+  "Resource": "arn:aws:ec2:*:*:instance/*",
+  "Condition": {
+    "StringEquals": {"ec2:InstanceMarketType": "spot"}
+  }
+}
+```
+Użycie: zabroń używania Spot w produkcji (przez SCP lub IAM policy).
+
+---
+
+**Pytanie 38:** Co to jest EFA i dla kogo?
+
+> **Odpowiedź:** **Elastic Fabric Adapter** — sieciowy adapter z RDMA (Remote Direct Memory Access) i OS-bypass dla MPI workloadów. Latency: mikrosekundy (vs milisekundy przez TCP). Bandwidth: do 3200 Gbps (p5 instancje). Dla: HPC klastrów (CFD, molecular dynamics), distributed deep learning (zamiast InfiniBand on-prem). Wymaga: EFA-capable instancja (HPC, P, Trn rodziny) + EFA-enabled AMI.
+
+---
+
+**Pytanie 39:** Firma kupiła RI Standard `m6i.xlarge` w eu-west-1. Uruchomiła `m6i.xlarge` w us-east-1. Czy RI applies?
+
+> **Odpowiedź:** **Nie** — Standard RI jest przypisany do konkretnego **regionu**. Instancja w innym regionie nie dostaje rabatu RI. Rozwiązanie: kup RI w us-east-1 osobno lub użyj Compute Savings Plans (cross-region).
+
+---
+
+**Pytanie 40:** Różnica między Cluster a Partition Placement Group?
+
+> **Odpowiedź:** **Cluster PG:** Wszystko w jednej AZ, jedna sieć, jeden "super-węzeł" z high bandwidth między maszynami. Max niski latency. Ryzyko: jeden hardware failure może dotknąć wiele instancji. **Partition PG:** Podział na "logiczne partycje" — każda na osobnym rack. Izolacja fault domains przy dużej skali (Hadoop, Cassandra). Do 7 partycji/AZ, wiele instancji per partycja.
+
+---
+
+**Pytanie 41:** Jakie informacje można pobrać z EC2 Instance Metadata Service?
+
+> **Odpowiedź:**
+```bash
+# Przykłady (IMDSv2 z tokenem):
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+
+curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/meta-data/instance-id       # i-12345678
+  http://169.254.169.254/latest/meta-data/instance-type     # m6i.xlarge
+  http://169.254.169.254/latest/meta-data/local-ipv4        # 10.0.1.5
+  http://169.254.169.254/latest/meta-data/public-ipv4       # 34.x.x.x
+  http://169.254.169.254/latest/meta-data/iam/security-credentials/MyRole  # temp creds
+  http://169.254.169.254/latest/meta-data/spot/termination-time  # Spot warning
+  http://169.254.169.254/latest/user-data                    # bootstrap script
+```
+
+---
+
+**Pytanie 42:** Firma chce uruchomić 1000-węzłowy HPC kluster. Jakie komponenty wybrać?
+
+> **Odpowiedź:** `hpc7g.16xlarge` lub `c7gn.16xlarge` (Graviton + EFA) + Cluster Placement Group (jeden AZ, max bandwidth) + EFA enabled + AWS ParallelCluster (zarządzanie HPC klusterem) + EFS lub FSx for Lustre (shared storage). Spot Fleet dla obliczeniowych węzłów (head node On-Demand).
+
+---
+
+**Pytanie 43:** Co to jest `DeleteOnTermination` dla EBS?
+
+> **Odpowiedź:** Flaga na każdym EBS volume przypiętym do EC2. Default: root volume `DeleteOnTermination=true` (usuwa się przy terminate). Data volumes: `DeleteOnTermination=false` (zachowują się). Można zmienić: przy launch (Launch Template) lub na działającej instancji dla root volume. Przy stop/hibernate: EBS zawsze zachowany (DeleteOnTermination nie dotyczy stop).
+
+---
+
+**Pytanie 44:** Różnica między `io2` a `io2 Block Express`?
+
+> **Odpowiedź:** **io2:** do 64 000 IOPS, do 1000 MB/s throughput, dla `nitro-based instances`. **io2 Block Express:** do 256 000 IOPS, do 4000 MB/s, sub-millisecond latency, Multi-Attach, tylko dla instancji `*.metal` lub R6i, X2idn, Im4gn etc. Block Express = nowa architektura storage backend. Najdroższa opcja EBS.
+
+---
+
+**Pytanie 45:** Firma używa Savings Plans. Kupiła $10/h Compute SP. Miesięczne EC2 koszty to $7000. Jak działa rabat?
+
+> **Odpowiedź:** Savings Plans pokrywa $10/h × 730h/mc = $7300/mc. Ponieważ faktyczne EC2 = $7000 < $7300 commitment — cały EC2 spend jest pokryty przez SP (z rabatem do 66%). Nadmiarowy commitment ($300 różnicy) jest stracony — płacisz pełne $7300 niezależnie. Kupuj SP nieco poniżej steady-state spend.
+
+---
+
+**Pytanie 46:** Co to jest EC2 Serial Console i kiedy używać?
+
+> **Odpowiedź:** Serial Console = dostęp do konsoli instancji przez szeregowy port (jak fizyczny monitor+klawiatura podłączony do serwera). Używaj gdy: kernel panic, SSH niedostępny, błąd konfiguracji sieci, troubleshoot boot issues. Wymaga: włączone przez account settings, instancja musi być w stanie "running", nie działa dla T2 i kilku starszych.
+
+---
+
+**Pytanie 47:** Firma ma autoscaling group i chce 70% On-Demand + 30% Spot. Jak?
+
+> **Odpowiedź:** ASG Mixed Instances Policy:
+```json
+{
+  "OnDemandBaseCapacity": 2,
+  "OnDemandPercentageAboveBaseCapacity": 70,
+  "SpotAllocationStrategy": "capacity-optimized",
+  "LaunchTemplateSpecification": {...},
+  "Overrides": [
+    {"InstanceType": "m6i.xlarge"},
+    {"InstanceType": "m5.xlarge"},
+    {"InstanceType": "m5a.xlarge"}
+  ]
+}
+```
+Pierwsze 2 instancje = On-Demand (base). Powyżej: 70% On-Demand, 30% Spot.
+
+---
+
+**Pytanie 48:** Co to jest AWS Compute Optimizer i co analizuje?
+
+> **Odpowiedź:** ML-based service analizujący: CPU, RAM (przez CloudWatch Agent), Network, Disk I/O przez **14 dni** historii. Rekomenduje: lepszy typ instancji (mniejszy/większy/inna rodzina), opcjonalnie Graviton. Dostępne dla: EC2, ECS Tasks, Lambda, EBS volumes, Auto Scaling Groups. Bezpłatne (Enhanced mode z 93 dni historii = płatne).
+
+---
+
+**Pytanie 49:** Co to jest EC2 Image Builder?
+
+> **Odpowiedź:** Pipeline do automatycznego tworzenia, testowania i dystrybucji AMI (Golden Images). Workflow: Source AMI → Build (install software, patches) → Test (security scans, app tests) → Distribute (multi-region, multi-account). Zastępuje ręczne tworzenie AMI. Integruje z Systems Manager, Inspector, Security Hub.
+
+---
+
+**Pytanie 50:** Firma ma 50 EC2 i chce sprawdzić compliance (patch level, vulnerability). Jakie narzędzie?
+
+> **Odpowiedź:** **AWS Systems Manager Patch Manager** — automatyczne patchowanie EC2. **Amazon Inspector** — skanowanie podatności (CVE) na EC2 i w container images. Razem: Patch Manager łata, Inspector skanuje. Bez potrzeby SSH — przez SSM Agent.
+
+---
+
+**Pytanie 51:** Różnica między `st1` a `sc1` EBS?
+
+> **Odpowiedź:** **st1 (Throughput Optimized HDD):** przeznaczony dla **frequently accessed**, throughput-intensive: big data, log processing, data warehouses. Max 500 IOPS, 500 MB/s. **sc1 (Cold HDD):** dla **infrequently accessed** danych: archiwum, backup. Max 250 IOPS, 250 MB/s. sc1 tańsze ($0.025 vs $0.045/GB). Oba: nie mogą być root volume.
+
+---
+
+**Pytanie 52:** Co to jest "burstable network bandwidth" dla EC2?
+
+> **Odpowiedź:** Mniejsze instancje (np. `m6i.xlarge`) mają **baseline bandwidth** (np. 750 Mbps) i **burst bandwidth** (do 10 Gbps przez chwilę). Duże instancje (`m6i.32xlarge`) mają dedykowane 50 Gbps. Burst network używa Network I/O credits (podobnie jak CPU credits w T rodzinie). Sprawdź w dokumentacji: `Baseline bandwidth (Gbps)` i `Burst bandwidth (Gbps)`.
+
+---
+
+**Pytanie 53:** Firma chce zreplikować EC2 z on-prem. Jakie narzędzie AWS?
+
+> **Odpowiedź:** **AWS Application Migration Service (MGN)** — ciągła replikacja blokowa z on-prem (lub innego cloud) do AWS. Po replikacji: test launch (staging VPC), cutover (production). Zastąpił AWS SMS (Server Migration Service). Bezpłatny przez 90 dni na serwer.
+
+---
+
+**Pytanie 54:** Co to jest `user data` w EC2?
+
+> **Odpowiedź:** Bootstrap script uruchamiany **raz** przy first launch (jako root). Shell script lub cloud-init directives. Użycie: instalacja software, konfiguracja aplikacji, download artefaktów z S3. Dostępny przez metadata service lub EC2 Console. Max 16 KB. Nie re-runs przy stop/start (chyba że konfigurujesz re-run przez cloud-init).
+
+```bash
+aws ec2 run-instances \
+  --user-data file://bootstrap.sh \
+  --image-id ami-12345678 \
+  --instance-type m6i.xlarge
+```
+
+---
+
+**Pytanie 55:** Firma ma EC2 w private subnet bez Internet access. Jak zainstalować pakiety z yum/apt?
+
+> **Odpowiedź:** Opcje: (1) **NAT Gateway** w public subnet → EC2 private → NAT GW → Internet. (2) **VPC Endpoint dla S3** → pobieraj pakiety z własnego S3 repo (prywatnie). (3) **Systems Manager Session Manager** + **SSM** (nie wymaga Internet — ma endpoint VPC). (4) **AWS CodeArtifact** — prywatne repo packages (npm, Maven, pip) z VPC endpoint.
+
+---
+
+**Pytanie 56:** Co to jest `AWS Nitro Enclaves`?
+
+> **Odpowiedź:** Izolowane środowisko obliczeniowe **wewnątrz EC2** bez dostępu do sieci, storage, interactive access. Uruchamia sensitive processing (klucze kryptograficzne, PII, machine learning model). Komunikacja: tylko przez vsock (virtual socket) do parent EC2. Certifiable jako Trusted Execution Environment. Użycie: przetwarzanie danych kart kredytowych, klucze prywatne, medical data.
+
+---
+
+**Pytanie 57:** Firma ma RI `m5.large` ale aplikacja potrzebuje `m5.xlarge` (2× większa). Jak?
+
+> **Odpowiedź:** Dla Standard RI: 2× `m5.large` RI = 1× `m5.xlarge` RI (normalization factor). AWS automatycznie normalizuje — dwa `m5.large` RI stosuje się do jednego `m5.xlarge`. Normalization factors: nano=0.25, micro=0.5, small=1, medium=2, large=4, xlarge=8, 2xlarge=16... etc.
+
+---
+
+**Pytanie 58:** Co to jest EC2 Fleet?
+
+> **Odpowiedź:** **EC2 Fleet** = ujednolicony interfejs do uruchamiania kombinacji On-Demand, RI i Spot instancji różnych typów. Podobne do Spot Fleet ale obsługuje wszystkie purchase options. Strategie: `lowestPrice`, `diversified`, `capacityOptimized`, `priceCapacityOptimized`. Używaj EC2 Fleet lub ASG Mixed Instances Policy dla nowoczesnych workloadów.
+
+---
+
+**Pytanie 59:** Firma chce wiedzieć ile kosztuje uruchomienie konkretnej konfiguracji EC2 zanim ją uruchomi. Jak?
+
+> **Odpowiedź:** **AWS Pricing Calculator** (calculator.aws) — szczegółowe kalkulacje. Lub CLI:
+```bash
+# Cena On-Demand przez Cost Explorer API lub Pricing API
+aws pricing get-products \
+  --service-code AmazonEC2 \
+  --filters "Type=TERM_MATCH,Field=instanceType,Value=m6i.xlarge"
+```
+Plus: **AWS Cost Explorer** dla istniejących zasobów + **Compute Optimizer** dla rekomendacji.
+
+---
+
+**Pytanie 60:** Opisz optymalną architekturę EC2 dla 3-tier web application (web, app, DB) z HA, security i kosztami w mind.
+
+> **Odpowiedź:**
+```
+Warstwa Web (Public):
+  ASG: t3.medium (burstable, web serving)
+  ALB przed ASG
+  Multi-AZ (min 2 instancje, 2 AZ)
+  Savings Plans lub RI dla baseline capacity
+  Spot dla extra scale (fault-tolerant web tier)
+  Security: SG only from ALB, IMDSv2, no public IP (ALB termination)
+
+Warstwa App (Private):
+  ASG: m6g.large (Graviton, general purpose)
+  NLB lub internal ALB
+  Multi-AZ
+  RI Standard 1 rok All Upfront dla steady-state
+  Savings Plans dla overflow
+
+Warstwa DB (Private):
+  RDS Multi-AZ (nie EC2 dla DB jeśli możliwe)
+  Jeśli EC2 DB: r6g.xlarge (Graviton, memory-optimized)
+  io2 EBS (wysokie IOPS)
+  RI 3 lata All Upfront (DB rzadko się zmienia)
+  Spread Placement Group (primary + replica na różnych rack)
+
+Wspólne:
+  Instance Profile (IAM Role, nie access keys)
+  SSM Session Manager (nie SSH, brak bastiona)
+  CloudWatch Agent + Compute Optimizer
+  Launch Templates (nie Launch Configurations)
+  EBS encryption domyślne (KMS)
+```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: EC2 rodziny, burstable, compute/memory/storage/accelerated, modele zakupu, On-Demand/RI/Savings Plans/Spot/Dedicated, EBS typy, networking ENI/EFA, Placement Groups*
+
+---
+
+# 11. Elastic Load Balancing — ALB, NLB, GWLB, CLB
+
+> **Zakres:** Kompletny przegląd czterech typów load balancerów AWS — Application (ALB), Network (NLB), Gateway (GWLB) i Classic (CLB legacy). Architektura, algorytmy, sticky sessions, SSL/TLS offloading, health checks, integracje, koszty.
+
+---
+
+## 11.1 Co to jest ELB i po co istnieje?
+
+**Elastic Load Balancing (ELB)** to zarządzana usługa AWS rozdzielająca ruch przychodzący między wiele celów (EC2, kontenery, IP, Lambda). AWS zarządza całą infrastrukturą load balancera — HA, skalowanie, patche.
+
+**Analogia z życia:** ELB to jak recepcja w dużym hotelu z wieloma liniami — recepcjonista (ELB) kieruje każdego gościa (request) do wolnego pokoju (serwera). Gdy jeden pokój jest zajęty (unhealthy), gość automatycznie trafia do innego.
+
+**Odpowiednik Azure:** Azure Load Balancer (L4, odpowiednik NLB) + Azure Application Gateway (L7, odpowiednik ALB) + Azure Gateway Load Balancer (GWLB).
+
+**Odpowiednik open-source:** HAProxy, nginx, Envoy, Traefik.
+
+### Dlaczego ELB, a nie własny load balancer na EC2?
+
+| Cecha | ELB (managed) | Własny HAProxy/nginx |
+|---|---|---|
+| **HA** | ✅ Wbudowane, multi-AZ | Ręczna konfiguracja |
+| **Skalowanie** | ✅ Automatyczne | Ręczne |
+| **SSL termination** | ✅ Wbudowane (ACM) | Ręczna konfiguracja |
+| **Health checks** | ✅ Wbudowane | Ręczna konfiguracja |
+| **Integracje AWS** | ✅ Auto Scaling, ECS, WAF | Brak |
+| **Koszt** | $/h + LCU | EC2 (wyższy baseline) |
+| **Patche/maintencance** | ✅ AWS zarządza | Ręczna |
+| **Kiedy własny** | — | Specyficzne funcje, legacy |
+
+---
+
+## 11.2 Cztery Typy Load Balancerów — Przegląd
+
+```mermaid
+graph TD
+    subgraph ELB["Elastic Load Balancing — Typy"]
+        ALB["🔵 ALB\nApplication Load Balancer\nLayer 7 (HTTP/HTTPS/gRPC)\nContent-based routing"]
+        NLB["🟢 NLB\nNetwork Load Balancer\nLayer 4 (TCP/UDP/TLS)\nUltra-low latency"]
+        GWLB["🟡 GWLB\nGateway Load Balancer\nLayer 3 (IP packets)\nVirtual appliances"]
+        CLB["⚫ CLB\nClassic Load Balancer\nLayer 4+7 (legacy)\nNIE używaj w nowych projektach"]
+    end
+```
+
+| | ALB | NLB | GWLB | CLB |
+|---|---|---|---|---|
+| **Warstwa OSI** | L7 (aplikacja) | L4 (transport) | L3 (sieć) | L4+L7 (stary) |
+| **Protokoły** | HTTP, HTTPS, gRPC, WebSocket | TCP, UDP, TLS | IP | HTTP, HTTPS, TCP |
+| **Routing** | Content-based (path, host, header) | IP:Port | GENEVE tunnel | Basic |
+| **Latency** | ~ms (wyższy) | ~µs (bardzo niski) | ~µs | ms |
+| **Static IP** | ❌ (DNS name) | ✅ (per-AZ EIP) | ❌ | ❌ |
+| **SSL offload** | ✅ | ✅ (TLS termination) | ❌ | ✅ |
+| **WAF integracja** | ✅ | ❌ | ❌ | ❌ |
+| **Lambda target** | ✅ | ❌ | ❌ | ❌ |
+| **IP target** | ✅ | ✅ | ✅ | ❌ |
+| **Zakres** | Regional | Regional | Regional | Regional |
+| **Status** | ✅ Aktywny | ✅ Aktywny | ✅ Aktywny | ⚠️ Legacy |
+
+---
+
+## 11.3 ALB — Application Load Balancer
+
+### Architektura i działanie
+
+ALB operuje na **warstwie 7** — rozumie HTTP/HTTPS. Może routować ruch na podstawie zawartości requestu (URL path, hostname, headers, query strings, metody HTTP).
+
+```
+Klient
+  │
+  ▼
+ALB (jeden DNS name, multi-AZ)
+  │
+  ├── Listener: :443 (HTTPS)
+  │     │
+  │     ├── Rule 1: path=/api/*  → Target Group: API Servers (EC2)
+  │     ├── Rule 2: path=/images/* → Target Group: Static Servers (EC2)
+  │     ├── Rule 3: host=mobile.example.com → Target Group: Mobile App
+  │     └── Default: → Target Group: Web Servers (EC2)
+  │
+  └── Listener: :80 (HTTP)
+        └── Rule: Redirect → https://#{host}/#{path}
+```
+
+### Komponenty ALB
+
+**Listener:**
+- Sprawdza przychodzące połączenia (port + protokół)
+- Ocenia reguły (rules) w kolejności priorytetu
+- Może być HTTP lub HTTPS
+
+**Rules (reguły routingu):**
+```
+Warunki (AND logic):
+  - host-header: mobile.example.com
+  - path-pattern: /api/*
+  - http-header: X-Custom-Header = value
+  - http-request-method: POST
+  - query-string: version=2
+  - source-ip: 10.0.0.0/8
+
+Akcje:
+  - forward → Target Group (z wagami)
+  - redirect → inny URL (301/302)
+  - fixed-response → zwróć statyczną odpowiedź (200/404/503 + body)
+  - authenticate-cognito → wymagaj logowania przez Cognito
+  - authenticate-oidc → wymagaj logowania przez OIDC provider
+```
+
+```bash
+# Utwórz ALB
+aws elbv2 create-load-balancer \
+  --name my-alb \
+  --subnets subnet-aaa subnet-bbb \    # min 2 różne AZ
+  --security-groups sg-12345678 \
+  --scheme internet-facing \           # lub internal
+  --type application
+
+# Utwórz Target Group
+aws elbv2 create-target-group \
+  --name my-tg \
+  --protocol HTTP \
+  --port 80 \
+  --vpc-id vpc-12345678 \
+  --target-type instance \             # instance | ip | lambda | alb
+  --health-check-path /health \
+  --health-check-interval-seconds 30
+
+# Dodaj regułę routingu
+aws elbv2 create-rule \
+  --listener-arn arn:aws:elasticloadbalancing:... \
+  --priority 10 \
+  --conditions '[{"Field":"path-pattern","Values":["/api/*"]}]' \
+  --actions '[{"Type":"forward","TargetGroupArn":"arn:..."}]'
+```
+
+### Target Types
+
+| Target Type | Opis | Kiedy |
+|---|---|---|
+| **instance** | EC2 instancje po ID | Tradycyjne EC2 apps |
+| **ip** | Dowolny IP (VPC, on-prem przez DX/VPN) | Kontenery (ECS), on-prem, multi-VPC |
+| **lambda** | AWS Lambda function | Serverless backend |
+| **alb** | Inny ALB (nested) | Multi-tenant, micro-frontend isolation |
+
+> ⚠️ **Egzamin:** Typ `ip` pozwala targetować **prywatne IP** — EC2 w innym VPC (przez Peering), on-prem serwery (przez DX/VPN). Używane w ECS gdy kontener ma dynamiczne IP.
+
+### Weighted Target Groups (Traffic Shifting)
+
+```bash
+# Blue/Green lub Canary deployment przez wagi
+aws elbv2 modify-rule \
+  --rule-arn arn:... \
+  --actions '[{
+    "Type": "forward",
+    "ForwardConfig": {
+      "TargetGroups": [
+        {"TargetGroupArn": "arn:...blue", "Weight": 90},
+        {"TargetGroupArn": "arn:...green", "Weight": 10}
+      ],
+      "TargetGroupStickinessConfig": {"Enabled": false}
+    }
+  }]'
+
+# 90% → stara wersja (blue), 10% → nowa wersja (green)
+# Stopniowo zmieniaj wagi: 80/20 → 50/50 → 0/100
+```
+
+### Sticky Sessions (Session Affinity)
+
+```
+Bez sticky sessions:
+  User request 1 → Server A
+  User request 2 → Server B  ← różny serwer, utrata sesji!
+
+Ze sticky sessions (duration-based):
+  User request 1 → Server A  ← cookie AWSALB ustawiony
+  User request 2 → Server A  ← cookie = ta sama instancja
+  User request 3 → Server A  ← przez X sekund (max 7 dni)
+
+Ze sticky sessions (application-based):
+  Twoja aplikacja kontroluje cookie → ALB czyta twój cookie
+```
+
+```bash
+aws elbv2 modify-target-group-attributes \
+  --target-group-arn arn:... \
+  --attributes \
+    Key=stickiness.enabled,Value=true \
+    Key=stickiness.type,Value=lb_cookie \   # lub app_cookie
+    Key=stickiness.lb_cookie.duration_seconds,Value=86400
+```
+
+> ⚠️ **Egzamin:** Sticky sessions = mniej equal distribution, potencjalnie nieoptymalne balansowanie. Lepiej: trzymaj sesję w zewnętrznym storage (Redis/DynamoDB) i nie używaj sticky.
+
+### SSL/TLS Termination i SNI
+
+```
+ALB z SNI (Server Name Indication):
+  - Jeden ALB może obsługiwać WIELE certyfikatów SSL
+  - TLS rozróżnia który certyfikat na podstawie hostname (SNI)
+  - Max 25 certyfikatów per listener (można zwiększyć)
+
+Certyfikaty: z AWS ACM (bezpłatne, auto-renew) lub importowane
+
+Polityki SSL (security policy):
+  ELBSecurityPolicy-TLS13-1-2-2021-06  (TLS 1.3 + 1.2, rekomendowane)
+  ELBSecurityPolicy-2016-08            (TLS 1.0-1.2, legacy)
+```
+
+```bash
+# Dodaj certyfikat do Listener
+aws elbv2 add-listener-certificates \
+  --listener-arn arn:... \
+  --certificates CertificateArn=arn:aws:acm:eu-west-1:123:certificate/abc123
+```
+
+### Connection Draining / Deregistration Delay
+
+```
+Gdy instancja wyrejestrowana z TG (scale-in, deploy):
+  - ALB przestaje wysyłać NOWE requesty do tej instancji
+  - Ale czeka na dokończenie IN-FLIGHT requestów
+  - Domyślnie: 300 sekund (5 minut)
+  - Zakres: 1-3600s (ustaw niski dla szybkiego deploymentu)
+
+aws elbv2 modify-target-group-attributes \
+  --attributes Key=deregistration_delay.timeout_seconds,Value=30
+```
+
+### ALB Access Logs
+
+```bash
+# Włącz Access Logs → S3
+aws elbv2 modify-load-balancer-attributes \
+  --load-balancer-arn arn:... \
+  --attributes \
+    Key=access_logs.s3.enabled,Value=true \
+    Key=access_logs.s3.bucket,Value=my-alb-logs \
+    Key=access_logs.s3.prefix,Value=alb
+
+# Format logów: timestamp, elb, client:port, target:port, 
+# request_processing_time, target_processing_time, 
+# response_processing_time, elb_status_code, target_status_code,
+# received_bytes, sent_bytes, request, user_agent, ssl_cipher...
+```
+
+### ALB — Headers i X-Forwarded
+
+```
+ALB dodaje do requestu:
+  X-Forwarded-For: <original-client-IP>    ← prawdziwy IP klienta
+  X-Forwarded-Proto: https                 ← oryginalny protokół
+  X-Forwarded-Port: 443                    ← oryginalny port
+
+Twoja aplikacja może sprawdzić X-Forwarded-For zamiast source IP
+(bo source IP do EC2 = IP ALB node, nie klienta)
+```
+
+---
+
+## 11.4 NLB — Network Load Balancer
+
+### Architektura i działanie
+
+NLB operuje na **warstwie 4** — widzi tylko TCP/UDP/TLS, nie rozumie HTTP. Ultraszybki (mikrosekundowe latency), zachowuje source IP klienta.
+
+```
+Klient (IP: 1.2.3.4)
+  │
+  ▼
+NLB (Static IP per AZ — Elastic IP)
+  │
+  ├── Listener: :443 (TLS)
+  │     └── Target Group: TLS / TCP 443 → EC2 backends
+  │
+  ├── Listener: :53 (UDP)
+  │     └── Target Group: UDP 53 → DNS servers
+  │
+  └── Listener: :80 (TCP)
+        └── Target Group: TCP 80 → HTTP servers
+
+EC2 widzi: source IP = 1.2.3.4 (zachowane!)
+```
+
+### Kluczowe cechy NLB
+
+**Static IP per AZ:**
+```bash
+# NLB automatycznie dostaje Elastic IP per AZ
+# → niezmienne IP nawet przy skalowaniu
+# Przydatne: firewalle on-prem które whitelist-ują po IP
+
+aws elbv2 create-load-balancer \
+  --name my-nlb \
+  --type network \
+  --subnets subnet-aaa subnet-bbb \
+  --subnet-mappings \
+    SubnetId=subnet-aaa,AllocationId=eipalloc-11111 \  # własny EIP
+    SubnetId=subnet-bbb,AllocationId=eipalloc-22222
+```
+
+**Zachowanie source IP klienta:**
+```
+NLB TCP/UDP: source IP = prawdziwy IP klienta (nie NLB IP!)
+NLB TLS termination: source IP zachowane
+ALB: source IP = IP ALB node (musisz użyć X-Forwarded-For)
+
+Ważne: Security Groups na EC2 muszą zezwalać na ruch z IP klientów!
+(nie z IP NLB — bo NLB nie ma własnego SG dla L4 flow)
+```
+
+**Zonal DNS:**
+```
+NLB DNS: my-nlb-123456.eu-west-1.elb.amazonaws.com
+  → rozkłada po AZ
+
+Zonal DNS (per-AZ): eu-west-1a.my-nlb-123456.eu-west-1.elb.amazonaws.com
+  → zawsze trafia do konkretnej AZ (przydatne dla latency-sensitive)
+```
+
+### NLB — kiedy używać vs ALB
+
+| Potrzebujesz | Wybierz |
+|---|---|
+| HTTP/HTTPS routing (path, header) | ALB |
+| Static IP (Elastic IP) | NLB |
+| Ultra-low latency (µs) | NLB |
+| TCP/UDP (nie HTTP) | NLB |
+| Source IP preservation | NLB |
+| WebSockets (long-lived) | NLB lub ALB |
+| gRPC | ALB |
+| Lambda target | ALB |
+| WAF integration | ALB |
+| On-prem firewall whitelist | NLB (static IP) |
+| Gaming (UDP) | NLB |
+| IoT (MQTT/TCP) | NLB |
+| PrivateLink (VPC endpoint service) | NLB |
+
+### NLB + PrivateLink
+
+```
+NLB jest wymagany dla VPC Endpoint Services (PrivateLink):
+  
+Dostawca VPC:
+  EC2/ECS → NLB (endpoint service)
+  
+Klient VPC:
+  Interface Endpoint (ENI) → PrivateLink → NLB → EC2/ECS
+  
+Klient widzi ENI w swoim VPC — nie wie nic o VPC dostawcy
+Works: cross-account, cross-VPC, overlapping CIDR OK
+```
+
+### Cross-Zone Load Balancing
+
+```
+Bez Cross-Zone (domyślne dla NLB):
+  AZ-A: 3 instancje → 50% ruchu (po 16.7% każda)
+  AZ-B: 1 instancja → 50% ruchu (50% na jedną instancję!)
+  
+  → Nierówne obciążenie
+
+Z Cross-Zone (domyślne dla ALB):
+  AZ-A: 3 instancje → 37.5% łącznie (12.5% każda)
+  AZ-B: 1 instancja → 12.5%
+  
+  → Równe obciążenie wszystkich instancji
+
+NLB: Cross-Zone = domyślnie OFF (dodatkowy koszt $0.01/GB cross-AZ)
+ALB: Cross-Zone = domyślnie ON (wliczone w cenę)
+```
+
+```bash
+aws elbv2 modify-load-balancer-attributes \
+  --load-balancer-arn arn:... \
+  --attributes Key=load_balancing.cross_zone.enabled,Value=true
+```
+
+---
+
+## 11.5 GWLB — Gateway Load Balancer
+
+### Czym jest GWLB?
+
+**Gateway Load Balancer** to specjalizowany load balancer dla **wirtualnych urządzeń sieciowych** (NVA — Network Virtual Appliance): firewalle, IDS/IPS, DPI (Deep Packet Inspection). Działa na warstwie 3 — widzi surowe pakiety IP.
+
+**Analogia:** GWLB to jak punkt kontrolny celny — każda ciężarówka (pakiet) przechodzi przez kontrolę (firewall/IDS), a po przejściu jedzie dalej do celu.
+
+**Odpowiednik Azure:** Azure Gateway Load Balancer.
+
+### Architektura GWLB z GENEVE
+
+```
+Klient → Internet
+  │
+  ▼
+IGW (Internet Gateway)
+  │
+  ▼  ← Ingress Route Table: 0.0.0.0/0 → GWLB Endpoint
+GWLB Endpoint (VPC)
+  │  GENEVE tunnel (port 6081, zachowuje oryginalne pakiety)
+  ▼
+GWLB → Fleet wirtualnych firewalli (EC2: Palo Alto, Checkpoint, Fortinet)
+  │  
+  ▼  ← po inspekcji: approve lub drop
+GWLB Endpoint
+  │
+  ▼
+Docelowy zasób (EC2, ALB)
+
+Ruch powrotny (odpowiedź):
+  EC2 → GWLB Endpoint → GWLB → Firewall (inspekcja) → GWLB Endpoint → IGW → Klient
+```
+
+### GENEVE Protocol
+
+```
+GWLB używa GENEVE (Generic Network Virtualization Encapsulation):
+  - Encapsuluje oryginalne pakiety IP
+  - Port: UDP 6081
+  - Zachowuje: source IP, destination IP, wszystkie nagłówki
+  - Firewall widzi oryginalny pakiet (nie enkapsulowany)
+  - Po inspekcji: firewall wysyła pakiet z powrotem do GWLB
+
+Ważne: Firewall MUSI obsługiwać GENEVE/GWLB
+(Palo Alto VM-Series, Check Point CloudGuard, Fortinet FortiGate, etc.)
+```
+
+### Kiedy używać GWLB
+
+- Wymagana inspekcja WSZYSTKIEGO ruchu wchodzącego/wychodzącego
+- Regulacje: NGFW (Next-Generation Firewall) per compliance
+- IDS/IPS (Intrusion Detection/Prevention)
+- Centralny punkt inspekcji w hub-and-spoke (TGW + Inspection VPC)
+- Vendor-specific firewall (nie AWS Network Firewall)
+
+---
+
+## 11.6 CLB — Classic Load Balancer (Legacy)
+
+**NIE używaj w nowych projektach.** CLB to stary load balancer z EC2-Classic era.
+
+```
+CLB obsługuje:
+  - HTTP/HTTPS (L7 — ale bardzo ograniczone reguły)
+  - TCP/SSL (L4)
+  
+Braki vs ALB/NLB:
+  - Brak content-based routing
+  - Brak target groups
+  - Brak SNI (tylko jeden certyfikat per CLB)
+  - Brak Lambda targets
+  - Brak weighted routing
+  
+Kiedy zobaczysz CLB na egzaminie:
+  → To jest odpowiedź BŁĘDNA (chyba że pytanie wprost o legacy)
+  → Migracja: CLB → ALB lub NLB przez Load Balancer Migration Tool
+```
+
+---
+
+## 11.7 Health Checks — Szczegóły
+
+```
+ALB Health Check:
+  Protokół: HTTP/HTTPS
+  Path: /health (konfigurowalne)
+  Kod sukcesu: 200 (konfigurowalne, np. 200-299)
+  
+NLB Health Check:
+  Protokół: TCP/HTTP/HTTPS
+  TCP: tylko sprawdza czy port otwarty (3-way handshake)
+  HTTP: sprawdza status code
+  
+Parametry:
+  HealthCheckIntervalSeconds: 5-300s (default 30)
+  HealthyThresholdCount: 2-10 (default 3 = po 3 pass = healthy)
+  UnhealthyThresholdCount: 2-10 (default 3 = po 3 fail = unhealthy)
+  HealthCheckTimeoutSeconds: 2-120s (default 5)
+```
+
+```bash
+aws elbv2 modify-target-group \
+  --target-group-arn arn:... \
+  --health-check-path /health \
+  --health-check-interval-seconds 10 \
+  --healthy-threshold-count 2 \
+  --unhealthy-threshold-count 3 \
+  --matcher HttpCode=200-299
+```
+
+---
+
+## 11.8 ELB + Auto Scaling Group — Integracja
+
+```
+ASG automatycznie:
+  1. Uruchamia nową EC2 (scale-out)
+  2. Rejestruje ją w Target Group
+  3. ELB health check → healthy
+  4. ALB zaczyna wysyłać ruch
+
+Scale-in:
+  1. ASG wybiera instancję do terminacji
+  2. Wyrejestrowuje z TG (Deregistration Delay!)
+  3. ALB drainuje połączenia (connection draining)
+  4. Po drain: terminuje instancję
+
+Warm-up period (ASG cooldown):
+  Nowa instancja potrzebuje czasu na start
+  Instance Warmup: czas zanim ASG liczy metryki (np. 300s)
+  → nie wysyła ruchu przez ten czas? NIE — ALB wysyła gdy health check pass
+  → ASG nie skaluje ponownie przez warmup czas
+```
+
+---
+
+## 11.9 SSL/TLS — Tryby i Polityki
+
+### SSL Termination na ALB
+
+```
+Klient ──HTTPS──► ALB (terminacja SSL) ──HTTP──► EC2
+                    ↑ certyfikat ACM
+
+Zalety: EC2 nie musi obsługiwać SSL (CPU savings), centralny cert mgmt
+Wady: ruch ALB→EC2 jest nieszyfrowany (w VPC, akceptowalne)
+Dla compliance wymagającego E2E: użyj HTTPS na TG też
+```
+
+### SSL Passthrough na NLB
+
+```
+Klient ──TLS──► NLB (TCP passthrough) ──TLS──► EC2
+                ↑ NLB NIE terminuje SSL
+
+EC2 terminuje TLS, widzi prawdziwy IP klienta
+Używaj gdy: E2E encryption wymagane, lub EC2 potrzebuje client certificate
+```
+
+### SSL Bridging (Re-encryption)
+
+```
+Klient ──HTTPS──► ALB (terminacja SSL, inspekcja) ──HTTPS──► EC2
+                    ↑ ALB re-szyfruje do backend
+
+Używaj gdy: compliance wymaga E2E + ALB musi widzieć headers (L7 routing)
+```
+
+---
+
+## 11.10 ELB — Zaawansowane Funkcje
+
+### Idle Timeout
+
+```bash
+# Domyślnie: 60 sekund idle → connection closed
+# Dla long-lived connections (WebSocket, streaming): zwiększ
+aws elbv2 modify-load-balancer-attributes \
+  --attributes Key=idle_timeout.timeout_seconds,Value=4000
+```
+
+### Deletion Protection
+
+```bash
+aws elbv2 modify-load-balancer-attributes \
+  --attributes Key=deletion_protection.enabled,Value=true
+```
+
+### Slow Start Mode (ALB)
+
+```bash
+# Nowe instancje w TG dostają mały % ruchu przez X sekund
+# Pozwala na "rozgrzanie" aplikacji (cache, JVM JIT)
+aws elbv2 modify-target-group-attributes \
+  --attributes Key=slow_start.duration_seconds,Value=300
+# 300 sekund: od 0% → 100% stopniowo
+```
+
+### Request Routing Algorithms
+
+```
+ALB Target Group:
+  Round robin (default): kolejno do każdej instancji
+  Least outstanding requests: instancja z najmniej aktywnych requestów
+    → lepsze dla zmiennych czasów odpowiedzi (niektóre requesty długie)
+
+aws elbv2 modify-target-group-attributes \
+  --attributes Key=load_balancing.algorithm.type,Value=least_outstanding_requests
+```
+
+### Lambda Target (ALB → Lambda)
+
+```bash
+# ALB może wywołać Lambda bezpośrednio
+aws lambda add-permission \
+  --function-name my-function \
+  --statement-id AllowELBInvoke \
+  --action lambda:InvokeFunction \
+  --principal elasticloadbalancing.amazonaws.com \
+  --source-arn arn:aws:elasticloadbalancing:...
+
+# Lambda receives event:
+# {
+#   "requestContext": {"elb": {...}},
+#   "httpMethod": "GET",
+#   "path": "/api/users",
+#   "headers": {...},
+#   "body": null
+# }
+# Lambda musi zwrócić: statusCode, headers, body
+```
+
+### ALB Authentication (Cognito/OIDC)
+
+```bash
+# ALB wymaga logowania PRZED przekazaniem do backend
+aws elbv2 create-rule \
+  --actions '[{
+    "Type": "authenticate-cognito",
+    "Order": 1,
+    "AuthenticateCognitoConfig": {
+      "UserPoolArn": "arn:aws:cognito-idp:...",
+      "UserPoolClientId": "abc123",
+      "UserPoolDomain": "myapp.auth.eu-west-1.amazoncognito.com",
+      "OnUnauthenticatedRequest": "authenticate"
+    }
+  }, {
+    "Type": "forward",
+    "Order": 2,
+    "TargetGroupArn": "arn:..."
+  }]'
+
+# Użytkownik niezalogowany → redirect do Cognito login page
+# Po zalogowaniu → ALB forward z JWT headers do backend
+```
+
+---
+
+## 11.11 ELB — Koszty
+
+### ALB Pricing
+
+```
+Opłata:  $0.008/h (ALB hour) + $0.008/LCU-h
+
+LCU (Load Balancer Capacity Unit) = MAX z:
+  - Nowe połączenia:     25/s  = 1 LCU
+  - Aktywne połączenia:  3000 concurrent = 1 LCU
+  - Bandwidth:           1 GB/h = 1 LCU
+  - Reguły (Rules):      1000 evaluated rules/s = 1 LCU
+
+Przykład:
+  ALB hour: $0.008 × 730h/mc = $5.84/mc
+  + LCU: zależy od ruchu
+  
+Typowy mały ALB: ~$20-50/mc
+```
+
+### NLB Pricing
+
+```
+Opłata: $0.008/h (NLB hour) + $0.006/NLCU-h
+
+NLCU (Network Load Balancer Capacity Unit) = MAX z:
+  - Nowe TCP/UDP flows:  800/s = 1 NLCU
+  - Aktywne TCP flows:   100000 concurrent = 1 NLCU  
+  - Bandwidth:           1 GB/h = 1 NLCU
+  
+Cross-Zone Load Balancing: $0.01/GB (jeśli włączone)
+```
+
+### GWLB Pricing
+
+```
+Opłata: $0.008/h + $0.004/GWLCU-h
+
+Endpoint: $0.0035/h per endpoint + $0.004/GB
+```
+
+---
+
+## 11.12 ELB — Monitoring i Metryki
+
+```bash
+# Kluczowe metryki CloudWatch:
+
+# ALB:
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/ApplicationELB \
+  --metric-name RequestCount \
+  --dimensions Name=LoadBalancer,Value=app/my-alb/50dc6c495c0c9188
+
+# Ważne metryki ALB:
+# RequestCount           — liczba requestów
+# TargetResponseTime     — czas odpowiedzi backendu (p50, p95, p99!)
+# HTTPCode_Target_5XX    — błędy 5xx z backendu
+# HTTPCode_ELB_5XX       — błędy 5xx z samego ELB (timeout, no healthy)
+# HealthyHostCount       — liczba zdrowych instancji w TG
+# UnhealthyHostCount     — liczba niezdrowych
+# ActiveConnectionCount  — aktywne połączenia
+
+# NLB:
+# ActiveFlowCount        — aktywne TCP flows
+# NewFlowCount           — nowe flows/s
+# ProcessedBytes         — dane przetworzone
+# HealthyHostCount
+```
+
+---
+
+## 11.13 Well-Architected Framework — ELB
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Access logs do S3 → Athena dla analizy, CloudWatch dashboards (TargetResponseTime p99, 5XX rates), AWS X-Ray tracing dla distributed tracing przez ALB |
+| **Security** | HTTPS only (redirect HTTP→HTTPS), TLS 1.2/1.3 policy, AWS WAF na ALB (OWASP rules, rate limiting, IP blocking), ALB authentication (Cognito/OIDC) dla wewnętrznych apps, Deletion Protection |
+| **Reliability** | Multi-AZ subnety (min 2), Cross-Zone Load Balancing (ALB domyślnie), health checks odpowiednio czułe (interval, threshold), Connection Draining dla zero-downtime deploy, ASG + TG integration |
+| **Performance Efficiency** | NLB dla ultra-low latency TCP/UDP, ALB Least Outstanding Requests zamiast Round Robin (zmienne czasy odpowiedzi), Slow Start Mode dla warm-up, keep-alive connections, HTTP/2 na ALB |
+| **Cost Optimization** | Right-size: NLB tańszy per połączenie niż ALB dla prostego TCP, Idle Timeout tuning (unikaj zbyt długich), wyłącz Cross-Zone w NLB jeśli nie potrzebne (oszczędność na transfer), jeden ALB z regułami zamiast wielu ALB |
+| **Sustainability** | Konsolidacja: jeden ALB dla wielu aplikacji (path routing), nie twórz oddzielnych LB per aplikacja, wyłącz CLB (legacy, mniej efektywny) |
+
+---
+
+## 11.14 4 Domeny Egzaminacyjne SAP-C02
+
+### Domena 1: Design Solutions for Organizational Complexity
+
+- **NLB + PrivateLink** dla ekspozycji usług cross-account bez VPC Peering
+- **ALB + Cognito** dla centralnego auth w multi-tenant aplikacjach
+- **Shared ALB** (multi-tenant path routing) vs oddzielne ALB per tenant — cost vs isolation
+- **WAF na ALB** dla centralnej ochrony aplikacji w organizacji
+
+### Domena 2: Design for New Solutions
+
+- **Wybór ALB vs NLB**: HTTP routing → ALB, static IP / UDP / PrivateLink → NLB
+- **Weighted Target Groups** dla Blue/Green i Canary deploymentu
+- **GWLB** gdy wymagana inspekcja przez third-party firewall (compliance, NGFW)
+- **Lambda targets** dla event-driven backends za ALB
+
+### Domena 3: Continuous Improvement for Existing Solutions
+
+- **CLB → ALB migration**: Load Balancer Migration Tool, zero-downtime via DNS cutover
+- **HTTP → HTTPS**: Listener redirect rule (HTTP 301 → HTTPS)
+- **gp2 TG → Least Outstanding Requests** gdy response time niejednorodny
+- **Cross-Zone tuning** dla NLB: włącz gdy nierówna liczba instancji per AZ
+
+### Domena 4: Accelerate Workload Migration and Modernization
+
+- **ALB + ECS/Fargate**: target type `ip` dla dynamicznych portów kontenerów
+- **ALB + Lambda**: serverless migration bez zmiany klienta (ten sam DNS)
+- **NLB static IP**: wymagane gdy on-prem firewall whitelist per IP (nie DNS)
+- **GWLB dla brownfield**: wstaw inspekcję między istniejące zasoby bez refaktoru
+
+---
+
+## 11.15 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Firma potrzebuje routować ruch do `/api/*` do jednej grupy serwerów i `/web/*` do innej. Jaki load balancer?
+
+> **Odpowiedź:** **ALB** — działa na L7, obsługuje `path-pattern` routing rules. NLB (L4) nie rozumie URL path. Konfiguracja: Listener → Rule 1: path=/api/* → TG-API, Rule 2: path=/web/* → TG-Web.
+
+---
+
+**Pytanie 2:** On-premises firewall wymaga whitelistowania stałych IP dla połączeń do AWS. Jaki load balancer?
+
+> **Odpowiedź:** **NLB** — jedyny ELB z **static Elastic IP** per AZ. ALB ma DNS name (IP zmienia się). Konfiguracja: NLB z przypisanymi EIP → te IP podaj do konfiguracji on-prem firewalla.
+
+---
+
+**Pytanie 3:** Różnica między Cross-Zone Load Balancing w ALB a NLB?
+
+> **Odpowiedź:** **ALB:** Cross-Zone **domyślnie ON**, wliczone w cenę, brak dodatkowych opłat. **NLB:** Cross-Zone **domyślnie OFF** (każdy node NLB routuje tylko do swojej AZ), włączenie = $0.01/GB za ruch cross-AZ. Włącz Cross-Zone dla NLB gdy masz nierówną liczbę instancji per AZ.
+
+---
+
+**Pytanie 4:** Aplikacja wymaga E2E encryption (TLS od klienta do EC2). Jak skonfigurować?
+
+> **Odpowiedź:** **NLB z TCP passthrough** — NLB nie terminuje TLS, przekazuje surowy TLS do EC2 który sam terminuje. Source IP zachowane. Alternatywnie: ALB z HTTPS listener → HTTPS Target Group (SSL bridging — ALB terminuje i re-szyfruje).
+
+---
+
+**Pytanie 5:** Co to jest LCU w kontekście ALB kosztów?
+
+> **Odpowiedź:** **Load Balancer Capacity Unit** — jednostka rozliczeniowa ALB. Obliczana jako MAX z: nowych połączeń/s (25=1 LCU), aktywnych połączeń (3000=1 LCU), bandwidth (1 GB/h=1 LCU), evaluated rules/s (1000=1 LCU). Płacisz $0.008 per LCU-h. Im więcej ruchu/reguł, tym więcej LCU.
+
+---
+
+**Pytanie 6:** Firma chce zerowawartościowy downtime podczas deploymentu. Jak użyć ALB?
+
+> **Odpowiedź:** (1) **Weighted Target Groups**: stara TG 100%, nowa TG 0% → stopniowo zmieniaj. (2) Deregistration Delay: ustaw odpowiednio (np. 30s) żeby aktywne requesty dokończyć. (3) Health Check: nowe instancje muszą przejść HC zanim dostają ruch. (4) Slow Start Mode: stopniowe zwiększanie ruchu do nowych instancji.
+
+---
+
+**Pytanie 7:** ALB lub NLB dla aplikacji WebSocket?
+
+> **Odpowiedź:** **Oba obsługują WebSocket.** ALB: natywna obsługa WebSocket (upgrade HTTP→WS). NLB: TCP passthrough — WS działa jako long-lived TCP. Wybór zależy od innych wymagań: routing potrzebny → ALB; ultra-low latency / static IP → NLB.
+
+---
+
+**Pytanie 8:** Firma ma 3 instancje EC2 w AZ-A i 1 w AZ-B w NLB target group. Cross-Zone OFF. Jak rozkłada się ruch?
+
+> **Odpowiedź:** NLB bez Cross-Zone: każdy NLB node wysyła ruch TYLKO do instancji w swojej AZ. **50% ruchu → AZ-A** (3 instancje, po ~16.7% każda). **50% ruchu → AZ-B** (1 instancja, dostaje 50%). Instancja w AZ-B jest 3× bardziej obciążona. Rozwiązanie: włącz Cross-Zone lub wyrównaj liczbę instancji.
+
+---
+
+**Pytanie 9:** Różnica między ALB target type `instance` a `ip`?
+
+> **Odpowiedź:** **Instance:** ALB rejestruje EC2 po Instance ID, ruch idzie przez Security Group instancji, port jest stały. **IP:** ALB rejestruje po prywatnym IP (EC2, on-prem przez DX/VPN, ECS kontenery z dynamicznym portem). Używaj `ip` dla: ECS/Fargate (dynamiczne porty), multi-VPC, on-prem.
+
+---
+
+**Pytanie 10:** Co to jest Deregistration Delay i jak wpływa na deployment?
+
+> **Odpowiedź:** Czas który ALB/NLB czeka na dokończenie in-flight requestów po wyrejestrowaniu instancji z TG. Default 300s (5 min). Krótki (30s): szybszy deployment, ryzyko przerwania długich requestów. Długi (600s): bezpieczniejszy dla długich requestów, wolniejszy deployment. Ustaw bazując na max expected request duration aplikacji.
+
+---
+
+**Pytanie 11:** Firma używa ALB i skarży się że aplikacja nie widzi prawdziwego IP klienta. Jak naprawić?
+
+> **Odpowiedź:** ALB zastępuje source IP swoim IP. Prawdziwy IP klienta jest w headerze **`X-Forwarded-For`**. Skonfiguruj aplikację żeby czytała ten header zamiast source IP. Frameworks: Express.js: `req.headers['x-forwarded-for']`, Python/Flask: `request.headers.get('X-Forwarded-For')`. NLB nie ma tego problemu — zachowuje source IP.
+
+---
+
+**Pytanie 12:** Kiedy użyć GWLB?
+
+> **Odpowiedź:** Gdy potrzebujesz transparentnego routowania ruchu przez **third-party NVA (Network Virtual Appliance)**: Palo Alto, Check Point, Fortinet, IDS/IPS. GWLB enkapsuluje pakiety GENEVE, firewall widzi oryginalne pakiety, może approve/drop, odsyła przez GWLB. Używaj dla: compliance wymagającej NGFW, centralna inspekcja w hub-and-spoke, east-west inspection.
+
+---
+
+**Pytanie 13:** Firma chce żeby tylko zalogowani użytkownicy (przez Google) mieli dostęp do internal app za ALB. Jak?
+
+> **Odpowiedź:** **ALB OIDC Authentication**: Listener rule z action `authenticate-oidc` → Google jako IdP. Niezalogowany user → redirect do Google login → token → ALB sprawdza → forward do backend z JWT headers. Brak potrzeby pisania auth kodu w aplikacji.
+
+---
+
+**Pytanie 14:** Ile SSL certyfikatów może obsługiwać jeden ALB listener?
+
+> **Odpowiedź:** Do **25 certyfikatów** per listener (można zwiększyć przez Service Quotas). ALB używa **SNI** (Server Name Indication) — klient wysyła hostname w TLS handshake, ALB wybiera właściwy certyfikat. Jeden ALB obsługuje wiele domen z różnymi certyfikatami.
+
+---
+
+**Pytanie 15:** Firma ma CLB i chce migrować do ALB. Jak zrobić to bez downtime?
+
+> **Odpowiedź:** (1) Utwórz ALB z identyczną konfiguracją (TG, health checks). (2) Test: wyślij testowy ruch do ALB DNS. (3) **DNS weighted routing** (Route 53): CLB 100% → stopniowo: CLB 80% / ALB 20% → 50/50 → 0/100. (4) Usuń CLB po stabilizacji. AWS **Load Balancer Migration Tool** automatyzuje niektóre kroki.
+
+---
+
+**Pytanie 16:** Czym jest Slow Start Mode i kiedy go użyć?
+
+> **Odpowiedź:** Slow Start = nowa instancja w TG otrzymuje stopniowo rosnący procent ruchu przez skonfigurowany czas (1-900s). Startuje od małego % → 100% na końcu okresu. Użycie: **JVM aplikacje** (JIT compilation), aplikacje które budują cache przy starcie, microservices z długim warm-up. Zapobiega overwhelmowaniu nowej instancji na start.
+
+---
+
+**Pytanie 17:** Różnica między HTTP/1.1 a HTTP/2 w kontekście ALB?
+
+> **Odpowiedź:** ALB obsługuje **HTTP/2 od klienta do ALB** (multiplexing, header compression, server push). Jednak ALB → backend (Target Group): zawsze **HTTP/1.1**. Jeśli backend też musi rozmawiać HTTP/2: użyj gRPC (ALB obsługuje gRPC end-to-end). ALB HTTP/2 jest domyślnie włączone — żadna konfiguracja nie potrzebna.
+
+---
+
+**Pytanie 18:** Firma chce żeby ruch aplikacji mobilnej (host: api.mobile.example.com) trafiał do innej TG niż desktop (api.example.com). Jak?
+
+> **Odpowiedź:** ALB **Host-Header routing rule**: Rule 1: `host-header = api.mobile.example.com` → TG-Mobile. Rule 2: `host-header = api.example.com` → TG-Desktop. Oba domenowy muszą wskazywać na ten sam ALB DNS (CNAME lub Alias w Route 53).
+
+---
+
+**Pytanie 19:** Firma chce odrzucać (return 403) requesty bez nagłówka `X-API-Key`. Jak w ALB?
+
+> **Odpowiedź:** ALB Rule: condition `http-header: X-API-Key` IS NOT PRESENT (negacja) → action `fixed-response` status=403, body="Forbidden". Alternatywnie: AWS WAF na ALB z custom rule blokującą brak X-API-Key header. WAF: bardziej zaawansowane reguły, lepsza observability.
+
+---
+
+**Pytanie 20:** Co to jest NLB Zonal DNS i kiedy używać?
+
+> **Odpowiedź:** NLB tworzy per-AZ DNS record: `eu-west-1a.my-nlb-xxx.eu-west-1.elb.amazonaws.com`. Zawsze rozwiązuje do NLB node w tej konkretnej AZ. Użyj gdy: aplikacja kliencka powinna trafiać do konkretnej AZ (latency-sensitive), lub gdy testujesz konkretną AZ. Normalny DNS rozkłada po wszystkich AZ automatycznie.
+
+---
+
+**Pytanie 21:** Firma ma aplikację z krótkimi requestami (10ms) i długimi (30s). ALB algorytm routing?
+
+> **Odpowiedź:** **Least Outstanding Requests** — ALB wysyła nowy request do instancji z najmniejszą liczbą aktywnych requestów. Przy Round Robin: instancja obsługująca długie requesty dostaje tyle samo nowych jak ta obsługująca krótkie → przeciążenie. LOR automatycznie kompensuje różne czasy odpowiedzi.
+
+---
+
+**Pytanie 22:** Różnica między health check ALB a NLB?
+
+> **Odpowiedź:** **ALB HC:** HTTP/HTTPS, sprawdza status code (200 domyślnie, konfigurowalne np. 200-399). Głębsza inspekcja. **NLB HC TCP:** tylko 3-way handshake (port open/closed). Szybsze, mniej informacji. **NLB HC HTTP/HTTPS:** podobne do ALB. Wybierz HTTP HC dla NLB gdy potrzebujesz sprawdzić aplikację, nie tylko port.
+
+---
+
+**Pytanie 23:** Firma ma ALB przed ECS/Fargate. Kontenery mają dynamiczne porty. Jak skonfigurować TG?
+
+> **Odpowiedź:** Target type: **`ip`** — Fargate kontenery dostają ENI z prywatnym IP. ECS rejestruje IP:port dynamicznie w TG przy starcie kontenera, wyrejestrowuje przy stop. Nie używaj `instance` dla Fargate (nie ma instancji). Dla ECS on EC2: możesz użyć `instance` z dynamic port mapping.
+
+---
+
+**Pytanie 24:** ALB jest internet-facing. Czy EC2 za nim muszą mieć publiczne IP?
+
+> **Odpowiedź:** **Nie** — EC2 mogą być w private subnet bez publicznego IP. ALB (z publicznym IP) komunikuje się z EC2 przez prywatną sieć VPC (private IP EC2). Security Group EC2: zezwól na ruch z SG ALB lub CIDR ALB subnet. To best practice: ALB w public, EC2 w private.
+
+---
+
+**Pytanie 25:** Firma chce monitorować p99 latency aplikacji. Jaka metryka CloudWatch?
+
+> **Odpowiedź:** **`TargetResponseTime`** — czas odpowiedzi od wysłania requestu do backendu do otrzymania odpowiedzi. Percentyle: CloudWatch Statistics: `p99`, `p95`, `p50`. Utwórz alarm: `TargetResponseTime p99 > 2s` → SNS notification. Różni się od `RequestProcessingTime` (ALB processing, zazwyczaj ms).
+
+---
+
+**Pytanie 26:** Co to jest ALB `fixed-response` action?
+
+> **Odpowiedź:** ALB może zwrócić statyczną odpowiedź HTTP bezpośrednio (bez kontaktowania backend): konfigurowalne status code (2xx/4xx/5xx), content-type i body text. Użycie: maintenance page, odrzucanie brakujących headers, redirect z custom messages, mock endpoints.
+
+---
+
+**Pytanie 27:** Firma chce eksponować usługę (NLB) do innych VPC bez VPC Peering. Jak?
+
+> **Odpowiedź:** **AWS PrivateLink** — utwórz VPC Endpoint Service na NLB. Inne VPC tworzą Interface Endpoint → ENI w ich subnecie → PrivateLink tunnel → NLB. Działa cross-account, cross-VPC, overlapping CIDR OK. NLB jest wymagany (nie ALB) dla Endpoint Service.
+
+---
+
+**Pytanie 28:** Jaka jest różnica między `internet-facing` a `internal` ALB?
+
+> **Odpowiedź:** **Internet-facing:** ALB nodes dostają publiczne IP — dostępny z Internetu. **Internal:** ALB nodes dostają tylko prywatne IP — dostępny tylko z VPC (lub przez VPN/DX). Internal ALB używaj dla: komunikacja między tier (frontend ALB → internal ALB → backend), microservices w VPC, api gateway pattern.
+
+---
+
+**Pytanie 29:** Firma ma sticky sessions włączone. Co się stanie gdy instancja stanie się unhealthy?
+
+> **Odpowiedź:** ALB automatycznie **przekieruje sticky session na zdrową instancję**. Cookie AWSALB jest updatowane do nowej instancji. Sesja jest utracona po stronie aplikacji (stan serwera-side), ale użytkownik zostaje przekierowany. Dlatego: nie trzymaj stanu sesji wyłącznie na instancji — użyj Redis/DynamoDB dla persystentnej sesji.
+
+---
+
+**Pytanie 30:** Co to jest ALB `authenticate-cognito` action i co się dzieje pod spodem?
+
+> **Odpowiedź:** ALB implementuje OIDC flow: (1) niezalogowany user → ALB redirect do Cognito Hosted UI, (2) user loguje się w Cognito, (3) Cognito wysyła authorization code do ALB callback URL, (4) ALB wymienia code na tokens (access, ID, refresh) przez backchannel, (5) ALB ustawia encrypted session cookie, (6) ALB forward request do backend z `x-amzn-oidc-*` headers zawierającymi user info.
+
+---
+
+**Pytanie 31:** NLB ma 4 instancje: 2 w eu-west-1a, 2 w eu-west-1b. Cross-Zone OFF. Klient w eu-west-1c wysyła request. Co się dzieje?
+
+> **Odpowiedź:** NLB node w eu-west-1c routuje do instancji w **swojej AZ** — ale nie ma tam instancji. Wynik: request jest **dropped** (bez odpowiedzi) lub **błąd połączenia**. Rozwiązanie: (1) dodaj instancje w eu-west-1c, lub (2) włącz Cross-Zone Load Balancing (NLB rozprawi ruch do wszystkich AZ). Zawsze deployuj TG w tych samych AZ co NLB subnets.
+
+---
+
+**Pytanie 32:** Firma chce HTTP→HTTPS redirect przez ALB. Jak?
+
+> **Odpowiedź:**
+```bash
+aws elbv2 create-listener \
+  --load-balancer-arn arn:... \
+  --protocol HTTP --port 80 \
+  --default-actions '[{
+    "Type": "redirect",
+    "RedirectConfig": {
+      "Protocol": "HTTPS",
+      "Port": "443",
+      "StatusCode": "HTTP_301"
+    }
+  }]'
+```
+HTTP listener: jedna reguła — redirect wszystkiego na HTTPS. HTTPS listener: normalne routing rules.
+
+---
+
+**Pytanie 33:** ALB vs NLB dla gaming backend (UDP, low latency)?
+
+> **Odpowiedź:** **NLB** — obsługuje UDP, ultra-low latency (µs vs ms ALB), source IP preservation (ważne dla game servers), brak HTTP overhead. ALB nie obsługuje UDP i ma wyższe latency (L7 processing). NLB jest jedynym wyborem dla UDP workloadów.
+
+---
+
+**Pytanie 34:** Co to jest `HealthyThresholdCount` i jak wpływa na failover?
+
+> **Odpowiedź:** Liczba consecutive health check **sukcesów** wymagana do przejścia z Unhealthy → Healthy. Default: 3. Przy niskim (2): szybsze odzyskanie po awarii. Przy wysokim (5): ostrożniejsze, mniej false-positive odzyskań. `UnhealthyThresholdCount`: consecutive failures → Unhealthy. Razem: `3 failures × 30s interval = 90s do unhealthy`.
+
+---
+
+**Pytanie 35:** Firma chce blokować SQL injection ataki na ALB. Jak?
+
+> **Odpowiedź:** **AWS WAF** (Web Application Firewall) dołączony do ALB. AWS Managed Rules: `AWSManagedRulesSQLiRuleSet` — gotowe reguły dla SQL injection detection. WAF inspektuje request body, headers, query strings. Block mode: zwraca 403. Log mode: loguje ale przepuszcza. Koszt: $5/mc per WAF WebACL + $1/mc per rule + $0.60 per 1M requests.
+
+---
+
+**Pytanie 36:** Co to jest ALB `forward` action z wieloma Target Groups?
+
+> **Odpowiedź:** **Weighted routing** — jeden request może trafić do jednej z wielu TG z prawdopodobieństwem proporcjonalnym do wag. `TG-Blue: weight=80, TG-Green: weight=20` = 80% do blue, 20% do green. Każdy request idzie do JEDNEJ TG (nie do obu). Używaj dla Blue/Green i Canary deployment.
+
+---
+
+**Pytanie 37:** Jaka jest różnica między ALB Access Logs a Request Tracing?
+
+> **Odpowiedź:** **Access Logs:** każdy request logowany do S3 (szczegóły: timestamp, IP, metody, status, latency). Analiza: Athena. **Request Tracing:** ALB dodaje header `X-Amzn-Trace-Id` do każdego requestu. Używany przez AWS X-Ray do distributed tracing (śledzi request przez ALB → EC2 → RDS itd.). Access Logs: post-mortem analysis. X-Ray/Trace ID: real-time distributed debugging.
+
+---
+
+**Pytanie 38:** Firma ma ALB i chce żeby tylko ruch z Cloudfront docierał do ALB. Jak?
+
+> **Odpowiedź:** (1) **AWS WAF** na ALB: custom header rule — CloudFront wysyła secret header `X-Origin-Verify: <secret>`, WAF blokuje requesty bez tego headera. (2) Alternatywnie: Security Group na ALB zezwala tylko na IP ranges CloudFront (ale CloudFront IP się zmieniają — używaj AWS-managed prefix list dla CloudFront). Opcja (1) jest bardziej niezawodna.
+
+---
+
+**Pytanie 39:** Co to jest NLB `preserve_client_ip` i kiedy jest domyślnie ON?
+
+> **Odpowiedź:** Flaga na NLB Target Group kontrolująca czy source IP klienta jest zachowane. **Domyślnie ON** dla: target type `instance` i `ip`. **Domyślnie OFF** dla: PrivateLink connections (source IP zawsze IP NLB w tym przypadku). Gdy OFF: security groups EC2 muszą zezwolić na IP NLB node (nie klienta).
+
+---
+
+**Pytanie 40:** Firma chce żeby jeden ALB obsługiwał 50 różnych aplikacji (multi-tenant SaaS). Jak?
+
+> **Odpowiedź:** **Host-based routing** — każda aplikacja ma swój subdomain (tenant1.saas.com, tenant2.saas.com). ALB: 50 reguł `host-header = tenantN.saas.com` → TG-N. SNI: 50 certyfikatów (lub wildcard *.saas.com = jeden certyfikat). Max: 100 reguł per listener (zwiększalne). Tańsze niż 50 osobnych ALB.
+
+---
+
+**Pytanie 41:** Co to jest GWLB Endpoint i czym różni się od GWLB?
+
+> **Odpowiedź:** **GWLB** = regionalny load balancer fleet wirtualnych firewalli. **GWLB Endpoint** = Interface Endpoint (ENI) w VPC który przechwytuje ruch i kieruje go do GWLB. Działają razem: ruch → GWLB Endpoint (VPC) → GENEVE tunnel → GWLB → Firewall → GWLB → GWLB Endpoint → dalej. Endpoint może być w innych VPC niż GWLB (cross-VPC inspection).
+
+---
+
+**Pytanie 42:** Kiedy ALB zwraca 502 Bad Gateway?
+
+> **Odpowiedź:** 502 = ALB dotarł do backendu ale dostał niepoprawną odpowiedź. Przyczyny: (1) backend zwrócił niepoprawny HTTP response, (2) backend zamknął połączenie niespodziewanie, (3) target nie obsługuje HTTP (np. TLS endpoint bez TLS config), (4) idle timeout ALB < request processing time backend. Różni się od 504 (timeout) i 503 (no healthy targets).
+
+---
+
+**Pytanie 43:** Firma chce skalować Load Balancer automatycznie z ruchem. Czy to potrzebne?
+
+> **Odpowiedź:** **Nie** — ELB auto-skaluje automatycznie (zarządzane przez AWS). Nie musisz konfigurować skalowania LB. Ale: przy nagłym dużym ruchu (cold start) LB potrzebuje czasu na skalowanie. **Pre-warming:** dla znanych skoków (Black Friday, launch) — skontaktuj się z AWS Support z wyprzedzeniem żeby pre-warm ALB. NLB skaluje szybciej niż ALB (bo L4 prostszy).
+
+---
+
+**Pytanie 44:** Co to jest ALB `connection idle timeout` i jak wpływa na WebSocket?
+
+> **Odpowiedź:** ALB zamyka idle connection po `idle_timeout.timeout_seconds` (default 60s). WebSocket może być idle (brak wiadomości) dłużej → ALB zamknie połączenie → użytkownik straci WebSocket. Rozwiązanie: (1) zwiększ idle timeout (max 4000s), lub (2) implementuj WebSocket heartbeat/ping poniżej timeout, lub (3) użyj NLB (brak HTTP idle timeout — TCP keepalive).
+
+---
+
+**Pytanie 45:** Firma eksponuje API przez ALB. Jak ograniczyć rate limiting (np. 100 req/s per IP)?
+
+> **Odpowiedź:** **AWS WAF** na ALB: Rate-based rule `LimitRequests100` — grupuj po `IP`, threshold 100 per 5-minutowe okno. Block action: zwróć 429 Too Many Requests. Alternatywnie: Amazon API Gateway ma wbudowany throttling, ale to osobny serwis. ALB sam w sobie nie ma rate limiting.
+
+---
+
+**Pytanie 46:** Co sprawdzić gdy `HealthyHostCount = 0` w Target Group?
+
+> **Odpowiedź:** Checklist: (1) **Security Group EC2** — zezwala na HC port z SG ALB lub `168.254.0.0/16` (APIPA, EC2 metadata/HC source)? (2) **Health check path** — zwraca 200? Sprawdź bezpośrednio z EC2. (3) **EC2 running** — status instancji OK? (4) **Port** — aplikacja słucha na HC port? (5) **NACL** — przepuszcza HC ruch? (6) **Timeout** — HC timeout < response time aplikacji?
+
+---
+
+**Pytanie 47:** Różnica między ALB `scheme=internet-facing` a `scheme=internal` z perspektywy DNS?
+
+> **Odpowiedź:** **Internet-facing:** DNS name rozwiązuje do **publicznych IP** ALB nodes (dostępne z Internetu). **Internal:** DNS name rozwiązuje do **prywatnych IP** ALB nodes (tylko VPC). W obu przypadkach: ALB node istnieje w subnet VPC. Internal ALB subnet: **nie** musi mieć IGW → działa w private subnet.
+
+---
+
+**Pytanie 48:** Firma chce mieć ALB per tenant dla izolacji (security requirement). Ale ma 200 tenantów. Problem?
+
+> **Odpowiedź:** AWS Limit: domyślnie **50 ALB per region** (soft limit, zwiększalne). Dla 200 tenantów: zwiększ limit przez Service Quotas lub użyj **host-based routing na jednym ALB** (target groups per tenant). Jeśli izolacja security wymagana: osobne ALB per tenant ale to kosztowne ($5.84/mc per ALB). Alternatywa: API Gateway per tenant (ma izolację per stage/key).
+
+---
+
+**Pytanie 49:** Co to jest ALB `Multi-value headers`?
+
+> **Odpowiedź:** Gdy Lambda jest target: normalnie ALB wysyła query string jako `key=value1` (pierwszy z wielu). `MultiValueHeaders=true` → ALB wysyła wszystkie wartości jako array: `key=["value1","value2"]`. Lambda event zawiera `multiValueQueryStringParameters` zamiast `queryStringParameters`. Włącz gdy Lambda musi obsługiwać multi-value params.
+
+---
+
+**Pytanie 50:** Firma chce używać tego samego backend za NLB dla połączeń z Internetu i z VPC. Jak?
+
+> **Odpowiedź:** **Dual NLB**: jeden internet-facing NLB (public) + jeden internal NLB (private) → oba wskazują na ten sam Target Group (te same EC2 instancje). Ruch zewnętrzny → public NLB, ruch wewnętrzny → internal NLB. EC2 Security Groups: zezwól na oba NLB source IPs.
+
+---
+
+**Pytanie 51:** Co to jest `slow_start.duration_seconds` i czym różni się od `deregistration_delay`?
+
+> **Odpowiedź:** **Slow Start:** Nowa instancja **zarejestrowana** w TG → stopniowe zwiększanie ruchu (0% → 100% przez X sekund). **Deregistration Delay:** Instancja **wyrejestrowywana** z TG → czekaj X sekund na dokończenie aktywnych połączeń. Slow start = ramp UP. Deregistration = graceful drain DOWN.
+
+---
+
+**Pytanie 52:** Firma używa NLB i aplikacja skarży się że widzi IP NLB zamiast IP klienta na niektórych instancjach. Jak naprawić?
+
+> **Odpowiedź:** Sprawdź target group attribute `preserve_client_ip`. Musi być `true`. Gdy `false` lub target type `alb` (nested LB): source IP = NLB IP. Włącz:
+```bash
+aws elbv2 modify-target-group-attributes \
+  --attributes Key=preserve_client_ip.enabled,Value=true
+```
+Potem: Security Groups EC2 muszą przepuszczać ruch z CIDR klientów (nie tylko NLB IP).
+
+---
+
+**Pytanie 53:** Ile reguł (rules) może mieć jeden ALB Listener?
+
+> **Odpowiedź:** Do **100 reguł** per Listener (wliczając default rule) — soft limit, zwiększalne przez Service Quotas. Każda reguła może mieć wiele warunków (AND). Reguły oceniane od najniższego priorytetu do najwyższego (priority 1 = pierwszy). Default rule: ostatnia (priorytet `default`).
+
+---
+
+**Pytanie 54:** Firma ma ALB i chce redirect `/old-path` → `/new-path`. Jak?
+
+> **Odpowiedź:**
+```bash
+aws elbv2 create-rule \
+  --priority 5 \
+  --conditions '[{"Field":"path-pattern","Values":["/old-path*"]}]' \
+  --actions '[{
+    "Type": "redirect",
+    "RedirectConfig": {
+      "Path": "/new-path#{path}",
+      "StatusCode": "HTTP_301",
+      "Protocol": "#{protocol}",
+      "Port": "#{port}",
+      "Host": "#{host}"
+    }
+  }]'
+# #{path} = oryginalna ścieżka po /old-path
+```
+
+---
+
+**Pytanie 55:** Co się stanie z ALB gdy wszystkie instancje w TG są unhealthy?
+
+> **Odpowiedź:** ALB zwraca **503 Service Unavailable** dla wszystkich requestów. Wyjątek: **Fail Open** — jeśli włączone (atrybut TG: `load_balancing.cross_zone.enabled`... nie, to coś innego). Właściwy atrybut: Target Group **Routing Failopen** — gdy włączone i wszystkie unhealthy: ALB WYSYŁA ruch mimo że unhealthy (zamiast 503). Fail Open używaj jako last resort.
+
+---
+
+**Pytanie 56:** Firma chce centralny punkt inspekcji dla ruchu east-west (między VPC) i north-south (Internet). Jakie rozwiązanie?
+
+> **Odpowiedź:** **TGW + GWLB** Inspection VPC pattern:
+```
+Internet → IGW → GWLB Endpoint → GWLB → Firewall Fleet → GWLB Endpoint → TGW → VPC cel (north-south)
+
+VPC A → TGW → Inspection VPC → GWLB Endpoint → GWLB → Firewall → GWLB Endpoint → TGW → VPC B (east-west)
+```
+TGW Route Tables z `Appliance Mode ON` (symetria ruchu). GWLB Fleet: Palo Alto/Check Point/Fortinet/AWS Network Firewall.
+
+---
+
+**Pytanie 57:** Czy ALB może być targetem NLB?
+
+> **Odpowiedź:** **Tak** — NLB target type `alb`. Przypadek użycia: chcesz static IP (NLB z EIP) + L7 routing (ALB). Client → NLB (static IP) → ALB (L7 routing) → EC2. Kiedy używać: on-prem firewall wymaga stałego IP + potrzebujesz content-based routing.
+
+---
+
+**Pytanie 58:** Firma ma API Gateway + ALB + EC2. Kiedy używać API GW zamiast ALB bezpośrednio?
+
+> **Odpowiedź:** **API Gateway gdy:** throttling/rate limiting per client, API keys management, request/response transformation, API versioning, caching, WebSocket API (managed), SDK generation, usage plans. **ALB bezpośrednio gdy:** brak potrzeby powyższych features, niski latency ważny (ALB < APIGW), koszt (APIGW droższe per request), nie-HTTP protokoły, prostota.
+
+---
+
+**Pytanie 59:** Co to jest NLB `TCP_UDP` listener?
+
+> **Odpowiedź:** Listener obsługujący zarówno TCP jak i UDP na tym samym porcie. Użycie: DNS server (port 53 TCP+UDP jednocześnie), gier protokoły mieszane. Konfiguracja:
+```bash
+aws elbv2 create-listener \
+  --load-balancer-arn arn:... \
+  --protocol TCP_UDP \
+  --port 53 \
+  --default-actions Type=forward,TargetGroupArn=arn:...
+```
+
+---
+
+**Pytanie 60:** Opisz pełną architekturę load balancing dla 3-tier app (web/app/db) z HA, security, zero-downtime deploy.
+
+> **Odpowiedź:**
+```
+Warstwa Web (Public):
+  Route 53 Alias → internet-facing ALB
+  ALB:
+    Listener 80: redirect → 443
+    Listener 443: 
+      - path=/api/* → TG-API (weight 90% v1 / 10% v2, canary)
+      - path=/* → TG-Web
+    WAF: OWASP rules, rate limit 1000/req/5min per IP
+    Access Logs → S3
+    Deletion Protection: ON
+    TLS Policy: TLS13-1-2-2021-06
+    Certyfikat: ACM wildcard *.example.com
+
+  TG-Web:
+    Type: instance (EC2 w private subnet)
+    HC: HTTP /health, interval=10s, threshold=2/2
+    Deregistration Delay: 30s
+    Slow Start: 120s
+    Algorithm: LeastOutstandingRequests
+    Stickiness: OFF (sesja w Redis)
+
+Warstwa App (Internal):
+  internal ALB
+  Listener 8080 HTTPS:
+    - path/* → TG-App
+  Security: tylko SG Web ALB może wysyłać ruch
+
+Warstwa DB:
+  RDS Multi-AZ (nie LB — RDS ma własny failover przez DNS)
+
+Deployment:
+  Blue/Green przez Weighted TG (100/0 → 0/100)
+  CodeDeploy lub ECS rolling deployment
+  
+Monitoring:
+  CloudWatch Alarm: TargetResponseTime p99 > 2s
+  CloudWatch Alarm: HTTPCode_Target_5XX > 1%
+  CloudWatch Alarm: HealthyHostCount < 1
+```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: ALB, NLB, GWLB, CLB, Target Groups, sticky sessions, SSL/TLS, health checks, routing rules, PrivateLink, WAF integration, Cross-Zone, Deregistration Delay, Slow Start*
+
+---
+
+# 12. HA, Redundancja i Skalowalność — EC2, ELB, ASG i Integracje
+
+> **Zakres:** Pełny przegląd mechanizmów wysokiej dostępności (HA), redundancji i skalowania dla EC2 i ELB. Auto Scaling Groups (ASG), Launch Templates, polityki skalowania, integracje ELB z różnymi typami endpointów (EC2, ECS, Lambda, on-prem, multi-VPC). Failure modes i recovery patterns.
+
+---
+
+## 12.1 Fundamenty HA i Redundancji w AWS
+
+### Hierarchia odporności na awarie
+
+```
+Poziom odporności (rosnąco):
+
+Single EC2 w jednej AZ
+  └─ Awaria instancji = downtime
+
+Multi-EC2 w jednej AZ + ELB
+  └─ Awaria instancji = ELB przenosi ruch; awaria AZ = downtime
+
+Multi-EC2 w wielu AZ + ELB (Cross-Zone)
+  └─ Awaria instancji = OK; awaria AZ = OK; awaria regionu = downtime
+
+Multi-Region (Active-Active lub Active-Passive)
+  └─ Awaria regionu = failover; awaria globalna = bardzo rzadka
+```
+
+**Analogia z życia:** Redundancja to jak rezerwa w wojsku. Jeden żołnierz (single EC2) pada — misja niewykonana. Pluton (multi-EC2 w AZ) — jeden pada, reszta działa. Kilka plutonów w różnych lokalizacjach (multi-AZ) — lokalna katastrofa nie zatrzymuje misji. Kilka baz w różnych krajach (multi-region) — nawet kraj w chaosie nie zatrzymuje operacji.
+
+### Terminy
+
+| Termin | Definicja |
+|---|---|
+| **HA (High Availability)** | System działa mimo awarii komponentów (mierzone jako % uptime: 99.9% = 8.76h/rok downtime) |
+| **Fault Tolerance** | System działa BEZ degradacji mimo awarii (droższe niż HA — wymaga nadmiarowości 1:1) |
+| **Redundancja** | Duplikacja komponentów dla HA/FT |
+| **RPO (Recovery Point Objective)** | Maksymalna akceptowalna utrata danych (np. 1h = możemy stracić max 1h danych) |
+| **RTO (Recovery Time Objective)** | Maksymalny akceptowalny czas przywrócenia (np. 15min = system musi działać w 15 min po awarii) |
+| **Scale-out (horizontal)** | Dodaj więcej instancji — preferowane w AWS |
+| **Scale-up (vertical)** | Większa instancja — wymaga restartu, nie dynamiczne |
+
+---
+
+## 12.2 Auto Scaling Group (ASG) — Fundament Skalowania EC2
+
+### Czym jest ASG?
+
+**ASG (Auto Scaling Group)** to mechanizm automatycznego zarządzania flotą EC2 — dodaje instancje gdy potrzeba więcej mocy, usuwa gdy obciążenie spada, zastępuje niedziałające instancje.
+
+**Analogia:** ASG to jak dyspozytor taksówek. Gdy więcej zamówień → wysyła więcej kierowców. Gdy mało zamówień → odsyła część do domu. Gdy kierowca zgłasza awarię → wysyła zastępstwo.
+
+```
+┌─────────────────────────────────────────────────────┐
+│               Auto Scaling Group                    │
+│                                                     │
+│  MinSize: 2 ──────┐                                │
+│  DesiredCapacity: 4 ─── aktualnie uruchomione      │
+│  MaxSize: 10 ─────┘                                │
+│                                                     │
+│  [EC2] [EC2] [EC2] [EC2]   ← Desired=4            │
+│   AZ-a  AZ-a  AZ-b  AZ-b  ← Multi-AZ rozkład     │
+└─────────────────────────────────────────────────────┘
+```
+
+### Launch Template (nie Launch Configuration!)
+
+```bash
+# Launch Template — nowoczesny sposób definiowania EC2 konfiguracji
+aws ec2 create-launch-template \
+  --launch-template-name my-app-lt \
+  --version-description "v1" \
+  --launch-template-data '{
+    "ImageId": "ami-12345678",
+    "InstanceType": "m6i.xlarge",
+    "SecurityGroupIds": ["sg-abc123"],
+    "IamInstanceProfile": {"Name": "MyAppRole"},
+    "UserData": "IyEvYmluL2Jhc2gK...",
+    "MetadataOptions": {"HttpTokens": "required"},
+    "BlockDeviceMappings": [{
+      "DeviceName": "/dev/xvda",
+      "Ebs": {"VolumeSize": 30, "VolumeType": "gp3", "Encrypted": true}
+    }],
+    "TagSpecifications": [{
+      "ResourceType": "instance",
+      "Tags": [{"Key": "App", "Value": "MyApp"}]
+    }]
+  }'
+
+# Utwórz ASG z Launch Template
+aws autoscaling create-auto-scaling-group \
+  --auto-scaling-group-name my-asg \
+  --launch-template LaunchTemplateName=my-app-lt,Version='$Latest' \
+  --min-size 2 \
+  --desired-capacity 4 \
+  --max-size 10 \
+  --vpc-zone-identifier "subnet-aaa,subnet-bbb,subnet-ccc" \  # Multi-AZ!
+  --target-group-arns "arn:aws:elasticloadbalancing:..." \
+  --health-check-type ELB \        # ELB sprawdza zdrowie (nie tylko EC2 status)
+  --health-check-grace-period 300  # 5 min na start aplikacji
+```
+
+### Typy Health Check w ASG
+
+```
+EC2 Health Check (domyślny):
+  Sprawdza: EC2 status checks (hardware, hypervisor, OS)
+  Nie sprawdza: czy aplikacja odpowiada na port 80
+
+ELB Health Check (REKOMENDOWANE z ALB/NLB):
+  Sprawdza: EC2 status + ELB health check (HTTP 200 na /health)
+  Gdy ELB uzna instancję za Unhealthy:
+    → ASG terminuje instancję i uruchamia nową (auto-replacement!)
+  
+  aws autoscaling update-auto-scaling-group \
+    --auto-scaling-group-name my-asg \
+    --health-check-type ELB \
+    --health-check-grace-period 300
+```
+
+> ⚠️ **Egzamin:** `health-check-grace-period` = czas po launch zanim ASG zacznie sprawdzać health. Jeśli za krótki → ASG terminuje zdrowe instancje które się jeszcze uruchamiają. Ustaw ≥ czasu startowania aplikacji.
+
+### ASG Lifecycle Hooks
+
+```
+Normalny flow:
+  Launch: Pending → InService
+  Terminate: Terminating → Terminated
+
+Z Lifecycle Hooks:
+  Launch Hook:
+    Pending → Pending:Wait (np. 1h) → Pending:Proceed → InService
+              ↑ Tutaj: konfiguruj instancję, pobierz config z S3,
+                rejestruj w CM DB, warm-up cache
+
+  Terminate Hook:
+    Terminating → Terminating:Wait (np. 1h) → Terminating:Proceed → Terminated
+                  ↑ Tutaj: graceful shutdown, flush logi, deregister z discovery
+
+aws autoscaling put-lifecycle-hook \
+  --auto-scaling-group-name my-asg \
+  --lifecycle-hook-name my-launch-hook \
+  --lifecycle-transition autoscaling:EC2_INSTANCE_LAUNCHING \
+  --default-result CONTINUE \
+  --heartbeat-timeout 300 \
+  --notification-target-arn arn:aws:sns:...   # SNS → Lambda → konfiguracja
+```
+
+---
+
+## 12.3 Polityki Skalowania ASG
+
+### 1. Simple Scaling (legacy, nie używaj)
+
+```
+IF CPU > 70% → dodaj 2 instancje
+WAIT 300s cooldown
+IF CPU > 70% → dodaj 2 instancje
+...
+
+Problem: cooldown = opóźnienie; może nie nadążać za ruchem
+```
+
+### 2. Step Scaling (zalecane dla reaktywnego)
+
+```
+IF CPU 70-80% → dodaj 1 instancję
+IF CPU 80-90% → dodaj 3 instancje
+IF CPU >90%   → dodaj 5 instancji
+IF CPU <30%   → usuń 2 instancje
+IF CPU <20%   → usuń 4 instancje
+
+Bez cooldown (każde przekroczenie progu → natychmiastowa akcja)
+Lepiej reaguje na nagłe skoki
+```
+
+```bash
+aws autoscaling put-scaling-policy \
+  --policy-name step-scale-out \
+  --auto-scaling-group-name my-asg \
+  --policy-type StepScaling \
+  --adjustment-type ChangeInCapacity \
+  --step-adjustments \
+    'MetricIntervalLowerBound=0,MetricIntervalUpperBound=10,ScalingAdjustment=1' \
+    'MetricIntervalLowerBound=10,MetricIntervalUpperBound=20,ScalingAdjustment=3' \
+    'MetricIntervalLowerBound=20,ScalingAdjustment=5'
+```
+
+### 3. Target Tracking Scaling (zalecane, najprostsze)
+
+```
+Utrzymuj: CPU = 50% (lub inne metryki)
+ASG automatycznie oblicza ile instancji potrzeba
+
+Przykład:
+  4 instancje, CPU=80% → ASG liczy: chcę 50%, mam 80%
+  Potrzebuję: 4 × (80/50) = 6.4 → zaokrągl = 7 instancji
+  Dodaj 3 instancje
+```
+
+```bash
+aws autoscaling put-scaling-policy \
+  --policy-name target-tracking-cpu \
+  --auto-scaling-group-name my-asg \
+  --policy-type TargetTrackingScaling \
+  --target-tracking-configuration '{
+    "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+    },
+    "TargetValue": 50.0,
+    "ScaleInCooldown": 300,
+    "ScaleOutCooldown": 60
+  }'
+
+# Inne predefined metryki:
+# ALBRequestCountPerTarget  ← NAJWAŻNIEJSZA dla web apps
+# ASGAverageNetworkIn
+# ASGAverageNetworkOut
+
+# Custom metric (np. SQS queue depth):
+aws autoscaling put-scaling-policy \
+  --policy-type TargetTrackingScaling \
+  --target-tracking-configuration '{
+    "CustomizedMetricSpecification": {
+      "MetricName": "ApproximateNumberOfMessagesVisible",
+      "Namespace": "AWS/SQS",
+      "Dimensions": [{"Name": "QueueName", "Value": "my-queue"}],
+      "Statistic": "Average"
+    },
+    "TargetValue": 10
+  }'
+```
+
+### 4. Scheduled Scaling
+
+```bash
+# Wiesz KIEDY będzie ruch (np. poniedziałek 9:00, przerwa 12:00)
+aws autoscaling put-scheduled-update-group-action \
+  --auto-scaling-group-name my-asg \
+  --scheduled-action-name scale-out-morning \
+  --recurrence "0 8 * * MON-FRI" \   # Cron: pn-pt 8:00 UTC
+  --min-size 5 \
+  --desired-capacity 10 \
+  --max-size 20
+
+aws autoscaling put-scheduled-update-group-action \
+  --scheduled-action-name scale-in-night \
+  --recurrence "0 20 * * *" \         # Każdy dzień 20:00 UTC
+  --desired-capacity 2
+```
+
+### 5. Predictive Scaling
+
+```
+ML-based: AWS analizuje historyczne metryki i przewiduje load
+Pre-skaluje PRZED spodziewanym szczytem (nie reaktywnie)
+
+Tryby:
+  ForecastOnly:      tylko prognoza, nie skaluje
+  ForecastAndScale:  prognoza + automatyczne skalowanie
+
+Wymaganie: ≥24h historii metryk (najlepiej ≥2 tygodnie)
+```
+
+```bash
+aws autoscaling put-scaling-policy \
+  --policy-name predictive-scaling \
+  --policy-type PredictiveScaling \
+  --predictive-scaling-configuration '{
+    "MetricSpecifications": [{
+      "TargetValue": 50,
+      "PredefinedMetricPairSpecification": {
+        "PredefinedMetricType": "ASGCPUUtilization"
+      }
+    }],
+    "Mode": "ForecastAndScale",
+    "SchedulingBufferTime": 300
+  }'
+# SchedulingBufferTime=300: skaluj 5 min PRZED prognozowanym szczytem
+```
+
+### Porównanie polityk skalowania
+
+| Polityka | Reakcja | Złożoność | Najlepszy dla |
+|---|---|---|---|
+| **Simple** | Cooldown = opóźnienie | Prosta | Legacy, nie używaj |
+| **Step** | Natychmiastowa | Średnia | Reaktywne na duże skoki |
+| **Target Tracking** | Automatyczna kalkulacja | Niska | Większość przypadków |
+| **Scheduled** | Pre-emptive | Niska | Znane wzorce (business hours) |
+| **Predictive** | Pre-emptive (ML) | Niska | Regularne wzorce tygodniowe |
+
+---
+
+## 12.4 ASG — Mixed Instances Policy (Spot + On-Demand)
+
+```bash
+aws autoscaling create-auto-scaling-group \
+  --auto-scaling-group-name mixed-asg \
+  --mixed-instances-policy '{
+    "LaunchTemplate": {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateName": "my-app-lt",
+        "Version": "$Latest"
+      },
+      "Overrides": [
+        {"InstanceType": "m6i.xlarge"},
+        {"InstanceType": "m5.xlarge"},
+        {"InstanceType": "m5a.xlarge"},
+        {"InstanceType": "c6i.xlarge"},
+        {"InstanceType": "c5.xlarge"}
+      ]
+    },
+    "InstancesDistribution": {
+      "OnDemandBaseCapacity": 2,
+      "OnDemandPercentageAboveBaseCapacity": 30,
+      "SpotAllocationStrategy": "price-capacity-optimized"
+    }
+  }' \
+  --min-size 2 \
+  --desired-capacity 6 \
+  --max-size 20 \
+  --vpc-zone-identifier "subnet-a,subnet-b,subnet-c"
+
+# Wynik przy Desired=6:
+# 2 On-Demand (base) + 4 instancje (30% OD = 1.2 → 2 OD, 70% Spot = 2 Spot)
+# Faktycznie: 2 base OD + 2 OD + 2 Spot = 4 OD + 2 Spot
+```
+
+### Strategie Spot w ASG
+
+| Strategia | Priorytet | Najlepszy dla |
+|---|---|---|
+| `lowest-price` | Najtańsze pule | Koszty (ryzyko interruption) |
+| `capacity-optimized` | Największa pojemność | Stabilność (mniej interruptions) |
+| `price-capacity-optimized` | Balans ceny i pojemności | **Rekomendowane** |
+| `diversified` | Rozkłada po pulach | Resilience dla Spot Fleet |
+
+---
+
+## 12.5 Warmup, Cooldown i Instance Refresh
+
+### Cooldown i Warmup
+
+```
+Scale-Out Cooldown (default 300s):
+  Po scale-out: czekaj X sekund zanim kolejna scale-out akcja
+  Cel: dać czas nowym instancjom na uruchomienie i stabilizację
+  
+Scale-In Cooldown (default 300s):
+  Po scale-in: czekaj X sekund zanim kolejna scale-in akcja
+  
+Instance Warmup (Target Tracking / Step Scaling):
+  Nowa instancja nie wliczana do metryk przez X sekund
+  Zapobiega "zbyt szybkiemu" scale-in zanim instancja się rozgrzeje
+  
+  Przykład bez warmup:
+    ASG skaluje do 6, 2 nowe instancje uruchamiają się
+    CPU nagle spada (2 nowe instancje "idle")
+    ASG myśli: za dużo → scale-in → terminuje 2 instancje
+    Błąd! Instancje się uruchamiały, nie były zbędne
+```
+
+### Instance Refresh — Rolling Deploy bez Downtime
+
+```bash
+# Zaktualizuj AMI/konfigurację bez downtime przez postupowe zastępowanie
+aws autoscaling start-instance-refresh \
+  --auto-scaling-group-name my-asg \
+  --preferences '{
+    "MinHealthyPercentage": 90,
+    "InstanceWarmup": 300,
+    "CheckpointPercentages": [20, 50, 100],
+    "CheckpointDelay": 600
+  }'
+
+# Działanie:
+# 1. Terminuje 10% instancji (MinHealthy=90% → max 10% w remoncie)
+# 2. Uruchamia nowe z nową konfiguracją
+# 3. Czeka na health check
+# 4. Kontynuuje do 20% → checkpoint (czeka 600s) → 50% → 100%
+# 
+# Rollback: aws autoscaling cancel-instance-refresh --asg my-asg
+```
+
+---
+
+## 12.6 ELB HA — Jak ELB Zapewnia Wysoką Dostępność
+
+### Multi-AZ ELB
+
+```
+ALB/NLB wymagają minimum 2 subnety w różnych AZ:
+
+ALB:
+  eu-west-1a: ALB node (auto-skaluje)
+  eu-west-1b: ALB node (auto-skaluje)
+  eu-west-1c: ALB node (auto-skaluje)
+  
+  → Jeden DNS name: my-alb-xxx.eu-west-1.elb.amazonaws.com
+  → DNS rozwiązuje do IP wszystkich node'ów (Round Robin DNS)
+  → Awaria jednej AZ: DNS usuwa IP tej AZ automatycznie
+
+NLB:
+  eu-west-1a: NLB node z Elastic IP #1
+  eu-west-1b: NLB node z Elastic IP #2
+  
+  → Każda AZ: osobny statyczny IP
+  → Awaria AZ: IP tej AZ nadal istnieje, ale nie odpowiada
+    (klient musi mieć retry/failover logic)
+```
+
+### ELB nie jest Single Point of Failure
+
+```
+AWS SLA dla ALB/NLB: 99.99% availability
+AWS zarządza:
+  - Skalowaniem ELB nodes (horizontal auto-scaling)
+  - HA między AZ (redundantne ELB nodes)
+  - Patchowaniem i aktualizacjami
+  
+Ty zarządzasz:
+  - Registrowanymi targetami (EC2, ECS, Lambda)
+  - Security Groups (dla ALB)
+  - Regułami routingu
+  - Certyfikatami SSL
+```
+
+### Zonal Isolation — Awaria AZ
+
+```
+Scenariusz: eu-west-1b niedostępna
+
+ALB z Cross-Zone ON:
+  Przed awarią: 33% ruchu per AZ
+  Po awarii eu-west-1b:
+    - ALB node w 1b niedostępny
+    - DNS usuwa IP 1b automatycznie
+    - Pozostałe ALB nodes (1a, 1c) obsługują 100% ruchu
+    - Ruch routowany do zdrowych EC2 w 1a i 1c (Cross-Zone!)
+    
+NLB z Cross-Zone OFF:
+  Przed awarią: 33% do 1a, 33% do 1b, 33% do 1c
+  Po awarii eu-west-1b:
+    - NLB node 1b niedostępny
+    - Klienci na 1b EIP nie dostają odpowiedzi
+    - Klienci na 1a/1c EIP: OK
+    - TYLKO 67% ruchu dociera (klienci celujący w 1b IP tracą połączenie)
+    
+  Z Cross-Zone ON: podobnie do ALB — wszystkie node routują wszędzie
+```
+
+---
+
+## 12.7 ELB + EC2 — Pełna Integracja
+
+### Flow: Request od klienta do EC2
+
+```
+1. Klient → DNS query: api.example.com
+2. Route 53 → ALIAS/CNAME → ALB DNS name
+3. ALB DNS → IP ALB node (najbliższy/round robin)
+4. Klient → TCP connect → ALB node:443
+5. ALB node:
+   a. TLS handshake (terminacja SSL)
+   b. Sprawdza Listener rules (path, host, header)
+   c. Wybiera Target Group
+   d. Wybiera zdrowy target (Round Robin lub LOR)
+   e. Ustanawia nowe TCP połączenie → EC2:80
+   f. Forward HTTP request z X-Forwarded-For
+6. EC2 przetwarza request
+7. EC2 → ALB node → Klient
+8. ALB drainuje połączenie (idle timeout lub Connection close)
+```
+
+### Security Group Chain — Zasada Least Privilege
+
+```
+Internet ─────► ALB (SG: allow 443 from 0.0.0.0/0)
+                  │
+                  └─► EC2 (SG: allow 80 from SG-ALB only)
+                          │
+                          └─► RDS (SG: allow 5432 from SG-EC2 only)
+
+Konfiguracja:
+
+# ALB Security Group
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-alb \
+  --protocol tcp --port 443 --cidr 0.0.0.0/0
+
+# EC2 Security Group — tylko z SG ALB (nie CIDR!)
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-ec2 \
+  --protocol tcp --port 80 \
+  --source-group sg-alb    # Referencja do SG, nie IP!
+
+# Zalety SG reference vs CIDR:
+# - ALB może zmieniać IP (skalowanie) → SG zawsze aktualne
+# - Czytelniejsze reguły
+# - Mniejsze ryzyko błędu
+```
+
+### EC2 Registration w Target Group
+
+```bash
+# Ręczna rejestracja (bez ASG)
+aws elbv2 register-targets \
+  --target-group-arn arn:... \
+  --targets \
+    Id=i-11111111,Port=80 \
+    Id=i-22222222,Port=80
+
+# Wyrejestrowanie
+aws elbv2 deregister-targets \
+  --target-group-arn arn:... \
+  --targets Id=i-11111111
+
+# Sprawdź health status
+aws elbv2 describe-target-health \
+  --target-group-arn arn:... \
+  --query 'TargetHealthDescriptions[*].{
+    ID:Target.Id,
+    Port:Target.Port,
+    State:TargetHealth.State,
+    Reason:TargetHealth.Reason
+  }'
+
+# Stany: healthy | unhealthy | initial | draining | unused | unavailable
+```
+
+### Port Override — Multiple Apps na Jednej EC2
+
+```bash
+# Jedna EC2 działa jako target dla DWÓCH różnych Target Groups
+# na różnych portach (np. app A: 8080, app B: 8081)
+
+# TG dla App A: port 8080
+aws elbv2 register-targets \
+  --target-group-arn arn:tg-app-a \
+  --targets Id=i-12345678,Port=8080
+
+# TG dla App B: port 8081 (ta sama instancja!)
+aws elbv2 register-targets \
+  --target-group-arn arn:tg-app-b \
+  --targets Id=i-12345678,Port=8081
+
+# ALB rules:
+# /app-a/* → TG-App-A (port 8080)
+# /app-b/* → TG-App-B (port 8081)
+```
+
+---
+
+## 12.8 ELB + ECS/Fargate — Kontenery
+
+### Dynamic Port Mapping (EC2 launch type)
+
+```
+Problem: wiele kontenerów na jednej EC2, każdy musi mieć unikalny port
+
+ECS z EC2 launch type (dynamic port mapping):
+  Container A: host port = 0 (auto-assign) → dostaje np. 32768
+  Container B: host port = 0 (auto-assign) → dostaje np. 32769
+  
+  ECS automatycznie rejestruje w TG: EC2_IP:32768 i EC2_IP:32769
+  ALB routuje do właściwego portu
+  
+  Target Group: type=instance, port=0 (override per target)
+```
+
+### Fargate (target type = ip)
+
+```
+Fargate: każdy task dostaje własne ENI z prywatnym IP
+  
+Task A: 10.0.1.5:8080
+Task B: 10.0.1.6:8080  (inny IP, ten sam port!)
+  
+Target Group: type=ip
+  ECS rejestruje: 10.0.1.5:8080, 10.0.1.6:8080
+  
+Zalety: brak konfliktu portów, izolacja na poziomie ENI
+```
+
+```bash
+# ECS Service z ALB integracja
+aws ecs create-service \
+  --cluster my-cluster \
+  --service-name my-service \
+  --task-definition my-task:3 \
+  --desired-count 3 \
+  --launch-type FARGATE \
+  --load-balancers '[{
+    "targetGroupArn": "arn:aws:elasticloadbalancing:...",
+    "containerName": "my-container",
+    "containerPort": 8080
+  }]' \
+  --network-configuration '{
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-aaa", "subnet-bbb"],
+      "securityGroups": ["sg-12345678"],
+      "assignPublicIp": "DISABLED"
+    }
+  }'
+```
+
+---
+
+## 12.9 ELB + Lambda — Serverless Backend
+
+```
+ALB → Lambda flow:
+  1. ALB otrzymuje HTTP request
+  2. ALB wywołuje Lambda synchronicznie (RequestResponse)
+  3. ALB transformuje HTTP → Lambda event (JSON)
+  4. Lambda przetwarza → zwraca JSON response
+  5. ALB transformuje JSON → HTTP response → klient
+
+Lambda event format:
+{
+  "requestContext": {"elb": {"targetGroupArn": "..."}},
+  "httpMethod": "POST",
+  "path": "/api/users",
+  "queryStringParameters": {"page": "1"},
+  "headers": {"content-type": "application/json", "x-forwarded-for": "1.2.3.4"},
+  "body": "{\"name\": \"John\"}",
+  "isBase64Encoded": false
+}
+
+Lambda response format:
+{
+  "statusCode": 200,
+  "headers": {"Content-Type": "application/json"},
+  "body": "{\"id\": 123}",
+  "isBase64Encoded": false
+}
+```
+
+```bash
+# Konfiguracja Lambda target w Target Group
+aws elbv2 create-target-group \
+  --name lambda-tg \
+  --target-type lambda
+
+aws elbv2 register-targets \
+  --target-group-arn arn:tg-lambda \
+  --targets Id=arn:aws:lambda:eu-west-1:123:function:my-function
+
+# Lambda permissions dla ALB
+aws lambda add-permission \
+  --function-name my-function \
+  --statement-id alb-invoke \
+  --action lambda:InvokeFunction \
+  --principal elasticloadbalancing.amazonaws.com \
+  --source-arn arn:aws:elasticloadbalancing:...
+```
+
+**Ograniczenia Lambda za ALB:**
+- Timeout: max 15 min (Lambda limit)
+- Payload: max 1 MB request body
+- Concurrency: Lambda concurrency limits (burst + provisioned)
+- Multi-value headers: wymagają `MultiValueHeaders=true` na TG
+
+---
+
+## 12.10 ELB + On-Premises (Hybrid) — Target Type IP
+
+```
+Scenariusz: Migracja stopniowa — część serwerów na AWS, część on-prem
+
+ALB z Target Type=IP:
+  Może targetować dowolny prywatny IP osiągalny z VPC
+
+  On-prem servers (przez DX/VPN):
+    10.100.1.5:8080  (on-prem serwer 1)
+    10.100.1.6:8080  (on-prem serwer 2)
+  
+  AWS servers:
+    10.0.1.100:8080  (EC2 instance 1)
+    10.0.1.101:8080  (EC2 instance 2)
+  
+  TG łączy oba → ALB routuje do wszystkich!
+```
+
+```bash
+# Rejestruj on-prem IP w Target Group
+aws elbv2 register-targets \
+  --target-group-arn arn:tg-hybrid \
+  --targets \
+    Id=10.100.1.5,Port=8080,AvailabilityZone=all \   # on-prem: AZ=all
+    Id=10.100.1.6,Port=8080,AvailabilityZone=all \
+    Id=10.0.1.100,Port=8080 \    # EC2: AZ=eu-west-1a (auto-detect)
+    Id=10.0.1.101,Port=8080
+
+# AvailabilityZone=all → dla IP poza VPC (on-prem, inny VPC)
+# ALB wysyła ruch do tych IP niezależnie od AZ
+```
+
+### Wzorzec Migracji Stopniowej
+
+```
+Faza 1: 100% on-prem w TG
+  On-prem(1) w=50%, On-prem(2) w=50%
+
+Faza 2: Canary — 10% na AWS
+  On-prem(1) w=45%, On-prem(2) w=45%, EC2(1) w=10%
+
+Faza 3: Coraz więcej na AWS
+  On-prem w=30%, EC2 w=70%
+
+Faza 4: 100% AWS
+  EC2(1) w=50%, EC2(2) w=50%
+  Wyrejestruj on-prem z TG
+
+Zaleta: Jeden DNS, zero downtime, rollback w sekundy (zmień wagi)
+```
+
+---
+
+## 12.11 ELB + Multi-VPC (Cross-VPC)
+
+### Metoda 1: VPC Peering + ALB IP Target
+
+```
+VPC A (ALB) ←── VPC Peering ──→ VPC B (EC2 10.1.0.5)
+  
+ALB w VPC A:
+  TG type=ip → target: 10.1.0.5 (VPC B, przez Peering)
+  AvailabilityZone=all
+  
+Wymagania:
+  - VPC Peering aktywny
+  - Route Tables zaktualizowane
+  - SG EC2 w VPC B: zezwól ruch z CIDR VPC A (ALB subnet)
+```
+
+### Metoda 2: PrivateLink (NLB + Interface Endpoint)
+
+```
+VPC A (konsument)                VPC B (dostawca)
+  Interface Endpoint  ←──────────  NLB (port 443)
+  ENI: 10.0.1.5:443              EC2 fleet
+  
+  ALB (VPC A) → NLB endpoint → NLB → EC2
+
+Zalety PrivateLink vs Peering:
+  - Działa z overlapping CIDR
+  - Dostawca nie widzi całej sieci konsumenta
+  - Cross-account, cross-region
+  - No transitive routing issues
+```
+
+### Metoda 3: ALB → NLB (Nested LB)
+
+```
+Cel: Static IP + L7 routing
+
+Internet ─► NLB (static Elastic IP) ─► ALB (L7 routing) ─► EC2
+              └ stały IP dla on-prem      └ path/host routing
+                firewall whitelist
+
+Konfiguracja:
+  NLB Target Group: type=alb, target=ARN of ALB
+  NLB Listener: TCP 443 → TG-ALB
+```
+
+---
+
+## 12.12 ELB + Global Accelerator — Ultra-HA Multi-Region
+
+```
+Route 53 Latency Routing → Global Accelerator → Regional ALB
+
+AWS Global Accelerator:
+  - 2 statyczne Anycast IP (globalne, nigdy się nie zmieniają)
+  - Ruch wchodzi do najbliższego AWS Edge Location
+  - Przez AWS backbone (nie Internet) → regional endpoint (ALB)
+  - Automatyczny failover między regionami (30s)
+
+Bez GA:
+  Klient (Tokyo) → Internet → eu-west-1 ALB
+  Latency: wysoka, niestabilna
+
+Z GA:
+  Klient (Tokyo) → Tokyo Edge (AWS) → AWS backbone → eu-west-1 ALB
+  Latency: niższa, stabilna (AWS backbone vs Internet)
+
+Kiedy GA zamiast CloudFront:
+  - Non-HTTP: TCP/UDP apps (gaming, VoIP) — CF tylko HTTP
+  - Static IP wymagany globalnie — CF ma DNS tylko
+  - Multi-region active-active TCP — CF ma edge caching, GA ma routing
+```
+
+```bash
+# Utwórz Global Accelerator z ALB endpoint
+aws globalaccelerator create-accelerator \
+  --name my-accelerator \
+  --ip-address-type IPV4
+
+aws globalaccelerator create-listener \
+  --accelerator-arn arn:... \
+  --protocol TCP \
+  --port-ranges '[{"FromPort":443,"ToPort":443}]'
+
+aws globalaccelerator create-endpoint-group \
+  --listener-arn arn:... \
+  --endpoint-group-region eu-west-1 \
+  --endpoint-configurations '[{
+    "EndpointId": "arn:aws:elasticloadbalancing:...", # ALB ARN
+    "Weight": 100,
+    "ClientIPPreservationEnabled": true
+  }]' \
+  --traffic-dial-percentage 100   # 0-100: ile % ruchu GA wysyła do tej grupy
+```
+
+---
+
+## 12.13 Wzorce Redundancji — Active-Active vs Active-Passive
+
+### Active-Active Multi-AZ
+
+```
+Route 53 (lub ALB)
+  │
+  ├── AZ-a: EC2 fleet (ASG) ← obsługuje ruch
+  └── AZ-b: EC2 fleet (ASG) ← obsługuje ruch
+
+Oba AZ aktywne jednocześnie:
+  + Pełne wykorzystanie zasobów
+  + Automatyczny failover (ALB Cross-Zone)
+  + Lepsza latency (ruch do nearest AZ)
+  - Wymaga stateless aplikacji (lub shared session store)
+  - Synchronizacja danych między AZ
+```
+
+### Active-Passive Multi-AZ
+
+```
+Route 53 (failover routing)
+  │
+  ├── AZ-a: EC2 (Primary, aktywny) ← CAŁY ruch
+  └── AZ-b: EC2 (Standby, idle)   ← włącza się gdy Primary pada
+
+Kiedy używać:
+  - Stateful aplikacje których nie można łatwo rozpraszać
+  - Bazy danych (RDS Multi-AZ: primary write + standby)
+  - Legacy apps z global state
+
+Wady:
+  - Zasoby Standby są "zmarnowane"
+  - Wyższy failover time (Route 53 health check TTL)
+```
+
+### Active-Active Multi-Region
+
+```
+Route 53 (Latency-based routing):
+  Klient EU → eu-west-1 ALB → EC2 EU
+  Klient US → us-east-1 ALB → EC2 US
+  Klient AP → ap-southeast-1 ALB → EC2 AP
+
+Dane: DynamoDB Global Tables / Aurora Global Database / S3 replication
+
+Najwyższy poziom HA:
+  + Niższe latency globalnie
+  + Pełna redundancja per region
+  - Najdroższe
+  - Skomplikowana synchronizacja danych (eventual consistency)
+  - Wymaga stateless lub globally consistent DB
+```
+
+### Active-Passive Multi-Region (Pilot Light / Warm Standby)
+
+```
+Pilot Light:
+  Primary region: full traffic
+  DR region: minimalna infrastruktura (tylko krytyczne komponenty)
+  Recovery: auto-scale DR region gdy Primary niedostępny
+  RTO: ~10-30 min
+
+Warm Standby:
+  Primary region: full traffic
+  DR region: mała ale działająca replika (scale-up przy failover)
+  Recovery: szybszy niż Pilot Light (zasoby już działają)
+  RTO: ~5-15 min
+  
+Multi-Site (Active-Active):
+  Oba regiony pełen ruch
+  RTO: ~0 (natychmiastowe)
+```
+
+---
+
+## 12.14 Termination Policies ASG — Która Instancja Usunąć
+
+```
+Gdy ASG scale-in (usuwa instancje), algorytm:
+
+1. Wybierz AZ z największą liczbą instancji
+2. W tej AZ zastosuj Termination Policy:
+
+   Default policy (kolejność):
+   a. Instancje ze starego Launch Template/Configuration
+   b. Instancja z najkrótszym remaining billing hour
+      (EC2 rozlicza per-sekundę, ale ta logika to legacy)
+   c. Najstarsza instancja
+   
+   Inne polityki:
+   OldestInstance:          usuwa najstarsze
+   NewestInstance:          usuwa najnowsze (testing)
+   OldestLaunchTemplate:    usuwa z najstarszym LT (promuje nowe)
+   ClosestToNextInstanceHour: optymalizacja kosztów (legacy)
+   AllocationStrategy:      dla Mixed (usuwa najpierw OD lub Spot)
+
+aws autoscaling update-auto-scaling-group \
+  --termination-policies "OldestLaunchTemplate" "Default"
+```
+
+---
+
+## 12.15 Scale-In Protection
+
+```bash
+# Chroń konkretną instancję przed scale-in (np. przetwarzanie długiego jobu)
+aws autoscaling set-instance-protection \
+  --instance-ids i-12345678 \
+  --auto-scaling-group-name my-asg \
+  --protected-from-scale-in
+
+# Zdejmij ochronę po zakończeniu jobu
+aws autoscaling set-instance-protection \
+  --instance-ids i-12345678 \
+  --auto-scaling-group-name my-asg \
+  --no-protected-from-scale-in
+
+# Gdy cała flota Spot jest chroniona: ASG nie może scale-in
+# → może prowadzić do kosztów powyżej MaxSize!
+# Zawsze zdejmuj ochronę po zakończeniu zadania
+```
+
+---
+
+## 12.16 Troubleshooting — Częste Problemy ASG + ELB
+
+### Problem 1: ASG zastępuje zdrowe instancje
+
+```
+Symptom: EC2 terminowane mimo działającej aplikacji
+Diagnoza: 
+  aws autoscaling describe-auto-scaling-instances
+  → sprawdź "HealthStatus": "Unhealthy"
+  
+Przyczyny:
+  1. health-check-grace-period za krótki → ustaw ≥ czas startowania
+  2. ELB health check za czuły → zwiększ threshold/interval
+  3. Aplikacja nie zwraca 200 na /health (np. zwraca 404)
+  4. Security Group blokuje HC port
+```
+
+### Problem 2: Scale-out nie nadąża za ruchem
+
+```
+Symptom: 503 Service Unavailable, mimo że ASG skaluje
+Diagnoza:
+  1. ASG w trakcie skalowania (check scaling activity)
+  2. New instancje: Initial → czeka na health check (60-120s)
+  3. ELB drainuje stare instancje (Deregistration Delay 300s)
+  
+Rozwiązanie:
+  - Zmniejsz health check grace period (jeśli app startuje szybciej)
+  - Zmniejsz Deregistration Delay (np. 30s)
+  - Predictive Scaling zamiast reaktywnego
+  - Scheduled Scaling dla znanych szczytów
+  - Pre-warm ALB (kontakt z AWS Support)
+```
+
+### Problem 3: NLB nie routuje do instancji w AZ
+
+```
+Symptom: część requestów timeout, część OK
+Diagnoza:
+  aws elbv2 describe-target-health --target-group-arn arn:...
+  → instancje w danej AZ: "unused" lub "unavailable"
+  
+Przyczyny:
+  1. Cross-Zone OFF + brak instancji w danej AZ
+  2. Security Group EC2: brak reguły dla klientów (NLB zachowuje source IP)
+  3. Instancje zarejestrowane ale nie ma subnet NLB w tej AZ
+  
+Rozwiązanie:
+  - Dodaj subnet NLB w każdej AZ gdzie masz instancje
+  - Lub włącz Cross-Zone Load Balancing
+  - SG EC2: `0.0.0.0/0 : port` lub konkretne CIDR klientów
+```
+
+---
+
+## 12.17 Well-Architected Framework — HA i Skalowalność
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Instance Refresh dla rolling deploy (nie ręczny), CloudWatch Alarms na ASG (ScalingActivity, FailedActions), EventBridge dla lifecycle hook events, Lifecycle Hooks dla graceful shutdown i config |
+| **Security** | SG chain (ALB → EC2 → RDS), Scale-In Protection dla długich jobów, IMDSv2 wymagane w Launch Template, EBS encryption w LT, Instance Profile (nie access keys) |
+| **Reliability** | Min 2 AZ zawsze, Multi-AZ ASG subnets, ELB health check type (nie EC2-only), Deregistration Delay dostosowany, health-check-grace-period ≥ app startup, Lifecycle Hooks dla graceful operations |
+| **Performance Efficiency** | Target Tracking (ALBRequestCountPerTarget) dla web apps, Predictive Scaling dla regularnych wzorców, Warm Pools (pre-initialized instances), Mixed Instances Policy dla dywersyfikacji, Slow Start Mode dla JVM |
+| **Cost Optimization** | Mixed Instances (Spot + On-Demand), Scale-In agresywne (krótki cooldown), Scheduled Scaling (noc/weekend), Savings Plans dla baseline On-Demand, Spot dla stateless web/app tier |
+| **Sustainability** | Graviton w Launch Template, right-sizing przez Compute Optimizer przed skalowaniem, agresywne scale-in w nocy (nie idle zasobów), Spot reduces idle physical capacity |
+
+---
+
+## 12.18 4 Domeny Egzaminacyjne SAP-C02
+
+### Domena 1: Design Solutions for Organizational Complexity
+
+- **Multi-account HA:** ASG + ALB per account, wspólny Route 53 (Latency routing), shared TGW dla connectivity
+- **Centralne zarządzanie ASG:** AWS Systems Manager → Parameter Store dla konfiguracji, Config dla compliance
+- **Cross-account ELB monitoring:** CloudWatch cross-account metrics sharing
+
+### Domena 2: Design for New Solutions
+
+- **Wybór strategii HA:** Active-Active (stateless) vs Active-Passive (stateful/DB)
+- **RPO/RTO mapping:** Pilot Light (RTO 30min), Warm Standby (RTO 5min), Multi-Site/Active-Active (RTO ~0)
+- **Hybrydowe TG:** IP targets dla stopniowej migracji on-prem → AWS
+- **Predictive + Target Tracking combo:** Predictive pre-skaluje, Target Tracking reaguje na odchylenia
+
+### Domena 3: Continuous Improvement for Existing Solutions
+
+- **Simple → Target Tracking:** eliminacja cooldown problemów
+- **LC → LT migration:** unlock Mixed Instances, version control
+- **EC2 health check → ELB health check:** auto-replacement niedziałających instancji
+- **Instance Refresh:** zastąp ręczny rolling deploy
+
+### Domena 4: Accelerate Workload Migration and Modernization
+
+- **Lift-and-shift:** ASG zastępuje ręcznie zarządzane VM on-prem
+- **Hybryid TG (IP targets):** stopniowa migracja bez cutover
+- **EC2 → ECS migration:** zmień target type instance → ip, ECS zarządza rejestracją
+- **EC2 → Lambda:** dodaj Lambda target do istniejącego ALB (zero klient-side changes)
+
+---
+
+## 12.19 Warm Pools — Skrócenie Czasu Scale-Out
+
+```
+Problem: nowa EC2 startuje 3-5 min (OS boot + app init) → powolny scale-out
+
+Warm Pool: pula pre-initialized instancji czeka w stanie Stopped lub Running
+  Gdy ASG potrzebuje scale-out → instancja z Warm Pool (już gotowa!)
+  Czas scale-out: sekundy zamiast minut
+
+Stany instancji w Warm Pool:
+  Stopped (default): EC2 zatrzymane (płacisz za EBS, NIE za EC2 hour)
+  Running:           EC2 działa (płacisz za EC2, ale najszybszy start)
+  Hibernated:        EC2 z zapisanym RAM (najszybszy start, wymaga Hibernate support)
+```
+
+```bash
+aws autoscaling put-warm-pool \
+  --auto-scaling-group-name my-asg \
+  --pool-state Stopped \        # Stopped | Running | Hibernated
+  --min-size 2 \                # Zawsze trzymaj 2 w Warm Pool
+  --max-group-prepared-capacity 5   # Max łącznie (InService + WarmPool)
+
+# Lifecycle Hook dla Warm Pool (konfiguracja instancji w WP):
+aws autoscaling put-lifecycle-hook \
+  --auto-scaling-group-name my-asg \
+  --lifecycle-hook-name WarmPoolInit \
+  --lifecycle-transition autoscaling:EC2_INSTANCE_LAUNCHING \
+  --default-result CONTINUE
+```
+
+---
+
+## 12.20 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Firma ma ASG z health-check-type=EC2. Aplikacja przestała odpowiadać na porcie 80, ale OS działa. Co zrobi ASG?
+
+> **Odpowiedź:** **Nic** — EC2 health check sprawdza tylko status EC2 (hardware, hypervisor, OS). Aplikacja na porcie 80 niewidoczna dla EC2 health check. Rozwiązanie: zmień na `health-check-type=ELB` — ALB health check sprawdza HTTP 200 na /health i raportuje do ASG. ASG terminuje i zastępuje instancję.
+
+---
+
+**Pytanie 2:** Jaka jest różnica między MinSize, DesiredCapacity i MaxSize w ASG?
+
+> **Odpowiedź:** **MinSize:** minimalna liczba instancji — ASG nigdy nie zejdzie poniżej (nawet przy scale-in). **DesiredCapacity:** aktualna liczba instancji — ASG dąży do tej wartości. Zmiana przez skalowanie. **MaxSize:** ASG nigdy nie przekroczy — chroni przed nieograniczonym scale-out (i kosztami).
+
+---
+
+**Pytanie 3:** Firma chce stopniowo migrować ruch z on-prem do EC2 bez zmiany DNS dla klientów. Jak?
+
+> **Odpowiedź:** ALB z **Target Type IP**: zarejestruj on-prem IPs (przez DX/VPN, AZ=all) i EC2 IPs w jednym Target Group. Użyj **Weighted Target Groups**: on-prem TG weight=90, AWS TG weight=10 → stopniowo zmieniaj wagi → 0/100. Jeden DNS (ALB), zero zmian po stronie klienta.
+
+---
+
+**Pytanie 4:** Różnica między Scale-Out Cooldown a Instance Warmup?
+
+> **Odpowiedź:** **Cooldown:** ASG czeka X sekund po scale-out zanim wykona kolejną akcję skalowania. **Instance Warmup (Target Tracking/Step):** nowa instancja NIE jest wliczana do metryk agregowanych przez X sekund — zapobiega przedwczesnemu scale-in gdy nowe instancje mają niskie metryki podczas rozgrzewania.
+
+---
+
+**Pytanie 5:** ASG ma DesiredCapacity=4. Dwie instancje w AZ-a, dwie w AZ-b. AZ-a staje się niedostępna. Co robi ASG?
+
+> **Odpowiedź:** ASG wykrywa brak AZ-a (EC2 health check fail). **Rebalancing:** ASG uruchamia 2 nowe instancje w AZ-b (lub innej dostępnej AZ) żeby utrzymać DesiredCapacity=4. Gdy AZ-a wróci: ASG może uruchomić instancje w AZ-a i terminować nadmiarowe z AZ-b (rebalancing). Proces: automatyczny, bez interwencji.
+
+---
+
+**Pytanie 6:** Co to jest ASG Lifecycle Hook i do czego służy?
+
+> **Odpowiedź:** Hook wstrzymuje instancję w stanie `Wait` (do 1h) podczas launch lub terminate, żeby wykonać niestandardowe akcje. Launch hook: konfiguruj instancję (pobierz config, rejestruj w service discovery, warm-up cache). Terminate hook: graceful shutdown (flush queue, deregister z Consul, backup danych). Powiadomienie przez SNS/SQS → Lambda wykonuje akcję → `complete-lifecycle-action`.
+
+---
+
+**Pytanie 7:** Firma ma peak traffic w dni robocze 9:00-17:00. Najlepsza polityka skalowania?
+
+> **Odpowiedź:** **Scheduled Scaling** + **Target Tracking**. Scheduled: o 8:45 pn-pt ustaw DesiredCapacity=10 (pre-scale przed szczytem), o 17:15 ustaw DesiredCapacity=2 (scale-in po godzinach). Target Tracking: CPU=50% (reaguje na odchylenia w ciągu dnia). Combo: Scheduled jako baseline, Target Tracking jako fine-tuning.
+
+---
+
+**Pytanie 8:** Różnica między Target Tracking a Step Scaling?
+
+> **Odpowiedź:** **Target Tracking:** podajesz cel (np. CPU=50%), ASG sam oblicza ile instancji dodać/usunąć. Prosty, zalecany. **Step Scaling:** definiujesz zakresy i kroki (CPU 70-80% → +1, 80-90% → +3, >90% → +5). Więcej kontroli, bardziej złożone. Step bez cooldown = szybsza reakcja. Target Tracking najlepszy dla większości.
+
+---
+
+**Pytanie 9:** Co to jest Instance Refresh i kiedy go używać?
+
+> **Odpowiedź:** Instance Refresh = stopniowe zastępowanie wszystkich instancji w ASG nowymi (np. po zmianie AMI lub Launch Template). Parametr `MinHealthyPercentage` (np. 90%): max 10% instancji w remoncie jednocześnie. Zachowuje HA podczas deploymentu. Alternatywa: Blue/Green ASG z Route 53 weighted routing.
+
+---
+
+**Pytanie 10:** Firma ma NLB. On-prem firewall whitelist IP NLB. Po kilku tygodniach firewall blokuje ruch. Dlaczego?
+
+> **Odpowiedź:** NLB z **Elastic IP** (statyczne) → IP się nie zmieniają. Ale jeśli firma używa NLB **bez przypisanych EIP** (auto-assigned IP) lub **ALB** — IP mogą się zmienić (skalowanie). Jeśli to NLB z EIP: sprawdź czy EIP przypisane do wszystkich AZ. Jeśli to ALB: migruj na NLB z EIP lub użyj Global Accelerator (statyczne Anycast IP).
+
+---
+
+**Pytanie 11:** Jaka jest różnica między `ChangeInCapacity` a `ExactCapacity` w polityce skalowania?
+
+> **Odpowiedź:** **ChangeInCapacity:** `+2` dodaje 2 instancje do obecnej liczby (4→6). **ExactCapacity:** ustaw dokładnie X instancji (np. 6 niezależnie od obecnej). **PercentChangeInCapacity:** zmień o Y% (np. 50% = 4→6). ExactCapacity przydatne dla Scheduled Scaling (wiesz dokładnie ile potrzebujesz).
+
+---
+
+**Pytanie 12:** Firma ma stateful aplikację (sesje na serwerze). Jak zapewnić HA bez utraty sesji?
+
+> **Odpowiedź:** Nie przechowuj sesji na EC2. Przenieś do zewnętrznego store: **ElastiCache Redis** (najszybsze) lub **DynamoDB** (serverless, trwałe). Aplikacja odczytuje/zapisuje sesję z zewnętrznego store → każda instancja EC2 może obsłużyć dowolne żądanie → pełna statelessness → HA bez sticky sessions.
+
+---
+
+**Pytanie 13:** ALB ma 3 Target Groups. Firma chce 10% ruchu do TG-Canary, 90% do TG-Stable. Jak?
+
+> **Odpowiedź:** **Weighted Target Groups** w Forward action: `TG-Stable: weight=90, TG-Canary: weight=10`. Jeden Listener Rule wysyła ruch proporcjonalnie. Monitoruj metryki (error rate, latency) dla TG-Canary. Stopniowo zwiększaj weight gdy stabilne: 10→25→50→100. Rollback: weight=0 dla Canary.
+
+---
+
+**Pytanie 14:** Co to jest Warm Pool i jak różni się od normalnych instancji w ASG?
+
+> **Odpowiedź:** Warm Pool = pula pre-initialized EC2 czekających w stanie Stopped/Running. Normalny ASG scale-out: uruchom nową EC2 (cold boot) = 3-5 min. Z Warm Pool: instancja już skonfigurowana, start w sekundy (Stopped → Running). Płacisz za EBS (Stopped) lub EC2+EBS (Running). Używaj dla apps z długim init time (JVM, ML model loading).
+
+---
+
+**Pytanie 15:** ELB health check dla EC2 zwraca `unhealthy`. Jakie kroki diagnostyczne?
+
+> **Odpowiedź:** (1) Czy EC2 running? `aws ec2 describe-instance-status`. (2) Czy port otwarty? SSH do EC2 lub z innej instancji: `curl http://10.x.x.x/health`. (3) Security Group: zezwala na HC port z ALB SG? (4) NACL: przepuszcza HC port + odpowiedź? (5) Aplikacja zwraca 200? (6) health-check-path poprawny? (7) health-check-timeout > response time?
+
+---
+
+**Pytanie 16:** Firma chce żeby podczas scale-in ASG nie terminował instancji przetwarzających długi job (SQS). Jak?
+
+> **Odpowiedź:** Dwa podejścia: (1) **Scale-In Protection** — aplikacja sama włącza protection gdy pobiera SQS message i wyłącza po zakończeniu (`set-instance-protection`). (2) **Lifecycle Hook** na terminate — hook zatrzymuje terminację, aplikacja doprowadza job do końca, potem `complete-lifecycle-action → CONTINUE`.
+
+---
+
+**Pytanie 17:** Co to jest `ALBRequestCountPerTarget` i dlaczego lepszy niż CPU dla web apps?
+
+> **Odpowiedź:** `ALBRequestCountPerTarget` = liczba requestów per instancja (z TG metrics). CPU mierzy obciążenie POŚREDNIO (może być niskie CPU przy długich I/O-bound requestach). RequestCount jest bezpośrednią miarą obciążenia aplikacji. Target Tracking na `ALBRequestCountPerTarget=1000` = każda instancja obsługuje max 1000 req/s → skalowalność proporcjonalna do ruchu.
+
+---
+
+**Pytanie 18:** Różnica między Pilot Light a Warm Standby w DR?
+
+> **Odpowiedź:** **Pilot Light:** DR region ma tylko minimalne zasoby (baza danych, core services). Reszta wyłączona/nieistniejąca. Recovery: uruchom ASG, skaluj do pełnej pojemności — RTO: ~30 min. **Warm Standby:** DR region ma działającą miniaturę (np. 25% pojemności). Recovery: scale-up ASG do full capacity — RTO: ~5-15 min. Warm Standby droższe ale szybsze.
+
+---
+
+**Pytanie 19:** Firma ma ALB z ECS/Fargate. Kontenery uruchamiają się ale ALB zwraca 502. Jak diagnozować?
+
+> **Odpowiedź:** (1) Target Group health: `describe-target-health` — czy targets są `healthy`? (2) Czy kontener słucha na skonfigurowanym porcie (8080)? (3) Security Group ECS task: zezwala na ruch z ALB SG na containerPort? (4) Task Definition: `containerPort` zgodny z TG port? (5) Health check path istnieje i zwraca 200? (6) Fargate: `awsvpcConfiguration` → subnety dostępne?
+
+---
+
+**Pytanie 20:** Co to jest ASG Rebalancing i kiedy jest uruchamiane?
+
+> **Odpowiedź:** Rebalancing = ASG wyrównuje liczbę instancji między AZ (dąży do równomiernego rozkładu). Triggery: (1) AZ wróci do działania po awarii, (2) dodanie nowej AZ do ASG, (3) ręczna zmiana subnet config, (4) terminacja instancji w jednej AZ. Rebalancing: najpierw uruchamia nowe instancje w niedoreprezentowanej AZ, POTEM terminuje stare (zapewnia HA podczas rebalance).
+
+---
+
+**Pytanie 21:** Firma chce żeby Lambda była targetem ALB ale musi obsługiwać multi-value query params. Co skonfigurować?
+
+> **Odpowiedź:** Włącz **Multi-Value Headers** na Target Group:
+```bash
+aws elbv2 modify-target-group-attributes \
+  --target-group-arn arn:tg-lambda \
+  --attributes Key=lambda.multi_value_headers.enabled,Value=true
+```
+Lambda otrzymuje `multiValueQueryStringParameters` (dict z listami) zamiast `queryStringParameters` (dict z pojedynczymi wartościami). Wymagane gdy URL ma `?tag=red&tag=blue`.
+
+---
+
+**Pytanie 22:** Ile AZ minimun powinien mieć ALB?
+
+> **Odpowiedź:** Minimum **2 subnety w różnych AZ** wymagane do stworzenia ALB. AWS rekomenduje min 2, najlepiej 3 (lub tyle ile AZ w regionie) dla maksymalnej HA. Każda AZ = jeden ALB node. Więcej AZ = wyższa odporność na zonal failure.
+
+---
+
+**Pytanie 23:** Firma używa Spot w ASG. Jak zapewnić że aplikacja obsłuży Spot Interruption gracefully?
+
+> **Odpowiedź:** (1) **Spot Interruption Notice** (2 min warning): aplikacja nasłuchuje przez metadata service `169.254.169.254/latest/meta-data/spot/termination-time` lub EventBridge rule `EC2 Spot Instance Interruption Warning`. (2) **ASG Lifecycle Hook** (Terminate): daj czas na graceful shutdown. (3) **SQS visibility timeout**: jeśli przetwarza SQS job — zwiększ visibility timeout żeby inny consumer przejął. (4) **Stateless design**: brak local state = łatwy failover.
+
+---
+
+**Pytanie 24:** Firma ma Global Accelerator przed ALB. Jak GA różni się od Route 53 Latency routing?
+
+> **Odpowiedź:** **Route 53 Latency:** DNS-based routing, klient otrzymuje IP regionalnego ALB, ruch przez Internet. Failover przez DNS TTL (60s-5min). **Global Accelerator:** Anycast routing, klient zawsze łączy się z tym samym statycznym IP, ruch przez AWS backbone od Edge Location. Failover < 30s. GA lepszy dla: latency-sensitive, non-HTTP, statyczny IP wymagany, szybki failover.
+
+---
+
+**Pytanie 25:** Jakie są implikacje `MinHealthyPercentage=100` w Instance Refresh?
+
+> **Odpowiedź:** `100%` = zero instancji może być jednocześnie terminowanych. Instance Refresh nie może działać przy 100% (musi terminować przynajmniej jedną). Minimum: musi być mniejsze niż 100. Typowe: 90% (max 10% w remoncie). Przy bardzo małym ASG (np. 2 instancje, MinHealthy=50%): terminuje 1, zastępuje 1, potem drugą.
+
+---
+
+**Pytanie 26:** Co to jest `SuspendProcesses` w ASG?
+
+> **Odpowiedź:** Tymczasowe zawieszenie procesów ASG. Procesy: `Launch`, `Terminate`, `HealthCheck`, `ReplaceUnhealthy`, `AZRebalance`, `AlarmNotification`, `ScheduledActions`, `InstanceRefresh`. Użycie: zawieś `Terminate` podczas troubleshootingu, zawieś `AZRebalance` przy maintenance AZ, zawieś `Launch` żeby zatrzymać scale-out. Ostrożnie: zawieszony `HealthCheck` = ASG nie zastępuje niedziałających instancji.
+
+---
+
+**Pytanie 27:** Firma ma ASG scale-out policy. CloudWatch Alarm jest triggered ale ASG nie dodaje instancji. Dlaczego?
+
+> **Odpowiedź:** Możliwe przyczyny: (1) ASG już w `MaxSize` — nie może dodać więcej. (2) Aktywny Cooldown — czeka na zakończenie poprzedniej akcji. (3) Suspended `Launch` process. (4) AZ capacity constraint — AWS nie ma wolnej pojemności (rozwiązanie: więcej AZ lub różne typy instancji). (5) Limit Service Quota na vCPU. (6) Launch Template błąd (niepoprawna AMI, SG, subnet).
+
+---
+
+**Pytanie 28:** Różnica między ALB `slow_start` a ASG `InstanceWarmup`?
+
+> **Odpowiedź:** **ALB Slow Start:** ramp-up procentu ruchu wysyłanego do konkretnej instancji w Target Group (0%→100% przez X sekund). Kontroluje ile requestów dostaje nowa instancja. **ASG Instance Warmup:** instancja jest WYKLUCZONA z agregowanych metryk przez X sekund (żeby ASG nie myślał że jest za dużo zasobów). Oba dotyczą "rozgrzewania" ale różne mechanizmy.
+
+---
+
+**Pytanie 29:** Firma ma ECS Fargate z ALB. Jak ECS rejestruje/wyrejestrowuje taski w TG?
+
+> **Odpowiedź:** ECS service controller automatycznie zarządza rejestracją w TG. Przy starcie task: ECS rejestruje `task-private-ip:containerPort` w TG (target type=ip). Task przechodzi HC → healthy → dostaje ruch. Przy zatrzymaniu (scale-in lub update): ECS wyrejestrowuje task → ALB Deregistration Delay → task terminowany. Bez ręcznej interwencji.
+
+---
+
+**Pytanie 30:** Co to jest `CapacityRebalancing` dla Spot w ASG?
+
+> **Odpowiedź:** Gdy ASG przewiduje Spot Interruption (2-min warning): automatycznie uruchamia nową instancję ZANIM przerwana zostanie terminowana. Zapewnia że DesiredCapacity jest utrzymane przez całą operację (nie ma chwili gdzie liczba = Desired-1). Domyślnie OFF, włącz:
+```bash
+aws autoscaling update-auto-scaling-group \
+  --auto-scaling-group-name my-asg \
+  --capacity-rebalance
+```
+
+---
+
+**Pytanie 31:** Firma ma aplikację na EC2 w jednym regionie. RPO=1h, RTO=4h. Jaka strategia DR?
+
+> **Odpowiedź:** **Pilot Light** w DR regionie — RTO 4h jest osiągalne. Komponenty: AMI zreplikowane do DR regionu, RDS snapshot replikacja (lub Read Replica w DR). Przy failover: uruchom ASG z AMI, promote RDS Read Replica → Primary, zaktualizuj Route 53. Koszt: minimalny (tylko RDS Read Replica w DR). RTO 4h = dużo czasu na ręczne / semi-automated failover.
+
+---
+
+**Pytanie 32:** Firma chce żeby EC2 w private subnet były targetami NLB. Czy NLB musi być w public subnet?
+
+> **Odpowiedź:** NLB może być `internet-facing` z nodeami w **public subnets** lub `internal` z nodeami w **private subnets**. Internet-facing NLB: subnety NLB muszą być public (dla Elastic IP). Targety (EC2) mogą być w private subnets — NLB komunikuje się z nimi przez VPC internal routing. EC2 SG: zezwól na ruch z IP NLB nodes lub CIDR NLB subnet.
+
+---
+
+**Pytanie 33:** Ile instancji może mieć jeden ASG maksymalnie?
+
+> **Odpowiedź:** Domyślnie: **MaxSize do 500** (soft limit). Faktycznie ograniczone przez Service Quota na vCPU (EC2 On-Demand limit, domyślnie 32 vCPU). Dla dużych fleet: zwiększ Service Quota przez AWS Console lub Support. EC2 Fleet i Spot Fleet mogą być większe ale to osobne mechanizmy.
+
+---
+
+**Pytanie 34:** Co to jest `predictive-scaling-configuration.SchedulingBufferTime`?
+
+> **Odpowiedź:** Czas (w sekundach) **przed** prognozowanym szczytem ruchu kiedy ASG zaczyna skalować. Default: 0 (skaluje dokładnie w momencie przewidywanego szczytu — za późno bo instancje muszą się uruchomić). Rekomendowane: 300-600s (5-10 min) buffer. Np. szczyt o 9:00 → skalowanie zaczyna o 8:55.
+
+---
+
+**Pytanie 35:** Firma ma ASG + ALB. Deployment nowej wersji przez Instance Refresh. Jak monitorować postęp?
+
+```bash
+# Opisz aktualny Instance Refresh
+aws autoscaling describe-instance-refreshes \
+  --auto-scaling-group-name my-asg \
+  --query 'InstanceRefreshes[0].{
+    Status:Status,
+    Percentage:PercentageComplete,
+    InProgress:InstancesToUpdate,
+    Checkpoints:ProgressDetails.LivePoolProgress
+  }'
+
+# Statusy: Pending | InProgress | Successful | Failed | Cancelling | Cancelled
+# Anuluj jeśli błędy:
+aws autoscaling cancel-instance-refresh --auto-scaling-group-name my-asg
+```
+
+> **Odpowiedź:** Użyj `describe-instance-refreshes` do monitorowania (status, % ukończenia). CloudWatch Events: `EC2 Auto Scaling Instance Refresh` events. Checkpoint system: przy checkpoints ASG czeka X minut — użyj tego czasu do weryfikacji nowych instancji przed kontynuacją.
+
+---
+
+**Pytanie 36:** Firma ma NLB z TLS listener. Backend EC2 nie obsługuje TLS. Czy to problem?
+
+> **Odpowiedź:** **Nie** — NLB z TLS listener może **terminować TLS** i wysyłać odszyfrowany TCP do backendu. Konfiguracja: Listener TLS → Target Group TCP (nie TLS). NLB deszyfruje TLS, EC2 dostaje plain TCP. Certyfikat: z ACM. Opcjonalnie: NLB TCP passthrough (bez terminacji) jeśli EC2 obsługuje TLS sam.
+
+---
+
+**Pytanie 37:** Co to jest `default-actions` w ALB Listener i kiedy jest wywołana?
+
+> **Odpowiedź:** Default action = akcja gdy ŻADNA reguła nie pasuje do requestu. Musi istnieć (wymagana). Typowo: `forward` do default TG, lub `fixed-response 404`, lub redirect. Reguły mają priorytety (1-50000) — oceniane od najniższego do najwyższego. Default: ostatnia w kolejce. Ustaw rozsądny default (np. 404 zamiast przekierowania do błędnej TG).
+
+---
+
+**Pytanie 38:** ASG scale-out uruchamia instancje w jednej AZ mimo że ma subnety w 3 AZ. Dlaczego?
+
+> **Odpowiedź:** ASG dąży do **zrównoważenia** (equal liczba per AZ). Jeśli jedna AZ ma mniej → skaluje tam. Ale jeśli: (1) AZ capacity problem (AWS brak pojemności) — ASG próbuje innej AZ. (2) Subnet błąd — sprawdź konfigurację. (3) Availability zone impaired — ASG omija niedostępną AZ. CloudTrail + ASG activity history: sprawdź error messages.
+
+---
+
+**Pytanie 39:** Firma chce żeby nowe instancje EC2 automatycznie rejestrowały się w Consul service discovery. Jak?
+
+> **Odpowiedź:** **Lifecycle Hook** (Launch): instancja w `Pending:Wait` → Lambda wywoływana (przez SNS/EventBridge) → Lambda wywołuje Consul API z IP nowej instancji → rejestracja w Consul → Lambda wywołuje `complete-lifecycle-action CONTINUE`. Instancja przechodzi do `InService`. Symetrycznie: Terminate hook → deregister z Consul.
+
+---
+
+**Pytanie 40:** Różnica między ASG `Desired Capacity` zmienioną ręcznie a przez politykę skalowania?
+
+> **Odpowiedź:** Obie zmieniają Desired. Różnica w persystencji: **Scheduled Scaling:** nadpisuje Desired w konkretnym czasie (cron). **Polityka (Target/Step):** zmienia Desired reaktywnie na CloudWatch Alarm. **Ręczna zmiana:** pozostaje do następnej polityki lub ręcznej zmiany. Polityki i Scheduled mogą nadpisywać siebie wzajemnie — ustaw `MinSize`/`MaxSize` jako "guardrails".
+
+---
+
+**Pytanie 41:** Firma ma Lambda za ALB. Aplikacja zwraca dużo danych (np. 5 MB JSON). Czy to problem?
+
+> **Odpowiedź:** Tak — ALB → Lambda ma **limit 1 MB** dla request i response body. Dla dużych payloadów: (1) zwróć dane z S3 (pre-signed URL w Lambda response zamiast pełnych danych), (2) użyj paginacji (max 1 MB per page), (3) zmień na EC2/ECS target zamiast Lambda, (4) CloudFront + S3 dla dużych statycznych danych.
+
+---
+
+**Pytanie 42:** Co to jest `connection draining` dla CLB i jak różni się od `deregistration delay` dla ALB/NLB?
+
+> **Odpowiedź:** To ta sama koncepcja z różnymi nazwami. **Connection Draining (CLB):** czas czekania na zakończenie in-flight requestów po wyrejestrowaniu targetu. **Deregistration Delay (ALB/NLB):** identyczny mechanizm, nowa nazwa. Default 300s w obu. Mechanizm: ELB przestaje wysyłać NOWE requesty, czeka na zakończenie aktywnych, potem target terminowany.
+
+---
+
+**Pytanie 43:** Firma ma 100 EC2 za NLB. Chcą zero-downtime rolling update. Jak bez ASG?
+
+> **Odpowiedź:** Ręcznie: (1) wyrejestruj 10 instancji z NLB TG, (2) czekaj na Deregistration Delay, (3) aktualizuj te 10 instancji (nowa AMI lub in-place update), (4) rejestruj z powrotem, (5) czekaj na health check → healthy, (6) powtórz dla następnych 10. Z ASG + Instance Refresh: automatyczne i bezpieczniejsze. Rekomendacja: zawsze używaj ASG.
+
+---
+
+**Pytanie 44:** Co to jest ELB `Access Logs` i jak analizować?
+
+> **Odpowiedź:** Logi każdego requestu przez ALB/NLB → S3. Format: timestamp, client IP, backend IP, latency, status codes, bytes, user-agent. Analiza: **Amazon Athena** z predefined query schema dla ALB logs. Użycie: troubleshooting 5XX, analiza latency percentyli, security forensics (IP analiza), capacity planning. Dodatkowy koszt: tylko S3 storage ($0.023/GB/mc).
+
+---
+
+**Pytanie 45:** ASG ma MaxSize=10. Polityka Target Tracking chce 12 instancji. Co się stanie?
+
+> **Odpowiedź:** ASG uruchomi maksymalnie **10 instancji** (MaxSize jest twardym limitem). CloudWatch alarm pozostaje w stanie `ALARM`. ASG loguje: `MaxSize reached`. Polityka nie błęduje — po prostu nie przekracza MaxSize. Rozwiązanie: zwiększ MaxSize jeśli faktycznie potrzebujesz 12+ lub optymalizuj aplikację żeby działała na mniej instancji.
+
+---
+
+**Pytanie 46:** Firma ma multi-tenant SaaS. Każdy tenant ma osobny ALB (dla izolacji). Teraz mają 500 tenantów. Problem?
+
+> **Odpowiedź:** Default limit: **50 ALB per region** (soft). 500 tenantów = problem. Opcje: (1) Service Quotas — zwiększ limit do 500+ (możliwe ale drogie: 500× $5.84/mc = $2920/mc). (2) **Host-based routing na jednym ALB** (100 reguł per listener, SNI 25 certów → wildcard cert). (3) **API Gateway** per tenant (ma izolację per stage). Rekomendacja: konsolidacja na jednym ALB z path/host routing.
+
+---
+
+**Pytanie 47:** Co to jest `connection_idle_timeout` dla NLB?
+
+> **Odpowiedź:** NLB nie ma HTTP idle timeout (to jest feature ALB). NLB obsługuje **TCP keepalive** — OS-level keepalive na EC2. Dla długich TCP połączeń (WebSocket, gaming): skonfiguruj TCP keepalive na EC2 (`net.ipv4.tcp_keepalive_time`). NLB timeout: 350 sekund dla TCP flows (nie konfigurowalne tak jak ALB). UDP flows: 120 sekund.
+
+---
+
+**Pytanie 48:** Firma ma ASG. Chcą coby nowe instancje były konfigurowane z najnowszą wersją app z S3. Jak?
+
+> **Odpowiedź:** Launch Template `UserData` — bootstrap script: pobierz artefakt z S3, zainstaluj i uruchom. Lub: **Lifecycle Hook** (Launch) + Lambda: Lambda wywołuje SSM Run Command na nowej instancji lub pobieral config z Parameter Store. Albo: **EC2 Image Builder** pipeline — zbuduj złote AMI z zainstalowaną aplikacją → ASG zawsze startuje z ready AMI (szybszy start niż UserData install).
+
+---
+
+**Pytanie 49:** Różnica między `health_check_grace_period` a `instance_warmup` w ASG?
+
+> **Odpowiedź:** **health_check_grace_period:** ASG **ignoruje health check failures** dla nowej instancji przez X sekund (liczy od launch). Zapobiega przedwczesnemu terminowaniu uruchamiającej się instancji. **instance_warmup (Target Tracking):** instancja wykluczona z **agregowanych metryk** przez X sekund. Dwie różne funkcje: grace period chroni przed terminacją, warmup chroni przed błędnym skalowaniem.
+
+---
+
+**Pytanie 50:** Firma ma NLB z Cross-Zone OFF i EC2 w 3 AZ: 3 w AZ-a, 3 w AZ-b, 1 w AZ-c. Jak rozkłada się ruch?
+
+> **Odpowiedź:** Każdy NLB node (per AZ) routuje tylko do instancji w swojej AZ. **Ruch równy do każdej AZ** (33.3% do AZ-a, AZ-b, AZ-c). Wewnątrz AZ: round robin między instancjami. AZ-c: 1 instancja dostaje 33.3% całego ruchu = mocno przeciążona vs 11.1% dla instancji w AZ-a/b. Rozwiązanie: wyrównaj liczbę instancji per AZ lub włącz Cross-Zone.
+
+---
+
+**Pytanie 51:** Co to jest ELB `stickiness.type=app_cookie` vs `lb_cookie`?
+
+> **Odpowiedź:** **lb_cookie:** ALB tworzy własny cookie `AWSALB` (duration 1s-7 dni). Aplikacja nie musi nic robić. **app_cookie:** aplikacja tworzy własny cookie (dowolna nazwa), ALB go czyta i na podstawie jego wartości routuje do tej samej instancji. `app_cookie` = aplikacja kontroluje logikę sticky, ALB tylko przestrzega. Użyj `app_cookie` gdy aplikacja ma własny session cookie.
+
+---
+
+**Pytanie 52:** Firma ma ASG + ALB. Podczas deploy (Instance Refresh) zauważają 502 errors przez kilka sekund. Jak wyeliminować?
+
+> **Odpowiedź:** 502 = stare instancje terminowane zanim drain skończyły. Rozwiązanie: (1) **Deregistration Delay**: zwiększ do wartości ≥ max request duration (np. 60s). (2) **MinHealthyPercentage**: zwiększ (np. 95%) — mniej instancji terminowanych jednocześnie. (3) **Lifecycle Hook** (Terminate): dodaj graceful shutdown logikę. (4) Sprawdź czy aplikacja zwraca connection: close header zanim zamknie.
+
+---
+
+**Pytanie 53:** Firma chce żeby ASG używał `ALBRequestCountPerTarget=500`. Jak skonfigurować?
+
+```bash
+aws autoscaling put-scaling-policy \
+  --policy-name alb-request-tracking \
+  --auto-scaling-group-name my-asg \
+  --policy-type TargetTrackingScaling \
+  --target-tracking-configuration '{
+    "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ALBRequestCountPerTarget",
+      "ResourceLabel": "app/my-alb/50dc6c495c0c9188/targetgroup/my-tg/73e2d6bc24d8a067"
+    },
+    "TargetValue": 500
+  }'
+```
+
+> **Odpowiedź:** ResourceLabel to `LoadBalancerArn/TargetGroupArn` suffix (format: `app/name/xxx/targetgroup/name/xxx`). Target 500 = ASG dąży do 500 req/s per instancja. `ALBRequestCountPerTarget` wymaga że TG jest powiązany z ASG przez Load Balancer.
+
+---
+
+**Pytanie 54:** Firma ma Active-Active deployment w eu-west-1 i us-east-1. Jak skonfigurować failover?
+
+> **Odpowiedź:** Route 53 **Latency-based routing** (normalny ruch) + **Health Checks** na oba ALB: (1) Latency record: `eu-west-1 → eu-ALB`, `us-east-1 → us-ALB`. (2) Health Check na każdy ALB (HTTP /health). (3) `failover=true` na recordach: gdy HC fail → Route 53 wysyła ruch do drugiego regionu. Alternatywnie: **Global Accelerator** (szybszy failover <30s vs Route 53 TTL).
+
+---
+
+**Pytanie 55:** Co sprawdzić gdy ASG nie scale-out mimo high CPU alarm?
+
+> **Odpowiedź:** Checklist: (1) CloudWatch Alarm: czy w stanie `ALARM`? (2) ASG activity history: `describe-scaling-activities` — błędy? (3) `MaxSize` osiągnięty? (4) Cooldown aktywny? (5) `Launch` process suspended? (6) Service Quota: czy masz wolne vCPU? (7) AZ capacity issues? (8) Launch Template błąd (AMI deprecated, subnet pełna)?
+
+---
+
+**Pytanie 56:** Firma ma SQS queue jako trigger dla ASG. Jak skonfigurować?
+
+> **Odpowiedź:** Target Tracking na **custom SQS metric**: `ApproximateNumberOfMessagesVisible` per worker:
+```bash
+aws autoscaling put-scaling-policy \
+  --policy-type TargetTrackingScaling \
+  --target-tracking-configuration '{
+    "CustomizedMetricSpecification": {
+      "MetricName": "ApproximateNumberOfMessagesVisible",
+      "Namespace": "AWS/SQS",
+      "Dimensions": [{"Name": "QueueName", "Value": "my-queue"}],
+      "Statistic": "Average",
+      "Unit": "Count"
+    },
+    "TargetValue": 100
+  }'
+```
+Cel: 100 wiadomości per worker. 1000 wiadomości → scale do 10 workerów.
+
+---
+
+**Pytanie 57:** Różnica między `HealthCheck` i `ReplaceUnhealthy` processes w ASG?
+
+> **Odpowiedź:** **HealthCheck process:** wykonuje sprawdzenia zdrowia i aktualizuje status instancji (healthy/unhealthy). **ReplaceUnhealthy process:** reaguje na unhealthy status — terminuje unhealthy i uruchamia nową. Zawieszenie `HealthCheck`: ASG nie wykrywa problemów. Zawieszenie `ReplaceUnhealthy`: ASG wykrywa ale NIE zastępuje (przydatne do debugowania niedziałającej instancji bez terminacji).
+
+---
+
+**Pytanie 58:** Firma ma ALB → EC2. Chcą analizować który tenant (na podstawie JWT claim) generuje najwięcej ruchu. Jak?
+
+> **Odpowiedź:** ALB sam nie parsuje JWT. Opcje: (1) **ALB Access Logs + Athena**: log zawiera `request_headers` — jeśli JWT w nagłówku, extract sub/tenant z Athena regex. (2) **Application-side logging**: EC2 loguje tenant ID z JWT → CloudWatch Logs → Insights. (3) **ALB + Cognito Auth**: ALB dodaje `x-amzn-oidc-identity` header (sub claim) → aplikacja logguje ten header.
+
+---
+
+**Pytanie 59:** Co to jest `zonal shift` i jak związane z ELB?
+
+> **Odpowiedź:** **AWS Zonal Shift** (Route 53 ARC) = przeniesienie ruchu z jednej AZ (gdy problemy) do pozostałych. Pracuje z ALB: zonal shift wyłącza ALB nodes w problematycznej AZ → ruch do pozostałych AZ. Szybsze niż czekanie na AWS naprawę AZ. Użycie: proaktywny failover gdy AZ ma degradację (nie pełną awarię). `aws arc-zonal-shift start-zonal-shift`.
+
+---
+
+**Pytanie 60:** Opisz kompletną architekturę HA dla krytycznej aplikacji: RTO=5min, RPO=1h, global users.
+
+> **Odpowiedź:**
+```
+Primary: eu-west-1 (Ireland)
+DR:      us-east-1 (N. Virginia)
+
+Frontend:
+  Global Accelerator (2 statyczne Anycast IP)
+    → eu-west-1 ALB (Active)
+    → us-east-1 ALB (Standby, Traffic=0%)
+  
+  GA Health Check: per ALB, failover <30s
+  Traffic Dial: eu-west-1=100%, us-east-1=0%
+  Przy awarii: GA automatycznie → 100% do us-east-1
+
+Per region:
+  ALB (multi-AZ, min 3 AZ)
+    → ASG (DesiredCapacity=10, Min=6, Max=20)
+    Target Tracking: ALBRequestCountPerTarget=500
+    Predictive Scaling: ON
+    Mixed Instances: 30% OD + 70% Spot
+    Lifecycle Hooks: Launch (config) + Terminate (drain)
+    Instance Refresh: MinHealthy=90%
+    Warm Pool: 3 stopped instances
+
+Dane:
+  Aurora Global Database:
+    eu-west-1: Primary (write + read)
+    us-east-1: Read Replica (RPO <1s replication lag)
+    Failover: promote us-east-1 replica → RTO ~1min
+  
+  ElastiCache Global Datastore (Redis):
+    Session store, cache — replikowane cross-region
+
+DNS:
+  Route 53: ALIAS → Global Accelerator
+  Health Checks: HTTP /health per ALB
+
+Security:
+  WAF na ALB (OWASP, rate limiting)
+  SG chain: ALB → EC2 → Aurora
+  IMDSv2 w Launch Template
+  EBS encrypted
+  
+Monitoring:
+  CloudWatch Alarms: 5XX rate, p99 latency, UnhealthyHostCount
+  EventBridge: ASG scaling events
+  X-Ray: distributed tracing
+  
+Wynik:
+  RTO: GA failover <30s + Aurora promote ~1min = ~2min ✅
+  RPO: Aurora Global replication lag <1s << 1h ✅
+  Global latency: AWS backbone przez GA
+```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: ASG, Launch Template, polityki skalowania, Mixed Instances, Lifecycle Hooks, Instance Refresh, Warm Pools, ELB HA Multi-AZ, EC2 targets, ECS Fargate targets, Lambda targets, on-prem IP targets, Global Accelerator, Active-Active/Passive, Pilot Light, Warm Standby*
+
+---
+
+# 13. TUN/TAP — Wirtualne Interfejsy Sieciowe, OpenVPN i AWS VPN
+
+> **Zakres:** Deep-dive w mechanizmy TUN i TAP — wirtualne interfejsy sieciowe jądra Linux. Jak działają, jak się różnią, jak OpenVPN / Viscosity je używają, jak to się ma do AWS Client VPN i Site-to-Site VPN. Diagramy przepływu pakietów, konfiguracje, troubleshooting.
+
+---
+
+## 13.1 Czym są TUN i TAP?
+
+**TUN** i **TAP** to **wirtualne interfejsy sieciowe** implementowane jako sterowniki jądra Linux (i Windows/macOS przez odpowiedniki). Nie reprezentują fizycznego sprzętu — są w całości programowe.
+
+**Kluczowa różnica już na starcie:**
+
+```
+TUN  =  Tunnel  =  działa na warstwie 3 (IP)   — widzi pakiety IP
+TAP  =  Tap     =  działa na warstwie 2 (Ethernet) — widzi ramki Ethernet
+```
+
+**Analogia z życia:**
+- **TUN** to jak rura wodociągowa łącząca dwa miasta — przesyła wodę (pakiety IP) bez znajomości tego co jest na końcu ulicy (Ethernet)
+- **TAP** to jak kabel sieciowy między dwoma przełącznikami — przesyła surowe ramki Ethernet razem z nagłówkami MAC, ARP, VLAN
+
+---
+
+## 13.2 Architektura Jądra — Jak TUN/TAP Istnieje w Systemie
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        USER SPACE                               │
+│                                                                 │
+│  ┌──────────┐    ┌──────────────┐    ┌──────────────────────┐  │
+│  │ Aplikacja│    │   OpenVPN    │    │  Twoja Aplikacja     │  │
+│  │ (nginx,  │    │  (czyta i    │    │  (np. przeglądarka)  │  │
+│  │  sshd)   │    │   pisze do   │    │                      │  │
+│  └──────────┘    │  /dev/net/tun│    └──────────────────────┘  │
+│                  └──────┬───────┘                              │
+└─────────────────────────│───────────────────────────────────────┘
+                          │ read()/write() — pakiety IP
+                          │ (lub ramki Ethernet dla TAP)
+┌─────────────────────────│───────────────────────────────────────┐
+│                   KERNEL SPACE                                  │
+│                          │                                      │
+│  ┌───────────────────────▼───────────────────────────────────┐  │
+│  │              TUN/TAP Driver (/dev/net/tun)                │  │
+│  │                                                           │  │
+│  │   Tworzy wirtualny interfejs: tun0, tap0, utun0 (macOS)  │  │
+│  └──────────────────────┬────────────────────────────────────┘  │
+│                         │                                       │
+│  ┌──────────────────────▼────────────────────────────────────┐  │
+│  │                  Network Stack                            │  │
+│  │   Routing Table   │   iptables/nftables  │   Sockets     │  │
+│  └──────────────────────┬────────────────────────────────────┘  │
+│                         │                                       │
+│  ┌──────────────────────▼────────────────────────────────────┐  │
+│  │             Fizyczny NIC Driver (eth0, ens3)               │  │
+└──┴───────────────────────────────────────────────────────────┴──┘
+                          │
+                    Fizyczna sieć
+```
+
+**Kluczowy mechanizm:** Gdy jądro chce wysłać pakiet przez `tun0`, zamiast przekazać go do fizycznego NIC, **wkłada pakiet do kolejki** z której czyta userspace-owy proces (OpenVPN). OpenVPN szyfruje pakiet i wysyła przez **prawdziwy** interfejs (eth0) jako UDP/TCP datagram do serwera VPN.
+
+---
+
+## 13.3 TUN — Warstwa 3 (IP Tunnel)
+
+### Jak działa TUN — krok po kroku
+
+```
+Scenariusz: Laptop (10.8.0.2) → przez VPN → serwer (192.168.1.10)
+
+STRONA KLIENTA:
+═══════════════
+
+Krok 1: Aplikacja wysyła pakiet
+  ping 192.168.1.10
+  Kernel: "192.168.1.0/24 via tun0" (routing table)
+  Kernel dostarcza pakiet do tun0
+
+Krok 2: TUN driver → OpenVPN
+  Pakiet IP wchodzi do kolejki tun0
+  OpenVPN process: read(/dev/net/tun) → dostaje raw IP packet:
+
+  ┌─────────────────────────────────────────────────────┐
+  │  IP Header  │  ICMP Header  │  Payload              │
+  │  Src:10.8.0.2│             │  (echo request)        │
+  │  Dst:192.168.1.10          │                         │
+  └─────────────────────────────────────────────────────┘
+
+Krok 3: OpenVPN szyfruje (AES-256-GCM + HMAC)
+  Dodaje OpenVPN header (peer ID, packet ID, timestamp)
+  Wynik:
+  ┌──────┬────────────────────────────────────────────┐
+  │OpenVPN│  Zaszyfrowany (cały oryginalny IP pakiet) │
+  │Header │  + MAC (authentication tag)               │
+  └──────┴────────────────────────────────────────────┘
+
+Krok 4: Wysłanie przez fizyczną sieć
+  OpenVPN: write(UDP socket) → eth0 → Internet
+  
+  ┌──────────┬────────┬──────────┬──────────────────────┐
+  │Ethernet  │  IP    │   UDP    │ OpenVPN+Encrypted IP  │
+  │Header    │ Header │  Header  │ Payload               │
+  │src: MACa │src:1.2.3.4│ :1194│                       │
+  │dst: MACb │dst:5.6.7.8│      │                       │
+  └──────────┴────────┴──────────┴──────────────────────┘
+
+STRONA SERWERA:
+═══════════════
+
+Krok 5: Serwer OpenVPN odbiera UDP
+  read(UDP socket) → dostaje zaszyfrowany payload
+  Odszyfrowuje → oryginalny pakiet IP (src:10.8.0.2, dst:192.168.1.10)
+
+Krok 6: write(/dev/net/tun) → tun0
+  Jądro serwera: routing table → "192.168.1.0/24 via eth1"
+  Pakiet wędruje do 192.168.1.10
+```
+
+### TUN Interface — Właściwości
+
+```
+tun0 po konfiguracji OpenVPN:
+  IP:           10.8.0.1/24 (lub point-to-point)
+  MTU:          1500 (domyślnie) → często zmniejszone do 1400-1450
+                (musi zmieścić się w UDP datagram razem z encapsulation)
+  Flags:        UP POINTOPOINT RUNNING NOARP MULTICAST
+  Brak MAC:     TUN = L3 = nie ma adresu MAC!
+  
+ip addr show tun0:
+  3: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc ...
+      link/none                         ← brak MAC!
+      inet 10.8.0.1 peer 10.8.0.2/32   ← point-to-point lub
+      inet 10.8.0.1/24                  ← subnet mode
+```
+
+---
+
+## 13.4 TAP — Warstwa 2 (Ethernet Bridge)
+
+### Jak działa TAP — krok po kroku
+
+```
+Scenariusz: Klient (PC w biurze) przez VPN staje się częścią sieci biura
+           Klient dostaje adres z DHCP serwera biurowego!
+
+TAP działa jak WIRTUALNY KABEL SIECIOWY:
+
+LAPTOP (w domu)              BIURO (serwer VPN)
+══════════════               ════════════════
+tap0                         tap0
+ │                            │
+ │  ←── Zaszyfrowana          │
+ │       ramka Ethernet ───►  │
+ │       (przez Internet)     │
+ │                            │
+ └── bridge (br0) ────────────┘── eth0 (fizyczna sieć biura)
+                                     │
+                              DHCP Server biura
+                              Serwery biurowe
+                              Drukarki biurowe
+
+Klient dostaje IP 192.168.1.105 od DHCP serwera biura!
+Ping do drukarki 192.168.1.50 → TAP działa jak kabel biurowy
+ARP działa! Klient może "widzieć" wszystkie urządzenia L2!
+```
+
+### TAP Interface — Właściwości
+
+```
+tap0 po konfiguracji:
+  ip addr show tap0:
+  4: tap0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc ...
+      link/ether 2e:a4:6c:bb:cc:dd brd ff:ff:ff:ff:ff:ff   ← MA MAC!
+      inet 192.168.1.105/24                                  ← z DHCP biura
+
+Kluczowe: TAP MA adres MAC → może uczestniczyć w ARP, spanning tree itd.
+TAP można dodać do bridge:
+  ip link set tap0 master br0
+  → TAP staje się portem wirtualnego switcha
+```
+
+### Ramka Ethernet przez TAP vs IP przez TUN
+
+```
+TUN – co OpenVPN czyta:
+┌─────────────┬─────────────┬──────────┐
+│  IP Header  │  TCP Header │  Payload │
+│  20 bytes   │  20 bytes   │  dane    │
+└─────────────┴─────────────┴──────────┘
+(brak Ethernet header — kernel go strippuje dla tun)
+
+TAP – co OpenVPN czyta:
+┌────────────────┬─────────────┬─────────────┬──────────┐
+│ Ethernet Header│  IP Header  │  TCP Header │  Payload │
+│  14 bytes      │  20 bytes   │  20 bytes   │  dane    │
+│ dst MAC|src MAC│             │             │          │
+│ EtherType      │             │             │          │
+└────────────────┴─────────────┴─────────────┴──────────┘
+(pełna ramka Ethernet — OpenVPN szyfruje całą)
+```
+
+---
+
+## 13.5 TUN vs TAP — Kiedy Co Używać
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    TUN vs TAP Porównanie                        │
+├────────────────┬────────────────────────┬───────────────────────┤
+│ Cecha          │ TUN (L3)               │ TAP (L2)              │
+├────────────────┼────────────────────────┼───────────────────────┤
+│ Warstwa OSI    │ 3 (Network — IP)       │ 2 (Data Link—Ethernet)│
+│ Co przesyła    │ Pakiety IP             │ Ramki Ethernet        │
+│ MAC address    │ ❌ Brak                │ ✅ Ma MAC             │
+│ ARP support    │ ❌ Nie                 │ ✅ Tak                │
+│ DHCP (L2)      │ ❌ Tylko statyczne IP  │ ✅ Pełny DHCP         │
+│ Broadcast      │ ❌ Nie                 │ ✅ Tak                │
+│ Bridge/Switch  │ ❌ Nie można bridgować │ ✅ Może być mostkowane │
+│ Overhead       │ Niższy (brak 14B ETH) │ Wyższy (+14B ETH hdr) │
+│ MTU efficiency │ Lepsze                 │ Nieco gorsze          │
+│ IPv6 support   │ ✅ Tak                 │ ✅ Tak                │
+│ Non-IP traffic │ ❌ Tylko IP            │ ✅ IPX, AppleTalk etc │
+│ Typowe użycie  │ Remote access VPN,     │ Site-to-Site bridge,  │
+│                │ Point-to-Point         │ VM networking, legacy │
+│ OpenVPN mode   │ --dev tun (default)    │ --dev tap             │
+│ AWS Client VPN │ ✅ Używa TUN           │ ❌ Nie używa          │
+├────────────────┴────────────────────────┴───────────────────────┤
+│ Kiedy TAP:                                                       │
+│  - Potrzebujesz L2 bridge (VM migracja, legacy apps)           │
+│  - NetBIOS/SMB broadcasting (Windows file shares przez VPN)    │
+│  - Protokoły non-IP (rzadkie, legacy)                          │
+│  - Emulacja fizycznej sieci LAN przez VPN                      │
+│                                                                 │
+│ Kiedy TUN (domyślnie):                                          │
+│  - Większość przypadków remote access VPN                      │
+│  - AWS Client VPN, WireGuard                                   │
+│  - Lepsza wydajność i prostota                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 13.6 Tworzenie TUN/TAP — Konfiguracja Ręczna
+
+### Tworzymy TUN ręcznie (Linux)
+
+```bash
+# Załaduj moduł jądra (zwykle załadowany automatycznie)
+sudo modprobe tun
+
+# Utwórz TUN interface
+sudo ip tuntap add dev tun0 mode tun user $(whoami)
+
+# Lub z iproute2 (nowszy sposób):
+sudo ip link add tun0 type tun
+sudo ip tuntap add mode tun dev tun0
+
+# Przypisz IP i uruchom
+sudo ip addr add 10.8.0.1/24 dev tun0
+sudo ip link set tun0 up
+
+# Sprawdź
+ip addr show tun0
+ip link show tun0
+
+# Usuń
+sudo ip tuntap del dev tun0 mode tun
+# lub
+sudo ip link del tun0
+```
+
+### Tworzymy TAP ręcznie
+
+```bash
+# Utwórz TAP interface
+sudo ip tuntap add dev tap0 mode tap user $(whoami)
+
+# Przypisz IP
+sudo ip addr add 192.168.100.1/24 dev tap0
+sudo ip link set tap0 up
+
+# Dodaj do bridge (opcjonalne — emulacja switcha):
+sudo ip link add br0 type bridge
+sudo ip link set tap0 master br0
+sudo ip link set eth1 master br0      # dodaj fizyczny NIC do bridge
+sudo ip link set br0 up
+sudo ip addr add 192.168.1.1/24 dev br0  # IP na bridge, nie na tap0!
+
+# Sprawdź bridge
+bridge link show
+```
+
+### /dev/net/tun — plik urządzenia
+
+```bash
+# /dev/net/tun to jeden plik dla WSZYSTKICH TUN/TAP interfejsów
+ls -la /dev/net/tun
+# crw-rw-rw- 1 root root 10, 200 /dev/net/tun
+
+# Otwarcie /dev/net/tun + ioctl(TUNSETIFF) tworzy nowy interfejs
+# Każdy proces który otwiera /dev/net/tun dostaje własny deskryptor
+# Deskryptor = jeden koniec "rury" do jądra
+
+# OpenVPN robi mniej więcej:
+# int fd = open("/dev/net/tun", O_RDWR);
+# struct ifreq ifr = {.ifr_flags = IFF_TUN};
+# strcpy(ifr.ifr_name, "tun0");
+# ioctl(fd, TUNSETIFF, &ifr);
+# → teraz read(fd) pobiera pakiety IP, write(fd) wysyła do stosu
+```
+
+---
+
+## 13.7 OpenVPN — Jak Używa TUN/TAP
+
+### Tryb TUN (--dev tun) — Remote Access VPN
+
+```bash
+# Typowa konfiguracja serwera OpenVPN (tun mode):
+# /etc/openvpn/server.conf
+
+port 1194
+proto udp                    # UDP: szybsze, ale może być blokowane
+dev tun                      # ← TUN mode!
+ca ca.crt
+cert server.crt
+key server.key
+dh dh2048.pem
+tls-auth ta.key 0            # Dodatkowe HMAC na pakiety handshake
+
+# VPN Subnet (nie część sieci biurowej)
+server 10.8.0.0 255.255.255.0   # ← Klienci dostają 10.8.0.x
+                                 # Serwer: 10.8.0.1, Klienci: 10.8.0.2+
+
+# Routing — powiedz klientom żeby routowali 192.168.1.0/24 przez VPN
+push "route 192.168.1.0 255.255.255.0"
+push "dhcp-option DNS 192.168.1.1"
+
+# Opcjonalnie: cały ruch przez VPN (full tunnel):
+# push "redirect-gateway def1 bypass-dhcp"
+
+keepalive 10 120             # Ping co 10s, restart po 120s braku odpowiedzi
+cipher AES-256-GCM           # Szyfrowanie
+auth SHA256                  # HMAC algorithm
+compress lz4-v2              # Kompresja (ostrożnie z VORACLE attack)
+max-clients 100
+persist-key
+persist-tun
+```
+
+### Routing po stronie klienta (co dzieje się z tabelą routingu)
+
+```bash
+# PRZED połączeniem VPN:
+ip route show
+# default via 192.168.0.1 dev eth0   ← cały ruch przez router domowy
+# 192.168.0.0/24 dev eth0            ← sieć lokalna
+
+# PO połączeniu OpenVPN (tun, split tunnel):
+ip route show
+# default via 192.168.0.1 dev eth0       ← Internet nadal przez domowy router
+# 10.8.0.0/24 dev tun0                   ← VPN subnet przez tun0
+# 192.168.1.0/24 via 10.8.0.1 dev tun0  ← BIURO przez VPN ← TO JEST CLUE
+# 5.6.7.8/32 via 192.168.0.1 dev eth0   ← serwer VPN przez lokalny router
+
+# FULL TUNNEL (push "redirect-gateway def1"):
+ip route show
+# 0.0.0.0/1 via 10.8.0.5 dev tun0        ← pierwsza połowa Internetu przez VPN
+# 128.0.0.0/1 via 10.8.0.5 dev tun0      ← druga połowa Internetu przez VPN
+# 5.6.7.8/32 via 192.168.0.1 dev eth0    ← TYLKO serwer VPN przez lokalny router
+# default via 192.168.0.1 dev eth0        ← oryginalne default (nadpisane przez 0/1, 128/1)
+```
+
+> ⚠️ **Dlaczego dwie trasy 0.0.0.0/1 i 128.0.0.0/1 zamiast 0.0.0.0/0?**
+> Bo `/0` (default route) jest nadpisywane przez bardziej specyficzne `/1` trasy.
+> Trasa do serwera VPN (5.6.7.8/32) jest bardziej specyficzna niż `/1` więc nie idzie przez VPN (pętla!).
+
+### Tryb TAP (--dev tap) — Bridge VPN
+
+```bash
+# /etc/openvpn/server-tap.conf
+port 1194
+proto udp
+dev tap                         # ← TAP mode!
+ca ca.crt
+cert server.crt
+key server.key
+dh dh2048.pem
+
+# W trybie TAP: używamy bridge zamiast server directive
+# server 10.8.0.0... NIE używamy
+# Zamiast tego konfigurujemy bridge w OS:
+
+up "/etc/openvpn/bridge-start.sh"
+down "/etc/openvpn/bridge-stop.sh"
+```
+
+```bash
+# bridge-start.sh:
+#!/bin/bash
+BR="br0"
+TAP="tap0"
+ETH="eth0"
+BRIDGE_IP="192.168.1.1"
+BRIDGE_NETMASK="255.255.255.0"
+
+# Utwórz bridge
+brctl addbr $BR
+
+# Dodaj tap0 i eth0 do bridge
+ip link set $TAP promisc on
+ip link set $ETH promisc on
+brctl addif $BR $TAP
+brctl addif $BR $ETH
+
+# Nadaj IP bridgowi (nie eth0/tap0!)
+ip addr add $BRIDGE_IP/$BRIDGE_NETMASK dev $BR
+ip link set $BR up
+
+# Klienci VPN dostają IP z DHCP serwera biura (przez bridge)!
+```
+
+---
+
+## 13.8 Viscosity — macOS/Windows TUN/TAP
+
+**Viscosity** to graficzny klient OpenVPN dla macOS i Windows. Pod spodem używa tych samych mechanizmów TUN/TAP.
+
+### macOS — utun zamiast tun
+
+```
+macOS nie ma /dev/net/tun jak Linux.
+macOS używa własnego mechanizmu: utun (user-space tunnel).
+
+Dostępne przez: Network Extension framework (nowszy)
+                lub TunnelKit / TunTap dla macOS (starszy)
+
+Viscosity na macOS:
+  Tworzy utun0, utun1, utun2...
+  /var/log/viscosity.log:
+  "Interface: utun2"
+  "IP Address: 10.8.0.4"
+  
+Sprawdź w macOS:
+  ifconfig utun0
+  netstat -rn -f inet   ← routing table
+  
+# Na macOS routing działa identycznie jak Linux tun
+# utun0 pojawia się jak zwykły interface:
+# utun2: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1500
+#     inet 10.8.0.4 --> 10.8.0.5 netmask 0xffffffff
+```
+
+### Windows — TAP-Windows / Wintun
+
+```
+Windows OpenVPN klient używa:
+  TAP-Windows6 (starszy):   wirtualny adapter widoczny w Device Manager
+                            "TAP-Windows Adapter V9"
+  
+  Wintun (nowszy):          ring-buffer driver, szybszy
+                            WireGuard używa Wintun
+
+Viscosity na Windows:
+  Instaluje TAP-Windows6 adapter
+  Pojawia się w Network Connections jako:
+    "TAP-Windows Adapter V9 #2"
+  
+  Przydzielony IP np. 10.8.0.4
+  Routing jak na Linux/macOS
+
+Sprawdź Windows:
+  ipconfig /all             ← zobaczysz TAP adapter
+  route print               ← routing table
+  Get-NetAdapter -Name "TAP*"  ← PowerShell
+```
+
+### Viscosity — co robi pod spodem
+
+```
+Viscosity UI → OpenVPN proces → TUN/TAP driver → szyfrowanie → UDP → VPN serwer
+
+Viscosity nie jest osobnym protokołem VPN!
+Jest to GUI wrapper dla OpenVPN.
+Może importować .ovpn pliki konfiguracyjne.
+Obsługuje:
+  - Profile zarządzania (wiele VPN)
+  - DNS leak protection (wymusza DNS przez VPN)
+  - IPv6 leak protection
+  - Kill switch (blokada Internetu gdy VPN rozłączony)
+
+Kill Switch działa przez:
+  iptables/pf (firewall) — blokada non-VPN ruchu
+  lub route manipulation — usuń default route gdy VPN padnie
+```
+
+---
+
+## 13.9 Szyfrowanie w TUN — Warstwy Ochrony OpenVPN
+
+```
+Warstwa 1: TLS Control Channel (konfiguracja, wymiana kluczy)
+  Protokół: TLS 1.2/1.3
+  Cel: uzgodnienie klucza sesji, certyfikaty peer-to-peer
+  Klucze: PKI (CA, Server cert, Client cert)
+  
+  ┌──────────────────────────────────────────────────────┐
+  │                 TLS Handshake                        │
+  │  Klient ──ServerHello──► Serwer                      │
+  │  Klient ◄──Certificate── Serwer                      │
+  │  Klient ──ClientCert───► Serwer  (mutual TLS)        │
+  │  Klient ◄──SessionKey─── Serwer                      │
+  │         Klucz sesji uzgodniony!                      │
+  └──────────────────────────────────────────────────────┘
+
+Warstwa 2: Data Channel (dane użytkownika przez tun0)
+  Szyfrowanie: AES-256-GCM (recommended) lub AES-256-CBC
+  HMAC: SHA256 / SHA512 (dla CBC) lub wbudowany w GCM
+  
+  Każdy pakiet IP z tun0:
+  ┌───────────┬──────────────────────────────────────────┐
+  │ OpenVPN   │  AES-256-GCM zaszyfrowany IP pakiet      │
+  │ Packet    │  + 16-byte Authentication Tag (AEAD)     │
+  │ Header    │  (zapobiega tampering)                   │
+  │ (peer_id, │                                          │
+  │  packet_id│                                          │
+  │  timestamp│                                          │
+  └───────────┴──────────────────────────────────────────┘
+
+Warstwa 3: tls-auth / tls-crypt (Pre-TLS HMAC)
+  tls-auth:   HMAC na pakiety kontrolne PRZED TLS handshake
+              Chroni przed DDoS na TLS endpoint
+  tls-crypt:  Szyfruje + HMAC pakiety kontrolne
+              Silniejsze — ukrywa fakt że to OpenVPN
+```
+
+---
+
+## 13.10 MTU — Krytyczny Problem TUN/TAP
+
+```
+Ethernet MTU: 1500 bytes (standard)
+
+Problem z TUN/OpenVPN:
+  Oryginalny pakiet IP:        1500 bytes
+  + OpenVPN header:              29 bytes
+  + UDP header:                   8 bytes
+  + Outer IP header:             20 bytes
+  + Ethernet header:             14 bytes
+                              ──────────
+  TOTAL:                       1571 bytes  ← za duże dla Ethernet!
+
+Wynik: fragmentacja lub dropped packets
+
+Rozwiązanie — zmniejsz MTU:
+
+# Opcja 1: tun-mtu w OpenVPN config
+tun-mtu 1400           # Wewnętrzny pakiet max 1400 bytes
+fragment 1300          # Fragmentuj na poziomie OpenVPN jeśli >1300
+mssfix 1300            # TCP MSS clamp (ważne!)
+
+# Opcja 2: na interfejsie OS
+ip link set tun0 mtu 1400
+
+# mssfix — dlaczego ważne:
+# TCP negocjuje MSS (Max Segment Size) w SYN handshake
+# Jeśli MSS za duże → TCP segmenty będą za duże → fragmentacja na UDP
+# mssfix przepisuje MSS w TCP SYN pakietach wychodzących przez tun
+# mssfix = tun-mtu - 40 (IP+TCP headers) = 1400 - 40 = 1360 (typowo)
+
+# Diagnostyka MTU:
+ping -M do -s 1400 192.168.1.1    # Linux: -M do = don't fragment
+ping -D -s 1400 192.168.1.1       # macOS
+# jeśli "Frag needed" lub timeout → MTU za duże
+```
+
+---
+
+## 13.11 AWS Client VPN — TUN Pod Spodem
+
+**AWS Client VPN** to zarządzany OpenVPN-compatible service. Klient AWS VPN Client (lub dowolny klient OpenVPN) tworzy TUN interface na laptopie.
+
+### Jak AWS Client VPN działa z TUN
+
+```
+Laptop pracownika
+  │
+  │  AWS VPN Client (lub OpenVPN klient):
+  │  1. TLS handshake do AWS Client VPN Endpoint
+  │  2. Mutual TLS (certyfikat klienta) lub SAML auth
+  │  3. OpenVPN protokół
+  │  4. Tworzy tun0 / utun0 (macOS)
+  │
+  ├──tun0: 10.0.64.2/22  ← z puli CIDR Client VPN (10.0.64.0/22)
+  │
+  │ OpenVPN UDP lub TCP → Internet → AWS Edge
+  │                                    │
+  ▼                                    ▼
+AWS Client VPN Endpoint          ENI w subnecie VPC (eu-west-1a)
+  10.0.64.1 (gateway)              10.0.1.x
+                                      │
+                                      └──► VPC (10.0.0.0/16)
+                                              EC2, RDS, etc.
+
+Routing po stronie klienta (split tunnel):
+  10.0.0.0/16 → tun0       ← tylko VPC ruch przez VPN
+  0.0.0.0/0 → eth0         ← Internet bezpośrednio (split tunnel)
+```
+
+### Client VPN .ovpn Plik — Anatomia
+
+```openvpn
+# Fragment pliku .ovpn pobranego z AWS Console
+
+client
+dev tun                    ← TUN mode (zawsze dla Client VPN)
+proto udp                  ← UDP 443 lub TCP 443
+remote cvpn-endpoint-xxx.prod.clientvpn.eu-west-1.amazonaws.com 443
+remote-random-hostname     ← randomizuje hostname (dla DNS-based LB)
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+cipher AES-256-GCM
+verb 3
+
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIDxx...  (AWS Certificate Authority)
+-----END CERTIFICATE-----
+</ca>
+
+<cert>
+-----BEGIN CERTIFICATE-----
+MIIDxx...  (Client certificate — dla mutual TLS)
+-----END CERTIFICATE-----
+</cert>
+
+<key>
+-----BEGIN PRIVATE KEY-----
+MIIExx...  (Client private key)
+-----END PRIVATE KEY-----
+</key>
+
+<tls-auth>
+# Static key pre-shared — tls-auth ta.key
+-----BEGIN OpenVPN Static key V1-----
+xxxxxxxx...
+-----END OpenVPN Static key V1-----
+</tls-auth>
+key-direction 1
+```
+
+### Co dzieje się z tun po połączeniu z Client VPN
+
+```bash
+# Po połączeniu AWS Client VPN (macOS):
+ifconfig utun4
+# utun4: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> mtu 1500
+#     inet 10.0.64.5 --> 10.0.64.1 netmask 0xffffffff
+
+netstat -rn -f inet | grep utun4
+# 10.0.0.0/16   10.0.64.1    UGSc    utun4   ← VPC przez VPN
+# 10.0.64.0/22  10.0.64.1    UGSc    utun4   ← Client VPN subnet
+
+# Linux:
+ip route show
+# 10.0.0.0/16 via 10.0.64.1 dev tun0    ← VPC traffic przez VPN
+# 10.0.64.0/22 dev tun0                 ← Client VPN subnet
+```
+
+---
+
+## 13.12 AWS Site-to-Site VPN — IPsec, nie OpenVPN
+
+Site-to-Site VPN nie używa TUN/TAP w tradycyjnym sensie — używa **IPsec** który jest implementowany głębiej w stosie sieciowym.
+
+### IPsec vs OpenVPN/TUN
+
+```
+OpenVPN/TUN:
+  Działa w userspace (OpenVPN daemon)
+  Protokół aplikacji (UDP/TCP)
+  Tworzy wirtualny interfejs tun0
+  Elastyczne (dowolny port, HTTP-like)
+
+IPsec (Site-to-Site VPN AWS):
+  Działa w kernel space (wbudowany w jądro Linux/Windows)
+  Protokoły IP: ESP (Encapsulating Security Payload, proto 50)
+                AH (Authentication Header, proto 51)
+                IKE (UDP port 500, 4500)
+  Nie tworzy tun0! Działa "transparentnie" w stosie
+  Bardziej standardowy, obsługiwany przez sprzęt (Cisco, Juniper)
+```
+
+### Jak IPsec tworzy wirtualny interfejs (Linux strongSwan/libreswan)
+
+```bash
+# IPsec też tworzy wirtualne interfejsy — ale inaczej niż TUN:
+
+# strongSwan / XFRM (Linux kernel IPsec):
+ip xfrm state list     ← security associations (SA)
+ip xfrm policy list    ← security policies (SP)
+
+# Interfejs VTI (Virtual Tunnel Interface) — dla IPsec:
+ip link add vti0 type vti local 1.2.3.4 remote 5.6.7.8 key 0
+ip addr add 169.254.x.x/30 dev vti0
+ip link set vti0 up
+
+# Routing przez VTI:
+ip route add 10.0.0.0/16 dev vti0
+
+# Na AWS CGW (on-premises router):
+# Cisco IOS:
+interface Tunnel1
+  ip address 169.254.x.x 255.255.255.252
+  ip virtual-reassembly
+  tunnel source GigabitEthernet0/0
+  tunnel mode ipsec ipv4
+  tunnel destination 52.x.x.x  ← AWS VGW public IP
+  tunnel protection ipsec profile AWS-VPN-Profile
+
+# Palo Alto / Fortinet: GUI + CLI podobnie
+```
+
+### AWS VGW — Co dzieje się po stronie AWS
+
+```
+On-prem Router (CGW)
+  │
+  │ IPsec ESP (proto 50) zaszyfrowane pakiety
+  │ IKEv2 (UDP 500/4500) key exchange
+  │
+  ▼
+AWS VGW (Virtual Private Gateway) — zarządzane przez AWS
+  │ Dwa tunele (różne publiczne IP, HA)
+  │
+  ▼
+VPC Router
+  │
+  ▼
+Route Table: 10.100.0.0/16 → vgw-xxxx (lub tgw-xxxx)
+  │
+  ▼
+EC2 w private subnet
+```
+
+---
+
+## 13.13 WireGuard — Nowoczesna Alternatywa dla TUN
+
+**WireGuard** to nowoczesny protokół VPN, dużo prostszy od OpenVPN, wbudowany w jądro Linux od 5.6.
+
+```bash
+# WireGuard ZAWSZE używa TUN (nie TAP)
+# Kernel module: wireguard.ko
+
+# Utwórz WireGuard interface:
+ip link add wg0 type wireguard
+
+# Konfiguracja:
+wg setconf wg0 /etc/wireguard/wg0.conf
+
+# /etc/wireguard/wg0.conf (serwer):
+[Interface]
+Address = 10.200.0.1/24
+ListenPort = 51820
+PrivateKey = <base64 private key>
+
+[Peer]
+PublicKey = <client public key>
+AllowedIPs = 10.200.0.2/32    ← klient może używać tego IP
+
+# Uruchom:
+wg-quick up wg0
+
+# Sprawdź:
+wg show
+ip addr show wg0
+# wg0: <POINTOPOINT,NOARP,UP,LOWER_UP> mtu 1420 qdisc noqueue
+#   inet 10.200.0.1/24 scope global wg0
+
+# WireGuard używa UDP (domyślnie 51820)
+# Klucze: Curve25519 (ECDH), ChaCha20-Poly1305 szyfrowanie
+# Dużo prostszy config niż OpenVPN (brak PKI per se)
+```
+
+### WireGuard vs OpenVPN/TUN
+
+```
+┌─────────────────┬─────────────────────┬─────────────────────┐
+│ Cecha           │ OpenVPN/TUN         │ WireGuard/TUN        │
+├─────────────────┼─────────────────────┼─────────────────────┤
+│ Kernel/User     │ Userspace daemon    │ Kernel space (5.6+) │
+│ Kod (LOC)       │ ~70,000            │ ~4,000               │
+│ Konfiguracja    │ Złożona (.conf)     │ Prosta (key-based)  │
+│ PKI             │ Wymagane (CA, cert) │ Nie wymagane        │
+│ Protokół        │ UDP lub TCP         │ UDP only            │
+│ Szyfrowanie     │ AES-256-GCM         │ ChaCha20-Poly1305   │
+│ Latency         │ Wyższe (userspace)  │ Niższe (kernel)     │
+│ Throughput      │ ~200 Mbps / core    │ ~1 Gbps / core      │
+│ Mobilność       │ Dobra               │ Doskonała (roaming) │
+│ AWS Client VPN  │ ✅ Używany          │ ❌ Nie obsługiwany  │
+│ AWS S2S VPN     │ ❌                  │ ❌ (używa IPsec)    │
+│ Interface       │ tun0                │ wg0                 │
+└─────────────────┴─────────────────────┴─────────────────────┘
+```
+
+---
+
+## 13.14 Diagnostyka TUN/TAP — Narzędzia
+
+```bash
+# ═══════════════════════════════════════════════
+# DIAGNOSTYKA INTERFEJSÓW
+# ═══════════════════════════════════════════════
+
+# Lista wszystkich interfejsów (w tym tun/tap):
+ip link show
+ip addr show
+ifconfig -a          # starsze systemy
+
+# Tylko TUN/TAP interfejsy:
+ip link show type tun
+ip link show type tap
+
+# Statystyki ruchu:
+ip -s link show tun0
+ethtool -S tun0      # nie zawsze dostępne dla virtual
+
+# ═══════════════════════════════════════════════
+# DIAGNOSTYKA ROUTINGU
+# ═══════════════════════════════════════════════
+
+# Pełna routing table:
+ip route show table all
+ip route show
+netstat -rn
+
+# Czy pakiet idzie przez tun0?
+ip route get 192.168.1.10
+# 192.168.1.10 via 10.8.0.1 dev tun0 src 10.8.0.2
+
+# Sprawdź czy trasa istnieje:
+ip route show 192.168.1.0/24
+
+# ═══════════════════════════════════════════════
+# DIAGNOSTYKA VPN POŁĄCZENIA
+# ═══════════════════════════════════════════════
+
+# OpenVPN logi (zwiększ verbosity w config: verb 9):
+journalctl -u openvpn@server -f
+tail -f /var/log/openvpn/openvpn.log
+
+# Czy OpenVPN nasłuchuje na porcie?
+ss -lunp | grep 1194     # UDP 1194
+ss -ltnp | grep 1194     # TCP 1194
+
+# Czy tunel przesyła dane?
+watch -n1 'ip -s link show tun0'
+# TX/RX bytes rosnące = dane przepływają
+
+# tcpdump na tun0 (pakiety przed szyfrowaniem):
+tcpdump -i tun0 -n
+
+# tcpdump na eth0 (zaszyfrowany ruch UDP):
+tcpdump -i eth0 udp port 1194 -n
+
+# ═══════════════════════════════════════════════
+# MTU DIAGNOSTYKA
+# ═══════════════════════════════════════════════
+
+# Test MTU path discovery:
+ping -M do -s 1400 10.8.0.1    # DF bit set, 1400 bytes payload
+ping -M do -s 1450 10.8.0.1    # zwiększaj do pojawienia się błędu
+# "ping: local error: message too long, mtu=1430" → MTU = 1430
+
+# Lub przez tracepath:
+tracepath 192.168.1.10          # pokazuje MTU per hop
+
+# ═══════════════════════════════════════════════
+# DEBUGGING TAP BRIDGE
+# ═══════════════════════════════════════════════
+
+# Sprawdź bridge:
+bridge link show
+brctl show
+
+# ARP table przez bridge:
+arp -n
+ip neigh show
+
+# Czy MAC adresy przepływają?
+tcpdump -i tap0 arp    # ARP na tap interfejsie
+tcpdump -i br0 -en    # ramki Ethernet na bridge (-e = show MAC)
+```
+
+---
+
+## 13.15 Bezpieczeństwo TUN/TAP — Zagrożenia i Ochrona
+
+```
+Zagrożenie 1: DNS Leak
+  Problem: System DNS resolver używa eth0 zamiast tun0
+  Sprawdź: https://dnsleaktest.com
+  
+  Rozwiązanie (OpenVPN):
+    push "dhcp-option DNS 10.8.0.1"     ← wymuś DNS przez VPN
+    script-security 2
+    up /etc/openvpn/update-resolv-conf  ← skrypt aktualizuje /etc/resolv.conf
+    down /etc/openvpn/update-resolv-conf
+  
+  Lub: systemd-resolved z DNS over VPN:
+    [Resolve]
+    DNS=10.8.0.1
+    Domains=~.                          ← wszystkie domeny przez VPN DNS
+
+Zagrożenie 2: IPv6 Leak
+  Problem: VPN tuneluje tylko IPv4, IPv6 idzie bezpośrednio
+  
+  Rozwiązanie:
+    push "block-outside-dns"
+    ifconfig-ipv6 fd00::/8
+    push "route-ipv6 ::/0"             ← full IPv6 tunnel
+    lub: wyłącz IPv6 na interfejsie
+    sysctl -w net.ipv6.conf.eth0.disable_ipv6=1
+
+Zagrożenie 3: Kill Switch brak
+  Problem: VPN rozłączone → ruch przez Internet bez szyfrowania
+  
+  Rozwiązanie (iptables):
+    # Zezwól tylko ruch przez VPN:
+    iptables -F
+    iptables -P INPUT DROP
+    iptables -P OUTPUT DROP
+    iptables -P FORWARD DROP
+    
+    # Zezwól loopback:
+    iptables -A INPUT -i lo -j ACCEPT
+    iptables -A OUTPUT -o lo -j ACCEPT
+    
+    # Zezwól VPN server connection (przed tunelem):
+    iptables -A OUTPUT -o eth0 -d <vpn_server_ip> -p udp --dport 1194 -j ACCEPT
+    iptables -A INPUT -i eth0 -s <vpn_server_ip> -p udp --sport 1194 -j ACCEPT
+    
+    # Zezwól cały ruch przez tun:
+    iptables -A INPUT -i tun0 -j ACCEPT
+    iptables -A OUTPUT -o tun0 -j ACCEPT
+    
+    # VPN rozłączone → iptables blokuje → Kill Switch działa
+
+Zagrożenie 4: TUN/TAP privilege escalation
+  Problem: /dev/net/tun dostępny dla normalnych userów
+  
+  Rozwiązanie:
+    # Ogranicz dostęp:
+    chown root:vpngroup /dev/net/tun
+    chmod 660 /dev/net/tun
+    
+    # OpenVPN --user/--group:
+    user nobody
+    group nogroup          ← drop privilegies po inicjalizacji
+```
+
+---
+
+## 13.16 TUN/TAP w Kontekście AWS — Mapa Powiązań
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              VPN Solutions i TUN/TAP w AWS                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  AWS Client VPN (zarządzany OpenVPN)                           │
+│    Klient: tun0 / utun0 (macOS) / TAP-Windows (Windows)        │
+│    Serwer: Zarządzany przez AWS (nie widać TUN po stronie AWS)  │
+│    Protokół: OpenVPN (UDP 443 lub TCP 443)                      │
+│    Szyfrowanie: AES-256-GCM                                     │
+│                                                                 │
+│  AWS Site-to-Site VPN (IPsec)                                  │
+│    Klient (CGW): IPsec VTI lub policy-based                    │
+│    Cisco/Juniper/Palo Alto: własny IPsec driver                 │
+│    Linux (strongSwan): ip xfrm, opcjonalnie VTI interface       │
+│    Protokół: IKEv2 + ESP (nie OpenVPN, nie TUN)                │
+│                                                                 │
+│  Własny OpenVPN na EC2                                         │
+│    EC2 serwer: tun0 lub tap0                                    │
+│    Klienci: tun0 / utun0                                       │
+│    Pełna kontrola (dobry dla BYOL OpenVPN Access Server)        │
+│                                                                 │
+│  AWS Direct Connect                                            │
+│    Warstwa fizyczna/L2 — bez TUN/TAP                           │
+│    Dedykowane łącze fizyczne                                    │
+│                                                                 │
+│  Transit Gateway (VPN attachment)                              │
+│    IPsec tunele do TGW — jak S2S VPN                           │
+│    Nie TUN/TAP — kernel IPsec lub VTI po stronie CGW           │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+Kiedy uruchamiasz własny OpenVPN na EC2:
+  
+  aws ec2 run-instances --instance-type t3.small  ← EC2 jako VPN serwer
+  
+  Na EC2 (Linux):
+    modprobe tun
+    tun0 tworzony przez OpenVPN
+    
+  Ważne dla EC2 jako VPN router:
+    # Włącz IP forwarding (wymagane!):
+    echo 1 > /proc/sys/net/ipv4/ip_forward
+    sysctl -w net.ipv4.ip_forward=1
+    
+    # Wyłącz Source/Destination Check na EC2:
+    aws ec2 modify-instance-attribute \
+      --instance-id i-12345678 \
+      --source-dest-check '{"Value": false}'
+    
+    # Bez tego: EC2 odrzuca pakiety gdzie src/dst != własne IP
+    # (EC2 hypervisor sprawdza i droppuje)
+    
+    # NAT dla klientów VPN (maskarada):
+    iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+```
+
+---
+
+## 13.17 Well-Architected Framework — TUN/TAP i VPN
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Centralizuj logi OpenVPN (CloudWatch Logs Agent), monitoring tun0 stats przez CloudWatch custom metrics, automate certificate rotation (ACM + Lambda), Infrastructure as Code dla VPN config |
+| **Security** | TLS mutual auth (certyfikaty, nie tylko hasła), tls-crypt (ukryj że to OpenVPN), Kill Switch dla klientów, DNS leak protection, IMDSv2 dla EC2 VPN servera, minimal privilege (nobody/nogroup), wyłącz Source/Dest Check tylko gdy wymagane |
+| **Reliability** | AWS Client VPN: multi-AZ (wiele subnet associations), OpenVPN własny: ASG za NLB, keepalive + restart on failure, certificate expiry monitoring |
+| **Performance Efficiency** | TUN > TAP (mniejszy overhead, brak L2), AES-256-GCM (hardware AES-NI), UDP > TCP dla VPN (brak TCP-over-TCP problem), odpowiednie MTU/mssfix, WireGuard dla wyższej przepustowości |
+| **Cost Optimization** | AWS Client VPN vs własny EC2 VPN: Client VPN $0.10/h/subnet + $0.05/h/user vs EC2 t3.small ~$15/mc + data transfer. Dla <50 users: EC2 tańszy. Dla >100: Client VPN łatwiejszy w zarządzaniu |
+| **Sustainability** | Graviton EC2 dla VPN servera (lepsza efektywność energetyczna), prawidłowe MTU = mniej fragmentacji = mniej retransmisji |
+
+---
+
+## 13.18 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Jaka jest fundamentalna różnica między TUN a TAP?
+
+> **Odpowiedź:** **TUN** = warstwa 3 (L3) — przesyła pakiety IP, brak adresu MAC, nie obsługuje ARP/broadcast. **TAP** = warstwa 2 (L2) — przesyła ramki Ethernet razem z nagłówkami MAC, obsługuje ARP/broadcast/DHCP. TUN = logiczny router. TAP = wirtualny kabel sieciowy.
+
+---
+
+**Pytanie 2:** Dlaczego OpenVPN domyślnie używa TUN a nie TAP?
+
+> **Odpowiedź:** TUN jest wydajniejszy (brak 14-bajtowego nagłówka Ethernet), prostszy w konfiguracji (nie wymaga bridge/brctl), obsługuje routing IP co wystarczy dla zdalnego dostępu VPN. TAP potrzebny tylko gdy wymagana warstwa L2 (ARP, DHCP z biurowego serwera, NetBIOS, bridge między sieciami).
+
+---
+
+**Pytanie 3:** Jak OpenVPN odczytuje pakiety z interfejsu tun0?
+
+> **Odpowiedź:** Przez `read()` na file descriptor otwartym na `/dev/net/tun`. Jądro, gdy chce wysłać pakiet przez `tun0`, umieszcza go w kolejce. OpenVPN (userspace) czyta z kolejki, szyfruje (AES-256-GCM), dodaje nagłówek OpenVPN i wysyła jako UDP/TCP datagram przez fizyczny interfejs `eth0` do serwera VPN.
+
+---
+
+**Pytanie 4:** Dlaczego po połączeniu OpenVPN w full-tunnel mode widzisz dwie trasy: 0.0.0.0/1 i 128.0.0.0/1 zamiast 0.0.0.0/0?
+
+> **Odpowiedź:** `/0` to domyślna trasa — gdyby OpenVPN dodał trasę `0.0.0.0/0 → tun0`, nadpisałby existing default route i ruch do serwera VPN (`5.6.7.8/32`) też by poszedł przez tunel → pętla. Zamiast tego: `0.0.0.0/1` i `128.0.0.0/1` są bardziej specyficzne niż `/0`, więc wygrywają routing dla całego Internetu, ale trasa `/32` do serwera VPN jest jeszcze bardziej specyficzna → idzie przez eth0.
+
+---
+
+**Pytanie 5:** Co to jest Source/Destination Check w EC2 i dlaczego trzeba go wyłączyć dla EC2-jako-router (np. VPN serwer)?
+
+> **Odpowiedź:** AWS hypervisor domyślnie droppuje pakiety gdzie source lub destination IP nie jest IP danej instancji. EC2 VPN serwer routuje pakiety klientów (src IP = 10.8.0.x, nie EC2 IP) → hypervisor droppuje. Wyłącz: `aws ec2 modify-instance-attribute --source-dest-check '{"Value": false}'`. To samo dla NAT Instance.
+
+---
+
+**Pytanie 6:** Jaka jest różnica między `tls-auth` a `tls-crypt` w OpenVPN?
+
+> **Odpowiedź:** **tls-auth:** dodaje HMAC do pakietów TLS control channel — chroni przed DDoS/port-scanning (atakujący bez klucza ta.key nie może zainicjować handshake). **tls-crypt:** szyfruje + HMAC na control channel — silniejsze: atakujący nie widzi nawet że to OpenVPN (ukrywa protokół). Rekomendowane: `tls-crypt`.
+
+---
+
+**Pytanie 7:** Firma używa AWS Client VPN. Na jakim interfejsie pracownik widzi połączenie VPN?
+
+> **Odpowiedź:** **Linux:** `tun0` (lub `tun1`, `tun2`...). **macOS:** `utun0`, `utun1`... (Apple's user-space tunnel, analogiczny do Linux TUN). **Windows:** adapter "TAP-Windows Adapter V9" lub Wintun. AWS Client VPN używa zawsze TUN mode (nie TAP).
+
+---
+
+**Pytanie 8:** Dlaczego TCP-over-TCP jest problematyczne dla VPN?
+
+> **Odpowiedź:** Zewnętrzny TCP (transport VPN) i wewnętrzny TCP (dane użytkownika) mają niezależne mechanizmy retransmisji. Przy stratach pakietów: wewnętrzny TCP czeka na retransmisję → rosnące timeouty → zewnętrzny TCP też retransmituje → "zagłodzenie". Efekt: drastyczny spadek wydajności przy stratach. Dlatego OpenVPN preferuje UDP jako transport.
+
+---
+
+**Pytanie 9:** Co to jest `mssfix` w OpenVPN i dlaczego jest ważne?
+
+> **Odpowiedź:** `mssfix` przepisuje pole MSS (Maximum Segment Size) w nagłówkach TCP SYN pakietów wychodzących przez tunel. TCP MSS negocjowany w handshake determines rozmiar segmentów. Bez mssfix: segmenty za duże dla tunelu → fragmentacja na UDP → drastyczny spadek wydajności. `mssfix = tun-mtu - 40` (np. 1360 przy tun-mtu 1400).
+
+---
+
+**Pytanie 10:** Firma chce żeby pracownicy przez VPN mieli dostęp do drukarki sieciowej biura (który używa NetBIOS/broadcast do discovery). TUN czy TAP?
+
+> **Odpowiedź:** **TAP** — NetBIOS discovery używa broadcast (`255.255.255.255`). TUN nie obsługuje broadcastu (L3 only). TAP + bridge pozwala na broadcasting przez VPN → klient VPN "widzi" broadcast z sieci biura → discovery działa. Ale: TAP jest rzadszy, wolniejszy, bardziej złożony w konfiguracji.
+
+---
+
+**Pytanie 11:** Jak sprawdzić czy pakiety przepływają przez interfejs tun0?
+
+> **Odpowiedź:** `ip -s link show tun0` — pokazuje TX/RX bytes/packets (sprawdź czy rosną). `tcpdump -i tun0 -n` — przechwytuje pakiety (niezaszyfrowane, przed enkrypcją OpenVPN). `watch -n1 'ip -s link show tun0'` — odświeżaj co sekundę. Jeśli TX/RX = 0 przy oczekiwanym ruchu → problem z routingiem (pakiety nie trafiają do tun0).
+
+---
+
+**Pytanie 12:** Co to jest Viscosity i jak różni się od standardowego klienta OpenVPN?
+
+> **Odpowiedź:** **Viscosity** to graficzny (GUI) klient OpenVPN dla macOS i Windows. Jest wrapperem na OpenVPN — identyczny protokół, TUN/TAP mechanizm. Dodaje: graficzne zarządzanie profilami, kill switch, DNS leak protection, statystyki ruchu. Nie jest osobnym protokołem VPN — pliki `.ovpn` działają zarówno w Viscosity jak i CLI OpenVPN.
+
+---
+
+**Pytanie 13:** Co to jest WireGuard i jak różni się od OpenVPN w kontekście TUN?
+
+> **Odpowiedź:** WireGuard też używa TUN (`wg0`), ale: działa w **kernel space** (szybsze, mniej CPU), ma prostszą konfigurację (klucze Curve25519, brak PKI), używa UDP only, osiąga ~1 Gbps throughput vs ~200 Mbps OpenVPN per core. AWS Client VPN nie obsługuje WireGuard — używa OpenVPN. AWS Site-to-Site VPN używa IPsec (nie TUN).
+
+---
+
+**Pytanie 14:** Dlaczego na macOS interfejs VPN nazywa się `utun0` a nie `tun0`?
+
+> **Odpowiedź:** macOS nie implementuje Linux `/dev/net/tun`. Zamiast tego ma własny **Network Extension framework** (utun = user-space tunnel). `utun` to natywny macOS mechanizm tworzenia wirtualnych punktowych interfejsów. Funkcjonalnie identyczny z Linux TUN dla OpenVPN — przesyła pakiety IP, brak MAC.
+
+---
+
+**Pytanie 15:** Co oznacza `POINTOPOINT` w flagach interfejsu tun0?
+
+> **Odpowiedź:** `POINTOPOINT` = point-to-point link — interfejs łączy dokładnie dwa węzły (klient ↔ serwer VPN), bez broadcastu. W `ip addr show tun0` widać: `inet 10.8.0.2 peer 10.8.0.1/32` (peer = adres drugiego końca). TAP ma `BROADCAST` zamiast `POINTOPOINT`.
+
+---
+
+**Pytanie 16:** Firma ma EC2 jako serwer OpenVPN. Klienci łączą się ale nie mogą pingować innych EC2 w VPC. Co sprawdzić?
+
+> **Odpowiedź:** Checklist: (1) `net.ipv4.ip_forward=1` na EC2? (2) Source/Dest Check wyłączony na EC2? (3) Route Table VPC: trasa `10.8.0.0/24 → instance-id EC2-VPN`? (4) Security Groups innych EC2: zezwala na ruch z `10.8.0.0/24`? (5) iptables MASQUERADE na EC2 VPN: `iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE`?
+
+---
+
+**Pytanie 17:** Co to jest `persist-tun` i `persist-key` w OpenVPN?
+
+> **Odpowiedź:** **persist-tun:** nie zamykaj/nie otwieraj ponownie interfejsu tun przy reconnect (restart tunelu). Zapobiega błędom permisji przy ponownym połączeniu gdy OpenVPN działał jako root początkowo a teraz jest jako `nobody`. **persist-key:** zachowaj klucze prywatne przez restart (nie ładuj ponownie z dysku). Oba przydatne gdy OpenVPN restartuje (`keepalive` timeout) bez pełnego restartu procesu.
+
+---
+
+**Pytanie 18:** Jaka jest różnica między IPsec a OpenVPN/TUN w Site-to-Site VPN?
+
+> **Odpowiedź:** **IPsec:** standard branżowy, obsługiwany sprzętowo (Cisco/Juniper), działa w kernel space (szybszy), protokoły ESP/AH/IKE, nie tworzy tun0 (transparentny dla OS), wymagany dla AWS Site-to-Site VPN i TGW. **OpenVPN/TUN:** userspace, bardziej elastyczny (dowolny port), cross-platform, prostszy debug, wymagany dla AWS Client VPN i własnych instalacji.
+
+---
+
+**Pytanie 19:** Co to jest VTI (Virtual Tunnel Interface) w kontekście IPsec na Linux?
+
+> **Odpowiedź:** VTI to wirtualny interfejs sieciowy (`vti0`) który działa jako endpoint dla IPsec tunnel. Podobny do TUN ale specjalizowany dla IPsec — rucie przez VTI automatycznie szyfrowane przez IPsec XFRM policy. Pozwala na używanie normalnych `ip route` komend dla IPsec routingu. `ip link add vti0 type vti local <cgw_ip> remote <aws_ip>`.
+
+---
+
+**Pytanie 20:** AWS Client VPN używa UDP 443 lub TCP 443. Dlaczego 443 a nie 1194?
+
+> **Odpowiedź:** Port **443** jest rzadko blokowany przez firewalle (normalnie HTTP/TLS). Port 1194 (domyślny OpenVPN) może być blokowany przez korporacyjne firewalle. AWS Client VPN na 443 (UDP lub TCP) może działać przez większość restrykcyjnych sieci. Ważne: UDP 443 to nie HTTPS — DPI firewall może wykryć że to nie jest prawdziwy TLS jeśli używa tls-crypt (ukrywa OpenVPN signature).
+
+---
+
+**Pytanie 21-60 — skróty dla zwięzłości:**
+
+---
+
+**Pytanie 21:** Jak sprawdzić DNS leak przez VPN?
+
+> `dig myip.opendns.com @208.67.222.222` — jeśli IP to serwer VPN = OK. Lub: `dig +short txt whoami.ds.akahelp.net` porównaj z i bez VPN. Komercyjne: dnsleaktest.com.
+
+---
+
+**Pytanie 22:** Co to jest `--redirect-gateway def1 bypass-dhcp`?
+
+> Full tunnel redirect. `def1` = użyj 0/1 + 128/1 zamiast 0/0 (zachowaj oryginalne default). `bypass-dhcp` = nie routuj DHCP przez VPN (potrzebne do renewalu lease).
+
+---
+
+**Pytanie 23:** Firma ma OpenVPN tap bridge. Klient VPN nie dostaje IP z DHCP biura. Co sprawdzić?
+
+> (1) bridge aktywny? `bridge link show`. (2) tap0 w bridge? `brctl show`. (3) DHCP serwer "widzi" żądanie? `tcpdump -i br0 udp port 67`. (4) Promisc mode na tap0 i eth0? `ip link set tap0 promisc on`. (5) Firewall nie blokuje broadcast (port 67/68)?
+
+---
+
+**Pytanie 24:** Co to jest `comp-lzo` i dlaczego wyłączyć?
+
+> Kompresja LZO w OpenVPN. Wyłącz przez **VORACLE attack** — kompresja danych przed szyfrowaniem ujawnia informacje o zawartości przez analizę rozmiaru zaszyfrowanych pakietów. AWS Client VPN nie obsługuje kompresji — bezpieczne.
+
+---
+
+**Pytanie 25:** Dlaczego tun MTU często ustawia się na 1400 zamiast 1500?
+
+> Overhead: OpenVPN header (~29B) + UDP (~8B) + outer IP (~20B) + Ethernet (~14B) = ~71B overhead. 1500 - 71 = 1429 → zaokrąglaj w dół do 1400 dla bezpieczeństwa. Zbyt małe MTU = fragmentacja z PMTU. Zbyt duże = pakiety droppowane przez Internet (ICMP unreachable).
+
+---
+
+**Pytanie 26:** Co to jest `keepalive 10 120` w OpenVPN?
+
+> Ping co 10 sekund. Jeśli brak odpowiedzi przez 120s → restart tunelu. Zapobiega "zombie" połączeniom i wykrywa zerwane połączenia. Po stronie klienta: identyczna wartość lub push z serwera.
+
+---
+
+**Pytanie 27:** Jak ograniczyć dostęp klientów VPN do konkretnych zasobów (nie całej sieci)?
+
+> OpenVPN server config + iptables: `iptables -A FORWARD -s 10.8.0.0/24 -d 192.168.1.10 -j ACCEPT` (tylko do konkretnego hosta). Lub per-client config (`ccd/` directory): każdy klient osobna trasa. Na AWS Client VPN: Authorization Rules per destination CIDR + AD group.
+
+---
+
+**Pytanie 28:** Co to jest `cert-verify-x509-name` w OpenVPN?
+
+> Weryfikuje że certyfikat klienta/serwera ma konkretny Common Name lub Subject Alternative Name. Np.: `verify-x509-name vpnserver.company.com name` — klient weryfikuje że serwer ma CN=vpnserver.company.com. Chroni przed atakiem z podstawionym certyfikatem (nawet podpisanym przez to samo CA).
+
+---
+
+**Pytanie 29:** AWS Site-to-Site VPN — co to są dwa tunele i dlaczego oba powinny być aktywne?
+
+> AWS VGW zawsze tworzy 2 tunele z różnymi publicznymi IP (różne AZ). Zalecane: konfiguruj oba tunele na CGW. Active-Active (BGP): obie trasy aktywne, ruch rozkładany. Active-Passive (BGP LOCAL_PREF): jeden preferowany, drugi backup. Jeśli tylko jeden skonfigurowany → awaria endpoint AWS = downtime.
+
+---
+
+**Pytanie 30:** Jak zmierzyć throughput przez tunel VPN?
+
+> `iperf3 -s` na serwerze za VPN. `iperf3 -c <server_ip> -t 30` na kliencie VPN. Porównaj z throughputem bez VPN → overhead szyfrowania. Lub: `dd if=/dev/zero | nc <server> 9999` (prosty test bez iperf).
+
+---
+
+**Pytanie 31-60 — kluczowe pytania egzaminacyjne / praktyczne:**
+
+---
+
+**Pytanie 31:** Co to jest `ccd` w OpenVPN?
+
+> Client Config Directory. Każdy plik = konfiguracja per-klient (CN z certyfikatu = nazwa pliku). Zawiera: `ifconfig-push <ip> <mask>` (statyczny IP), `push "route ..."` (dodatkowe trasy). `/etc/openvpn/ccd/JanKowalski` → Jan dostaje stałe IP i dostęp do konkretnych podsieci.
+
+---
+
+**Pytanie 32:** Firma chce żeby połączenia VPN były logowane w CloudWatch. Jak?
+
+> Na EC2 OpenVPN: zainstaluj CloudWatch Agent, konfiguruj zbieranie `/var/log/openvpn/openvpn.log` → log group `/vpn/connections`. Dla AWS Client VPN: wbudowane Connection Logging (CloudWatch Logs) — włącz przez Console/CLI przy tworzeniu Client VPN Endpoint.
+
+---
+
+**Pytanie 33:** Co się dzieje z połączeniem TCP przez VPN gdy tunel się zrywa?
+
+> TCP connection timeout lub RST. Zależy od keep-alive ustawień. Bez TCP keep-alive: socket "wisi" w ESTABLISHED do timeout (~15 min domyślnie). Z TCP keep-alive (SO_KEEPALIVE): szybsze wykrycie (~75s + retries). OpenVPN `keepalive` nie jest tym samym co TCP keep-alive — działa na poziomie VPN protokołu.
+
+---
+
+**Pytanie 34:** AWS Client VPN — ile połączeń obsługuje jeden endpoint?
+
+> Do **20 000 concurrent connections** per Client VPN Endpoint (limit soft). Cost: $0.05/h per connection. Dla 1000 users × 8h/dzień ≈ 500 concurrent avg → $0.05 × 500 × 730h/mc = $18,250/mc. Dla małych firm: EC2 OpenVPN tańszy.
+
+---
+
+**Pytanie 35:** Co to jest `net.ipv4.ip_forward` i gdzie jest wymagane?
+
+> Kernel parameter zezwalający na routing pakietów między interfejsami. Wymagane na: EC2 VPN serwer (forward między tun0 a eth0), NAT Instance, każdym routerze Linux. Sprawdź: `sysctl net.ipv4.ip_forward`. Włącz permanentnie: `/etc/sysctl.conf`: `net.ipv4.ip_forward=1`.
+
+---
+
+**Pytanie 36:** Czym różni się `mode server` od `mode p2p` w OpenVPN?
+
+> **mode server** (lub `server` directive): serwer obsługuje wielu klientów, każdy dostaje unikalny IP, client isolation, HMAC per-client. **mode p2p** (lub `peer`): point-to-point, dokładnie 2 węzły, prostsze ale nie dla wielu klientów. AWS Client VPN: zawsze tryb server.
+
+---
+
+**Pytanie 37:** Jak TUN/TAP wpływa na EC2 Security Groups?
+
+> Security Group sprawdza ruch na poziomie ENI (eth0), nie tun0. Pakiety przez tun0 → decryptowane przez OpenVPN → wysyłane przez eth0 → SG widzi: `src=EC2_IP, dst=target`. Klienci VPN za EC2 VPN server: SG nie chroni ich bezpośrednio. Musisz dodać iptables na EC2 lub SG zezwolić na cały ruch z tun0 subnet.
+
+---
+
+**Pytanie 38:** Co to jest `topology subnet` vs `topology net30` w OpenVPN?
+
+> **net30 (stary default):** każdy klient dostaje /30 (4 adresy, 2 użyteczne) — marnotrawstwo IP. `10.8.0.0/30`: klient=.1, serwer=.2 (dla każdego klienta osobna para!). **subnet (nowszy):** wszyscy klienci w jednej podsieci `10.8.0.0/24`, klient dostaje jeden IP. Bardziej efektywne. AWS Client VPN używa `topology subnet`.
+
+---
+
+**Pytanie 39:** Firma chce zablokować ruch między klientami VPN (klient A nie widzi klienta B). Jak?
+
+> OpenVPN server config: `client-to-client` — gdy POMINIĘTE (domyślnie): klienci nie widzą siebie wzajemnie. Gdy dodane: klienci mogą się komunikować. Plus iptables: `iptables -A FORWARD -i tun0 -o tun0 -j DROP` — blokuj forward między klientami na poziomie OS.
+
+---
+
+**Pytanie 40:** Co to jest `auth-nocache` w OpenVPN klienta?
+
+> Nie cache'uj hasła/credentials w pamięci procesu OpenVPN. Po reconnect: OpenVPN pyta ponownie o credentials. Bezpieczniejsze (dane nie siedzą w pamięci), ale mniej wygodne (wymaga interakcji przy reconnect). Dla automated scripts: użyj `--auth-user-pass <file>` z `auth-nocache`.
+
+---
+
+**Pytanie 41:** Jak skonfigurować OpenVPN przez TCP 443 żeby przejść przez restrykcyjny firewall?
+
+```bash
+# Serwer:
+proto tcp-server
+port 443
+
+# Klient:
+proto tcp-client
+remote vpn.company.com 443
+
+# Uwaga: TCP-over-TCP problem (powolne przy stratach)
+# Rozwiązanie: obfuscation proxy (obfs4, stunnel) lub WireGuard
+```
+
+---
+
+**Pytanie 42:** Co to jest `reneg-sec` w OpenVPN?
+
+> Czas (sekundy) po którym OpenVPN odnawia klucze sesji. Default 3600s (1h). Krótszy = częstsze renegocjacje = lepsza forward secrecy ale krótki przestój podczas renegocjacji. AWS Client VPN: `reneg-sec 0` w niektórych konfiguracjach (zarządzane przez AWS).
+
+---
+
+**Pytanie 43:** Jak wygląda ruch sieciowy przy TAP bridge mode? Jakie protokoły przechodzą?
+
+> Wszystkie protokoły L2 i wyżej: IP, IPv6, ARP, DHCP broadcasts, NetBIOS, VLAN (802.1Q), Spanning Tree (STP), IPX (stary Novell). To daje pełną emulację sieci LAN — ale też więcej overhead i potencjalne security issues (STP loops, broadcast storms przez VPN).
+
+---
+
+**Pytanie 44:** Co to jest OpenVPN Access Server (AS)?
+
+> Komercyjna wersja OpenVPN z: webowym panelem administracyjnym, LDAP/AD integration, per-user profile management, wizardami. Dostępna na AWS Marketplace. Alternatywa dla AWS Client VPN gdy potrzebujesz zaawansowanego zarządzania użytkownikami i funkcji BYOL.
+
+---
+
+**Pytanie 45:** Jak IPsec XFRM działa w Linux kernel (bez tun interface)?
+
+> IPsec XFRM (transform) to podsystem jądra dla IPsec. Security Policy (SP) definiuje które pakiety szyfrować/deszyfrować (`ip xfrm policy`). Security Association (SA) definiuje jak (`ip xfrm state`: algorytm, klucz, SPI). Gdy pakiet pasuje do SP → kernel automatycznie stosuje transformację (bez userspace i tun). Przeźroczyste dla aplikacji.
+
+---
+
+**Pytanie 46:** Firma ma własny OpenVPN serwer na EC2. Chcą HA. Jak?
+
+> (1) NLB (TCP passthrough) przed dwoma EC2 OpenVPN. Problem: OpenVPN jest stanowy (TLS session) → sticky sessions wymagane. (2) Lepiej: dwa niezależne OpenVPN serwery, każdy z osobnym DNS A record, klient próbuje kolejnych. (3) AWS Client VPN = managed HA (AWS zarządza). (4) Shared state: `--persist-tun --persist-key` minimalizuje restart impact.
+
+---
+
+**Pytanie 47:** Co to jest `remote-cert-tls server` w konfiguracji klienta OpenVPN?
+
+> Weryfikuje że certyfikat serwera ma Extended Key Usage (EKU) = `TLS Web Server Authentication`. Zapobiega atakom man-in-the-middle gdzie ktoś użyłby certyfikatu klienta jako serwera. Analogicznie serwer: `remote-cert-tls client` dla certyfikatów klientów.
+
+---
+
+**Pytanie 48:** Jak skonfigurować DNS dla klientów VPN na Linux (przy połączeniu/rozłączeniu)?
+
+```bash
+# up/down script w config:
+up /etc/openvpn/update-resolv-conf
+down /etc/openvpn/update-resolv-conf
+
+# update-resolv-conf używa resolvconf lub systemd-resolved:
+# Dodaje DNS do /etc/resolv.conf przy UP
+# Usuwa przy DOWN
+
+# Alternatywnie systemd-resolved:
+# /etc/systemd/resolved.conf.d/vpn.conf:
+# [Resolve]
+# DNS=10.8.0.1
+# Domains=~company.internal
+```
+
+---
+
+**Pytanie 49:** Różnica między AWS Client VPN a własnym OpenVPN na EC2 — kiedy co wybrać?
+
+> **AWS Client VPN:** managed, HA wbudowane, SAML/AD auth, centralne zarządzanie, dużo droższe przy wielu użytkownikach, compliance-ready. **EC2 OpenVPN:** tańsze (t3.small $15/mc), pełna kontrola, własne certyfikaty, może obsługiwać TAP mode, wymaga zarządzania (patches, HA). Granica opłacalności: ~50-100 concurrent users.
+
+---
+
+**Pytanie 50:** Co to jest `ifconfig-push` w ccd (client config directory)?
+
+> Przypisz statyczne IP klientowi VPN:
+```
+# /etc/openvpn/ccd/JanKowalski
+ifconfig-push 10.8.0.100 255.255.255.0
+# Jan zawsze dostaje IP 10.8.0.100
+
+# Dodaj trasy dla tego klienta:
+push "route 10.10.0.0 255.255.0.0"
+# Jan ma dostęp do 10.10.0.0/16
+```
+Użycie: admini i serwery dostają stałe IP dla audytu i firewall rules.
+
+---
+
+**Pytanie 51:** Co to jest `plugin openvpn-auth-pam.so` w OpenVPN?
+
+> Plugin PAM (Pluggable Authentication Modules) — pozwala OpenVPN na autentykację przez system PAM: Unix passwords, LDAP (pam_ldap), RADIUS (pam_radius), Google Authenticator TOTP (pam_google_authenticator). Alternatywa dla PKI-only auth. AWS Client VPN używa wbudowanego AD auth lub SAML (nie PAM).
+
+---
+
+**Pytanie 52:** Jak sprawdzić połączonych klientów na serwerze OpenVPN?
+
+```bash
+# Status plik (jeśli skonfigurowany: status /run/openvpn/status.log 10):
+cat /run/openvpn/status.log
+
+# Management interface (jeśli włączony: management 127.0.0.1 7505):
+telnet 127.0.0.1 7505
+> status          # lista klientów
+> kill JanKowalski  # rozłącz klienta
+> quit
+
+# Lub przez socat:
+echo "status" | socat - TCP:127.0.0.1:7505
+```
+
+---
+
+**Pytanie 53:** Co to jest `float` w OpenVPN?
+
+> Pozwala klientowi zmieniać swój publiczny IP/port podczas sesji (np. zmiana WiFi → LTE) bez rozłączenia tunelu. VPN roaming. WireGuard ma to wbudowane. AWS Client VPN ma `remote-random-hostname` dla load balancing ale nie identyczny mechanizm.
+
+---
+
+**Pytanie 54:** Jak TUN/TAP wchodzi w interakcję z iptables netfilter?
+
+```
+Pakiet przychodzący przez tun0:
+  PREROUTING → INPUT (jeśli dla lokalnego procesu)
+              → FORWARD → POSTROUTING (jeśli routowany dalej)
+
+Pakiet wychodzący przez tun0:
+  OUTPUT → POSTROUTING → tun0
+
+Kluczowe: iptables widzi pakiety NA tun0, przed szyfrowaniem
+          (pakiety zaszyfrowane przepływają przez eth0, osobne reguły)
+
+Typowe reguły dla VPN serwera:
+  iptables -A FORWARD -i tun0 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+  iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+  iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+```
+
+---
+
+**Pytanie 55:** Co to jest `explicit-exit-notify` w OpenVPN?
+
+> Klient wysyła wiadomość do serwera przed zamknięciem połączenia. Serwer natychmiast usuwa sesję zamiast czekać na keepalive timeout (120s). Wartości: `1` = wyślij raz, `2` = wyślij kilka razy. Dla UDP (zawodny): `2`. Szybsze zwolnienie zasobów serwera po disconneccie klienta.
+
+---
+
+**Pytanie 56:** Co to jest GENEVE i jak różni się od OpenVPN encapsulation?
+
+> **GENEVE** (Generic Network Virtualization Encapsulation) — używany przez AWS GWLB dla ruchu przez wirtualne firewalle. Enkapsuluje oryginalne pakiety IP w UDP (port 6081) z metadanymi. Pozwala zachować kontekst oryginalnego pakietu przez firewall. **OpenVPN** enkapsuluje w UDP też, ale dodaje własny nagłówek + szyfrowanie. GENEVE to standard (RFC 8926); OpenVPN to proprietary.
+
+---
+
+**Pytanie 57:** Jak zmierzyć overhead szyfrowania VPN na EC2?
+
+```bash
+# Bez VPN:
+iperf3 -c 10.0.1.10 -t 30       # serwer w VPC
+# Wynik: 9.4 Gbps (EC2 wewnętrzna sieć)
+
+# Przez VPN tun0 (EC2 VPN serwer):
+iperf3 -c 10.8.0.10 -t 30       # serwer za VPN
+# Wynik: ~200-500 Mbps (zależy od CPU i szyfrowania)
+
+# CPU usage podczas iperf:
+top lub htop → openssl/openvpn process CPU%
+
+# AES-NI (hardware acceleration):
+openssl speed -evp aes-256-gcm   # sprawdź czy AES-NI używane
+grep aes /proc/cpuinfo           # czy CPU ma AES-NI instruction
+```
+
+---
+
+**Pytanie 58:** Co to jest `--daemon` w OpenVPN i jakie są alternatywy?
+
+> `--daemon` uruchamia OpenVPN w tle jako daemon (fork + setsid). Alternatywy: `systemd` (nowsze systemy, `systemctl start openvpn@server`), `supervisord`, `runit`. AWS zaleca systemd dla OpenVPN na EC2. AWS Client VPN: zarządzany przez AWS (nie musisz uruchamiać procesu).
+
+---
+
+**Pytanie 59:** Jak AWS Site-to-Site VPN używa BGP do automatycznego failovera między tunelami?
+
+> CGW nawiązuje dwa eBGP sesje (do IP Tunnel1 i Tunnel2 VGW). Oba tunele ogłaszają te same prefiksy. BGP LOCAL_PREF lub MED kontroluje preferowany tunel. Gdy Tunnel1 padnie: BGP session drops → trasa przez Tunnel1 usunięta → ruch automatycznie przez Tunnel2. Konwergencja: kilka-kilkanaście sekund (zależy od BGP timers: keepalive/hold-down).
+
+---
+
+**Pytanie 60:** Opisz pełny przepływ pakietu od przeglądarki na macOS przez AWS Client VPN do EC2 w private subnet.
+
+> **Odpowiedź:**
+```
+1. Przeglądarka: TCP connect → 10.0.1.50:443 (EC2 private IP)
+2. macOS networking stack: route lookup → "10.0.0.0/16 via utun2"
+3. Kernel: pakiet wychodzi przez utun2 (TUN interface)
+4. TUN driver → AWS VPN Client process: read(utun_fd) → IP packet
+5. AWS VPN Client: AES-256-GCM encrypt pakietu
+6. Dodaje OpenVPN header (peer_id, packet_id)
+7. UDP sendto() → eth0 → WiFi/LTE → Internet
+8. UDP datagram: src=MacBook_public_IP:port dst=AWS_CVE_Endpoint_IP:443
+
+Na drodze przez Internet:
+  → ISP router → Internet → AWS Edge POP
+  
+9. AWS Client VPN Endpoint: odbiera UDP datagram
+10. Deszyfruje → oryginalny IP packet (src:10.0.64.5 dst:10.0.1.50)
+11. AWS VPN endpoint → ENI (10.0.64.x) w subnecie VPC
+12. VPC routing: 10.0.1.50 → private subnet route
+13. Security Group EC2 sprawdza: allow 443 from 10.0.64.0/22 → PASS
+14. EC2 aplikacja na porcie 443 odpowiada
+
+Odpowiedź wraca tą samą drogą (symetrycznie):
+15. EC2 → VPC router → VPN endpoint → szyfrowanie
+16. UDP → Internet → MacBook
+17. AWS VPN Client: deszyfruje → write(utun_fd)
+18. macOS kernel: pakiet przez utun2 → socket aplikacji
+19. Przeglądarka dostaje odpowiedź HTTPS
+```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: TUN/TAP architektura, /dev/net/tun, OpenVPN TUN mode, TAP bridge mode, Viscosity, macOS utun, Windows TAP-Windows/Wintun, WireGuard, IPsec VTI, AWS Client VPN, MTU/mssfix, szyfrowanie, diagnostyka, kill switch, DNS leak*
+
+---
+
+# 14. Security Groups — Deep Dive: ENI, EC2, VPC, Reguły
+
+> **Zakres:** Pełny deep-dive Security Groups w AWS. Jak działają na poziomie ENI, EC2, VPC. Stateful vs stateless. Reguły inbound/outbound. Self-referencing. Chaining SG. Różnice od NACL. Troubleshooting. 60 Q&A.
+
+---
+
+## 14.1 Czym Jest Security Group — Fundament
+
+**Security Group (SG)** to wirtualny, **stanowy (stateful)** firewall działający na poziomie **ENI (Elastic Network Interface)**. Nie jest to firewall sieciowy — jest to firewall **na poziomie interfejsu sieciowego konkretnej instancji**.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         VPC                                     │
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │                    Subnet 10.0.1.0/24                    │  │
+│  │                                                          │  │
+│  │   ┌─────────────────────────────────────────────────┐   │  │
+│  │   │                   EC2 Instance                  │   │  │
+│  │   │                                                 │   │  │
+│  │   │   ┌──────────────────────────────────────────┐  │   │  │
+│  │   │   │              ENI (eth0)                   │  │   │  │
+│  │   │   │              10.0.1.15                    │  │   │  │
+│  │   │   │                   │                       │  │   │  │
+│  │   │   │            ┌──────▼──────┐                │  │   │  │
+│  │   │   │            │ Security    │  ← TUTAJ działa│  │   │  │
+│  │   │   │            │ Group       │    SG! Na ENI  │  │   │  │
+│  │   │   │            │ (sg-abc123) │                │  │   │  │
+│  │   │   │            └─────────────┘                │  │   │  │
+│  │   │   └──────────────────────────────────────────┘  │   │  │
+│  │   └─────────────────────────────────────────────────┘   │  │
+│  └──────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Kluczowe fakty:**
+- SG przypisany do **ENI**, nie do EC2 bezpośrednio (EC2 ma ENI → ENI ma SG)
+- Jeden ENI może mieć do **5 SG** jednocześnie
+- Jedna EC2 może mieć wiele ENI (eth0, eth1...) — każde z osobnym SG
+- SG to **nie jest sieć** — nie blokuje na poziomie routera/switcha
+- SG działa w **hypervisorze** — ruch jest filtrowany zanim dotrze do VM
+
+---
+
+## 14.2 ENI — Elastic Network Interface
+
+ENI to wirtualna karta sieciowa. Zrozumienie ENI = zrozumienie SG.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                    EC2 Instance                              │
+│                                                              │
+│  ┌────────────────────────┐  ┌────────────────────────────┐  │
+│  │    ENI Primary (eth0)  │  │    ENI Secondary (eth1)    │  │
+│  │                        │  │                            │  │
+│  │  Private IP: 10.0.1.15 │  │  Private IP: 10.0.2.50    │  │
+│  │  Public IP: 54.x.x.x  │  │  Private IP: 10.0.2.51    │  │
+│  │  EIP: (opcjonalnie)    │  │  (wiele private IP!)       │  │
+│  │  MAC: aa:bb:cc:dd:ee:ff│  │  MAC: 11:22:33:44:55:66   │  │
+│  │                        │  │                            │  │
+│  │  SG: sg-web (port 80)  │  │  SG: sg-admin (port 22)   │  │
+│  │  SG: sg-https (443)    │  │                            │  │
+│  └────────────────────────┘  └────────────────────────────┘  │
+│         Subnet A                      Subnet B               │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**ENI właściwości:**
+- Każde ENI ma osobny **MAC address** (stały, nawet przez restart)
+- ENI primary (eth0) — nie można odłączyć od działającej instancji
+- ENI secondary (eth1+) — można **przenosić między instancjami** (hot-attach/detach)
+- Przeniesienie ENI = przeniesienie wszystkich jego SG, EIP, prywatnych IP
+- ENI może być w **innym subnecie** niż primary ENI (ale tym samym AZ!)
+
+**Przenoszenie ENI — use case:**
+```
+Scenariusz: EC2 padło, trzeba szybko przenieść ruch na nową instancję
+
+EC2-Old (ip: 10.0.1.15, EIP: 54.x.x.x, SG: sg-web)
+  ↓ detach eth1 (z EIP i SG)
+EC2-New (attach eth1)
+  → EC2-New natychmiast dostaje IP 10.0.1.15, EIP, SG
+  → Zero zmian DNS, Security Groups, whitelist
+```
+
+---
+
+## 14.3 Jak SG Działa — Hypervisor Level
+
+Ruch nigdy nie dociera do EC2 zanim SG go nie przeanalizuje:
+
+```
+Ruch przychodzący (Inbound):
+
+Internet / inna EC2
+        │
+        │ pakiet TCP: src=10.0.2.5:54321 dst=10.0.1.15:443
+        │
+        ▼
+┌───────────────────────────────────────────────────┐
+│               AWS Hypervisor / VPC SDN             │
+│                                                   │
+│  1. Lookup ENI dla IP 10.0.1.15                   │
+│  2. Pobierz wszystkie SG przypisane do tego ENI   │
+│  3. Sprawdź każdy SG — czy któryś ZEZWALA?        │
+│                                                   │
+│  SG-1: port 443 from 0.0.0.0/0  → MATCH ✅       │
+│                                                   │
+│  Decyzja: ALLOW                                   │
+└───────────────────────────────────────────────────┘
+        │
+        ▼
+    EC2 (10.0.1.15) otrzymuje pakiet
+
+────────────────────────────────────────────────────
+
+Ruch wychodzący (Outbound) odpowiedź (stateful!):
+
+EC2 wysyła odpowiedź TCP ACK
+        │
+        ▼
+┌───────────────────────────────────────────────────┐
+│               AWS Hypervisor / VPC SDN             │
+│                                                   │
+│  STATEFUL: to jest odpowiedź na dozwolone         │
+│  połączenie przychodzące                          │
+│  → AUTOMATYCZNIE DOZWOLONE                        │
+│  → Nie sprawdza Outbound Rules!                   │
+│                                                   │
+└───────────────────────────────────────────────────┘
+        │
+        ▼
+    Odpowiedź dociera do klienta
+```
+
+---
+
+## 14.4 Stateful — Co To Naprawdę Oznacza
+
+**Stateful** = SG śledzi **stan połączeń** (connection tracking).
+
+```
+Connection Tracking Table (w hypervisorze):
+
+┌────────────────────┬──────────┬──────────┬──────────┬────────┐
+│ Source             │ Src Port │ Dest     │Dst Port  │ State  │
+├────────────────────┼──────────┼──────────┼──────────┼────────┤
+│ 203.0.113.5        │ 54321    │10.0.1.15 │ 443      │ESTAB.  │
+│ 10.0.2.20          │ 33445    │10.0.1.15 │ 3306     │ESTAB.  │
+│ 10.0.1.10          │ 45678    │10.0.1.15 │ 80       │SYN_SENT│
+└────────────────────┴──────────┴──────────┴──────────┴────────┘
+
+Gdy EC2 odpowiada na 203.0.113.5:54321:
+  → Hypervisor: "To jest odpowiedź na tracked connection"
+  → Nie sprawdza outbound rules
+  → Pakiet przechodzi
+
+Gdy EC2 INICJUJE połączenie do 10.0.2.100:5432:
+  → Hypervisor: "Nowe połączenie — sprawdź Outbound Rules"
+  → Outbound rule: port 5432 to 10.0.2.0/24 → MATCH ✅
+  → Odpowiedź od 10.0.2.100 → tracked → przechodzi auto
+```
+
+**Praktyczna konsekwencja:**
+```
+Inbound: port 443 from 0.0.0.0/0
+Outbound: (domyślnie ALL open)
+
+→ HTTPS odpowiedzi: działają (stateful — odpowiedź na inbound)
+→ EC2 inicjuje połączenie do S3: działa (outbound ALL)
+→ EC2 inicjuje połączenie do innego EC2 port 8080: 
+    outbound EC2-A: ALL → OK
+    inbound EC2-B: brak reguły dla 8080 → BLOCKED ❌
+```
+
+---
+
+## 14.5 Reguły SG — Anatomia
+
+Każda reguła SG składa się z:
+
+```
+┌──────────────┬───────────────────────────────────────────────┐
+│ Pole         │ Opis i wartości                               │
+├──────────────┼───────────────────────────────────────────────┤
+│ Type         │ Custom TCP/UDP/ICMP lub predefiniowane (SSH,   │
+│              │ HTTP, HTTPS, RDP, MySQL, PostgreSQL...)       │
+│ Protocol     │ TCP / UDP / ICMP / ICMPv6 / All (wszystko)   │
+│ Port Range   │ Pojedynczy port (443) lub zakres (8000-9000)  │
+│ Source/Dest  │ IP CIDR (10.0.0.0/8) lub SG ID (sg-abc123)  │
+│              │ lub własny SG (self-referencing)              │
+│ Description  │ Opcjonalny opis (max 255 znaków)             │
+└──────────────┴───────────────────────────────────────────────┘
+```
+
+**Source/Destination — możliwości:**
+
+```
+Inbound rules — Source:
+  ┌────────────────────────────────────────────────────────┐
+  │  0.0.0.0/0         → cały Internet (IPv4)             │
+  │  ::/0              → cały Internet (IPv6)             │
+  │  10.0.1.0/24       → konkretna podsieć                │
+  │  10.0.2.5/32       → konkretny IP (jeden host)        │
+  │  sg-0abc123        → inny Security Group              │
+  │  sg-self (własne)  → self-referencing                 │
+  └────────────────────────────────────────────────────────┘
+
+Outbound rules — Destination:
+  (identyczne opcje jak Source)
+```
+
+---
+
+## 14.6 SG Source = Security Group ID — Magia AWS
+
+To najważniejsza i najczęściej używana funkcja SG.
+
+### Zamiast IP — używaj SG jako source/destination
+
+```
+Tradycyjne podejście (IP-based):
+  SG-RDS inbound: port 3306 from 10.0.1.0/24
+  
+  Problem: co gdy EC2 dostanie nowy IP po restart?
+           co gdy dodam nowe EC2 w innym subnecie?
+           co gdy ASG skaluje do innego zakresu IP?
+
+Podejście AWS (SG-based):
+  SG-RDS inbound: port 3306 from sg-webapp
+  
+  Znaczenie: "Zezwól na port 3306 od KAŻDEGO ENI który ma przypisany sg-webapp"
+  
+  Nowe EC2 → przypisz sg-webapp → automatycznie dostęp do RDS ✅
+  Usuń EC2 → SG reguła niezmieniona, ale EC2 już nie istnieje ✅
+  ASG skalowanie → nowe instancje mają sg-webapp → dostęp auto ✅
+```
+
+### Jak to działa pod spodem
+
+```
+EC2-App (sg-webapp, IP: 10.0.1.25) → MySQL (RDS, sg-rds)
+
+SG-RDS inbound: 
+  port 3306  source: sg-webapp
+
+Hypervisor otrzymuje pakiet:
+  src: 10.0.1.25:45123  dst: 10.0.2.100:3306
+
+Sprawdza: "Który SG jest przypisany do ENI z IP 10.0.1.25?"
+Odpowiedź: "sg-webapp"
+Porównuje z regułą: "3306 from sg-webapp" → MATCH ✅
+
+EC2-Hacker (sg-unknown, IP: 10.0.3.50) → MySQL:
+  src: 10.0.3.50:12345  dst: 10.0.2.100:3306
+  
+ENI 10.0.3.50 ma sg-unknown ≠ sg-webapp → NO MATCH ❌ → BLOCKED
+```
+
+### Typowy schemat SG chaining (łańcuch SG)
+
+```
+Internet
+   │
+   │ port 443
+   ▼
+┌──────────────────┐
+│   ALB            │  SG-ALB: inbound 443 from 0.0.0.0/0
+│   sg-alb         │         outbound 8080 to sg-webapp
+└──────────────────┘
+   │
+   │ port 8080 (tylko z sg-alb!)
+   ▼
+┌──────────────────┐
+│   EC2 App        │  SG-App: inbound 8080 from sg-alb
+│   sg-webapp      │         outbound 3306 to sg-rds
+└──────────────────┘
+   │
+   │ port 3306 (tylko z sg-webapp!)
+   ▼
+┌──────────────────┐
+│   RDS MySQL      │  SG-RDS: inbound 3306 from sg-webapp
+│   sg-rds         │
+└──────────────────┘
+
+Hacker z Internetu nie może:
+  → Bezpośrednio trafić do EC2 (tylko ALB może, przez sg-alb)
+  → Bezpośrednio trafić do RDS (tylko EC2-App może, przez sg-webapp)
+```
+
+---
+
+## 14.7 Self-Referencing Security Group
+
+SG może zezwolić na ruch od instancji które **mają ten sam SG**.
+
+```
+SG-Cluster:
+  Inbound: ALL traffic  source: sg-cluster (self!)
+  
+┌─────────────────────────────────────────────────────┐
+│                 VPC                                 │
+│                                                     │
+│  EC2-Node1 ──────────────────► EC2-Node2           │
+│  [sg-cluster]   ANY PORT       [sg-cluster]  ✅    │
+│                                                     │
+│  EC2-Node1 ──────────────────► EC2-Node3           │
+│  [sg-cluster]                  [sg-cluster]  ✅    │
+│                                                     │
+│  EC2-External ────────────────► EC2-Node1          │
+│  [sg-other]                    [sg-cluster]  ❌    │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+
+Use cases:
+  - Klaster baz danych (MongoDB replica set, Cassandra)
+  - Klaster aplikacji (Elasticsearch, Kafka)
+  - ECS tasks w tym samym cluster
+  - Kubernetes worker nodes
+```
+
+---
+
+## 14.8 Wiele SG na ENI — Jak Działa Union
+
+ENI może mieć do **5 SG**. Reguły są łączone przez **OR (union)**.
+
+```
+EC2 ma przypisane:
+  SG-Web:   inbound port 80, 443 from 0.0.0.0/0
+  SG-Admin: inbound port 22 from 10.0.0.0/8
+  SG-Mon:   inbound port 9100 from sg-prometheus
+
+Efektywne reguły = UNION wszystkich SG:
+  port 80   from 0.0.0.0/0       (z SG-Web)
+  port 443  from 0.0.0.0/0       (z SG-Web)
+  port 22   from 10.0.0.0/8      (z SG-Admin)
+  port 9100 from sg-prometheus   (z SG-Mon)
+
+Pytanie: czy mogę w SG-Admin zablokować port 80?
+Odpowiedź: NIE! SG nie ma reguł DENY — tylko ALLOW.
+           Nie możesz "cofnąć" reguły z innego SG.
+           Jedyna opcja: usuń SG-Web lub zmodyfikuj jego reguły.
+```
+
+**SG = TYLKO ALLOW, NIGDY DENY** — to fundamentalna różnica od tradycyjnych firewalli.
+
+---
+
+## 14.9 Default Security Group vs Custom Security Group
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              Default SG (tworzony automatycznie z VPC)          │
+├───────────────────────┬─────────────────────────────────────────┤
+│ Inbound               │ ALL traffic  from  default-sg (self)    │
+│ Outbound              │ ALL traffic  to    0.0.0.0/0            │
+├───────────────────────┴─────────────────────────────────────────┤
+│ Efekt: instancje z default SG mogą się komunikować wzajemnie    │
+│ (self-referencing), ale nie z innymi SG. Internet wychodzący OK.│
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│              Nowo Utworzony Custom SG                           │
+├───────────────────────┬─────────────────────────────────────────┤
+│ Inbound               │ (puste — wszystko zablokowane)          │
+│ Outbound              │ ALL traffic  to    0.0.0.0/0 (default) │
+├───────────────────────┴─────────────────────────────────────────┤
+│ Efekt: nic nie może wejść do EC2. EC2 może inicjować dowolne    │
+│ połączenia wychodzące.                                          │
+└─────────────────────────────────────────────────────────────────┘
+
+Best Practice: NIE używaj Default SG dla workloadów produkcyjnych.
+Twórz dedykowane SG per warstwa (web, app, db, mgmt).
+```
+
+---
+
+## 14.10 SG na Poziomie VPC vs Subnet vs ENI
+
+Częste zamieszanie: gdzie "siedzi" SG?
+
+```
+VPC Level:
+  SG jest ZASOBEM VPC — tworzony w konkretnym VPC
+  Jeden SG nie może być przypisany do ENI w innym VPC!
+  
+  VPC-A: sg-web-a (tylko dla EC2 w VPC-A)
+  VPC-B: sg-web-b (tylko dla EC2 w VPC-B)
+  
+  Po VPC Peering: sg-web-a NIE może być source w SG w VPC-B
+  (Reguły SG cross-VPC: musisz użyć CIDR IP, nie SG ID)
+
+Subnet Level:
+  SG nie działa na poziomie subnetu — to jest NACL (Network ACL)
+  SG ignoruje granice subnetów!
+  
+  EC2 w subnet-A → EC2 w subnet-B (ten sam VPC):
+  Routing: automatyczne w VPC (local route)
+  Filtrowanie: tylko SG obu EC2 (nie NACL subnetu, chyba że ruch 
+               przez granicę subnetu → NACL też sprawdza)
+
+ENI Level:
+  SG działa TUTAJ. Każde ENI = osobny zestaw SG.
+  EC2 z 2x ENI może mieć różne SG na każdym interfejsie.
+```
+
+### Ilustracja: EC2 w tej samej subnecie
+
+```
+Subnet 10.0.1.0/24
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  EC2-A                          EC2-B                   │
+│  eth0: 10.0.1.10                eth0: 10.0.1.20         │
+│  SG: sg-open                    SG: sg-empty            │
+│    inbound: ALL from 0.0.0.0/0    inbound: (puste)      │
+│                                                         │
+│                                                         │
+│  EC2-A ──── SSH port 22 ────► EC2-B                    │
+│                                                         │
+│  Routing: 10.0.1.20 → local route → bezpośrednio       │
+│  SG EC2-B: brak reguły dla port 22 → BLOCKED ❌        │
+│                                                         │
+│  Fizyczna sieć "widzi" pakiet, ale hypervisor go        │
+│  droppuje przed dostarczeniem do EC2-B!                │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Fizyczna sieć = nieistotna dla SG.** Sąsiedztwo w subnecie nie daje żadnych przywilejów.
+
+---
+
+## 14.11 SG vs NACL — Kluczowe Różnice
+
+```
+┌──────────────────────┬────────────────────────┬──────────────────────┐
+│ Cecha                │ Security Group         │ Network ACL (NACL)   │
+├──────────────────────┼────────────────────────┼──────────────────────┤
+│ Poziom               │ ENI (instancja)        │ Subnet               │
+│ Stan                 │ Stateful               │ Stateless            │
+│ Reguły               │ Tylko ALLOW            │ ALLOW i DENY         │
+│ Ocena reguł          │ Union wszystkich SG    │ Numerycznie (100, 200│
+│                      │ (wszystkie sprawdzane) │ pierwsza pasująca)   │
+│ Ephemeral ports      │ Auto (stateful)        │ Musisz dodać outbound│
+│                      │                        │ 1024-65535 ręcznie   │
+│ Zasięg               │ Ten sam VPC            │ Ten sam subnet       │
+│ Domyślna akcja       │ Implicit deny (brak reguły)│ Explicit deny rule│
+│ Kto zarządza         │ DevOps / App teams     │ Network / Security   │
+│ Typowe użycie        │ Per-instance granular  │ Subnet-level broad   │
+│                      │ control                │ deny/allow           │
+│ Source jako SG       │ ✅ Tak                  │ ❌ Tylko CIDR        │
+└──────────────────────┴────────────────────────┴──────────────────────┘
+```
+
+### NACL Stateless — Dlaczego Ephemeral Ports Ważne
+
+```
+Klient → EC2 port 443:
+  
+NACL Inbound:
+  100: ALLOW TCP 443 from 0.0.0.0/0  ✅ (żądanie przechodzi)
+
+Odpowiedź EC2 → Klient:
+  Klient: port SOURCE był np. 54321 (ephemeral: 1024-65535)
+  EC2 odpowiada: dst=203.0.113.5:54321
+
+NACL Outbound (stateless! nie pamięta że 54321 to odpowiedź!):
+  Sprawdza: "czy mam regułę dla TCP dst port 54321?"
+  Bez reguły: BLOCKED ❌
+
+Fix dla NACL:
+  Outbound: ALLOW TCP 1024-65535 to 0.0.0.0/0  (ephemeral range)
+
+SG (stateful): to jest AUTOMATYCZNIE obsługiwane, bez dodatkowych reguł.
+```
+
+---
+
+## 14.12 Outbound Rules — Kiedy Ograniczać
+
+Domyślnie outbound SG = `ALL traffic to 0.0.0.0/0` — wszystko wychodzi.
+
+**Kiedy warto ograniczyć outbound:**
+
+```
+Scenariusz: EC2 z danymi wrażliwymi (PCI DSS, HIPAA)
+
+SG-Database outbound:
+  ❌ Usuń ALL 0.0.0.0/0
+  ✅ Dodaj:
+     port 5432 to sg-webapp (odpowiedź na DB connections)
+     port 443 to 0.0.0.0/0 (AWS API calls: S3, CloudWatch, SSM)
+     port 53 to VPC CIDR (DNS — Route53 Resolver)
+
+Efekt:
+  EC2 DB nie może zainicjować połączenia do Internetu
+  Nawet jeśli malware zainfekuje EC2, nie "zadzwoni do domu"
+  Data exfiltration przez wychodzące połączenie = niemożliwe
+
+Ale uwaga: stateful! Odpowiedzi na INBOUND connections 
+           przechodzą automatycznie niezależnie od outbound rules.
+```
+
+---
+
+## 14.13 Jak Dodać / Zmodyfikować SG — AWS CLI
+
+```bash
+# ═══════════════════════════════════════════════════════════
+# TWORZENIE SG
+# ═══════════════════════════════════════════════════════════
+
+# Utwórz SG w VPC:
+aws ec2 create-security-group \
+  --group-name sg-webapp \
+  --description "Web Application Security Group" \
+  --vpc-id vpc-12345678
+
+# Output: {"GroupId": "sg-0abc123def456789"}
+
+# ═══════════════════════════════════════════════════════════
+# DODAWANIE REGUŁ INBOUND
+# ═══════════════════════════════════════════════════════════
+
+# Dodaj port 443 z Internetu:
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-0abc123def456789 \
+  --protocol tcp \
+  --port 443 \
+  --cidr 0.0.0.0/0
+
+# Dodaj port 3306 z konkretnego SG:
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-0rds111111111111 \
+  --protocol tcp \
+  --port 3306 \
+  --source-group sg-0abc123def456789
+
+# Dodaj ICMP (ping) z VPC CIDR:
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-0abc123def456789 \
+  --protocol icmp \
+  --port -1 \
+  --cidr 10.0.0.0/16
+
+# Dodaj zakres portów:
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-0abc123def456789 \
+  --ip-permissions '[{
+    "IpProtocol": "tcp",
+    "FromPort": 8000,
+    "ToPort": 9000,
+    "IpRanges": [{"CidrIp": "10.0.0.0/8", "Description": "Internal apps"}]
+  }]'
+
+# ═══════════════════════════════════════════════════════════
+# SELF-REFERENCING (self-referencing SG)
+# ═══════════════════════════════════════════════════════════
+
+# Zezwól na cały ruch między instancjami z tym samym SG:
+aws ec2 authorize-security-group-ingress \
+  --group-id sg-0cluster111111111 \
+  --ip-permissions '[{
+    "IpProtocol": "-1",
+    "UserIdGroupPairs": [{
+      "GroupId": "sg-0cluster111111111",
+      "Description": "Allow all traffic within cluster SG"
+    }]
+  }]'
+
+# ═══════════════════════════════════════════════════════════
+# PRZYPISYWANIE SG DO EC2 / ENI
+# ═══════════════════════════════════════════════════════════
+
+# Przypisz SG do ENI (zastępuje istniejące!):
+aws ec2 modify-network-interface-attribute \
+  --network-interface-id eni-12345678 \
+  --groups sg-0abc123def456789 sg-0def456789abc123
+
+# Dodaj SG do istniejącej EC2 (przez modify-instance-attribute):
+# Uwaga: to ZASTĘPUJE wszystkie SG! Podaj kompletną listę:
+aws ec2 modify-instance-attribute \
+  --instance-id i-12345678 \
+  --groups sg-0abc123def456789 sg-0existing111111
+
+# ═══════════════════════════════════════════════════════════
+# SPRAWDZANIE / USUWANIE
+# ═══════════════════════════════════════════════════════════
+
+# Opisz SG:
+aws ec2 describe-security-groups \
+  --group-ids sg-0abc123def456789
+
+# Usuń regułę inbound:
+aws ec2 revoke-security-group-ingress \
+  --group-id sg-0abc123def456789 \
+  --protocol tcp \
+  --port 80 \
+  --cidr 0.0.0.0/0
+
+# Usuń SG (musi być odłączony od wszystkich ENI):
+aws ec2 delete-security-group \
+  --group-id sg-0abc123def456789
+```
+
+---
+
+## 14.14 SG i VPC Peering / Transit Gateway
+
+Cross-VPC: SG ID jako source **nie działa** między różnymi VPC (nawet przez peering).
+
+```
+VPC-A (10.0.0.0/16)          VPC-B (10.1.0.0/16)
+  EC2-A [sg-a]     ←── Peering ───►  EC2-B [sg-b]
+
+SG-B inbound:
+  ❌ port 443 from sg-a      ← NIE DZIAŁA dla cross-VPC peering
+  ✅ port 443 from 10.0.0.0/16  ← Działa (CIDR VPC-A)
+  ✅ port 443 from 10.0.1.5/32  ← Działa (konkretny IP)
+
+Wyjątek: VPC Peering między VPC w TYM SAMYM koncie i tym samym regionie:
+  → Można używać SG ID jako source (cross-VPC SG reference)
+  aws ec2 authorize-security-group-ingress \
+    --group-id sg-0inVPCB \
+    --ip-permissions '[{
+      "IpProtocol": "tcp",
+      "FromPort": 443,
+      "ToPort": 443,
+      "UserIdGroupPairs": [{
+        "UserId": "123456789012",
+        "GroupId": "sg-0inVPCA"    ← SG z innego VPC (same account, same region)
+      }]
+    }]'
+
+Transit Gateway:
+  Ruch przez TGW: SG jako source NIE działa (zawsze CIDR)
+```
+
+---
+
+## 14.15 SG i Services — ELB, RDS, Lambda, ECS
+
+### ALB / NLB Security Groups
+
+```
+ALB ma własny SG!
+
+ALB SG (sg-alb):
+  Inbound: 443 from 0.0.0.0/0, 80 from 0.0.0.0/0
+
+EC2 Target SG (sg-ec2):
+  Inbound: 8080 from sg-alb   ← tylko ALB może dotrzeć do EC2
+
+Ale: NLB nie ma SG!
+  NLB to L4 — nie ma własnego ENI w tradycyjnym sensie
+  Ruch przez NLB: source IP = CLIENT IP (nie NLB IP)
+  EC2 za NLB musi mieć regułę dla client IP range (lub 0.0.0.0/0)
+  
+  Wyjątek: NLB z Security Group (nowa funkcja 2023+):
+    NLB dostał własne SG → możliwe sg-nlb jako source w ec2 SG
+```
+
+### RDS Security Groups
+
+```
+RDS instance ma własne ENI → własny SG
+
+SG-RDS:
+  Inbound: 5432 from sg-webapp (EC2 App)
+  Inbound: 5432 from sg-bastion (jump host)
+  Outbound: (domyślnie ALL — możesz zostawić lub ograniczyć)
+
+Multi-AZ RDS: oba ENI (primary i standby) mają ten sam SG
+Read Replica: osobne ENI, może mieć inny SG (ale często ten sam)
+```
+
+### Lambda Security Groups
+
+```
+Lambda w VPC:
+  Lambda dostaje ENI (VPC-connected Lambda)
+  ENI ma SG jak każde inne
+
+SG-Lambda:
+  Outbound: 5432 to sg-rds    (Lambda → RDS)
+  Outbound: 443 to 0.0.0.0/0  (Lambda → AWS API, S3 etc.)
+
+SG-RDS:
+  Inbound: 5432 from sg-lambda  ← zezwól Lambda
+
+Uwaga: Lambda spoza VPC (domyślna) → nie ma SG → używa NAT/IGW przez AWS managed infra
+```
+
+### ECS Fargate Security Groups
+
+```
+Fargate task: każdy task dostaje własne ENI (awsvpc network mode)
+  → Każdy task = osobny SG assignment
+  → Możliwe granularne kontrole per-task
+
+ECS EC2 launch type:
+  Instancje EC2 mają SG
+  Tasks współdzielą ENI instancji → SG instancji
+  Dynamiczne port mapping → SG musi zezwolić na zakres portów
+  lub użyj sg-alb jako source dla całego zakresu
+
+SG-ECS-Fargate:
+  Inbound: 8080 from sg-alb
+  Outbound: 5432 to sg-rds
+           443 to 0.0.0.0/0 (AWS API)
+```
+
+---
+
+## 14.16 Troubleshooting SG — Najczęstsze Problemy
+
+```
+Problem 1: Połączenie odmówione mimo "poprawnych" reguł SG
+
+Checklist:
+  □ Czy SG jest przypisany do WŁAŚCIWEGO ENI?
+    aws ec2 describe-network-interfaces --filters Name=group-id,Values=sg-xxx
+  □ Czy sprawdziłeś OUTBOUND rules na EC2 INICJUJĄCEJ połączenie?
+  □ Czy NACL subnetu nie blokuje? (stateless! sprawdź oba kierunki)
+  □ Czy routing table ma trasę? (SG nie pomoże bez routingu)
+  □ Czy aplikacja nasłuchuje na właściwym porcie/interfejsie?
+    ss -tlnp lub netstat -tlnp na EC2
+
+Problem 2: Działa z jednego IP ale nie z drugiego
+
+  □ Sprawdź Source w regule — CIDR za wąskie?
+  □ Czy second EC2 ma inny SG? Reguła dotyczy konkretnego sg-id?
+
+Problem 3: EC2 nie może połączyć się z Internetem (outbound)
+
+  □ Outbound SG: czy jest reguła dla 443/0.0.0.0/0?
+  □ IGW przypisany do VPC?
+  □ Route Table: default route → IGW lub NAT GW?
+  □ Public IP / EIP przypisany?
+  □ NACL: outbound i ephemeral ports (1024-65535)?
+
+Problem 4: Security Group changes nie działają natychmiast
+
+  → Nieprawda! SG changes są NATYCHMIASTOWE (bez restartu instancji)
+  → Sprawdź czy zmieniony właściwy SG (może jest kilka o podobnych nazwach)
+```
+
+### VPC Reachability Analyzer — automatyczna diagnostyka
+
+```bash
+# Utwórz analizę ścieżki sieciowej:
+aws ec2 create-network-insights-path \
+  --source eni-0abc123 \
+  --destination eni-0def456 \
+  --protocol tcp \
+  --destination-port 443
+
+# Uruchom analizę:
+aws ec2 start-network-insights-analysis \
+  --network-insights-path-id nip-12345678
+
+# Sprawdź wyniki:
+aws ec2 describe-network-insights-analyses \
+  --network-insights-analysis-ids nia-12345678
+
+# Output wskaże dokładnie który SG / NACL / Route blokuje
+```
+
+---
+
+## 14.17 Limity Security Groups
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ Limit                              │ Wartość domyślna            │
+├──────────────────────────────────────────────────────────────────┤
+│ SG per VPC                         │ 2,500                       │
+│ SG per ENI                         │ 5 (max 16 po zwiększeniu)   │
+│ Reguły inbound per SG              │ 60 (max 1,000 po zwiększeniu│
+│ Reguły outbound per SG             │ 60 (max 1,000 po zwiększeniu│
+│ SG w grupie (group references)     │ 5 per reguła               │
+│ Reguły × SG per ENI (combined)    │ 300 (5 SG × 60 reguł)      │
+└──────────────────────────────────────────────────────────────────┘
+
+Uwaga: więcej reguł = więcej zasobów hypervisora = potencjalnie
+wyższe latency przy inicjowaniu połączeń (minimalne, ale istnieje).
+```
+
+---
+
+## 14.18 Well-Architected Framework — Security Groups
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Taguj SG czytelnie (Name, Environment, Owner), używaj AWS Config rules (np. `restricted-ssh` sprawdza czy port 22 nie otwarty na 0.0.0.0/0), automatyzuj przez CloudFormation/Terraform, audytuj przez Security Hub |
+| **Security** | Zasada najmniejszego przywileju (tylko wymagane porty i źródła), SG chaining (ALB→App→DB), self-referencing dla klastrów, ogranicz outbound dla wrażliwych workloadów, usuń regułę `0.0.0.0/0` dla SSH/RDP, użyj SSM Session Manager zamiast bastiona |
+| **Reliability** | SG changes są natychmiastowe i nie wymagają restartu. SG jako "żywa" konfiguracja — zmiana SG może naprawić lub zepsuć produkcję w sekundę. Testuj zmiany SG na staging przed prod |
+| **Performance Efficiency** | Mniej reguł = szybsza ewaluacja. Konsoliduj reguły. Unikaj overlapping CIDR ranges. VPC Reachability Analyzer do debugowania bez wpływu na ruch |
+| **Cost Optimization** | SG są bezpłatne — nie ma opłat per SG ani per reguła. Koszty pośrednie: złe SG → debugging time → engineer hours |
+| **Sustainability** | Regularnie czyść nieużywane SG i reguły (AWS Config, Trusted Advisor), mniej overhead hypervisora |
+
+---
+
+## 14.19 4 Domeny Egzaminacyjne SAP-C02
+
+| Domena | Zastosowanie SG |
+|---|---|
+| **Design for New Solutions** | Projektuj SG per warstwa (web/app/db/mgmt). SG chaining. Self-referencing dla klastrów. Decyzja: kiedy SG vs NACL vs WAF |
+| **Organizational Complexity** | Cross-account SG reference przez Resource Access Manager (RAM). SCP nie może zarządzać SG — to IAM. SG per workload team, centralne security team audytuje |
+| **Continuous Improvement** | AWS Config rules dla compliance SG. Security Hub findings dla SG misconfigurations. GuardDuty wykrywa anomalie w ruchu sieciowym |
+| **Migration & Modernization** | Lift-and-shift: mapuj on-prem firewall rules na SG. Monitoruj traffic patterns przed migracją (VPC Flow Logs) żeby zbudować właściwe SG |
+
+---
+
+## 14.20 VPC Flow Logs — Debug SG przez Logi
+
+```bash
+# Włącz Flow Logs dla ENI (debug SG):
+aws ec2 create-flow-logs \
+  --resource-type NetworkInterface \
+  --resource-ids eni-12345678 \
+  --traffic-type ALL \
+  --log-destination-type cloud-watch-logs \
+  --log-destination arn:aws:logs:eu-west-1:123456789:log-group:/vpc/flow-logs
+
+# Format logu (domyślny):
+# version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status
+# 2 123456789 eni-abc 10.0.1.5 10.0.2.10 54321 3306 6 10 1200 ... REJECT OK
+#                                                                    ^^^^^^
+#                                                            REJECT = SG lub NACL zablokowało
+
+# Szukaj REJECT dla konkretnego IP:
+# CloudWatch Logs Insights:
+# fields @timestamp, srcAddr, dstAddr, srcPort, dstPort, action
+# | filter action = "REJECT" and dstAddr = "10.0.2.10"
+# | sort @timestamp desc
+# | limit 50
+```
+
+---
+
+## 14.21 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Na jakim poziomie infrastruktury działa Security Group?
+
+> **Odpowiedź:** SG działa na poziomie **ENI (Elastic Network Interface)** — na warstwie hypervisora. Nie działa na poziomie sieci, subnetu ani routera. Ruch jest filtrowany przez hypervisor zanim dotrze do VM.
+
+---
+
+**Pytanie 2:** EC2-A i EC2-B są w tej samej subnecie. EC2-B ma SG z pustymi regułami inbound. Czy EC2-A może pingować EC2-B?
+
+> **Odpowiedź:** **Nie.** Pusta reguła inbound = implicit deny dla wszystkiego. Nie ma znaczenia że są w tej samej subnecie — routing działa, ale SG blokuje na poziomie ENI EC2-B.
+
+---
+
+**Pytanie 3:** Co to znaczy że SG jest stateful?
+
+> **Odpowiedź:** SG śledzi stan połączeń (connection tracking). Jeśli połączenie przychodzące (inbound) jest dozwolone przez regułę, odpowiedź wychodzi automatycznie bez sprawdzania outbound rules. I odwrotnie: jeśli EC2 inicjuje połączenie wychodzące (outbound) zgodne z regułą, odpowiedź wraca automatycznie.
+
+---
+
+**Pytanie 4:** Czy SG może mieć regułę DENY?
+
+> **Odpowiedź:** **Nie.** SG obsługuje tylko reguły **ALLOW**. Nie możesz dodać reguły blokującej. Jeśli chcesz blokować konkretny ruch — użyj **NACL** (Network ACL) który obsługuje ALLOW i DENY.
+
+---
+
+**Pytanie 5:** Ile SG można przypisać do jednego ENI?
+
+> **Odpowiedź:** Domyślnie **5 SG**. Można zwiększyć do **16** przez AWS Support request. Jeśli ENI ma 5 SG, reguły ze wszystkich 5 są łączone przez OR (union).
+
+---
+
+**Pytanie 6:** Czym różni się SG Default od nowo utworzonego SG?
+
+> **Odpowiedź:** **Default SG:** inbound = self-referencing (wszystko z tego samego SG), outbound = ALL. **Nowy SG:** inbound = puste (wszystko zablokowane), outbound = ALL (domyślnie). Best practice: nie używaj Default SG dla prod workloadów.
+
+---
+
+**Pytanie 7:** Jak działa Source = Security Group ID w regule SG?
+
+> **Odpowiedź:** AWS sprawdza który SG jest przypisany do ENI z którego pochodzi pakiet. Jeśli ten SG pasuje do source w regule → ALLOW. Nie ma znaczenia jaki IP ma source — liczy się przypisany SG. To bardziej elastyczne niż IP-based rules (dynamiczne środowiska, ASG).
+
+---
+
+**Pytanie 8:** EC2 ma dwa ENI (eth0 i eth1). Czy można przypisać różne SG do każdego ENI?
+
+> **Odpowiedź:** **Tak.** Każdy ENI jest niezależnym bytem — ma własne IP, własne SG, własne EIP. eth0 może mieć sg-web, eth1 może mieć sg-admin. SG sprawdzany jest per ENI.
+
+---
+
+**Pytanie 9:** Firma ma VPC Peering między VPC-A i VPC-B. EC2 w VPC-B ma SG. Czy jako Source można podać SG z VPC-A?
+
+> **Odpowiedź:** **Tak, ale tylko w tym samym koncie AWS i tym samym regionie.** Dla cross-account lub cross-region peering: musisz użyć CIDR VPC-A jako source. Dla Transit Gateway: zawsze CIDR.
+
+---
+
+**Pytanie 10:** Co to jest self-referencing Security Group?
+
+> **Odpowiedź:** SG który zezwala na ruch od instancji mających **ten sam SG** przypisany. `inbound: ALL from sg-same` → wszystkie EC2 z sg-same mogą komunikować się wzajemnie. Użyteczne dla klastrów (Elasticsearch, Kafka, DB replica sets).
+
+---
+
+**Pytanie 11:** Jak szybko wchodzą w życie zmiany w SG?
+
+> **Odpowiedź:** **Natychmiast** — bez restartu instancji, bez restartu aplikacji. Zmiana reguły SG jest propagowana do hypervisora w sekundy i zaczyna działać dla nowych oraz istniejących połączeń.
+
+---
+
+**Pytanie 12:** ALB ma własny SG. Jak skonfigurować SG tak żeby tylko ALB mógł dotrzeć do EC2?
+
+> **Odpowiedź:** `SG-EC2 inbound: port 8080 from sg-alb` — tylko ENI ALB (które mają sg-alb) mogą połączyć się z EC2. Nawet jeśli ktoś zna prywatny IP EC2 i próbuje się połączyć bezpośrednio — SG blokuje.
+
+---
+
+**Pytanie 13:** Dlaczego NLB jest trudniejszy do integracji z SG niż ALB?
+
+> **Odpowiedź:** NLB nie miał własnego SG (L4 passthrough) — ruch do EC2 ma source IP = klient (nie NLB IP). SG EC2 musiał zezwalać na zakres IP klientów. Od 2023: NLB wspiera własne SG — można używać sg-nlb jako source w SG EC2.
+
+---
+
+**Pytanie 14:** Co to jest VPC Reachability Analyzer i kiedy go użyć?
+
+> **Odpowiedź:** Narzędzie AWS do automatycznej diagnostyki połączeń sieciowych. Analizuje path między dwoma punktami (ENI, IGW, VGW, TGW) i wskazuje dokładnie który komponent blokuje: SG, NACL, Route Table, czy brak trasy. Nie generuje rzeczywistego ruchu — analiza logiczna.
+
+---
+
+**Pytanie 15:** Lambda funkcja (w VPC) nie może połączyć się z RDS. Co sprawdzić?
+
+> **Odpowiedź:** (1) Lambda ma ENI w VPC? (2) SG Lambda: outbound port 5432 do sg-rds? (3) SG RDS: inbound port 5432 from sg-lambda? (4) Route Table subnetu Lambda: trasa do subnetu RDS (local VPC route)? (5) NACL obu subnetów?
+
+---
+
+**Pytanie 16:** Jaka jest różnica między SG a NACL pod względem oceny reguł?
+
+> **Odpowiedź:** **SG:** wszystkie reguły ze wszystkich przypisanych SG są oceniane razem (union) — wystarczy że jedna reguła zezwala. **NACL:** reguły numeryczne, oceniane od najniższego numeru — **pierwsza pasująca** reguła wygrywa (jak tradycyjny ACL). SG = OR. NACL = first match.
+
+---
+
+**Pytanie 17:** Firma chce zablokować dostęp z konkretnego IP do VPC. SG czy NACL?
+
+> **Odpowiedź:** **NACL** — bo obsługuje DENY. SG nie ma DENY. W NACL dodajesz regułę: `DENY TCP ALL from 203.0.113.5/32` z niskim numerem (np. 50) przed reguły ALLOW. SG nie może tego zrobić.
+
+---
+
+**Pytanie 18:** EC2 ma SG z outbound: ALL. Dlaczego EC2 nie może połączyć się z Internetem?
+
+> **Odpowiedź:** SG outbound OK, ale problem może być gdzie indziej: (1) Brak Public IP / EIP. (2) Brak IGW w VPC. (3) Route Table: brak default route `0.0.0.0/0 → igw-xxx`. (4) Prywatna subnet bez NAT Gateway. SG to tylko jeden element — cały pipeline musi działać.
+
+---
+
+**Pytanie 19:** Co to jest VPC Flow Logs i jak pomaga debugować SG?
+
+> **Odpowiedź:** Flow Logs rejestrują metadata ruchu przez ENI/subnet/VPC: source IP, dest IP, porty, protokół, akcja (ACCEPT/REJECT). `REJECT` = pakiet zablokowany przez SG lub NACL. Możesz zobaczyć które połączenia są blokowane i zidentyfikować brakujące reguły SG.
+
+---
+
+**Pytanie 20:** Czy usunięcie SG z ENI (bez dodania nowego) jest możliwe?
+
+> **Odpowiedź:** **Nie** — ENI musi mieć przypisany przynajmniej jeden SG w każdej chwili. AWS nie pozwoli na operację która usuwa ostatni SG bez dodania innego.
+
+---
+
+**Pytanie 21:** Firma używa ASG. Jak zapewnić że wszystkie nowe instancje automatycznie mają właściwy SG?
+
+> **Odpowiedź:** Dodaj SG do **Launch Template** (lub Launch Configuration). ASG przy uruchamianiu nowych instancji używa LT → automatycznie przypisuje skonfigurowane SG.
+
+---
+
+**Pytanie 22:** ECS Fargate z awsvpc network mode — jak działa SG?
+
+> **Odpowiedź:** Każdy Fargate task dostaje **własne ENI** (dzięki awsvpc). Każde ENI ma własny SG skonfigurowany w task definition / service definition. Granularne kontrole per-task, nie per-host jak w EC2 launch type.
+
+---
+
+**Pytanie 23:** Jak sprawdzić który SG blokuje połączenie bez generowania ruchu?
+
+> **Odpowiedź:** **VPC Reachability Analyzer** — tworzy analizę logiczną path network bez rzeczywistego ruchu. Wskazuje konkretny SG/NACL/Route który blokuje.
+
+---
+
+**Pytanie 24:** Czy modyfikacja reguł SG wpływa na istniejące połączenia (established)?
+
+> **Odpowiedź:** Tak — SG jest stateful, ale zmiana reguły wpływa na tracking. Usunięcie reguły ALLOW → istniejące połączenia mogą zostać zerwane (nowe pakiety sprawdzają aktualne reguły). Dodanie DENY w NACL dla established connection → przerwie połączenie (NACL stateless, każdy pakiet od nowa).
+
+---
+
+**Pytanie 25:** Firma chce żeby tylko jej corporate IP mógł łączyć się SSH do bastion host. Jak?
+
+> `SG-Bastion inbound: port 22 from 203.0.113.0/24` (corporate IP range). Usuń regułę `0.0.0.0/0`. Opcja lepsza: użyj **AWS Systems Manager Session Manager** — zero otwartych portów, zero SG reguł dla SSH.
+
+---
+
+**Pytanie 26:** Multi-AZ RDS — czy primary i standby mają ten sam SG?
+
+> **Odpowiedź:** **Tak** — Multi-AZ RDS to jedna logiczna instancja z dwoma fizycznymi ENI w różnych AZ. Oba ENI współdzielą te same SG konfigurację. Failover jest transparentny dla SG.
+
+---
+
+**Pytanie 27:** Jak SG obsługuje IPv6?
+
+> **Odpowiedź:** SG obsługuje IPv6 jako osobne reguły. `0.0.0.0/0` = IPv4 only. `::/0` = IPv6 only. Musisz dodać osobne reguły dla IPv4 i IPv6 jeśli chcesz obsługiwać oba. AWS nie mapuje automatycznie.
+
+---
+
+**Pytanie 28:** Co sprawdzić gdy SG zmiana nie wydaje się działać?
+
+> **Odpowiedź:** (1) Właściwy SG ID? (podobne nazwy mogą mylić). (2) Właściwe ENI? (EC2 może mieć wiele). (3) Czy zmiana zapisana? (niezapisany draft w Console). (4) NACL też blokuje? (5) Aplikacja nasłuchuje? (`ss -tlnp`). (6) Flow Logs potwierdzają REJECT?
+
+---
+
+**Pytanie 29:** Firma ma 3-tier architekturę (web/app/db). Zaprojektuj SG per tier.
+
+```
+SG-ALB:
+  In: 443, 80 from 0.0.0.0/0
+  Out: 8080 to sg-web
+
+SG-Web (EC2):
+  In: 8080 from sg-alb
+  Out: 3000 to sg-app, 443 to 0.0.0.0/0
+
+SG-App (EC2):
+  In: 3000 from sg-web
+  Out: 5432 to sg-db, 443 to 0.0.0.0/0
+
+SG-DB (RDS):
+  In: 5432 from sg-app
+  Out: (ograniczony lub domyślny)
+```
+
+---
+
+**Pytanie 30:** Czy SG można używać z AWS Lambda spoza VPC?
+
+> **Odpowiedź:** **Nie** — Lambda spoza VPC nie ma ENI w VPC → nie ma SG. Lambda spoza VPC komunikuje się z Internetem przez AWS managed infra. Dla RDS/EC2 w VPC: Lambda musi być w VPC → dostaje ENI → można przypisać SG.
+
+---
+
+**Pytanie 31-60 — kluczowe pytania egzaminacyjne:**
+
+---
+
+**Pytanie 31:** Jaki jest domyślny outbound rule w nowo utworzonym SG?
+
+> `ALL traffic to 0.0.0.0/0` — wszystko wychodzi. Możesz to usunąć i ograniczyć.
+
+---
+
+**Pytanie 32:** Czy SG jest regionalny czy globalny?
+
+> SG jest **regionalny** — tworzony w konkretnym regionie AWS i przypisywany do VPC w tym regionie. Nie można używać SG z eu-west-1 w us-east-1.
+
+---
+
+**Pytanie 33:** Co to jest "stale security group rule"?
+
+> Reguła SG która odwołuje się do SG w innym VPC przez peering, gdy to połączenie peer zostało usunięte. Stale rules pojawiają się z opisem "This rule references a security group that no longer exists". Usuń je ręcznie.
+
+---
+
+**Pytanie 34:** Czy można przypisać ten sam SG do wielu instancji?
+
+> **Tak** — to jest podstawowy use case. Jeden SG (np. sg-webapp) przypisany do dziesiątek EC2. Zmiana SG = zmiana dla wszystkich przypisanych instancji jednocześnie.
+
+---
+
+**Pytanie 35:** Jaka jest kolejność oceny reguł w SG?
+
+> **Brak kolejności** — wszystkie reguły ze wszystkich przypisanych SG są oceniane jednocześnie (union). Wystarczy że JEDNA reguła pasuje = ALLOW. Nie ma "pierwsza pasująca" jak w NACL.
+
+---
+
+**Pytanie 36:** EC2 ma SG z inbound: `port 22 from sg-bastion`. Bastion host nie ma SG bastion przypisanego. Czy połączenie zadziała?
+
+> **Nie.** Reguła sprawdza SG przypisany do ENI źródła. Bastion bez sg-bastion = nie pasuje do reguły = REJECT.
+
+---
+
+**Pytanie 37:** Co to jest "security group referencing" w kontekście RAM (Resource Access Manager)?
+
+> AWS RAM pozwala na sharing SG między kontami w tej samej organizacji. Konto B może użyć SG z konta A jako source w swoich regułach (cross-account SG reference). Nie jest to dostępne domyślnie — wymaga RAM setup.
+
+---
+
+**Pytanie 38:** Różnica między SG a host-based firewall (iptables)?
+
+> **SG:** działa w hypervisorze (przed VM), zarządzany przez AWS, stateful, tylko ALLOW. **iptables/nftables:** działa w OS VM, więcej opcji (MARK, LOG, REJECT z komunikatem), może definiować DENY per-process. Defense in depth: oba razem = dwie niezależne warstwy ochrony.
+
+---
+
+**Pytanie 39:** AWS Config rule `restricted-ssh` — co robi?
+
+> Sprawdza czy jakiś SG w VPC ma regułę inbound `port 22 from 0.0.0.0/0` lub `::/0`. Jeśli tak — oznacza SG jako NON_COMPLIANT. Automatyzacja: Lambda remediation może automatycznie usuwać taką regułę.
+
+---
+
+**Pytanie 40:** EC2 jest NAT Instance. Jakie SG potrzebuje?
+
+> `SG-NAT inbound:` ALL traffic from VPC CIDR (10.0.0.0/16) — prywatne instancje wysyłają ruch do NAT. `SG-NAT outbound:` ALL to 0.0.0.0/0 — NAT przesyła do Internetu. Plus: `Source/Destination Check = disabled` na EC2 NAT Instance.
+
+---
+
+**Pytanie 41:** Jak SG obsługuje ICMP (ping)?
+
+> Dodaj regułę: Protocol=ICMP, Type=Echo Request (-1 lub 8), Source=CIDR. Możesz zezwolić na konkretny ICMP type (Echo, Traceroute) lub `ALL ICMP`. Domyślnie: wszystko zablokowane, nie możesz pingować EC2 bez jawnej reguły.
+
+---
+
+**Pytanie 42:** Co to jest "connection draining" w kontekście SG i ALB?
+
+> Connection draining (deregistration delay) — ALB czeka na zakończenie istniejących połączeń przed usunięciem target z target group. SG nie wpływa bezpośrednio na draining — to mechanizm ALB. Ale zmiana SG blokująca ruch od ALB może przerwać draining.
+
+---
+
+**Pytanie 43:** Czy SG chroni ruch między dwoma ENI tego samego EC2?
+
+> **Nie dotyczy** — ruch między ENI tej samej instancji (loopback traffic) jest obsługiwany przez OS networking stack, nie przez hypervisor SG. SG sprawdza ruch **zewnętrzny** do/od ENI.
+
+---
+
+**Pytanie 44:** Firma chce audytować wszystkie zmiany SG. Jak?
+
+> **AWS CloudTrail** loguje wszystkie API calls: `AuthorizeSecurityGroupIngress`, `RevokeSecurityGroupEgress`, `ModifySecurityGroupRules`. **AWS Config** rejestruje historię zmian konfiguracji SG. **Security Hub** + Config rules = alert przy niezgodnych zmianach.
+
+---
+
+**Pytanie 45:** Czy SG może być source w regule innego SG w innym regionie?
+
+> **Nie** — SG są regionalne. Nie można używać sg-eu-west-1 jako source w SG w us-east-1. Przy cross-region peering: zawsze CIDR IP.
+
+---
+
+**Pytanie 46:** EC2 ma SG z 5 przypisanymi SG (limit). Potrzebujesz dodać 6. Co robisz?
+
+> Opcja 1: Połącz reguły z kilku SG w jeden (konsolidacja). Opcja 2: Zwiększ limit przez AWS Support (do 16 per ENI). Opcja 3: Stwórz nowy ENI (eth1) z dodatkowym SG.
+
+---
+
+**Pytanie 47:** Co to jest "prefix list" w SG i kiedy używać?
+
+> Managed Prefix List = lista CIDR które można używać jako source/destination w SG zamiast podawania każdego CIDR osobno. AWS ma gotowe: `pl-xxx` dla S3, CloudFront, DynamoDB (używane z Gateway Endpoints). Własne: dla IP biur, partnerów.
+
+---
+
+**Pytanie 48:** Firma migruje on-prem firewall do AWS SG. Co nie jest możliwe do odtworzenia?
+
+> (1) DENY rules — SG nie ma DENY (użyj NACL). (2) Logging per-rule — SG nie loguje które reguły matchują (Flow Logs logują ACCEPT/REJECT ale nie która reguła). (3) Deep packet inspection — SG to port/IP firewall, nie L7 (użyj WAF lub 3rd party NVA + GWLB).
+
+---
+
+**Pytanie 49:** Jak SG integruje się z GuardDuty?
+
+> GuardDuty analizuje VPC Flow Logs i identyfikuje anomalie: nieoczekiwane połączenia, port scanning, komunikacja z known malicious IPs. GuardDuty nie modyfikuje SG automatycznie — ale EventBridge + Lambda może automatycznie dodać blokujące reguły (lub użyć AWS WAF/Security Hub automated remediation).
+
+---
+
+**Pytanie 50:** Czym różni się SG od AWS Network Firewall?
+
+> **SG:** L3/L4 stateful, per-ENI, tylko ALLOW, brak DPI. **AWS Network Firewall:** L3-L7 stateful/stateless, per-VPC/subnet level, ALLOW+DENY, Suricata-compatible IDS/IPS rules, domain filtering, TLS inspection. SG = podstawowa ochrona instancji. Network Firewall = centralna kontrola ruchu VPC.
+
+---
+
+**Pytanie 51:** Jak skonfigurować SG dla Kubernetes (EKS) worker nodes?
+
+> Dwa SG: `sg-eks-cluster` (EKS control plane) i `sg-eks-nodes` (worker nodes). EKS automatycznie tworzy SG dla control plane. sg-eks-nodes: inbound z sg-eks-cluster (control plane komunikacja), self-referencing (node-to-node), outbound ALL. Dokładne reguły zależą od CNI plugin (aws-node, Calico).
+
+---
+
+**Pytanie 52:** Co to jest "egress only internet gateway" i jak SG z nim współpracuje?
+
+> Egress-Only IGW dla IPv6 (jak NAT GW dla IPv4) — pozwala instancjom z prywatną IPv6 na wychodzący Internet bez możliwości inicjowania połączeń z zewnątrz. SG outbound: zezwól `::/0`. SG inbound: block `::/0` (egress-only IGW nie routuje ruchu inbound mimo to, ale SG jako defense in depth).
+
+---
+
+**Pytanie 53:** Firma chce zero-trust networking w VPC. Jak użyć SG?
+
+> Zero-trust: brak zaufania na podstawie lokalizacji (subnet, VPC). Każdy ENI domyślnie blokowany. Dostęp na podstawie identity (SG = identity). Implementacja: każda warstwa ma własny SG, reguły source = konkretne SG (nie CIDR), outbound ograniczony per service, monitoring przez Config + Security Hub.
+
+---
+
+**Pytanie 54:** Jak SG wpływa na latency połączeń?
+
+> Minimalny wpływ — ocena SG w hypervisorze (~microseconds). Więcej reguł = marginalne wydłużenie. Nie powinno być mierzalne w normalnych aplikacjach. Znaczący wpływ na latency mają: routing (longer path), DNS resolution, TLS handshake.
+
+---
+
+**Pytanie 55:** Różnica między Security Group a IAM Policy?
+
+> **SG:** kontroluje dostęp sieciowy (które IP/porty mogą się połączyć z ENI). **IAM Policy:** kontroluje dostęp do AWS API (kto może wywołać `s3:GetObject`, `ec2:DescribeInstances`). Orthogonal — oba potrzebne. SG blokuje połączenie sieciowe. IAM blokuje działanie w API.
+
+---
+
+**Pytanie 56:** EC2 Instance Connect — jak SG?
+
+> AWS EC2 Instance Connect wysyła jednorazowy klucz SSH do EC2 przez AWS API. Sam dostęp SSH: port 22 from `18.206.107.24/29` (EC2 Instance Connect IP range per region) lub `3.8.37.24/29` (eu-west-1). Bez otwierania 22 na 0.0.0.0/0.
+
+---
+
+**Pytanie 57:** Fargate task nie może pobrać Docker image z ECR. Co sprawdzić?
+
+> (1) SG Fargate task: outbound 443 to 0.0.0.0/0 (lub ECR CIDR). (2) VPC Endpoint dla ECR? (jeśli tak: outbound do sg-vpc-endpoint-ecr). (3) Route Table: dostęp do Internetu lub VPC Endpoint. (4) NACL. (5) IAM role ECS task: ecr:GetAuthorizationToken.
+
+---
+
+**Pytanie 58:** Co to jest "security group stale rules cleanup" i jak ją zautomatyzować?
+
+> Stale rules = reguły odwołujące się do SG które zostały usunięte. `aws ec2 describe-stale-security-groups --vpc-id vpc-xxx` zwraca listę. Automatyzacja: Lambda + EventBridge rule na `DeleteSecurityGroup` event → sprawdź i wyczyść stale references.
+
+---
+
+**Pytanie 59:** AWS Systems Manager Session Manager vs Bastion Host + SG. Zalety SSM?
+
+> SSM Session Manager: zero otwartych portów (nie potrzebujesz port 22/3389 w SG), sessions przez HTTPS (port 443 wychodzący wystarczy), pełna auditability (CloudTrail, S3 session logs), działa przez NATGW/VPC Endpoint, brak bastion EC2 kosztu. Bastion: wymaga portu 22 w SG, dodatkowa EC2, własne certyfikaty, trudniejszy audyt.
+
+---
+
+**Pytanie 60:** Opisz pełny przepływ pakietu od Internetu do EC2 przez ALB z uwzględnieniem SG.
+
+```
+Internet (203.0.113.5) → HTTPS port 443 → ALB
+
+Krok 1: Pakiet dociera do ALB ENI
+  Hypervisor sprawdza SG-ALB:
+  "port 443 from 0.0.0.0/0" → MATCH ✅
+  ALB przetwarza TLS, terminuje HTTPS
+
+Krok 2: ALB → EC2 Target (port 8080)
+  ALB ENI ma sg-alb
+  Pakiet: src=ALB_ENI_IP dst=EC2_IP:8080
+  Hypervisor sprawdza SG-EC2:
+  "port 8080 from sg-alb" →
+  Czy ENI(ALB_ENI_IP) ma sg-alb? → TAK ✅
+  Pakiet dociera do EC2
+
+Krok 3: EC2 odpowiada
+  SG stateful: odpowiedź na inbound connection
+  → Automatycznie dozwolona, nie sprawdza outbound
+  EC2 → ALB → klient
+
+Krok 4: Ktoś próbuje bezpośrednio EC2 IP:8080 z Internetu
+  src=evil_ip dst=EC2_IP:8080
+  SG-EC2: "port 8080 from sg-alb"
+  ENI(evil_ip) nie ma sg-alb → NO MATCH ❌
+  Implicit deny → REJECTED
+  Nawet jeśli ktoś zna prywatny IP EC2 — SG blokuje
+```
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: Security Groups, ENI, stateful firewall, SG chaining, self-referencing, SG vs NACL, VPC Flow Logs, Reachability Analyzer, cross-VPC SG, troubleshooting*
+
+---
+
+# 15. Launch Templates, AMI, Instance Types, Placement Groups — Deep Dive
+
+> **Zakres:** Launch Templates (vs Launch Configurations), AMI (tworzenie, katalog, sharing, szyfrowanie), typy instancji EC2 (szczegółowe), Placement Groups (Cluster/Spread/Partition). Fundamenty uruchamiania EC2 workloadów.
+
+---
+
+## 15.1 Launch Template — Czym Jest i Po Co
+
+**Launch Template (LT)** to szablon konfiguracji instancji EC2 — zbiera wszystkie parametry uruchamiania w jednym miejscu z obsługą wersjonowania.
+
+```
+Launch Template zawiera (opcjonalne — możesz pominąć co chcesz):
+┌────────────────────────────────────────────────────────────────┐
+│  AMI ID               instance-id lub AMI ARN                 │
+│  Instance Type        t3.medium, m6g.large...                 │
+│  Key Pair             dla SSH                                  │
+│  Security Groups      sg-xxx, sg-yyy                          │
+│  Subnet               lub pozostaw dla ASG                    │
+│  IAM Instance Profile arn:aws:iam::xxx:instance-profile/MyIP  │
+│  User Data            bash script (cloud-init)                │
+│  Storage (EBS)        typ, rozmiar, encrypted, delete-on-term │
+│  Network Interface    ENI settings, public IP assignment      │
+│  Tags                 Name, Env, Team...                      │
+│  Placement Group      cluster/spread/partition                │
+│  Tenancy              default/dedicated/host                  │
+│  Shutdown Behavior    stop/terminate                          │
+│  Hibernation          enable/disable                          │
+│  Monitoring           detailed monitoring on/off              │
+│  Metadata Options     IMDSv2 required, hop limit              │
+│  License Config       BYOL tracking                          │
+└────────────────────────────────────────────────────────────────┘
+```
+
+### Launch Template vs Launch Configuration
+
+```
+┌───────────────────────┬────────────────────────┬────────────────────┐
+│ Cecha                 │ Launch Template (LT)   │ Launch Config (LC) │
+├───────────────────────┼────────────────────────┼────────────────────┤
+│ Status                │ ✅ Aktywny, zalecany    │ ❌ Legacy, deprecated│
+│ Wersjonowanie         │ ✅ Tak (v1, v2, $Latest)│ ❌ Nie             │
+│ Spot + On-Demand mix  │ ✅ Mixed Instances      │ ❌ Nie             │
+│ T2/T3 Unlimited       │ ✅ Tak                  │ ❌ Ograniczone     │
+│ Elastic GPU           │ ✅ Tak                  │ ❌ Nie             │
+│ Capacity Reservation  │ ✅ Tak                  │ ❌ Nie             │
+│ IMDSv2 config         │ ✅ Tak                  │ ✅ Tak             │
+│ Partial parameters    │ ✅ Tak (merge z bazą)   │ ❌ Wszystko lub nic│
+│ Dedykowane Hosty      │ ✅ Tak                  │ ❌ Nie             │
+│ ASG support           │ ✅ Tak                  │ ✅ Tak (legacy)    │
+│ EC2 Fleet             │ ✅ Tak                  │ ❌ Nie             │
+└───────────────────────┴────────────────────────┴────────────────────┘
+
+Migracja LC → LT:
+aws ec2 create-launch-template-from-launch-config \  (nie istnieje bezpośrednio)
+Ręcznie: pobierz LC parametry, utwórz LT z tymi samymi wartościami
+```
+
+### Wersjonowanie Launch Template
+
+```bash
+# Utwórz LT:
+aws ec2 create-launch-template \
+  --launch-template-name "web-server-lt" \
+  --version-description "Initial version" \
+  --launch-template-data '{
+    "ImageId": "ami-0abcdef1234567890",
+    "InstanceType": "t3.medium",
+    "SecurityGroupIds": ["sg-0abc123"],
+    "UserData": "'"$(base64 -w0 user-data.sh)"'",
+    "TagSpecifications": [{
+      "ResourceType": "instance",
+      "Tags": [{"Key": "Name", "Value": "WebServer"}]
+    }],
+    "MetadataOptions": {
+      "HttpTokens": "required",
+      "HttpPutResponseHopLimit": 1
+    }
+  }'
+
+# Output: LaunchTemplateId: lt-0abc123, Version: 1
+
+# Utwórz nową wersję (zmień tylko AMI):
+aws ec2 create-launch-template-version \
+  --launch-template-id lt-0abc123 \
+  --source-version 1 \
+  --version-description "Updated AMI" \
+  --launch-template-data '{"ImageId": "ami-0newami1234567890"}'
+# → Version: 2 (dziedziczy wszystko z v1, zmienia tylko AMI)
+
+# Ustaw default version:
+aws ec2 modify-launch-template \
+  --launch-template-id lt-0abc123 \
+  --default-version 2
+
+# Wersje specjalne:
+# $Latest  → zawsze najnowsza wersja
+# $Default → ustawiona domyślna wersja
+# 1, 2, 3  → konkretna wersja
+
+# Sprawdź wersje:
+aws ec2 describe-launch-template-versions \
+  --launch-template-id lt-0abc123
+```
+
+### User Data — Cloud-Init
+
+```bash
+# User Data = skrypt wykonywany PRZY PIERWSZYM URUCHOMIENIU instancji
+# Base64 encoded w Launch Template
+
+#!/bin/bash
+# /user-data.sh
+
+# Zaktualizuj system:
+yum update -y
+
+# Zainstaluj aplikację:
+yum install -y nginx
+
+# Konfiguruj z S3:
+aws s3 cp s3://my-config-bucket/nginx.conf /etc/nginx/nginx.conf
+
+# Uruchom serwis:
+systemctl enable nginx
+systemctl start nginx
+
+# Wyślij sygnał do cfn-signal (dla CloudFormation):
+/opt/aws/bin/cfn-signal -e $? --stack MyStack --region eu-west-1
+
+# Logi User Data:
+# /var/log/cloud-init.log
+# /var/log/cloud-init-output.log
+
+# Sprawdź z działającej instancji (IMDSv2):
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/user-data
+```
+
+---
+
+## 15.2 AMI — Amazon Machine Image
+
+**AMI** to template do uruchamiania EC2 — zawiera OS, skonfigurowane oprogramowanie, dane i polityki startowe.
+
+### Anatomia AMI
+
+```
+AMI = kilka komponentów:
+┌──────────────────────────────────────────────────────────────────┐
+│  AMI Metadata:                                                   │
+│    AMI ID:          ami-0abcdef1234567890                        │
+│    Name:            "MyApp-v1.2.3-2026-10-27"                   │
+│    Architecture:    x86_64 / arm64                              │
+│    Virtualization:  hvm (Hardware Virtual Machine — standard)    │
+│                     pv (Paravirtual — legacy, nie używaj)        │
+│    Root Device:     ebs (standard) lub instance-store (legacy)  │
+│    State:           available / pending / failed                 │
+│    Ownership:       self / amazon / marketplace / others         │
+│                                                                  │
+│  Snapshots EBS (per volume):                                     │
+│    /dev/xvda → snap-0abc123 (root volume, 20GB gp3)             │
+│    /dev/xvdb → snap-0def456 (data volume, 100GB gp3)            │
+│                                                                  │
+│  Block Device Mapping:                                           │
+│    Mapuje snapshoty na urządzenia przy starcie instancji         │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+### Tworzenie AMI
+
+```bash
+# Metoda 1: Z działającej instancji (najczęstsza):
+aws ec2 create-image \
+  --instance-id i-0abc123 \
+  --name "MyApp-v1.2.3-$(date +%Y%m%d)" \
+  --description "Production AMI for MyApp" \
+  --no-reboot   # ← bez restartu instancji (filesystem może być niespójny)
+                # bez --no-reboot: instancja jest zatrzymana → AMI → restart
+
+# Output: ImageId: ami-0newami1234567890
+
+# Metoda 2: Ze snapshotu EBS (dla przypadku root volume):
+aws ec2 register-image \
+  --name "MyApp-from-snapshot" \
+  --root-device-name "/dev/xvda" \
+  --block-device-mappings '[{
+    "DeviceName": "/dev/xvda",
+    "Ebs": {
+      "SnapshotId": "snap-0abc123",
+      "VolumeType": "gp3",
+      "DeleteOnTermination": true
+    }
+  }]' \
+  --virtualization-type hvm \
+  --architecture x86_64
+
+# Metoda 3: EC2 Image Builder (automatyczne AMI pipeline):
+# Managed service — definiujesz recipes, components, pipelines
+# Buduje, testuje i dystrybuuje AMI automatycznie
+```
+
+### AMI — Gdzie i Kiedy
+
+```
+AMI jest regionalna! ami-xxx w eu-west-1 NIE DZIAŁA w us-east-1.
+
+Kopiowanie AMI między regionami:
+aws ec2 copy-image \
+  --source-region eu-west-1 \
+  --source-image-id ami-0abc123 \
+  --region us-east-1 \
+  --name "MyApp-v1.2.3-us-east-1" \
+  --encrypted                    # ← opcjonalnie zaszyfruj w docelowym regionie
+  --kms-key-id alias/my-key      # ← opcjonalnie własny KMS key
+
+Kopiowanie tworzy nowe snapshoty w docelowym regionie.
+Koszt: storage nowych snapshotów + transfer (nieduże).
+
+AMI w Multi-Region DR:
+  Każdy region ma własną kopię AMI
+  Automation: EventBridge + Lambda po każdym nowym AMI build → copy-image do DR regionu
+```
+
+### AMI Sharing — Właściciele i Dostęp
+
+```
+AMI owner: konto które stworzyło AMI
+
+Sharing AMI z innymi kontami:
+aws ec2 modify-image-attribute \
+  --image-id ami-0abc123 \
+  --launch-permission '{"Add": [{"UserId": "123456789012"}]}'
+
+Sharing z całą AWS Organization:
+aws ec2 modify-image-attribute \
+  --image-id ami-0abc123 \
+  --launch-permission '{"Add": [{"OrganizationArn": "arn:aws:organizations::xxx:organization/o-xxx"}]}'
+
+Public AMI:
+aws ec2 modify-image-attribute \
+  --image-id ami-0abc123 \
+  --launch-permission '{"Add": [{"Group": "all"}]}'  # ← ostrożnie!
+
+Zasady dostępu:
+  Owner konta: może używać AMI do uruchamiania instancji
+  Shared konto: może używać do uruchamiania, NIE może modyfikować
+  Shared konto: może zrobić kopię (copy-image) i wtedy modyfikować swoją kopię
+```
+
+### AMI Encryption
+
+```
+AMI z EBS (standard):
+  Snapshoty w AMI mogą być zaszyfrowane lub nie
+  Instancja uruchomiona z niezaszyfrowanego AMI: root volume NIEzaszyfrowany
+  (chyba że w Launch Template ustawisz encrypted=true → tworzy zaszyfrowaną kopię)
+
+Wymuś szyfrowanie w całym koncie (Account-level default encryption):
+  aws ec2 enable-ebs-encryption-by-default
+  → wszystkie nowe woluminy, w tym z AMI, będą zaszyfrowane
+
+Kopiowanie AMI z szyfrowaniem:
+  aws ec2 copy-image \
+    --source-image-id ami-unencrypted \
+    --encrypted \
+    --kms-key-id arn:aws:kms:us-east-1:xxx:key/yyy
+  → Tworzy nowe zaszyfrowane snapshoty
+
+Sharing zaszyfrowanych AMI:
+  AMI z CMK-encrypted snapshot → musisz udostępnić też klucz KMS!
+  Recipient musi mieć dostęp do klucza KMS przez Key Policy
+```
+
+---
+
+## 15.3 AMI Catalog — Publiczne i Marketplace AMI
+
+```
+Typy AMI w AWS Console / CLI:
+
+1. AWS AMI (właściciel: amazon):
+   Amazon Linux 2023 (AL2023)
+   Amazon Linux 2 (AL2)
+   Ubuntu 22.04/24.04
+   RHEL 8/9
+   Windows Server 2019/2022
+   macOS (tylko dla Mac instances)
+   
+   Pobierz najnowszy AMI ID (zmienia się z każdym patchem!):
+   aws ec2 describe-images \
+     --owners amazon \
+     --filters \
+       "Name=name,Values=al2023-ami-*" \
+       "Name=architecture,Values=x86_64" \
+       "Name=state,Values=available" \
+     --query 'sort_by(Images, &CreationDate)[-1].ImageId' \
+     --output text
+   # → ami-0latest1234567890
+
+2. AWS Marketplace AMI:
+   Komercyjne obrazy (Cisco, Palo Alto, Fortinet, Zscaler)
+   BYOL lub license included
+   Dodatkowe opłaty za licencję (na godzinę lub roczna)
+   Wymaga akceptacji warunków przed uruchomieniem
+
+3. Community AMI:
+   Publiczne AMI tworzone przez użytkowników
+   Ostrożnie: brak weryfikacji bezpieczeństwa
+   NIGDY nie uruchamiaj w prod bez audytu!
+
+4. Private AMI (twoje własne):
+   AMI z twojego konta
+   Shared AMI z innych kont (wymagają explicit sharing)
+
+SSM Parameter Store — canonical AMI IDs:
+  aws ssm get-parameter \
+    --name /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 \
+    --query 'Parameter.Value' \
+    --output text
+  # Zawsze aktualny AMI ID bez szukania przez describe-images
+```
+
+### EC2 Image Builder — Automatyczne AMI Pipeline
+
+```
+EC2 Image Builder = managed service do automatycznego budowania AMI
+
+Komponenty:
+  Recipe        = definicja AMI (base AMI + components)
+  Components    = scripts/commands do konfiguracji (AWS lub własne)
+  Pipeline      = schedule + recipe + distribution
+  Infrastructure= EC2 instance używana do budowania (tymczasowa)
+  Distribution  = które regiony i konta dostają AMI
+  
+Workflow:
+  1. Uruchom EC2 build instance (z base AMI)
+  2. Zainstaluj komponenty (yum update, install nginx, harden OS...)
+  3. Utwórz AMI ze zbudowanej instancji
+  4. Uruchom testy (EC2 Test Instance z nowym AMI)
+  5. Dystrybuuj do regionów/kont (copy-image)
+  6. Terminated build/test instances
+  
+STIG Hardened AMI:
+  AWS dostarcza STIG-compliant AMI przez Image Builder
+  Defence in Depth: OS hardened per DISA STIG
+```
+
+---
+
+## 15.4 Typy Instancji EC2 — Szczegółowy Przegląd
+
+Budowa nazwy instancji (rozwinięcie z Rozdziału 10):
+
+```
+  c  7  g  n  . x l a r g e
+  │  │  │  │    │ │
+  │  │  │  │    │ └─ Rozmiar: nano, micro, small, medium, large,
+  │  │  │  │    │             xlarge, 2xlarge, ... 112xlarge
+  │  │  │  │    └─── Dodatkowe atrybuty (patrz niżej)
+  │  │  │  └──────── n = Enhanced Networking (100 Gbps ENA Express)
+  │  │  └─────────── g = Graviton (AWS ARM chip)
+  │  └────────────── 7 = Generacja
+  └───────────────── c = Rodzina (Compute optimized)
+```
+
+### Wszystkie Sufiksy Instancji
+
+```
+┌──────┬──────────────────────────────────────────────────────────┐
+│ Suf. │ Znaczenie                                                │
+├──────┼──────────────────────────────────────────────────────────┤
+│  a   │ AMD EPYC processor (tańsze ~10%)                         │
+│  b   │ Block storage optimized (więcej EBS throughput)          │
+│  d   │ Local NVMe SSD (instance store) dołączony                │
+│  e   │ Extra storage lub memory (extended)                      │
+│  g   │ AWS Graviton (ARM64 — własny chip AWS)                   │
+│  i   │ Intel processor (czasem explicit)                        │
+│  n   │ Network optimized (wyższy bandwidth, ENA Express)        │
+│  p   │ Processor feature (AES, AVX-512...)                      │
+│  q   │ Qualcomm (tylko niektóre)                                │
+│  s   │ Shadow — mniejszy rozmiar (1/4 next size)               │
+│  z   │ High frequency CPU (Intel Xeon Scalable 4.0+ GHz)       │
+│  flex│ Flexible (EC2 Flex Instances — nowe)                     │
+└──────┴──────────────────────────────────────────────────────────┘
+```
+
+### Rodziny Instancji — Pełna Tabela
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Rodzina     │ Typy          │ vCPU:RAM ratio │ Use Case                     │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ T (Burst)   │ t2,t3,t3a,    │ Kredyty CPU    │ Dev/test, web, light prod    │
+│             │ t4g           │ zmiennie       │ Tani; spike handling         │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ M (General) │ m5,m5a,m5d,   │ 1:4 (vCPU:GiB)│ Standardowy workload         │
+│             │ m6g,m6i,m7g,  │                │ Aplikacje, mid-size DB       │
+│             │ m7i,m8g       │                │ Default gdy wątpisz          │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ C (Compute) │ c5,c5n,c5d,   │ 1:2            │ CPU-bound: HPC, batch,       │
+│             │ c6g,c6i,c7g,  │                │ gaming, encoding, ML infer.  │
+│             │ c7i,c8g       │                │                              │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ R (Memory)  │ r5,r5b,r5d,   │ 1:8 lub 1:16  │ In-memory DB (Redis, Memcache│
+│             │ r6g,r6i,r7g,  │                │ SAP HANA, big data analytics │
+│             │ r7i,r8g       │                │                              │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ X (Extreme) │ x1e,x2gd,     │ 1:32+          │ SAP HANA, Oracle in-memory  │
+│ Memory)     │ x2idn,x2iedn  │                │ TB-scale RAM                 │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ U (Ultra    │ u-6tb1, u-9tb1│ 1:128 (6-24 TB)│ Largest in-memory DB         │
+│ High Mem)   │ u-12tb1       │                │ SAP HANA scale-up only       │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ I (Storage) │ i3,i3en,i4g,  │ High NVMe IOPS │ NoSQL, Elasticsearch, OLTP  │
+│             │ i4i,is4gen    │                │ High random I/O              │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ D (Dense)   │ d2,d3,d3en    │ HDD sequential │ Hadoop, DWH, data lake (raw) │
+│ Storage)    │               │                │ Cheap sequential throughput  │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ H (High     │ h1             │ HDD + storage  │ MapReduce, HDFS, S3-like     │
+│ Disk)       │               │                │ workloads on-instance         │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ P (GPU)     │ p3,p4d,p4de,  │ GPU: Nvidia V100│ ML training, HPC, rendering  │
+│ Parallel)   │ p5            │ A100, H100     │ Deep learning                │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ G (GPU      │ g4dn,g4ad,    │ GPU: T4, V520, │ ML inference, GPU gaming,    │
+│ Graphics)   │ g5,g5g,g6     │ A10G           │ Remote desktop, video encode │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ Trn         │ trn1,trn2     │ AWS Trainium   │ ML training (AWS chip)       │
+│ (Training)  │               │                │ Cheaper than P5 for training │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ Inf         │ inf1,inf2     │ AWS Inferentia │ ML inference (AWS chip)      │
+│ (Inference) │               │                │ 40x throughput vs GPU        │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ VT          │ vt1           │ FPGA Video     │ Live video transcoding        │
+│ (Video)     │               │                │                              │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ F (FPGA)    │ f1            │ Xilinx FPGA    │ Custom hardware acceleration  │
+│             │               │                │ Genomics, financial           │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ HPC         │ hpc6a,hpc7g,  │ EFA 100 Gbps+  │ Tightly coupled HPC clusters │
+│             │ hpc7a         │                │ MPI workloads                │
+├─────────────┼───────────────┼────────────────┼──────────────────────────────┤
+│ Mac         │ mac1,mac2,    │ macOS only      │ iOS/macOS app development    │
+│             │ mac2-m2pro    │                │ Xcode builds, TestFlight     │
+└─────────────┴───────────────┴────────────────┴──────────────────────────────┘
+```
+
+### Graviton — AWS ARM Chip Szczegóły
+
+```
+Graviton = AWS własny chip ARM64:
+  Graviton 2 (M6g, C6g, R6g...): do 40% lepszy performance/$ vs x86
+  Graviton 3 (M7g, C7g, R7g...): 25% szybszy niż Graviton 2
+  Graviton 4 (M8g, C8g, R8g...): najnowszy, 30% szybszy niż Graviton 3
+  
+Wymagania dla Graviton:
+  Software skompilowany dla ARM64 (aarch64)
+  Większość managed services obsługuje automatycznie:
+    Amazon Linux 2023: natywnie ARM64
+    Ubuntu 22.04+: ARM64 wersja
+    Docker images: --platform linux/arm64
+    Java (Corretto): ARM64 JVM
+    Python/Node/Go: multiarch
+  
+  Nie obsługuje Graviton:
+    32-bit aplikacje
+    Windows (brak ARM Windows w EC2)
+    Niektóre legacy x86 binaries
+  
+Koszt porównanie (m7g.xlarge vs m7i.xlarge):
+  m7g.xlarge (Graviton3): $0.1632/h
+  m7i.xlarge (Intel):     $0.2016/h
+  → Graviton ~19% tańszy + często szybszy
+```
+
+---
+
+## 15.5 Placement Groups — Rozmieszczenie Instancji
+
+**Placement Group** kontroluje jak EC2 instancje są rozmieszczone na fizycznym sprzęcie AWS.
+
+### Cluster Placement Group
+
+```
+Cel: Minimalna latency, maksymalny throughput (HPC, MPI, ML)
+
+Wszystkie instancje na jednym "rack" (lub kilka sąsiadujących rack):
+  
+  ┌─────────────────────────────────────────────────┐
+  │           JEDEN RACK / ZONA SIECIOWA            │
+  │                                                 │
+  │  ┌─────┐  ┌─────┐  ┌─────┐  ┌─────┐           │
+  │  │ EC2 │  │ EC2 │  │ EC2 │  │ EC2 │           │
+  │  │ (1) │  │ (2) │  │ (3) │  │ (4) │  ...      │
+  │  └──┬──┘  └──┬──┘  └──┬──┘  └──┬──┘           │
+  │     └────────┴────────┴────────┘               │
+  │          Enhanced Networking (EFA/ENA)          │
+  │          10 / 25 / 100 Gbps                    │
+  │          Latency: ~10-50 microseconds           │
+  └─────────────────────────────────────────────────┘
+  
+  + Niskie latency (fizyczna bliskość)
+  + Enhanced Networking: 10-100 Gbps między instancjami
+  + Wymaga: Enhanced Networking (ENA) lub EFA
+  - Jeden punkt awarii (wszystkie w jednym AZ!)
+  - Jeśli rack padnie → cały klaster offline
+  - Capacity risk: może brakować miejsca na rack dla dużego klastra
+  
+Tworzenie:
+  aws ec2 create-placement-group \
+    --group-name "hpc-cluster-1" \
+    --strategy cluster
+    
+Use cases: Hadoop, MPI jobs, ML training (multi-node), Kafka
+
+EFA (Elastic Fabric Adapter) — dla Cluster PG:
+  Low-latency, high-bandwidth interconnect
+  Omija OS network stack (RDMA-like)
+  Wymagane dla: hpc6a, hpc7g, p4d, trn1
+```
+
+### Spread Placement Group
+
+```
+Cel: Maksymalna redundancja (krytyczne aplikacje)
+
+Każda instancja na INNYM fizycznym rack (każdy rack = osobny zasilacz, sieć):
+
+  AZ us-east-1a:
+  ┌──────────┐  ┌──────────┐  ┌──────────┐
+  │ Rack #1  │  │ Rack #2  │  │ Rack #3  │
+  │ ┌──────┐ │  │ ┌──────┐ │  │ ┌──────┐ │
+  │ │ EC2  │ │  │ │ EC2  │ │  │ │ EC2  │ │
+  │ │ (1)  │ │  │ │ (2)  │ │  │ │ (3)  │ │
+  │ └──────┘ │  │ └──────┘ │  │ └──────┘ │
+  └──────────┘  └──────────┘  └──────────┘
+  
+  + Rack awaria = tylko 1 instancja offline
+  + Różne AZ możliwe (spread działa cross-AZ)
+  - LIMIT: 7 instancji per AZ per placement group!
+  - Nie nadaje się dla dużych klastrów
+  
+Tworzenie:
+  aws ec2 create-placement-group \
+    --group-name "critical-app-spread" \
+    --strategy spread
+
+Use cases:
+  Zookeeper (3 lub 5 nodes) — nie może paść > 1 naraz
+  Primary/Secondary DB pair
+  Aplikacje wymagające izolacji hardware
+  Max 7 instancji → wtedy Partition PG zamiast
+```
+
+### Partition Placement Group
+
+```
+Cel: Duże klastry z izolacją "grup awarii" (failure domains)
+
+Instancje dzielone na N partycji, każda na osobnych rack:
+
+  ┌─────────────────────────────────────────────────────┐
+  │              AZ us-east-1a                          │
+  │                                                     │
+  │  Partition 1    Partition 2    Partition 3           │
+  │  ┌──────────┐  ┌──────────┐  ┌──────────┐          │
+  │  │ Rack A   │  │ Rack B   │  │ Rack C   │          │
+  │  │ EC2 (1)  │  │ EC2 (5)  │  │ EC2 (9)  │          │
+  │  │ EC2 (2)  │  │ EC2 (6)  │  │ EC2 (10) │          │
+  │  │ EC2 (3)  │  │ EC2 (7)  │  │ EC2 (11) │          │
+  │  │ EC2 (4)  │  │ EC2 (8)  │  │ EC2 (12) │          │
+  │  └──────────┘  └──────────┘  └──────────┘          │
+  │   (osobny zasilacz, sieć, switch per partycja)      │
+  └─────────────────────────────────────────────────────┘
+  
+  + Do 7 partycji per AZ
+  + Każda partycja nie współdzieli sprzętu z innymi
+  + Aplikacja "wie" do której partycji należy instancja (metadata)
+  + Setki instancji w grupie (w przeciwieństwie do Spread max 7/AZ)
+  - Partycja awarii = wszystkie EC2 w partycji offline
+  
+Dostęp do numeru partycji (w instancji):
+  curl http://169.254.169.254/latest/meta-data/placement/partition-number
+  → 2  (ta instancja jest w partycji 2)
+
+Tworzenie:
+  aws ec2 create-placement-group \
+    --group-name "kafka-partition-pg" \
+    --strategy partition \
+    --partition-count 3  # 3 partycje = 3 failure domains
+
+Use cases:
+  Apache Kafka (replikacja między partycjami)
+  Apache Cassandra (rack-aware replication)
+  HDFS (block replication across racks)
+  Elasticsearch (shard replicas across partitions)
+```
+
+### Placement Groups — Porównanie
+
+```
+┌──────────────────┬───────────────────┬───────────────────┬───────────────────┐
+│ Cecha            │ Cluster           │ Spread            │ Partition         │
+├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
+│ Cel              │ Niska latency     │ Max izolacja      │ Duże klastry HA   │
+│ Maks instancji   │ Brak limitu (rack)│ 7 per AZ         │ Setki (7 part/AZ) │
+│ Failure domain   │ Cały cluster      │ Jedna instancja   │ Cała partycja     │
+│ Multi-AZ         │ ❌ (jedna AZ)      │ ✅ (cross-AZ)     │ ✅ (per AZ)       │
+│ Latency          │ ~microseconds      │ Normalna          │ Normalna          │
+│ Networking       │ 10-100 Gbps        │ Standardowe       │ Standardowe       │
+│ Typowy use case  │ HPC, ML training  │ 3-7 kryt. serwers.│ Kafka, Cassandra  │
+│ Koszt            │ Brak extra        │ Brak extra        │ Brak extra        │
+│ Instancje typy   │ Wymaga ENA/HVM    │ Dowolne HVM       │ Dowolne HVM       │
+└──────────────────┴───────────────────┴───────────────────┴───────────────────┘
+
+Dodawanie instancji do Placement Group:
+  W Launch Template: --placement '{"GroupName": "my-cluster-pg"}'
+  lub przy uruchamianiu:
+  aws ec2 run-instances --placement '{"GroupName": "my-cluster-pg"}'
+  
+  Uwaga: istniejąca instancja nie może być przeniesiona do PG
+         (musi być zatrzymana i uruchomiona ponownie ze specyfikacją PG)
+```
+
+---
+
+## 15.6 Well-Architected Framework — Launch Templates, AMI, PG
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Launch Template versioning = infrastruktura jako kod. AMI baking w Image Builder pipeline. Tagi AMI (wersja, build date, application). AMI lifecycle policy. |
+| **Security** | IMDSv2 wymagane w LT (`HttpTokens: required`). Zaszyfrowane AMI (KMS). Minimalne prawa IAM Instance Profile. User Data bez sekretów (użyj SSM Parameter Store / Secrets Manager). |
+| **Reliability** | AMI per region dla DR. Spread PG dla krytycznych aplikacji. Nie polegaj na jeden AMI — bake Application Layer, nie tylko OS. AMI golden image strategy. |
+| **Performance Efficiency** | Graviton (arm64) dla kompatybilnych workloadów — 20-40% lepszy perf/$. Cluster PG dla HPC/ML. Właściwa rodzina instancji (C dla CPU, R dla RAM). Bake AMI z pre-installed dependencies = faster startup. |
+| **Cost Optimization** | Graviton oszczędność 20-40%. Launch Template z Spot support. AMI deregistration po starzeniu (nie trzymaj 100 starych AMI — snapshoty kosztują). gp3 zamiast gp2 w AMI EBS. |
+| **Sustainability** | Graviton = mniejszy ślad węglowy. Właściwy rozmiar instancji. Konsolidacja workloadów na większą instancję vs wiele małych. |
+
+---
+
+## 15.7 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Co to jest Launch Template i czym różni się od Launch Configuration?
+
+> **Odpowiedź:** LT to nowoczesny, wersjonowany szablon konfiguracji EC2. Różnice od LC: wersjonowanie (v1, v2, $Latest), Mixed Instances Policy (Spot+OD), EC2 Fleet support, Capacity Reservation, Dedicated Hosts, T3 Unlimited. LC jest legacy — nowe projekty zawsze LT.
+
+---
+
+**Pytanie 2:** Jak działają wersje Launch Template?
+
+> **Odpowiedź:** Każda zmiana LT tworzy nową wersję (niemodifikowalną). ASG może używać `$Latest` (zawsze najnowsza), `$Default` (wyznaczona domyślna) lub konkretny numer. Nowa wersja dziedziczy parametry poprzedniej — możesz zmienić tylko AMI ID tworząc nową wersję z `--source-version 1`.
+
+---
+
+**Pytanie 3:** Co to jest AMI i co zawiera?
+
+> **Odpowiedź:** AMI = Amazon Machine Image — template dla EC2. Zawiera: Block Device Mapping (EBS snapshoty → urządzenia), metadata (architektura, wirtualizacja, root device type), oraz ewentualnie dane konfiguracyjne. Przy starcie EC2 z AMI: snapshoty są kopiowane do nowych EBS woluminów.
+
+---
+
+**Pytanie 4:** AMI jest regionalna. Jak uruchomić EC2 w us-east-1 używając AMI z eu-west-1?
+
+> **Odpowiedź:** `aws ec2 copy-image --source-region eu-west-1 --source-image-id ami-xxx --region us-east-1` — kopiuje AMI (i jej snapshoty) do us-east-1. Następnie użyj nowego AMI ID w us-east-1.
+
+---
+
+**Pytanie 5:** Co to jest `--no-reboot` przy `create-image`?
+
+> **Odpowiedź:** Bez `--no-reboot`: AWS zatrzymuje instancję → robi snapshot → restartuje (filesystem spójny). Z `--no-reboot`: instancja działa → snapshot może być niespójny (in-flight I/O, DB buffers). Dla DB: lepiej zatrzymać lub użyć `--no-reboot` z aplikacją quiesce.
+
+---
+
+**Pytanie 6:** Jak wymusić szyfrowanie root volume przy starcie EC2 z niezaszyfrowanego AMI?
+
+> **Odpowiedź:** W Launch Template Block Device Mapping: `"Encrypted": true, "KmsKeyId": "alias/my-key"` — AWS tworzy zaszyfrowaną kopię snapshotu przy starcie. Lub: włącz domyślne szyfrowanie EBS (`enable-ebs-encryption-by-default`) na poziomie konta.
+
+---
+
+**Pytanie 7:** Co to jest EC2 Image Builder?
+
+> **Odpowiedź:** Managed service do automatycznego budowania AMI. Definiujesz: Recipe (base AMI + components), Pipeline (schedule, test), Distribution (regiony/konta). Image Builder: uruchamia build EC2, aplikuje komponenty (scripts), tworzy AMI, testuje, dystrybuuje. Zero ręcznego patchowania AMI.
+
+---
+
+**Pytanie 8:** Ile instancji może mieć Spread Placement Group per AZ?
+
+> **Odpowiedź:** **7 instancji per AZ**. Spread gwarantuje różny rack per instancja — max 7 różnych rack per AZ (fizyczne ograniczenie AWS). Dla więcej instancji z izolacją: użyj Partition Placement Group.
+
+---
+
+**Pytanie 9:** Kiedy używać Cluster Placement Group?
+
+> **Odpowiedź:** Gdy potrzebujesz najniższej latency i najwyższego throughput między instancjami: HPC (MPI), ML training (multi-node PyTorch/TensorFlow), Apache Kafka (high-throughput), big data klastry. Wymaga ENA lub EFA, tylko jeden AZ, ryzyko całkowitej awarii klastra.
+
+---
+
+**Pytanie 10:** Co to jest EFA i do czego służy?
+
+> **Odpowiedź:** EFA (Elastic Fabric Adapter) to network interface dla HPC workloadów. Omija OS network stack — komunikacja RDMA-like między instancjami. Latency ~microseconds. Dostępny tylko w Cluster Placement Group. Wymagany dla: hpc6a, hpc7g, p4d, trn1 (Trainium) dla multi-node ML.
+
+---
+
+**Pytanie 11:** Firma uruchamia Kafka cluster (50 brokerów). Jak skonfigurować Placement Group?
+
+> **Odpowiedź:** **Partition Placement Group** z 3 partycjami. Rozdziel broker repliki między partycje (Kafka rack-aware assignment). Rack ID w Kafka config = numer partycji (`placement/partition-number` z IMDS). Partycja awarii = maksymalnie 1/3 brokerów offline, replikacja zapewnia dostępność.
+
+---
+
+**Pytanie 12:** Jak dodać instancję do Placement Group?
+
+> **Odpowiedź:** Przy uruchamianiu nowej instancji: LT z `Placement.GroupName` lub `aws ec2 run-instances --placement '{"GroupName": "pg-name"}'`. Istniejąca instancja: **zatrzymaj → uruchom ponownie** ze specyfikacją PG (nie można przenieść działającej). Running instance nie może być dodana do PG.
+
+---
+
+**Pytanie 13:** Skąd wziąć zawsze aktualny AMI ID dla Amazon Linux 2023?
+
+> **Odpowiedź:** SSM Parameter Store: `aws ssm get-parameter --name /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64 --query Parameter.Value`. Zawsze aktualny, nie wymaga `describe-images`. W CloudFormation: `{{resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64}}`.
+
+---
+
+**Pytanie 14:** Co to jest "AMI baking" i jakie ma zalety?
+
+> **Odpowiedź:** AMI baking = tworzenie AMI z pre-zainstalowanym software (nginx, Java, aplikacja). Zalety: szybszy start instancji (brak instalacji przy boot), deterministyczne wdrożenia (ta sama binarka zawsze), łatwiejsze rollback (poprzednia AMI), redukcja zależności od zewnętrznych repo podczas skalowania.
+
+---
+
+**Pytanie 15:** Czy Graviton (ARM64) wymaga przepisania kodu?
+
+> **Odpowiedź:** Zazwyczaj nie — większość języków (Python, Java, Go, Node.js, Ruby) i frameworków obsługuje ARM64 natywnie lub przez JIT. Wymagana rekompilacja: kod C/C++ (ale recompile to wystarczy), natywne moduły Node.js, starsze binaria x86. Nie obsługuje: aplikacje 32-bit, Windows, niektóre legacy libraries.
+
+---
+
+**Pytanie 16:** Czym różni się `hvm` od `pv` wirtualizacja?
+
+> **Odpowiedź:** **HVM (Hardware Virtual Machine):** pełna wirtualizacja sprzętowa, wymaga VT-x/AMD-V, obsługuje Enhanced Networking, GPU, EFA — standard dla wszystkich nowych typów instancji. **PV (Paravirtual):** starszy mechanizm, modyfikowany kernel, szybsze I/O kiedyś ale teraz gorsze, brak Enhanced Networking. Używaj zawsze HVM.
+
+---
+
+**Pytanie 17:** Jak działa User Data i kiedy jest wykonywane?
+
+> **Odpowiedź:** User Data = skrypt (bash lub cloud-config YAML) wykonywany przez `cloud-init` **przy pierwszym uruchomieniu** instancji (nie przy restart). Base64 encoded, max 16KB. Logi: `/var/log/cloud-init-output.log`. Można wymusić re-execution: usuń `/var/lib/cloud/instance/` i uruchom `cloud-init init`.
+
+---
+
+**Pytanie 18:** Czym jest "instance store" i jak różni się od EBS?
+
+> **Odpowiedź:** Instance store = fizyczny NVMe/SSD wbudowany w serwer gdzie działa instancja. Dane **tracone przy stop/terminate** (ephemeral). Nie można snapshottować. Bezpłatny (wliczony w cenę instancji). Typy z instance store: c5d, m5d, r5d, i3, d3 (sufiks 'd'). EBS = trwały, persystuje po stop/terminate, można snapshottować, dodatkowy koszt.
+
+---
+
+**Pytanie 19:** Firma buduje multi-region disaster recovery. Jak zarządzać AMI?
+
+> **Odpowiedź:** EC2 Image Builder z Distribution Settings: automatycznie kopiuj nowe AMI do DR regionu po każdym build. Lub EventBridge rule: na event `EC2 AMI State Change (available)` → Lambda → `copy-image` do DR regionu. Tagi AMI z wersją i datą ułatwiają identyfikację.
+
+---
+
+**Pytanie 20:** Co to jest Marketplace AMI i na co uważać przy korzystaniu?
+
+> **Odpowiedź:** AMI z AWS Marketplace = komercyjne obrazy (Cisco, Palo Alto, vendor software). Dodatkowe opłaty: license fee per godzinę lub annual subscription, **niezależnie od EC2 pricing** (nie ma Spot dla większości Marketplace AMI). Wymagana akceptacja Terms of Service przed pierwszym użyciem. Przed użyciem w prod: sprawdź wersję, vendor support, changelog.
+
+---
+
+**Pytanie 21-60 — skróty kluczowych pytań egzaminacyjnych:**
+
+---
+
+**Pytanie 21:** Co to jest "AMI deprecation"?
+
+> AWS pozwala ustawić datę deprecacji AMI (`aws ec2 enable-image-deprecation --image-id --deprecate-at`). Po tej dacie: nie pojawia się w domyślnych wynikach, nadal można używać przez ID. Nie myl z deregistration (usuwa AMI całkowicie).
+
+---
+
+**Pytanie 22:** Cluster PG — czy działa cross-AZ?
+
+> **Nie.** Cluster PG zawsze jedna AZ. Cała izolacja fizyczna (niskie latency) wymaga tej samej lokalizacji datacenter.
+
+---
+
+**Pytanie 23:** Co to jest "insufficient capacity error" przy Placement Group?
+
+> Cluster PG wymaga wolnego miejsca na jednym rack dla wszystkich instancji. Jeśli rack pełny: `InsufficientInstanceCapacity`. Fix: zmień typ instancji lub uruchom instancje w fazach (AWS może rozmieścić na wielu rack, traci to PG benefit).
+
+---
+
+**Pytanie 24:** Jak działa Partition PG z aplikacją świadomą rack?
+
+> Aplikacja czyta `metadata/placement/partition-number` (1-7) → traktuje jak rack ID. Kafka: `broker.rack=<partition-number>` → replikacja preferuje inne "rack" (partycje). Cassandra: `rack` w topology properties = numer partycji.
+
+---
+
+**Pytanie 25:** Co to jest "AMI golden image"?
+
+> Bazowy AMI z: OS + hardening (STIG/CIS) + monitoring agents (CloudWatch, SSM) + wymagane certyfikaty. Wszystkie team AMI bazują na golden image. Image Builder pipeline aktualizuje golden image przy każdym patchu OS.
+
+---
+
+**Pytanie 26:** Jak skonfigurować LT dla Mixed Instances Policy?
+
+> LT definiuje override: `InstanceRequirementsOverride` lub `InstanceTypeOverride` (lista typów). ASG `MixedInstancesPolicy` używa LT jako bazy i dodaje Spot/OD ratio i allokację strategię.
+
+---
+
+**Pytanie 27:** AMI sharing — co otrzymuje odbiorca?
+
+> Odbiorca może: uruchamiać EC2 z tego AMI, kopiować do swojego konta (`copy-image`). Nie może: modyfikować AMI, zobaczyć zawartości snapshotów (tylko uruchamiać). Zaszyfrowane AMI: odbiorca musi mieć dostęp do KMS key.
+
+---
+
+**Pytanie 28:** Co to jest "block device mapping" w AMI?
+
+> Lista mapowań: `DeviceName` (`/dev/xvda`, `/dev/xvdb`...) → `EBS` (SnapshotId, VolumeType, Size, DeleteOnTermination) lub `NoDevice` lub `VirtualName` (instance store). Przy launch instancji: każdy wpis tworzy wolumen EBS (lub używa instance store) i podpina do urządzenia blokowego.
+
+---
+
+**Pytanie 29:** Jak sprawdzić do której Placement Group należy instancja?
+
+```bash
+# IMDS v2:
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/meta-data/placement/group-name
+curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/meta-data/placement/partition-number
+```
+
+---
+
+**Pytanie 30:** Dlaczego duże instancje (xlarge+) nie mogą mieć T-type burst?
+
+> T-type burst (T3, T4g) używa CPU credit model. Burst jest proporcjonalny do rozmiaru. `t3.nano` = 2 credits/h, `t3.2xlarge` = 192 credits/h. Powyżej `t3.2xlarge` nie ma w T family — dla większych rozmiarów użyj M family (stabilna wydajność).
+
+---
+
+**Pytanie 31-60 — dalsze kluczowe zagadnienia:**
+
+---
+
+**Pytanie 31:** U-type instances — do czego służą?
+
+> Ultra High Memory: 6TB, 9TB, 12TB RAM per instancja. Wyłącznie dla SAP HANA scale-up w systemach enterprise. Najdroższe EC2 (setki dolarów per godzinę). Dedykowany sprzęt fizyczny.
+
+---
+
+**Pytanie 32:** Mac instances — specyfika?
+
+> Działają na dedykowanych Mac mini (mac1 = Intel, mac2 = M1, mac2-m2pro = M2 Pro). Minimum allocation: **24 godziny** (bare metal, nie wirtualizacja). Dla: Xcode builds, iOS/macOS apps, TestFlight distribution.
+
+---
+
+**Pytanie 33:** Co to są "nitro instances"?
+
+> Architektura AWS Nitro System: hypervisor zastąpiony dedykowanymi Nitro cards dla EBS, Networking, Security. Prawie cały compute dostępny dla instancji (nie hypervisor overhead). Wszystkie nowsze typy (5+, 6+, 7+) to Nitro. Korzyści: wyższy performance, lepsza bezpieczeństwo (isolated hardware).
+
+---
+
+**Pytanie 34:** Różnica między t3.micro i t3.micro "T3 Unlimited"?
+
+> T3 Unlimited: może przekroczyć credit baseline, pobierając dodatkowe CPU bez throttling, ale **płacisz extra** za vCPU-hours ponad baseline. Standardowy T3: po wyczerpaniu credits → throttle do baseline CPU (~20%). Unlimited włącza się per LT lub per instancja.
+
+---
+
+**Pytanie 35:** Co to jest instance "bare metal"?
+
+> EC2 bez hypervisora — bezpośredni dostęp do fizycznego serwera. `m5.metal`, `c5.metal` etc. Użycie: własna wirtualizacja (VMware Cloud on AWS), potrzeba fizycznego hardware (NUMA, CPU topology), compliance wymagający hardware-level isolation. Droższe niż wirtualne odpowiedniki.
+
+---
+
+**Pytanie 36:** LT — jak bezpiecznie przekazać secrets przez User Data?
+
+> **Nie wpisuj secrets w User Data** (są widoczne przez IMDS, logowane). Zamiast: (1) IAM Instance Profile + `aws secretsmanager get-secret-value` w User Data skrypcie. (2) SSM Parameter Store z SecureString. (3) Secrets Manager SDK call w aplikacji przy starcie. User Data może zawierać URL/path do secreta, nie sam secret.
+
+---
+
+**Pytanie 37:** Co to jest "Enhanced Networking" i kiedy wymagane?
+
+> Enhanced Networking = ENA (Elastic Network Adapter) — SR-IOV, lower CPU overhead, higher PPS. Dostępne na wszystkich Nitro instances automatycznie. Wymagane dla Cluster PG (osiągnięcie 10-100 Gbps). Sprawdź: `ethtool -i eth0 | grep driver` → `ena` = Enhanced Networking aktywne.
+
+---
+
+**Pytanie 38:** Jak AMI wpływa na koszty? Co to jest "snapshot cost"?
+
+> Każde AMI ma przypisane snapshoty EBS. Koszt: $0.05/GB-miesiąc per snapshot (tylko unikalne bloki — przyrostowe). 10 AMI z 20GB root = nie 200GB — snapshoty są incremental, dużo mniej. Deregister AMI (usunięcie AMI) nie usuwa snapshotów automatycznie — musisz ręcznie usunąć snapshoty.
+
+---
+
+**Pytanie 39:** Jak skonfigurować Launch Template dla IMDSv2?
+
+```json
+"MetadataOptions": {
+  "HttpTokens": "required",        ← IMDSv2 wymagane (blokuje v1)
+  "HttpPutResponseHopLimit": 1,    ← tylko dla bezpośrednich calls (nie przez proxy)
+  "HttpEndpoint": "enabled",       ← IMDS włączony
+  "InstanceMetadataTags": "enabled" ← tagi widoczne przez IMDS
+}
+```
+
+---
+
+**Pytanie 40:** Firma ma 100 EC2 z tym samym LT. Jak zrobić rolling update AMI?
+
+> (1) Utwórz nową wersję LT z nowym AMI ID. (2) ASG: Instance Refresh → `aws autoscaling start-instance-refresh --auto-scaling-group-name my-asg --preferences '{"MinHealthyPercentage": 80}'`. ASG stopniowo wymienia instancje (stara AMI → nowa AMI) z kontrolą MinHealthy%.
+
+---
+
+**Pytanie 41:** Czym różni się `stop` od `terminate` w EC2?
+
+> **Stop:** instancja zatrzymana, EBS persystuje, nie płacisz za compute (płacisz za EBS). Public IP zwalniany (EIP zostaje). **Terminate:** instancja usunięta, EBS z `DeleteOnTermination=true` usunięty, EIP odłączony. Stop → można restart; Terminate → nie można cofnąć.
+
+---
+
+**Pytanie 42:** Co to jest "Instance Metadata Service" (IMDS)?
+
+> HTTP endpoint na `169.254.169.254` dostępny z wewnątrz instancji. Zwraca: instance ID, AZ, IAM role credentials, user data, public/private IP, security groups, placement group. IMDSv2 (wymagany token) chroni przed SSRF attacks.
+
+---
+
+**Pytanie 43:** Różnica między Graviton 2 a Graviton 3?
+
+> Graviton 2 (m6g, c6g, r6g): do 40% lepszy perf/$ vs Intel/AMD. Graviton 3 (m7g, c7g, r7g): 25% szybszy niż Graviton 2, 2x wyższy FP, 2x wyższy crypto, DDR5. Graviton 4 (m8g, c8g): 30% szybszy niż Graviton 3. Każda generacja: nowa microarchitecture.
+
+---
+
+**Pytanie 44:** Spread PG — czy można mieć więcej niż 7 instancji łącznie (różne AZ)?
+
+> **Tak.** Limit 7 per AZ, ale można mieć w 3 AZ → 7×3 = 21 instancji w jednym Spread PG. Każda instancja i tak jest na osobnym rack — izolacja utrzymana.
+
+---
+
+**Pytanie 45:** Jak launch template obsługuje Spot?
+
+> LT samo w sobie nie definiuje Spot vs OD. Spot konfiguruje się w: (1) `aws ec2 request-spot-instances` z `--launch-template`. (2) ASG `MixedInstancesPolicy`. (3) EC2 Fleet. W LT możesz ustawić `InstanceMarketOptions.MarketType = spot` bezpośrednio, ale w ASG lepiej użyć MixedInstancesPolicy.
+
+---
+
+**Pytanie 46:** Co to jest "instance family flexibility" w kontekście Savings Plans?
+
+> Compute Savings Plans dają discount dla dowolnej rodziny instancji, rozmiaru, AZ, regionu. EC2 Instance Savings Plans: konkretna rodzina i region, ale dowolny rozmiar i OS. Instance family flexibility = możność zmiany np. z c5.xlarge na c6g.large bez utraty discounty.
+
+---
+
+**Pytanie 47:** Jak sprawdzić czy LT jest poprawnie skonfigurowany zanim użyje go ASG?
+
+> `aws ec2 describe-launch-template-versions` — sprawdź parametry. Uruchom jedną testową instancję: `aws ec2 run-instances --launch-template LaunchTemplateId=lt-xxx,Version=2 --count 1` → sprawdź czy startuje poprawnie. Sprawdź User Data logi: `/var/log/cloud-init-output.log`.
+
+---
+
+**Pytanie 48:** AMI Community — dlaczego ryzyko?
+
+> Community AMI (publiczne, nie-Amazon) nie są weryfikowane przez AWS pod kątem bezpieczeństwa. Mogą zawierać: backdoors, malware, mining software, stary unpatched OS. Nigdy nie używaj community AMI w prod bez: weryfikacji SHA hash, skanowania (Tenable/Inspector), audytu User Data/crontabs.
+
+---
+
+**Pytanie 49:** Co to jest "AMI lifecycle policy" i jak ją skonfigurować?
+
+> Amazon DLM (Data Lifecycle Manager) nie dotyczy AMI bezpośrednio (dotyczy EBS snapshots). Dla AMI lifecycle: EC2 Image Builder ma wbudowane "Distribution settings" z retention policy. Lub: Lambda + EventBridge cron → `describe-images --owner self` → sortuj po dacie → `deregister-image` + `delete-snapshot` stare AMI.
+
+---
+
+**Pytanie 50:** Jak Instance Store (NVMe) różni się od EBS w kontekście wydajności?
+
+> Instance Store: bezpośrednio podłączony NVMe, latency ~100µs, throughput 10+ GB/s, IOPS milion+. EBS io2: max 64K-256K IOPS, throughput 4-16 GB/s, latency ~125µs. Instance Store szybszy, ale ephemeral. Dla temp data (cache, buffer): instance store. Dla persystentnych danych: EBS.
+
+---
+
+**Pytanie 51-60 — finalne zagadnienia:**
+
+---
+
+**Pytanie 51:** Co to jest "launch template hierarchy" (override)?
+
+> ASG mixed instances policy może override instancję z LT: per-type `InstanceType` + `WeightedCapacity`. Lub `InstanceRequirements` (CPU/RAM range) zamiast konkretnych typów — AWS dobiera najbliższe. Hierarchy: MixedInstancesPolicy override > LT default.
+
+---
+
+**Pytanie 52:** Czy User Data może zawierać CloudFormation signals?
+
+> Tak: `cfn-signal -e $? --stack ${AWS::StackName} --region ${AWS::Region} --resource MyASG` — sygnalizuje CloudFormation że instancja jest "healthy" po bootstrapie. CloudFormation czeka na `DesiredCapacity` sygnałów przed uznaniem stack update za sukces.
+
+---
+
+**Pytanie 53:** Co to jest "AMI store-backed" vs "EBS-backed"?
+
+> EBS-backed AMI: root device = EBS snapshot. Stop/Start bez utraty danych. **Standard.** Instance store-backed AMI: root device = instance store (S3-backed). Dane tracone po stop/terminate. Nie obsługuje: Stop (tylko Terminate/Reboot). Legacy, rzadkie.
+
+---
+
+**Pytanie 54:** Jak platforma Graviton wpływa na ceny Reserved Instances?
+
+> Graviton RI jest tańszy niż Intel odpowiednik (już w On-Demand Graviton ~20% taniej). RI discount stosuje się do Graviton RI tak samo jak do Intel RI (do 72% dla 3-year All Upfront). Graviton RI nie jest zamienny z Intel RI — to oddzielne typy instancji.
+
+---
+
+**Pytanie 55:** Jaki jest limit LT per konto?
+
+> 5,000 Launch Templates per konto (per region). Każdy LT może mieć do 10,000 wersji. W praktyce dla dużych organizacji: 5000 LT to dużo — jeden per aplikację/środowisko jest standardem.
+
+---
+
+**Pytanie 56:** Co to jest "nitro enclaves"?
+
+> Izolowane środowisko obliczeniowe wewnątrz EC2 — odizolowane od hosta, brak trwałej pamięci, własny kernel. Dla: przetwarzanie danych wrażliwych (klucze kryptograficzne, PII). Komunikacja tylko przez local socket (vsock). Wymaga: nitro-enabled instance + `--enclave-options Enabled=true` w LT.
+
+---
+
+**Pytanie 57:** Jak PG wpływa na costs?
+
+> Placement Groups są **bezpłatne** — brak dodatkowych opłat za tworzenie lub używanie PG. Koszty pośrednie: Cluster PG często wymaga większych/droższych instancji (ENA capable). Data transfer między instancjami w Cluster PG: w tej samej AZ = bezpłatne.
+
+---
+
+**Pytanie 58:** Co to jest "capacity block for ML"?
+
+> Nowy model zakupu GPU capacity — `Capacity Block` = zarezerwuj blok GPU instancji (p4d, p5) na konkretny czas. Dla trening ML trwający kilka dni/tygodni — gwarantowana dostępność bez przerw. Nie jest to RI ani Spot — dedykowany blok czasowy.
+
+---
+
+**Pytanie 59:** Firma chce uruchamiać identyczne instancje w 3 AZ. Jak to skonfigurować?
+
+> ASG z LT + `VPCZoneIdentifier` = subnety w 3 AZ. ASG automatycznie rozmieszcza instancje cross-AZ (domyślnie stara się balansować). Jedna AMI w każdym regionie (regionalna, nie ma cross-AZ problemów z AMI). LT jednakowy dla wszystkich AZ.
+
+---
+
+**Pytanie 60:** Co to jest "launch template data" inheritance vs override?
+
+> Nowa wersja LT dziedziczy wszystkie parametry `--source-version N`. W `--launch-template-data` podajesz TYLKO te które chcesz zmienić — reszta zostaje. Przy uruchamianiu instancji z LT: możesz override przez `--overrides` (np. inny InstanceType). Hierarchy: run-instances override > LT specific version > LT $Default.
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: Launch Templates, AMI, EC2 Image Builder, typy instancji, Graviton, Placement Groups (Cluster/Spread/Partition), EFA, instance store, User Data, AMI sharing/encryption*
+
+---
+
+# 16. Modele Zakupu EC2 — Spot, Reserved Instances, Savings Plans, Dedicated, Capacity
+
+> **Zakres:** Wszystkie modele zakupu EC2: On-Demand, Spot (Fleet, strategie, interruptions), Reserved Instances (Standard/Convertible), Savings Plans (Compute/EC2/SageMaker), Dedicated Hosts/Instances, Capacity Reservations, nowe UltraServers, Capacity Manager. Optymalizacja kosztów.
+
+---
+
+## 16.1 Przegląd Modeli Zakupu — Big Picture
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                    MODELE ZAKUPU EC2                                   │
+├──────────────────┬─────────────────┬──────────────────────────────────┤
+│ Model            │ Discount vs OD  │ Use Case                         │
+├──────────────────┼─────────────────┼──────────────────────────────────┤
+│ On-Demand        │ 0% (baseline)   │ Unpredictable, short-term        │
+│ Spot             │ 60-90%          │ Fault-tolerant, batch, ML train  │
+│ Savings Plans    │ do 66%          │ Flexible steady-state compute    │
+│ RI Standard      │ do 72%          │ Steady-state, znany type         │
+│ RI Convertible   │ do 54%          │ Steady-state, zmienne typy       │
+│ Dedicated Host   │ do 70% z BYOL   │ Compliance, BYOL licensing       │
+│ Dedicated Inst.  │ do 70%          │ Hardware isolation (simpler)     │
+│ Capacity Reserv. │ 0% (cena OD)    │ Gwarancja dostępności, DR        │
+│ Capacity Block   │ Stała cena      │ GPU clusters, ML training slots  │
+└──────────────────┴─────────────────┴──────────────────────────────────┘
+```
+
+---
+
+## 16.2 On-Demand — Baseline
+
+```
+Charakterystyka:
+  Bez zobowiązań, płatność per sekundę (min 60s)
+  Najdroższy model
+  Natychmiastowa dostępność (prawie zawsze)
+  
+Cena EC2 składa się z:
+  Compute: rodzina × rozmiar × region × OS
+  Data transfer: OUT z VPC do Internetu (pierwsze 100GB/mc darmowe)
+  EBS: osobna opłata
+  
+Kiedy używać:
+  - Testy i development
+  - Nieprzewidywalne spiki
+  - Nowe aplikacje (przed analizą wzorców zużycia)
+  - Short burst workloads
+```
+
+---
+
+## 16.3 Spot Instances — Deep Dive
+
+### Czym Są Spot Instances
+
+```
+Spot = "nadwyżkowa" pojemność AWS do kupienia po obniżonej cenie
+       (~60-90% taniej niż On-Demand)
+
+Mechanizm:
+  AWS ma pool niealokowanej pojemności w każdym AZ
+  Spot price = rynkowa cena za tę pojemność (zmienia się co ~5min)
+  Twoja "bid" = On-Demand price (domyślnie) — płacisz aktualny Spot price
+  
+  Gdy AWS potrzebuje pojemności:
+    Daje 2-minutowe ostrzeżenie (Spot Instance Interruption Notice)
+    Instancja jest "przerywana" (terminated lub stopped/hibernated)
+    
+Spot Interruption Notice:
+  http://169.254.169.254/latest/meta-data/spot/interruption-action
+  http://169.254.169.254/latest/meta-data/spot/termination-time
+  
+  Lub EventBridge: "EC2 Spot Instance Interruption Warning" event
+  → Trigger Lambda → graceful shutdown, checkpoint, drain ELB
+```
+
+### Spot Fleet vs EC2 Fleet
+
+```
+Spot Fleet = stara API dla zarządzania pulą Spot
+EC2 Fleet   = nowa, ujednolicona API dla Spot + OD
+
+EC2 Fleet:
+  Możesz mieszać Spot i OD
+  Definiujesz InstanceRequirements lub konkretne typy
+  Jeden request = wiele typów instancji i AZ
+  
+Spot Fleet Allocation Strategies:
+┌─────────────────────────┬──────────────────────────────────────────┐
+│ Strategia               │ Opis                                     │
+├─────────────────────────┼──────────────────────────────────────────┤
+│ capacity-optimized      │ AWS wybiera pool z największą dostępnością│
+│                         │ Najniższe ryzyko przerwania              │
+│ price-capacity-optimized│ Balans: niska cena + dobra dostępność    │
+│ (REKOMENDOWANA)         │ AWS recommended dla większości           │
+├─────────────────────────┼──────────────────────────────────────────┤
+│ lowest-price            │ Najtańszy pool (wyższe ryzyko przerwania)│
+│                         │ Stara strategia, avoid unless critical   │
+├─────────────────────────┼──────────────────────────────────────────┤
+│ diversified             │ Rozkłada po wszystkich poolach           │
+│                         │ Dla Spot Fleet z ciągłą pojemnością      │
+└─────────────────────────┴──────────────────────────────────────────┘
+```
+
+### Spot Request Types
+
+```
+One-Time Request:
+  Jednorazowe żądanie Spot
+  Gdy instancja przerwana → request zakończony
+  
+Persistent Request:
+  Po przerwaniu: auto-restart gdy Spot dostępny
+  Działa gdy instancja stopped (nie terminated)
+  
+  Cykl:
+  Request → instancja → przerwanie → request open → instancja → ...
+
+Hibernation (new):
+  Spot instance hibernated zamiast terminated
+  RAM zapisany do EBS root volume
+  Po wznowieniu: aplikacja kontynuuje od miejsca przerwania
+  Wymagania: musi być EBS-backed, RAM < EBS space, hibernation enabled
+```
+
+### Spot Blocks (deprecated 2021)
+
+```
+Spot Blocks pozwalały zarezerwować Spot na 1-6h bez przerwania.
+AWS wycofał Spot Blocks — użyj Capacity Reservations + Spot Fleet
+lub Capacity Block (dla GPU).
+```
+
+### Resilient Architecture dla Spot
+
+```bash
+# ASG z Mixed Instances — Spot + On-Demand:
+aws autoscaling create-auto-scaling-group \
+  --auto-scaling-group-name "resilient-asg" \
+  --mixed-instances-policy '{
+    "LaunchTemplate": {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateId": "lt-0abc123",
+        "Version": "$Latest"
+      },
+      "Overrides": [
+        {"InstanceType": "c5.xlarge"},
+        {"InstanceType": "c5a.xlarge"},
+        {"InstanceType": "c6i.xlarge"},
+        {"InstanceType": "c6a.xlarge"},
+        {"InstanceType": "m5.xlarge"},   ← różne rodziny = mniejsze ryzyko
+        {"InstanceType": "m6i.xlarge"}
+      ]
+    },
+    "InstancesDistribution": {
+      "OnDemandBaseCapacity": 2,              ← 2 OD zawsze
+      "OnDemandPercentageAboveBaseCapacity": 20, ← 20% ponad baseline = OD
+      "SpotAllocationStrategy": "price-capacity-optimized",
+      "SpotInstancePools": 2
+    }
+  }' \
+  --min-size 2 \
+  --desired-capacity 10 \
+  --max-size 20 \
+  --vpc-zone-identifier "subnet-a,subnet-b,subnet-c"
+
+# Graceful Spot termination (Lambda triggered by EventBridge):
+# 1. Drain ELB target (deregister)
+# 2. Checkpoint state do S3/DynamoDB
+# 3. Finish current task (masz 2 min)
+```
+
+---
+
+## 16.4 Reserved Instances (RI) — Deep Dive
+
+### Typy RI
+
+```
+Standard RI:
+  Commit: 1 lub 3 lata
+  Discount: do 72% vs OD
+  Flexibility: NISKA — zmiana tylko w ramach rodziny (zmiana rozmiaru w tej samej rodzinie)
+  Przykład: m5.xlarge → m5.2xlarge (tylko rozmiar, ta sama rodzina/region/OS)
+  Sprzedaż: RI Marketplace (możesz sprzedać nieużywane)
+  
+Convertible RI:
+  Commit: 1 lub 3 lata
+  Discount: do 54% vs OD
+  Flexibility: WYSOKA — zmiana rodziny, rozmiaru, OS, tenancy
+  Przykład: m5.xlarge → c6g.large → r5.4xlarge
+  Sprzedaż: Nie można sprzedać (tylko exchange na inny Convertible RI)
+  Exchange: `aws ec2 accept-reserved-instances-exchange-quote`
+```
+
+### RI Zakres (Scope)
+
+```
+Regional RI:
+  Działa w całym regionie, dowolny AZ
+  Automatycznie aplikuje się do pasujących instancji
+  Benefit: AZ flexibility (instancja w eu-west-1a lub eu-west-1b)
+  
+Zonal RI:
+  Konkretna AZ (eu-west-1a)
+  Mniej elastyczne
+  Zapewnia Capacity Reservation (gwarancja dostępności!)
+  
+  Regional NIE gwarantuje pojemności — tylko zniżkę
+  Zonal = zniżka + gwarancja pojemności w tej AZ
+```
+
+### RI Payment Options
+
+```
+┌───────────────────┬──────────┬────────────┬────────────────────────┐
+│ Opcja płatności   │ Upfront  │ Monthlyfee │ Total discount         │
+├───────────────────┼──────────┼────────────┼────────────────────────┤
+│ All Upfront       │ Cała kwota│ $0/mc     │ Najwyższy discount     │
+│ Partial Upfront   │ ~50%     │ Reszta/12  │ Średni discount        │
+│ No Upfront        │ $0       │ Pełna cena │ Najniższy discount     │
+└───────────────────┴──────────┴────────────┴────────────────────────┘
+
+Przykład (m5.xlarge, 3-year, Linux, us-east-1):
+  OD:               $0.192/h = $1,681/rok
+  RI 1yr No Upfront: $0.116/h = $1,016/rok (40% off)
+  RI 3yr All Upfront: $1,648 total = $0.063/h (67% off)
+  
+Break-even: po 9-10 miesiącach All Upfront vs No Upfront
+```
+
+### Jak RI jest Aplikowane
+
+```
+RI benefit (zniżka) stosuje się automatycznie do pasujących instancji:
+  
+Running EC2: m5.xlarge, Linux, eu-west-1a
+RI w portfelu: m5.xlarge, Linux, Regional (eu-west-1)
+→ Automatycznie: RI benefit aplikowany, płacisz RI price
+
+Running EC2: m5.2xlarge (nie pasuje)
+RI w portfelu: m5.xlarge
+→ Normalizacja: m5.2xlarge = 2× m5.xlarge
+→ RI pokrywa 50% m5.2xlarge (1 RI unit = 1 xlarge = 2 large)
+
+Normalization factors:
+  nano=0.25, micro=0.5, small=1, medium=2, large=4, xlarge=8,
+  2xlarge=16, 4xlarge=32, 8xlarge=64, 12xlarge=96, 16xlarge=128,
+  24xlarge=192, metal=128
+  
+Konwersja rozmiaru w tej samej rodzinie:
+  1 × m5.2xlarge (NF=16) = 2 × m5.xlarge (NF=8) = 8 × m5.small (NF=2)
+```
+
+### RI Marketplace
+
+```
+Sprzedaż nieużywanych Standard RI:
+  Tylko Standard RI (nie Convertible)
+  Tylko Linux RI (nie Windows/RHEL/SLES)
+  Musi mieć > 30 dni do wygaśnięcia
+  
+aws ec2 describe-reserved-instances      ← sprawdź swoje RI
+aws ec2 describe-reserved-instances-listings ← aukcje na Marketplace
+
+Kupno na Marketplace: nowe RI z krótszym terminem (np. 6 miesięcy)
+  Tańsze za jednostkę czasu niż nowe RI
+```
+
+---
+
+## 16.5 Savings Plans — Elastyczna Alternatywa dla RI
+
+### Typy Savings Plans
+
+```
+Compute Savings Plans:
+  Commit: $/h (np. $10/h spend)
+  Flexibility: NAJWYŻSZA
+    - Dowolna rodzina instancji
+    - Dowolny rozmiar
+    - Dowolny AZ
+    - Dowolny region
+    - EC2, Fargate, Lambda (wszystko compute!)
+  Discount: do 66%
+  Zastępuje: Convertible RI dla elastycznych środowisk
+  
+EC2 Instance Savings Plans:
+  Commit: $/h dla konkretnej rodziny w konkretnym regionie
+  Flexibility: ŚREDNIA
+    - Konkretna rodzina + region (np. m w eu-west-1)
+    - Dowolny rozmiar (m5.large, m6g.xlarge, m7i.2xlarge...)
+    - Dowolny AZ w tym regionie
+    - Dowolny OS
+    - Tylko EC2 (nie Fargate/Lambda)
+  Discount: do 72% (taki sam jak Standard RI!)
+  Zastępuje: Standard RI ale z rozmiarem flexibility
+  
+SageMaker Savings Plans:
+  Commit: $/h dla SageMaker instances
+  Flexibility: dowolny region, rozmiar, typ (ml.*)
+  Discount: do 64%
+  Tylko: SageMaker (nie EC2)
+```
+
+### Jak Zakupić Savings Plans
+
+```bash
+# Sprawdź rekomendacje (Cost Explorer):
+aws ce get-savings-plans-purchase-recommendation \
+  --savings-plans-type COMPUTE_SP \
+  --term-in-years ONE_YEAR \
+  --payment-option NO_UPFRONT \
+  --account-scope PAYER
+
+# Output: EstimatedMonthlySavings, RecommendedHourlyCommitment
+
+# Zakup (przez Console lub CLI):
+aws savingsplans purchase-savings-plan \
+  --savings-plan-offering-id "offering-id-from-describe" \
+  --commitment 10.00 \          ← $10/h przez 1 rok
+  --purchase-time $(date -u +%Y-%m-%dT%H:%M:%SZ) \
+  --client-token $(uuidgen)
+```
+
+### Savings Plans vs RI — Kiedy Co
+
+```
+┌─────────────────────────────┬──────────────────────┬──────────────────────┐
+│ Kryterium                   │ Savings Plans        │ Reserved Instances   │
+├─────────────────────────────┼──────────────────────┼──────────────────────┤
+│ Zarządzanie                 │ Prostsze ($/h)        │ Złożone (per type)   │
+│ Flexibility                 │ Compute SP: max       │ Standard: niska      │
+│ Discount level              │ Compute: do 66%       │ Standard: do 72%     │
+│ Fargate/Lambda              │ ✅ Compute SP         │ ❌                   │
+│ Sprzedaż                    │ ❌                    │ ✅ (Standard)        │
+│ Widoczność w Bill           │ $/h commitment        │ Per instance         │
+│ Modyfikacja                 │ ❌ Nie można          │ Exchange (Convertible│
+│ Zonal RI (capacity reserv.) │ ❌                    │ ✅ (Zonal RI only)   │
+│ Multi-region                │ ✅ Compute SP         │ ❌                   │
+└─────────────────────────────┴──────────────────────┴──────────────────────┘
+
+Strategia optymalna:
+  1. Compute SP → elastyczność, multi-family, Fargate/Lambda
+  2. EC2 Instance SP → najlepszy discount dla stabilnej rodziny
+  3. Standard RI → tylko gdy potrzebujesz capacity reservation (Zonal)
+  4. Spot → fault-tolerant, burst, batch
+```
+
+---
+
+## 16.6 Dedicated Hosts i Dedicated Instances
+
+### Dedicated Host
+
+```
+Dedicated Host = FIZYCZNY SERWER dedykowany tylko dla twojego konta
+               = widzisz fizyczne gniazda CPU i rdzenie
+
+Zastosowania:
+  1. BYOL (Bring Your Own License):
+     Licencje SQL Server, Windows, Oracle, RHEL, SUSE
+     które są per-socket lub per-core
+     Dedicated Host: wiesz DOKŁADNIE ile socketów/rdzeni używasz
+     
+  2. Compliance wymagający izolacji sprzętowej:
+     "Nasze dane nie mogą być na sprzęcie współdzielonym"
+     Regulacje: banking, healthcare, government
+     
+  3. Visibility wymagania:
+     Audyt: "które instancje na którym fizycznym serwerze"
+     
+Zarządzanie:
+  Konfiguracja: 1 lub 2 socket, konkretna ilość cores
+  Możesz uruchamiać wiele instancji na jednym Dedicated Host
+  Instancje muszą pasować do socket/core budżetu hosta
+  
+  Licencja per-socket: m5.metal = 2 sockets → 1 socket license
+  Możesz uruchomić 8× m5.xlarge na jednym m5 Dedicated Host
+  (zamiast 8 oddzielnych licencji — 1 licencja per host/socket)
+  
+Auto-placement:
+  ON: nowe instancje automatycznie rozmieszczane na dostępnych hostach
+  OFF: musisz wskazać konkretny Host ID
+
+Host Affinity:
+  Instancja "przywiązana" do konkretnego hosta
+  Po restart: wróci na ten sam host
+
+Koszt:
+  Płacisz per godzinę za Dedicated Host (nie per instancja!)
+  Masz RI i Savings Plans dla Dedicated Hosts (On-Demand i Reserved)
+  
+  Przykład: Dedicated Host m5.xlarge → $5.47/h OD lub $2.62/h 1yr RI
+```
+
+### Dedicated Instance
+
+```
+Dedicated Instance = instancja na FIZYCZNYM SPRZĘCIE dedykowanym TYLKO
+                     dla twojego konta — ale nie wiesz który host
+
+vs Dedicated Host:
+  Dedicated Instance: nie widzisz fizycznych socketów/rdzeni
+                      prostsze zarządzanie
+                      BYOL per-VM jest możliwe (nie per-socket)
+                      może być na różnych hostach po restart
+                      
+  Dedicated Host:     widzisz fizyczny host
+                      BYOL per-socket/core
+                      Host affinity
+                      droższy
+                      
+Koszt Dedicated Instance:
+  $2 per Region per godzinę (opłata za dedicated tenancy)
+  + normalna cena OD za instancje
+  
+Konfiguracja:
+  W Launch Template: tenancy=dedicated
+  Na poziomie VPC: można wymusić dedicated dla całego VPC
+    aws ec2 modify-vpc-tenancy --vpc-id vpc-xxx --instance-tenancy dedicated
+    (NIE rób dla prod VPC — wszystkie instancje dedykowane = drożej)
+```
+
+---
+
+## 16.7 Capacity Reservations
+
+### On-Demand Capacity Reservation
+
+```
+Problem: Potrzebujesz gwarancji że EC2 będzie dostępne w konkretnym AZ
+         (np. dla DR, dla burst w znany dzień)
+         
+Capacity Reservation:
+  Rezerwujesz pojemność TERAZ, nie płacisz za nieużywaną
+  (płacisz OD rate niezależnie czy instancja działa)
+  
+  Możesz łączyć z:
+    Savings Plans lub RI → dostać discount za zarezerwowaną pojemność
+    
+  Scope: konkretna AZ (nie regional jak RI)
+  
+aws ec2 create-capacity-reservation \
+  --instance-type m5.xlarge \
+  --instance-platform Linux/UNIX \
+  --availability-zone eu-west-1a \
+  --instance-count 10 \
+  --end-date-type limited \
+  --end-date 2026-12-31T00:00:00Z
+
+Kiedy używać:
+  DR planowanie — "mogę potrzebować 20 instancji w AZ-1a na wypadek awarii"
+  Capacity block dla regularnych workloadów
+  Compliance: "workload musi działać w konkretnym AZ"
+  Przed świętami/wydarzeniami — zarezerwuj capacity z wyprzedzeniem
+
+Capacity Reservation Group:
+  Możesz grupować reservations dla ASG
+  ASG prefers reservations z grupy przed ogólną pojemnością
+  
+  aws ec2 create-capacity-reservation-fleet \
+    --allocation-strategy prioritized \
+    --instance-type-specifications '[{
+      "InstanceType": "m5.xlarge",
+      "TotalTargetCapacity": 10,
+      "Priority": 1
+    }]'
+```
+
+---
+
+## 16.8 UltraServers (EC2 UltraCluster)
+
+**UltraServers** to superklastry EC2 z bardzo dużą ilością GPU — dla foundation model training.
+
+```
+EC2 UltraCluster:
+  Zestaw p4d.24xlarge lub p5.48xlarge w Cluster Placement Group
+  Połączone przez EFA (Elastic Fabric Adapter) — 400 Gbps collective bandwidth
+  Całe klastry dostępne jako jednostka
+  
+Charakterystyka:
+  p5.48xlarge: 8× H100 GPU, 192 vCPU, 2 TB RAM, 3.2 TB NVMe
+  8 instancji p5 = 64× H100 GPU (jeden "UltraServer")
+  EFA bandwidth: 3,200 Gbps (8 instancji)
+  
+Zakup:
+  Capacity Block (nowy model) — zarezerwuj klaster na konkretny czas
+  Alternatywnie: Spot Fleet + Cluster PG (możliwe przerwanie)
+  Managed ML services: SageMaker HyperPod (zarządza klasterem automatycznie)
+  
+Use cases:
+  GPT-4 size model training
+  Foundation models (100B+ parameters)
+  Scientific simulation (HPC)
+```
+
+---
+
+## 16.9 EC2 Capacity Manager (AWS Capacity Manager)
+
+```
+AWS Capacity Manager to narzędzie do zarządzania pojemnością EC2
+w dużych organizacjach.
+
+Funkcje:
+  1. Capacity Visibility:
+     Ile mamy zarezerwowanej pojemności per typ/AZ
+     Pokrycie przez RI/SP vs On-Demand
+     
+  2. Recommendations:
+     Cost Explorer → Purchase Recommendations
+     Która rodzina powinna być SP, która RI
+     
+  3. Capacity Reservations Fleet:
+     Zarządzanie grupami rezerwacji
+     Priorytetyzacja typów instancji
+     
+  4. EC2 Fleet Management:
+     Dywersyfikacja Spot pools
+     Auto-replace Spot interruptions
+     
+CLI — sprawdź pokrycie RI/SP:
+aws ce get-reservation-coverage \
+  --time-period Start=2026-09-01,End=2026-10-01 \
+  --granularity MONTHLY
+
+aws ce get-savings-plans-coverage \
+  --time-period Start=2026-09-01,End=2026-10-01 \
+  --granularity MONTHLY
+```
+
+---
+
+## 16.10 Wybór Modelu — Decision Tree
+
+```
+WORKLOAD ANALIZOWANY:
+
+Czy może być przerwany?
+  TAK → SPOT (60-90% discount)
+         (fault-tolerant: batch, ML training, data processing, video encoding)
+  NIE → kontynuuj
+
+Jak długo trwa workload?
+  < 1 rok → ON-DEMAND lub SAVINGS PLANS (bez long-term commit)
+  1-3 lata → kontynuuj
+
+Czy workload jest przewidywalny?
+  TAK → RI lub Savings Plans
+  NIE → Savings Plans (elastyczniejsze)
+
+Czy potrzebujesz flexibility między rodzinami/regionami?
+  TAK → Compute Savings Plans (Fargate/Lambda też!)
+  NIE → EC2 Instance Savings Plans lub Standard RI
+
+Czy potrzebujesz BYOL per-socket?
+  TAK → Dedicated Host + RI/SP
+  NIE → kontynuuj
+
+Czy potrzebujesz gwarancji pojemności?
+  TAK → Capacity Reservation (+ łącz z SP/RI dla discount)
+        lub Zonal RI (capacity + discount w jednym)
+  NIE → Regional RI lub SP
+
+Typowa strategia produkcyjna:
+  70% On-Demand → analizuj przez 1-3 miesiące → zakup SP
+  30% Spot → fault-tolerant komponenty (workers, batch)
+  + Capacity Reservation dla DR
+```
+
+---
+
+## 16.11 Well-Architected Framework — Modele Zakupu
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | AWS Cost Explorer Purchase Recommendations, regularne audyty pokrycia RI/SP (co kwartał), automatyczne zakupy SP przez Lambda/EventBridge |
+| **Security** | Dedicated Host/Instance dla compliance (regulatory requirements), hardware isolation dla sensitive data, BYOL licencje audytowalność |
+| **Reliability** | Zonal RI = capacity reservation + discount, Capacity Reservations dla DR, Mixed Instances (Spot + OD) dla resilience, Spot interruption handling (graceful shutdown) |
+| **Performance Efficiency** | Spot Fleet: price-capacity-optimized strategia, Compute SP: flexibility do używania najlepszego typu, Capacity Block dla ML: gwarantowany access do GPU |
+| **Cost Optimization** | Target: 20-40% OD + 40-60% SP/RI + 20-30% Spot. Rightsizing przed zakupem RI/SP. Graviton zamiast Intel. Spot dla batch. SP Coverage > 70% dla steady-state. |
+| **Sustainability** | Spot = używa "spare" capacity (less new hardware). Rightsizing = mniej zasobów. Graviton = lepsza efektywność energetyczna. |
+
+---
+
+## 16.12 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Co to jest Spot Instance i jakie jest ryzyko?
+
+> **Odpowiedź:** Spot = nadwyżkowa pojemność AWS po 60-90% niższej cenie niż On-Demand. Ryzyko: **interruption** — AWS daje 2-minutowe ostrzeżenie i przerywa instancję gdy potrzebuje pojemności. Odpowiednie dla fault-tolerant workloadów: batch, ML training, rendering.
+
+---
+
+**Pytanie 2:** Różnica między Standard RI a Convertible RI?
+
+> **Odpowiedź:** **Standard RI:** do 72% discount, małe flexibility (tylko zmiana rozmiaru w tej samej rodzinie), można sprzedać na Marketplace. **Convertible RI:** do 54% discount, wysoka flexibility (zmiana rodziny, OS, tenancy), nie można sprzedać (tylko exchange na inny Convertible RI).
+
+---
+
+**Pytanie 3:** Co to jest Compute Savings Plans i czym różni się od EC2 Instance SP?
+
+> **Odpowiedź:** **Compute SP:** najwyższa flexibility — dowolna rodzina, rozmiar, AZ, region, EC2+Fargate+Lambda. Do 66% discount. **EC2 Instance SP:** konkretna rodzina w konkretnym regionie, dowolny rozmiar/OS/AZ — do 72% discount (jak Standard RI). Compute SP lepszy dla elastycznych środowisk.
+
+---
+
+**Pytanie 4:** Co to jest `price-capacity-optimized` Spot strategy?
+
+> **Odpowiedź:** AWS recommended strategia dla Spot Fleet — balansuje między ceną a dostępnością (głębokością pula). Wybiera pool z dobrą ceną ale też dużą dostępnością (mniejsze ryzyko przerwania). Lepsza niż `lowest-price` (która wybiera najtańszy pool ale może mieć wysokie ryzyko przerwania).
+
+---
+
+**Pytanie 5:** Zonal RI vs Regional RI — kluczowa różnica?
+
+> **Odpowiedź:** **Regional RI:** discount aplikuje się w całym regionie, dowolny AZ — elastyczne, ale **NIE gwarantuje pojemności**. **Zonal RI:** discount w konkretnym AZ + **GWARANCJA POJEMNOŚCI** w tej AZ. Dla DR i krytycznych workloadów: Zonal RI lub Capacity Reservation.
+
+---
+
+**Pytanie 6:** Co to jest On-Demand Capacity Reservation?
+
+> **Odpowiedź:** Rezerwacja pojemności EC2 (konkretny typ, AZ, ilość) na określony czas. **Płacisz OD rate niezależnie czy instancja działa.** Połącz z SP lub RI dla discounty. Użycie: DR, planowane burst events, compliance wymogi lokalizacji.
+
+---
+
+**Pytanie 7:** Dlaczego Dedicated Host jest droższy od Dedicated Instance?
+
+> **Odpowiedź:** Dedicated Host: płacisz za **cały fizyczny serwer** (per godzinę), widzisz wszystkie sockets/cores, możesz uruchamiać wiele instancji. Dedykated Instance: płacisz per instancja + $2/region/h opłata za dedicated tenancy, prostsze zarządzanie. Dedicated Host droższy ale niezbędny dla BYOL per-socket.
+
+---
+
+**Pytanie 8:** Kiedy używać Dedicated Host zamiast Dedicated Instance?
+
+> **Odpowiedź:** Dedicated Host: BYOL per-socket/core (SQL Server, Oracle, Windows), compliance wymagający widoczności fizycznych socket/core, możliwość uruchamiania wielu małych instancji na jednym hoście (cost-effective z BYOL). Dedicated Instance: prostrzejsza izolacja bez potrzeby widzenia fizycznego hostingu.
+
+---
+
+**Pytanie 9:** Co to jest Spot Hibernation?
+
+> **Odpowiedź:** Zamiast `terminate` przy interruption: instancja hibernuje — RAM zapisany do root EBS volume. Po wznowieniu (gdy Spot dostępny): instancja bootuje, przywraca RAM, aplikacja kontynuuje od miejsca zatrzymania. Wymaga: EBS-backed AMI, RAM < root EBS wolna przestrzeń, hibernation enabled w LT.
+
+---
+
+**Pytanie 10:** Jaka jest maksymalna zniżka dla 3-year All Upfront Standard RI?
+
+> **Odpowiedź:** Do **72%** vs On-Demand. Przykład: m5.xlarge Linux us-east-1 OD = $0.192/h. 3yr All Upfront RI ≈ $0.054/h efektywnie. Rzeczywiste wartości: sprawdź AWS Pricing Calculator (zmienia się z regionem i typem).
+
+---
+
+**Pytanie 11:** Firma ma Savings Plans Compute $10/h. Co się dzieje gdy compute > $10/h?
+
+> **Odpowiedź:** Savings Plans pokrywa $10/h commitmentu po obniżonej cenie. Nadmiar powyżej $10/h → normalny On-Demand rate. Nie ma kary za przekroczenie — tylko płacisz OD za nadmiar.
+
+---
+
+**Pytanie 12:** Spot Fleet "diversified" strategia — kiedy używać?
+
+> **Odpowiedź:** Dla długotrwałych Spot Fleetów potrzebujących ciągłej pojemności. Rozkłada instancje po wielu poolach (różne typy i AZ) — gdy jeden pool jest przerwany, inne nadal działają. Kosztem: nie najtańsze (nie wszystkie instancje z najtańszego poola).
+
+---
+
+**Pytanie 13:** Co to jest Spot Instance Interruption Notice i jak go obsłużyć?
+
+> **Odpowiedź:** 2 minuty przed przerwaniem: IMDS zwraca `spot/termination-time` i `spot/interruption-action`. EventBridge emituje `EC2 Spot Instance Interruption Warning`. Obsługa: (1) drain ELB (deregister target), (2) checkpoint stanu do S3/DynamoDB, (3) graceful shutdown aplikacji, (4) notify ASG.
+
+---
+
+**Pytanie 14:** Czy można zmienić istniejące Savings Plans?
+
+> **Odpowiedź:** **Nie** — Savings Plans są niemodyfikowalne po zakupie. Możesz kupić nowe SP które nakładają się na stare. Po wygaśnięciu: kup nowe (zmiana) lub pozwól na OD. Brak możliwości anulowania (pełne zobowiązanie finansowe).
+
+---
+
+**Pytanie 15:** Jak aplikuje się zniżka Savings Plans?
+
+> **Odpowiedź:** AWS automatycznie aplikuje SP zniżkę do najdroższego kwalifikującego compute zużycia (maximalizuje savings). EC2 Instance SP stosuje się przed Compute SP. SP benefit jest per konto lub per organization w Consolidated Billing (zależnie od konfiguracji sharing).
+
+---
+
+**Pytanie 16:** Co to jest "Capacity Block for ML"?
+
+> **Odpowiedź:** Nowy model zakupu GPU EC2 (p4d, p5) — rezerwujesz blok instancji GPU na konkretny przedział czasowy (np. tydzień). Gwarantuje dostępność dla długich treningów ML bez ryzyka Spot interruption. Nie jest to RI ani Spot — dedykowany "time slot" na GPU klaster.
+
+---
+
+**Pytanie 17:** Jaka jest normalization factor dla m5.2xlarge?
+
+> **Odpowiedź:** Normalization factor dla m5.2xlarge = **16**. 1 × m5.xlarge (NF=8) pokrywa 50% kosztów m5.2xlarge. 2 × m5.xlarge RI pokrywa 1 × m5.2xlarge. Pełna tabela: nano=0.25, micro=0.5, small=1, medium=2, large=4, xlarge=8, 2xlarge=16...
+
+---
+
+**Pytanie 18:** Firma ma 20 EC2 m5.xlarge. Ile powinni kupić RI dla 80% pokrycia?
+
+> **Odpowiedź:** 20 × 80% = **16 RI** dla m5.xlarge. Pozostałe 4 instancje = On-Demand (lub Spot jeśli fault-tolerant). Zasada: nie kupuj 100% RI — zawsze zostaw margines dla skalowania i zmian.
+
+---
+
+**Pytanie 19:** Czy Reserved Instances mogą być używane przez ECS lub Fargate?
+
+> **Odpowiedź:** RI stosuje się do **EC2 instancji**. Fargate → **Compute Savings Plans** (nie RI). ECS na EC2 launch type → RI stosuje się do underlying EC2. ECS Fargate → tylko Compute SP daje discount.
+
+---
+
+**Pytanie 20:** Co to jest "Scheduled Reserved Instance"?
+
+> **Odpowiedź:** Przestarzała funkcja (deprecated). Pozwalała rezerwować pojemność na określone godziny/dni (np. każdy poniedziałek 9-17). AWS wycofał — użyj Capacity Reservation (elastyczniejsze) lub Compute SP.
+
+---
+
+**Pytanie 21-60 — kluczowe pytania egzaminacyjne:**
+
+---
+
+**Pytanie 21:** Spot Fleet vs EC2 Fleet — którą używać?
+
+> EC2 Fleet = nowa, zalecana API. Spot Fleet = stara, legacy. EC2 Fleet unified API dla Spot + OD + Capacity Reservations. AWS rekomenduje migrację do EC2 Fleet.
+
+---
+
+**Pytanie 22:** Co to jest "Spot price history"?
+
+> Historyczne ceny Spot per typ/AZ — `aws ec2 describe-spot-price-history`. Pomaga wybrać typ i AZ z najbardziej stabilną ceną (mało volatile = mniejsze ryzyko przerwania).
+
+---
+
+**Pytanie 23:** Firma ma Compute SP $10/h i uruchamia Fargate tasks. Czy SP się aplikuje?
+
+> Tak — Compute SP stosuje się do EC2, Fargate i Lambda. To kluczowa zaleta Compute SP vs EC2 Instance SP (który działa tylko dla EC2).
+
+---
+
+**Pytanie 24:** Jaka jest minimalna jednostka czasu płatności za EC2 Spot?
+
+> Per sekunda (minimum 60 sekund). Tak samo jak On-Demand. Jeśli AWS przerywa instancję w ciągu godziny: płacisz tylko za czas działania (proporcjonalnie).
+
+---
+
+**Pytanie 25:** Co to jest "Spot Fleet maintenance" i jak obsługuje interruptions?
+
+> Spot Fleet z `AllocationStrategy=diversified` + `TargetCapacity`: gdy instancja jest przerwana → Fleet automatycznie replenishes z innego poola. Bez Fleet: musisz ręcznie obsługiwać replenishment.
+
+---
+
+**Pytanie 26:** Czy można przenieść RI między regionami?
+
+> Nie — RI jest regionalne. Sprzedaj Standard RI na Marketplace lub dokonaj exchange Convertible RI (możesz exchange na RI w innym regionie).
+
+---
+
+**Pytanie 27:** Co to jest "unused RI" i jak optymalizować?
+
+> Unused RI = kupiłeś RI dla m5.xlarge ale uruchamiasz m5.2xlarge. AWS liczy RI utilizaiton (% czasu RI był "użyty"). Cost Explorer pokazuje unused RI. Fix: (1) skaluj instancje do pasujących rozmiarów, (2) sprzedaj na Marketplace (Standard RI), (3) exchange na pasujący Convertible RI.
+
+---
+
+**Pytanie 28:** Shared Tenancy vs Dedicated Tenancy — domyślne?
+
+> Domyślne = Shared Tenancy (twoja VM współdzieli fizyczny host z innymi kontami). Dedicated Tenancy: Host (Dedicated Host) lub Instance (Dedicated Instance). Uwaga: jeśli VPC ma `instance-tenancy=dedicated` → wszystkie instancje automatycznie dedykowane.
+
+---
+
+**Pytanie 29:** Firma migruje z Windows SQL Server on-prem do EC2. Jak optymalizować licencje?
+
+> Dedicated Host + BYOL Windows i SQL Server: (1) 1 licencja SQL Server Developer/Standard per socket, nie per VM. (2) Dedicated Host z Windows Server: pokrywa wszystkie VM na hoście (jeden Windows Server Datacenter = unlimited VMs na hoście). Ogromne oszczędności vs licencja per EC2 instancja.
+
+---
+
+**Pytanie 30:** AWS Compute Optimizer — co to i jak powiązane z purchase models?
+
+> Compute Optimizer analizuje utilization EC2 (CloudWatch metrics) i rekomenduje: rightsize do mniejszych instancji, zmianę rodziny (Graviton), zmianę storage. Używaj przed zakupem RI/SP — najpierw rightsize, potem commit. Zakup RI dla oversized instancji = przepłacasz.
+
+---
+
+**Pytanie 31-60 — dalsze pytania:**
+
+---
+
+**Pytanie 31:** Spot Blocks — czy są nadal dostępne?
+
+> **Nie** — AWS wycofał Spot Blocks (2021). Alternatywa: Capacity Reservations dla gwarantowanej pojemności.
+
+---
+
+**Pytanie 32:** Jak działa "Spot Instance advisor"?
+
+> `spot.amazonaws.com/instance-advisor` — AWS narzędzie online pokazujące: częstotliwość interrupcji (< 5%, 5-10%, >10%) i savings vs OD per typ/region. Pomaga wybrać typ z niskim ryzykiem przerwania.
+
+---
+
+**Pytanie 33:** Co to jest "RI Convertible exchange"?
+
+> Wymiana Convertible RI na inny Convertible RI. Warunek: wartość nowych RI >= wartość starych. Możesz exchange na: inny typ, inny OS, inny region, inną tenancy. `aws ec2 accept-reserved-instances-exchange-quote` po uprzednim `get-reserved-instances-exchange-quote`.
+
+---
+
+**Pytanie 34:** Mixed Instances Policy — co to jest `OnDemandBaseCapacity`?
+
+> Minimalna liczba OD instancji w ASG, niezależnie od Spot/OD ratio. Np. `OnDemandBaseCapacity=2`: zawsze 2 OD instancje, reszta skaluje według `OnDemandPercentageAboveBaseCapacity`.
+
+---
+
+**Pytanie 35:** Savings Plans — kiedy zaczynają działać?
+
+> Natychmiast po zakupie (retroaktywnie na bieżącą godzinę). Nie ma czekania do kolejnego dnia.
+
+---
+
+**Pytanie 36:** Co to jest EC2 Savings Plans "instance family flexibility"?
+
+> EC2 Instance SP dla rodziny `m` w `eu-west-1`: zniżka działa dla m5.large, m5a.2xlarge, m6g.xlarge, m7i.4xlarge — dowolny rozmiar i generacja z rodziny `m`. Zmiana rozmiaru (scale up/down) nie wymaga nowego SP.
+
+---
+
+**Pytanie 37:** Capacity Reservation — jak połączyć z RI?
+
+> (1) Utwórz On-Demand Capacity Reservation (konretny AZ, typ). (2) Miej Zonal RI dla tego samego AZ+type → RI zniżka aplikuje się do pojemności z ODCR. Efekt: gwarantowana pojemność + RI discount.
+
+---
+
+**Pytanie 38:** Czy Spot instancje mogą być w ASG?
+
+> Tak — przez MixedInstancesPolicy lub LT z `InstanceMarketOptions.MarketType=spot`. ASG zarządza Spot przerwaniami: automatycznie zastępuje przerwaną Spot nową (Spot lub OD per policy).
+
+---
+
+**Pytanie 39:** Co to jest "spot instance pool"?
+
+> Pul instancji o tym samym typie i AZ, które mają tę samą cenę Spot. `c5.xlarge` w `eu-west-1a` = jeden pool. Im więcej poolów używasz (różne typy i AZ) → dywersyfikacja → mniejsze ryzyko całkowitej interrupcji.
+
+---
+
+**Pytanie 40:** Jak Cost Explorer pomaga w purchase decisions?
+
+> Purchase Recommendations: analizuje 14-30 dni historycznych danych → sugeruje RI lub SP z szacowanymi oszczędnościami. Pokazuje: breakeven period, savings amount, recommended commitment. Możesz filtrować per usługa, region, typ.
+
+---
+
+**Pytanie 41-60 — finalne zagadnienia:**
+
+---
+
+**Pytanie 41:** Czy RI działa dla Windows EC2?
+
+> Tak. Windows RI to oddzielna SKU (droższa niż Linux RI). Nie można exchange Linux RI na Windows RI — to różne "produkty". Convertible RI możesz exchange między OS.
+
+---
+
+**Pytanie 42:** Co to jest "AWS License Manager"?
+
+> Usługa śledzenia BYOL licencji. Definiujesz reguły licencji (np. "max 10 SQL Server per konto"). License Manager monitoruje użycie na Dedicated Hosts. Integruje z EC2, CodeDeploy, Systems Manager.
+
+---
+
+**Pytanie 43:** Savings Plans — czy można kupić dla innego konta w AWS Organization?
+
+> SP kupuje się na poziomie payer account. Benefit można sharing z member accounts (Cost Explorer SP sharing settings). W Consolidated Billing: SP z payer account pokrywa member accounts (jeśli sharing włączone).
+
+---
+
+**Pytanie 44:** Jaka jest różnica między interruption a rebalancing dla Spot?
+
+> **Interruption:** AWS zabiera instancję (2-minutowe notice). **Rebalancing:** AWS ostrzega że instancja jest "at elevated risk of interruption" (wczesne ostrzeżenie, > 2 min). Możesz proaktywnie zastąpić zanim AWS przerwie. EventBridge: `EC2 Instance Rebalance Recommendation`.
+
+---
+
+**Pytanie 45:** Dedicated Host RI vs On-Demand Dedicated Host?
+
+> Dedicated Host RI (1 lub 3 lata): do 70% discount vs On-Demand Dedicated Host. Płatność: All/Partial/No Upfront. Na poziomie Host ID — konkretny fizyczny host. Flexibility: mała (konkretna rodzina instancji).
+
+---
+
+**Pytanie 46:** Czy można Spot Fleet Target = 0 (zero instancji)?
+
+> Tak — `TargetCapacity=0` jest valid. Wstrzymuje fleet bez kasowania. Przywróć ustawiając `TargetCapacity > 0`. Przydatne dla koszt-świadomych środowisk dev/test które nie działają po godzinach.
+
+---
+
+**Pytanie 47:** Co to jest "SageMaker Savings Plans"?
+
+> SP dla SageMaker compute (ml.* instances). Dowolny region, typ, rozmiar SageMaker. Do 64% savings. Tylko dla SageMaker — nie pokrywa EC2 ani Fargate.
+
+---
+
+**Pytanie 48:** Jak sprawdzić Spot ceny w danej chwili?
+
+```bash
+aws ec2 describe-spot-price-history \
+  --instance-types c5.xlarge m5.xlarge \
+  --product-descriptions "Linux/UNIX" \
+  --availability-zone eu-west-1a \
+  --max-results 5
+# SpotPrice: $0.0543  (porównaj z OD: $0.192)
+```
+
+---
+
+**Pytanie 49:** Firma chce zoptymalizować koszty dla 3-letniej, stabilnej, CPU-intensive aplikacji w eu-west-1. Co polecić?
+
+> EC2 Instance Savings Plans dla rodziny `c` w `eu-west-1`, 3-year All Upfront → do 72% savings. Albo: Standard RI 3yr All Upfront dla c6g (Graviton) → najniższy koszt. Sprawdź Cost Explorer recommendations dla dokładnych liczb.
+
+---
+
+**Pytanie 50:** Co to jest "Capacity Reservation Fleet"?
+
+> Fleet zarządzający wieloma Capacity Reservations — automatycznie tworzy reservations dla lista typów instancji z priorytetem. Gdy preferowany typ niedostępny → fallback na kolejny. Dla ASG które preferuje capacity reservations.
+
+---
+
+**Pytanie 51-60:**
+
+---
+
+**Pytanie 51:** AWS kara za anulowanie RI?
+
+> **Nie ma** opcji anulowania RI. Jeśli nie używasz: (1) sprzedaj na Marketplace (Standard RI), (2) exchange na inny Convertible RI, (3) płać (nie ma partial refund). Dlatego: kupuj ostrożnie i rightsize najpierw.
+
+---
+
+**Pytanie 52:** Savings Plans "lookback period" dla rekomendacji?
+
+> Cost Explorer używa 7, 14 lub 30 dni historii (configurowalne). Więcej = lepsza reprezentatywność. Sezonowe workloady: sprawdź 90+ dni ręcznie.
+
+---
+
+**Pytanie 53:** Co to jest "Spot Fleet request type = maintain"?
+
+> Fleet utrzymuje `TargetCapacity` — gdy instancja przerwana, automatycznie replenishes z innego poola. vs `request` (one-time, bez replenishment). Dla ciągłych workloadów: `maintain`.
+
+---
+
+**Pytanie 54:** Dedicated Host — ile instancji można uruchomić?
+
+> Zależy od rodziny i rozmiaru hosta. Przykład: `m5` Dedicated Host (`m5.metal`) = 2 sockets × 24 cores. Możesz uruchomić: 1× m5.24xlarge, 2× m5.12xlarge, 4× m5.4xlarge, lub mieszankę w ramach capacity. Host ma fixed capacity (nie można expandować).
+
+---
+
+**Pytanie 55:** Jaka jest strategia "just-in-time" dla Capacity Reservations?
+
+> Utwórz Capacity Reservation z `EndDateType=limited, EndDate=<jutro>` przed planowanym wydarzeniem (launch, sale, deployment). Po wydarzeniu: cancel reservation. Koszt: zapłacisz OD rate za zarezerwowaną pojemność przez ten czas.
+
+---
+
+**Pytanie 56:** Co to jest "tiered discounts" w AWS dla large volume?
+
+> Private Pricing Agreements (Enterprise Discount Program) — dla bardzo dużych klientów ($1M+). Negocjowane oszczędności na całym portfelu AWS. Różni się od publicznych RI/SP — wymaga kontaktu z AWS Sales.
+
+---
+
+**Pytanie 57:** Czy można łączyć Dedicated Host RI z Savings Plans?
+
+> Tak. Dedicated Host RI daje zniżkę na Dedicated Host fee. Savings Plans mogą dodatkowo dawać zniżkę na instancje uruchomione na Dedicated Host (Compute SP stosuje się niezależnie). W praktyce: Dedicated Host RI + Compute SP = optymalne.
+
+---
+
+**Pytanie 58:** Co to jest "On-Demand Capacity Reservation sharing"?
+
+> Przez AWS RAM (Resource Access Manager) możesz share Capacity Reservations z innymi kontami w AWS Organization. Dzielone konto może używać zarezerwowanej pojemności (i płaci za instancje które uruchamia na tej pojemności).
+
+---
+
+**Pytanie 59:** Spot Fleet "weighted capacity" — co to?
+
+> Każdy typ instancji w Fleet ma `WeightedCapacity` — ile "jednostek" reprezentuje. Np.: m5.xlarge=4 units, m5.2xlarge=8 units, c5.2xlarge=8 units. TargetCapacity=40 units → Fleet uruchamia tyle instancji ile potrzeba by osiągnąć 40 units (może to być 10× m5.xlarge lub 5× m5.2xlarge).
+
+---
+
+**Pytanie 60:** Opisz optymalną strategię zakupu EC2 dla e-commerce z Black Friday spikami.
+
+> (1) Baseline load (80% time): EC2 Instance Savings Plans dla głównej rodziny → do 72% discount. (2) Sezonowy burst: Capacity Reservation zarezerwowana tydzień przed BF → gwarancja pojemności. (3) Fault-tolerant workers (queue processing, image resize): Spot Fleet `price-capacity-optimized`. (4) Launch Template z MixedInstancesPolicy: 70% OD baseline + 30% Spot. (5) Cost Explorer po BF: analiza actual vs expected, korekta SP commitment na następny rok.
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: Spot instances, interruption handling, Spot Fleet, Reserved Instances, Convertible/Standard RI, Savings Plans, Dedicated Host/Instance, Capacity Reservations, Capacity Block, EC2 Fleet, UltraServers*
+
+---
+
+# 17. EBS Volumes, Snapshots, Lifecycle Manager, Instance Store
+
+> **Zakres:** Typy woluminów EBS (gp3, io2, st1, sc1), parametry wydajności, Multi-Attach, szyfrowanie, snapshots (incremental, fast snapshot restore), Amazon Data Lifecycle Manager, Instance Store vs EBS. Deep-dive z konfiguracją i troubleshooting.
+
+---
+
+## 17.1 EBS — Elastic Block Store Przegląd
+
+**EBS** = trwałe, sieciowe urządzenia blokowe dla EC2. Persystują niezależnie od cyklu życia instancji.
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                         VPC / AZ                                 │
+│                                                                  │
+│  EC2 Instance (eu-west-1a)         EBS Volume (eu-west-1a)      │
+│  ┌──────────────────────────┐      ┌──────────────────────────┐  │
+│  │                          │      │                          │  │
+│  │  /dev/nvme0n1 (root)  ───┼──────►  gp3: 20GB              │  │
+│  │  /dev/nvme1n1 (data)  ───┼──────►  io2: 1TB               │  │
+│  │                          │      │                          │  │
+│  └──────────────────────────┘      └──────────────────────────┘  │
+│                                                                  │
+│  Cechy EBS:                                                      │
+│  - Dostępne tylko w tym samym AZ co EC2 (domyślnie)             │
+│  - Sieciowe (przez NVMe protokół wewnętrznie)                   │
+│  - Persystują po stop/terminate (DeleteOnTermination = false)    │
+│  - Snapshoty do S3 (cross-AZ, cross-region)                     │
+│  - Szyfrowanie at-rest + in-transit (KMS)                       │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 17.2 Typy Woluminów EBS — Szczegółowa Tabela
+
+```
+┌─────────┬────────────┬──────────┬────────────┬──────────────────────────────┐
+│ Typ     │ Kategoria  │ Max IOPS │ Max Through│ Use Case                     │
+├─────────┼────────────┼──────────┼────────────┼──────────────────────────────┤
+│ gp3     │ SSD General│ 16,000   │ 1,000 MB/s │ Boot, dev/test, general app  │
+│ gp2     │ SSD General│ 16,000   │ 250 MB/s   │ Legacy (gp3 > gp2 zawsze)    │
+│ io2     │ SSD Provis.│ 64,000   │ 1,000 MB/s │ Critical DBs, IOPS-intensive │
+│ io2 BE  │ SSD Block  │ 256,000  │ 4,000 MB/s │ SAP HANA, Oracle RAC, Multi-A│
+│ io1     │ SSD Provis.│ 64,000   │ 1,000 MB/s │ Legacy (io2 > io1)          │
+│ st1     │ HDD Throughp│ 500     │ 500 MB/s   │ Sequential: Hadoop, DWH, logs│
+│ sc1     │ HDD Cold   │ 250      │ 250 MB/s   │ Archival, infrequent access  │
+│ magnetic│ HDD Prev.  │ 40-200   │ 90 MB/s    │ Legacy, avoid               │
+└─────────┴────────────┴──────────┴────────────┴──────────────────────────────┘
+```
+
+### gp3 — General Purpose SSD (Standard)
+
+```
+gp3 = nowy standard, zastępuje gp2 we wszystkich use cases
+
+Charakterystyka:
+  Rozmiar:      1 GB – 16 TB
+  IOPS:         3,000 IOPS baseline ZAWSZE (niezależnie od rozmiaru!)
+                Max: 16,000 IOPS (dodatkowe IOPS: $0.005/IOPS-mc ponad 3,000)
+  Throughput:   125 MB/s baseline
+                Max: 1,000 MB/s (dodatkowy: $0.040/MB/s-mc ponad 125)
+  Latency:      single-digit milliseconds
+  Koszt:        $0.08/GB-mc
+
+gp3 vs gp2 KLUCZOWA różnica:
+  gp2: IOPS = 3 × rozmiar GB (max 16,000)
+       500 GB gp2 = 1,500 IOPS (provision z rozmiarem tied!)
+       gp2 burst credits (jak T-type CPU credits) — do 3,000 IOPS burstowo
+       
+  gp3: IOPS NIEZALEŻNE od rozmiaru
+       500 GB gp3 = 3,000 IOPS baseline (możesz provisioned 16,000 niezależnie)
+       Throughput max 1,000 MB/s (vs gp2 max 250 MB/s)
+       Tańszy: gp3 $0.08/GB vs gp2 $0.10/GB
+       
+  Migracja gp2 → gp3:
+  aws ec2 modify-volume --volume-id vol-xxx --volume-type gp3
+  Zero downtime! (hot modification)
+```
+
+### io2 Block Express — Provisioned IOPS SSD
+
+```
+io2 Block Express (najnowszy):
+  Rozmiar:      4 GB – 64 TB
+  IOPS:         Max 256,000 (!) — 1,000 IOPS/GB ratio
+  Throughput:   4,000 MB/s
+  Latency:      sub-millisecond (< 1ms P99)
+  Multi-Attach: ✅ (do 16 EC2 jednocześnie!)
+  Dostępność:   99.999% (5 nines)
+  Koszt:        $0.125/GB-mc + $0.065/provisioned IOPS-mc
+
+io2 (nie Block Express):
+  Max IOPS: 64,000, Max Throughput: 1,000 MB/s
+  
+io1 (stary): Unikaj — io2 tańszy i lepszy przy tej samej cenie IOPS
+
+Kiedy io2:
+  Relacyjne DB: MySQL, PostgreSQL, Oracle (high IOPS)
+  NoSQL: Cassandra, MongoDB
+  SAP HANA: wymaga io2 Block Express (256K IOPS)
+  EBS Multi-Attach: Oracle RAC, clustered applications
+```
+
+### st1 i sc1 — HDD Volumes
+
+```
+st1 (Throughput Optimized HDD):
+  Rozmiar:      125 GB – 16 TB
+  Max IOPS:     500
+  Max Throughput: 500 MB/s (burst: sustained dla sequential)
+  Koszt:        $0.045/GB-mc
+  Nie może być root volume!
+  Use: Hadoop HDFS, Kafka (log storage), sequential data processing
+  
+sc1 (Cold HDD):
+  Rozmiar:      125 GB – 16 TB
+  Max IOPS:     250
+  Max Throughput: 250 MB/s
+  Koszt:        $0.015/GB-mc (najtańszy EBS!)
+  Nie może być root volume!
+  Use: Archival data, infrequent access, backup storage
+
+st1/sc1 NIE NADAJĄ się dla:
+  Boot volumes (brak wsparcia)
+  Random I/O (baza danych)
+  Low-latency applications
+  
+HDD burst bucket:
+  Podobnie jak T3 CPU credits — TB/s burst credits
+  Baseline: 40 MB/s per TB (sc1) lub 40 MB/s per TB (st1)
+  Burst: 250 MB/s (sc1) lub 500 MB/s (st1)
+```
+
+---
+
+## 17.3 EBS Multi-Attach
+
+```
+io2 Block Express TYLKO = jeden wolumin podłączony do wielu EC2
+
+┌──────────────────────────────────────────────────────────────┐
+│                     AZ (eu-west-1a)                          │
+│                                                              │
+│  EC2-1  EC2-2  EC2-3  ...  EC2-16                           │
+│    │      │      │            │                              │
+│    └──────┴──────┴────────────┘                              │
+│                  │                                           │
+│          io2 Block Express Volume (10TB)                     │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘
+
+Wymagania:
+  ✅ io2 Block Express only
+  ✅ Wszystkie EC2 w tym samym AZ
+  ✅ Max 16 EC2 jednocześnie
+  ✅ Cluster-aware filesystem (GFS2, OCFS2) — nie ext4/XFS!
+     (multi-writer filesystem potrzebny do koordynacji)
+  
+Dlaczego cluster-aware filesystem:
+  Zwykły ext4/XFS: nie obsługuje concurrent writes z wielu hostów
+  GFS2 (Red Hat): distributed lock manager
+  OCFS2 (Oracle): cluster filesystem dla Oracle RAC
+  
+Use cases:
+  Oracle RAC (Real Application Clusters)
+  Linux HA clusters (Pacemaker + DRBD alternatywa)
+  SAP HANA Scale-Out (rzadko przez EBS, częściej instance store lub FSx)
+```
+
+---
+
+## 17.4 EBS Szyfrowanie
+
+```
+EBS Encryption:
+  Szyfrowanie: AES-256
+  KMS key: AWS managed key (aws/ebs) lub customer managed key (CMK)
+  
+  Co jest szyfrowane:
+    ✅ Dane at-rest na woluminie
+    ✅ Dane in-transit między EC2 a EBS (sieć AWS, zawsze zaszyfrowana)
+    ✅ Snapshoty (dziedziczą szyfrowanie z woluminu)
+    ✅ Woluminy z zaszyfrowanych snapshotów (automatycznie zaszyfrowane)
+    
+  Co NIE jest szyfrowane przez EBS:
+    ❌ Dane wewnątrz OS (filesystem encryption to osobna warstwa)
+    (ale EBS encryption obsługuje to na poziomie storage)
+
+Domyślne szyfrowanie (konto-level):
+  aws ec2 enable-ebs-encryption-by-default
+  aws ec2 get-ebs-encryption-by-default  # sprawdź
+  
+  Po włączeniu: WSZYSTKIE nowe woluminy automatycznie zaszyfrowane
+  Istniejące woluminy: nie są automatycznie szyfrowane (tylko nowe)
+
+Szyfrowanie istniejącego niezaszyfrowanego woluminu:
+  Nie można zaszyfrować istniejącego woluminu bezpośrednio!
+  Procedura:
+    1. Snapshot woluminu (niezaszyfrowany)
+    2. Kopiuj snapshot z --encrypted (tworzy zaszyfrowaną kopię)
+    3. Utwórz nowy wolumin z zaszyfrowanego snapshotu
+    4. Podmień wolumin (stop EC2, detach old, attach new)
+    
+Szyfrowanie cross-account share:
+  Zaszyfrowany snapshot z CMK → share z innym kontem
+  Inne konto musi mieć grant do CMK przez Key Policy
+  Inne konto nie może używać twojego aws/ebs managed key!
+```
+
+---
+
+## 17.5 EBS Snapshots — Incremental Backup
+
+```
+Snapshot = point-in-time kopia EBS woluminu zapisana w S3
+           (nie widzisz tego bucketu — zarządzane przez AWS)
+
+Snapshot jest INCREMENTAL:
+  Snapshot 1: kopiuje wszystkie bloki (np. 20 GB zajętych)
+  Snapshot 2: kopiuje TYLKO zmienione bloki od Snapshot 1
+  Snapshot 3: kopiuje TYLKO zmienione bloki od Snapshot 2
+  
+  Każdy snapshot self-sufficient — możesz przywrócić z dowolnego snapshotu
+  (AWS internalize chain — nie musisz mieć wszystkich poprzednich)
+  
+Koszt snapshotów:
+  $0.05/GB-mc (tylko unikalne dane — nie pełny rozmiar woluminu)
+  Przykład: 100 GB wolumin, 5 GB zmian dziennie
+    Snapshot 1: ~5 GB (zajęte) × $0.05 = $0.25/mc
+    Snapshot 2: ~5 GB (zmienione) × $0.05 = $0.25/mc
+    (nie 200 GB za dwa snapshoty!)
+
+Tworzenie snapshotu:
+  aws ec2 create-snapshot \
+    --volume-id vol-0abc123 \
+    --description "DB backup 2026-10-27" \
+    --tag-specifications 'ResourceType=snapshot,Tags=[{Key=Name,Value=db-backup}]'
+  
+  Snapshot w trakcie: wolumin nadal dostępny! (nie musisz unmountować)
+  Ale: dla spójności DB → flush + freeze lub zatrzymaj aplikację
+
+Multi-volume snapshot (application consistent):
+  aws ec2 create-snapshots \
+    --instance-specification InstanceId=i-0abc123,ExcludeBootVolume=false \
+    --description "Application consistent snapshot"
+  
+  Tworzy snapshoty wszystkich woluminów EC2 jednocześnie (crash-consistent)
+```
+
+### Fast Snapshot Restore (FSR)
+
+```
+Problem: Przywrócenie z dużego snapshotu do woluminu → "lazy initialization"
+         Pierwsze odczyty z woluminu: wolne (bloki pobierane z S3 on-demand)
+         Może trwać godziny zanim wszystkie bloki są "warm"
+         
+Fast Snapshot Restore:
+  Pre-initializes wszystkie bloki snapshotu
+  Przywrócony wolumin działa od razu z pełną wydajnością
+  Brak "warming up" fazy
+  
+  Koszt: $0.75/FSR snapshot/AZ/godzinę
+  (drogie! używaj tylko dla krytycznych snapshots w DR)
+  
+  Włącz:
+  aws ec2 enable-fast-snapshot-restores \
+    --source-snapshot-ids snap-0abc123 \
+    --availability-zones eu-west-1a eu-west-1b
+  
+  Sprawdź:
+  aws ec2 describe-fast-snapshot-restores \
+    --filters Name=snapshot-id,Values=snap-0abc123
+
+Alternatywa dla FSR (tańsza):
+  Pre-warming: dd if=/dev/xvda of=/dev/null bs=128k
+  (czyta cały wolumin sekwencyjnie → AWS pobiera bloki z S3 → wolumin warm)
+  Trwa długo dla dużych woluminów ale bezpłatne
+```
+
+### Snapshot Cross-Region Copy
+
+```bash
+# Kopiuj snapshot do innego regionu:
+aws ec2 copy-snapshot \
+  --source-region eu-west-1 \
+  --source-snapshot-id snap-0abc123 \
+  --destination-region us-east-1 \
+  --description "DR copy" \
+  --encrypted \
+  --kms-key-id alias/dr-key     # KMS key w destination region
+
+# Automatyczna cross-region copy przez DLM (patrz 17.8)
+
+# Snapshot sharing między kontami:
+aws ec2 modify-snapshot-attribute \
+  --snapshot-id snap-0abc123 \
+  --attribute createVolumePermission \
+  --operation-type add \
+  --user-ids 123456789012
+```
+
+---
+
+## 17.6 EBS Volume Modification (Hot Resize)
+
+```
+Możesz modyfikować woluminy BEZ zatrzymania EC2:
+
+Co można modyfikować na gorąco (in-place, no downtime):
+  ✅ Rozmiar (zwiększ, nie zmniejsz!)
+  ✅ Typ (gp2 → gp3, gp3 → io2...)
+  ✅ IOPS (dla gp3 i io2)
+  ✅ Throughput (dla gp3)
+  
+Co MUSISZ zrobić po zwiększeniu rozmiaru (EBS):
+  EBS volume jest większy, ale filesystem tego nie widzi!
+  Musisz rozszerzyć filesystem po stronie OS:
+  
+  # Linux ext4:
+  sudo resize2fs /dev/nvme0n1
+  
+  # Linux xfs:
+  sudo xfs_growfs /mount/point
+  
+  # Linux LVM:
+  sudo pvresize /dev/nvme0n1
+  sudo lvextend -l +100%FREE /dev/mapper/vg-lv
+  sudo resize2fs /dev/mapper/vg-lv
+
+Cooldown period:
+  Po modyfikacji: 6 godzin cooldown (nie możesz zmodyfikować ponownie)
+  
+aws ec2 modify-volume \
+  --volume-id vol-0abc123 \
+  --size 200 \
+  --volume-type gp3 \
+  --iops 6000 \
+  --throughput 500
+
+# Sprawdź status modyfikacji:
+aws ec2 describe-volumes-modifications --volume-ids vol-0abc123
+# State: optimizing → completed
+```
+
+---
+
+## 17.7 EBS Wydajność — Limity i Bottlenecks
+
+```
+Każda instancja EC2 ma limit bandwidth dla EBS (EBS-optimized):
+  
+  t3.medium:    2,085 Mbps (260 MB/s), 16,000 IOPS
+  m5.xlarge:    4,750 Mbps (594 MB/s), 18,750 IOPS
+  m5.4xlarge:   8,750 Mbps (1,094 MB/s), 43,750 IOPS
+  
+  Wolumin io2 256,000 IOPS → potrzebujesz instancji wspierającej taki bandwidth!
+  
+  Znalezienie bottlenecka:
+    CloudWatch metryki:
+      VolumeReadOps/WriteOps  → IOPS
+      VolumeReadBytes/WriteBytes → Throughput
+      VolumeQueueLength → queue depth (>1 na steady state = throttling?)
+      BurstBalance (gp2 only) → credit balance
+      
+    # Sprawdź czy instancja throttle EBS:
+    iostat -x 1 /dev/nvme0n1
+    # %iowait > 0 przy małym queue = disk bottleneck
+    # queue_depth > 1 sustained = disk saturated
+    
+Multi-volume stripe (dla wyższego throughput):
+  RAID 0 na EBS (mdadm lub LVM striping):
+  2× io2 64K IOPS = 128K IOPS przez RAID 0 stripping
+  
+  # Utwórz RAID 0 z 2 woluminami:
+  mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/nvme1n1 /dev/nvme2n1
+  mkfs.xfs /dev/md0
+  mount /dev/md0 /data
+  
+  Uwaga: RAID 0 = brak redundancji. Jeden wolumin padnie = cały array!
+  Używaj tylko dla temp data lub mając snapshoty.
+```
+
+---
+
+## 17.8 Amazon Data Lifecycle Manager (DLM)
+
+**DLM** = automatyczne zarządzanie cyklem życia EBS snapshotów i AMI.
+
+```
+DLM Policy = reguła definiująca:
+  1. Jakie zasoby zarządzać (tagi EC2 lub EBS)
+  2. Harmonogram (co ile godzin/dni tworzyć snapshot)
+  3. Retencja (ile snapshotów zachować lub ile dni trzymać)
+  4. Cross-region copy (opcjonalnie)
+  5. Cross-account share (opcjonalnie)
+  6. Fast Snapshot Restore (opcjonalnie)
+```
+
+### Tworzenie DLM Policy
+
+```bash
+# Policy dla codziennych backupów produkcji:
+aws dlm create-lifecycle-policy \
+  --description "Daily production backups" \
+  --state ENABLED \
+  --execution-role-arn arn:aws:iam::123456789:role/AWSDataLifecycleManagerDefaultRole \
+  --policy-details '{
+    "PolicyType": "EBS_SNAPSHOT_MANAGEMENT",
+    "ResourceTypes": ["VOLUME"],
+    "TargetTags": [{"Key": "Environment", "Value": "Production"}],
+    "Schedules": [{
+      "Name": "Daily backup",
+      "CreateRule": {
+        "Interval": 24,
+        "IntervalUnit": "HOURS",
+        "Times": ["03:00"]
+      },
+      "RetainRule": {
+        "Count": 7
+      },
+      "CopyTags": true,
+      "CrossRegionCopyRules": [{
+        "TargetRegion": "us-east-1",
+        "Encrypted": true,
+        "KmsKeyId": "arn:aws:kms:us-east-1:123:key/xxx",
+        "RetainRule": {"Interval": 30, "IntervalUnit": "DAYS"},
+        "CopyTags": true
+      }]
+    }]
+  }'
+```
+
+### DLM Policy Typy
+
+```
+EBS Snapshot Policy:
+  Tworzy snapshoty woluminów EBS
+  Może: cross-region copy, cross-account share, FSR enable
+  Target: EBS volumes lub EC2 instances (snapshot wszystkich woluminów)
+  
+AMI Policy:
+  Tworzy AMI z EC2 instancji
+  Może: cross-region distribution, deregister + delete snapshot
+  Target: EC2 instances z tagiem
+  
+Event-Based Policy:
+  Reaguje na eventy (np. stary snapshot osiągnie wiek X) → copy do innego regionu
+  Zarządzanie cyklem życia importowanych/sharowanych snapshotów
+  
+Retencja:
+  Count-based: zachowaj ostatnie N snapshotów
+  Age-based: zachowaj snapshoty przez N dni/tygodni/miesięcy/lat
+  
+  Stare snapshoty (ponad retencję): automatycznie usuwane przez DLM
+```
+
+### DLM IAM Role
+
+```
+DLM potrzebuje IAM Role do wykonywania snapshotów:
+
+# AWS tworzy domyślną rolę: AWSDataLifecycleManagerDefaultRole
+# ale możesz użyć własnej:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateSnapshot",
+        "ec2:CreateSnapshots",
+        "ec2:DeleteSnapshot",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSnapshots",
+        "ec2:EnableFastSnapshotRestores",
+        "ec2:DescribeFastSnapshotRestores",
+        "ec2:DisableFastSnapshotRestores",
+        "ec2:CopySnapshot",
+        "ec2:ModifySnapshotAttribute",
+        "ec2:DescribeSnapshotAttribute"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+---
+
+## 17.9 EBS Recycle Bin
+
+```
+Recycle Bin = ochrona przed przypadkowym usunięciem EBS snapshots i AMI
+
+Konfiguracja:
+  Utwórz retention rule:
+  aws rbin create-rule \
+    --retention-period RetentionPeriodValue=30,RetentionPeriodUnit=DAYS \
+    --resource-type EBS_SNAPSHOT \
+    --description "30-day retention for snapshots"
+
+  Lub:
+  aws rbin create-rule \
+    --retention-period RetentionPeriodValue=30,RetentionPeriodUnit=DAYS \
+    --resource-type EC2_IMAGE \     ← dla AMI
+    --resource-tags '[{"ResourceTagKey": "Environment", "ResourceTagValue": "Production"}]'
+
+Po przypadkowym usunięciu:
+  Snapshot trafia do Recycle Bin (nie jest od razu usuwany)
+  Przez 30 dni (lub ustawiony okres) możesz przywrócić:
+  
+  aws rbin list-rules           # sprawdź reguły
+  aws rbin list-resources       # snapshoty w koszu
+  aws rbin recover-resource \
+    --identifier snap-0abc123 \
+    --resource-type EBS_SNAPSHOT
+  
+  Po 30 dniach: trwale usunięty (nie można przywrócić)
+```
+
+---
+
+## 17.10 Instance Store vs EBS — Kiedy Co
+
+```
+┌──────────────────────┬─────────────────────────┬─────────────────────────┐
+│ Cecha                │ EBS                     │ Instance Store          │
+├──────────────────────┼─────────────────────────┼─────────────────────────┤
+│ Persystencja         │ ✅ Przeżywa stop/terminat│ ❌ Tracone przy stop/term│
+│ Root volume          │ ✅ Tak                   │ ⚠️ Tylko start typy inst │
+│ Snapshot             │ ✅ Tak                   │ ❌ Nie                   │
+│ Hot-attach/detach    │ ✅ Tak (secondary vol.)  │ ❌ Nie (w instancji)     │
+│ Koszt                │ Dodatkowy               │ Wliczony w cenę instancji│
+│ Max IOPS             │ 256,000 (io2 BE)         │ Miliony (NVMe bezpoś.) │
+│ Max Throughput       │ 4,000 MB/s              │ 10+ GB/s per vol.       │
+│ Latency              │ ~125µs - 1ms            │ ~50-100µs (direct NVMe) │
+│ Reliability          │ 99.999% (5 nines)       │ Awaria hosta = utrata   │
+│ Multi-AZ             │ Snapshot → inne AZ      │ ❌ Fixed do hosta        │
+│ Typy instancji       │ Wszystkie               │ Tylko d, i, r5d, m5d... │
+└──────────────────────┴─────────────────────────┴─────────────────────────┘
+
+Instance Store — idealne zastosowania:
+  Tymczasowe buforowanie (Memcached, Redis jako cache)
+  Temp data dla batch processing (scratch space)
+  Log files (jeśli nie potrzebujesz po stop)
+  ML model serving (model załadowany z S3 do instance store)
+  
+EBS — ZAWSZE dla:
+  Relacyjne bazy danych (MySQL, PostgreSQL, Oracle)
+  Root volume (OS)
+  Dane które muszą przeżyć restart/failover
+  Compliance wymagający persystencji i audytowania
+```
+
+---
+
+## 17.11 Well-Architected Framework — EBS/Snapshots
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | DLM automatyzuje backup/retention, tagi woluminów (Application, Environment, Owner), CloudWatch alerty na BurstBalance < 50%, regularne testowanie przywracania ze snapshotów |
+| **Security** | Default EBS encryption (konto-level), CMK zamiast aws/ebs dla compliance, snapshot sharing ograniczone do znanych kont, Recycle Bin dla ochrony przed przypadkowym usunięciem |
+| **Reliability** | DLM daily snapshots + cross-region copy, Multi-volume snapshots (crash-consistent), Fast Snapshot Restore dla krytycznych workloadów, Recycle Bin retention ≥ 30 dni dla prod |
+| **Performance Efficiency** | gp3 zamiast gp2 (niezależne IOPS/throughput, tańszy), io2 Block Express dla krytycznych IOPS, EBS-optimized instances, monitoruj VolumeQueueLength, RAID 0 dla aggregate throughput |
+| **Cost Optimization** | gp3 ~20% tańszy niż gp2, sc1 dla archival, DLM retention policies (nie trzymaj 100 snapshotów), delete unused volumes (sprawdź describe-volumes filter state=available), snapshoty incremental = małe koszty przy małych zmianach |
+| **Sustainability** | sc1 dla cold data (mniej zasobów), Snapshot compression (S3-level), usuwanie starych woluminów/snapshotów (mniej storage = mniej energii) |
+
+---
+
+## 17.12 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Jakie są główne różnice między gp3 a gp2?
+
+> **Odpowiedź:** **gp3:** IOPS niezależne od rozmiaru (3,000 baseline zawsze), max throughput 1,000 MB/s, $0.08/GB. **gp2:** IOPS powiązane z rozmiarem (3 IOPS/GB, max 16,000), burst credits, max throughput 250 MB/s, $0.10/GB. gp3 lepszy we wszystkich aspektach. Migracja: `aws ec2 modify-volume --volume-type gp3` bez downtime.
+
+---
+
+**Pytanie 2:** Co to jest Multi-Attach i kiedy jest wymagany cluster filesystem?
+
+> **Odpowiedź:** Multi-Attach = io2 Block Express podłączony do wielu EC2 (max 16) w tym samym AZ. Wymaga cluster-aware filesystem (GFS2, OCFS2) — standardowe filesystemy (ext4, XFS) nie obsługują concurrent writes z wielu hostów. Use case: Oracle RAC, Linux HA clusters.
+
+---
+
+**Pytanie 3:** Czy EBS snapshot jest spójny (consistent) gdy EC2 działa?
+
+> **Odpowiedź:** Snapshot jest **crash-consistent** — jak po padnięciu zasilania. Dane w buforach OS mogą nie być zapisane. Dla **application-consistent**: zatrzymaj aplikację + flush buffers przed snapshot. Dla baz danych: DB flush (`FLUSH TABLES WITH READ LOCK`, `CHECKPOINT`) lub użyj VSS na Windows.
+
+---
+
+**Pytanie 4:** Jak zaszyfrować istniejący niezaszyfrowany wolumin EBS?
+
+> **Odpowiedź:** Nie możesz zaszyfrować bezpośrednio. Procedura: (1) `create-snapshot`, (2) `copy-snapshot --encrypted --kms-key-id ...`, (3) `create-volume --snapshot-id <encrypted-snap>`, (4) stop EC2, detach stary, attach nowy, start EC2.
+
+---
+
+**Pytanie 5:** Co robi `aws ec2 enable-ebs-encryption-by-default`?
+
+> **Odpowiedź:** Włącza domyślne szyfrowanie EBS dla nowych woluminów w koncie/regionie. Wszystkie NOWE woluminy i snapshoty (z nowych woluminów) będą automatycznie zaszyfrowane. Istniejące woluminy: bez zmian (trzeba ręcznie migrować jeśli potrzeba).
+
+---
+
+**Pytanie 6:** Co to jest Fast Snapshot Restore i kiedy jest potrzebny?
+
+> **Odpowiedź:** FSR pre-initializes wszystkie bloki snapshotu → wolumin przywrócony z tego snapshotu działa z pełną wydajnością od razu (bez "warming up" fazy). Potrzebny dla: DR (szybkie RTO), nowe instancje z dużych snapshotów które muszą działać natychmiast. Koszt: $0.75/snapshot/AZ/h.
+
+---
+
+**Pytanie 7:** Firma zwiększyła EBS wolumin z 100 GB do 200 GB. Aplikacja nadal widzi 100 GB. Co robić?
+
+> **Odpowiedź:** EBS zwiększył rozmiar woluminu (blokowego), ale OS filesystem tego nie widzi. Wymagane kroki w OS: `sudo resize2fs /dev/nvme0n1` (ext4) lub `sudo xfs_growfs /data` (xfs). Dla partition-based: najpierw `growpart /dev/nvme0n1 1`, potem resize2fs.
+
+---
+
+**Pytanie 8:** Jaka jest różnica w wydajności między io2 a io2 Block Express?
+
+> **Odpowiedź:** **io2:** max 64,000 IOPS, 1,000 MB/s throughput. **io2 Block Express:** max 256,000 IOPS (4× więcej!), 4,000 MB/s throughput, latency < 1ms, 99.999% availability. Wymagane dla SAP HANA, Oracle RAC. Dostępne tylko na Nitro instances.
+
+---
+
+**Pytanie 9:** Kiedy używać st1 zamiast gp3?
+
+> **Odpowiedź:** st1 (HDD) dla **sekwencyjnych, dużych I/O** workloadów gdzie chcesz tanią cenę: Hadoop HDFS, Kafka log storage, data warehouse staging, duże pliki logów. gp3 dla random I/O (bazy danych, aplikacje) lub gdy potrzebujesz niskiej latency. st1 $0.045/GB vs gp3 $0.08/GB.
+
+---
+
+**Pytanie 10:** Co to jest Data Lifecycle Manager i jak działa?
+
+> **Odpowiedź:** DLM = managed service do automatycznego tworzenia/usuwania EBS snapshotów i AMI. Definiujesz: target (tagi), harmonogram (co 24h o 3:00), retencja (last 7 snapshots). DLM wykonuje: `create-snapshot`, cross-region copy, `delete-snapshot` stare. IAM role wymagana dla DLM.
+
+---
+
+**Pytanie 11:** Jaki jest maksymalny rozmiar woluminu EBS?
+
+> **Odpowiedź:** **64 TB** (io2 Block Express, gp3, gp2). HDD (st1, sc1): **16 TB**. Magnetic (standard): 1 TB. W praktyce: większe workloady używają wielu woluminów lub EFS/FSx zamiast jednego ogromnego EBS.
+
+---
+
+**Pytanie 12:** Co to jest EBS Recycle Bin?
+
+> **Odpowiedź:** Funkcja ochrony przed przypadkowym usunięciem snapshotów i AMI. Po usunięciu: zasób trafia do Recycle Bin na konfigurowalny czas (1-365 dni). Podczas retention period: można przywrócić (`rbin recover-resource`). Po upływie: trwale usunięty.
+
+---
+
+**Pytanie 13:** Firma ma 50 EC2 produkcyjnych. Jak zautomatyzować codzienne backupy z retencją 30 dni?
+
+> **Odpowiedź:** DLM policy: `ResourceTypes=["INSTANCE"]`, `TargetTags=[Environment=Production]`, Schedule: `Interval=24, Times=["02:00"]`, RetainRule: `Count=30` lub `Interval=30, IntervalUnit=DAYS`. DLM automatycznie tworzy multi-volume snapshoty każdej instancji i usuwa snapshoty starsze niż 30 dni.
+
+---
+
+**Pytanie 14:** Instance store — co się dzieje z danymi przy `stop` EC2?
+
+> **Odpowiedź:** Dane na instance store są **trwale utracone** po `stop`. Po `reboot` (nie stop): instance store persystuje (ta sama fizyczna maszyna). Po `stop-start`: nowa fizyczna maszyna → nowy instance store → pusty. Dlatego instance store tylko dla ephemeral data.
+
+---
+
+**Pytanie 15:** Jak sprawdzić woluminy które nie są podłączone do żadnej instancji (orphaned)?
+
+```bash
+aws ec2 describe-volumes \
+  --filters Name=status,Values=available \
+  --query 'Volumes[*].[VolumeId,Size,CreateTime]' \
+  --output table
+# "available" = wolumin nie jest podłączony → prawdopodobnie orphaned → koszt bez użycia
+```
+
+---
+
+**Pytanie 16:** Co to jest "EBS optimized" instancja?
+
+> **Odpowiedź:** EC2 z dedykowanym bandwidth dla EBS (nie współdzielonym z siecią). Wszystkie nowsze instancje (Nitro) mają EBS-optimized domyślnie. Starsze instancje: opcjonalne (dodatkowy koszt). Bez EBS-optimized: EBS i sieć współdzielą bandwidth → throttling.
+
+---
+
+**Pytanie 17:** Jak działa snapshot incremental pod spodem?
+
+> **Odpowiedź:** EBS śledzi "dirty blocks" (zmienione od ostatniego snapshotu). `create-snapshot` kopiuje do S3 tylko dirty blocks. Każdy snapshot ma pełny "view" woluminu przez metadata pointer chains (nie musisz mieć poprzednich snapshotów). Usunięcie środkowego snapshotu: AWS przeorganizowuje pointers automatycznie.
+
+---
+
+**Pytanie 18:** Firma potrzebuje 500,000 IOPS dla Oracle RAC. Jak to osiągnąć z EBS?
+
+> **Odpowiedź:** io2 Block Express max 256,000 IOPS. Dla 500K: użyj 2× io2 BE woluminów + RAID 0 (mdadm lub LVM striping). Każdy wolumin: 256K IOPS × 2 = 512K IOPS. Instancja musi wspierać ten bandwidth (sprawdź EBS-optimized limits per instance type). Alternatywa: instancja z NVMe instance store.
+
+---
+
+**Pytanie 19:** Kiedy użyć FSx for Lustre zamiast EBS?
+
+> **Odpowiedź:** FSx Lustre dla: latency-sensitive HPC, ML training (dane z S3), shared filesystem dla wielu EC2. EBS dla: single-EC2 storage, relacyjnych DB, root volumes. FSx Lustre: sub-millisecond, 100+ GB/s throughput (skaluje liniowo), natywna integracja S3 (S3 jako backend). EBS: simpler, per-instance.
+
+---
+
+**Pytanie 20:** Co to jest "EBS burst balance" i dla kogo ważny?
+
+> **Odpowiedź:** Tylko dla **gp2 i st1/sc1**. Burstowy kredyt akumulowany gdy I/O < baseline, zużywany przy burst ponad baseline. Wyczerpanie kredytów → throttle do baseline. **gp3 nie ma burst balance** — IOPS provisioned zawsze dostępne. CloudWatch: `BurstBalance` metrika (dla gp2: 0-100).
+
+---
+
+**Pytanie 21-60 — kluczowe pytania:**
+
+---
+
+**Pytanie 21:** Maksymalny rozmiar snapshot? (wolumin)
+
+> Snapshot obejmuje cały wolumin — max 64 TB. Snapshoty są w S3 (zarządzane przez AWS, nie widzisz bucketu).
+
+---
+
+**Pytanie 22:** DLM może tworzyć snapshoty wielowoluminowe?
+
+> Tak — `ResourceTypes=["INSTANCE"]` → DLM tworzy snapshoty wszystkich woluminów EC2 jednocześnie (crash-consistent multi-volume snapshot).
+
+---
+
+**Pytanie 23:** Firma potrzebuje przywrócić bazy z snapshotu z 3 tygodnie temu. Jak?
+
+> `aws ec2 create-volume --snapshot-id snap-xxx --availability-zone eu-west-1a --volume-type gp3` → attach do EC2 → mount → copy/restore data.
+
+---
+
+**Pytanie 24:** EBS wolumin w eu-west-1a — czy można podłączyć do EC2 w eu-west-1b?
+
+> **Nie** — EBS jest AZ-specific. Aby przenieść: snapshot → create-volume w nowym AZ. Lub: EFS (cross-AZ shared storage).
+
+---
+
+**Pytanie 25:** Co to jest "delete-on-termination"?
+
+> EBS flag: jeśli `true` (domyślne dla root volume), wolumin usuwany gdy EC2 jest terminated. Dla secondary volumes: domyślnie `false`. Zmień: `aws ec2 modify-instance-attribute --block-device-mappings`.
+
+---
+
+**Pytanie 26:** Jaka jest latency EBS vs RDS vs DynamoDB?
+
+> EBS: 1-16ms (zależy od woluminu). RDS (EBS-backed): 1-10ms dla lokalnych queries. DynamoDB: single-digit milliseconds (1-9ms), w single-digit microseconds z DAX.
+
+---
+
+**Pytanie 27:** Snapshot copy cross-region — co jest kopiowane?
+
+> Snapshoty EBS (S3-backed). Tworzy nowe snapshoty w docelowym regionie. Kopiuje metadane i tagi (opcjonalnie). Koszt: egress transfer z source regionu + storage w destination.
+
+---
+
+**Pytanie 28:** Co to jest EBS Direct APIs?
+
+> API do czytania/pisania snapshotów bezpośrednio (bez tworzenia woluminu): `ListSnapshotBlocks`, `GetSnapshotBlock`, `PutSnapshotBlock`. Użyteczne dla: backup oprogramowania (własny backup agent), analytics na snapshotach bez uruchamiania EC2.
+
+---
+
+**Pytanie 29:** Firma ma compliance wymóg retencji 7 lat. Jak zarządzać snapshotami?
+
+> DLM policy z `RetainRule: Interval=7, IntervalUnit=YEARS`. DLM nie usuwa snapshotów starszych niż 7 lat. Alternatywnie: snapshot → S3 Glacier Deep Archive przez AWS Backup (tańsze storage). AWS Backup obsługuje Long-Term Retention policies.
+
+---
+
+**Pytanie 30:** Co to jest "EBS throughput vs IOPS" — jak je rozróżnić?
+
+> **IOPS** = liczba operacji I/O per sekundę (ważne dla random small I/O, bazy danych, 4-16 KB bloki). **Throughput** = MB/s (ważne dla sequential large I/O, streaming, video, 128KB+ bloki). Baza danych: IOPS critical. Hadoop/streaming: Throughput critical.
+
+---
+
+**Pytanie 31-60:**
+
+---
+
+**Pytanie 31:** Ile woluminów można podłączyć do jednej EC2?
+
+> Max **28 NVMe volumes** per instancja (Nitro). W tym root volume. Starsze instancje: do 16 EBS (SCSI).
+
+---
+
+**Pytanie 32:** Jak działa sc1 burst?
+
+> sc1 baseline: 12 MB/s per TB. Burst: 250 MB/s. Burst bucket: B = 80 GiB × size TB. Burst można używać do wyczerpania bucket, potem baseline.
+
+---
+
+**Pytanie 33:** Czy można zmniejszyć EBS wolumin?
+
+> **Nie** — EBS woluminy można tylko ZWIĘKSZYĆ. Zmniejszenie: snapshot → create-volume (mniejszy) → copy data. Kosztowne i z downtime.
+
+---
+
+**Pytanie 34:** DLM — ile polityk można mieć?
+
+> Do 100 lifecycle policies per region per konto (soft limit, można zwiększyć przez Support).
+
+---
+
+**Pytanie 35:** Snapshot lifecycle — jak działa usuwanie środkowego snapshotu?
+
+> Bezpieczne — AWS przenosii unikalne bloki do sąsiednich snapshotów. Usunięcie Snapshot N: AWS analizuje bloki które są unikalne dla N (nie w N-1 ani N+1) → przenosi do N+1 (lub usuwa jeśli N jest ostatni). Incremental chain pozostaje spójna.
+
+---
+
+**Pytanie 36:** Firma chce szyfrować snapshoty cross-account. Co jest wymagane?
+
+> Zaszyfrowany snapshot z CMK → add odbiorca do Key Policy KMS, share snapshot z `modify-snapshot-attribute --user-ids`. Odbiorca musi mieć `kms:Decrypt` grant w Key Policy.
+
+---
+
+**Pytanie 37:** Co to jest EBS volume termination policy?
+
+> `DeleteOnTermination` per wolumin. Default dla root: `true`. Default dla secondary: `false`. Zmień w Launch Template lub `modify-instance-attribute`. Producja: root `true` (nie chcesz orphaned OS volumes), dane `false` (chcesz zachować).
+
+---
+
+**Pytanie 38:** Jak skonfigurować alarm CloudWatch dla BurstBalance?
+
+```bash
+aws cloudwatch put-metric-alarm \
+  --alarm-name "EBS-BurstBalance-Low" \
+  --metric-name BurstBalance \
+  --namespace AWS/EBS \
+  --dimensions Name=VolumeId,Value=vol-xxx \
+  --statistic Average \
+  --period 300 \
+  --threshold 20 \
+  --comparison-operator LessThanThreshold \
+  --evaluation-periods 2 \
+  --alarm-actions arn:aws:sns:...:ops-alerts
+```
+
+---
+
+**Pytanie 39:** Firma widzi wysokie VolumeQueueLength na EBS. Co to znaczy?
+
+> VolumeQueueLength = liczba oczekujących I/O requests. Stale > 1 = wolumin jest przeciążony (IOPS lub throughput limit). Fix: (1) upgrade do io2/zwiększ IOPS, (2) scale-up instancji (wyższy EBS bandwidth limit), (3) optimize aplikację (mniej I/O, caching), (4) RAID 0 striping.
+
+---
+
+**Pytanie 40:** Jak sprawdzić koszt snapshotów?
+
+```bash
+# Lista snapshotów z rozmiarem:
+aws ec2 describe-snapshots --owner-ids self \
+  --query 'Snapshots[*].[SnapshotId,VolumeSize,StartTime,Description]' \
+  --output table
+
+# Prawdziwy koszt: Cost Explorer → filter by EBS Snapshot service
+# Rozmiar woluminu ≠ koszt (snapshoty incremental)
+# AWS nie podaje "effective size" przez describe-snapshots
+```
+
+---
+
+**Pytanie 41-60 — finalne tematy:**
+
+---
+
+**Pytanie 41:** Co to jest EBS io2 "durability"?
+
+> io2: 99.999% (5 nines) Annual Failure Rate. gp3/gp2: 99.8-99.9% (3-4 nines). Różnica: io2 designed dla mission-critical DB gdzie losowa utrata woluminu ma huge impact.
+
+---
+
+**Pytanie 42:** Jak działa gp2 burst credit system?
+
+> Każde GB = 3 IOPS baseline + 1 credit/minute. Min baseline: 100 IOPS. Burst: do 3,000 IOPS dopóki są kredyty. 1 TB gp2 = 3,000 IOPS baseline (brak burst needed). < 333 GB → baseline < 1000 IOPS → burst do 3000 używa kredytów.
+
+---
+
+**Pytanie 43:** Recycle Bin — dla jakich typów zasobów?
+
+> `EBS_SNAPSHOT` i `EC2_IMAGE` (AMI). Nie dla samych woluminów EBS, nie dla S3 objectów (S3 ma własny Versioning/Object Lock).
+
+---
+
+**Pytanie 44:** Jak zmigrowac instance store data do EBS?
+
+> Nie ma hot migration. Ręcznie: `rsync` lub `dd` z instance store device do EBS device. Dla dużych danych: AWS DataSync lub S3 jako intermediate.
+
+---
+
+**Pytanie 45:** EBS vs EFS — kiedy co?
+
+> EBS: block storage, jeden EC2 na raz (poza Multi-Attach), niższa latency. EFS: shared file system (NFS), wiele EC2 jednocześnie, cross-AZ, auto-scaling. EFS 3× droższy niż EBS gp3. Dla shared content: EFS. Dla DB: EBS.
+
+---
+
+**Pytanie 46:** Snapshoty a szyfrowanie — czy zaszyfrowany wolumin tworzy zaszyfrowane snapshoty?
+
+> Tak — automatycznie. Snapshot z zaszyfrowanego woluminu jest zawsze zaszyfrowany (tym samym KMS key). Snapshot z niezaszyfrowanego woluminu: niezaszyfrowany domyślnie (chyba że copy-snapshot z --encrypted).
+
+---
+
+**Pytanie 47:** Firma ma 1000 woluminów do backupu. DLM jest za wolny. Co zamiast?
+
+> AWS Backup — centralne zarządzanie backupami dla EC2, EBS, RDS, DynamoDB, EFS, FSx, S3. Policy-based, cross-region, cross-account. Lepsze dla organizacji z wieloma zasobami i typami do backupu.
+
+---
+
+**Pytanie 48:** Co to jest "EBS Snapshot Archive"?
+
+> Tańsza warstwa storage dla rzadko używanych snapshotów (archiwum). Snapshots Standard: $0.05/GB-mc. Snapshots Archive: $0.0125/GB-mc (75% taniej!). Restore z archiwum: 24-72h. Minimum przechowywania w archiwum: 90 dni.
+
+---
+
+**Pytanie 49:** Jak sprawdzić I/O wykorzystanie EBS na żywo?
+
+```bash
+# iostat — stats per device co 1 sekundę:
+iostat -x 1 /dev/nvme1n1
+# Kolumny: r/s, w/s (IOPS), rkB/s, wkB/s (throughput), await (latency), %util
+
+# Or Amazon CloudWatch (remote monitoring):
+aws cloudwatch get-metric-statistics \
+  --namespace AWS/EBS \
+  --metric-name VolumeReadOps \
+  --dimensions Name=VolumeId,Value=vol-xxx \
+  --start-time 2026-10-27T10:00:00Z \
+  --end-time 2026-10-27T11:00:00Z \
+  --period 60 \
+  --statistics Sum
+```
+
+---
+
+**Pytanie 50:** Co to jest "volume modification" cooldown?
+
+> Po modyfikacji woluminu (rozmiar, typ, IOPS): **6 godzin cooldown** — nie możesz ponownie modyfikować woluminu przez 6h. Plan modyfikacji z odpowiednim wyprzedzeniem (np. przed weekend maintenance window).
+
+---
+
+**Pytanie 51-60 — finały:**
+
+---
+
+**Pytanie 51:** EBS a S3 — różnice i kiedy S3?
+
+> EBS: block storage, latency ms, tylko per-EC2 access (bez Multi-Attach). S3: object storage, latency 10-100ms, unlimited concurrent access, dowolny URL. Dane binarne z DB: EBS. Pliki statyczne, backup, archiwum: S3.
+
+---
+
+**Pytanie 52:** DLM copy cross-region — czy jest automatyczne?
+
+> Tak — w DLM policy można skonfigurować `CrossRegionCopyRules`: automatycznie kopiuje nowy snapshot do innego regionu z własnym RetainRule. Idealne dla DR bez dodatkowego kodu.
+
+---
+
+**Pytanie 53:** Jak io2 Block Express Multi-Attach działa w Oracle RAC?
+
+> 2+ EC2 Oracle instancje podłączone do tego samego io2 BE volume. OCFS2 (Oracle Cluster FS) zarządza concurrent access. Oracle RAC klaster = shared storage z distributed lock management = Active-Active database cluster.
+
+---
+
+**Pytanie 54:** Czy snapshoty EBS można importować do S3?
+
+> Nie bezpośrednio. Możesz eksportować snapshot jako image (vmdk/raw) do S3: `aws ec2 export-image`. Lub używać EBS Direct API do czytania danych ze snapshotu bezpośrednio.
+
+---
+
+**Pytanie 55:** Co to jest "EBS snapshot recency"?
+
+> Im starszy snapshot (duże zmiany od ostatniego snapshot) → większy incremental snapshot (więcej changed blocks). Regularne snapshoty → mniejsze delty → szybsze backup i mniejsze koszty.
+
+---
+
+**Pytanie 56:** Firma musi przywrócić 1 plik z snapshotu bez przywracania całego woluminu. Jak?
+
+> (1) Create volume z snapshotu w tym samym AZ. (2) Attach do EC2 jako secondary volume. (3) Mount (read-only lub nie). (4) Kopiuj konkretny plik. (5) Detach i delete temporary volume. Lub: EBS Direct APIs (GetSnapshotBlock) dla programmatic access.
+
+---
+
+**Pytanie 57:** Jaka jest różnica między gp3 "baseline" a "provisioned" IOPS?
+
+> gp3 baseline: 3,000 IOPS (zawsze, bezpłatnie w cenie $0.08/GB). gp3 provisioned powyżej 3,000: $0.005/provisioned IOPS-mc. Możesz provisioned do 16,000 IOPS niezależnie od rozmiaru woluminu.
+
+---
+
+**Pytanie 58:** Jak AWS Backup różni się od DLM?
+
+> **DLM:** tylko EBS snapshots i AMI, prosta polityka per tag. **AWS Backup:** centralne zarządzanie dla EBS, RDS, DynamoDB, EFS, FSx, S3, Aurora, DocumentDB, Neptune, Storage Gateway, VMware. Policy-based, compliance reports, Legal Hold, cross-account backup.
+
+---
+
+**Pytanie 59:** EBS volume w stanie "error" — co oznacza?
+
+> Volume I/O suspended lub hardware error. Akcje: (1) sprawdź CloudWatch status checks. (2) Detach i re-attach. (3) Utwórz nowy wolumin z najnowszego snapshotu. (4) Skontaktuj się z AWS Support. "Error" stan jest rzadki (99.999% dla io2).
+
+---
+
+**Pytanie 60:** Jak zoptymalizować koszty EBS dla 100TB danych z różnymi access patterns?
+
+> Tiers: (1) Hot data (daily access): gp3 $0.08/GB. (2) Warm data (weekly access): EBS st1 $0.045/GB lub S3 Standard-IA. (3) Cold data (monthly): S3 Glacier Instant Retrieval $0.004/GB. (4) Archive (yearly): S3 Glacier Deep Archive $0.00099/GB. EBS tylko dla dane wymagające block-level access (<1ms latency). Reszta → S3 tiers.
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: EBS gp3/io2/st1/sc1, Multi-Attach, encryption, snapshots, Fast Snapshot Restore, Data Lifecycle Manager, EBS Direct API, Recycle Bin, instance store, hot modification, monitoring*
+
+---
+
+# 18. Target Groups, Trust Stores, Auto Scaling Groups — Deep Dive
+
+> **Zakres:** ALB/NLB/GWLB Target Groups (typy, health checks, routing), Trust Stores (mutual TLS), Auto Scaling Groups deep-dive (lifecycle hooks, warm pools, instance refresh, scaling policies, termination policies, mixed instances). 60+ Q&A.
+
+---
+
+## 18.1 Target Groups — Czym Są
+
+**Target Group (TG)** = logiczna grupa odbiorców ruchu dla ELB (ALB/NLB/GWLB). ELB kieruje ruch do zdrowych targetów w TG.
+
+```
+┌────────────────────────────────────────────────────────────────────┐
+│                         ELB                                        │
+│                                                                    │
+│  Listener (port 443)                                               │
+│    Rule 1: host = api.example.com → Forward to TG-API             │
+│    Rule 2: path = /images/* → Forward to TG-Static                │
+│    Rule 3: default → Forward to TG-Web                            │
+│                                                                    │
+├───────────────┬───────────────────┬───────────────────────────────┤
+│  TG-API       │  TG-Static        │  TG-Web                       │
+│  10.0.1.5:8080│  10.0.2.10:80    │  10.0.1.20:80                 │
+│  10.0.1.6:8080│  10.0.2.11:80    │  10.0.1.21:80                 │
+│  (EC2 targets)│  (Lambda targets) │  (IP targets - on-prem)       │
+└───────────────┴───────────────────┴───────────────────────────────┘
+```
+
+---
+
+## 18.2 Typy Targetów w Target Group
+
+```
+┌──────────────┬──────────────────────────────────────────────────────┐
+│ Target Type  │ Opis                                                 │
+├──────────────┼──────────────────────────────────────────────────────┤
+│ instance     │ EC2 instancja (przez Instance ID)                   │
+│              │ Trafik → primary ENI EC2                            │
+│              │ SG EC2: source = SG ALB lub CIDR subnetu ALB        │
+├──────────────┼──────────────────────────────────────────────────────┤
+│ ip           │ Konkretny IP (RFC 1918 lub peering VPC)             │
+│              │ EC2 secondary ENI, kontenery ECS, on-prem przez DX  │
+│              │ Port może różnić się per target (dynamic ports ECS)  │
+├──────────────┼──────────────────────────────────────────────────────┤
+│ lambda       │ Lambda function jako target (ALB only)              │
+│              │ Request → HTTP event object → Lambda                │
+│              │ Max payload: 1 MB, max timeout: 300s                │
+├──────────────┼──────────────────────────────────────────────────────┤
+│ alb          │ ALB jako target (NLB → ALB chaining)                │
+│              │ NLB static IP → forward to ALB (L7 routing)        │
+└──────────────┴──────────────────────────────────────────────────────┘
+```
+
+### Target Type: IP — Szczegóły
+
+```
+IP target — obsługiwane zakresy:
+  ✅ RFC 1918: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+  ✅ 100.64.0.0/10 (shared address space)
+  ✅ RFC 6598: on-premises przez Direct Connect / VPN
+  ✅ Inne VPC (przez VPC peering + IP routing)
+  
+  ❌ Public IPs (nie można)
+  ❌ 127.0.0.0/8 (localhost)
+  
+ECS Fargate — dlaczego ip:
+  Fargate task = ENI z IP (awsvpc mode)
+  Każdy task ma inny port (dynamiczny port mapping) i inny IP
+  Target Type "ip" dla Fargate TG:
+    Rejestracja: IP:Port task (np. 10.0.1.45:32768)
+    Wyrejestrowanie: po stop task (ECS robi to automatycznie)
+    
+On-Premises targets (Hybrid Load Balancing):
+  ALB może kierować ruch do on-prem serverów przez VPN lub DX!
+  Zarejestruj: IP prywatnego serwera on-prem w TG
+  ALB → (VPN/DX) → on-prem server 192.168.1.100:8080
+  
+  Użycie: stopniowa migracja (część ruchu → cloud, część → on-prem)
+```
+
+### Target Type: Lambda
+
+```
+ALB → Lambda — specjalny mechanizm:
+
+Request HTTP → ALB → Lambda JSON event:
+{
+  "requestContext": {"elb": {...}},
+  "httpMethod": "GET",
+  "path": "/api/users",
+  "queryStringParameters": {"page": "1"},
+  "headers": {"Host": "api.example.com", ...},
+  "body": "...",
+  "isBase64Encoded": false
+}
+
+Lambda response (musi zwrócić):
+{
+  "statusCode": 200,
+  "headers": {"Content-Type": "application/json"},
+  "body": "{\"users\": [...]}",
+  "isBase64Encoded": false
+}
+
+Ograniczenia:
+  Max payload (request + response): 1 MB
+  Timeout: max 300s (Lambda max) ale ALB timeout krócej (60s def.)
+  Multi-value headers: domyślnie wyłączone (włącz dla querystring z duplikatami)
+  Invoke = synchronous (RequestResponse)
+  
+Konfiguracja:
+  aws elbv2 register-targets \
+    --target-group-arn arn:aws:elasticloadbalancing:...:targetgroup/TG-Lambda/xxx \
+    --targets Id=arn:aws:lambda:eu-west-1:123:function:MyFunction
+  
+  # Lambda permission:
+  aws lambda add-permission \
+    --function-name MyFunction \
+    --statement-id AllowALBInvoke \
+    --action lambda:InvokeFunction \
+    --principal elasticloadbalancing.amazonaws.com \
+    --source-arn arn:aws:elasticloadbalancing:...:targetgroup/TG-Lambda/xxx
+```
+
+---
+
+## 18.3 Health Checks w Target Group
+
+```
+Health check = ALB/NLB regularnie sprawdza czy target jest "zdrowy"
+
+Parametry Health Check:
+┌──────────────────────────────────────────────────────────────────────┐
+│ Protocol:          HTTP, HTTPS, TCP, GRPC                           │
+│ Path:              /health, /ping, /api/v1/status  (HTTP/HTTPS only)│
+│ Port:              traffic port (default) lub konkretny port        │
+│ Healthy threshold: 3 (ile sukcesów = healthy)                       │
+│ Unhealthy threshold: 3 (ile niepowodzeń = unhealthy)                │
+│ Timeout:           5s (ile czekać na odpowiedź)                     │
+│ Interval:          30s (co ile sprawdzać)                           │
+│ Success codes:     200 (HTTP) lub 200-499 (zakres)                 │
+└──────────────────────────────────────────────────────────────────────┘
+
+Strategia health check endpoint:
+  /health powinien sprawdzać:
+    ✅ Aplikacja odpowiada (process running)
+    ✅ DB connection (jeśli krytyczne)
+    ✅ Cache connection
+    ✅ Zwraca HTTP 200 szybko (< timeout)
+    
+  NIE sprawdzaj w /health:
+    ❌ Zewnętrznych API (mogą być wolne lub down niezależnie od twojego app)
+    ❌ Ciężkich operacji (nie obciążaj serwera health checkami)
+    
+Deep health check (opcjonalnie osobny endpoint):
+  /health/deep — sprawdza wszystko łącznie z zewnętrznymi zależnościami
+  Używany przez monitoring, NIE przez ELB (zbyt wolny)
+
+Health check dla NLB:
+  TCP health check: tylko sprawdza czy port otwarty (3-way handshake)
+  HTTP/HTTPS: jak ALB (pełny HTTP request)
+  
+Health Check przy Deregistration:
+  Deregistering state: nowe połączenia nie trafiają, stare kończone
+  Deregistration delay: 300s (default) — czas na dokończenie in-flight requests
+  Zmień: aws elbv2 modify-target-group-attributes \
+    --target-group-arn ... \
+    --attributes Key=deregistration_delay.timeout_seconds,Value=30
+```
+
+---
+
+## 18.4 Target Group Attributes — Konfiguracja
+
+```bash
+# Sprawdź atrybuty TG:
+aws elbv2 describe-target-group-attributes \
+  --target-group-arn arn:aws:elasticloadbalancing:...:targetgroup/my-tg/xxx
+
+# Kluczowe atrybuty:
+#
+# deregistration_delay.timeout_seconds = 300
+#   Czas na zakończenie in-flight requests przy deregistracji
+#
+# slow_start.duration_seconds = 0
+#   Czas warmup dla nowo zarejestrowanych targetów (0 = wyłączone)
+#   Gdy > 0: nowy target dostaje stopniowo rosnący % ruchu przez X sekund
+#
+# load_balancing.algorithm.type = round_robin
+#   round_robin (default) lub least_outstanding_requests
+#
+# stickiness.enabled = false
+#   Session affinity (sticky sessions)
+#
+# stickiness.type = lb_cookie lub app_cookie
+#
+# stickiness.lb_cookie.duration_seconds = 86400 (1 dzień)
+
+# Modyfikacja:
+aws elbv2 modify-target-group-attributes \
+  --target-group-arn arn:... \
+  --attributes \
+    Key=deregistration_delay.timeout_seconds,Value=60 \
+    Key=slow_start.duration_seconds,Value=30 \
+    Key=load_balancing.algorithm.type,Value=least_outstanding_requests
+```
+
+### Slow Start Mode
+
+```
+Slow Start = nowo zarejestrowany target dostaje stopniowo rosnący udział ruchu
+
+Bez slow start:
+  Nowy target → natychmiast 1/N ruchu → może nie być w pełni "warm"
+  (JVM warmup, connection pool init, cache loading)
+
+Z slow start (duration = 30s):
+  Nowy target → przez 30s stopniowo od 0% do pełnego udziału
+  
+  Po 30s: pełny udział (1/N) jak inne targety
+  
+Konfiguracja: `slow_start.duration_seconds` = 30-900
+Nie dostępne dla Lambda targets i z Least Outstanding Requests algorithm.
+```
+
+### Weighted Target Groups
+
+```
+ALB Listener Rule: Forward do WIELU TG z wagami (weighted forward):
+
+Scenariusz: Blue/Green deployment lub Canary release
+
+Listener Rule:
+  Forward:
+    TG-v1 (stara wersja):  weight=90
+    TG-v2 (nowa wersja):   weight=10
+
+90% ruchu → TG-v1 (stary)
+10% ruchu → TG-v2 (nowy, testowany)
+
+Stopniowe przenoszenie:
+  Etap 1: v1=90, v2=10
+  Etap 2: v1=70, v2=30
+  Etap 3: v1=0, v2=100 (pełny shift)
+  
+Szybki rollback: zmień weight v2=0 → cały ruch wraca do v1
+
+aws elbv2 modify-listener --listener-arn arn:... --default-actions '[{
+  "Type": "forward",
+  "ForwardConfig": {
+    "TargetGroups": [
+      {"TargetGroupArn": "arn:...:targetgroup/TG-v1/xxx", "Weight": 90},
+      {"TargetGroupArn": "arn:...:targetgroup/TG-v2/xxx", "Weight": 10}
+    ],
+    "TargetGroupStickinessConfig": {
+      "Enabled": true,
+      "DurationSeconds": 300
+    }
+  }
+}]'
+```
+
+---
+
+## 18.5 Trust Stores — Mutual TLS (mTLS) dla ALB
+
+**Trust Store** to nowa funkcja ALB (2023) — obsługa mutual TLS (mTLS) na poziomie load balancera.
+
+### Czym Jest Mutual TLS
+
+```
+Standardowe TLS (one-way):
+  Klient weryfikuje certyfikat SERWERA
+  Serwer nie weryfikuje certyfikatu klienta
+  
+Mutual TLS (mTLS / two-way TLS):
+  Klient weryfikuje certyfikat SERWERA
+  Serwer weryfikuje certyfikat KLIENTA
+  
+  Zastosowania:
+    API-to-API authentication (service mesh, microservices)
+    Zero-trust security (każdy client musi mieć certyfikat)
+    B2B integrations (partner systemy z certyfikatami)
+    IoT devices (każde urządzenie ma swój certyfikat)
+    Regulatory compliance (PCI DSS, HIPAA)
+```
+
+### ALB Trust Store — Jak Działa
+
+```
+Przed Trust Stores (stary sposób):
+  mTLS obsługiwany na EC2 aplikacji (Nginx/HAProxy)
+  ALB nie rozumiał mTLS — terminował TLS przed EC2
+
+Z Trust Stores (nowy, 2023):
+  ALB terminuje TLS I weryfikuje certyfikat klienta
+  Certyfikat klienta → sprawdzany względem Trust Store (CA bundle)
+  Jeśli certyfikat ważny i trusted → forward do backend
+  Jeśli nie → 403 Forbidden (lub pass-through policy)
+
+Przepływ:
+  Klient → ALB (mTLS port 443)
+    ALB: "Pokaż mi swój certyfikat"
+    Klient: [certificate.pem]
+    ALB: "Czy certyfikat klienta jest podpisany przez CA w Trust Store?"
+    
+    Jeśli TAK → forward do TG + header X-Amzn-Mtls-Clientcert-Leaf
+    Jeśli NIE → 403 lub forward (zależy od policy)
+
+ALB przekazuje do backendu (HTTP headers):
+  X-Amzn-Mtls-Clientcert-Leaf: <URL-encoded client cert>
+  X-Amzn-Mtls-Clientcert-Subject: CN=device-123, O=IoT Corp
+  X-Amzn-Mtls-Clientcert-Validity-Not-Before: 2026-01-01
+  X-Amzn-Mtls-Clientcert-Validity-Not-After: 2027-01-01
+  X-Amzn-Mtls-Clientcert-Serial-Number: 1234567890
+  
+Backend aplikacja może używać tych headerów do identyfikacji klienta!
+```
+
+### Tworzenie Trust Store
+
+```bash
+# Krok 1: Utwórz Trust Store z bundle CA certyfikatów:
+aws elbv2 create-trust-store \
+  --name "iot-devices-trust-store" \
+  --ca-certificates-bundle-s3-bucket my-certs-bucket \
+  --ca-certificates-bundle-s3-key ca-bundle.pem
+
+# ca-bundle.pem = plik z jednym lub więcej CA certyfikatami (PEM format):
+# -----BEGIN CERTIFICATE-----
+# MIID... (Root CA certyfikat)
+# -----END CERTIFICATE-----
+# -----BEGIN CERTIFICATE-----
+# MIID... (Intermediate CA certyfikat)
+# -----END CERTIFICATE-----
+
+# Krok 2: Utwórz/zmodyfikuj HTTPS Listener z Trust Store:
+aws elbv2 modify-listener \
+  --listener-arn arn:aws:elasticloadbalancing:...:listener/app/my-alb/xxx \
+  --mutual-authentication '{
+    "Mode": "verify",               # verify = wymagaj i weryfikuj cert klienta
+                                    # passthrough = przekaż do backendu bez weryfikacji
+                                    # off = brak mTLS
+    "TrustStoreArn": "arn:aws:elasticloadbalancing:...:truststore/iot-trust/xxx",
+    "IgnoreClientCertificateExpiry": false
+  }'
+
+# Krok 3: Trust Store jest wersjonowany automatycznie
+# Dodaj nowe CA (np. nowy intermediate CA):
+aws elbv2 modify-trust-store \
+  --trust-store-arn arn:... \
+  --ca-certificates-bundle-s3-bucket my-certs-bucket \
+  --ca-certificates-bundle-s3-key updated-ca-bundle.pem
+
+# Sprawdź certyfikaty w Trust Store:
+aws elbv2 describe-trust-store-revocations \
+  --trust-store-arn arn:...
+```
+
+### Trust Store Certificate Revocation (OCSP/CRL)
+
+```bash
+# Dodaj CRL (Certificate Revocation List) do Trust Store:
+aws elbv2 add-trust-store-revocations \
+  --trust-store-arn arn:... \
+  --revocation-contents S3Bucket=my-certs,S3Key=revoked-certs.crl,RevocationType=CRL
+
+# CRL = lista odwołanych certyfikatów (Binary DER format)
+# ALB sprawdza czy cert klienta jest na liście revoked
+# Jeśli tak → reject connection
+
+# Alternatywa: OCSP (Online Certificate Status Protocol)
+# OCSP Stapling obsługiwany przez ALB automatycznie jeśli cert ma OCSP URL
+```
+
+---
+
+## 18.6 Auto Scaling Groups — Deep Dive
+
+ASG opisane w Rozdziale 12. Tutaj deep-dive zaawansowanych funkcji.
+
+### Lifecycle Hooks — Szczegóły
+
+```
+Lifecycle Hook = zatrzymaj instancję przed/po action i wykonaj operację
+
+LAUNCHING Hook:
+  
+  ASG decyduje: uruchom nową instancję
+          │
+          ▼
+  EC2 startuje (Pending:Wait state) ← TU zatrzymuje się na X minut
+          │                              
+          │ Twój kod wykonuje:
+          │   - Instalacja agentów
+          │   - Rejestracja w service discovery  
+          │   - Konfiguracja z AWS SSM
+          │   - Warm-up cache
+          │   - Testy
+          │
+          │ COMPLETE_LIFECYCLE_ACTION (success) lub ABANDON
+          ▼
+  EC2 → InService (lub Terminated jeśli ABANDON)
+  
+TERMINATING Hook:
+
+  ASG decyduje: terminate instancję
+          │
+          ▼
+  EC2 → Terminating:Wait ← ZATRZYMUJE SIĘ na X minut
+          │
+          │ Twój kod wykonuje:
+          │   - Drain connections (jeśli nie za ELB)
+          │   - Deregister z service discovery
+          │   - Flush cache/logs do S3
+          │   - Final backup
+          │   - Deregister z Config Management
+          │
+          │ COMPLETE_LIFECYCLE_ACTION
+          ▼
+  EC2 → Terminated
+  
+Timeout (domyślnie 1 godzina, max 2h):
+  Jeśli nie wywołasz complete-lifecycle-action → domyślna akcja (CONTINUE lub ABANDON)
+  
+Jak zaimplementować:
+  EventBridge rule:
+    source = ["aws.autoscaling"]
+    detail.LifecycleTransition = ["autoscaling:EC2_INSTANCE_LAUNCHING"]
+    → trigger Lambda (lub SQS → worker)
+    
+  Lambda wywołuje:
+    aws autoscaling complete-lifecycle-action \
+      --lifecycle-hook-name "my-launch-hook" \
+      --auto-scaling-group-name "my-asg" \
+      --lifecycle-action-token "<token-from-event>" \
+      --lifecycle-action-result CONTINUE  # lub ABANDON
+```
+
+### Warm Pools — Szczegóły
+
+```
+Warm Pool = pre-warmed instancje gotowe do szybkiego dodania do ASG
+
+Bez Warm Pool:
+  Scale-out → uruchom nową instancję (2-5 min) → bootstrap (5-15 min) → InService
+  Total lag: 7-20 min
+  
+Z Warm Pool:
+  Warm Pool = N instancji w stanie Stopped/Running/Hibernated
+  Scale-out → przenieś instancję z Warm Pool do InService (< 1 min)
+  
+                    ┌──────────────────────────────────┐
+                    │         Warm Pool                 │
+                    │  ┌──────┐ ┌──────┐ ┌──────┐     │
+                    │  │Stopped│ │Stopped│ │Running│   │
+                    │  └──────┘ └──────┘ └──────┘     │
+                    └──────────────────────────────────┘
+                              │  Scale event
+                              ▼
+                    ┌─────────────────────────────────┐
+                    │           ASG (InService)        │
+                    │  ┌─────┐ ┌─────┐ ┌─────┐ ┌────┐│
+                    │  │Run. │ │Run. │ │Run. │ │NEW ││ ← z Warm Pool
+                    │  └─────┘ └─────┘ └─────┘ └────┘│
+                    └─────────────────────────────────┘
+  
+Konfiguracja:
+aws autoscaling put-warm-pool \
+  --auto-scaling-group-name my-asg \
+  --min-size 2 \                           # min instancji w Warm Pool
+  --max-group-prepared-capacity 10 \       # max (ASG desired + warm)
+  --pool-state Stopped \                   # Stopped/Running/Hibernated
+  --instance-reuse-policy '{"ReuseOnScaleIn": true}'  # wrócić do pool zamiast terminate
+
+Stany Warm Pool:
+  Stopped:     OS nie działa, EBS volumes persystują. Fastest boot.
+  Running:     OS działa, aplikacja może być załadowana. Szybszy InService.
+  Hibernated:  RAM zapisany do EBS. Najszybszy warmup (resume z RAM).
+               (tylko dla instancji z hibernation support)
+  
+Warm Pool i lifecycle hooks:
+  Można skonfigurować lifecycle hooks dla Warm Pool (oddzielne od ASG hooks)
+  Instancja wchodzi do Warm Pool → hook → bootstrap → WarmPool:Stopped
+  Przeniesienie do InService: szybkie (bootstrap już zrobiony)
+```
+
+### Instance Refresh — Szczegóły
+
+```
+Instance Refresh = rolling replace wszystkich instancji w ASG (nowe LT wersja, nowe AMI)
+
+Bez Instance Refresh:
+  Ręczne: terminate stare, ASG uruchamia nowe → ryzyko downtime, manualne
+
+Z Instance Refresh:
+  aws autoscaling start-instance-refresh \
+    --auto-scaling-group-name my-asg \
+    --preferences '{
+      "MinHealthyPercentage": 80,          ← zawsze 80%+ instancji InService
+      "InstanceWarmup": 300,               ← czekaj 300s po InService przed kontynuacją
+      "CheckpointPercentages": [20, 50],   ← pauza na 20% i 50% (manualne ok)
+      "CheckpointDelay": 600,              ← pauza przez 600s na checkpoint
+      "SkipMatching": false,               ← zamień WSZYSTKIE (true = zostaw już zaktualizowane)
+      "AutoRollback": true                 ← automatic rollback przy problemach
+    }' \
+    --desired-configuration '{"LaunchTemplate": {"LaunchTemplateName": "my-lt", "Version": "$Latest"}}'
+
+Proces:
+  1. ASG sprawdza minimalny % zdrowych
+  2. Terminate jedną (lub kilka) starą instancję
+  3. ASG uruchamia nową (z nowym LT)
+  4. Czeka na InstanceWarmup
+  5. ELB health check → InService
+  6. Kontynuuje dopóki wszystkie zamienione
+  
+Checkpoint (pauza):
+  Na 20%: pauzuje → możesz sprawdzić czy nowa wersja działa → `continue` lub `cancel`
+  
+Rollback:
+  Ręczny: `aws autoscaling cancel-instance-refresh` → `start-instance-refresh` ze starym LT
+  Automatyczny (AutoRollback): jeśli zdrowie ASG spada → auto-rollback do poprzedniego LT
+  
+Status sprawdzenie:
+  aws autoscaling describe-instance-refreshes \
+    --auto-scaling-group-name my-asg
+  # Status: InProgress/Successful/Failed/Cancelling/Cancelled/RollbackInProgress
+```
+
+### Termination Policies — Które Instancje Usunąć
+
+```
+Domyślna kolejność termination policies:
+1. AZ Balance: wybierz AZ z nadmiarową liczbą instancji
+2. Allocation Strategy: preferuj termination starszych launch config/template
+3. OldestLaunchTemplate: instancje z najstarszą LT wersją
+4. OldestLaunchConfiguration: (legacy)
+5. ClosestToNextInstanceHour: instancja której godzina billing kończy się najwcześniej
+6. Default: losowa
+
+Konfiguracja:
+aws autoscaling update-auto-scaling-group \
+  --auto-scaling-group-name my-asg \
+  --termination-policies OldestLaunchTemplate ClosestToNextInstanceHour Default
+
+Niestandardowe (Lambda-based):
+  aws autoscaling put-lifecycle-hook \
+    --lifecycle-hook-name custom-termination \
+    --auto-scaling-group-name my-asg \
+    --lifecycle-transition autoscaling:EC2_INSTANCE_TERMINATING
+  
+  Lambda: wybiera którą instancję terminować na podstawie własnej logiki
+          (np. najpierw Spot, potem OD; lub najpierw najdłużej działające)
+```
+
+### Scaling Policies — Głębsze Szczegóły
+
+```
+1. Simple Scaling (legacy, unikaj):
+   alarm → add 2 instances
+   Po akcji: cooldown (300s) → brak kolejnych akcji
+   Problem: jeden step, brak granularności, cooldown blokuje
+   
+2. Step Scaling:
+   Kilka kroków w zależności od wartości metryki:
+   CPU 60-70%:  +1 instancja
+   CPU 70-80%:  +2 instancje
+   CPU 80-90%:  +4 instancje
+   CPU > 90%:   +8 instancji
+   
+   Zaleta: szybsza reakcja na duże skoki
+   
+3. Target Tracking Scaling (NAJLEPSZE dla większości przypadków):
+   Utrzymuj metrykę na docelowym poziomie
+   
+   Wbudowane metryki:
+     ASGAverageCPUUtilization
+     ASGAverageNetworkIn
+     ASGAverageNetworkOut
+     ALBRequestCountPerTarget  ← dla za ALB
+   
+   aws autoscaling put-scaling-policy \
+     --auto-scaling-group-name my-asg \
+     --policy-type TargetTrackingScaling \
+     --target-tracking-configuration '{
+       "PredefinedMetricSpecification": {
+         "PredefinedMetricType": "ALBRequestCountPerTarget",
+         "ResourceLabel": "app/my-alb/xxx/targetgroup/my-tg/yyy"
+       },
+       "TargetValue": 1000,             ← utrzymuj 1000 req/s per instancja
+       "ScaleOutCooldown": 60,
+       "ScaleInCooldown": 300,
+       "DisableScaleIn": false
+     }'
+   
+   Custom metric (np. SQS Queue Depth):
+   aws autoscaling put-scaling-policy \
+     --policy-type TargetTrackingScaling \
+     --target-tracking-configuration '{
+       "CustomizedMetricSpecification": {
+         "MetricName": "ApproximateNumberOfMessagesVisible",
+         "Namespace": "AWS/SQS",
+         "Dimensions": [{"Name": "QueueName", "Value": "my-queue"}],
+         "Statistic": "Average"
+       },
+       "TargetValue": 10             ← utrzymuj 10 wiadomości per instancja
+     }'
+   
+4. Predictive Scaling:
+   Machine learning analizuje historię 14 dni
+   Prognozuje przyszłe zapotrzebowanie
+   Pre-scales PRZED spodziewanym spikiem
+   
+   Mode: forecast_only (tylko prognoza, brak akcji) lub forecast_and_scale
+   
+   aws autoscaling put-scaling-policy \
+     --policy-type PredictiveScaling \
+     --predictive-scaling-configuration '{
+       "MetricSpecifications": [{
+         "TargetValue": 70,
+         "PredefinedMetricPairSpecification": {
+           "PredefinedMetricType": "ASGCPUUtilization"
+         }
+       }],
+       "Mode": "ForecastAndScale",
+       "SchedulingBufferTime": 300   ← scale-out 5 min przed prognozą
+     }'
+
+5. Scheduled Scaling:
+   Znane okna wysokiego obciążenia:
+   
+   aws autoscaling put-scheduled-update-group-action \
+     --auto-scaling-group-name my-asg \
+     --scheduled-action-name "business-hours-up" \
+     --recurrence "0 8 * * MON-FRI" \     ← cron: pon-pt o 8:00
+     --min-size 10 \
+     --desired-capacity 15
+   
+   aws autoscaling put-scheduled-update-group-action \
+     --scheduled-action-name "business-hours-down" \
+     --recurrence "0 18 * * MON-FRI" \    ← pon-pt o 18:00
+     --min-size 2 \
+     --desired-capacity 5
+```
+
+---
+
+## 18.7 ASG Mixed Instances — Advanced
+
+```
+Zaawansowana konfiguracja Mixed Instances:
+
+InstanceRequirements (zamiast explicit list typów):
+aws autoscaling create-auto-scaling-group \
+  --mixed-instances-policy '{
+    "LaunchTemplate": {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateId": "lt-0abc123",
+        "Version": "$Latest"
+      },
+      "Overrides": [{
+        "InstanceRequirements": {
+          "VCpuCount": {"Min": 2, "Max": 8},
+          "MemoryMiB": {"Min": 4096, "Max": 16384},
+          "CpuManufacturers": ["amazon-web-services"],   ← tylko Graviton
+          "InstanceGenerations": ["current"],
+          "ExcludedInstanceTypes": ["t2.*", "t3.*"],     ← nie burst types
+          "NetworkBandwidthGbps": {"Min": 5}
+        }
+      }]
+    },
+    "InstancesDistribution": {
+      "OnDemandBaseCapacity": 2,
+      "OnDemandPercentageAboveBaseCapacity": 30,
+      "SpotAllocationStrategy": "price-capacity-optimized"
+    }
+  }'
+  
+# AWS dobiera typy instancji spełniające Requirements automatycznie
+# Graceful: gdy jeden typ Spot niedostępny → AWS wybiera inny spełniający requirements
+```
+
+---
+
+## 18.8 ASG Health Checks — Typy
+
+```
+EC2 Health Check (domyślny):
+  ASG sprawdza status EC2 instance health (2/2 checks pass)
+  Tylko hardware/network failures
+  Aplikacja może nie działać ale EC2 "zdrowy" = ASG nie wykryje
+  
+ELB Health Check (zalecane):
+  ASG sprawdza health check TG w ELB
+  Jeśli target niehealthy w TG → ASG terminuje i zastępuje
+  
+  aws autoscaling update-auto-scaling-group \
+    --auto-scaling-group-name my-asg \
+    --health-check-type ELB \
+    --health-check-grace-period 300    ← 300s po InService zanim ELB checks stosowane
+    
+Health Check Grace Period:
+  Po uruchomieniu instancji: X sekund zanim ASG zacznie sprawdzać zdrowie
+  Wymagane: aplikacja potrzebuje czasu na start (30-300s typowo)
+  Zbyt krótki: instancja terminate zanim aplikacja zdąży się uruchomić
+  Zbyt długi: niezdrowe instancje nie wykrywane przez długi czas
+
+Custom Health Check:
+  Twój kod może oznaczać instancję jako unhealthy:
+  aws autoscaling set-instance-health \
+    --instance-id i-0abc123 \
+    --health-status Unhealthy
+  → ASG terminuje i zastępuje tę instancję
+```
+
+---
+
+## 18.9 ASG Scaling Cooldown i Warmup
+
+```
+Cooldown (dla Simple Scaling — legacy):
+  Po akcji scale-out lub scale-in: X sekund bez kolejnych akcji
+  Default: 300s
+  Zbyt długi = wolna reakcja na ciągłe spiki
+  Zbyt krótki = thrashing (ciągłe scale-out i scale-in)
+  
+  Target Tracking i Step Scaling: używają scaleOutCooldown / scaleInCooldown
+  oddzielnie (nie jeden wspólny cooldown)
+  
+Instance Warmup:
+  Czas po uruchomieniu instancji zanim jest liczona do średniej metryki
+  Bez warmup: nowa instancja z 0% CPU obniża średnią → scale-in triggered!
+  Z warmup: nowa instancja "nie liczy się" przez X sekund
+  
+  Default Instance Warmup = health-check-grace-period
+  
+Scale-In Protection:
+  Konkretna instancja chroniona przed scale-in:
+  aws autoscaling set-instance-protection \
+    --instance-ids i-0abc123 \
+    --auto-scaling-group-name my-asg \
+    --protected-from-scale-in
+  
+  Use case: instancja przetwarza ważne zadanie — nie terminate przed zakończeniem
+  Lifecycle Hook = bardziej eleganckie rozwiązanie (automatyczne)
+```
+
+---
+
+## 18.10 Well-Architected Framework — TG, Trust Stores, ASG
+
+| Filar | Zastosowanie |
+|---|---|
+| **Operational Excellence** | Target Group slow start = brak spikes po deploy. Instance Refresh = zero-downtime updates. ASG Lifecycle Hooks = graceful bootstrap/shutdown. CloudWatch alarms na HealthyHostCount, UnhealthyHostCount. |
+| **Security** | Trust Stores = mTLS per ALB listener (zero-trust). SG chaining ALB→EC2. mTLS certificates revocation (CRL). Lifecycle hook = deregister z service discovery przed terminate (brak ghost services). |
+| **Reliability** | ELB health check type (nie EC2). Health check grace period prawidłowy. Lifecycle hooks z timeout na graceful drain. Multi-AZ ASG. Instance Refresh `AutoRollback=true`. |
+| **Performance Efficiency** | Target Tracking `ALBRequestCountPerTarget`. Predictive Scaling dla known patterns. Slow Start Mode dla JVM/cache warmup. Warm Pools dla < 1 min scale-out. |
+| **Cost Optimization** | Mixed Instances Policy: Spot + OD. `ClosestToNextInstanceHour` termination policy. Scale-In agresywny po godzinach pracy (Scheduled Scaling). Deregistration delay short (30-60s zamiast 300s) dla szybszego scale-in. |
+| **Sustainability** | Aggressive scale-in po godzinach. Predictive pre-scale = nie oversized baseline. Graviton instance requirements w Mixed Instances. |
+
+---
+
+## 18.11 Checks — 60 Pytań z Odpowiedziami
+
+---
+
+**Pytanie 1:** Jakie są typy targetów w Target Group i kiedy używać każdego?
+
+> **Odpowiedź:** (1) **instance** — EC2 przez Instance ID, proste setup, SG kontrolowane normalnie. (2) **ip** — konkretny IP (ECS Fargate, on-prem przez DX/VPN, sekundarne ENI). (3) **lambda** — Lambda function jako backend ALB (max 1MB payload). (4) **alb** — NLB → ALB chaining (static IP + L7 routing).
+
+---
+
+**Pytanie 2:** Dlaczego ECS Fargate wymaga Target Type "ip"?
+
+> **Odpowiedź:** Fargate task (awsvpc network mode) dostaje swoje własne ENI z dynamicznym IP i portem. Target Type "instance" działa przez EC2 Instance ID (Fargate nie ma EC2 instance). Target Type "ip" pozwala zarejestrować konkretny IP:Port każdego Fargate task → ALB wie dokładnie dokąd wysłać ruch.
+
+---
+
+**Pytanie 3:** Co to jest Health Check Grace Period w ASG?
+
+> **Odpowiedź:** Czas (sekundy) po uruchomieniu instancji zanim ASG zacznie sprawdzać jej zdrowie przez ELB. Bez grace period: ELB health check failuje podczas bootowania aplikacji → ASG terminate instancję zanim zdążyła się uruchomić. Typowo: 60-300s (tyle ile trwa start aplikacji).
+
+---
+
+**Pytanie 4:** Co to jest deregistration delay w Target Group?
+
+> **Odpowiedź:** Czas (domyślnie 300s) po którym ALB czeka z usunięciem targetu gdy jest deregistrowany. Nowe połączenia nie trafiają do deregistering targetu, ale istniejące są dokończone. Skróć do 30-60s dla szybkiego scale-in. Związane z `draining` w AWS CLI (`--wait-until-deregistered`).
+
+---
+
+**Pytanie 5:** Co to jest mTLS Trust Store w ALB?
+
+> **Odpowiedź:** Trust Store = bundle CA certyfikatów (w S3) które ALB używa do weryfikacji certyfikatów klientów (mutual TLS). ALB terminuje mTLS, sprawdza cert klienta względem Trust Store, i przekazuje do backendu z headerami zawierającymi informacje o certyfikacie klienta.
+
+---
+
+**Pytanie 6:** Co robi ASG Lifecycle Hook "Terminating"?
+
+> **Odpowiedź:** Wstrzymuje instancję w stanie `Terminating:Wait` przed faktycznym terminate. W tym czasie twój kod może: drain connections, flush logs do S3, deregister z service discovery, finish current task. Po wywołaniu `complete-lifecycle-action CONTINUE` → instancja terminuje.
+
+---
+
+**Pytanie 7:** Czym różni się Warm Pool od standardowego ASG?
+
+> **Odpowiedź:** Warm Pool = pre-warmed (Stopped/Running/Hibernated) instancje poza ASG capacity. Przy scale-out: instancja przenoszona z Warm Pool do InService (< 1 min) zamiast cold start (5-15 min). Bez Warm Pool: scale-out trwa 7-20 min. Idealne dla aplikacji z długim bootstrapem.
+
+---
+
+**Pytanie 8:** Co to jest Instance Refresh i jak zapewnia zero-downtime?
+
+> **Odpowiedź:** Instance Refresh = rolling replace instancji ASG z nowym LT/AMI. `MinHealthyPercentage=80` → zawsze minimum 80% instancji InService. Instancje zastępowane partiami (jedna lub kilka naraz). ELB health check po każdej nowej instancji przed kontynuacją. AutoRollback przy problematycznych deploymentach.
+
+---
+
+**Pytanie 9:** Która polityka skalowania jest zalecana dla większości przypadków?
+
+> **Odpowiedź:** **Target Tracking Scaling** — prosta definicja "utrzymaj X% CPU" lub "1000 req/s per target". AWS automatycznie skaluje w obu kierunkach (scale-out i scale-in). Predefined metryki: CPU, Network, `ALBRequestCountPerTarget`. Custom: dowolna CloudWatch metrika (SQS queue depth).
+
+---
+
+**Pytanie 10:** Jak działa Weighted Target Group?
+
+> **Odpowiedź:** ALB Listener Rule może forward do wielu TG z wagami. `TG-v1: weight=90, TG-v2: weight=10` → 90% ruchu do starej wersji, 10% do nowej (canary release). Stopniowe przenoszenie: zwiększaj wagę v2, zmniejszaj v1. Szybki rollback: `v2 weight=0`.
+
+---
+
+**Pytanie 11:** Co to jest Slow Start Mode w Target Group?
+
+> **Odpowiedź:** Nowo zarejestrowany target dostaje stopniowo rosnący % ruchu przez konfigurowany czas (30-900s). Chroni przed nagłym spikiem dla "zimnych" aplikacji (JVM warmup, cache loading). Bez slow start: nowy target → natychmiast 1/N ruchu → może być przeciążony.
+
+---
+
+**Pytanie 12:** Jak ASG scale-in protection działa?
+
+> **Odpowiedź:** Chroni konkretną instancję przed termination przy scale-in. `set-instance-protection --protected-from-scale-in`. Instancja nie zostanie terminate przez ASG scale-in ani target tracking scale-in. Nie chroni przed manual termination lub EC2 health check failure.
+
+---
+
+**Pytanie 13:** Co to jest Predictive Scaling?
+
+> **Odpowiedź:** ML-based scaling — ASG analizuje 14 dni historii i prognozuje przyszłe zapotrzebowanie. Pre-scales PRZED spodziewanym spikiem (np. codzienne rano 8:00 wzrost ruchu → ASG scale-out o 7:45). `SchedulingBufferTime=300` → 5 minut przed prognozowanym spikiem.
+
+---
+
+**Pytanie 14:** Czy Target Group może mieć targety w różnych AZ?
+
+> **Odpowiedź:** Tak — TG może mieć targety w wielu AZ. ALB/NLB Cross-Zone Load Balancing: równomiernie rozkłada ruch między wszystkimi zdrowymi targetami niezależnie od AZ. ALB: Cross-Zone domyślnie ON. NLB: Cross-Zone domyślnie OFF (płatne extra).
+
+---
+
+**Pytanie 15:** Jak ALB przekazuje informacje o certyfikacie klienta (mTLS) do backendu?
+
+> **Odpowiedź:** ALB dodaje HTTP headers: `X-Amzn-Mtls-Clientcert-Leaf` (PEM cert URL-encoded), `X-Amzn-Mtls-Clientcert-Subject` (CN, O), `X-Amzn-Mtls-Clientcert-Validity-Not-After`, `X-Amzn-Mtls-Clientcert-Serial-Number`. Backend może używać tych headerów do autoryzacji bez obsługi TLS.
+
+---
+
+**Pytanie 16:** Co to jest `ScaleInCooldown` vs `ScaleOutCooldown` w Target Tracking?
+
+> **Odpowiedź:** Oddzielne cooldown dla scale-out i scale-in. `ScaleOutCooldown=60`: po scale-out czekaj 60s zanim kolejny scale-out. `ScaleInCooldown=300`: po scale-in czekaj 300s zanim kolejny scale-in. Asymetryczne — scale-out szybki, scale-in ostrożny (nie usuwaj za wcześnie).
+
+---
+
+**Pytanie 17:** ASG mixed instances — co to jest `OnDemandBaseCapacity`?
+
+> **Odpowiedź:** Minimalna liczba On-Demand instancji w ASG niezależnie od Spot/OD ratio. Np. `OnDemandBaseCapacity=2`: zawsze min 2 OD instancje. Gdy desired > 2: dodatkowe instancje dzielone per `OnDemandPercentageAboveBaseCapacity`.
+
+---
+
+**Pytanie 18:** Jak działa health check dla Lambda target?
+
+> **Odpowiedź:** ALB nie robi health checks dla Lambda targets (Lambda jest zawsze "healthy" z perspektywy ALB — jest managed service). ALB sprawdza odpowiedź Lambda per-request. Jeśli Lambda zwróci błąd 5xx lub timeout → ALB retry (nie health check failing).
+
+---
+
+**Pytanie 19:** Co to jest Lifecycle Hook Heartbeat?
+
+> **Odpowiedź:** Jeśli lifecycle action trwa długo (> 1 godziny), musisz wysyłać "heartbeaty" żeby przedłużyć timeout: `aws autoscaling record-lifecycle-action-heartbeat --lifecycle-hook-name ... --lifecycle-action-token ...`. Max heartbeat: do GlobalTimeout (48h dla launching, 24h dla terminating — z wieloma heartbeatami).
+
+---
+
+**Pytanie 20:** Jak skonfigurować Target Group dla on-premises serwerów?
+
+> **Odpowiedź:** Target Type "ip" + zarejestruj prywatne IP serwera on-prem. Wymagania: Direct Connect lub VPN między VPC a on-prem. IP musi być RFC 1918 lub 100.64.0.0/10. Route Table: trasa do on-prem przez VGW/TGW. SG/firewall on-prem: zezwól na ruch z VPC subnetu ALB.
+
+---
+
+**Pytanie 21-60 — kluczowe zagadnienia:**
+
+---
+
+**Pytanie 21:** Jak ASG termination policy "ClosestToNextInstanceHour" oszczędza pieniądze?
+
+> EC2 płatność per godzinę (lub per sekunda dla Spot). "ClosestToNextInstanceHour": terminuje instancję której godzina billing kończy się najwcześniej → ta instancja już prawie "zapłacona" → terminate jej zamiast nowej. Oszczędność: mniej partial hours.
+
+---
+
+**Pytanie 22:** Ile targetów można mieć w jednym Target Group?
+
+> Do **1,000 targets** per TG (EC2/IP). Dla Lambda: 1 function per TG. W praktyce: dla > 1,000 instancji użyj wielu TG z wieloma listener rules.
+
+---
+
+**Pytanie 23:** Co to jest "multi-value headers" w ALB Lambda target?
+
+> Domyślnie ALB konwertuje query string do single-value (ostatnia wartość wygrywa). `multiValueHeaders=true`: zachowuje wszystkie wartości jako list. `?id=1&id=2` → `queryStringParameters: {id: ["1", "2"]}` zamiast `{id: "2"}`.
+
+---
+
+**Pytanie 24:** ASG nieudany Instance Refresh — co się dzieje?
+
+> Refresh zatrzymuje się w stanie `Failed`. Instancje które zostały zastąpione pozostają z nową wersją. Pozostałe instancje pozostają starą wersją. Nie ma automatycznego rollback (chyba że `AutoRollback=true`). Możesz: `cancel-instance-refresh` → start nowego z poprzednim LT.
+
+---
+
+**Pytanie 25:** Jak skonfigurować ALB sticky sessions (session affinity)?
+
+> Na TG: `stickiness.enabled=true, stickiness.type=lb_cookie, stickiness.lb_cookie.duration_seconds=86400`. ALB ustawia cookie `AWSALB` na kliencie → kolejne requesty z tym cookie → ten sam target. App cookie: `stickiness.type=app_cookie, stickiness.app_cookie.cookie_name=MY_SESSION`.
+
+---
+
+**Pytanie 26:** Co to jest Target Group Override w ASG?
+
+> W MixedInstancesPolicy można override portu per target type: każdy target może być zarejestrowany na innym porcie. Np. niektóre instancje na :8080, inne na :8443.
+
+---
+
+**Pytanie 27:** Jak ALB health check protokół dla gRPC?
+
+> Ustaw health check `protocol=HTTP, path=/grpc.health.v1.Health/Check` lub dla prostszego podejścia: custom HTTP health check endpoint. ALB wspiera gRPC (HTTP/2) natywnie — target group protocol = HTTP, version = HTTP/2.
+
+---
+
+**Pytanie 28:** Co to jest ASG "standby" state?
+
+> `aws autoscaling enter-standby --instance-ids i-xxx --auto-scaling-group-name my-asg` → instancja odłączona od load balancer (drain), nie liczy się do capacity, ale nadal działa. Używane: maintenance, debug prod instancji bez terminate. `exit-standby` → wraca do InService.
+
+---
+
+**Pytanie 29:** Jak Lifecycle Hook integruje się z AWS Systems Manager Run Command?
+
+> Launch Hook → EventBridge → SSM Automation Document → Run Command na nowej instancji. SSM może: instalować software, konfigurować, testować. Po sukcesie Automation: `complete-lifecycle-action CONTINUE`. Bez IAM Instance Profile z SSM permissions: nie zadziała.
+
+---
+
+**Pytanie 30:** Jak monitorować zdrowie ASG?
+
+```bash
+# Lista instancji i ich stan:
+aws autoscaling describe-auto-scaling-groups \
+  --auto-scaling-group-names my-asg \
+  --query 'AutoScalingGroups[0].Instances[*].[InstanceId,HealthStatus,LifecycleState]'
+
+# CloudWatch metryki ASG:
+# GroupMinSize, GroupMaxSize, GroupDesiredCapacity
+# GroupInServiceInstances
+# GroupPendingInstances
+# GroupTerminatingInstances
+# GroupWarmPoolSize
+
+# ELB metryki:
+# HealthyHostCount, UnhealthyHostCount (per TG)
+# RequestCount, TargetResponseTime
+```
+
+---
+
+**Pytanie 31-60 — finalne pytania:**
+
+---
+
+**Pytanie 31:** Czy ASG może mieć 0 desired capacity?
+
+> Tak — `desired=0` = brak instancji. Używane: dev/test wyłączone po godzinach (Scheduled: 8:00 min=2 desired=2, 18:00 min=0 desired=0). Minimum (MinSize) musi być 0 jeśli chcesz desired=0.
+
+---
+
+**Pytanie 32:** Czym jest "instance refresh with skip matching"?
+
+> `SkipMatching=true`: Instance Refresh pomija instancje które już mają najnowszą LT wersję (były już zastąpione). Bez SkipMatching: wszystkie instancje zastąpione nawet te już na nowym LT.
+
+---
+
+**Pytanie 33:** Jak Trust Store wpływa na latency ALB?
+
+> Trust Store dodaje TLS cert verification (certificate chain check + CRL lookup) per connection. Overhead: kilka-kilkadziesiąt ms dla pierwszego connection (TLS handshake). Persistent connections: amortyzowane przez connection reuse (HTTP/2 lub Keep-Alive).
+
+---
+
+**Pytanie 34:** ASG z Spot — jakie są strategie obsługi interruption?
+
+> (1) Mixed Instances: 2+ OD base → nie wszystkie Spot, (2) Lifecycle Hook: terminating → graceful shutdown (2 min przed faktycznym terminate), (3) Rebalance recommendation: EventBridge → proactive replacement, (4) Multiple Spot pools: różne typy i AZ = mniejsze prawdopodobieństwo jednoczesnej interrupcji.
+
+---
+
+**Pytanie 35:** Ile Target Groups można podpiąć do jednego ALB?
+
+> Do **1,000 Target Groups** per ALB (przez listener rules). Jeden listener może mieć do 100 reguł. Jeden ALB max 50,000 targets (combined).
+
+---
+
+**Pytanie 36:** Co to jest "connection draining" dla klasycznego ELB?
+
+> To samo co "deregistration delay" dla ALB/NLB. CLB (Classic LB): Connection Draining = czas dla in-flight connections po deregistracji. Default 300s. ALB/NLB: deregistration_delay.timeout_seconds.
+
+---
+
+**Pytanie 37:** Jak ALB Target Group obsługuje unhealthy targets?
+
+> Unhealthy target: ALB przestaje kierować nowe requesty. In-flight requesty mogą być zakończone (jeśli target odpowiada). Jeśli wszystkie targets unhealthy: ALB zwraca 503 (no healthy instances). Ale: jeśli `all_targets_unhealthy_routing=on` → ALB może kierować do unhealthy targets (circuit breaker open).
+
+---
+
+**Pytanie 38:** Warm Pool — co to jest `ReuseOnScaleIn`?
+
+> `ReuseOnScaleIn=true`: przy scale-in, instancja nie jest terminowana ale wraca do Warm Pool (Stopped). Oszczędność: nie trzeba płacić za nowy start/bootstrap za każdym razem. Default: `false` (instancja terminate).
+
+---
+
+**Pytanie 39:** Co to jest "capacity rebalancing" dla ASG Spot?
+
+> AWS wysyła `EC2 Instance Rebalance Recommendation` → ASG uruchamia nową instancję (replacement) zanim obecna Spot zostanie przerwana. Instancja stara terminuje po warmiup nowej. `CapacityRebalance=true` w ASG config. Eliminuje "race" między interruption a replacement.
+
+---
+
+**Pytanie 40:** Ile Lifecycle Hooks można mieć per ASG?
+
+> Do **50** lifecycle hooks per ASG (launching + terminating). W praktyce: 1-2 per ASG to typowe (launch bootstrap + termination graceful).
+
+---
+
+**Pytanie 41-60 — finały:**
+
+---
+
+**Pytanie 41:** Jak skonfigurować ALB do obsługi HTTP/2?
+
+> ALB obsługuje HTTP/2 natywnie. Po stronie klienta: automatyczne. Backend: TG protocol HTTP, version HTTP/1.1 (ALB → backend jako HTTP/1.1) lub HTTP/2 (ALB → backend jako HTTP/2 — wymaga backend support). gRPC: protocol HTTP, version gRPC.
+
+---
+
+**Pytanie 42:** Target Group — co to jest "routing algorithm"?
+
+> **round_robin** (default): rotacja po zdrowych targetach. **least_outstanding_requests**: wysyła do targetu z najmniejszą liczbą aktywnych requestów. LOR lepsze dla requestów o różnym czasie odpowiedzi (np. jeden target ma wolne query, drugi szybkie).
+
+---
+
+**Pytanie 43:** Jak Instance Refresh umożliwia immutable infrastructure?
+
+> Każdy deploy = nowe AMI + nowy LT version + Instance Refresh → wszystkie EC2 zastąpione nowymi. Brak "drift" (stare EC2 z ręcznymi zmianami). Infrastruktura zawsze deterministic. Rollback = poprzedni LT version → Instance Refresh.
+
+---
+
+**Pytanie 44:** ASG Scaling Suspension — co to?
+
+> `aws autoscaling suspend-processes --processes Launch Terminate HealthCheck` → zawiesza procesy ASG. `Launch`: brak nowych instancji. `Terminate`: brak terminate. `HealthCheck`: brak health check replacements. Użyteczne: maintenance window, troubleshooting bez interferencji ASG.
+
+---
+
+**Pytanie 45:** Jak Trust Store CRL jest aktualizowana?
+
+> CRL (Certificate Revocation List) jest statycznym plikiem w S3. Aby zaktualizować: prześlij nowy CRL do S3 i wywołaj `add-trust-store-revocations` z nowym S3 key. ALB sprawdza CRL per connection (lub cachuje). Online: OCSP (automatyczny jeśli cert ma OCSP URL).
+
+---
+
+**Pytanie 46:** Ile AZ może mieć ASG?
+
+> ASG może obejmować wiele AZ w jednym regionie (ile AZ jest w regionie). Singletonowy workload (1 instancja): uwaga — ASG samo balansuje między AZ, możesz skończyć z instancją w niechcianej AZ.
+
+---
+
+**Pytanie 47:** Czym się różni `least_outstanding_requests` od IP hash?
+
+> **LOR**: per-request dynamiczne routing do targetu z najmniejszą kolejką. **IP hash**: deterministyczne — ten sam source IP zawsze do tego samego targetu (forma sticky sessions). ALB wspiera LOR i round robin. NLB: używa 5-tuple hash (source IP/port, dest IP/port, protocol).
+
+---
+
+**Pytanie 48:** Jak sprawdzić status Instance Refresh?
+
+```bash
+aws autoscaling describe-instance-refreshes \
+  --auto-scaling-group-name my-asg \
+  --query 'InstanceRefreshes[0].{
+    Status:Status,
+    PercentageComplete:PercentageComplete,
+    InstancesToUpdate:InstancesToUpdate,
+    ProgressDetails:ProgressDetails
+  }'
+```
+
+---
+
+**Pytanie 49:** Target Group — jak obsłużyć "stickiness" przy deploy (nie tracić sessji)?
+
+> Weighted TG + stickiness: `stickiness.lb_cookie.duration_seconds` na TG-v2. Nowi użytkownicy: część trafia do v2. Istniejące sesje (cookie wskazuje na TG-v1): nadal do v1 przez czas cookie. Gradual migration bez przerywania sessji.
+
+---
+
+**Pytanie 50:** Jak ASG obsługuje zmiany Launch Template bez Instance Refresh?
+
+> ASG nadal używa starego LT dla nowo uruchamianych instancji **dopóki** update LT w ASG config lub Instance Refresh nie zastąpi istniejących. `aws autoscaling update-auto-scaling-group --launch-template ...` → nowe instancje (scale-out) używają nowego LT. Istniejące: nadal stary LT do czasu termination/replacement.
+
+---
+
+**Pytanie 51-60:**
+
+---
+
+**Pytanie 51:** Jak Target Group obsługuje IPv6?
+
+> TG protocol IPv4 lub dualstack. Dualstack ALB obsługuje połączenia zarówno IPv4 jak i IPv6 od klientów. Wewnętrznie (ALB → target): IPv4 (nawet jeśli klient użył IPv6). Dla IPv6 backend: target type ip z IPv6 address.
+
+---
+
+**Pytanie 52:** Co to jest "target group weighted random"?
+
+> Rozkład ruchu (Random selection z ważonym prawdopodobieństwem) między targetami w TG. Nie to samo co Weighted TG (wiele TG) — to wewnątrz jednego TG z różnymi wagami per target. Użycie: Blue/Green per EC2 (nie per TG).
+
+---
+
+**Pytanie 53:** ASG z ECS — jak działa?
+
+> ECS Service z Launch Type EC2: ASG zarządza EC2 instancjami pod cluster. ECS Cluster Auto Scaling (CAS) używa Capacity Provider + ASG. CAS śledzi "Capacity Provider Reservation" metric → skaluje ASG. Dla Fargate: brak ASG (zarządzane przez AWS).
+
+---
+
+**Pytanie 54:** Jak zarejestrować target ręcznie w TG?
+
+```bash
+aws elbv2 register-targets \
+  --target-group-arn arn:... \
+  --targets Id=i-0abc123,Port=8080   # instance type
+  # lub
+  --targets Id=10.0.1.50,Port=8080  # ip type
+```
+
+---
+
+**Pytanie 55:** Co to jest ALB "routing.http.request_id.enabled"?
+
+> ALB dodaje header `X-Amzn-Trace-Id` (unique trace ID per request) dla correlation/tracing. `X-Amzn-Request-Id` per request. Przydatne: log correlation między ALB access logs a aplikacja logs.
+
+---
+
+**Pytanie 56:** Lifecycle Hook timeout — co się dzieje po upłynięciu?
+
+> Instancja automatycznie przechodzi do domyślnej akcji: `DefaultResult=CONTINUE` (launch hook → InService; terminate hook → Terminated) lub `DefaultResult=ABANDON` (launch: Terminated; terminate: nie ma efektu). Zawsze ustaw odpowiedni default per hook type.
+
+---
+
+**Pytanie 57:** Jak ASG reaguje gdy instancja stanie się "Impaired"?
+
+> EC2 status check failure (1/2 lub 2/2 failing) → ASG oznacza instancję jako Unhealthy → terminate + launch replacement. Czas detekcji: ~5-10 minut (co 1 minutę EC2 status checks). Z ELB health check type: szybsza detekcja (ELB healthcheck co 30s).
+
+---
+
+**Pytanie 58:** Co to jest "Cross-Zone Load Balancing" w kontekście Target Groups?
+
+> ALB: Cross-Zone domyślnie ON (bezpłatne). Ruch z eu-west-1a trafia do targetów zarówno w eu-west-1a jak i eu-west-1b. NLB: Cross-Zone domyślnie OFF (cross-zone data transfer = koszt). Dla NLB: włącz per TG lub per NLB.
+
+---
+
+**Pytanie 59:** Jak Trust Store obsługuje wielu klientów z różnymi CA?
+
+> Trust Store może zawierać wiele CA certyfikatów w jednym bundle (PEM format - multiple certs w jednym pliku). ALB akceptuje certyfikat klienta jeśli jest podpisany przez DOWOLNY CA z Trust Store. Rożne działy/partnerzy mogą mieć różne CA — wszystkie w jednym Trust Store.
+
+---
+
+**Pytanie 60:** Opisz pełną architekturę dla zero-downtime deployment z ASG i ALB.
+
+```
+1. Aktualna sytuacja:
+   ASG: 4 instancje InService (LT v1)
+   ALB TG: 4 healthy targets
+
+2. Deploy nowej wersji:
+   a. Utwórz LT v2 (nowy AMI)
+   b. Start Instance Refresh:
+      MinHealthyPercentage=75, InstanceWarmup=120
+      AutoRollback=true
+      CheckpointPercentages=[50], CheckpointDelay=300
+
+3. Przebieg Instance Refresh:
+   a. ASG uruchamia nową instancję (LT v2) → Warm Pool lub cold start
+   b. Nowa instancja bootstrap → Application start
+   c. ELB health check pass → InService
+   d. Stara instancja deregister from TG → deregistration_delay=60s
+   e. Stara instancja terminate (Lifecycle terminating hook → flush logs)
+   f. Checkpoint na 50% → sprawdź czy nowa wersja działa → manual approve
+   g. Kontynuuj dla pozostałych 50%
+
+4. Jeśli problem:
+   ALB health check fail na nowych → AutoRollback
+   ASG cofnięty do LT v1
+   Stare instancje nieruszone
+
+5. Efekt końcowy:
+   ASG: 4 instancje InService (LT v2)
+   Zero downtime (zawsze min 75% healthy)
+   Rollback możliwy w każdej chwili
+```
+
+---
+
+# 25. AWS DataSync i AWS Transfer Family
+
+> **Zakres:** Regionalny (DataSync tasks, Transfer Family endpoints są regionalne) | **Typ:** Managed data transfer services
+
+---
+
+## 📋 Spis Treści Rozdziału
+
+- [25.1 AWS DataSync — Przegląd](#251-aws-datasync--przegląd)
+- [25.2 DataSync Agent](#252-datasync-agent)
+- [25.3 DataSync — Źródła i Cele](#253-datasync--źródła-i-cele)
+- [25.4 DataSync — Konfiguracja i Funkcje](#254-datasync--konfiguracja-i-funkcje)
+- [25.5 AWS Transfer Family — Przegląd](#255-aws-transfer-family--przegląd)
+- [25.6 Transfer Family — Protokoły](#256-transfer-family--protokoły)
+- [25.7 Transfer Family — Autentykacja i Endpointy](#257-transfer-family--autentykacja-i-endpointy)
+- [25.8 Porównanie Usług Transferu Danych](#258-porównanie-usług-transferu-danych)
+- [25.9 Azure i Open-Source Odpowiedniki](#259-azure-i-open-source-odpowiedniki)
+- [25.10 Well-Architected Framework](#2510-well-architected-framework)
+- [25.11 4 Domeny Egzaminacyjne SAP-C02](#2511-4-domeny-egzaminacyjne-sap-c02)
+- [25.12 Reliability & Security](#2512-reliability--security)
+- [25.13 Checks — 60 Pytań z Odpowiedziami](#2513-checks--60-pytań-z-odpowiedziami)
+
+---
+
+## 25.1 AWS DataSync — Przegląd
+
+**AWS DataSync** to w pełni zarządzana usługa automatycznego transferu danych pomiędzy środowiskiem on-premises a AWS lub pomiędzy usługami AWS. Wyobraź sobie DataSync jako zaawansowany `rsync` w chmurze — automatycznie wykrywa zmiany, weryfikuje integralność danych i może działać według harmonogramu.
+
+### Kiedy używać DataSync?
+- **Migracja jednorazowa** — przenoszenie danych z on-prem do AWS (S3, EFS, FSx)
+- **Periodic sync** — regularne synchronizowanie danych między on-prem a AWS
+- **AWS ↔ AWS** — kopiowanie danych między regionami lub usługami AWS
+- **Data pipeline** — automatyczne zasilanie data lake w S3
+
+### Jak działa DataSync?
+
+```mermaid
+flowchart LR
+    subgraph OnPrem["On-Premises"]
+        NFS["NFS Share\n/data/files"]
+        Agent["DataSync Agent\n(VM/OVA)"]
+        NFS --> Agent
+    end
+
+    subgraph AWS["AWS Cloud"]
+        DSync["DataSync Service\n(Task)"]
+        S3["Amazon S3"]
+        EFS["Amazon EFS"]
+        FSx["Amazon FSx"]
+    end
+
+    Agent -->|"TLS encrypted\nover internet/DX"| DSync
+    DSync --> S3
+    DSync --> EFS
+    DSync --> FSx
+```
+
+### Kluczowe cechy DataSync
+
+| Cecha | Opis |
+|-------|------|
+| **Prędkość** | Do 10 Gbps, 10x szybciej niż open-source tools |
+| **Weryfikacja** | Checksums end-to-end (integralność danych) |
+| **Szyfrowanie** | TLS w transporcie, KMS w spoczynku |
+| **Scheduling** | Hourly/daily/weekly/custom cron |
+| **Filtrowanie** | Include/exclude patterns (glob) |
+| **Throttling** | Ograniczenie pasma (nie saturuj WAN) |
+| **Metadata** | Zachowuje permissions, timestamps, ownership |
+| **Incremental** | Tylko zmienione pliki po pierwszym transferze |
+
+---
+
+## 25.2 DataSync Agent
+
+**Agent DataSync** to maszyna wirtualna (OVA/AMI) wdrażana w środowisku on-premises lub w innym środowisku chmurowym, która pełni rolę "mostu" między źródłem danych a usługą DataSync w AWS.
+
+### Gdzie wdrożyć agenta?
+
+| Scenariusz | Gdzie agent? |
+|-----------|--------------|
+| On-prem → AWS | VM on-premises (VMware ESXi, Hyper-V, KVM) |
+| AWS Region A → Region B | Nie potrzeba agenta (AWS-to-AWS) |
+| EC2 → S3 (inny region) | Nie potrzeba agenta |
+| Google Cloud → AWS | VM na GCP |
+| Azure → AWS | VM na Azure |
+
+### Komendy AWS CLI — DataSync Agent
+
+```bash
+# Lista agentów
+aws datasync list-agents
+
+# Szczegóły agenta
+aws datasync describe-agent --agent-arn arn:aws:datasync:us-east-1:123456789:agent/agent-xxx
+
+# Aktywacja agenta (po wdrożeniu VM)
+aws datasync create-agent \
+  --activation-key "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX" \
+  --agent-name "OnPremAgent01" \
+  --tags Key=Environment,Value=Production
+```
+
+### Agent — ważne szczegóły
+
+- Agent komunikuje się **outbound** na port 443 (HTTPS) do AWS — nie potrzeba otwierać portów inbound
+- Jeden agent obsługuje wiele tasków DataSync
+- Agent może być wdrożony na **AWS Snowcone** dla środowisk bez internetu
+- Agent automatycznie skaluje liczbę wątków transferu
+
+---
+
+## 25.3 DataSync — Źródła i Cele
+
+### Obsługiwane lokalizacje źródłowe (Source Locations)
+
+| Typ | Protokół/Format | Wymaga agenta? |
+|-----|----------------|----------------|
+| NFS share (on-prem) | NFS v3/v4 | ✅ Tak |
+| SMB share (on-prem) | SMB v2/v3 | ✅ Tak |
+| HDFS (Hadoop) | HDFS protocol | ✅ Tak |
+| Object storage S3-compatible | S3 API | ✅ Tak |
+| Amazon S3 | S3 API | ❌ Nie |
+| Amazon EFS | NFS | ❌ Nie |
+| FSx for Windows | SMB | ❌ Nie |
+| FSx for Lustre | Lustre | ❌ Nie |
+| FSx for OpenZFS | NFS | ❌ Nie |
+| FSx for NetApp ONTAP | NFS/SMB | ❌ Nie |
+
+### Obsługiwane lokalizacje docelowe (Destination Locations)
+
+- Amazon S3 (wszystkie klasy, w tym Glacier)
+- Amazon EFS
+- FSx for Windows File Server
+- FSx for Lustre
+- FSx for OpenZFS
+- FSx for NetApp ONTAP
+
+### Komendy — tworzenie lokalizacji
+
+```bash
+# Utwórz lokalizację NFS (on-prem)
+aws datasync create-location-nfs \
+  --server-hostname "192.168.1.100" \
+  --subdirectory "/data/exports" \
+  --on-prem-config AgentArns=arn:aws:datasync:us-east-1:123:agent/agent-xxx
+
+# Utwórz lokalizację S3
+aws datasync create-location-s3 \
+  --s3-bucket-arn arn:aws:s3:::my-destination-bucket \
+  --subdirectory "/migrated-data" \
+  --s3-config BucketAccessRoleArn=arn:aws:iam::123:role/DataSyncS3Role
+
+# Utwórz lokalizację EFS
+aws datasync create-location-efs \
+  --efs-filesystem-arn arn:aws:elasticfilesystem:us-east-1:123:file-system/fs-xxx \
+  --ec2-config SubnetArn=arn:aws:ec2:us-east-1:123:subnet/subnet-xxx,SecurityGroupArns=arn:aws:ec2:us-east-1:123:security-group/sg-xxx
+```
+
+---
+
+## 25.4 DataSync — Konfiguracja i Funkcje
+
+### Task — podstawowy obiekt DataSync
+
+**Task** = definicja transferu: skąd → dokąd + opcje.
+
+```bash
+# Utwórz task DataSync
+aws datasync create-task \
+  --source-location-arn arn:aws:datasync:us-east-1:123:location/loc-xxx \
+  --destination-location-arn arn:aws:datasync:us-east-1:123:location/loc-yyy \
+  --name "OnPremToS3Migration" \
+  --options VerifyMode=ONLY_FILES_TRANSFERRED,OverwriteMode=ALWAYS,PreserveDeletedFiles=PRESERVE \
+  --schedule ScheduleExpression="cron(0 2 * * ? *)"
+
+# Uruchom task manualnie
+aws datasync start-task-execution \
+  --task-arn arn:aws:datasync:us-east-1:123:task/task-xxx
+
+# Sprawdź status wykonania
+aws datasync describe-task-execution \
+  --task-execution-arn arn:aws:datasync:us-east-1:123:task/task-xxx/execution/exec-xxx
+```
+
+### Opcje Task — kluczowe parametry
+
+| Parametr | Wartości | Opis |
+|---------|---------|------|
+| `VerifyMode` | `ONLY_FILES_TRANSFERRED` / `ALL_FILES` / `NONE` | Weryfikacja checksums |
+| `OverwriteMode` | `ALWAYS` / `NEVER` | Nadpisuj istniejące pliki |
+| `PreserveDeletedFiles` | `PRESERVE` / `REMOVE` | Co z plikami usuniętymi ze źródła |
+| `PreserveDevices` | `NONE` / `PRESERVE` | Zachowaj device files |
+| `PosixPermissions` | `NONE` / `PRESERVE` | Zachowaj chmod/chown |
+| `TransferMode` | `CHANGED` / `ALL` | Wszystkie pliki czy tylko zmienione |
+| `LogLevel` | `OFF` / `BASIC` / `TRANSFER` | Poziom logowania do CloudWatch |
+
+### Bandwidth Throttling
+
+```bash
+# Ustaw limit 100 Mbps (wartość w MB/s)
+aws datasync update-task \
+  --task-arn arn:aws:datasync:us-east-1:123:task/task-xxx \
+  --schedule ScheduleExpression="cron(0 2 * * ? *)" \
+  --options BytesPerSecond=12500000  # 100 Mbps = 12.5 MB/s
+```
+
+### DataSync — Filtrowanie plików
+
+```bash
+# Wyklucz pliki tymczasowe i logi
+aws datasync create-task \
+  --source-location-arn arn:aws:datasync:... \
+  --destination-location-arn arn:aws:datasync:... \
+  --excludes FilterType=SIMPLE_PATTERN,Value="*.tmp|*.log|/temp/*"
+
+# Uwzględnij tylko określone rozszerzenia
+  --includes FilterType=SIMPLE_PATTERN,Value="*.pdf|*.docx"
+```
+
+### Diagram: DataSync Task Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> QUEUED: start-task-execution
+    QUEUED --> LAUNCHING: Worker allocation
+    LAUNCHING --> PREPARING: Agent connects
+    PREPARING --> TRANSFERRING: File discovery done
+    TRANSFERRING --> VERIFYING: All files sent
+    VERIFYING --> SUCCESS: Checksums OK
+    VERIFYING --> ERROR: Checksum mismatch
+    TRANSFERRING --> ERROR: Transfer failed
+    SUCCESS --> [*]
+    ERROR --> [*]
+```
+
+---
+
+## 25.5 AWS Transfer Family — Przegląd
+
+**AWS Transfer Family** to w pełni zarządzana usługa serwerów protokołów transferu plików (SFTP, FTPS, FTP, AS2) zintegrowana bezpośrednio z Amazon S3 lub Amazon EFS.
+
+Wyobraź sobie Transfer Family jako "bramę protokołową" — zewnętrzni partnerzy biznesowi mogą wysyłać pliki przez znany im protokół (np. SFTP), a pliki lądują bezpośrednio w S3.
+
+### Kluczowe przypadki użycia
+
+| Use Case | Opis |
+|---------|------|
+| **B2B file exchange** | Partner wysyła faktury przez SFTP → S3 |
+| **FTP → AWS migracja** | Zastąp on-prem FTP serwer |
+| **EDI/B2B** | Wymiana dokumentów EDI przez AS2 |
+| **Data ingestion** | Zbieranie plików od zewnętrznych dostawców |
+| **Regulatory compliance** | SFTP z MFT (Managed File Transfer) wymagania |
+
+### Transfer Family — architektura
+
+```mermaid
+flowchart LR
+    subgraph External["Zewnętrzni Partnerzy"]
+        Partner1["Partner A\nSFTP Client"]
+        Partner2["Partner B\nFTPS Client"]
+        Partner3["EDI System\nAS2"]
+    end
+
+    subgraph TF["AWS Transfer Family"]
+        Endpoint["Transfer Family\nEndpoint\n(public/VPC)"]
+        Auth["Authentication\nService-managed\nCustom IdP\nAD"]
+    end
+
+    subgraph Storage["AWS Storage"]
+        S3["Amazon S3\n(pliki partnerów)"]
+        EFS["Amazon EFS\n(shared filesystem)"]
+    end
+
+    subgraph Processing["Przetwarzanie"]
+        Lambda["Lambda\n(post-upload trigger)"]
+        EventBridge["EventBridge"]
+    end
+
+    Partner1 -->|SFTP:22| Endpoint
+    Partner2 -->|FTPS:21/990| Endpoint
+    Partner3 -->|AS2:443| Endpoint
+    Endpoint --> Auth
+    Endpoint --> S3
+    Endpoint --> EFS
+    S3 --> Lambda
+    Lambda --> EventBridge
+```
+
+---
+
+## 25.6 Transfer Family — Protokoły
+
+### Porównanie protokołów
+
+| Protokół | Port | Szyfrowanie | Typowe użycie | Endpoint |
+|---------|------|-------------|--------------|---------|
+| **SFTP** | 22 | SSH (zawsze) | Linux/Unix transfer, DevOps | Public lub VPC |
+| **FTPS** | 21 (control), 990 (implicit) | TLS/SSL | Windows legacy, fintech | Public lub VPC |
+| **FTP** | 21 | ❌ Brak | Legacy systems, internal only | **VPC only** |
+| **AS2** | 443 | TLS + podpis | EDI, B2B, handel elektroniczny | Public lub VPC |
+
+### SFTP — Szczegóły
+
+```bash
+# Utwórz serwer SFTP
+aws transfer create-server \
+  --protocols SFTP \
+  --identity-provider-type SERVICE_MANAGED \
+  --endpoint-type PUBLIC \
+  --tags Key=Name,Value=SFTPProductionServer
+
+# Utwórz użytkownika SFTP
+aws transfer create-user \
+  --server-id s-xxxxxxxxxxxx \
+  --user-name partner-user \
+  --role arn:aws:iam::123:role/TransferFamilyS3Role \
+  --home-directory /my-bucket/partners/partner-a \
+  --home-directory-type LOGICAL \
+  --home-directory-mappings Entry=/,Target=/my-bucket/partners/partner-a
+```
+
+### AS2 — Applicability Statement 2
+
+AS2 to protokół używany głównie w **EDI (Electronic Data Interchange)** — wymiana dokumentów handlowych (zamówienia, faktury) między firmami. Transfer Family AS2 obsługuje:
+
+- **Podpisywanie wiadomości** (message signing) — gwarancja integralności
+- **Szyfrowanie wiadomości** (message encryption) — poufność
+- **MDN (Message Disposition Notification)** — potwierdzenie odbioru
+- Synchroniczne i asynchroniczne MDN
+
+```bash
+# Utwórz serwer AS2
+aws transfer create-server \
+  --protocols AS2 \
+  --endpoint-type VPC \
+  --endpoint-details VpcId=vpc-xxx,SubnetIds=subnet-xxx,SecurityGroupIds=sg-xxx
+
+# Utwórz profil AS2 (lokalny)
+aws transfer create-profile \
+  --as2-id "MYCOMPANY" \
+  --profile-type LOCAL \
+  --certificate-ids cert-xxx
+
+# Utwórz profil partnera AS2
+aws transfer create-profile \
+  --as2-id "PARTNERCOMPANY" \
+  --profile-type PARTNER \
+  --certificate-ids cert-yyy
+
+# Utwórz agreement (umowa wymiany)
+aws transfer create-agreement \
+  --server-id s-xxx \
+  --local-profile-id p-xxx \
+  --partner-profile-id p-yyy \
+  --base-directory /bucket/as2-inbox \
+  --access-role arn:aws:iam::123:role/TransferAS2Role
+```
+
+---
+
+## 25.7 Transfer Family — Autentykacja i Endpointy
+
+### Metody autentykacji
+
+| Metoda | Opis | Protokoły |
+|-------|------|-----------|
+| **Service-managed** | SSH public keys (SFTP) lub passwords | SFTP, FTPS, FTP |
+| **Custom IdP (Lambda)** | Lambda weryfikuje credentials w zewnętrznym systemie | Wszystkie |
+| **AWS Directory Service** | AD/LDAP authentication | SFTP, FTPS, FTP |
+| **AWS IAM Identity Center** | SSO integration | SFTP |
+
+### Custom Identity Provider (Lambda)
+
+```mermaid
+sequenceDiagram
+    participant Client as SFTP Client
+    participant TF as Transfer Family
+    participant Lambda as Lambda (IdP)
+    participant DB as User Database
+
+    Client->>TF: Connect (username + password)
+    TF->>Lambda: Invoke with username/password
+    Lambda->>DB: Verify credentials
+    DB-->>Lambda: User record + S3 path + role
+    Lambda-->>TF: AuthResponse (role, homeDir, policy)
+    TF-->>Client: Auth OK / Denied
+```
+
+```bash
+# Utwórz serwer z custom IdP
+aws transfer create-server \
+  --protocols SFTP \
+  --identity-provider-type AWS_LAMBDA \
+  --identity-provider-details Function=arn:aws:lambda:us-east-1:123:function:SFTPAuthFunction \
+  --endpoint-type PUBLIC
+```
+
+### Typy endpointów
+
+| Typ | Dostępność | Użycie | Koszt extra |
+|-----|----------|-------|------------|
+| **Public** | Internet (publiczne IP) | Zewnętrzni partnerzy | ❌ Nie |
+| **VPC (internet-facing)** | Internet przez VPC + EIP | Kontrola SG/NACLs | Elastic IP |
+| **VPC (internal)** | Tylko wewnątrz VPC/VPN/DX | Internal only | ❌ Nie |
+
+### Logical Directories — mapowanie katalogów
+
+Logical directories pozwalają mapować ścieżki widziane przez użytkownika na rzeczywiste ścieżki S3:
+
+```bash
+# User widzi /uploads, ale S3 path to /company-bucket/partners/partner-a/incoming
+aws transfer create-user \
+  --server-id s-xxx \
+  --user-name partner-a \
+  --home-directory-type LOGICAL \
+  --home-directory-mappings '[
+    {"Entry": "/uploads", "Target": "/company-bucket/partners/partner-a/incoming"},
+    {"Entry": "/downloads", "Target": "/company-bucket/partners/partner-a/outgoing"}
+  ]' \
+  --role arn:aws:iam::123:role/TransferRole
+```
+
+### Workflow — przetwarzanie po uploadzie
+
+Transfer Family Managed Workflows = lambda/decryption/tagging po każdym pliku:
+
+```bash
+# Utwórz workflow (np. decrypt + move)
+aws transfer create-workflow \
+  --description "Decrypt and tag uploaded files" \
+  --steps '[
+    {
+      "Type": "DECRYPT",
+      "DecryptStepDetails": {
+        "Name": "DecryptPGP",
+        "Type": "PGP",
+        "SourceFileLocation": "${original.file}",
+        "OverwriteExisting": "TRUE",
+        "DestinationFileLocation": {"S3FileLocation": {"Bucket": "processed-bucket", "Key": "decrypted/"}}
+      }
+    },
+    {
+      "Type": "TAG",
+      "TagStepDetails": {
+        "Name": "TagFile",
+        "Tags": [{"Key": "Status", "Value": "processed"}]
+      }
+    }
+  ]'
+```
+
+---
+
+## 25.8 Porównanie Usług Transferu Danych
+
+### Główna tabela porównawcza
+
+| Usługa | Co robi | Użycie | Protokół | Źródło |
+|-------|---------|-------|---------|-------|
+| **DataSync** | Automatyczny transfer/sync plików | Migracja, periodic sync | Własny (TLS) | On-prem, AWS |
+| **Transfer Family** | Managed SFTP/FTP/AS2 server | B2B, legacy FTP | SFTP/FTPS/FTP/AS2 | Zewnętrzni klienci |
+| **Storage Gateway** | Hybrid storage — ciągły dostęp | Ongoing hybrid access | NFS/SMB/iSCSI | On-prem apps |
+| **S3 Replication** | S3-to-S3 automatyczna replikacja | Multi-region, backup | Internal | S3 tylko |
+| **Snow Family** | Fizyczny transfer danych | Brak łącza/ogromne dane | Fizyczna paczka | On-prem |
+| **Direct Connect** | Dedykowane łącze sieciowe | Stałe połączenie | Ethernet | On-prem |
+
+### Decision Tree — którą usługę wybrać?
+
+```mermaid
+flowchart TD
+    A[Potrzebuję przenieść dane do AWS] --> B{Skąd?}
+    B -->|S3 do S3| C[S3 Replication]
+    B -->|On-prem lub AWS-to-AWS| D{Jak dużo danych?}
+    D -->|>100 TB, brak łącza| E[Snow Family]
+    D -->|Mniej, jest łącze| F{Jak często?}
+    F -->|Jednorazowo lub periodic| G[DataSync]
+    F -->|Ciągły dostęp app on-prem| H[Storage Gateway]
+    F -->|Zewnętrzni partnerzy SFTP/FTP| I[Transfer Family]
+    F -->|EDI/B2B AS2| I
+```
+
+### DataSync vs Transfer Family — kluczowa różnica
+
+| Aspekt | DataSync | Transfer Family |
+|-------|---------|----------------|
+| **Inicjator transferu** | AWS (scheduled task) | Zewnętrzny klient |
+| **Protokół kliencki** | Brak (agent push) | SFTP/FTP/AS2 |
+| **Użytkownicy** | AWS admin, automated | Zewnętrzni partnerzy |
+| **Typowy use case** | Migracja, backup sync | B2B file exchange |
+| **Pricing** | Per GB transferred | Per hour + per GB |
+
+---
+
+## 25.9 Azure i Open-Source Odpowiedniki
+
+### Azure Odpowiedniki
+
+| AWS | Azure | Podobieństwa | Różnice |
+|-----|-------|-------------|---------|
+| **DataSync** | **Azure File Sync** | Sync on-prem ↔ chmura | Azure File Sync = tylko Azure Files (SMB); DataSync = S3/EFS/FSx |
+| **DataSync** | **AzCopy** | Szybki transfer do cloud | AzCopy = CLI tool, nie managed service |
+| **Transfer Family SFTP** | **Azure Blob Storage SFTP** | SFTP endpoint do cloud storage | Azure SFTP = Blob only; Transfer Family = S3 lub EFS |
+| **Transfer Family AS2** | **Azure Logic Apps (EDI)** | B2B/EDI | Azure = workflow-based; AWS = dedicated server |
+
+### Open-Source Odpowiedniki
+
+| AWS | Open-Source | Opis |
+|-----|------------|------|
+| DataSync | `rsync` | Podobny koncept, brak checksum verification, skalowania |
+| DataSync | `rclone` | Multi-cloud sync, ale wymaga zarządzania |
+| Transfer Family | `OpenSSH (sftp-server)` | SFTP server on-prem, brak integracji S3 |
+| Transfer Family | `vsftpd`, `ProFTPD` | FTP servers, brak cloud storage |
+| Transfer Family AS2 | `Mendelson AS2` | Open-source AS2, self-hosted |
+
+---
+
+## 25.10 Well-Architected Framework
+
+| Filar | DataSync | Transfer Family |
+|-------|---------|----------------|
+| **Operational Excellence** | CloudWatch metrics/logs dla każdego task execution; alarmy na błędy transferu | CloudWatch logs dla każdego połączenia; audit trail w CloudTrail |
+| **Security** | TLS w transporcie, KMS at rest, IAM roles dla dostępu do S3/EFS, VPC endpoints | IAM roles, SSH key management, custom IdP, VPC-only endpoint dla internal, SG kontrola |
+| **Reliability** | Automatyczny retry przy błędach; checksum verification; incremental transfer | Multi-AZ endpoint (VPC); health checks wbudowane; managed service = AWS odpowiedzialność |
+| **Performance Efficiency** | Parallelism automatyczny (multi-thread agent); bandwidth throttling; 10 Gbps max | Automatyczne skalowanie połączeń; Elastic IPs dla stałych IP partnerów |
+| **Cost Optimization** | Pay per GB transferred; brak opłat za idle; throttle bandwidth w godzinach szczytu | Pay per hour (server) + per GB; wyłącz server gdy nieużywany; VPC internal tańszy |
+| **Sustainability** | Incremental transfer = mniej danych = mniej energii | Brak idle connections = efektywne zasoby |
+
+---
+
+## 25.11 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+
+**DataSync w multi-account:**
+- DataSync może transferować dane między kontami AWS (cross-account S3 bucket policy)
+- Centralne zarządzanie task'ami przez AWS Organizations
+
+**Transfer Family centralizacja:**
+- Jeden serwer Transfer Family dla wielu partnerów
+- Logical directories izolują partnerów od siebie
+- Custom IdP w Lambda może centralnie zarządzać userami z różnych systemów
+
+### Domain 2: Design for New Solutions
+
+**Nowa architektura data ingestion:**
+```
+Partnerzy → Transfer Family (SFTP) → S3 → Lambda (przetwarzanie) → DynamoDB/RDS
+```
+
+**Nowa architektura migracji:**
+```
+On-prem NFS → DataSync Agent → DataSync Task → Amazon EFS/S3
+```
+
+**Design decisions:**
+- Transfer Family gdy partnerzy potrzebują standardowego protokołu (SFTP)
+- DataSync gdy kontrolujesz źródło i cel (bez zewnętrznych klientów)
+
+### Domain 3: Continuous Improvement for Existing Solutions
+
+**Optymalizacja kosztów DataSync:**
+- Włącz scheduling (transferuj nocą gdy tańsza przepustowość)
+- Ustaw `TransferMode=CHANGED` (tylko zmienione pliki)
+- Throttle bandwidth w godzinach peak
+
+**Optymalizacja Transfer Family:**
+- Wyłącz serwer Transfer Family poza godzinami pracy (save ~$0.30/h)
+- Użyj Managed Workflows zamiast osobnych Lambda (mniej kodu)
+- S3 Lifecycle policies na katalogi uploadów
+
+### Domain 4: Accelerate Workload Migration and Modernization
+
+**Migracja FTP on-prem → Transfer Family:**
+1. Deploy Transfer Family z tym samym hostnamen (DNS CNAME)
+2. Zmigruj użytkowników (import SSH keys)
+3. Przekieruj ruch (zmień DNS)
+4. Wyłącz stary serwer FTP
+
+**Migracja NAS on-prem → EFS/FSx:**
+1. Deploy DataSync Agent w sieci on-prem
+2. Utwórz location NFS/SMB
+3. Utwórz location EFS/FSx
+4. Transfer initial data (pełny)
+5. Uruchom periodic sync (incremental)
+6. Cutover: zatrzymaj aplikacje, finalny sync, przestaw DNS/mount
+
+---
+
+## 25.12 Reliability & Security
+
+### DataSync — Security
+
+```bash
+# IAM Role dla DataSync → S3 (least privilege)
+# Polityka przykład:
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::my-destination-bucket",
+        "arn:aws:s3:::my-destination-bucket/*"
+      ]
+    }
+  ]
+}
+```
+
+**Security checklist DataSync:**
+- [ ] Agent komunikuje się outbound only (port 443) — nie otwieraj inbound
+- [ ] Użyj VPC endpoint dla DataSync (nie przez internet)
+- [ ] Oddzielna IAM role per task (least privilege)
+- [ ] Włącz CloudTrail dla DataSync API calls
+- [ ] Szyfruj dane w celu (KMS)
+
+### Transfer Family — Security
+
+```bash
+# Restrykcyjna policy dla użytkownika Transfer Family
+# Użytkownik widzi tylko swój katalog
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
+      "Resource": "arn:aws:s3:::company-bucket/partners/${transfer:UserName}/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::company-bucket",
+      "Condition": {
+        "StringLike": {"s3:prefix": "partners/${transfer:UserName}/*"}
+      }
+    }
+  ]
+}
+```
+
+**Security checklist Transfer Family:**
+- [ ] SFTP: wymagaj SSH keys (nie password)
+- [ ] FTP: tylko VPC-internal endpoint (nigdy public)
+- [ ] VPC endpoint z Security Groups (whitelist IP partnerów)
+- [ ] Logical directories = izolacja między partnerami
+- [ ] Managed Workflows: scan plików (antivirus Lambda)
+- [ ] CloudWatch alarmy na failed login attempts
+- [ ] Rotacja SSH keys dla partnerów
+
+### Reliability
+
+| Aspekt | DataSync | Transfer Family |
+|-------|---------|----------------|
+| **HA** | Multi-AZ task execution | Multi-AZ VPC endpoint |
+| **Retry** | Automatyczny retry przy błędzie | Klient ponawia połączenie |
+| **Checksum** | End-to-end verification | Protokół (SFTP) weryfikuje |
+| **Monitoring** | CloudWatch metrics per task | CloudWatch logs per connection |
+| **SLA** | AWS managed (99.9%) | AWS managed (99.9%) |
+
+### Limity (Limits)
+
+| Zasób | DataSync Limit |
+|-------|---------------|
+| Tasks per account | 100 |
+| Locations per account | 100 |
+| Agents per account | 100 |
+| Max file size | 5 TB (S3 limit) |
+| Max bandwidth | 10 Gbps per agent |
+
+| Zasób | Transfer Family Limit |
+|-------|----------------------|
+| Servers per region | 10 (soft limit) |
+| Users per server | 10,000 |
+| Concurrent connections | 25,000 |
+| Max file size | S3/EFS limits |
+| Protocols per server | 3 (SFTP+FTPS+FTP) |
+
+---
+
+## 25.13 Checks — 60 Pytań z Odpowiedziami
+
+### DataSync (1–30)
+
+**1. Co to jest AWS DataSync?**
+> Zarządzana usługa automatycznego transferu danych on-prem ↔ AWS lub AWS ↔ AWS, z weryfikacją integralności i harmonogramowaniem.
+
+**2. Kiedy potrzebny jest agent DataSync?**
+> Zawsze gdy źródło lub cel jest poza AWS (on-prem, inna chmura). Dla AWS-to-AWS transfer agent nie jest potrzebny.
+
+**3. Jak agent DataSync komunikuje się z AWS?**
+> Outbound HTTPS (port 443) — nie potrzeba otwierać portów inbound w firewall.
+
+**4. Jakie protokoły obsługuje DataSync jako źródło on-prem?**
+> NFS (v3/v4), SMB (v2/v3), HDFS, S3-compatible object storage.
+
+**5. Jakie usługi AWS mogą być celem DataSync?**
+> S3, EFS, FSx for Windows, FSx for Lustre, FSx for OpenZFS, FSx for NetApp ONTAP.
+
+**6. Czym różni się DataSync od rsync?**
+> DataSync: managed service, 10x szybszy, checksum verification, scheduling, multi-threaded. rsync: CLI tool, wymaga zarządzania, brak auto-retry.
+
+**7. Co to jest TransferMode=CHANGED?**
+> DataSync transferuje tylko pliki zmienione od ostatniego transferu (incremental), nie wszystkie pliki za każdym razem.
+
+**8. Jak ograniczyć pasmo DataSync w godzinach szczytu?**
+> Parametr `BytesPerSecond` w opcjach task lub harmonogram transferu na noc.
+
+**9. Co robi opcja VerifyMode=ALL_FILES?**
+> Po transferze weryfikuje checksum KAŻDEGO pliku (nie tylko przetransferowanych). Wolniej, ale gwarantuje pełną integralność.
+
+**10. Jaka jest maksymalna prędkość DataSync?**
+> Do 10 Gbps na agenta.
+
+**11. Czy DataSync może transferować do Glacier?**
+> Tak — S3 Glacier jest klasą S3, więc DataSync może pisać do S3 z klasą Glacier Instant Retrieval lub Flexible/Deep Archive.
+
+**12. Jak DataSync obsługuje uprawnienia plików (permissions)?**
+> Opcja `PosixPermissions=PRESERVE` zachowuje chmod/chown. Domyślnie: `NONE` (nie przenosi permissions).
+
+**13. Czym różni się DataSync od Storage Gateway?**
+> DataSync: migracja lub periodic sync (nie ciągły). Storage Gateway: ciągły dostęp hybrydowy dla aplikacji on-prem (mount point).
+
+**14. Co to jest lokalizacja (location) w DataSync?**
+> Definicja źródła lub celu — NFS/SMB/S3/EFS/FSx. Task łączy dwie lokalizacje.
+
+**15. Czy DataSync obsługuje filtrowanie plików?**
+> Tak — include/exclude patterns (glob patterns) na poziomie task.
+
+**16. Gdzie DataSync loguje wyniki?**
+> CloudWatch Logs (poziom logowania: OFF/BASIC/TRANSFER).
+
+**17. Co się stanie gdy plik zostanie usunięty ze źródła a DataSync ma PreserveDeletedFiles=REMOVE?**
+> DataSync usunie ten plik z celu podczas następnego transferu.
+
+**18. Jak DataSync radzi sobie z błędami transferu?**
+> Automatyczny retry. Plik który nie mógł być przetransferowany jest logowany, task kończy się z ostrzeżeniem (nie błędem krytycznym).
+
+**19. Czy można uruchomić DataSync task manualnie?**
+> Tak — `aws datasync start-task-execution` lub przez konsolę AWS.
+
+**20. Na czym wdrożyć agenta DataSync on-prem?**
+> VMware ESXi, Microsoft Hyper-V, KVM, lub jako AMI na EC2. Też na AWS Snowcone.
+
+**21. Ile agentów DataSync można mieć na koncie?**
+> Domyślnie 100 (soft limit, można zwiększyć przez Support).
+
+**22. Czy DataSync działa z S3 w innym koncie AWS?**
+> Tak — S3 bucket policy musi zezwolić na dostęp dla roli DataSync z drugiego konta.
+
+**23. Jaki jest koszt DataSync?**
+> Per GB transferred (0.0125 USD/GB). Brak opłaty za idle.
+
+**24. Co to oznacza VPC endpoint dla DataSync?**
+> DataSync może komunikować się z AWS przez PrivateLink (nie przez public internet) — bezpieczniejsze dla danych wrażliwych.
+
+**25. Czy DataSync może synchronizować HDFS (Hadoop)?**
+> Tak — obsługuje HDFS jako lokalizację źródłową z agentem.
+
+**26. Jaka jest różnica między DataSync a AWS Snow Family?**
+> DataSync: przez sieć (internet/DX). Snow Family: fizyczny transport danych (gdy brak łącza lub >100 TB).
+
+**27. Czy DataSync zachowuje metadane plików?**
+> Tak — timestamps, permissions (jeśli włączone), ownership.
+
+**28. Jak monitorować DataSync task execution?**
+> CloudWatch metrics: BytesTransferred, FilesTransferred, FilesVerified, Errors. CloudWatch Events/EventBridge na status change.
+
+**29. Czy DataSync może kopiować dane z EFS do S3?**
+> Tak — EFS jako source location, S3 jako destination location, bez agenta.
+
+**30. Co to jest DataSync Discovery?**
+> Funkcja analizy on-prem storage (NetApp, Dell EMC) — rekomenduje odpowiedniki AWS i szacuje koszty migracji.
+
+---
+
+### Transfer Family (31–60)
+
+**31. Co to jest AWS Transfer Family?**
+> Zarządzana usługa serwerów SFTP/FTPS/FTP/AS2 zintegrowanych bezpośrednio z S3 lub EFS.
+
+**32. Jakie protokoły obsługuje Transfer Family?**
+> SFTP, FTPS, FTP, AS2.
+
+**33. Dlaczego FTP dostępny jest tylko dla VPC endpoint?**
+> FTP nie szyfruje danych — dostęp przez public internet byłby niebezpieczny. VPC-only wymusza użycie w sieci prywatnej.
+
+**34. Co to jest AS2 i kiedy go używać?**
+> Applicability Statement 2 — protokół B2B/EDI do wymiany dokumentów handlowych z podpisem cyfrowym i potwierdzeniem odbioru (MDN). Używany w retail, logistyce, finansach.
+
+**35. Jakie są opcje autentykacji w Transfer Family?**
+> Service-managed (SSH keys/passwords), Custom IdP przez Lambda, AWS Directory Service (AD), AWS IAM Identity Center.
+
+**36. Co to jest custom IdP w Transfer Family?**
+> Lambda function wywołana przy każdym logowaniu — weryfikuje credentials w zewnętrznym systemie (własna baza, LDAP, Okta) i zwraca rolę IAM + home directory.
+
+**37. Co to są logical directories w Transfer Family?**
+> Mapowanie ścieżek widocznych dla użytkownika SFTP na rzeczywiste ścieżki S3/EFS — izolacja i ukrycie struktury bucket przed partnerami.
+
+**38. Ile protokołów może mieć jeden serwer Transfer Family?**
+> Do 3 protokołów jednocześnie (np. SFTP + FTPS + FTP).
+
+**39. Czym różni się Public endpoint od VPC endpoint w Transfer Family?**
+> Public: dostępny z internetu przez publiczne IP. VPC: dostępny przez VPC (wewnętrzny lub internet-facing z EIP) — pełna kontrola SG/NACLs.
+
+**40. Co to są Managed Workflows w Transfer Family?**
+> Automatyczne operacje po każdym uploadzie pliku: decrypt, tag, copy, delete, wywołanie Lambda — bez osobnego kodu.
+
+**41. Jak izolować użytkowników w Transfer Family (każdy widzi tylko swoje pliki)?**
+> Logical directories z `${transfer:UserName}` w ścieżce S3 + sesyjna policy IAM z `s3:prefix` condition.
+
+**42. Czy Transfer Family obsługuje SSH key rotation?**
+> Tak — można mieć wiele aktywnych SSH keys na użytkownika, dodawać/usuwać przez API/konsolę.
+
+**43. Jaki jest koszt Transfer Family?**
+> Per hour za działający serwer (~$0.30/h dla SFTP) + per GB uploaded/downloaded (~$0.04/GB).
+
+**44. Jak zoptymalizować koszty Transfer Family?**
+> Wyłączaj serwer poza godzinami pracy (`delete-server` + recreate lub stop/start przez API).
+
+**45. Czy Transfer Family obsługuje wysoką dostępność?**
+> Tak — Multi-AZ dla VPC endpoint, AWS managed service z 99.9% SLA.
+
+**46. Jak monitorować Transfer Family?**
+> CloudWatch Logs (każde połączenie, upload, download, błędy). CloudWatch metrics: FilesIn, FilesOut, BytesIn, BytesOut.
+
+**47. Co to jest MDN w AS2?**
+> Message Disposition Notification — potwierdzenie odbioru wiadomości AS2 (sync lub async).
+
+**48. Czy można mieć wiele serwerów Transfer Family w regionie?**
+> Tak — domyślnie do 10 (soft limit).
+
+**49. Jak Transfer Family integruje się z S3 Event Notifications?**
+> Upload przez SFTP → plik w S3 → S3 Event → SNS/SQS/Lambda (standardowa S3 integracja).
+
+**50. Czym Transfer Family różni się od DataSync?**
+> Transfer Family: zarządzany serwer protokołów dla zewnętrznych klientów (partnerów). DataSync: automatyczny task transfer bez zewnętrznych klientów (migracja/sync).
+
+**51. Czy Transfer Family może używać EFS jako backend?**
+> Tak — SFTP/FTPS/FTP mogą używać EFS. AS2 używa tylko S3.
+
+**52. Co to jest Transfer Family server endpoint type "VPC_ENDPOINT" vs "VPC"?**
+> `VPC_ENDPOINT` (stary) = deprecated. `VPC` (nowy) = aktualny typ dla VPC deploymentu z pełną kontrolą SG.
+
+**53. Jak zabezpieczyć Transfer Family przed brute-force?**
+> VPC SG whitelist IP partnerów, custom IdP z rate limiting w Lambda, CloudWatch alarm na AuthenticationFailures, AWS WAF (dla HTTP-based endpoints).
+
+**54. Czy Transfer Family obsługuje IPv6?**
+> Tak — Public endpoint obsługuje IPv6 (dual-stack).
+
+**55. Co to jest "home directory type: PATH vs LOGICAL"?**
+> PATH: absolutna ścieżka S3/EFS (user widzi całą strukturę). LOGICAL: wirtualne mapowanie (user widzi tylko swoje katalogi przez aliasy).
+
+**56. Jak skonfigurować Transfer Family z Active Directory?**
+> Identity provider type: `AWS_DIRECTORY_SERVICE`, podaj ID Directory Service (Managed Microsoft AD lub Simple AD). Użytkownicy AD mogą się logować przez SFTP.
+
+**57. Czy Transfer Family obsługuje szyfrowanie plików w locie (file-level encryption)?**
+> Nie natywnie. Managed Workflows mogą wywołać Lambda do deszyfracji (np. PGP) po uploadzie.
+
+**58. Jakie są limity concurrent connections w Transfer Family?**
+> 25,000 concurrent connections (soft limit, można zwiększyć).
+
+**59. Jak Transfer Family radzi sobie z dużymi plikami?**
+> Przez SFTP/FTPS pliki są streamowane bezpośrednio do S3 Multi-Part Upload — brak limitu rozmiaru (poza S3 limitem 5 TB per object).
+
+**60. Kiedy wybrać Transfer Family AS2 zamiast Transfer Family SFTP?**
+> AS2 gdy wymagany jest EDI/B2B z podpisem cyfrowym, MDN potwierdzeniem i compliance (np. standardy GS1, retail). SFTP gdy po prostu potrzeba bezpiecznego transferu plików przez SSH.
+
+# 23. AWS Storage Gateway
+
+> **Hybridowy most między centrum danych a chmurą AWS** — wirtualne urządzenie (VM lub sprzęt) uruchamiane lokalnie, które udostępnia standardowe protokoły (NFS, SMB, iSCSI) i transparentnie przechowuje dane w S3, EBS lub FSx.
+
+---
+
+## 23.1 Przegląd i Kontekst
+
+Storage Gateway to usługa **hybrydowego storage**, która pozwala aplikacjom on-prem używać AWS jako backendu bez zmiany protokołów. Działa jako:
+
+- **Wirtualna maszyna** (VMware ESXi, Microsoft Hyper-V, KVM, EC2)
+- **Fizyczne urządzenie sprzętowe** (Storage Gateway Hardware Appliance)
+
+**Zakres regionalny:** Gateway wdrażasz lokalnie (on-prem lub EC2), ale łączy się z konkretnym regionem AWS. Dane trafiają do S3/EBS/FSx w wybranym regionie. Jeden gateway = jeden region (możesz mieć wiele gatewayów w różnych regionach).
+
+**4 typy Storage Gateway:**
+
+| Typ | Protokół | Backend AWS | Główny use case |
+|-----|----------|-------------|-----------------|
+| S3 File Gateway | NFS, SMB | Amazon S3 | File share → S3 |
+| FSx File Gateway | SMB | FSx for Windows | Branch office shares |
+| Volume Gateway | iSCSI | S3 + EBS Snapshots | Backup bloków on-prem |
+| Tape Gateway (VTL) | iSCSI VTL | S3 + Glacier | Zamiana taśm fizycznych |
+
+**Azure odpowiednik:**
+- Azure File Sync (odpowiednik S3/FSx File Gateway) — synchronizuje pliki między on-prem a Azure Files
+- Azure StorSimple (odpowiednik Volume Gateway) — wycofany, zastąpiony przez Azure File Sync + Backup
+
+---
+
+## 23.2 S3 File Gateway
+
+### Opis
+
+S3 File Gateway udostępnia **NFS (v3, v4.1) i SMB** jako punkt montowania on-prem. Pliki zapisywane przez użytkowników trafiają do S3 jako natywne obiekty S3 (1 plik = 1 obiekt S3). Lokalny cache trzyma najczęściej używane dane — zmniejsza latencję.
+
+```
+On-prem apps/users
+       │
+    NFS/SMB mount
+       │
+  [S3 File Gateway VM]
+       │   ↑ cache (local disk)
+       │
+  HTTPS → Amazon S3 (bucket)
+```
+
+### Kluczowe cechy
+
+- Pliki dostępne zarówno przez NFS/SMB (on-prem) jak i bezpośrednio przez S3 API (AWS side)
+- Obsługiwane klasy S3: Standard, Standard-IA, One Zone-IA, Intelligent-Tiering (NIE Glacier bezpośrednio)
+- S3 Lifecycle policies działają normalnie po stronie S3
+- **Metadane plików** → metadane obiektów S3
+- Integracja z S3 Versioning, Object Lock, SSE
+- Jeden bucket = jeden file share (możliwe wiele share na różne buckety)
+
+### Use cases
+
+- Migracja file sharesów do S3 bez zmiany aplikacji
+- Backup plików do S3 (taniej niż EFS)
+- Dostęp do S3 z aplikacji nie obsługujących S3 API
+
+### AWS CLI
+
+```bash
+# Lista gatewayów
+aws storagegateway list-gateways
+
+# Lista file shares na gatewayу
+aws storagegateway list-file-shares --gateway-arn arn:aws:storagegateway:...
+
+# Refresh cache (wymuś synchronizację z S3)
+aws storagegateway refresh-cache --file-share-arn arn:aws:storagegateway:...
+```
+
+---
+
+## 23.3 FSx File Gateway
+
+### Opis
+
+FSx File Gateway to **SMB file share** z lokalnym cache, który synchronizuje dane z **FSx for Windows File Server**. Przeznaczony dla środowisk Windows z Active Directory.
+
+```
+Branch office
+Windows clients
+       │
+     SMB
+       │
+  [FSx File Gateway VM]
+       │   ↑ cache (local disk, hot data)
+       │
+  HTTPS → FSx for Windows File Server (AWS)
+```
+
+### Kluczowe cechy
+
+- Tylko **SMB** (brak NFS)
+- Pełna integracja z **Active Directory** — użytkownicy logują się domenowymi credentials
+- Obsługuje **DFS (Distributed File System)** namespaces
+- Lokalny cache = niskie latencje dla hot data
+- Dane w FSx = wysoka dostępność, Multi-AZ FSx
+
+### Use cases
+
+- Branch office → centralne dane w FSx
+- Konsolidacja file sharesów z wielu biur
+- Zamiana fizycznych serwerów plików Windows
+
+---
+
+## 23.4 Volume Gateway
+
+### Opis
+
+Volume Gateway udostępnia **iSCSI block storage** on-prem, synchronizując dane z S3. Dostępne dwa tryby:
+
+### Cached Mode (Tryb z Pamięcią Podręczną)
+
+```
+On-prem server
+    iSCSI attach
+         │
+  [Volume Gateway]
+    cache (hot blocks)
+         │
+    S3 (primary storage — wszystkie dane)
+         │
+    EBS Snapshots (point-in-time backups)
+```
+
+- **Dane primarne w S3** — lokalnie tylko cache (hot blocks)
+- Lokalny dysk = tylko cache, nie potrzebujesz dużo miejsca on-prem
+- Dostęp do danych przez iSCSI jak normalny dysk
+
+### Stored Mode (Tryb z Pełnym Przechowywaniem)
+
+```
+On-prem server
+    iSCSI attach
+         │
+  [Volume Gateway]
+    primary storage (wszystkie dane lokalnie)
+         │
+    Async upload → S3 (backup)
+         │
+    EBS Snapshots (tworzone ze S3 backup)
+```
+
+- **Dane primarne on-prem** — niskie latencje, pełna lokalność
+- Async upload do S3 jako backup
+- Z backupu S3 możesz tworzyć EBS Snapshots i montować w EC2
+
+### Porównanie trybów Volume Gateway
+
+| Cecha | Cached Mode | Stored Mode |
+|-------|-------------|-------------|
+| Dane primarne | S3 | On-prem |
+| Lokalny storage | Tylko cache (mniej miejsca) | Pełny wolumin (dużo miejsca) |
+| Latencja | Wyższa dla cold data | Zawsze niska |
+| Backup | Snapshots z S3 | Async upload → S3 → Snapshots |
+| Use case | Duże dane, mały local cache | Niska latencja + backup do AWS |
+
+### AWS CLI
+
+```bash
+# Lista woluminów
+aws storagegateway list-volumes --gateway-arn arn:aws:storagegateway:...
+
+# Utwórz EBS Snapshot z woluminu
+aws storagegateway create-snapshot \
+  --volume-arn arn:aws:storagegateway:... \
+  --snapshot-description "backup-2024-10-27"
+
+# Lista snapshotów
+aws storagegateway list-volume-recovery-points --gateway-arn arn:aws:storagegateway:...
+```
+
+---
+
+## 23.5 Tape Gateway (VTL — Virtual Tape Library)
+
+### Opis
+
+Tape Gateway emuluje **fizyczną bibliotekę taśm (VTL)** przez iSCSI. Istniejące aplikacje backupowe (Veeam, Veritas NetBackup, Commvault, Dell EMC NetWorker) widzą go jako normalną bibliotekę taśm — **zero zmian w oprogramowaniu backupowym**.
+
+```
+Backup software (Veeam, Veritas...)
+    iSCSI VTL
+         │
+  [Tape Gateway VM]
+    Virtual Tape Shelf (VTS)
+         │
+    S3 (active tapes)
+         │
+    S3 Glacier / Glacier Deep Archive (archived tapes)
+```
+
+### Kluczowe pojęcia
+
+| Pojęcie | Opis |
+|---------|------|
+| Virtual Tape | Odpowiednik fizycznej taśmy, przechowywana w S3 |
+| Virtual Tape Library (VTL) | Zestaw wirtualnych napędów i slotów taśm |
+| Virtual Tape Shelf (VTS) | Archiwum taśm w Glacier |
+| Tape Drive | Wirtualny napęd taśmowy (widoczny dla backup SW) |
+| Media Changer | Wirtualny robot taśmowy |
+
+### Lifecycle taśmy
+
+```
+Backup job → Write to Virtual Tape (S3)
+                    │
+              Tape ejected → VTS (Glacier lub Glacier Deep Archive)
+                    │
+              Retrieve → przywróć do VTL (kilka godzin)
+                    │
+              Restore backup
+```
+
+### Kompatybilność oprogramowania
+
+- Veeam Backup & Replication
+- Veritas NetBackup / Backup Exec
+- Commvault
+- Dell EMC NetWorker / Avamar
+- IBM Spectrum Protect
+
+### AWS CLI
+
+```bash
+# Lista wirtualnych taśm
+aws storagegateway list-tapes --gateway-arn arn:aws:storagegateway:...
+
+# Archiwizuj taśmę (wyślij do Glacier)
+aws storagegateway delete-tape \
+  --gateway-arn arn:aws:storagegateway:... \
+  --tape-arn arn:aws:storagegateway:...
+
+# Przywróć taśmę z archiwum
+aws storagegateway retrieve-tape-archive \
+  --tape-arn arn:aws:storagegateway:... \
+  --gateway-arn arn:aws:storagegateway:...
+```
+
+---
+
+## 23.6 Pełne Porównanie — Wszystkie Typy
+
+| Cecha | S3 File GW | FSx File GW | Volume GW Cached | Volume GW Stored | Tape GW |
+|-------|-----------|-------------|-----------------|-----------------|---------|
+| Protokół | NFS, SMB | SMB | iSCSI | iSCSI | iSCSI VTL |
+| Backend AWS | S3 | FSx for Windows | S3 + EBS Snaps | S3 + EBS Snaps | S3 + Glacier |
+| Cache lokalny | ✅ | ✅ | ✅ (hot blocks) | Nie (full local) | ✅ |
+| AD integracja | SMB only | ✅ pełna | ❌ | ❌ | ❌ |
+| Dane primarne | S3 | FSx | S3 | On-prem | S3/Glacier |
+| Use case | File share → S3 | Branch office | Duże woluminy | Backup bloków | Zamiana taśm |
+| Backup SW | ❌ | ❌ | ❌ | ❌ | ✅ kompatybilny |
+| Windows native | Częściowo | ✅ pełna | ✅ | ✅ | ✅ |
+
+---
+
+## 23.7 Opcje Wdrożenia
+
+| Platforma | Szczegóły |
+|-----------|-----------|
+| VMware ESXi | OVA download, minimalne wymagania: 4 vCPU, 16 GB RAM |
+| Microsoft Hyper-V | VHD download |
+| KVM | qcow2 image |
+| Amazon EC2 | Gateway jako EC2 instance (dla testów lub disaster recovery) |
+| Hardware Appliance | Gotowe urządzenie fizyczne od AWS, model SGW-HD-FX lub SGW-HD-SX |
+
+**Hardware Appliance** — gotowy do wdrożenia sprzęt, przydatny gdy środowisko nie ma hypervisora lub potrzebujesz gwarantowanej wydajności.
+
+---
+
+## 23.8 Przepustowość i Latencja
+
+- Gateway buforuje zmiany lokalnie → wysyła do AWS przez HTTPS
+- Wymaga stabilnego łącza internetowego lub Direct Connect / VPN
+- **Direct Connect** zalecany dla dużych transferów (Volume Gateway Stored mode)
+- Bandwidth throttling: konfigurujesz okna transferu (np. tylko w nocy)
+
+```bash
+# Ustaw bandwidth throttle (w bajtach/sekundę)
+aws storagegateway update-bandwidth-rate-limit \
+  --gateway-arn arn:aws:storagegateway:... \
+  --average-upload-rate-limit-in-bits-per-sec 10000000 \
+  --average-download-rate-limit-in-bits-per-sec 10000000
+```
+
+---
+
+## 23.9 Storage Gateway vs DataSync
+
+| Kryterium | Storage Gateway | DataSync |
+|-----------|----------------|----------|
+| Cel | Ongoing hybrid access | Jednorazowa/schedulowana migracja |
+| Protokół on-prem | NFS, SMB, iSCSI | Agent na serwerze |
+| Tryb pracy | Ciągły (persistent) | Zadania (tasks) |
+| Cache | ✅ | ❌ |
+| Latencja dostępu | Niska (cache) | N/A (transfer only) |
+| Kiedy używać | Aplikacje potrzebują ciągłego dostępu | Migracja danych do AWS |
+| Koszty | Gateway + transfer | Per GB transfer |
+
+**Reguła:**
+- Aplikacja **czyta i pisze** do storage on-prem → **Storage Gateway**
+- Chcesz **przenieść dane** jednorazowo lub cyklicznie → **DataSync**
+
+---
+
+## 23.10 Bezpieczeństwo i Niezawodność
+
+### Szyfrowanie
+
+- Dane w tranzycie: **HTTPS/TLS** zawsze
+- Dane w S3: **SSE-S3** domyślnie, opcjonalnie **SSE-KMS**
+- Cache lokalny: **AES-256** szyfrowanie dysku cache
+- Snapshots EBS: dziedziczą szyfrowanie z KMS
+
+### IAM i dostęp
+
+- Gateway komunikuje się z AWS przez **IAM role** (service account)
+- Nie wymaga dostępu publicznego do S3 — może używać VPC Endpoint
+- CloudWatch monitoring: metryki gateway, alerty na błędy
+
+### Wysoka dostępność
+
+- Gateway VM → uruchom na klastrowanym hypervisorze (VMware HA)
+- Hardware Appliance → brak wbudowanej HA (single point of failure)
+- Volume Gateway Stored: dane primarne on-prem — backup async do S3
+- Jeśli gateway padnie → możesz przywrócić z S3/Glacier do EC2
+
+```bash
+# Aktywuj nowy gateway (po odtworzeniu VM)
+aws storagegateway activate-gateway \
+  --activation-key <key-from-console> \
+  --gateway-name my-gateway \
+  --gateway-timezone GMT+1:00 \
+  --gateway-region eu-west-1 \
+  --gateway-type FILE_S3
+```
+
+---
+
+## 23.11 Limity i Ograniczenia
+
+| Zasób | Limit |
+|-------|-------|
+| Gatewayów na region | 10 (soft limit, zwiększalny) |
+| File sharesów na gateway | 10 |
+| Wirtualnych taśm na gateway | 1500 |
+| Rozmiar wirtualnej taśmy | 100 GB – 5 TB |
+| Woluminów Cached na gateway | 32 |
+| Woluminów Stored na gateway | 32 |
+| Max rozmiar woluminu Cached | 32 TB |
+| Max rozmiar woluminu Stored | 16 TB |
+| Cache lokalny minimalny | 150 GB |
+
+---
+
+## 23.12 Well-Architected Framework
+
+| Filar | Jak Storage Gateway wspiera |
+|-------|---------------------------|
+| **Operational Excellence** | CloudWatch metrics, CloudTrail auditing, automated snapshots |
+| **Security** | TLS in transit, SSE-KMS at rest, IAM role-based access, VPC Endpoints |
+| **Reliability** | Async replication do S3 = durable backup; możliwość restore do EC2; Multi-AZ FSx dla FSx GW |
+| **Performance Efficiency** | Lokalny cache = niska latencja dla hot data; bandwidth throttling; Direct Connect dla dużych transferów |
+| **Cost Optimization** | S3 Lifecycle policies na danych z File GW; Glacier dla archiwum taśm; płacisz tylko za używany storage S3 |
+| **Sustainability** | Eliminacja fizycznych taśm; konsolidacja storage do AWS; mniejsza infrastruktura on-prem |
+
+---
+
+## 23.13 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+- **Multi-account backup:** Volume Gateway Stored mode + cross-account S3 bucket replication
+- **Centralizacja file sharesów:** FSx File Gateway w branch offices → centralny FSx w AWS
+- **Compliance archiwizacja:** Tape Gateway → Glacier Deep Archive dla długoterminowego przechowywania
+
+### Domain 2: Design for New Solutions
+- **Hybrid cloud storage:** S3 File Gateway jako NAS replacement — aplikacje nie wymagają zmiany
+- **Modernizacja backupu taśmowego:** Tape Gateway = zero zmian w backup software, dane w chmurze
+- **Block storage backup:** Volume Gateway Cached mode dla serwerów wymagających iSCSI
+
+### Domain 3: Continuous Improvement for Existing Solutions
+- **Zmniejszenie kosztów storage:** Migracja hot data do cache, cold data do S3/Glacier
+- **Monitorowanie:** CloudWatch → alerty na błędy synchronizacji, cache hit ratio
+- **Bandwidth throttling:** Optymalizacja transferów w godzinach pracy vs nocnych okienek
+
+### Domain 4: Accelerate Workload Migration and Modernization
+- **Lift and shift:** Aplikacje używające NFS/SMB/iSCSI → bez zmian kodu, dane w S3
+- **Tape to cloud:** Tape Gateway jako pierwszy krok → potem DataSync do pełnej migracji
+- **DataSync po migracji:** Po zakończeniu migracji zastąp Storage Gateway natywnym S3/EFS
+
+---
+
+## 23.14 Checks — 60 Pytań z Odpowiedziami
+
+**Q1: Ile typów Storage Gateway istnieje i jakie są?**
+A: 4 typy: S3 File Gateway, FSx File Gateway, Volume Gateway (Cached + Stored mode), Tape Gateway.
+
+**Q2: Jaki protokół używa S3 File Gateway?**
+A: NFS (v3, v4.1) i SMB.
+
+**Q3: Jaki protokół używa Volume Gateway?**
+A: iSCSI (block storage).
+
+**Q4: Jaki protokół używa Tape Gateway?**
+A: iSCSI VTL (Virtual Tape Library).
+
+**Q5: Gdzie są przechowywane dane w S3 File Gateway?**
+A: W Amazon S3 jako natywne obiekty. Lokalnie tylko cache.
+
+**Q6: Różnica między Volume Gateway Cached a Stored mode?**
+A: Cached: dane primarne w S3, lokalnie tylko cache hot bloków. Stored: dane primarne on-prem, async backup do S3.
+
+**Q7: Gdzie trafiają taśmy po archiwizacji z Tape Gateway?**
+A: Do S3 Glacier lub Glacier Deep Archive (Virtual Tape Shelf).
+
+**Q8: Czy Storage Gateway wymaga zmiany aplikacji on-prem?**
+A: Nie. Aplikacje widzą standardowe protokoły (NFS/SMB/iSCSI/VTL).
+
+**Q9: Czy można montować S3 File Gateway w EC2?**
+A: Tak, ale tylko dla testów. W produkcji gateway powinien być on-prem.
+
+**Q10: Jaki typ Storage Gateway wspiera Active Directory?**
+A: FSx File Gateway (pełna integracja AD dla SMB). S3 File Gateway obsługuje SMB z AD w ograniczonym zakresie.
+
+**Q11: Jaka jest różnica między Storage Gateway a DataSync?**
+A: Storage Gateway = ciągły dostęp hybrydowy (aplikacje piszą/czytają). DataSync = jednorazowa/schedulowana migracja danych.
+
+**Q12: Ile file sharesów może mieć jeden gateway?**
+A: Maksymalnie 10.
+
+**Q13: Czy S3 File Gateway obsługuje S3 Object Lock?**
+A: Tak, możesz skonfigurować bucket z Object Lock — pliki zapisane przez gateway będą podlegać WORM.
+
+**Q14: Jak szyfrowane są dane w tranzycie przez Storage Gateway?**
+A: HTTPS/TLS zawsze — nie można wyłączyć.
+
+**Q15: Jak szyfrowany jest cache lokalny?**
+A: AES-256.
+
+**Q16: Które klasy S3 są obsługiwane przez S3 File Gateway?**
+A: Standard, Standard-IA, One Zone-IA, Intelligent-Tiering. NIE Glacier bezpośrednio (ale S3 Lifecycle może przenieść obiekty do Glacier).
+
+**Q17: Jak przywrócić dane z Volume Gateway Stored mode do EC2?**
+A: Async backup tworzy EBS Snapshots w S3 → z snapshotu tworzysz EBS volume → montujesz do EC2.
+
+**Q18: Jaki jest maksymalny rozmiar woluminu Volume Gateway Cached?**
+A: 32 TB.
+
+**Q19: Ile wirtualnych taśm może mieć jeden Tape Gateway?**
+A: 1500.
+
+**Q20: Jaki jest zakres regionalny Storage Gateway?**
+A: Gateway wdrażasz on-prem, ale łączy się z konkretnym regionem AWS. Dane trafiają do S3/FSx w tym regionie.
+
+**Q21: Czy Storage Gateway może używać VPC Endpoint (PrivateLink)?**
+A: Tak. Gateway może komunikować się z AWS przez VPC Endpoint zamiast publicznego internetu (wymaga Direct Connect lub VPN).
+
+**Q22: Który typ gateway jest kompatybilny z Veeam i Veritas?**
+A: Tape Gateway — obsługuje standardowy interfejs iSCSI VTL rozpoznawany przez wszystkie popularne rozwiązania backupowe.
+
+**Q23: Jaka jest minimalna wielkość dysku cache dla Storage Gateway?**
+A: 150 GB.
+
+**Q24: Czy możesz mieć wiele S3 File Gatewayów zapisujących do tego samego bucketu?**
+A: Tak, ale tylko jeden gateway na jeden file share. Kilka gatewayów może mieć oddzielne file shares na różne prefiksy tego samego bucketu.
+
+**Q25: Jak Storage Gateway monitoruje wydajność?**
+A: CloudWatch metrics: CacheHitPercent, CacheUsed, ReadBytes, WriteBytes, TimeSinceLastRecoveryPoint.
+
+**Q26: Czy można ograniczyć bandwidth Storage Gateway?**
+A: Tak. Można ustawić harmonogram throttlingu (różne limity w różnych porach dnia).
+
+**Q27: Jaka jest różnica między FSx File Gateway a S3 File Gateway?**
+A: FSx File GW → SMB + AD, dane w FSx for Windows. S3 File GW → NFS+SMB, dane w S3.
+
+**Q28: Czy Storage Gateway Hardware Appliance zapewnia HA?**
+A: Nie. Hardware Appliance to pojedyncze urządzenie. HA wymaga wdrożenia na klastrowanym hypervisorze (VMware HA).
+
+**Q29: Jakie są opcje wdrożenia Storage Gateway?**
+A: VMware ESXi, Microsoft Hyper-V, KVM, Amazon EC2, Hardware Appliance.
+
+**Q30: Kiedy Volume Gateway Stored mode jest lepszy niż Cached?**
+A: Gdy wymagana jest bardzo niska latencja (dane primarne on-prem) + backup do AWS. Cached lepszy gdy chcesz oszczędzić lokalny storage.
+
+**Q31: Co to jest Virtual Tape Shelf (VTS)?**
+A: Archiwum offline wirtualnych taśm w Glacier/Glacier Deep Archive. Taśmy w VTS muszą być przywrócone (retrieve) zanim będą dostępne.
+
+**Q32: Jak długo trwa przywrócenie taśmy z VTS (Glacier)?**
+A: Standardowo 3-5 godzin (Glacier Flexible Retrieval). Glacier Deep Archive: do 12 godzin.
+
+**Q33: Czy S3 File Gateway tworzy wersje plików?**
+A: Jeśli bucket ma S3 Versioning włączone, każda modyfikacja pliku przez gateway tworzy nową wersję obiektu S3.
+
+**Q34: Jak S3 File Gateway radzi sobie z konfliktem zapisu (dwóch klientów)?**
+A: Ostatni zapis wygrywa (last-writer-wins). Brak mechanizmu lock jak w NFS — możliwy konflikt przy jednoczesnych zapisach z wielu klientów.
+
+**Q35: Czy można użyć Storage Gateway do disaster recovery?**
+A: Tak. Volume Gateway Stored mode → async backup do S3 → z S3 można tworzyć EBS Snapshots → deploy w innym regionie.
+
+**Q36: Jaki jest koszt Storage Gateway?**
+A: Gateway opłata (per gateway per miesiąc) + storage (S3/Glacier) + transfer danych (wychodzący z AWS).
+
+**Q37: Czy Storage Gateway obsługuje cross-region replikację?**
+A: Gateway łączy się z jednym regionem. Cross-region → S3 CRR na bucket, do którego zapisuje gateway.
+
+**Q38: Co to jest activate-gateway i kiedy jest potrzebne?**
+A: Aktywacja łączy instancję VM/Hardware z kontem AWS i regionem. Wymagane przy pierwszym uruchomieniu i po odtworzeniu gateway z kopii.
+
+**Q39: Czy Volume Gateway Cached wymaga dużo lokalnego storage?**
+A: Nie. Lokalnie tylko cache (hot blocks). Dane primarne w S3. Mniej miejsca lokalnego niż Stored mode.
+
+**Q40: Jakie metryki CloudWatch są kluczowe dla S3 File Gateway?**
+A: CacheHitPercent (im wyższy tym lepiej), CachePercentUsed (jeśli blisko 100% — zwiększ cache disk), CloudBytesUploaded/Downloaded.
+
+**Q41: Czy Storage Gateway może pracować bez internetu?**
+A: Tylko przez AWS Direct Connect lub VPN — brak połączenia = brak synchronizacji z S3/FSx. Cache działa lokalnie, ale bez sync dane nie trafiają do AWS.
+
+**Q42: Jaki jest Azure odpowiednik Tape Gateway?**
+A: Brak bezpośredniego. Azure ma Azure Backup (MARS/MABS) dla on-prem backup do chmury, ale bez VTL emulacji.
+
+**Q43: Czy FSx File Gateway obsługuje NFS?**
+A: Nie. Tylko SMB. FSx for Windows File Server to Windows-native file system.
+
+**Q44: Jak zabezpieczyć dostęp do S3 File Gateway?**
+A: IAM policy na bucket S3, szyfrowanie SSE-KMS, VPC Endpoint (PrivateLink), Network ACLs na VM gateway, firewall tylko port 443 wychodzący.
+
+**Q45: Kiedy użyć S3 File Gateway zamiast EFS?**
+A: S3 File Gateway: tańszy storage (S3 vs EFS), dane dostępne przez S3 API z AWS side, obsługuje SMB (Windows). EFS: natywny NFS dla EC2/Lambda/ECS w chmurze, bez potrzeby gateway.
+
+**Q46: Czy można użyć S3 Object Lifecycle z danymi z File Gateway?**
+A: Tak. Pliki zapisane przez gateway to zwykłe obiekty S3 — Lifecycle rules działają normalnie (przejście do IA, Glacier, etc.).
+
+**Q47: Co oznacza "refresh cache" w S3 File Gateway?**
+A: Wymusza odświeżenie cache lokalnego z S3. Potrzebne gdy obiekty S3 zostały zmienione bezpośrednio (poza gateway) — bez refresh gateway nie widzi zmian.
+
+**Q48: Czy Tape Gateway obsługuje deduplikację i kompresję?**
+A: Nie natywnie. Deduplikacja/kompresja zależy od oprogramowania backupowego (Veeam, Veritas) przed zapisem do gateway.
+
+**Q49: Ile gatewayów można mieć w jednym regionie?**
+A: Domyślnie 10 (soft limit, można zwiększyć przez support).
+
+**Q50: Kiedy wybrać Hardware Appliance zamiast VM?**
+A: Gdy środowisko nie ma hypervisora (np. mały oddział), gdy potrzebna jest dedykowana wydajność sprzętowa, lub gdy IT policy zabrania software appliances.
+
+**Q51: Jakie porty musi mieć otwarty gateway do komunikacji z AWS?**
+A: Port 443 (HTTPS) wychodzący do AWS endpoints. Port 80 dla aktywacji (jednorazowo).
+
+**Q52: Czy Volume Gateway Stored mode zastępuje snapshoty EBS?**
+A: Nie zastępuje, ale tworzy EBS Snapshots z woluminów on-prem. Snapshoty można użyć do tworzenia EBS volumes w EC2.
+
+**Q53: Jaka jest różnica między S3 File Gateway a AWS DataSync dla plików?**
+A: File Gateway = trwały mount, aplikacje stale czytają/piszą. DataSync = zadania transferu (nie trwały mount), szybszy transfer masowy.
+
+**Q54: Czy możesz przywrócić plik z S3 File Gateway bez gateway?**
+A: Tak. Pliki to natywne obiekty S3 — dostęp przez S3 API, S3 Console, AWS CLI bez potrzeby gateway.
+
+**Q55: Co się stanie z danymi gdy gateway VM padnie (S3 File Gateway)?**
+A: Dane są bezpieczne w S3. Po odtworzeniu VM i aktywacji, gateway kontynuuje pracę. Zmiany niezapisane (w cache) mogą się stracić.
+
+**Q56: Czy Tape Gateway może archiwizować do Glacier Deep Archive?**
+A: Tak. Przy konfiguracji możesz wybrać Glacier lub Glacier Deep Archive dla Virtual Tape Shelf.
+
+**Q57: Jaki jest minimalny rozmiar wirtualnej taśmy?**
+A: 100 GB. Maksymalny: 5 TB.
+
+**Q58: Czy S3 File Gateway obsługuje S3 Replication?**
+A: Tak, pośrednio. Możesz włączyć CRR/SRR na bucket S3, do którego zapisuje gateway — obiekty będą replikowane.
+
+**Q59: Jak sprawdzić status synchronizacji Storage Gateway?**
+A: CloudWatch metrics (CacheDirtyPercentage = procent danych czekających na upload), CloudTrail logi, Storage Gateway console → monitor.
+
+**Q60: Kiedy NIE używać Storage Gateway?**
+A: Gdy potrzebujesz czystej migracji danych (użyj DataSync), gdy aplikacje są już w chmurze (użyj natywnego S3/EFS/EBS), gdy wymagana jest bardzo niska latencja dla wszystkich danych (Stored mode ma async lag dla backupu, Cached ma latencję dla cold data).
+
+*Ostatnia aktualizacja: 2026-10-27 | Tematy: Target Groups (instance/ip/lambda/alb), health checks, weighted TG, Trust Stores, mTLS, ASG lifecycle hooks, warm pools, instance refresh, scaling policies, termination policies, mixed instances*
+
+---
+
+# 20. Amazon EBS — Elastic Block Store
+
+> **EBS** (Elastic Block Store) to trwały, sieciowy dysk blokowy dla instancji EC2. Odpowiednik dysku twardego w chmurze — dane przeżywają restart instancji, ale dysk jest przywiązany do jednej **Availability Zone**.
+
+---
+
+## 20.1 Przegląd i Kontekst
+
+### 🧠 Czym jest EBS?
+
+EBS to **block storage** — widoczny dla OS jako `/dev/xvda`, `C:\` itp. Możesz formatować go dowolnym systemem plików, instalować aplikacje, bazy danych.
+
+**Kluczowe cechy:**
+- **Trwały** — dane przeżywają stop/start EC2 (w odróżnieniu od Instance Store)
+- **AZ-scoped** — dysk istnieje w jednej AZ; EC2 musi być w tej samej AZ
+- **Sieciowy** — podłączony przez sieć AWS (nie fizycznie wewnątrz serwera)
+- **Jeden do jednego** (domyślnie) — jeden wolumin → jedna instancja EC2
+- **Elastic Volumes** — zmień rozmiar/typ/IOPS bez odłączania
+
+### 🌍 Gdzie regionalny/zonalny?
+
+| Zasięg | EBS |
+|--------|-----|
+| Globalny | ❌ |
+| Regionalny | ❌ |
+| **Zonal (AZ)** | ✅ — przypisany do konkretnej AZ |
+
+> Wolumin EBS w `eu-west-1a` **nie może** być podłączony do EC2 w `eu-west-1b`.
+
+### ☁️ Porównanie z Azure
+
+| | Amazon EBS | Azure Managed Disks |
+|--|------------|---------------------|
+| Typ | Block storage | Block storage |
+| Zasięg | AZ | Zone (Availability Zone) |
+| Typy | gp2/gp3/io1/io2/st1/sc1 | Standard HDD/SSD, Premium SSD, Ultra Disk |
+| Multi-Attach | io1/io2 (do 16 inst.) | Ultra Disk, Premium SSD v2 |
+| Snapshots | Tak, incremental | Tak, incremental |
+| Szyfrowanie | KMS, AES-256 | SSE z Platform/Customer key |
+| Odpowiednik gp3 | gp3 | Premium SSD v2 |
+| Odpowiednik io2 | io2 Block Express | Ultra Disk |
+
+---
+
+## 20.2 Typy Woluminów EBS
+
+```mermaid
+graph TD
+    EBS[EBS Volume Types]
+    EBS --> SSD[SSD - IOPS-intensive]
+    EBS --> HDD[HDD - Throughput-intensive]
+    SSD --> GP2[gp2 - General Purpose]
+    SSD --> GP3[gp3 - General Purpose v2]
+    SSD --> IO1[io1 - Provisioned IOPS]
+    SSD --> IO2[io2 - Provisioned IOPS v2]
+    HDD --> ST1[st1 - Throughput Optimized]
+    HDD --> SC1[sc1 - Cold HDD]
+```
+
+### 📊 Tabela porównawcza wszystkich typów
+
+| Cecha | gp2 | gp3 | io1 | io2 | st1 | sc1 |
+|-------|-----|-----|-----|-----|-----|-----|
+| **Typ** | SSD | SSD | SSD | SSD | HDD | HDD |
+| **Rozmiar** | 1 GiB–16 TiB | 1 GiB–16 TiB | 4 GiB–16 TiB | 4 GiB–64 TiB | 125 GiB–16 TiB | 125 GiB–16 TiB |
+| **Max IOPS** | 16 000 | 16 000 | 64 000 | 256 000 (Block Express) | 500 | 250 |
+| **IOPS baseline** | 3 IOPS/GiB (min 100) | 3 000 (niezależne) | Provisioned | Provisioned | N/A | N/A |
+| **Max throughput** | 250 MiB/s | 1 000 MiB/s | 1 000 MiB/s | 4 000 MiB/s | 500 MiB/s | 250 MiB/s |
+| **Burst** | Tak (≤1 TiB) | Nie (stałe 3000) | Nie | Nie | Tak | Tak |
+| **Multi-Attach** | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
+| **Boot volume** | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| **Latencja** | ms | ms | sub-ms | sub-ms | ms | ms |
+| **Cena** | $$ | $ (tańszy niż gp2) | $$$ | $$$$ | $ | $$ |
+| **Użycie** | Ogólne, boot | Ogólne, bazy danych | OLTP, duże bazy | Mission-critical DB | Big data, Kafka | Archiwizacja, backup |
+
+### 🔍 gp2 vs gp3 — kluczowe różnice
+
+| | gp2 | gp3 |
+|--|-----|-----|
+| IOPS baseline | 3 × rozmiar GiB | **3 000 stałe** (niezależnie od rozmiaru) |
+| Burst do | 3 000 IOPS (dla <1 TiB) | N/A — zawsze 3 000 |
+| Max IOPS | 16 000 | 16 000 (provisioned extra) |
+| Throughput | 250 MiB/s | **1 000 MiB/s** |
+| Cena | baseline | **20% tańszy** niż gp2 |
+| Niezależne IOPS | ❌ — zależy od rozmiaru | ✅ — ustaw osobno |
+
+> **SAP-C02 pułapka:** gp2 ma burst oparty o "credit bucket". Mały dysk gp2 (np. 10 GiB = 30 IOPS baseline) wyczerpie kredyty przy długotrwałym obciążeniu. gp3 tego nie ma — zawsze 3 000 IOPS.
+
+### 🔍 io1 vs io2
+
+| | io1 | io2 |
+|--|-----|-----|
+| Max IOPS | 64 000 | 256 000 (Block Express) |
+| Durability | 99.8–99.9% | **99.999%** |
+| IOPS:GiB ratio | 50:1 | **500:1** |
+| Multi-Attach | ✅ | ✅ |
+| Sub-ms latency | ✅ | ✅ |
+| Cena | $$$ | $$$$ |
+
+> io2 Block Express wymaga **Nitro-based** instancji EC2.
+
+---
+
+## 20.3 EBS Multi-Attach
+
+**Tylko io1 i io2** — jeden wolumin podłączony do **do 16 instancji EC2** jednocześnie, w **tej samej AZ**.
+
+```
+┌─────────────────────┐
+│   io2 EBS Volume    │
+│   (single AZ)       │
+└──────┬──────┬───────┘
+       │      │
+    EC2-1   EC2-2   ... EC2-16
+    (same AZ only)
+```
+
+**Wymagania:**
+- Cluster-aware filesystem (np. GFS2, OCFS2) — **nie ext4, xfs**
+- Aplikacja musi zarządzać concurrent writes
+- Użycie: Oracle RAC, SAP HANA clustering, high-availability databases
+
+```bash
+# Sprawdź Multi-Attach status
+aws ec2 describe-volumes \
+  --volume-ids vol-0abc123 \
+  --query 'Volumes[].MultiAttachEnabled'
+```
+
+---
+
+## 20.4 EBS Snapshots
+
+### Jak działają snapshots
+
+**Incremental** — pierwszy snapshot = pełna kopia, każdy kolejny = tylko zmienione bloki.
+
+```mermaid
+sequenceDiagram
+    participant EC2
+    participant EBS
+    participant S3 as S3 (managed by AWS)
+    EC2->>EBS: Write data
+    EBS->>S3: Snapshot 1 (full, 100% blocks)
+    EC2->>EBS: Write more data
+    EBS->>S3: Snapshot 2 (only changed blocks)
+    EC2->>EBS: Write more data
+    EBS->>S3: Snapshot 3 (only changed blocks)
+```
+
+> Snapshots przechowywane w S3 (zarządzanym przez AWS — nie widocznym w twoim buckecie).
+
+### Operacje na snapshotach
+
+```bash
+# Utwórz snapshot
+aws ec2 create-snapshot \
+  --volume-id vol-0abc123 \
+  --description "MyApp backup"
+
+# Skopiuj snapshot do innego regionu
+aws ec2 copy-snapshot \
+  --source-region eu-west-1 \
+  --source-snapshot-id snap-0abc123 \
+  --destination-region us-east-1 \
+  --encrypted
+
+# Udostępnij snapshot innemu kontu AWS
+aws ec2 modify-snapshot-attribute \
+  --snapshot-id snap-0abc123 \
+  --attribute createVolumePermission \
+  --operation-type add \
+  --user-ids 123456789012
+
+# Utwórz wolumin ze snapshotu
+aws ec2 create-volume \
+  --snapshot-id snap-0abc123 \
+  --availability-zone eu-west-1a \
+  --volume-type gp3
+```
+
+### Fast Snapshot Restore (FSR)
+
+Normalnie wolumin ze snapshotu ma **lazy loading** — pierwsze odczyty wolne (dane ładowane z S3). FSR eliminuje to przez pre-warming.
+
+| | Bez FSR | Z FSR |
+|--|---------|-------|
+| First read latency | Wysoka (lazy load) | Niska (pre-warmed) |
+| Koszt | Brak extra | $$ za snapshot × AZ |
+| Użycie | Standardowe | Krytyczne systemy, szybki DR |
+
+```bash
+# Włącz FSR
+aws ec2 enable-fast-snapshot-restores \
+  --availability-zones eu-west-1a eu-west-1b \
+  --source-snapshot-ids snap-0abc123
+```
+
+### Snapshot Archive Tier
+
+Przenieś snapshot do tańszego tier (cold storage) — 75% tańszy, ale restore trwa 24–72 godziny.
+
+```bash
+# Archiwizuj snapshot
+aws ec2 modify-snapshot-tier \
+  --snapshot-id snap-0abc123 \
+  --storage-tier archive
+
+# Przywróć z archiwum (tymczasowo)
+aws ec2 restore-snapshot-tier \
+  --snapshot-id snap-0abc123 \
+  --temporary-restore-days 7
+```
+
+---
+
+## 20.5 EBS Encryption
+
+### Co jest szyfrowane?
+
+- ✅ Data at rest (na dysku)
+- ✅ Data in transit (między EC2 a EBS, przez sieć AWS)
+- ✅ Snapshots (automatycznie jeśli wolumin zaszyfrowany)
+- ✅ Woluminy tworzone ze zaszyfrowanych snapshotów
+
+### Jak działa
+
+```
+EC2 (Nitro) ──encrypted──▶ EBS Volume
+                 AES-256
+                 KMS key (aws/ebs lub Customer Managed Key)
+```
+
+**Klucze:**
+- `aws/ebs` — AWS managed key (domyślny)
+- Customer Managed Key (CMK) — twój klucz w KMS, rotacja, audyt
+
+```bash
+# Stwórz zaszyfrowany wolumin (domyślny klucz)
+aws ec2 create-volume \
+  --availability-zone eu-west-1a \
+  --size 100 \
+  --volume-type gp3 \
+  --encrypted
+
+# Z własnym kluczem KMS
+aws ec2 create-volume \
+  --availability-zone eu-west-1a \
+  --size 100 \
+  --volume-type gp3 \
+  --encrypted \
+  --kms-key-id arn:aws:kms:eu-west-1:123456:key/mrk-abc123
+
+# Włącz domyślne szyfrowanie EBS w regionie
+aws ec2 enable-ebs-encryption-by-default \
+  --region eu-west-1
+```
+
+### Jak zaszyfrować istniejący niezaszyfrowany wolumin
+
+> EBS **nie pozwala** bezpośrednio szyfrować istniejącego woluminu. Procedura:
+
+```mermaid
+flowchart LR
+    A[Unencrypted Volume] -->|Create snapshot| B[Unencrypted Snapshot]
+    B -->|Copy with encryption| C[Encrypted Snapshot]
+    C -->|Create volume| D[Encrypted Volume]
+    D -->|Attach to EC2| E[EC2 with encrypted volume]
+```
+
+```bash
+# 1. Snapshot niezaszyfrowanego woluminu
+aws ec2 create-snapshot --volume-id vol-unencrypted --description "pre-encrypt"
+
+# 2. Kopiuj snapshot z szyfrowaniem
+aws ec2 copy-snapshot \
+  --source-region eu-west-1 \
+  --source-snapshot-id snap-unencrypted \
+  --encrypted \
+  --kms-key-id alias/my-key \
+  --destination-region eu-west-1
+
+# 3. Stwórz nowy zaszyfrowany wolumin
+aws ec2 create-volume \
+  --snapshot-id snap-encrypted \
+  --availability-zone eu-west-1a \
+  --volume-type gp3
+```
+
+---
+
+## 20.6 EBS vs Instance Store
+
+| Cecha | EBS | Instance Store |
+|-------|-----|----------------|
+| **Trwałość** | Trwały (przeżywa stop/start) | **Efemeryczny** (dane giną przy stop/terminate) |
+| **Typ** | Sieciowy (network-attached) | Fizycznie w serwerze |
+| **Latencja** | ms (sieć) | **Niższa** (lokalny dysk) |
+| **IOPS** | Do 256 000 (io2) | Bardzo wysokie (NVMe local) |
+| **Backup** | Snapshots | Brak natywnego |
+| **Cena** | Płacisz za GB | **Wliczone** w cenę instancji |
+| **Rozmiar** | Do 64 TiB (io2) | Zależny od typu instancji |
+| **Użycie** | Bazy danych, OS, dane trwałe | Cache, bufor, temp data, Hadoop HDFS |
+| **Stop EC2** | Dane przeżywają | **Dane giną** |
+| **Terminate EC2** | Opcja DeleteOnTermination | Dane zawsze giną |
+
+> **Instance Store** najlepszy do: buffer/cache/scratch data, Hadoop intermediate data, aplikacje replikujące dane same (Kafka, Cassandra).
+
+---
+
+## 20.7 EBS Performance
+
+### IOPS vs Throughput
+
+| Pojęcie | Opis | Kiedy ważne |
+|---------|------|-------------|
+| **IOPS** | Operacje I/O na sekundę | Bazy danych, random access |
+| **Throughput** | MB/s transferu | Streaming, big data, sequential |
+| **Latency** | Czas odpowiedzi | OLTP, trading systems |
+
+### Queue Depth
+
+Wydajność EBS rośnie z **queue depth** (liczba równoczesnych requestów):
+- Queue depth = 1: IOPS wykorzystane ~30–40%
+- Queue depth = 32+: pełne IOPS
+
+### Nitro Instances
+
+io2 Block Express (256 000 IOPS) wymaga **Nitro-based** EC2 (C5, M5, R5, I3en, X2iedn, etc.).
+
+```bash
+# Sprawdź wydajność woluminu
+aws ec2 describe-volumes \
+  --volume-ids vol-0abc123 \
+  --query 'Volumes[].{IOPS:Iops,Throughput:Throughput,Type:VolumeType}'
+```
+
+---
+
+## 20.8 EBS Data Lifecycle Manager (DLM)
+
+**DLM** automatyzuje tworzenie i usuwanie snapshotów EBS oraz AMI.
+
+```mermaid
+flowchart TD
+    DLM[DLM Policy] -->|Trigger: schedule| Snapshot[Create Snapshot]
+    Snapshot -->|Retention policy| Old[Delete old snapshots]
+    DLM -->|Tags filter| EBS[Target: EBS volumes with tag]
+```
+
+```bash
+# Utwórz politykę DLM
+aws dlm create-lifecycle-policy \
+  --description "Daily EBS backup" \
+  --state ENABLED \
+  --execution-role-arn arn:aws:iam::123456:role/AWSDataLifecycleManagerDefaultRole \
+  --policy-details '{
+    "PolicyType": "EBS_SNAPSHOT_MANAGEMENT",
+    "ResourceTypes": ["VOLUME"],
+    "TargetTags": [{"Key": "Backup", "Value": "true"}],
+    "Schedules": [{
+      "Name": "DailySnapshots",
+      "CreateRule": {"Interval": 24, "IntervalUnit": "HOURS", "Times": ["03:00"]},
+      "RetainRule": {"Count": 7},
+      "CopyTags": true
+    }]
+  }'
+
+# Listuj polityki
+aws dlm get-lifecycle-policies
+```
+
+**DLM vs AWS Backup:**
+| | DLM | AWS Backup |
+|--|-----|-----------|
+| Zakres | Tylko EBS + AMI | Multi-service (RDS, EFS, S3...) |
+| Cross-account | Tak | Tak |
+| Cross-region | Tak | Tak |
+| Centralne zarządzanie | Ograniczone | ✅ Full |
+| Compliance vault | ❌ | ✅ |
+
+---
+
+## 20.9 EBS Elastic Volumes
+
+Możesz **bez odłączania** woluminu zmienić:
+- Rozmiar (tylko zwiększyć, nie zmniejszyć)
+- Typ (np. gp2 → gp3)
+- IOPS (dla io1/io2/gp3)
+- Throughput (dla gp3)
+
+```bash
+# Zwiększ rozmiar i zmień typ
+aws ec2 modify-volume \
+  --volume-id vol-0abc123 \
+  --size 200 \
+  --volume-type gp3 \
+  --iops 6000 \
+  --throughput 500
+
+# Sprawdź status modyfikacji
+aws ec2 describe-volumes-modifications \
+  --volume-ids vol-0abc123
+
+# Po modyfikacji — rozszerz filesystem (Linux)
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1   # ext4
+# lub
+sudo xfs_growfs /           # xfs
+```
+
+> **Uwaga:** Po modyfikacji woluminu musi minąć min. **6 godzin** przed kolejną modyfikacją.
+
+---
+
+## 20.10 Ograniczenia EBS
+
+| Limit | Wartość |
+|-------|---------|
+| Max rozmiar woluminu | 64 TiB (io2), 16 TiB (pozostałe) |
+| Max IOPS na wolumin | 256 000 (io2 Block Express) |
+| Max throughput na wolumin | 4 000 MiB/s (io2 Block Express) |
+| Max woluminów na instancję | 28 (Nitro), 40 (inne) |
+| Multi-Attach max instancji | 16 |
+| Snapshot archiwum restore | 24–72 godziny |
+| Modyfikacja woluminu cooldown | 6 godzin |
+| FSR max snapshotów | 5 na AZ |
+
+---
+
+## 20.11 Reliability & Security
+
+### Reliability
+- EBS replikowany w ramach AZ (bez dodatkowych opłat)
+- io2: **99.999%** durability (io1: 99.9%)
+- Snapshots do S3 = cross-AZ durability
+- Multi-AZ przez snapshots + create volume in another AZ
+
+### Security
+- Szyfrowanie domyślne per-region: `aws ec2 enable-ebs-encryption-by-default`
+- KMS Customer Managed Keys — rotacja, audyt CloudTrail
+- IAM policies kontrolują kto może tworzyć/usuwać woluminy
+- Resource-based: snapshot sharing przez `modify-snapshot-attribute`
+- VPC endpoint dla EC2 API (nie wpływa na EBS bezpośrednio — ruch EBS zawsze prywatny)
+
+---
+
+## 20.12 Well-Architected Framework
+
+| Filar | EBS |
+|-------|-----|
+| **Operational Excellence** | DLM automatyzuje snapshoty; CloudWatch metryki (VolumeReadOps, VolumeWriteOps, BurstBalance) |
+| **Security** | Szyfrowanie KMS, IAM, enable-ebs-encryption-by-default, CloudTrail dla API calls |
+| **Reliability** | Replikacja w AZ, snapshots cross-region, io2 99.999% durability, Multi-Attach dla HA clustering |
+| **Performance Efficiency** | gp3 (niezależne IOPS/throughput), io2 Block Express dla sub-ms, Instance Store dla lokalnego cache |
+| **Cost Optimization** | gp3 tańszy niż gp2, Snapshot Archive Tier, DLM retention policies, Elastic Volumes zamiast nowych dysków |
+| **Sustainability** | Elastic Volumes zamiast tworzenia nowych woluminów; migrate gp2→gp3 (efektywniejsze) |
+
+---
+
+## 20.13 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+- Multi-account snapshot sharing (`modify-snapshot-attribute --user-ids`)
+- Cross-region snapshot copy dla DR
+- Resource Access Manager (RAM) nie obsługuje EBS bezpośrednio — użyj snapshot sharing
+
+### Domain 2: Design for New Solutions
+- gp3 jako domyślny wybór (tańszy, lepszy niż gp2)
+- io2 Block Express dla Oracle RAC, SAP HANA
+- Multi-Attach + cluster filesystem dla shared storage
+- Instance Store dla ephemeral workloads (Spark, Hadoop)
+
+### Domain 3: Continuous Improvement for Existing Solutions
+- Migracja gp2 → gp3 (Elastic Volumes, zero downtime)
+- DLM zamiast ręcznych snapshotów
+- CloudWatch BurstBalance alarm (gp2 burst wyczerpanie)
+- Snapshot Archive dla starych backupów
+
+### Domain 4: Accelerate Workload Migration and Modernization
+- AWS Application Migration Service (MGN) używa EBS internally
+- CloudEndure → MGN → replika EBS w target regionie
+- Database Migration Service (DMS) + EBS jako landing zone
+
+---
+
+## 20.14 Checks — 60 Pytań z Odpowiedziami
+
+**1. Jaki jest zasięg EBS?**
+→ AZ (Availability Zone). Wolumin i EC2 muszą być w tej samej AZ.
+
+**2. Jaka jest domyślna wydajność IOPS woluminu gp3?**
+→ 3 000 IOPS, niezależnie od rozmiaru.
+
+**3. Czym różni się gp2 od gp3 pod kątem IOPS?**
+→ gp2: 3 IOPS/GiB (zależy od rozmiaru, burst). gp3: 3 000 IOPS stałe, niezależne od rozmiaru.
+
+**4. Ile IOPS max obsługuje io2 Block Express?**
+→ 256 000 IOPS.
+
+**5. Które typy EBS obsługują Multi-Attach?**
+→ io1 i io2.
+
+**6. Ile instancji EC2 może używać Multi-Attach jednocześnie?**
+→ Do 16.
+
+**7. Czy Multi-Attach działa między AZ?**
+→ Nie — tylko w tej samej AZ.
+
+**8. Jakiego systemu plików wymagasz dla Multi-Attach?**
+→ Cluster-aware (GFS2, OCFS2) — nie ext4 ani xfs.
+
+**9. Czy snapshots EBS są incremental?**
+→ Tak — pierwszy pełny, kolejne tylko zmienione bloki.
+
+**10. Gdzie przechowywane są snapshots EBS?**
+→ W S3 zarządzanym przez AWS (niewidocznym w twoich bucketach).
+
+**11. Co to jest Fast Snapshot Restore (FSR)?**
+→ Pre-warming woluminu ze snapshotu — eliminuje lazy loading przy pierwszych odczytach.
+
+**12. Ile kosztuje FSR?**
+→ Dodatkowa opłata per snapshot per AZ.
+
+**13. Jak zaszyfrować istniejący niezaszyfrowany wolumin EBS?**
+→ Snapshot → copy snapshot with encryption → create volume from encrypted snapshot.
+
+**14. Co jest szyfrowane przez EBS encryption?**
+→ Dane at rest, in transit (EC2↔EBS), snapshots, woluminy ze zaszyfrowanych snapshotów.
+
+**15. Jaki algorytm szyfruje EBS?**
+→ AES-256.
+
+**16. Jaka jest różnica między aws/ebs a CMK?**
+→ aws/ebs = AWS managed key (brak kontroli rotacji). CMK = twój klucz w KMS, pełna kontrola.
+
+**17. Czym różni się EBS od Instance Store?**
+→ EBS: trwały, sieciowy, snapshots. Instance Store: efemeryczny, lokalny, szybszy, tańszy.
+
+**18. Co się dzieje z danymi Instance Store po stop/terminate EC2?**
+→ Dane są bezpowrotnie tracone.
+
+**19. Kiedy używać Instance Store?**
+→ Cache, buffer, temp data, Hadoop intermediate, Kafka (gdy dane replikowane osobno).
+
+**20. Jaki typ EBS ma najniższy koszt?**
+→ sc1 (Cold HDD).
+
+**21. Czy można używać sc1 jako boot volume?**
+→ Nie — tylko SSD (gp2, gp3, io1, io2).
+
+**22. Jaka jest max przepustowość gp3?**
+→ 1 000 MiB/s.
+
+**23. Jaka jest max przepustowość st1?**
+→ 500 MiB/s.
+
+**24. Kiedy używać st1 zamiast sc1?**
+→ st1: częsty dostęp sekwencyjny (Kafka, big data). sc1: rzadki dostęp (backup, archiwizacja).
+
+**25. Ile godzin cooldown po modyfikacji Elastic Volumes?**
+→ 6 godzin.
+
+**26. Czy można zmniejszyć rozmiar EBS Elastic Volume?**
+→ Nie — tylko zwiększyć.
+
+**27. Co to jest DLM?**
+→ Data Lifecycle Manager — automatyczne tworzenie i usuwanie snapshotów/AMI wg harmonogramu.
+
+**28. Jaka jest różnica DLM vs AWS Backup?**
+→ DLM: tylko EBS+AMI. AWS Backup: multi-service, centralne zarządzanie, compliance vault.
+
+**29. Jaka jest trwałość (durability) io2?**
+→ 99.999%.
+
+**30. Jaka jest trwałość gp3?**
+→ 99.8–99.9%.
+
+**31. Czego wymaga io2 Block Express?**
+→ Nitro-based EC2 instance.
+
+**32. Ile max woluminów można podłączyć do jednej instancji Nitro?**
+→ 28 woluminów EBS.
+
+**33. Co to jest Snapshot Archive Tier?**
+→ Tańszy (75%) tier do przechowywania snapshotów; restore trwa 24–72 godziny.
+
+**34. Jak skopiować snapshot do innego regionu?**
+→ `aws ec2 copy-snapshot --source-region ... --destination-region ...`
+
+**35. Czy snapshot można udostępnić innemu kontu AWS?**
+→ Tak, przez `modify-snapshot-attribute --user-ids`.
+
+**36. Jak włączyć domyślne szyfrowanie EBS w regionie?**
+→ `aws ec2 enable-ebs-encryption-by-default --region eu-west-1`
+
+**37. Co monitoruje metryka BurstBalance?**
+→ Pozostałe kredyty burst dla gp2/st1/sc1. Gdy = 0, wolumen operuje na baseline.
+
+**38. Jak sprawdzić status modyfikacji Elastic Volume?**
+→ `aws ec2 describe-volumes-modifications --volume-ids vol-xxx`
+
+**39. Czy EBS replikuje dane między AZ automatycznie?**
+→ Nie. EBS replikuje w ramach jednej AZ. Cross-AZ = snapshots + nowy wolumin.
+
+**40. Jaki jest max rozmiar woluminu io2?**
+→ 64 TiB.
+
+**41. Jaki jest max rozmiar woluminu gp3?**
+→ 16 TiB.
+
+**42. Jak zwiększyć filesystem po Elastic Volume resize (ext4)?**
+→ `sudo growpart /dev/xvda 1` następnie `sudo resize2fs /dev/xvda1`
+
+**43. Czym jest EBS w kontekście sieci AWS?**
+→ Network-attached storage — podłączony przez prywatną sieć AWS, nie fizycznie w serwerze.
+
+**44. Czy szyfrowanie EBS wpływa na wydajność?**
+→ Minimalnie — Nitro instances obsługują szyfrowanie sprzętowo, brak zauważalnego wpływu.
+
+**45. Co oznacza DeleteOnTermination dla EBS?**
+→ Domyślnie root volume usuwany przy terminate EC2. Można wyłączyć dla woluminów dodatkowych.
+
+**46. Czy można zmienić klucz KMS zaszyfrowanego woluminu?**
+→ Nie bezpośrednio. Snapshot → copy z nowym kluczem → nowy wolumin.
+
+**47. Co to jest EBS-optimized instance?**
+→ Instancja z dedykowaną przepustowością dla EBS (nie dzielona z siecią). Większość nowoczesnych instancji jest domyślnie EBS-optimized.
+
+**48. Jak DLM targetuje woluminy?**
+→ Przez tagi (np. `Backup: true`).
+
+**49. Ile max snapshotów FSR na AZ?**
+→ 5.
+
+**50. Czy snapshots EBS są spójne z systemem plików?**
+→ Nie automatycznie — zalecane `fsfreeze` lub zatrzymanie IO przed snapshotem.
+
+**51. Jaki typ EBS wybrać dla Oracle Database?**
+→ io2 Block Express (max IOPS, 99.999% durability, sub-ms latency).
+
+**52. Jaki typ EBS wybrać dla Apache Kafka?**
+→ st1 (wysoki throughput sekwencyjny, niski koszt) lub Instance Store.
+
+**53. Czy gp2 i gp3 mają tę samą max IOPS?**
+→ Tak — oba 16 000 IOPS max.
+
+**54. Jak sprawdzić IOPS woluminu gp2 z jego rozmiaru?**
+→ IOPS = 3 × GiB. Np. 100 GiB = 300 IOPS baseline.
+
+**55. Kiedy gp2 wyczerpuje burst credits?**
+→ Gdy przez długi czas I/O > baseline (3 IOPS/GiB). Mały dysk (np. 10 GiB = 30 IOPS baseline) wyczerpuje szybko.
+
+**56. Jaki jest IOPS:GiB ratio dla io1?**
+→ 50:1 (max 64 000 IOPS przy 1 280 GiB).
+
+**57. Jaki jest IOPS:GiB ratio dla io2?**
+→ 500:1 (znacznie wydajniejszy niż io1).
+
+**58. Czy można tworzyć AMI ze snapshotu EBS?**
+→ Tak — AMI używa snapshotów EBS jako backing.
+
+**59. Co to jest EBS direct APIs?**
+→ API do odczytu/zapisu danych snapshotu bezpośrednio (blok po bloku), bez tworzenia woluminu. Użycie: backup software, antywirus.
+
+**60. Czy EBS obsługuje NFS lub SMB?**
+→ Nie — EBS to block storage (nie file system). Dla NFS użyj EFS, dla SMB FSx for Windows.
+
+---
+
+# 21. Amazon EFS — Elastic File System
+
+> **Zakres:** Regionalny (multi-AZ) | **Protokół:** NFSv4.1/4.0 | **OS:** Linux only | **Skalowanie:** Automatyczne (petabyte-scale)
+
+## 21.1 Przegląd i kontekst
+
+Amazon EFS (Elastic File System) to w pełni zarządzany, elastyczny system plików NFS dla instancji EC2, kontenerów i funkcji Lambda działających w AWS. W odróżnieniu od EBS (blokowy, jeden EC2) czy S3 (obiektowy), EFS oferuje **współdzielony dostęp do systemu plików** dla wielu instancji jednocześnie — jak serwer NFS w tradycyjnym datacenter, tylko bez zarządzania infrastrukturą.
+
+**Kluczowe cechy:**
+- Automatycznie rośnie i maleje — płacisz za faktycznie zajęte miejsce
+- Multi-AZ — dane replikowane w kilku strefach dostępności
+- Obsługuje tysiące równoczesnych połączeń
+- Standard POSIX — działa jak zwykły filesystem
+
+**Odpowiednik open-source/Linux:** Serwer NFS (`nfs-kernel-server`) + montowanie przez klientów NFS  
+**Odpowiednik Azure:** Azure Files (SMB/NFS), Azure NetApp Files (premium NFS)
+
+```bash
+# Utwórz EFS filesystem
+aws efs create-file-system \
+  --performance-mode generalPurpose \
+  --throughput-mode elastic \
+  --encrypted \
+  --tags Key=Name,Value=MyEFS
+
+# Utwórz Mount Target w subnecie (jeden per AZ)
+aws efs create-mount-target \
+  --file-system-id fs-12345678 \
+  --subnet-id subnet-abc123 \
+  --security-groups sg-xyz789
+
+# Zamontuj na EC2 (wymagane: amazon-efs-utils)
+sudo mount -t efs -o tls fs-12345678:/ /mnt/efs
+# lub przez DNS:
+sudo mount -t nfs4 -o nfsvers=4.1,tls \
+  fs-12345678.efs.eu-west-1.amazonaws.com:/ /mnt/efs
+```
+
+---
+
+## 21.2 EFS vs EBS vs S3 — Porównanie
+
+| Cecha | EFS | EBS | S3 |
+|-------|-----|-----|----|
+| **Typ storage** | File (NFS) | Block | Object |
+| **Protokół** | NFSv4.1/4.0 | iSCSI (wewnętrznie) | HTTPS REST API |
+| **Dostęp** | Wiele EC2 jednocześnie | Jeden EC2 (Multi-Attach: do 16) | Dowolnie (API, CLI, SDK) |
+| **Zakres** | Regionalny (multi-AZ) | Zonal (jedna AZ) | Regionalny (globalny z replikacją) |
+| **OS** | Linux only | Linux + Windows | Dowolny (API) |
+| **Elastyczność** | Auto (petabyte-scale) | Ręczna zmiana rozmiaru | Auto (nieograniczony) |
+| **Latencja** | ms (sub-ms w GP mode) | sub-ms (SSD) | ms–s (sieć) |
+| **IOPS** | do 35k (GP) / wyższe (MaxI/O) | do 256k (io2) | brak pojęcia IOPS |
+| **Cena (za GB/mies.)** | ~$0.30 (Standard) | ~$0.10 (gp3) | ~$0.023 (Standard) |
+| **Typowy use case** | CMS, web serving, shared config | Bazy danych, OS, boot | Backup, archiwum, static assets |
+| **Backup** | AWS Backup | Snapshots | Versioning, Replication |
+
+---
+
+## 21.3 EFS Performance Modes
+
+Wybierany przy tworzeniu — **nie można zmienić po utworzeniu**.
+
+| Mode | Opis | Max IOPS | Latencja | Kiedy używać |
+|------|------|----------|----------|--------------|
+| **General Purpose** (default) | Zoptymalizowany pod latencję | 35,000 | sub-ms | Web serving, CMS, home dirs, dev |
+| **Max I/O** | Wyższy throughput/IOPS, wyższa latencja | >500,000 | ms | Big data, media processing, HPC, tysiące EC2 równolegle |
+
+> ⚠️ **Egzamin:** Większość workloadów = General Purpose. Max I/O tylko gdy tysiące instancji równolegle i akceptujesz wyższą latencję.
+
+```bash
+# Sprawdź performance mode
+aws efs describe-file-systems \
+  --file-system-id fs-12345678 \
+  --query 'FileSystems[].PerformanceMode'
+```
+
+---
+
+## 21.4 EFS Throughput Modes
+
+Można zmienić w dowolnym momencie (w odróżnieniu od Performance Mode).
+
+| Mode | Opis | Baseline | Burst | Kiedy używać |
+|------|------|----------|-------|--------------|
+| **Bursting** | Throughput skaluje się ze storage | 50 KiB/s per GB | Do 100 MiB/s (< 1TB) lub 100 MiB/s per TB | Małe/średnie systemy z nieprzewidywalnym ruchem |
+| **Provisioned** | Stały throughput niezależnie od rozmiaru | Ustalasz (np. 1 GiB/s) | Brak (stały) | Workloady wymagające stałego wysokiego throughput |
+| **Elastic** (nowość) | Auto-skalowanie, brak limitów | Auto | Auto (do 3 GiB/s read, 1 GiB/s write) | **Zalecany default** — nieprzewidywalne workloady |
+
+```bash
+# Zmień na Elastic throughput
+aws efs update-file-system \
+  --file-system-id fs-12345678 \
+  --throughput-mode elastic
+
+# Zmień na Provisioned (1 GiB/s)
+aws efs update-file-system \
+  --file-system-id fs-12345678 \
+  --throughput-mode provisioned \
+  --provisioned-throughput-in-mibps 1024
+```
+
+> ⚠️ **Egzamin:** Bursting = throughput zależny od rozmiaru filesystem. Mały EFS (<1TB) = mały burst. Elastic = brak tego problemu, ale wyższy koszt.
+
+---
+
+## 21.5 EFS Storage Classes i Lifecycle Management
+
+### Klasy storage
+
+| Klasa | Opis | Dostępność | Koszt (US) | Retrieval fee |
+|-------|------|-----------|-----------|---------------|
+| **Standard** | Często używane dane | Multi-AZ | ~$0.30/GB | Brak |
+| **Standard-IA** | Rzadko używane, multi-AZ | Multi-AZ | ~$0.025/GB | $0.01/GB |
+| **One Zone** | Często używane, jedna AZ | Jedna AZ | ~$0.17/GB | Brak |
+| **One Zone-IA** | Rzadko używane, jedna AZ | Jedna AZ | ~$0.013/GB | $0.01/GB |
+
+> ⚠️ **One Zone** — tańsze ~47%, ale ryzyko utraty danych przy awarii AZ. Dobre dla dev/test.
+
+### Lifecycle Management
+
+EFS automatycznie przenosi pliki do IA po X dniach bezczynności:
+
+```bash
+# Włącz lifecycle — przenoś do IA po 30 dniach
+aws efs put-lifecycle-configuration \
+  --file-system-id fs-12345678 \
+  --lifecycle-policies \
+    TransitionToIA=AFTER_30_DAYS \
+    TransitionToPrimaryStorageClass=AFTER_1_ACCESS
+```
+
+Opcje `TransitionToIA`: 7, 14, 30, 60, 90 dni  
+`TransitionToPrimaryStorageClass=AFTER_1_ACCESS` — przenieś z powrotem do Standard przy pierwszym odczycie.
+
+```mermaid
+flowchart LR
+    A[Nowy plik → Standard] -->|30 dni bez dostępu| B[Standard-IA]
+    B -->|Odczyt pliku| C[Standard ponownie]
+    style A fill:#4CAF50,color:#fff
+    style B fill:#FF9800,color:#fff
+    style C fill:#4CAF50,color:#fff
+```
+
+---
+
+## 21.6 EFS Access Points
+
+Access Points = logiczne punkty wejścia do EFS dla konkretnych aplikacji. Każdy Access Point może:
+- Wymuszać konkretny katalog root (np. `/app1/data`)
+- Wymuszać konkretne UID/GID dla dostępu POSIX
+- Ograniczać dostęp przez IAM
+
+```bash
+# Utwórz Access Point
+aws efs create-access-point \
+  --file-system-id fs-12345678 \
+  --posix-user Uid=1000,Gid=1000 \
+  --root-directory \
+    Path=/app1/data,CreationInfo="{OwnerUid=1000,OwnerGid=1000,Permissions=755}"
+
+# Montuj przez Access Point
+sudo mount -t efs -o tls,accesspoint=fsap-abc123 \
+  fs-12345678:/ /mnt/app1
+```
+
+**Use case:** Wiele aplikacji na jednym EFS, każda widzi tylko swój katalog. Idealne dla ECS/EKS gdzie wiele kontenerów dzieli jeden EFS.
+
+---
+
+## 21.7 EFS Security
+
+### Warstwy bezpieczeństwa
+
+```mermaid
+flowchart TD
+    EC2[EC2 / Lambda / Container] --> SG[Security Group\nport 2049 NFS]
+    SG --> MT[Mount Target]
+    MT --> EFS[EFS Filesystem]
+    EFS --> KMS[KMS Encryption\nat rest]
+    EC2 -->|TLS| MT
+    IAM[IAM Policy\nefs:ClientMount\nefs:ClientWrite] --> EFS
+    style KMS fill:#FF5722,color:#fff
+    style IAM fill:#9C27B0,color:#fff
+```
+
+| Warstwa | Mechanizm | Opis |
+|---------|-----------|------|
+| **Sieciowa** | Security Groups | Mount Target wymaga SG z TCP 2049 (NFS) |
+| **Szyfrowanie in-transit** | TLS (`-o tls`) | Przez amazon-efs-utils |
+| **Szyfrowanie at-rest** | KMS (AWS managed lub CMK) | Włączone przy tworzeniu, nie można wyłączyć |
+| **Tożsamość** | IAM + Resource Policy | `efs:ClientMount`, `efs:ClientWrite`, `efs:ClientRootAccess` |
+| **Dostęp aplikacji** | Access Points + POSIX UID/GID | Izolacja per-aplikacja |
+
+```bash
+# Przykład EFS Resource Policy — tylko szyfrowane połączenia
+aws efs put-file-system-policy \
+  --file-system-id fs-12345678 \
+  --policy '{
+    "Version": "2012-10-17",
+    "Statement": [{
+      "Effect": "Deny",
+      "Principal": {"AWS": "*"},
+      "Action": "*",
+      "Condition": {
+        "Bool": {"aws:SecureTransport": "false"}
+      }
+    }]
+  }'
+```
+
+---
+
+## 21.8 EFS z Lambda, ECS, EKS
+
+### EFS + Lambda
+
+Lambda może montować EFS — pozwala na:
+- Współdzielenie danych między wywołaniami (Lambda jest bezstanowa)
+- Duże modele ML, dane referencyjne
+- Wymaga VPC Lambda + Mount Target w tej samej AZ
+
+```bash
+# Konfiguracja Lambda z EFS
+aws lambda update-function-configuration \
+  --function-name MyFunction \
+  --file-system-configs \
+    Arn=arn:aws:elasticfilesystem:eu-west-1:123456789012:access-point/fsap-abc123,\
+    LocalMountPath=/mnt/data
+```
+
+### EFS + ECS/Fargate
+
+```json
+// Task Definition — Volume EFS
+{
+  "volumes": [{
+    "name": "efs-vol",
+    "efsVolumeConfiguration": {
+      "fileSystemId": "fs-12345678",
+      "rootDirectory": "/app",
+      "transitEncryption": "ENABLED",
+      "authorizationConfig": {
+        "accessPointId": "fsap-abc123",
+        "iam": "ENABLED"
+      }
+    }
+  }]
+}
+```
+
+### EFS + EKS
+
+```yaml
+# PersistentVolume w EKS przez EFS CSI Driver
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efs-pv
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-12345678
+```
+
+> `ReadWriteMany` — jedyny typ storage w AWS natywnie obsługujący RWX dla Kubernetes.
+
+---
+
+## 21.9 EFS Cross-Region i Backup
+
+### Cross-Region
+
+EFS **NIE** obsługuje natywnej replikacji cross-region (inaczej niż S3). Opcje:
+
+| Metoda | Opis | RTO/RPO |
+|--------|------|---------|
+| **AWS DataSync** | Scheduled sync EFS→EFS cross-region | Minuty/godziny |
+| **AWS Backup** | Backup vault cross-region | Godziny |
+| **rsync + EC2** | Ręcznie lub przez cron | Zależy od implementacji |
+
+```bash
+# DataSync — synchronizuj EFS między regionami
+aws datasync create-task \
+  --source-location-arn arn:aws:datasync:eu-west-1:...:location/loc-src \
+  --destination-location-arn arn:aws:datasync:us-east-1:...:location/loc-dst \
+  --name "EFS-CrossRegion-Sync"
+```
+
+### AWS Backup + EFS
+
+```bash
+# Włącz backup EFS przez AWS Backup
+aws backup create-backup-plan \
+  --backup-plan '{
+    "BackupPlanName": "EFSDaily",
+    "Rules": [{
+      "RuleName": "Daily",
+      "TargetBackupVaultName": "Default",
+      "ScheduleExpression": "cron(0 2 * * ? *)",
+      "StartWindowMinutes": 60,
+      "CompletionWindowMinutes": 120,
+      "Lifecycle": {
+        "DeleteAfterDays": 30
+      }
+    }]
+  }'
+```
+
+---
+
+## 21.10 Porównanie EFS vs Azure Files vs GCP Filestore
+
+| | Amazon EFS | Azure Files | GCP Filestore |
+|-|-----------|------------|---------------|
+| **Protokół** | NFSv4.1 | SMB 3.0, NFSv4.1 | NFSv3 |
+| **OS** | Linux | Windows + Linux | Linux |
+| **Elastyczność** | Auto | Auto | Manual tiers |
+| **Multi-AZ** | Tak (default) | Tak (ZRS tier) | Nie (zonal) |
+| **Min rozmiar** | 0 (auto) | 100 GiB (Standard) | 1 TiB (Basic) |
+| **Cena baseline** | $0.30/GB | $0.06/GB (Standard) | $0.20/GB |
+| **Performance** | GP/MaxI/O + Elastic | Standard/Premium | Basic/High Scale/Enterprise |
+| **K8s RWX** | Tak (EFS CSI) | Tak (Azure Files CSI) | Tak |
+
+---
+
+## 21.11 Ograniczenia EFS
+
+| Ograniczenie | Wartość |
+|-------------|---------|
+| Max file systems per region | 1000 |
+| Max mount targets per AZ | 1 per filesystem |
+| Max size pojedynczego pliku | 52 TiB |
+| Max throughput (Elastic mode) | 3 GiB/s read, 1 GiB/s write |
+| Max IOPS (Max I/O mode) | >500,000 |
+| Obsługiwane OS | Linux only (NFSv4.1) |
+| Cross-Region natywnie | NIE |
+| Windows support | NIE (użyj FSx for Windows) |
+| Latencja vs EBS | Wyższa (sieć vs lokalny) |
+
+---
+
+## 21.12 Well-Architected Framework — EFS
+
+| Filar | Rekomendacja EFS |
+|-------|-----------------|
+| **Operational Excellence** | Monitoruj `PercentIOLimit` i `BurstCreditBalance` w CloudWatch; użyj Elastic mode by uniknąć zarządzania burst credits |
+| **Security** | Zawsze włącz szyfrowanie at-rest (KMS) i in-transit (TLS); użyj Resource Policy by wymusić TLS; Access Points dla izolacji aplikacji |
+| **Reliability** | Multi-AZ Standard class dla produkcji; AWS Backup z retention policy; unikaj One Zone dla krytycznych danych |
+| **Performance Efficiency** | General Purpose + Elastic throughput dla większości; Max I/O tylko dla HPC/big data z tysiącami połączeń; monitoruj `PercentIOLimit` |
+| **Cost Optimization** | Lifecycle Management → IA po 30 dniach; One Zone-IA dla dev/test; monitoruj `StorageBytes` per storage class |
+| **Sustainability** | Lifecycle do IA zmniejsza pojemność aktywnego storage; eliminuje nadprowizjonowanie (auto-scaling) |
+
+---
+
+## 21.13 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+- EFS jako centralny storage dla wielu VPC przez VPC Peering / Transit Gateway + Mount Targets
+- Access Points dla izolacji team/aplikacji przy wielodzierżawczości
+- IAM Resource Policy dla cross-account EFS access
+
+### Domain 2: Design for New Solutions
+- EFS + Fargate + EKS = shared persistent storage dla kontenerów (ReadWriteMany)
+- EFS + Lambda = stateful serverless (modele ML, cache)
+- EFS z Auto Scaling Group — wszystkie instancje montują ten sam filesystem
+
+### Domain 3: Continuous Improvement for Existing Solutions
+- Migracja z NFS on-prem na EFS przez DataSync
+- Zmiana throughput mode z Bursting na Elastic gdy `BurstCreditBalance` wyczerpany
+- Włączenie Lifecycle Management dla redukcji kosztów istniejących EFS
+
+### Domain 4: Accelerate Workload Migration and Modernization
+- DataSync: NFS on-prem → EFS (migracja lift-and-shift)
+- Storage Gateway File Gateway → EFS jako cache dla on-prem dostępu do EFS
+- EFS jako wspólny storage przy migracji aplikacji monolitycznych do mikrousług (ECS)
+
+---
+
+## 21.14 Reliability i Security — Deep Dive
+
+### Reliability
+```
+Production EFS:
+- Performance Mode: General Purpose
+- Throughput Mode: Elastic
+- Storage Class: Standard (multi-AZ)
+- Backup: AWS Backup, daily, 30 dni retention
+- Mount Targets: po jednym w każdej AZ (us-east-1a, 1b, 1c)
+- DNS: fs-xxx.efs.region.amazonaws.com → automatyczny failover do zdrowej AZ
+```
+
+### Security Checklist
+- [ ] Szyfrowanie at-rest włączone przy tworzeniu (KMS)
+- [ ] TLS (`-o tls`) przy montowaniu
+- [ ] Security Group Mount Target: tylko TCP 2049 z zaufanych SG
+- [ ] Resource Policy: deny bez SecureTransport
+- [ ] Access Points zamiast bezpośredniego dostępu root
+- [ ] IAM: `efs:ClientMount` + `efs:ClientWrite` explicite
+
+---
+
+## 21.15 Checks — 60 Pytań z Odpowiedziami
+
+**Podstawy:**
+
+1. **Q: Jaki protokół używa EFS?**  
+   A: NFSv4.1 (i NFSv4.0 jako fallback)
+
+2. **Q: Czy EFS działa na Windows?**  
+   A: Nie. EFS to NFS — tylko Linux. Dla Windows użyj FSx for Windows File Server (SMB).
+
+3. **Q: Czy EFS jest regionalny czy zonal?**  
+   A: Regionalny — dane replikowane w wielu AZ (Standard class). One Zone = pojedyncza AZ.
+
+4. **Q: Ile Mount Targets możesz mieć per AZ?**  
+   A: Jeden Mount Target per AZ per filesystem.
+
+5. **Q: Czy rozmiar EFS trzeba określać przy tworzeniu?**  
+   A: Nie. EFS automatycznie rośnie i maleje — płacisz za faktycznie zajęte miejsce.
+
+6. **Q: Jaka jest różnica między EFS a EBS?**  
+   A: EFS = shared file system (NFS), wiele EC2 równocześnie, auto-scaling. EBS = block storage, jeden EC2 (lub Multi-Attach do 16 dla io1/io2), stały rozmiar.
+
+7. **Q: Czy możesz zmienić Performance Mode po utworzeniu EFS?**  
+   A: Nie. Performance Mode jest niezmienialny po utworzeniu.
+
+8. **Q: Czy możesz zmienić Throughput Mode po utworzeniu EFS?**  
+   A: Tak. Throughput Mode można zmieniać w dowolnym momencie.
+
+**Performance:**
+
+9. **Q: Kiedy użyć Max I/O zamiast General Purpose?**  
+   A: Max I/O gdy tysiące instancji równolegle uzyskują dostęp i potrzeba bardzo wysokiego throughput, akceptując wyższą latencję. Np. big data, genomika, HPC.
+
+10. **Q: Ile IOPS oferuje General Purpose EFS?**  
+    A: Do 35,000 IOPS.
+
+11. **Q: Co to jest BurstCreditBalance w EFS?**  
+    A: Kredyty burst dla trybu Bursting throughput. Akumulują się gdy EFS jest używany poniżej baseline. Gdy wyczerpane — throughput spada do baseline (50 KiB/s per GB).
+
+12. **Q: EFS ma 500 GB i używasz trybu Bursting. Jaki baseline throughput?**  
+    A: 500 GB × 50 KiB/s = 25 MiB/s baseline. Burst do 100 MiB/s (do 72 min dziennie).
+
+13. **Q: Kiedy Elastic throughput lepszy niż Provisioned?**  
+    A: Elastic gdy ruch nieprzewidywalny i nie chcesz zarządzać pojemnością. Provisioned gdy potrzebujesz gwarantowanego stałego throughput (np. 1 GiB/s zawsze).
+
+14. **Q: Jaki maksymalny throughput w Elastic mode?**  
+    A: 3 GiB/s read, 1 GiB/s write.
+
+**Storage Classes:**
+
+15. **Q: Jakie są 4 klasy storage EFS?**  
+    A: Standard, Standard-IA, One Zone, One Zone-IA.
+
+16. **Q: Czy Standard-IA ma opłatę za odczyt?**  
+    A: Tak — retrieval fee ~$0.01/GB przy odczycie danych z IA.
+
+17. **Q: Po ilu dniach Lifecycle Management przenosi pliki do IA?**  
+    A: Konfigurowalne: 7, 14, 30, 60 lub 90 dni.
+
+18. **Q: Czy TransitionToPrimaryStorageClass automatycznie przenosi z IA do Standard?**  
+    A: Tak, z opcją `AFTER_1_ACCESS` — przy pierwszym odczycie plik wraca do Standard.
+
+19. **Q: O ile taniej jest One Zone-IA vs Standard?**  
+    A: ~96% taniej na storage (ale ryzyko utraty danych przy awarii AZ).
+
+20. **Q: Kiedy NIE używać One Zone dla produkcji?**  
+    A: Gdy dane są krytyczne i nie możesz tolerować utraty przy awarii jednej AZ.
+
+**Security:**
+
+21. **Q: Czy EFS domyślnie szyfruje dane at-rest?**  
+    A: Nie domyślnie — musisz włączyć przy tworzeniu. Po włączeniu nie można wyłączyć.
+
+22. **Q: Jak wymusić TLS przy montowaniu EFS?**  
+    A: Opcja `-o tls` w komendzie mount + zainstalowany `amazon-efs-utils`.
+
+23. **Q: Jaki port używa NFS (EFS)?**  
+    A: TCP 2049.
+
+24. **Q: Co to EFS Access Point?**  
+    A: Logiczny punkt wejścia wymuszający konkretny root directory i UID/GID dla aplikacji.
+
+25. **Q: Jak ograniczyć EFS tylko do szyfrowanych połączeń?**  
+    A: EFS Resource Policy z Deny gdy `aws:SecureTransport = false`.
+
+26. **Q: Czy EFS wspiera cross-account access?**  
+    A: Tak — przez Resource Policy z Principal z innego account ID.
+
+**Integracje:**
+
+27. **Q: Czy Lambda może używać EFS?**  
+    A: Tak — Lambda musi być w VPC, EFS musi mieć Mount Target w tej samej AZ co Lambda.
+
+28. **Q: Jaki accessMode Kubernetes obsługuje EFS?**  
+    A: `ReadWriteMany` (RWX) — wiele podów równocześnie.
+
+29. **Q: Jak EKS używa EFS?**  
+    A: Przez EFS CSI Driver i PersistentVolume z `volumeHandle: fs-xxxxxxxx`.
+
+30. **Q: Czy Fargate może używać EFS?**  
+    A: Tak — przez efsVolumeConfiguration w ECS Task Definition.
+
+**Cross-Region i Backup:**
+
+31. **Q: Czy EFS obsługuje natywną replikację cross-region?**  
+    A: Nie. Użyj DataSync lub AWS Backup z cross-region copy.
+
+32. **Q: Jak migrować dane NFS on-prem do EFS?**  
+    A: AWS DataSync — agent on-prem, scheduled sync do EFS.
+
+33. **Q: Czy AWS Backup obsługuje EFS?**  
+    A: Tak — pełna integracja, backup i restore, cross-region copy.
+
+34. **Q: Co to DataSync i kiedy go użyć z EFS?**  
+    A: DataSync = managed data transfer. Użyj do migracji NFS→EFS lub synchronizacji EFS między regionami.
+
+**Ograniczenia i pułapki:**
+
+35. **Q: Ile maksymalnie EFS filesystem można mieć per region?**  
+    A: 1000.
+
+36. **Q: Jaki maksymalny rozmiar pojedynczego pliku w EFS?**  
+    A: 52 TiB.
+
+37. **Q: Czy EFS działa przez Internet (bez VPC)?**  
+    A: Nie. EFS wymaga VPC i Mount Target w subnecie.
+
+38. **Q: Czy możesz mieć dwa Mount Targets w tej samej AZ?**  
+    A: Nie — jeden Mount Target per AZ per filesystem.
+
+39. **Q: EFS vs FSx for Lustre — kiedy co?**  
+    A: EFS = general purpose NFS dla web/CMS/shared config. FSx for Lustre = HPC, sub-ms latencja, integracja z S3.
+
+40. **Q: EFS vs FSx for Windows — kiedy co?**  
+    A: EFS = Linux, NFSv4. FSx for Windows = Windows, SMB, AD integration.
+
+**Koszty:**
+
+41. **Q: Jak EFS liczy koszty?**  
+    A: Per GB-month faktycznie zajętego miejsca. Brak opłaty za provisioning.
+
+42. **Q: Czy Elastic throughput mode ma dodatkowe koszty?**  
+    A: Tak — opłata per GB transferu (read/write), nie za provisioned capacity.
+
+43. **Q: Jak obniżyć koszty EFS dla rzadko używanych danych?**  
+    A: Lifecycle Management → Standard-IA lub One Zone-IA.
+
+44. **Q: Czy transfer między EC2 a EFS w tej samej AZ jest bezpłatny?**  
+    A: Tak — brak opłat za transfer danych wewnątrz tej samej AZ.
+
+45. **Q: Koszt transfer cross-AZ dla EFS?**  
+    A: Standardowe opłaty za data transfer między AZ (~$0.01/GB).
+
+**Scenariusze egzaminacyjne:**
+
+46. **Q: Masz ASG z 10 EC2 — wszystkie potrzebują dostępu do wspólnych plików konfiguracyjnych. Co wybrać?**  
+    A: EFS — montowany na wszystkich instancjach, automatycznie dostępny dla nowych instancji po dołączeniu do ASG.
+
+47. **Q: Aplikacja kontenerowa na EKS potrzebuje shared persistent storage (RWX). Co wybrać?**  
+    A: EFS z EFS CSI Driver i PersistentVolume AccessMode: ReadWriteMany.
+
+48. **Q: Lambda przetwarza duże modele ML (5 GB) — za wolno ładować z S3 przy każdym wywołaniu. Co zrobić?**  
+    A: Zamontuj EFS do Lambda — model załadowany raz, dostępny dla kolejnych wywołań (warm container).
+
+49. **Q: Masz serwer NFS on-prem, chcesz migrować do AWS. Co użyć?**  
+    A: DataSync do transferu danych NFS on-prem → EFS, Storage Gateway File Gateway dla hybrydowego dostępu podczas migracji.
+
+50. **Q: EFS BurstCreditBalance = 0, throughput bardzo niski. Co zrobić?**  
+    A: Zmień Throughput Mode z Bursting na Elastic lub Provisioned.
+
+51. **Q: Potrzebujesz EFS dostępny z dwóch różnych VPC w tym samym regionie. Jak?**  
+    A: VPC Peering lub Transit Gateway + Mount Targets w obu VPC (lub jeden VPC z Mount Target i routing przez Peering).
+
+52. **Q: Które konta mogą montować EFS z innego konta AWS?**  
+    A: Przez Resource Policy (cross-account) + VPC Peering/TGW. EFS nie ma publicznego endpointu.
+
+53. **Q: Masz EFS bez szyfrowania — chcesz zaszyfrować. Jak?**  
+    A: Nie możesz włączyć szyfrowania na istniejącym EFS. Utwórz nowy zaszyfrowany EFS i skopiuj dane przez DataSync lub rsync.
+
+54. **Q: Aplikacja wymaga sub-ms latencji dla filesystem. EFS czy co innego?**  
+    A: EBS (gp3/io2) — niższa latencja niż EFS. EFS = ms latencja przez sieć. Jeśli shared access wymagany i ms OK → EFS General Purpose.
+
+55. **Q: Chcesz zbudować tanią archiwum długoterminową na EFS. Jak?**  
+    A: EFS One Zone-IA + Lifecycle Management z krótkim transition period (7 dni) — najtańsza opcja EFS.
+
+56. **Q: Co lepsze do CMS (WordPress, Drupal) na wielu EC2 — EFS czy EBS?**  
+    A: EFS — WordPress wymaga shared `/wp-content/uploads` dostępnego dla wszystkich instancji.
+
+57. **Q: Jaka jest maksymalna liczba równoczesnych połączeń do EFS?**  
+    A: Tysiące — EFS nie ma formalnego limitu connections (zależy od Performance Mode).
+
+58. **Q: PercentIOLimit metric = 100% przez długi czas. Co to znaczy i co zrobić?**  
+    A: General Purpose mode osiąga limit IOPS. Zmień na Max I/O Performance Mode (ale uwaga — nie można cofnąć i latencja wzrośnie).
+
+59. **Q: Czy EFS działa z EC2 w innym regionie?**  
+    A: Nie bezpośrednio — EFS jest regionalny. Przez DataSync możesz synchronizować między regionami, ale nie montować cross-region.
+
+60. **Q: Różnica między EFS a S3 dla workloadów HPC?**  
+    A: EFS (szczególnie z Max I/O) daje POSIX filesystem semantics, niską latencję dla małych plików, concurrent access. S3 = object storage, wyższe latency, brak POSIX, brak concurrent write. Dla HPC z małymi plikami i high IOPS → FSx for Lustre (lepszy niż EFS).
+
+---
+
+## 🔗 Dokumentacja
+
+- [Amazon EFS Documentation](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)
+- [EFS Performance](https://docs.aws.amazon.com/efs/latest/ug/performance.html)
+- [EFS Storage Classes](https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html)
+- [EFS Access Points](https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
+- [EFS with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html)
+- [EFS CSI Driver for EKS](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html)
+
+---
+
+# 22. Amazon FSx — Managed File Systems
+
+> **Zakres:** Regionalny (Multi-AZ lub Single-AZ zależnie od wariantu) | **Typ:** Managed file storage | **Protokoły:** SMB, NFS, Lustre, iSCSI
+
+---
+
+## 📋 Spis Treści Rozdziału
+
+- [22.1 Przegląd FSx](#221-przegląd-fsx)
+- [22.2 FSx for Windows File Server](#222-fsx-for-windows-file-server)
+- [22.3 FSx for Lustre](#223-fsx-for-lustre)
+- [22.4 FSx for NetApp ONTAP](#224-fsx-for-netapp-ontap)
+- [22.5 FSx for OpenZFS](#225-fsx-for-openzfs)
+- [22.6 Tabela porównawcza — wszystkie 4 warianty](#226-tabela-porównawcza)
+- [22.7 FSx vs EFS — kiedy co?](#227-fsx-vs-efs)
+- [22.8 Bezpieczeństwo i niezawodność](#228-bezpieczeństwo-i-niezawodność)
+- [22.9 Well-Architected Framework](#229-well-architected-framework)
+- [22.10 4 Domeny egzaminacyjne SAP-C02](#2210-4-domeny-egzaminacyjne)
+- [22.11 Checks — 60 pytań z odpowiedziami](#2211-checks--60-pytań-z-odpowiedziami)
+
+---
+
+## 22.1 Przegląd FSx
+
+**Amazon FSx** to w pełni zarządzana usługa oferująca popularne systemy plików innych firm jako usługę w chmurze. AWS zajmuje się infrastrukturą, patchwaniem, backupami i HA — ty tylko używasz systemu plików.
+
+**Cztery warianty FSx:**
+
+```mermaid
+graph TD
+    FSx[Amazon FSx] --> W[FSx for Windows\nFile Server]
+    FSx --> L[FSx for Lustre]
+    FSx --> N[FSx for NetApp\nONTAP]
+    FSx --> Z[FSx for OpenZFS]
+
+    W --> W1[SMB / NTFS\nWindows workloads]
+    L --> L1[Parallel FS\nHPC / ML]
+    N --> N1[Multi-protocol\nEnterprise NAS]
+    Z --> Z1[NFS / ZFS\nLinux migration]
+```
+
+**Kiedy FSx zamiast EFS?**
+- Windows workloads → FSx Windows
+- HPC / ML → FSx Lustre
+- On-prem NetApp migration → FSx ONTAP
+- On-prem ZFS/NFS migration → FSx OpenZFS
+- Linux shared storage (simpler) → EFS
+
+---
+
+## 22.2 FSx for Windows File Server
+
+### 🪟 Opis
+
+W pełni zarządzany Windows file server oparty na Windows Server. Protokół **SMB** (Server Message Block), system plików **NTFS**. Natywna integracja z Active Directory.
+
+**Azure odpowiednik:** Azure Files (SMB, premium tier)
+
+### Architektura
+
+```mermaid
+graph LR
+    AD[Active Directory\nAWS Managed AD\nlub self-managed] --> FSxW[FSx for Windows\nFile Server]
+    FSxW --> EC2W[Windows EC2]
+    FSxW --> EC2L[Linux EC2\nvia SMB]
+    FSxW --> WorkSpaces[Amazon WorkSpaces]
+    FSxW --> S3[AWS Backup\n/ S3 snapshots]
+```
+
+### Kluczowe cechy
+
+| Cecha | Szczegóły |
+|-------|-----------|
+| **Protokół** | SMB 2.0, 2.1, 3.0, 3.1.1 |
+| **System plików** | NTFS |
+| **AD integracja** | AWS Managed Microsoft AD lub self-managed AD |
+| **DFS** | DFS Namespaces + DFS Replication |
+| **Deployment** | Single-AZ lub Multi-AZ |
+| **Szyfrowanie** | At-rest (KMS), in-transit (SMB encryption) |
+| **Deduplication** | ✅ (data deduplication Windows feature) |
+| **Shadow copies** | ✅ VSS |
+| **Rozmiar** | 32 GiB – 65,536 GiB |
+| **Throughput** | 8 MB/s – 2,048 MB/s |
+
+### Single-AZ vs Multi-AZ
+
+| | Single-AZ | Multi-AZ |
+|-|-----------|----------|
+| **HA** | Jeden AZ | Aktywny + standby w różnych AZ |
+| **Failover** | Brak auto-failover | Automatyczny failover (~30s) |
+| **Koszt** | Niższy | Wyższy |
+| **Zastosowanie** | Dev/test | Produkcja |
+
+### DFS (Distributed File System)
+
+**DFS Namespaces** — jeden wirtualny punkt dostępu do wielu udziałów:
+```
+\\corp.example.com\shares → wiele serwerów/FSx filesystem
+```
+
+**DFS Replication** — replikacja plików między wieloma FSx (multi-region DR):
+```
+FSx (us-east-1) ←→ DFS Replication ←→ FSx (eu-west-1)
+```
+
+### AWS CLI — przykłady
+
+```bash
+# Utwórz FSx for Windows (Single-AZ)
+aws fsx create-file-system \
+  --file-system-type WINDOWS \
+  --storage-capacity 300 \
+  --storage-type SSD \
+  --subnet-ids subnet-12345678 \
+  --windows-configuration \
+    ActiveDirectoryId=d-9067633459,\
+    ThroughputCapacity=32,\
+    DeploymentType=SINGLE_AZ_2
+
+# Lista systemów plików
+aws fsx describe-file-systems
+
+# Utwórz backup
+aws fsx create-backup \
+  --file-system-id fs-12345678
+
+# Zmień throughput
+aws fsx update-file-system \
+  --file-system-id fs-12345678 \
+  --windows-configuration ThroughputCapacity=64
+```
+
+### Ograniczenia
+
+| Ograniczenie | Wartość |
+|-------------|---------|
+| Maks. rozmiar FS | 65,536 GiB |
+| Maks. throughput | 2,048 MB/s |
+| Maks. backup retention | 90 dni |
+| Protokół Linux | SMB (via Samba client) |
+| Cross-region replikacja | Tylko przez DFS |
+
+---
+
+## 22.3 FSx for Lustre
+
+### ⚡ Opis
+
+**Lustre** = wysokowydajny rozproszony system plików, używany w HPC (High Performance Computing), ML/AI, genomics, financial modeling. Sub-milisekundowe opóźnienia, setki GB/s throughput.
+
+**Open-source odpowiednik:** Lustre (oryginalny open source, używany w superkomputerach)
+**Azure odpowiednik:** Azure HPC Cache
+
+### Architektura + S3 integracja
+
+```mermaid
+graph LR
+    S3[Amazon S3\n"data lake"] -->|Lazy load on first access| Lustre[FSx for Lustre\nHigh-speed cache]
+    Lustre -->|Write back / export| S3
+    Lustre --> EC2[EC2 Instances\nHPC cluster]
+    Lustre --> EKS[EKS / Batch\nML training]
+    Lustre --> SageMaker[SageMaker]
+```
+
+**S3 integracja — jak działa:**
+1. Tworzysz FSx Lustre linkując do S3 bucket
+2. Pliki z S3 ładowane **lazy** — dopiero gdy EC2 pierwszy raz odczyta
+3. Po przetworzeniu → eksport z powrotem do S3
+
+### Scratch vs Persistent
+
+| | Scratch 1 / Scratch 2 | Persistent 1 / Persistent 2 |
+|-|----------------------|------------------------------|
+| **Cel** | Tymczasowe obliczenia | Długoterminowe, HA |
+| **Replikacja** | Brak (no HA) | Tak (w ramach AZ) |
+| **Durability** | Niska | Wysoka |
+| **Koszt** | Niższy | Wyższy |
+| **S3 export** | ✅ | ✅ |
+| **Automatyczny backup** | ❌ | ✅ |
+| **Zastosowanie** | Jednorazowe job-y | Ciągłe workloady |
+
+### Kluczowe cechy
+
+| Cecha | Wartość |
+|-------|---------|
+| **Protokół** | Lustre (POSIX-compliant) |
+| **Latency** | Sub-milisecond |
+| **Throughput** | Do 1+ TB/s |
+| **Rozmiar** | 1.2 TiB – 100s TiB |
+| **S3 integration** | ✅ natywna (data repository) |
+| **POSIX** | ✅ |
+| **Szyfrowanie** | At-rest (KMS), in-transit |
+
+### AWS CLI — przykłady
+
+```bash
+# Utwórz FSx Lustre z S3 data repository
+aws fsx create-file-system \
+  --file-system-type LUSTRE \
+  --storage-capacity 1200 \
+  --subnet-ids subnet-12345678 \
+  --lustre-configuration \
+    ImportPath=s3://my-bucket/data,\
+    ExportPath=s3://my-bucket/output,\
+    DeploymentType=SCRATCH_2
+
+# Export danych z Lustre do S3
+aws fsx create-data-repository-task \
+  --type EXPORT_TO_REPOSITORY \
+  --file-system-id fs-12345678 \
+  --paths /output/results
+
+# Import nowych danych z S3
+aws fsx create-data-repository-task \
+  --type IMPORT_METADATA_FROM_REPOSITORY \
+  --file-system-id fs-12345678
+```
+
+### Ograniczenia
+
+| Ograniczenie | Wartość |
+|-------------|---------|
+| Min rozmiar | 1.2 TiB (inkrements 2.4 TiB) |
+| Protokół | Tylko Lustre (nie SMB/NFS) |
+| Cross-region | Tylko przez S3 jako pośrednik |
+| Windows | ❌ (Linux only) |
+
+---
+
+## 22.4 FSx for NetApp ONTAP
+
+### 🐧 Opis
+
+W pełni zarządzany NetApp ONTAP — enterprise NAS z obsługą **NFS, SMB i iSCSI** jednocześnie. Idealne do migracji on-prem NetApp do AWS lub hybrydowych środowisk.
+
+**On-prem odpowiednik:** NetApp ONTAP (fizyczne urządzenia NAS)
+**Azure odpowiednik:** Azure NetApp Files
+
+### Architektura
+
+```mermaid
+graph TD
+    OnPrem[On-Premises\nNetApp ONTAP] -->|SnapMirror replication| ONTAP[FSx for NetApp ONTAP]
+    ONTAP --> NFS[NFS clients\nLinux EC2]
+    ONTAP --> SMB[SMB clients\nWindows EC2]
+    ONTAP --> iSCSI[iSCSI clients\nblock storage]
+    ONTAP --> S3tier[S3 tiering\ncold data]
+    ONTAP --> Replica[Replica AZ\nMulti-AZ HA]
+```
+
+### Kluczowe cechy
+
+| Cecha | Szczegóły |
+|-------|-----------|
+| **Protokoły** | NFS v3/v4, SMB 2/3, iSCSI |
+| **Deployment** | Multi-AZ (aktywny + standby) |
+| **Data tiering** | Hot (SSD) → Cold (S3) automatycznie |
+| **Replikacja** | SnapMirror (do innego FSx ONTAP lub on-prem) |
+| **Deduplication** | ✅ |
+| **Kompresja** | ✅ |
+| **Snapshots** | ✅ (ONTAP snapshots) |
+| **Thin provisioning** | ✅ |
+| **Szyfrowanie** | At-rest (KMS), in-transit |
+
+### Storage tiering
+
+```
+Hot data (SSD) → [automatyczny tiering] → Cold data (S3)
+                        ↑
+                 Polityka tiering:
+                 - snapshot-only
+                 - auto (dane nieużywane X dni)
+                 - all (wszystko na S3 oprócz metadanych)
+                 - none
+```
+
+### Migracja z on-prem ONTAP
+
+```bash
+# 1. Utwórz FSx ONTAP
+aws fsx create-file-system \
+  --file-system-type ONTAP \
+  --storage-capacity 1024 \
+  --subnet-ids subnet-aza subnet-azb \
+  --ontap-configuration \
+    DeploymentType=MULTI_AZ_1,\
+    ThroughputCapacity=128,\
+    PreferredSubnetId=subnet-aza
+
+# 2. Skonfiguruj SnapMirror z on-prem → FSx
+# (wykonywane z ONTAP System Manager lub CLI ONTAP)
+snapmirror create -source-path onprem:vol -dest-path fsx:vol
+
+# 3. Po migracji — break mirror i przełącz klientów
+snapmirror break -destination-path fsx:vol
+```
+
+---
+
+## 22.5 FSx for OpenZFS
+
+### 🐡 Opis
+
+W pełni zarządzany system plików ZFS z protokołem **NFS**. Idealne do migracji workloadów z on-prem Linux/NFS/ZFS, gdzie zależy nam na funkcjach ZFS (snapshots, clones, kompresja).
+
+**Open-source odpowiednik:** OpenZFS (Linux, FreeBSD)
+**Azure odpowiednik:** Brak bezpośredniego odpowiednika
+
+### Kluczowe cechy
+
+| Cecha | Szczegóły |
+|-------|-----------|
+| **Protokół** | NFS v3, v4.1, v4.2 |
+| **Deployment** | Single-AZ lub Multi-AZ |
+| **IOPS** | Do 1,000,000 IOPS |
+| **Latency** | Sub-milisecond (SSD) |
+| **Snapshots** | ✅ (ZFS snapshots — natychmiastowe) |
+| **Clones** | ✅ (zero-copy clones) |
+| **Kompresja** | ✅ (LZ4) |
+| **Szyfrowanie** | At-rest (KMS), in-transit |
+| **Rozmiar** | 64 GiB – 512 TiB |
+
+### ZFS — zero-copy clone
+
+```
+Snapshot (point-in-time, instant) → Clone (writable kopia)
+                                          ↑
+                        Clone nie kopiuje danych — tylko zapisuje delta
+                        Idealne do dev/test environments
+```
+
+### AWS CLI
+
+```bash
+# Utwórz FSx OpenZFS
+aws fsx create-file-system \
+  --file-system-type OPENZFS \
+  --storage-capacity 64 \
+  --subnet-ids subnet-12345678 \
+  --open-zfs-configuration \
+    DeploymentType=SINGLE_AZ_1,\
+    ThroughputCapacity=64
+
+# Utwórz snapshot
+aws fsx create-snapshot \
+  --volume-id fsvol-12345678 \
+  --name "pre-migration-snapshot"
+
+# Utwórz volume z snapshotu (clone)
+aws fsx create-volume \
+  --volume-type OPENZFS \
+  --open-zfs-configuration \
+    ParentVolumeId=fsvol-12345678,\
+    OriginSnapshot={SnapshotARN=...,CopyStrategy=CLONE}
+```
+
+---
+
+## 22.6 Tabela porównawcza
+
+| Cecha | FSx Windows | FSx Lustre | FSx ONTAP | FSx OpenZFS |
+|-------|-------------|------------|-----------|-------------|
+| **Protokół** | SMB | Lustre | NFS+SMB+iSCSI | NFS |
+| **System plików** | NTFS | Lustre | ONTAP | ZFS |
+| **OS** | Windows/Linux | Linux | Windows+Linux | Linux |
+| **AD integracja** | ✅ natywna | ❌ | ✅ | ❌ |
+| **S3 integracja** | ❌ | ✅ natywna | ✅ tiering | ❌ |
+| **Multi-AZ** | ✅ | ❌ (per AZ) | ✅ | ✅ |
+| **Max throughput** | 2 GB/s | 1+ TB/s | Setki GB/s | 21 GB/s |
+| **IOPS** | Setki tys. | Miliony | Miliony | 1,000,000 |
+| **Snapshots** | VSS | ❌ | ✅ ONTAP | ✅ ZFS |
+| **Deduplication** | ✅ | ❌ | ✅ | ❌ |
+| **Kompresja** | ✅ | ❌ | ✅ | ✅ LZ4 |
+| **Tiering do S3** | ❌ | ✅ (export) | ✅ auto | ❌ |
+| **Zastosowanie** | Windows apps | HPC/ML/AI | Enterprise NAS | Linux migration |
+| **Azure analog** | Azure Files | Azure HPC Cache | Azure NetApp Files | — |
+| **Koszt** | Średni | Wysoki (HPC) | Wysoki | Średni |
+
+---
+
+## 22.7 FSx vs EFS
+
+| | Amazon EFS | FSx for Windows | FSx for Lustre | FSx for ONTAP | FSx OpenZFS |
+|-|-----------|----------------|---------------|---------------|-------------|
+| **Protokół** | NFS v4 | SMB | Lustre | NFS+SMB+iSCSI | NFS |
+| **OS** | Linux | Windows (+ Linux) | Linux | Both | Linux |
+| **Skalowalność** | Auto (petabytes) | Manual (32-65k GiB) | Manual | Manual | Manual |
+| **Performance** | General purpose | High (SSD/HDD) | Ultra-high | High | Very high |
+| **Use case** | Web apps, CMS, shared Linux | Windows workloads | HPC, ML | Enterprise NAS | Linux NAS migration |
+| **AD** | ❌ | ✅ | ❌ | ✅ | ❌ |
+| **Multi-AZ** | ✅ natywnie | Opcja | ❌ | ✅ | ✅ |
+| **Koszt** | Pay per GB | Provisioned | Provisioned | Provisioned | Provisioned |
+
+**Reguła egzaminacyjna:**
+- Windows + SMB + AD → **FSx Windows**
+- HPC, ML, S3 data lake → **FSx Lustre**
+- Multi-protocol enterprise → **FSx ONTAP**
+- Linux NFS migration → **FSx OpenZFS** lub **EFS**
+- Simple Linux shared → **EFS**
+
+---
+
+## 22.8 Bezpieczeństwo i niezawodność
+
+### Szyfrowanie
+
+```
+At-rest:  KMS (AWS managed key lub customer managed key)
+In-transit: TLS/SMB encryption (Windows), NFS over TLS (ONTAP/OpenZFS)
+           Lustre: in-transit encryption via VPC network policies
+```
+
+### Dostęp sieciowy
+
+| Wariant | Dostęp |
+|---------|--------|
+| FSx Windows | VPC only (ENI w subnecie) |
+| FSx Lustre | VPC only |
+| FSx ONTAP | VPC only (ENI) |
+| FSx OpenZFS | VPC only |
+
+**Wszystkie FSx** = dostęp tylko z VPC. Brak publicznego endpoint. Połączenie on-prem → VPN lub Direct Connect.
+
+### IAM + Resource Policies
+
+```bash
+# Kontrola FSx przez IAM policy
+{
+  "Effect": "Allow",
+  "Action": [
+    "fsx:CreateFileSystem",
+    "fsx:DescribeFileSystems",
+    "fsx:CreateBackup"
+  ],
+  "Resource": "arn:aws:fsx:*:123456789:file-system/*"
+}
+```
+
+### Backup
+
+```bash
+# Automatyczne backupy (okno maintenance)
+aws fsx update-file-system \
+  --file-system-id fs-12345678 \
+  --windows-configuration \
+    AutomaticBackupRetentionDays=30,\
+    DailyAutomaticBackupStartTime=02:00
+
+# Restore z backupu
+aws fsx create-file-system-from-backup \
+  --backup-id backup-12345678 \
+  --subnet-ids subnet-12345678
+```
+
+### HA i failover
+
+```mermaid
+graph TD
+    Client[Klient] --> DNS[DNS alias\n(automatyczny failover)]
+    DNS --> Primary[Primary\nFile Server\nAZ-A]
+    DNS --> Standby[Standby\nFile Server\nAZ-B]
+    Primary -->|Synchroniczna replikacja| Standby
+    Primary -->|Awaria| Failover{Failover\n~30s}
+    Failover --> Standby
+```
+
+---
+
+## 22.9 Well-Architected Framework
+
+| Filar | FSx — implementacja |
+|-------|---------------------|
+| **Operational Excellence** | CloudWatch metrics (DataReadBytes, DataWriteBytes, FreeStorageCapacity), CloudTrail audit, automatyczne backupy |
+| **Security** | VPC isolation, KMS encryption, IAM access control, AD integration (FSx Windows/ONTAP), Security Groups |
+| **Reliability** | Multi-AZ deployment (Windows, ONTAP, OpenZFS), automatyczne backupy, cross-region backup via AWS Backup |
+| **Performance Efficiency** | Wybór odpowiedniego wariantu (Lustre dla HPC), SSD vs HDD tier, throughput provisioning, FSx Lustre sub-ms latency |
+| **Cost Optimization** | S3 tiering (ONTAP), Scratch vs Persistent (Lustre), prawidłowy rozmiar przez monitoring FreeStorageCapacity, Single-AZ dla dev/test |
+| **Sustainability** | Data deduplication (Windows, ONTAP) redukuje przechowywane dane, S3 tiering dla cold data |
+
+---
+
+## 22.10 4 Domeny egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+
+- **Multi-account FSx**: Udostępnianie FSx ONTAP przez VPC Peering lub AWS RAM
+- **Hybrid**: FSx Windows z on-prem AD → użytkownicy on-prem i chmurowi z tym samym auth
+- **Cross-region DR**: FSx Windows Multi-AZ + AWS Backup cross-region copy
+- **SnapMirror** z on-prem ONTAP do FSx ONTAP = hybrydowy NAS
+
+### Domain 2: Design for New Solutions
+
+- **Greenfield HPC cluster**: FSx Lustre Scratch 2 + S3 data repository + EC2 HPC instances + EFA
+- **Windows file server replacement**: FSx Windows Multi-AZ zamiast Windows Server na EC2
+- **Enterprise NAS**: FSx ONTAP Multi-AZ dla środowisk wymagających NFS + SMB jednocześnie
+
+### Domain 3: Continuous Improvement for Existing Solutions
+
+- Migracja EFS → FSx ONTAP (lepsze enterprise features: deduplication, compression)
+- Migracja Windows File Server na EC2 → FSx Windows (reduce management overhead)
+- Optymalizacja kosztów: włącz storage tiering w FSx ONTAP
+
+### Domain 4: Accelerate Workload Migration and Modernization
+
+- **NetApp on-prem → FSx ONTAP**: SnapMirror replikacja, cut-over bez retrainingu zespołu
+- **Windows File Server on-prem → FSx Windows**: DataSync + FSx
+- **HPC on-prem → FSx Lustre**: zachowanie POSIX, integracja z S3
+
+---
+
+## 22.11 Checks — 60 pytań z odpowiedziami
+
+**Q1: Jaki protokół używa FSx for Windows File Server?**
+A: SMB (Server Message Block) 2.0/2.1/3.0/3.1.1 + NTFS
+
+**Q2: Czy FSx for Windows działa na Linuksie?**
+A: Tak — Linux może mountować SMB share (via cifs-utils / Samba client)
+
+**Q3: Czym jest DFS Namespaces w kontekście FSx?**
+A: Jeden wirtualny namespace (\\corp\shares) agregujący wiele FSx lub file shares — klient widzi jeden punkt dostępu
+
+**Q4: Jakie typy deploymentu ma FSx for Windows?**
+A: Single-AZ (1 i 2) oraz Multi-AZ. Multi-AZ = aktywny + standby z automatycznym failoverem (~30s)
+
+**Q5: Co to FSx for Lustre Scratch vs Persistent?**
+A: Scratch = tymczasowe, bez replikacji, tańsze (job-y HPC). Persistent = HA wewnątrz AZ, z replikacją, droższe
+
+**Q6: Jak FSx Lustre integruje się z S3?**
+A: Data Repository Association — pliki ładowane lazy z S3 przy pierwszym dostępie, eksportowane z powrotem przez Data Repository Task
+
+**Q7: Czy FSx Lustre obsługuje Windows?**
+A: Nie — tylko Linux (POSIX)
+
+**Q8: Jakie protokoły obsługuje FSx for NetApp ONTAP?**
+A: NFS v3/v4, SMB 2/3, iSCSI — wszystkie jednocześnie
+
+**Q9: Co to SnapMirror w FSx ONTAP?**
+A: Natywna replikacja ONTAP — synchronizuje dane z on-prem ONTAP do FSx ONTAP lub między regionami
+
+**Q10: Jak działa tiering w FSx ONTAP?**
+A: Nieużywane dane (cold) automatycznie przenoszone na S3 (FabricPool). Hot data pozostaje na SSD. Polityki: snapshot-only, auto, all, none
+
+**Q11: Czym charakteryzuje się FSx for OpenZFS?**
+A: ZFS file system, NFS protocol, sub-ms latency, do 1M IOPS, snapshots + zero-copy clones, kompresja LZ4
+
+**Q12: Co to zero-copy clone w ZFS?**
+A: Natychmiastowa kopia wolumenu ze snapshotu — nie kopiuje danych, zapisuje tylko zmiany (delta). Idealne do dev/test
+
+**Q13: Jaki jest Azure odpowiednik FSx for Windows?**
+A: Azure Files (SMB, premium tier)
+
+**Q14: Jaki jest Azure odpowiednik FSx for Lustre?**
+A: Azure HPC Cache
+
+**Q15: Jaki jest Azure odpowiednik FSx for NetApp ONTAP?**
+A: Azure NetApp Files
+
+**Q16: Czy FSx ma publiczny endpoint?**
+A: Nie — wszystkie warianty dostępne tylko z VPC przez ENI (Elastic Network Interface)
+
+**Q17: Jak podłączyć on-prem do FSx?**
+A: AWS Direct Connect lub Site-to-Site VPN
+
+**Q18: Jaki jest maksymalny throughput FSx for Windows?**
+A: 2,048 MB/s
+
+**Q19: Ile IOPS może osiągnąć FSx for OpenZFS?**
+A: Do 1,000,000 IOPS
+
+**Q20: Czy FSx obsługuje szyfrowanie at-rest?**
+A: Tak — wszystkie warianty używają KMS (AWS managed lub customer managed key)
+
+**Q21: Kiedy wybrać EFS zamiast FSx?**
+A: Linux workloads bez specjalnych wymagań, auto-scaling, pay-per-use, prostsze zarządzanie
+
+**Q22: Kiedy wybrać FSx ONTAP zamiast EFS?**
+A: Multi-protocol (NFS+SMB), deduplication, compression, tiering, migracja z NetApp, enterprise features
+
+**Q23: Czy FSx Lustre obsługuje Multi-AZ?**
+A: Nie — FSx Lustre jest single-AZ. HA przez S3 data repository (dane bezpieczne w S3)
+
+**Q24: Jaki jest minimalny rozmiar FSx Lustre?**
+A: 1.2 TiB (inkrements 2.4 TiB)
+
+**Q25: Co to FSx for Windows Shadow Copies?**
+A: VSS (Volume Shadow Copy Service) — point-in-time snapshots dla użytkowników Windows (Previous Versions)
+
+**Q26: Jak działa failover w FSx Windows Multi-AZ?**
+A: Automatyczny ~30 sekund — DNS alias zmienia się na standby serwer. Klienci reconnectują automatycznie
+
+**Q27: Czy FSx Windows obsługuje AD?**
+A: Tak — AWS Managed Microsoft AD lub self-managed AD (on-prem lub na EC2)
+
+**Q28: Do czego służy FSx Lustre w ML/AI?**
+A: Szybki dostęp do training data w S3 — FSx Lustre działa jako high-speed cache, eliminuje wąskie gardło S3 API
+
+**Q29: Jakie są typy deployment FSx for OpenZFS?**
+A: Single-AZ 1, Single-AZ 2, Multi-AZ 1
+
+**Q30: Co to FSx ONTAP Thin Provisioning?**
+A: Alokujesz więcej przestrzeni niż fizycznie masz — system rośnie dynamicznie. Redukcja kosztów przy nieciągłym zużyciu
+
+**Q31: Czy FSx obsługuje AWS Backup?**
+A: Tak — wszystkie warianty FSx integrują się z AWS Backup (centralne zarządzanie, cross-region copy)
+
+**Q32: Jaka jest różnica między FSx Scratch 1 a Scratch 2?**
+A: Scratch 2 = wyższy throughput per TiB, lepsze odtwarzanie po awarii dysku (6x szybciej)
+
+**Q33: Czy można zmienić throughput FSx Windows po utworzeniu?**
+A: Tak — online scaling (bez downtime)
+
+**Q34: Co to FSx ONTAP FlexVol / FlexGroup?**
+A: FlexVol = volume do ~100 TiB. FlexGroup = rozproszony volume, do petabajtów — automatycznie rozproszone I/O
+
+**Q35: Kiedy użyć FSx Lustre zamiast EFS dla ML?**
+A: Gdy potrzebujesz sub-ms latency + integracji z S3 + throughputu setki GB/s. EFS jest wolniejszy dla ML
+
+**Q36: Czy FSx ONTAP obsługuje iSCSI?**
+A: Tak — blokowy dostęp przez iSCSI. Jedyny FSx z block storage
+
+**Q37: Jak migrować dane do FSx?**
+A: AWS DataSync (z NFS/SMB on-prem lub EFS), SnapMirror (ONTAP), bezpośrednia kopia przez robocopy/rsync po VPN
+
+**Q38: Co to FSx Lustre Data Repository Task?**
+A: Operacja importu (S3→Lustre) lub eksportu (Lustre→S3) danych — uruchamiana przez API/CLI
+
+**Q39: Czy FSx Windows obsługuje deduplication?**
+A: Tak — Windows Data Deduplication (redukuje zajętość dla często powtarzających się plików)
+
+**Q40: Jaki jest max backup retention dla FSx?**
+A: 90 dni (automatyczne backupy)
+
+**Q41: Czy FSx Lustre jest POSIX-compliant?**
+A: Tak — pełna zgodność POSIX (permissions, symlinks, hardlinks)
+
+**Q42: Jak FSx Windows integruje się z WorkSpaces?**
+A: FSx Windows jako shared home directories dla Amazon WorkSpaces użytkowników
+
+**Q43: Co wybrać do HPC gdzie dane są w S3?**
+A: FSx for Lustre z data repository association do S3
+
+**Q44: Jaki protokół szyfrowania in-transit używa FSx Windows?**
+A: SMB encryption (AES-128, AES-256) — konfigurowane przez Group Policy lub FSx setting
+
+**Q45: Czy FSx OpenZFS obsługuje SMB?**
+A: Nie — tylko NFS
+
+**Q46: Co to FSx ONTAP SnapMirror vs FSx Windows DFS Replication?**
+A: SnapMirror = replikacja ONTAP na poziomie volume (async/sync). DFS Replication = replikacja plików Windows między serwerami/lokalizacjami
+
+**Q47: Jak monitorować FSx?**
+A: CloudWatch metrics (FreeStorageCapacity, DataReadBytes, DataWriteBytes, NetworkThroughput)
+
+**Q48: Czy FSx wymaga dodatkowych opłat za transfer danych?**
+A: Transfer danych między AZ (Multi-AZ) jest wliczony. Cross-region backup — opłata za transfer
+
+**Q49: Co wybrać gdy mam on-prem NetApp i chcę migrować do AWS?**
+A: FSx for NetApp ONTAP — SnapMirror replikacja, zero reskillingu, te same narzędzia ONTAP
+
+**Q50: Czy można używać FSx z EKS/ECS?**
+A: Tak — FSx Lustre przez CSI driver w EKS, FSx Windows przez SMB w Windows containers
+
+**Q51: Co to FSx ONTAP Storage Virtual Machine (SVM)?**
+A: Logiczny izolowany storage server wewnątrz FSx ONTAP — wielokrotne SVM w jednym FS, izolacja tenantów
+
+**Q52: Jak wygląda pricing FSx?**
+A: Provisioned storage (GB/miesiąc) + provisioned throughput (MB/s/miesiąc) + backup storage. Brak opłat per request
+
+**Q53: Czy FSx Persistent obsługuje automatyczne backupy?**
+A: Tak. FSx Scratch — nie (dane tymczasowe)
+
+**Q54: Co to Amazon FSx File Gateway?**
+A: Storage Gateway wariant — lokalny cache dla FSx Windows on-prem. Nie mylić z S3 File Gateway
+
+**Q55: Kiedy FSx OpenZFS zamiast EFS?**
+A: Gdy potrzebujesz ZFS features (snapshots, clones, compression), wyższych IOPS, migracji z on-prem ZFS
+
+**Q56: Czy FSx ONTAP obsługuje Kerberos?**
+A: Tak — Kerberos authentication dla NFS (NFSv4 Kerberos)
+
+**Q57: Co to FSx Lustre Persistent 2 vs Persistent 1?**
+A: Persistent 2 = wyższy throughput per TiB, nowsza generacja. Persistent 1 = starsza, niższy throughput
+
+**Q58: Jak skonfigurować FSx Windows z on-prem AD (nie AWS Managed AD)?**
+A: Self-managed AD — podaj domain name, DNS IPs, OU, service account. FSx dołącza do istniejącej domeny
+
+**Q59: Czy FSx obsługuje cross-account sharing?**
+A: Tak — przez AWS RAM (Resource Access Manager) można udostępniać FSx ONTAP SVM między kontami
+
+**Q60: Jakie są ograniczenia FSx Lustre Scratch vs Persistent dla egzaminu?**
+A: Scratch: brak backupów, brak replikacji, tańszy → jednorazowe job-y. Persistent: backupy, replikacja w AZ, droższy → ciągłe workloady. Multi-AZ = tylko Windows/ONTAP/OpenZFS, nie Lustre
+
+---
+
+
+---
+
+# 19. Amazon S3 — Simple Storage Service
+
+## 19.1 Przegląd i Kontekst
+
+**Amazon S3** (Simple Storage Service) to obiektowy magazyn danych AWS — jeden z najstarszych i najważniejszych serwisów platformy (dostępny od 2006 roku). Przechowuje dane jako **obiekty** w **bucketach**. Nie jest systemem plików (brak hierarchii katalogów — tylko klucze z `/` w nazwie symulują katalogi) ani blokiem (jak EBS).
+
+**Kluczowe cechy:**
+- Pojemność: **nieograniczona** (per bucket)
+- Maksymalny rozmiar obiektu: **5 TB**
+- Maksymalny rozmiar jednego PUT: **5 GB** (powyżej → Multipart Upload)
+- Multipart Upload zalecany: **> 100 MB**
+- Trwałość: **99.999999999% (11 dziewiątek)**
+- Dostępność: zależy od klasy (99.99% Standard)
+
+**Zakres geograficzny:**
+- Bucket = **regionalny** (dane fizycznie w jednym regionie)
+- Namespace bucketów = **globalny** (nazwa bucketa musi być unikalna na świecie)
+- URL bucketa: `https://bucket-name.s3.region.amazonaws.com/key`
+
+**Porównanie z innymi chmurami:**
+
+| Cecha | AWS S3 | Azure Blob Storage | Google Cloud Storage |
+|-------|--------|-------------------|---------------------|
+| Jednostka | Bucket / Object | Container / Blob | Bucket / Object |
+| Klasy | 7 klas | Hot/Cool/Cold/Archive | Standard/Nearline/Coldline/Archive |
+| Globalny namespace | ✅ | ✅ (per account) | ✅ |
+| Wersjonowanie | ✅ | ✅ (soft delete + versioning) | ✅ |
+| Object Lock (WORM) | ✅ | ✅ (immutability policies) | ✅ |
+| Transfer Acceleration | ✅ (CloudFront edge) | ✅ (Azure CDN) | ✅ (Premium Tier) |
+| Static Website | ✅ | ✅ (static website hosting) | ✅ |
+| SQL na obiektach | S3 Select | — | BigQuery Storage Read |
+
+---
+
+## 19.2 S3 Storage Classes
+
+Wybór klasy = kompromis: **koszt przechowywania** vs **koszt pobierania** vs **dostępność**.
+
+| Klasa | Min. czas przechow. | Retrieval time | Opłata za retrieve | Dostępność | AZ | Użycie |
+|-------|--------------------|-----------------|--------------------|------------|-----|--------|
+| **S3 Standard** | brak | Natychmiastowy | ❌ | 99.99% | ≥3 | Aktywne dane, częsty dostęp |
+| **S3 Intelligent-Tiering** | brak | Natychmiastowy (częste/rzadkie), opcjonalnie minuty/godziny (archiwum) | ❌ (monitoring fee) | 99.9% | ≥3 | Nieprzewidywalny wzorzec dostępu |
+| **S3 Standard-IA** | 30 dni | Natychmiastowy | ✅ per GB | 99.9% | ≥3 | Rzadki dostęp, duże pliki (backupy DR) |
+| **S3 One Zone-IA** | 30 dni | Natychmiastowy | ✅ per GB | 99.5% | 1 | Dane odtwarzalne, rzadki dostęp |
+| **S3 Glacier Instant Retrieval** | 90 dni | Natychmiastowy (ms) | ✅ per GB | 99.9% | ≥3 | Archiwa z rzadkim ale szybkim dostępem |
+| **S3 Glacier Flexible Retrieval** | 90 dni | Expedited: 1-5 min / Standard: 3-5h / Bulk: 5-12h | ✅ per GB + per request | 99.99% | ≥3 | Archiwa, dostęp kilka razy w roku |
+| **S3 Glacier Deep Archive** | **180 dni** | Standard: 12h / Bulk: 48h | ✅ per GB + per request | 99.99% | ≥3 | Długoterminowe archiwum (7-10 lat) |
+
+> **Egzamin:** S3 Intelligent-Tiering ma **opłatę monitoringową** (~$0.0025/1000 obiektów) — bez opłaty za retrieve.
+
+---
+
+## 19.3 S3 Lifecycle Policies
+
+Automatyczne przejścia między klasami i wygasanie obiektów.
+
+**Dozwolone przejścia (waterfall — tylko w dół):**
+
+```mermaid
+graph TD
+    A[S3 Standard] -->|min 30 dni| B[S3 Standard-IA]
+    A -->|min 30 dni| C[S3 Intelligent-Tiering]
+    A -->|min 30 dni| D[S3 One Zone-IA]
+    B -->|min 30 dni od IA| E[S3 Glacier Instant Retrieval]
+    C -->|min 30 dni| E
+    D -->|min 30 dni od IA| E
+    E -->|min 90 dni od Glacier IR| F[S3 Glacier Flexible Retrieval]
+    F -->|min 90 dni od Flexible| G[S3 Glacier Deep Archive]
+    B -->|min 30 dni od IA| F
+    B -->|min 30 dni od IA| G
+```
+
+**Ograniczenia:**
+- Nie można przejść z klasy niższej do wyższej (np. Glacier → Standard) przez lifecycle — tylko ręczna restore
+- Minimum 30 dni w Standard przed przejściem do IA
+- Minimum rozmiar obiektu dla IA: **128 KB** (mniejsze nie są przenoszone — naliczany pełny koszt 128KB)
+
+```bash
+# Przykład lifecycle policy (AWS CLI)
+aws s3api put-bucket-lifecycle-configuration \
+  --bucket my-bucket \
+  --lifecycle-configuration '{
+    "Rules": [{
+      "ID": "archive-old-logs",
+      "Status": "Enabled",
+      "Filter": {"Prefix": "logs/"},
+      "Transitions": [
+        {"Days": 30, "StorageClass": "STANDARD_IA"},
+        {"Days": 90, "StorageClass": "GLACIER"}
+      ],
+      "Expiration": {"Days": 365}
+    }]
+  }'
+```
+
+---
+
+## 19.4 S3 Versioning
+
+Przechowuje **wszystkie wersje** obiektu — łącznie z usuniętymi.
+
+**Stany bucketa:**
+- `Unversioned` (domyślny) — jeden obiekt per klucz
+- `Versioning-enabled` — każdy PUT tworzy nową wersję (Version ID)
+- `Versioning-suspended` — nowe obiekty dostają `null` jako Version ID, stare zachowane
+
+**Delete behavior:**
+- `DELETE` bez Version ID → tworzy **Delete Marker** (obiekt "ukryty", nie usunięty)
+- `DELETE` z konkretnym Version ID → trwale usuwa tę wersję
+- Przywrócenie = usuń Delete Marker
+
+**MFA Delete:**
+- Wymaga MFA token przy: trwałym usunięciu wersji + wyłączeniu wersjonowania
+- Włączyć może tylko root account przez CLI
+- Chroni przed przypadkowym lub złośliwym usunięciem
+
+```bash
+# Włącz wersjonowanie
+aws s3api put-bucket-versioning \
+  --bucket my-bucket \
+  --versioning-configuration Status=Enabled
+
+# Lista wersji obiektu
+aws s3api list-object-versions --bucket my-bucket --prefix myfile.txt
+
+# Usuń konkretną wersję
+aws s3api delete-object \
+  --bucket my-bucket \
+  --key myfile.txt \
+  --version-id abc123xyz
+```
+
+---
+
+## 19.5 S3 Replication
+
+**Cross-Region Replication (CRR)** — replikacja między regionami.
+**Same-Region Replication (SRR)** — replikacja w tym samym regionie.
+
+**Wymagania:**
+- Wersjonowanie MUSI być włączone na **obu** bucketach (source + destination)
+- IAM Role z uprawnieniami do odczytu źródła i zapisu celu
+- Buckety mogą być w różnych kontach AWS
+
+**Co NIE jest replikowane:**
+- Obiekty istniejące przed włączeniem replikacji (← pułapka egzaminacyjna!)
+- Delete Markers (domyślnie) — można włączyć `DeleteMarkerReplication`
+- Obiekty zaszyfrowane SSE-C
+- Obiekty w klasie Glacier / Deep Archive
+- Replikacje z innych bucketów (nie ma "chain replication" bez dodatkowej konfiguracji)
+
+**Replication Time Control (RTC):**
+- Gwarantuje replikację **99.99% obiektów w 15 minutach**
+- Dodatkowy koszt
+- Daje metryki replikacji w CloudWatch
+
+```bash
+# Konfiguracja replikacji CRR
+aws s3api put-bucket-replication \
+  --bucket source-bucket \
+  --replication-configuration '{
+    "Role": "arn:aws:iam::123456789:role/replication-role",
+    "Rules": [{
+      "Status": "Enabled",
+      "Destination": {
+        "Bucket": "arn:aws:s3:::destination-bucket",
+        "StorageClass": "STANDARD_IA"
+      }
+    }]
+  }'
+```
+
+---
+
+## 19.6 S3 Object Lock — WORM
+
+**Write Once Read Many** — obiekty nie mogą być modyfikowane ani usuwane przez zdefiniowany czas.
+
+Wymaga: wersjonowanie włączone przy tworzeniu bucketa.
+
+**Tryby Retention:**
+
+| Tryb | Opis | Kto może usunąć przed końcem? |
+|------|------|-------------------------------|
+| **Governance** | Chroni przed przypadkowym usunięciem | User z `s3:BypassGovernanceRetention` |
+| **Compliance** | Nikt nie może usunąć — nawet root/AWS | **Nikt** — nieodwołalny |
+
+**Legal Hold:**
+- Niezależny od retention period
+- Włącz/wyłącz w dowolnym momencie (wymaga `s3:PutObjectLegalHold`)
+- Blokuje usunięcie dopóki aktywny
+
+> **Egzamin:** Compliance mode = **nikt** (włącznie z root) nie może usunąć przed końcem okresu. Governance = można obejść z odpowiednim IAM permission.
+
+```bash
+# Ustaw Object Lock (Governance, 365 dni)
+aws s3api put-object-retention \
+  --bucket my-bucket \
+  --key important-file.pdf \
+  --retention '{"Mode":"GOVERNANCE","RetainUntilDate":"2025-12-31T00:00:00Z"}'
+```
+
+---
+
+## 19.7 S3 Encryption
+
+**Server-Side Encryption (SSE):**
+
+| Typ | Klucz zarządza | Audit | Koszt | Wymuszenie |
+|-----|---------------|-------|-------|------------|
+| **SSE-S3** (AES-256) | AWS (S3 service) | Brak per-key | ❌ extra | Domyślne od 2023 |
+| **SSE-KMS** | AWS KMS (CMK) | CloudTrail per call | ✅ KMS API calls | Bucket policy |
+| **SSE-C** | Klient (własny klucz) | Brak | ❌ extra | HTTPS wymagany |
+| **DSSE-KMS** | AWS KMS (2x envelope) | CloudTrail | ✅✅ | Bucket policy |
+| **Client-Side** | Klient (przed upload) | Klient | Zależy | — |
+
+**SSE-KMS — ważne dla egzaminu:**
+- Każde GET/PUT = wywołanie KMS API → **KMS limits** (5,500–30,000 req/s per region)
+- Przy dużym ruchu S3 + SSE-KMS → możliwy throttling
+- Rozwiązanie: użyj S3 Bucket Key (redukuje wywołania KMS o ~99%)
+
+**Wymuszenie szyfrowania — bucket policy:**
+```json
+{
+  "Sid": "DenyUnencryptedObjectUploads",
+  "Effect": "Deny",
+  "Principal": "*",
+  "Action": "s3:PutObject",
+  "Resource": "arn:aws:s3:::my-bucket/*",
+  "Condition": {
+    "StringNotEquals": {
+      "s3:x-amz-server-side-encryption": "aws:kms"
+    }
+  }
+}
+```
+
+---
+
+## 19.8 S3 Access Control
+
+**Hierarchia uprawnień (od najszerszego do najwęższego):**
+1. **Block Public Access** — nadrzędne, blokuje wszystko publiczne (konto lub bucket)
+2. **Bucket Policy** — resource-based, JSON, kontroluje dostęp do całego bucketa
+3. **Access Points** — named endpoints z własną polityką
+4. **ACL** — legacy, obiekt-level, przestarzałe (domyślnie wyłączone od 2023)
+
+**Object Ownership:**
+- `BucketOwnerEnforced` (domyślne) — ACL wyłączone, właściciel bucketa = właściciel wszystkich obiektów
+- `BucketOwnerPreferred` — właściciel bucketa gdy uploader doda `bucket-owner-full-control`
+- `ObjectWriter` — uploader = właściciel (legacy)
+
+**Multi-Region Access Points (MRAP):**
+- Globalny endpoint routujący do najbliższego bucketa
+- Failover routing między regionami
+- Działa z replikacją bi-directional
+
+```bash
+# Utwórz Access Point
+aws s3control create-access-point \
+  --account-id 123456789 \
+  --name my-access-point \
+  --bucket my-bucket \
+  --vpc-configuration VpcId=vpc-abc123
+```
+
+---
+
+## 19.9 S3 Presigned URLs
+
+Tymczasowy URL dający dostęp do prywatnego obiektu bez credentials.
+
+- Generowany przez IAM tożsamość (user, role)
+- Ważność: domyślnie 1h, max: 7 dni (dla IAM user z długoterm. credentials), 1h (dla STS/role)
+- Używane do: upload (PUT presigned), download (GET presigned)
+
+> **Pułapka:** URL wygasa gdy wygasną credentials roli — nie po ustawionym czasie jeśli rola ma krótszą sesję.
+
+```bash
+# Wygeneruj presigned URL (pobieranie, 1 godzina)
+aws s3 presign s3://my-bucket/my-file.pdf --expires-in 3600
+```
+
+---
+
+## 19.10 S3 Event Notifications
+
+Triggerowanie serwisów przy operacjach na obiektach.
+
+**Destynacje:**
+- **SNS** — powiadomienia, fan-out
+- **SQS** — kolejkowanie, przetwarzanie asynchroniczne
+- **Lambda** — przetwarzanie bezpośrednie
+- **EventBridge** — zaawansowane filtrowanie, routing do wielu serwisów
+
+**Zdarzenia:** `s3:ObjectCreated:*`, `s3:ObjectRemoved:*`, `s3:Replication:*`, `s3:ObjectRestore:*`
+
+> **Egzamin:** EventBridge = najbardziej elastyczne (filtrowanie po metadata, routing do 20+ serwisów). SNS/SQS/Lambda = prostsze, tańsze.
+
+```bash
+# Konfiguracja notyfikacji → SQS
+aws s3api put-bucket-notification-configuration \
+  --bucket my-bucket \
+  --notification-configuration '{
+    "QueueConfigurations": [{
+      "QueueArn": "arn:aws:sqs:us-east-1:123456789:my-queue",
+      "Events": ["s3:ObjectCreated:*"],
+      "Filter": {
+        "Key": {"FilterRules": [{"Name": "suffix", "Value": ".jpg"}]}
+      }
+    }]
+  }'
+```
+
+---
+
+## 19.11 S3 Performance
+
+**Transfer Acceleration:**
+- Upload przez **CloudFront edge locations** → prywatna sieć AWS → bucket
+- URL: `bucket.s3-accelerate.amazonaws.com`
+- Opłata dodatkowa (~$0.04/GB US→EU)
+- Kiedy używać: klienci globalnie rozproszeni, duże pliki
+
+**Multipart Upload:**
+- Wymagany dla obiektów **> 5 GB**
+- Zalecany dla **> 100 MB**
+- Upload równoległy parts → szybszy transfer
+- Możliwość wznowienia po błędzie
+- Należy czyścić niekompletne multipart uploads (lifecycle rule)
+
+**Request Rate Limits (per prefix):**
+- **3,500 PUT/COPY/POST/DELETE** per sekunda
+- **5,500 GET/HEAD** per sekunda
+- Optymalizacja: użyj wielu prefiksów (random hash w kluczu)
+
+**S3 Select:**
+- SQL na obiekcie S3 (CSV, JSON, Parquet, gzip)
+- Pobiera tylko potrzebne kolumny/wiersze → tańszy transfer
+- Max 5 GB obiekt, max 128 MB wynik
+- Kiedy używać vs Athena: S3 Select = jeden obiekt, Athena = wiele obiektów/tabel
+
+---
+
+## 19.12 S3 Requester Pays
+
+Koszt transferu danych ponosi ten kto pobiera (requester), nie właściciel bucketa.
+
+- Requester musi być uwierzytelniony (AWS account) — brak dla anonymous
+- Przydatne przy dużych publicznych datasetach (publiczne dane genomiczne, satelitarne)
+- Nagłówek: `x-amz-request-payer: requester`
+
+---
+
+## 19.13 S3 Static Website Hosting
+
+- Serwuje HTML/CSS/JS z bucketa jako strona WWW
+- URL: `http://bucket-name.s3-website-region.amazonaws.com`
+- **HTTPS nie jest obsługiwane bezpośrednio** → użyj CloudFront przed S3
+- Wymaga publicznego dostępu (Block Public Access wyłączony)
+- CORS konfiguracja w XML dla cross-origin requests
+- Index document + Error document
+
+> **Egzamin:** S3 Static Website = tylko HTTP. CloudFront + S3 = HTTPS + custom domain + OAC.
+
+---
+
+## 19.14 S3 Storage Lens
+
+- **Organizational-wide** widoczność użycia S3 (wszystkie konta AWS Organizations)
+- Metryki: rozmiar, liczba obiektów, aktywność requestów, koszt
+- Dashboard w konsoli, eksport do S3
+- Dwie wersje: Free (25 metryki) + Advanced (35+ metryki, płatny)
+
+---
+
+## 19.15 S3 Batch Operations
+
+Operacje na **miliardach obiektów** jednocześnie:
+- Kopiowanie obiektów
+- Ustawianie tagów / ACL / Object Lock
+- Wywoływanie Lambda per obiekt
+- Przywracanie z Glacier
+- Źródło: lista z S3 Inventory lub własny CSV manifest
+
+```bash
+# Utwórz Batch Operations job (kopiowanie)
+aws s3control create-job \
+  --account-id 123456789 \
+  --operation '{"S3CopyObject":{"TargetResource":"arn:aws:s3:::dest-bucket"}}' \
+  --manifest '{"Spec":{"Format":"S3BatchOperations_CSV_20180820","Fields":["Bucket","Key"]},"Location":{"ObjectArn":"arn:aws:s3:::my-bucket/manifest.csv","ETag":"abc123"}}' \
+  --report '{"Bucket":"arn:aws:s3:::report-bucket","Format":"Report_CSV_20180820","Enabled":true,"ReportScope":"AllTasks"}' \
+  --role-arn arn:aws:iam::123456789:role/batch-ops-role \
+  --priority 10
+```
+
+---
+
+## 19.16 Integracje z innymi serwisami AWS
+
+| Serwis | Integracja z S3 |
+|--------|----------------|
+| **CloudFront** | Origin dla dystrybucji CDN, OAC/OAI |
+| **Lambda** | Trigger z event notifications, Batch Operations |
+| **Athena** | SQL queries na S3 data lake |
+| **Glue** | ETL, Data Catalog |
+| **EMR** | HDFS-compatible storage (s3a://) |
+| **SageMaker** | Training data, model artifacts |
+| **Redshift Spectrum** | Query S3 z Redshift |
+| **AWS Backup** | Backup S3 (cross-region, cross-account) |
+| **Macie** | PII discovery w S3 |
+| **GuardDuty** | Analiza S3 access logs |
+| **KMS** | SSE-KMS encryption |
+| **CloudTrail** | Audit S3 API calls |
+| **DataSync** | Migracja danych do/z S3 |
+| **Storage Gateway** | File Gateway → S3 |
+| **Transfer Family** | SFTP/FTP → S3 |
+
+---
+
+## 19.17 Reliability i Security
+
+**Reliability:**
+- S3 przechowuje dane w **≥3 AZ** (poza One Zone-IA)
+- 11 dziewiątek trwałości = 1 obiekt na 10M utracony raz na 10,000 lat
+- Versioning chroni przed przypadkowym usunięciem
+- Replication (CRR) = cross-region DR
+- Object Lock = ochrona przed ransomware
+
+**Security best practices:**
+- Włącz **Block Public Access** na poziomie konta i bucketa
+- Użyj **SSE-KMS** z CMK dla wrażliwych danych
+- Włącz **Access Logging** lub **CloudTrail Data Events**
+- MFA Delete dla krytycznych bucketów
+- S3 **Macie** do wykrywania PII
+- **VPC Endpoint** (Gateway) dla prywatnego dostępu bez internetu
+- Zasada **least privilege** w bucket policies
+
+**Limity:**
+| Limit | Wartość |
+|-------|---------|
+| Buckets per account | 100 (soft), 1000 (hard) |
+| Max object size | 5 TB |
+| Max single PUT | 5 GB |
+| Max bucket policy size | 20 KB |
+| S3 Batch Operations jobs | 1000 active |
+| Lifecycle rules per bucket | 1000 |
+| Replication rules per bucket | 1000 |
+
+---
+
+## 19.18 Well-Architected Framework — S3
+
+| Filar | Praktyki S3 |
+|-------|------------|
+| **Operational Excellence** | S3 Storage Lens (widoczność), CloudWatch metryki, S3 Access Logs, automatyzacja przez lifecycle + Batch Operations |
+| **Security** | Block Public Access, SSE-KMS + CMK, bucket policies (least privilege), MFA Delete, Macie (PII), VPC Gateway Endpoint, Object Lock |
+| **Reliability** | Versioning, CRR (cross-region), Object Lock (WORM), 11-dziewiątek trwałości, Multi-Region Access Points |
+| **Performance Efficiency** | Transfer Acceleration (global clients), Multipart Upload (>100MB), S3 Select (mniej transferu), partycjonowanie prefiksów |
+| **Cost Optimization** | Lifecycle policies (Glacier/IA), Intelligent-Tiering, S3 Storage Lens (cost metrics), Requester Pays, S3 Bucket Key (KMS costs) |
+| **Sustainability** | Lifecycle policies (usuń nieużywane), Intelligent-Tiering (optymalizacja automatyczna), Glacier Deep Archive (długoterminowe archiwa) |
+
+---
+
+## 19.19 4 Domeny Egzaminacyjne SAP-C02
+
+### Design Solutions for Organizational Complexity
+- Multi-account S3 access: cross-account bucket policies, Resource Access Manager (nie dla S3 bezpośrednio), S3 Access Points per VPC/account
+- AWS Organizations SCP blokujące dostęp do S3 poza regionem
+- S3 Storage Lens dla organizacji: widoczność wszystkich kont
+
+### Design for New Solutions
+- S3 jako data lake: partycjonowanie kluczy, Athena, Glue, Redshift Spectrum
+- Event-driven architecture: S3 → EventBridge → Step Functions
+- Static website: S3 + CloudFront + Route 53 + ACM
+- WORM compliance: S3 Object Lock Compliance mode
+
+### Continuous Improvement for Existing Solutions
+- Redukcja kosztów: Storage Lens → identyfikacja rzadko używanych danych → lifecycle do Glacier
+- Poprawa bezpieczeństwa: włącz Block Public Access, migruj z SSE-S3 na SSE-KMS (Batch Operations)
+- Optymalizacja wydajności: Transfer Acceleration, S3 Bucket Key
+
+### Accelerate Workload Migration and Modernization
+- Storage Gateway File Gateway: NFS/SMB z on-prem → S3
+- DataSync: masowa migracja on-prem → S3
+- Snowball/Snowmobile: petabyte-scale transfer
+- S3 jako staging dla Database Migration Service
+
+---
+
+## 19.20 Checks — 60 Pytań z Odpowiedziami
+
+**1. Jaka jest maksymalna wielkość obiektu w S3?**
+> 5 TB. Pojedynczy PUT max 5 GB → powyżej wymagany Multipart Upload.
+
+**2. S3 jest serwisem regionalnym czy globalnym?**
+> Dane w buckecie są **regionalne**. Namespace bucketów jest **globalny** (unikalna nazwa na świecie).
+
+**3. Która klasa S3 ma najdłuższy minimalny czas przechowywania?**
+> **S3 Glacier Deep Archive** — 180 dni.
+
+**4. Czy S3 Standard-IA ma opłatę za pobranie danych?**
+> Tak — opłata per GB przy retrieve. Dlatego używana dla rzadkiego dostępu z dużymi obiektami.
+
+**5. Co się dzieje gdy usuniesz obiekt z włączonym wersjonowaniem bez podania Version ID?**
+> Tworzony jest **Delete Marker** — obiekt jest "ukryty" ale nie usunięty. Wersje nadal istnieją.
+
+**6. Jakie wymagania musi spełniać bucket aby działała replikacja S3?**
+> Wersjonowanie musi być włączone na **obu** bucketach (source i destination).
+
+**7. Czy obiekty istniejące przed włączeniem replikacji są automatycznie replikowane?**
+> **Nie** — replikuje się tylko nowe obiekty po włączeniu. Stare wymagają S3 Batch Replication.
+
+**8. Jaka jest różnica między S3 Object Lock Compliance a Governance?**
+> **Compliance** — nikt (nawet root) nie może usunąć przed końcem okresu. **Governance** — można obejść z uprawnieniem `s3:BypassGovernanceRetention`.
+
+**9. Czym różni się SSE-KMS od SSE-S3?**
+> SSE-KMS używa CMK (Customer Managed Key) w AWS KMS — daje audit w CloudTrail i kontrolę nad kluczem. SSE-S3 używa klucza zarządzanego przez S3, brak auditu per-object.
+
+**10. Dlaczego SSE-KMS może powodować throttling przy dużym ruchu S3?**
+> Każdy GET/PUT = wywołanie KMS API. KMS ma limity (5,500–30,000 req/s). Rozwiązanie: **S3 Bucket Key** (jeden klucz per bucket, ~99% redukcja KMS calls).
+
+**11. Co to jest S3 Transfer Acceleration?**
+> Upload przez CloudFront edge locations → prywatna sieć szkieletowa AWS → bucket. Szybszy dla globalnych klientów. Dodatkowy koszt.
+
+**12. Kiedy Multipart Upload jest wymagany?**
+> Obiekty **> 5 GB** — wymagany. Zalecany dla > 100 MB.
+
+**13. Ile requestów GET na sekundę może obsłużyć jeden prefix S3?**
+> 5,500 GET/HEAD per sekundę per prefix. Dla większego ruchu: użyj wielu prefiksów.
+
+**14. Co to jest S3 Select?**
+> SQL query na pojedynczym obiekcie S3 (CSV, JSON, Parquet). Pobiera tylko potrzebne dane — tańszy transfer. Max 5 GB obiekt.
+
+**15. Kiedy S3 Select vs Athena?**
+> S3 Select = jeden obiekt. Athena = wiele obiektów, wiele tabel, złożone query.
+
+**16. Co to jest Requester Pays w S3?**
+> Koszt transferu danych ponosi osoba pobierająca (requester), nie właściciel bucketa. Requester musi być uwierzytelniony.
+
+**17. Czy S3 Static Website Hosting obsługuje HTTPS?**
+> **Nie** — tylko HTTP. HTTPS wymaga CloudFront przed S3.
+
+**18. Co to jest S3 Intelligent-Tiering?**
+> Automatyczne przenoszenie obiektów między tierami (frequent → infrequent → archive) na podstawie wzorca dostępu. Opłata monitoringowa, bez opłaty za retrieve.
+
+**19. Jaka jest minimalna wielkość obiektu dla S3 Standard-IA?**
+> Technicznie brak minimum, ale obiekty < 128 KB są naliczane jak 128 KB — nieopłacalne dla małych plików.
+
+**20. Co to jest Legal Hold w S3 Object Lock?**
+> Niezależna od retention period blokada — uniemożliwia usunięcie dopóki aktywna. Może być włączona/wyłączona w dowolnym momencie (wymaga odpowiedniego IAM uprawnienia).
+
+**21. Czy Delete Markers są replikowane przy CRR?**
+> Domyślnie **nie**. Można włączyć `DeleteMarkerReplication` w konfiguracji replikacji.
+
+**22. Co to jest Replication Time Control (RTC)?**
+> Gwarancja replikacji 99.99% obiektów w **15 minutach**. Dodatkowy koszt. Daje metryki w CloudWatch.
+
+**23. Ile bucketów można mieć per konto AWS?**
+> Domyślnie **100** (soft limit), max **1000** po złożeniu support case.
+
+**24. Co to jest S3 Multi-Region Access Point?**
+> Globalny endpoint routujący requesty do najbliższego bucketa. Obsługuje failover między regionami. Działa z replikacją bi-directional.
+
+**25. Jak wymusić szyfrowanie SSE-KMS na buckecie?**
+> Bucket policy z `Deny` gdy `s3:x-amz-server-side-encryption != "aws:kms"`.
+
+**26. Co to jest S3 Batch Operations?**
+> Zarządzana usługa do operacji na miliardach obiektów jednocześnie: kopiowanie, tagowanie, Object Lock, wywołanie Lambda, restore z Glacier.
+
+**27. Co to jest S3 Storage Lens?**
+> Organizational-wide dashboard widoczności S3: rozmiar, liczba obiektów, koszty, aktywność — na poziomie konta, regionu, bucketa.
+
+**28. Kiedy używać S3 One Zone-IA?**
+> Dla danych **odtwarzalnych** (np. thumbnails, re-processable cache) z rzadkim dostępem. Jeden AZ = tańszy ale brak resilience na utratę AZ.
+
+**29. Jakie są typy retrieval w Glacier Flexible Retrieval?**
+> Expedited (1-5 min), Standard (3-5h), Bulk (5-12h). Expedited = najdroższy.
+
+**30. Jak chronić bucket S3 przed ransomware?**
+> Kombinacja: Object Lock (WORM), Versioning, MFA Delete, Block Public Access, Macie (wykrycie anomalii), CloudTrail (audit).
+
+**31. Co to jest S3 Access Point?**
+> Named endpoint z własną polityką dostępu, przypisany do bucketa. Umożliwia granularną kontrolę dostępu per aplikacja/VPC.
+
+**32. Jaka jest maksymalna ważność Presigned URL dla IAM Role?**
+> Presigned URL wygasa gdy wygasną credentials roli (max 12h dla AssumeRole). Dla IAM user (long-term credentials): max 7 dni.
+
+**33. Co to jest S3 Object Ownership i jakie ma tryby?**
+> Kontroluje kto jest właścicielem uploadzonych obiektów. Tryby: `BucketOwnerEnforced` (ACL wyłączone), `BucketOwnerPreferred`, `ObjectWriter`.
+
+**34. Jaka jest domyślna enkrypcja S3 od 2023?**
+> Od stycznia 2023 — domyślnie **SSE-S3** (AES-256) dla wszystkich nowych obiektów.
+
+**35. Co to jest S3 Glacier Instant Retrieval?**
+> Klasa dla archiwalnych danych wymagających **natychmiastowego** dostępu (ms latency). Tańsza niż Standard, droższa niż Flexible. Min 90 dni przechowywania.
+
+**36. Jak działa S3 Lifecycle — czy można przejść z Glacier do Standard przez lifecycle?**
+> **Nie** — lifecycle transitions są jednokierunkowe (waterfall w dół). Przywrócenie z Glacier to ręczny restore, nie lifecycle.
+
+**37. Co musi być włączone zanim użyjesz S3 Object Lock?**
+> Wersjonowanie — musi być włączone **przy tworzeniu bucketa** (nie można włączyć Object Lock po fakcie bez kontaktu z AWS Support).
+
+**38. Czy S3 CRR replikuje obiekty zaszyfrowane SSE-C?**
+> **Nie** — obiekty z SSE-C (customer-provided key) nie są replikowane.
+
+**39. Jak zoptymalizować koszty KMS przy S3 SSE-KMS?**
+> Włącz **S3 Bucket Key** — jeden klucz danych per bucket, redukuje wywołania KMS API o ~99%.
+
+**40. Co to jest S3 Block Public Access i na jakim poziomie działa?**
+> Nadrzędne ustawienie blokujące publiczny dostęp do S3. Działa na poziomie **konta** (blokuje wszystkie buckety) i **bucketa**. Nadrzędne nad bucket policy i ACL.
+
+**41. Jaka jest różnica między S3 EventBridge a bezpośrednim powiadomieniem SNS/SQS/Lambda?**
+> EventBridge = zaawansowane filtrowanie (po metadata, typie zdarzenia), routing do 20+ serwisów, archiwizacja eventów. SNS/SQS/Lambda = prostsze, tańsze, niższe latency.
+
+**42. Co to jest DSSE-KMS?**
+> Dual-layer SSE-KMS — dwa niezależne klucze KMS szyfrują dane. Dla wymagań compliance (CJIS, ITAR). Podwójny koszt KMS.
+
+**43. Jak działa S3 Transfer Acceleration technicznie?**
+> Upload do najbliższego CloudFront edge location → prywatna sieć szkieletowa AWS (nie publiczny internet) → bucket w docelowym regionie.
+
+**44. Czy S3 Replication działa między różnymi kontami AWS?**
+> Tak — wymaga dodatkowych uprawnień w bucket policy na destination i odpowiedniej IAM role z trust policy.
+
+**45. Kiedy użyć S3 Glacier Deep Archive zamiast Flexible Retrieval?**
+> Gdy dane są potrzebne raz na rok lub rzadziej, akceptowalny czas retrieval 12-48h, wymagana długoterminowa retencja (7-10 lat). Najtańsza klasa S3.
+
+**46. Co to jest S3 Inventory?**
+> Tygodniowy/dzienny raport CSV/ORC/Parquet wszystkich obiektów w buckecie. Źródło dla S3 Batch Operations i analiz.
+
+**47. Jak działa MFA Delete?**
+> Wymaga token MFA przy: trwałym usunięciu wersji obiektu i wyłączeniu wersjonowania. Włączyć może tylko root account przez AWS CLI.
+
+**48. Co to jest S3 Replication ownership override?**
+> Opcja wymuszająca zmianę właściciela replikowanych obiektów na właściciela destination bucketa. Ważne przy cross-account replication.
+
+**49. Jakie formaty obsługuje S3 Select?**
+> CSV, JSON, Apache Parquet. Kompresja: GZIP, BZIP2 (dla CSV/JSON).
+
+**50. Co to jest S3 Object Tagging?**
+> Key-value metadata przypisane do obiektu (max 10 tagów). Używane w: lifecycle rules, bucket policies (warunki), cost allocation, S3 Batch Operations.
+
+**51. Jak S3 obsługuje eventual consistency?**
+> Od 2020: S3 zapewnia **strong consistency** dla wszystkich operacji PUT/DELETE — natychmiastowo spójne po zapisie. Nie ma już "read after write" problemu.
+
+**52. Co to jest S3 Glacier Vault Lock?**
+> Compliance WORM policy dla Glacier Vault (nie S3 bucket). Dla legacy Glacier — S3 Object Lock jest nowoczesnym odpowiednikiem.
+
+**53. Jaka jest różnica między S3 CRR a SRR?**
+> CRR = replikacja między regionami (DR, compliance, latency reduction). SRR = replikacja w tym samym regionie (test/prod, log aggregation, backup).
+
+**54. Co to jest S3 Outposts?**
+> S3 API na AWS Outposts (on-premises hardware). Dane pozostają w data center klienta. S3 APIs + S3 on Outposts storage class.
+
+**55. Jak zabezpieczyć dostęp do S3 z EC2 bez credentials?**
+> IAM Role przypisana do EC2 (Instance Profile). Bucket policy może też wymagać dostępu przez VPC Endpoint (Gateway Endpoint — bezpłatny).
+
+**56. Co to jest S3 Versioning "suspended" state?**
+> Nowe obiekty dostają `null` jako Version ID. Stare wersje z poprzednich Version ID są zachowane. Wersjonowanie można wznowić.
+
+**57. Jaki jest koszt VPC Gateway Endpoint dla S3?**
+> **Bezpłatny** — S3 Gateway Endpoint (i DynamoDB) są darmowe. Interface Endpoints (PrivateLink) mają koszt.
+
+**58. Co to jest S3 Lifecycle minimum dla One Zone-IA?**
+> 30 dni w S3 Standard przed przejściem do One Zone-IA (jeśli transition z Standard). Min przechowywanie w One Zone-IA: 30 dni.
+
+**59. Jak audytować dostęp do S3?**
+> Dwie opcje: **S3 Server Access Logging** (tani, do innego bucketa) lub **CloudTrail Data Events** (droższy, ale w CloudTrail, integracja z CloudWatch/Athena).
+
+**60. Co to jest S3 Intelligent-Tiering Archive tiers?**
+> Opcjonalne dodatkowe tiery w Intelligent-Tiering: Archive Instant Access (90 dni), Archive Access (90 dni, async), Deep Archive Access (180 dni, async). Włączane osobno, tańsze niż standardowe tiers.
+
+---
+
+## TOC entries (do dodania do spisu treści):
+
+```
+- [19. Amazon S3 — Simple Storage Service](#19-amazon-s3--simple-storage-service)
+  - [19.1 Przegląd i Kontekst](#191-przegląd-i-kontekst)
+  - [19.2 S3 Storage Classes](#192-s3-storage-classes)
+  - [19.3 S3 Lifecycle Policies](#193-s3-lifecycle-policies)
+  - [19.4 S3 Versioning](#194-s3-versioning)
+  - [19.5 S3 Replication](#195-s3-replication)
+  - [19.6 S3 Object Lock — WORM](#196-s3-object-lock--worm)
+  - [19.7 S3 Encryption](#197-s3-encryption)
+  - [19.8 S3 Access Control](#198-s3-access-control)
+  - [19.9 S3 Presigned URLs](#199-s3-presigned-urls)
+  - [19.10 S3 Event Notifications](#1910-s3-event-notifications)
+  - [19.11 S3 Performance](#1911-s3-performance)
+  - [19.12 S3 Requester Pays](#1912-s3-requester-pays)
+  - [19.13 S3 Static Website Hosting](#1913-s3-static-website-hosting)
+  - [19.14 S3 Storage Lens](#1914-s3-storage-lens)
+  - [19.15 S3 Batch Operations](#1915-s3-batch-operations)
+  - [19.16 Integracje z innymi serwisami AWS](#1916-integracje-z-innymi-serwisami-aws)
+  - [19.17 Reliability i Security](#1917-reliability-i-security)
+  - [19.18 Well-Architected Framework — S3](#1918-well-architected-framework--s3)
+  - [19.19 4 Domeny Egzaminacyjne SAP-C02](#1919-4-domeny-egzaminacyjne-sap-c02)
+  - [19.20 Checks — 60 Pytań z Odpowiedziami](#1920-checks--60-pytań-z-odpowiedziami)
+```
+
+
+---
+
+# 26. AWS Backup — Centralne Zarządzanie Kopiami Zapasowymi
+
+> **AWS Backup** to w pełni zarządzana usługa centralizująca tworzenie, zarządzanie i przywracanie kopii zapasowych zasobów AWS z jednego miejsca. Zamiast konfigurować backup dla każdej usługi osobno, tworzysz polityki (Backup Plans) i stosujesz je do wielu zasobów jednocześnie — w wielu kontach i regionach.
+
+**Azure odpowiednik:** Azure Backup (Recovery Services Vault + Backup Center)  
+**Zasięg:** Regionalny (Backup Vaults są regionalne) | Cross-Region copy dostępne | Multi-Account przez AWS Organizations  
+
+---
+
+## 26.1 Czym jest AWS Backup?
+
+AWS Backup to **policy-based backup service**. Zamiast pisać skrypty do tworzenia snapshotów EBS, backupów RDS i kopii DynamoDB — definiujesz Backup Plan i AWS robi to za Ciebie według harmonogramu.
+
+```mermaid
+graph TD
+    BP[Backup Plan] --> BR1[Rule: Daily backup\n7-day retention]
+    BP --> BR2[Rule: Weekly backup\n30-day retention\nCopy to eu-west-1]
+    BP --> BS[Backup Selection]
+    BS --> T[By Tag: Environment=prod]
+    T --> EC2[EC2 instances]
+    T --> RDS[RDS databases]
+    T --> EFS[EFS file systems]
+    T --> DDB[DynamoDB tables]
+    BR1 --> BV[Backup Vault\nus-east-1]
+    BR2 --> BVR[Backup Vault\neu-west-1]
+```
+
+**Kluczowe pojęcia:**
+
+| Pojęcie | Opis |
+|---------|------|
+| **Backup Plan** | Polityka backupu — kiedy, jak często, jak długo przechowywać |
+| **Backup Rule** | Jeden harmonogram w planie (np. daily, weekly) |
+| **Backup Selection** | Co backupować — zasoby wybrane przez tagi lub ARN |
+| **Backup Vault** | Logiczny kontener na Recovery Points (zaszyfrowany KMS) |
+| **Recovery Point** | Pojedyncza kopia zapasowa (snapshot, backup) |
+| **Backup Gateway** | Wirtualna bramka do backupu VMware na premises |
+
+---
+
+## 26.2 Obsługiwane Usługi AWS
+
+| Usługa | Typ backup | Cross-Region | Cross-Account | Item-Level Restore |
+|--------|-----------|--------------|--------------|-------------------|
+| **EC2** | AMI snapshot | ✅ | ✅ | ❌ |
+| **EBS** | Snapshot | ✅ | ✅ | ❌ |
+| **RDS** | DB snapshot | ✅ | ✅ | ❌ |
+| **Aurora** | DB cluster snapshot | ✅ | ✅ | ❌ |
+| **DynamoDB** | On-demand backup | ✅ | ✅ | ✅ (table/item) |
+| **EFS** | Incremental backup | ✅ | ✅ | ✅ (file/dir) |
+| **FSx for Windows** | VSS backup | ✅ | ✅ | ✅ |
+| **FSx for Lustre** | Snapshot | ✅ | ✅ | ❌ |
+| **FSx for ONTAP** | Snapshot | ✅ | ✅ | ✅ |
+| **FSx for OpenZFS** | Snapshot | ✅ | ✅ | ✅ |
+| **S3** | Continuous backup | ✅ | ✅ | ✅ (object) |
+| **DocumentDB** | Cluster snapshot | ✅ | ✅ | ❌ |
+| **Neptune** | Cluster snapshot | ✅ | ✅ | ❌ |
+| **Storage Gateway** | Volume snapshot | ✅ | ✅ | ❌ |
+| **VMware Cloud on AWS** | VM backup via Gateway | ✅ | ✅ | ❌ |
+| **Timestream** | ✅ | ✅ | ✅ | ❌ |
+| **Redshift** | ✅ | ✅ | ✅ | ❌ |
+
+---
+
+## 26.3 Backup Plans — Szczegóły
+
+Backup Plan = jeden lub więcej **Backup Rules** + **Backup Selection**.
+
+```bash
+# Utwórz Backup Plan
+aws backup create-backup-plan \
+  --backup-plan '{
+    "BackupPlanName": "prod-backup-plan",
+    "Rules": [
+      {
+        "RuleName": "daily-backup",
+        "TargetBackupVaultName": "prod-vault",
+        "ScheduleExpression": "cron(0 5 * * ? *)",
+        "StartWindowMinutes": 60,
+        "CompletionWindowMinutes": 120,
+        "Lifecycle": {
+          "MoveToColdStorageAfterDays": 30,
+          "DeleteAfterDays": 90
+        },
+        "CopyActions": [
+          {
+            "DestinationBackupVaultArn": "arn:aws:backup:eu-west-1:123456789:backup-vault:dr-vault",
+            "Lifecycle": {
+              "DeleteAfterDays": 30
+            }
+          }
+        ]
+      }
+    ]
+  }'
+```
+
+### Backup Rule — parametry:
+
+| Parametr | Opis | Przykład |
+|---------|------|---------|
+| `ScheduleExpression` | cron/rate kiedy uruchamiać | `cron(0 5 * * ? *)` = 5:00 UTC daily |
+| `StartWindowMinutes` | Okno startowe (jak długo czekać na start) | 60 min |
+| `CompletionWindowMinutes` | Max czas na ukończenie backupu | 180 min |
+| `Lifecycle.MoveToColdStorageAfterDays` | Kiedy przenieść do cold storage | 30 dni |
+| `Lifecycle.DeleteAfterDays` | Kiedy usunąć | 90 dni |
+| `CopyActions` | Kopiuj do innego vault (cross-region/account) | DestinationVaultARN |
+| `EnableContinuousBackup` | Continuous backup (S3, RDS PITR) | true/false |
+
+---
+
+## 26.4 Backup Vaults
+
+Vault = **logiczny kontener** na Recovery Points. Każdy vault jest **zaszyfrowany KMS** (domyślnie AWS managed key, można użyć CMK).
+
+```bash
+# Utwórz vault z CMK
+aws backup create-backup-vault \
+  --backup-vault-name prod-vault \
+  --encryption-key-arn arn:aws:kms:us-east-1:123456789:key/mrk-abc123
+
+# Pobierz vault
+aws backup describe-backup-vault \
+  --backup-vault-name prod-vault
+
+# Dodaj resource-based policy do vaultu (kto może tworzyć/usuwać)
+aws backup put-backup-vault-access-policy \
+  --backup-vault-name prod-vault \
+  --policy '{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "backup:DeleteRecoveryPoint",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLike": {
+            "aws:PrincipalArn": "arn:aws:iam::*:role/backup-admin"
+          }
+        }
+      }
+    ]
+  }'
+```
+
+**Default vault** — AWS tworzy automatycznie vault `Default` w każdym regionie gdzie włączysz AWS Backup.
+
+---
+
+## 26.5 Backup Selection — Jak Wybierać Zasoby
+
+Trzy sposoby:
+
+```bash
+# 1. Po tagach (najlepsze podejście dla dużych środowisk)
+aws backup create-backup-selection \
+  --backup-plan-id PLAN_ID \
+  --backup-selection '{
+    "SelectionName": "prod-tagged-resources",
+    "IamRoleArn": "arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole",
+    "ListOfTags": [
+      {
+        "ConditionType": "STRINGEQUALS",
+        "ConditionKey": "BackupPolicy",
+        "ConditionValue": "daily"
+      }
+    ]
+  }'
+
+# 2. Po ARN (konkretne zasoby)
+aws backup create-backup-selection \
+  --backup-plan-id PLAN_ID \
+  --backup-selection '{
+    "SelectionName": "specific-rds",
+    "IamRoleArn": "arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole",
+    "Resources": [
+      "arn:aws:rds:us-east-1:123456789:db:prod-mysql"
+    ]
+  }'
+
+# 3. Wszystkie zasoby danego typu
+# Użyj wildcard w Resources: "arn:aws:ec2:*:*:instance/*"
+```
+
+---
+
+## 26.6 Cross-Region i Cross-Account Backup
+
+### Cross-Region — Copy Rule
+
+Dodaj `CopyActions` w Backup Rule. Recovery Point zostaje skopiowany do innego regionu automatycznie.
+
+```mermaid
+sequenceDiagram
+    participant Source as us-east-1\nBackup Vault
+    participant AWS as AWS Backup Service
+    participant Dest as eu-west-1\nBackup Vault
+    
+    AWS->>Source: Create Recovery Point (daily)
+    AWS->>Dest: Copy Recovery Point (Copy Action)
+    Note over Source,Dest: Cross-Region copy = dodatkowy koszt\n(data transfer + storage w DR region)
+```
+
+### Cross-Account — AWS Organizations
+
+```bash
+# W management account Organizations — włącz cross-account backup
+aws organizations enable-aws-service-access \
+  --service-principal backup.amazonaws.com
+
+# Deleguj backup management do dedykowanego konta
+aws backup put-backup-vault-access-policy \
+  --backup-vault-name shared-vault \
+  --policy '{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::MEMBER_ACCOUNT_ID:root"
+        },
+        "Action": [
+          "backup:CopyIntoBackupVault"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }'
+```
+
+**Backup Policies** (jak SCPs) — możesz wymusić backup na wszystkich kontach w OU:
+```json
+{
+  "plans": {
+    "ProdBackupPlan": {
+      "regions": {"@@assign": ["us-east-1", "eu-west-1"]},
+      "rules": {
+        "DailyBackups": {
+          "schedule_expression": {"@@assign": "cron(0 5 * * ? *)"},
+          "target_backup_vault_name": {"@@assign": "Default"},
+          "lifecycle": {
+            "delete_after_days": {"@@assign": "35"}
+          }
+        }
+      },
+      "selections": {
+        "tags": {
+          "ProdResources": {
+            "iam_role_arn": {"@@assign": "arn:aws:iam::$account:role/AWSBackupDefaultServiceRole"},
+            "tag_key": {"@@assign": "BackupRequired"},
+            "tag_value": {"@@assign": ["true"]}
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+---
+
+## 26.7 AWS Backup Vault Lock — WORM
+
+Vault Lock = **Write Once Read Many** — uniemożliwia usunięcie Recovery Points przed upływem retention period. Nawet root/admin nie może usunąć.
+
+| Feature | Governance Mode | Compliance Mode |
+|---------|----------------|----------------|
+| Kto może wyłączyć | Admin (IAM) | **Nikt** (nieodwracalne!) |
+| Usunięcie przed retention | Admin może | **Niemożliwe** |
+| Zastosowanie | Dev/Test | Compliance, HIPAA, SEC, FINRA |
+| Cooling period | 3 dni przed aktywacją | 3 dni przed aktywacją |
+| Zmiana po aktywacji | Można | **Nie można** |
+
+```bash
+# Włącz Vault Lock (Compliance Mode — NIEODWRACALNE po cooling period!)
+aws backup put-backup-vault-lock-configuration \
+  --backup-vault-name prod-vault \
+  --min-retention-days 7 \
+  --max-retention-days 365
+  # Bez --changeable-for-days = Compliance Mode
+  
+# Governance Mode (można wyłączyć przez 3 dni)
+aws backup put-backup-vault-lock-configuration \
+  --backup-vault-name dev-vault \
+  --min-retention-days 1 \
+  --max-retention-days 30 \
+  --changeable-for-days 3
+```
+
+> ⚠️ **UWAGA EGZAMINACYJNA:** Compliance Mode Vault Lock = żaden principal (włącznie z root i AWS Support) nie może usunąć backupu przed upływem retention. To jedyne rozwiązanie dla regulacji wymagających nienaruszalności backupów.
+
+---
+
+## 26.8 AWS Backup Audit Manager
+
+Audit Manager = automatyczna weryfikacja zgodności polityk backupowych z frameworkami.
+
+**Wbudowane frameworki compliance:**
+- AWS Backup controls (własne)
+- CIS AWS Foundations
+- HIPAA
+- PCI DSS
+- SOC 2
+
+```bash
+# Utwórz framework audytowy
+aws backup create-framework \
+  --framework-name "prod-backup-compliance" \
+  --framework-controls '[
+    {
+      "ControlName": "BACKUP_PLAN_MIN_FREQUENCY_AND_MIN_RETENTION_CHECK",
+      "ControlInputParameters": [
+        {"ParameterName": "requiredFrequencyUnit", "ParameterValue": "days"},
+        {"ParameterName": "requiredFrequencyValue", "ParameterValue": "1"},
+        {"ParameterName": "requiredRetentionDays", "ParameterValue": "35"}
+      ]
+    },
+    {
+      "ControlName": "BACKUP_RECOVERY_POINT_ENCRYPTED"
+    },
+    {
+      "ControlName": "BACKUP_RESOURCES_PROTECTED_BY_CROSS_REGION"
+    }
+  ]'
+
+# Generuj raport compliance
+aws backup create-report-plan \
+  --report-plan-name monthly-compliance \
+  --report-delivery-channel '{
+    "S3BucketName": "backup-reports-bucket",
+    "Formats": ["CSV", "JSON"]
+  }' \
+  --report-setting '{
+    "ReportTemplate": "BACKUP_JOB_REPORT"
+  }'
+```
+
+---
+
+## 26.9 AWS Backup vs Native Snapshots
+
+| Cecha | AWS Backup | Native Snapshots/Backup |
+|-------|-----------|------------------------|
+| **Centralność** | Jedno miejsce dla wszystkich | Per-usługa, osobno |
+| **Cross-service policy** | ✅ Jeden plan dla EC2+RDS+EFS | ❌ Osobne konfiguracje |
+| **Cross-account** | ✅ Natywnie przez Organizations | ❌ Wymaga skryptów |
+| **Cross-region** | ✅ Copy Action w planie | ⚠️ Ręcznie lub skrypt |
+| **Compliance (WORM)** | ✅ Vault Lock | ❌ Brak |
+| **Audit reporting** | ✅ Audit Manager | ❌ Brak |
+| **Koszt** | Koszt storage + overhead mgmt | Tylko koszt storage |
+| **Granularność** | Minuty/godziny/dni | Zależy od usługi |
+| **Instant Restore (RDS PITR)** | ✅ Continuous backup | ✅ Native PITR |
+| **IAM control** | ✅ Vault policies | ❌ Ograniczone |
+| **Tag-based selection** | ✅ Automatyczne | ❌ Ręczne |
+| **Monitoring** | CloudWatch + EventBridge | Osobno dla każdej usługi |
+
+**Kiedy używać AWS Backup:**
+- Wiele kont (Organizations) → wymóg compliance
+- Regulacje (HIPAA, PCI, SEC) → Vault Lock
+- Wiele usług → jeden plan do zarządzania
+- Audyt i raportowanie → Audit Manager
+
+**Kiedy wystarczą natywne snapshoty:**
+- Jeden account, jeden region
+- Prosta aplikacja, mało usług
+- Brak wymogów compliance
+
+---
+
+## 26.10 Restore
+
+```bash
+# Lista recovery points dla zasobu
+aws backup list-recovery-points-by-resource \
+  --resource-arn arn:aws:rds:us-east-1:123456789:db:prod-mysql
+
+# Przywróć RDS z recovery point
+aws backup start-restore-job \
+  --recovery-point-arn arn:aws:backup:us-east-1:123456789:recovery-point:abc123 \
+  --metadata '{
+    "DBInstanceIdentifier": "prod-mysql-restored",
+    "DBInstanceClass": "db.r5.large",
+    "Engine": "mysql"
+  }' \
+  --iam-role-arn arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole
+
+# Przywróć EFS — item-level (konkretny katalog)
+aws backup start-restore-job \
+  --recovery-point-arn arn:aws:backup:us-east-1:123456789:recovery-point:efs123 \
+  --metadata '{
+    "file-system-id": "fs-abc123",
+    "newFileSystem": "false",
+    "Encrypted": "true"
+  }' \
+  --iam-role-arn arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole \
+  --resource-type EFS
+
+# Cross-account restore: najpierw skopiuj recovery point do docelowego konta
+aws backup copy-job \
+  --source-backup-vault-name prod-vault \
+  --source-recovery-point-arn arn:aws:backup:... \
+  --destination-backup-vault-arn arn:aws:backup:us-east-1:TARGET_ACCOUNT:backup-vault:restore-vault \
+  --iam-role-arn arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole
+```
+
+---
+
+## 26.11 Backup dla VMware — AWS Backup Gateway
+
+AWS Backup Gateway = wirtualny appliance (OVA) instalowany on-premises w środowisku VMware.
+
+```mermaid
+graph LR
+    VM[VMware VMs\non-premises] --> GW[Backup Gateway\nOVA Appliance]
+    GW --> AWS[AWS Backup Service]
+    AWS --> BV[Backup Vault\nS3-backed]
+    BV --> CR[Cross-Region Copy]
+    BV --> CA[Cross-Account Copy]
+```
+
+**Wymagania:**
+- vSphere 6.7 lub nowszy
+- ESXi host z dostępem do internetu
+- IAM role z uprawnieniami backup:*
+
+---
+
+## 26.12 Pricing
+
+| Element | Koszt |
+|---------|-------|
+| Backup storage (warm) | ~$0.05/GB-miesiąc (region-dependent) |
+| Backup storage (cold) | ~$0.01/GB-miesiąc |
+| Restore | ~$0.02/GB |
+| Cross-region copy | Data transfer + storage w DR region |
+| DynamoDB continuous backup | $0.20/GB-miesiąc |
+| S3 backup | $0.05/GB |
+| Audit Manager | $1.00 per resource/miesiąc oceniany |
+
+> **Uwaga:** AWS Backup jest tańszy od zarządzania backupem manualnie (brak kosztu Lambdy, EventBridge, custom skryptów). Ale AWS Backup for EFS jest droższy (~$0.05/GB) niż snapshot EBS (~$0.05/GB-miesiąc — różnica w granularności).
+
+---
+
+## 26.13 Integracja z AWS Organizations
+
+```mermaid
+graph TD
+    MA[Management Account\nOrganizations] -->|Backup Policy| OU[Production OU]
+    OU --> A1[Account A\napp-prod-1]
+    OU --> A2[Account B\napp-prod-2]
+    OU --> A3[Account C\napp-prod-3]
+    
+    A1 -->|Recovery Points| BV[Shared Backup Vault\nDedicated Backup Account]
+    A2 --> BV
+    A3 --> BV
+    
+    BV -->|Cross-Region Copy| DR[DR Backup Vault\neu-west-1]
+```
+
+**Backup Policies (Organization-level):**
+- Działają jak SCPs ale dla backup
+- Stosowane do wszystkich kont w OU
+- Nie można ich nadpisać w kontach członkowskich
+- Umożliwiają wymuszenie backup compliance bez dania uprawnień do kont
+
+```bash
+# Włącz backup policies w Organizations
+aws organizations enable-policy-type \
+  --root-id r-xxxx \
+  --policy-type BACKUP_POLICY
+
+# Przypnij policy do OU
+aws organizations attach-policy \
+  --policy-id p-xxxxxxxx \
+  --target-id ou-xxxx-xxxxxxxx
+```
+
+---
+
+## 26.14 Well-Architected Framework
+
+| Filar | Zastosowanie AWS Backup |
+|-------|------------------------|
+| **Operational Excellence** | Automatyczne backupy eliminują ręczne operacje. CloudWatch metryki (BackupJobStatus, RestoreJobStatus). EventBridge do alertów o nieudanych backupach |
+| **Security** | Vault Lock (WORM) dla compliance. KMS CMK szyfrowanie vaultów. IAM role + Vault Access Policies. Cross-account isolation — backup konto oddzielone od app kont |
+| **Reliability** | Cross-Region backup dla DR. Cross-Account backup — izolacja od ransomware/accidental delete. Continuous backup (S3, RDS) = PITR. Testowanie restore przez jobs |
+| **Performance Efficiency** | Incremental backupy (EFS, EBS snapshots). Cold storage lifecycle — przenoś stare backupy do cold po 30 dniach. Backup window — uruchamiaj poza godzinami produkcyjnymi |
+| **Cost Optimization** | Lifecycle policy: warm→cold→delete. Konsolidacja wielu narzędzi backup w jedno. Tag-based selection zapobiega backupowaniu niepotrzebnych zasobów. Reserved capacity dla storage |
+| **Sustainability** | Lifecycle do cold storage redukuje footprint. Usunięcie niepotrzebnych recovery points przez retention policy |
+
+---
+
+## 26.15 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+- **Multi-account backup**: Backup Policies przez Organizations wymuszają compliance backup bez nadawania uprawnień
+- **Cross-account isolation**: Ataki ransomware na konto prod nie dotykają backup account (Vault Lock)
+- **Delegated administration**: Dedykowane konto backup jako centralny hub
+
+### Domain 2: Design for New Solutions
+- **Architektura backup-first**: Tag `BackupPolicy=daily` na wszystkich zasobach od startu
+- **RPO/RTO design**: Continuous backup dla RPO ~1h; Cross-Region dla RTO w DR regionie
+- **WORM compliance**: Vault Lock Compliance Mode dla HIPAA/PCI od początku projektu
+
+### Domain 3: Continuous Improvement for Existing Solutions
+- **Migracja z custom skryptów**: Replace Lambda+EventBridge backup scripts → AWS Backup Plan
+- **Audit Manager**: Wykryj zasoby bez backup policy → remediacja przez backup plan
+- **Cost optimization**: Dodaj lifecycle rules do istniejących planów → cold storage
+
+### Domain 4: Accelerate Workload Migration and Modernization
+- **VMware migration**: Backup Gateway → backup VM przed migracją → restore jako EC2 (AWS Application Migration Service)
+- **Lift-and-shift safety net**: Backup wszystkich zasobów przed migracją
+- **Modernization**: Migruj z backup tapes (on-prem) → AWS Backup + cold storage
+
+---
+
+## 26.16 Reliability i Security
+
+### Reliability
+```
+✅ Cross-Region copy — DR w innym regionie
+✅ Cross-Account copy — izolacja backup od produkcji
+✅ Vault Lock — nienaruszalność backupów
+✅ Continuous backup — PITR dla RDS, S3
+✅ Monitoring — CloudWatch + EventBridge alerts na failed backup jobs
+✅ Restore testing — możesz uruchomić restore job do test środowiska
+```
+
+### Security
+```
+✅ KMS encryption — każdy vault szyfrowany (domyślnie AWS managed, można CMK)
+✅ Vault Access Policy — kto może tworzyć/usuwać/restore recovery points
+✅ IAM roles — AWSBackupDefaultServiceRole (lub custom)
+✅ Vault Lock Compliance Mode — zero-trust backup (nawet admin nie usuwa)
+✅ Cross-account vault — backup account oddzielony od app accounts
+✅ CloudTrail — wszystkie backup API calls są logowane
+```
+
+### Ograniczenia
+
+| Ograniczenie | Wartość |
+|-------------|---------|
+| Max Backup Plans per account | 100 |
+| Max Backup Rules per plan | 10 |
+| Max Backup Vaults per account | 100 |
+| Max Recovery Points per vault | Bez limitu (soft: miliony) |
+| Backup Gateway per account | 100 |
+| Max concurrent backup jobs | 1000 |
+| Cross-region copy — dostępność | Nie wszystkie regiony obsługują wszystkie usługi |
+| S3 backup — wymaganie | Versioning musi być włączone na bucket |
+| DynamoDB continuous backup | Tylko przez AWS Backup (nie natywny DynamoDB backup) |
+
+---
+
+## 26.17 Checks — 60 Pytań z Odpowiedziami
+
+**Pytanie 1:** Czym różni się AWS Backup od natywnych snapshotów EBS?
+
+> AWS Backup to centralny, policy-based service zarządzający backupami wielu usług jednocześnie. Natywne snapshoty EBS są tworzone ręcznie lub przez Data Lifecycle Manager tylko dla EBS. AWS Backup dodaje: cross-account, cross-region, Vault Lock, Audit Manager, Backup Policies przez Organizations.
+
+---
+
+**Pytanie 2:** Jak wymusić backup na wszystkich kontach w Organization bez nadawania uprawnień IAM użytkownikom tych kont?
+
+> Użyj **Backup Policies** przez AWS Organizations. Działają podobnie do SCP — stosowane do OU lub kont, nie można ich nadpisać. Management account definiuje plan backup i wymusza go na wszystkich kontach w OU.
+
+---
+
+**Pytanie 3:** Co to jest Backup Vault Lock i kiedy użyć Compliance Mode?
+
+> Vault Lock = WORM protection — Recovery Points nie mogą być usunięte przed retention period. **Compliance Mode**: nieodwracalne, żaden principal (nawet root) nie może usunąć backupu. Używaj dla HIPAA, PCI DSS, SEC Rule 17a-4, FINRA.
+
+---
+
+**Pytanie 4:** Jaka jest różnica między Governance Mode a Compliance Mode w Vault Lock?
+
+> **Governance Mode**: admin z IAM może wyłączyć lock (przez 3-dniowy cooling period). **Compliance Mode**: po upływie cooling period (3 dni) — **nieodwracalne**, nikt nie może wyłączyć ani usunąć recovery pointów przed retention.
+
+---
+
+**Pytanie 5:** Jak skonfigurować cross-region backup dla RDS?
+
+> W Backup Rule dodaj `CopyActions` z `DestinationBackupVaultArn` wskazującym na vault w DR regionie. Vault musi istnieć przed skonfigurowaniem copy action.
+
+---
+
+**Pytanie 6:** Czy AWS Backup obsługuje S3? Jakie są wymagania?
+
+> Tak. Wymaganie: **S3 Versioning musi być włączone** na buckecie. AWS Backup tworzy ciągły backup (continuous backup) umożliwiający restore do dowolnego punktu w czasie (PITR — Point-In-Time Recovery).
+
+---
+
+**Pytanie 7:** Czym jest Recovery Point w AWS Backup?
+
+> Recovery Point = pojedyncza kopia zapasowa zasobu (snapshot EBS, backup RDS, kopia EFS). Ma własny ARN, datę utworzenia, status, rozmiar i czas retencji. Przechowywany w Backup Vault.
+
+---
+
+**Pytanie 8:** Jak AWS Backup chroni przed ransomware?
+
+> Cross-account backup do dedykowanego backup account + Vault Lock Compliance Mode. Nawet jeśli konto prod zostanie zaatakowane (ransomware zaszyfruje dane, usunie snapshoty), backup account jest oddzielny — atakujący nie ma dostępu do Vault Lock protected recovery points.
+
+---
+
+**Pytanie 9:** Jaką rolę IAM używa AWS Backup do tworzenia backupów?
+
+> `AWSBackupDefaultServiceRole` — AWS-managed role z uprawnieniami do tworzenia/usuwania snapshotów, backupów RDS, DynamoDB etc. Można też użyć custom role z minimalnymi uprawnieniami (least privilege).
+
+---
+
+**Pytanie 10:** Czy AWS Backup obsługuje VMware on-premises?
+
+> Tak — przez **AWS Backup Gateway** (wirtualny appliance OVA instalowany na vSphere). Backup VMs do AWS Backup Vault. Wymaga vSphere 6.7+.
+
+---
+
+**Pytanie 11:** Co to jest Backup Selection i jakie są sposoby wyboru zasobów?
+
+> Backup Selection definiuje które zasoby są objęte planem. Trzy metody: (1) **By tag** — wszystkie zasoby z określonym tagiem, (2) **By ARN** — konkretne zasoby, (3) **Wildcard ARN** — np. wszystkie instancje EC2 `arn:aws:ec2:*:*:instance/*`.
+
+---
+
+**Pytanie 12:** Jak monitorować nieudane backup jobs?
+
+> CloudWatch metryki: `NumberOfBackupJobsFailed`, `NumberOfCopyJobsFailed`. EventBridge rules na event `AWS Backup Backup Job State Change` → SNS/Lambda. Sprawdź też AWS Backup console → Jobs.
+
+---
+
+**Pytanie 13:** Czym jest AWS Backup Audit Manager?
+
+> Usługa weryfikacji zgodności polityk backupowych z frameworkami compliance (CIS, HIPAA, PCI DSS, SOC2). Automatycznie sprawdza kontrole (np. "czy każdy zasób ma backup plan?") i generuje raporty do S3.
+
+---
+
+**Pytanie 14:** Ile Backup Plans można mieć per account?
+
+> **100** Backup Plans per account (soft limit, można zwiększyć przez Service Quotas).
+
+---
+
+**Pytanie 15:** Jak działa lifecycle w Backup Rule?
+
+> `MoveToColdStorageAfterDays` — przenieś Recovery Point do cold storage (tańszy, wolniejszy dostęp) po N dniach. `DeleteAfterDays` — usuń Recovery Point po N dniach. Cold storage: min 90 dni przechowywania, pierwsze 90 dni liczone od przeniesienia.
+
+---
+
+**Pytanie 16:** Czy można przywrócić backup cross-account bezpośrednio?
+
+> Nie bezpośrednio. Najpierw skopiuj Recovery Point do vaultu w docelowym koncie (`copy-job`), potem uruchom `start-restore-job` w docelowym koncie.
+
+---
+
+**Pytanie 17:** Jak AWS Backup obsługuje DynamoDB?
+
+> On-demand backup (pełny snapshot) + **continuous backup** (PITR — Point-In-Time Recovery do 35 dni wstecz). Item-level restore: możesz przywrócić konkretną tabelę do nowej tabeli. Wymaga włączenia PITR w planie.
+
+---
+
+**Pytanie 18:** Co to jest StartWindowMinutes w Backup Rule?
+
+> Czas (minuty) jaki AWS Backup czeka na start backupu po zaplanowanej godzinie. Jeśli backup nie zacznie się w tym oknie — job failed. Domyślnie 60 min. Zwiększ dla dużych, wolnych środowisk.
+
+---
+
+**Pytanie 19:** Czym różni się AWS Backup dla EFS od EFS natywnych backupów?
+
+> AWS Backup dla EFS używa inkrementalnych backupów (szybsze, tańsze). Natywny backup EFS nie istnieje — tylko przez AWS Backup lub Rsync/DataSync. AWS Backup EFS wspiera item-level restore (konkretne pliki/katalogi).
+
+---
+
+**Pytanie 20:** Czy Backup Vaults są globalne czy regionalne?
+
+> **Regionalne** — każdy vault jest w konkretnym regionie. Dane nie opuszczają regionu bez Copy Action. Masz osobne vaultsy w us-east-1 i eu-west-1.
+
+---
+
+**Pytanie 21:** Jak włączyć continuous backup dla RDS?
+
+> W Backup Rule ustaw `EnableContinuousBackup: true`. Wymaga RDS w trybie automated backup. Umożliwia PITR do dowolnego punktu w ostatnich 35 dniach.
+
+---
+
+**Pytanie 22:** Jak AWS Backup Vault Lock różni się od S3 Object Lock?
+
+> Analogiczna koncepcja (WORM) ale dla różnych zasobów. S3 Object Lock chroni obiekty S3. Vault Lock chroni **Recovery Points** w Backup Vault (snapshoty EC2, RDS, EFS itd). Oba mają Governance i Compliance mode.
+
+---
+
+**Pytanie 23:** Czy AWS Backup obsługuje Redshift?
+
+> Tak. AWS Backup może tworzyć snapshoty Redshift cluster i Redshift Serverless namespace. Cross-region i cross-account copy obsługiwane.
+
+---
+
+**Pytanie 24:** Jak sprawdzić status backup job?
+
+```bash
+aws backup list-backup-jobs \
+  --by-state FAILED \
+  --by-resource-type RDS
+```
+
+---
+
+**Pytanie 25:** Jakie są koszty AWS Backup?
+
+> Per GB backed up (~$0.05/GB warm, ~$0.01/GB cold) + restore (~$0.02/GB). Dodatkowe koszty: cross-region data transfer, DynamoDB PITR ($0.20/GB), Audit Manager ($1/resource/miesiąc). Brak opłaty za Backup Plans/Rules/Selections.
+
+---
+
+**Pytanie 26:** Jak AWS Backup integruje się z AWS Config?
+
+> AWS Config Rule `BACKUP_PLAN_EXISTS` sprawdza czy zasób ma backup plan. Możesz użyć Config + AWS Backup Audit Manager do wykrywania zasobów bez wymaganego backupu.
+
+---
+
+**Pytanie 27:** Co to jest CompletionWindowMinutes?
+
+> Maksymalny czas (minuty) na ukończenie backup job. Jeśli backup nie skończy się w tym oknie — AWS Backup oznaczy job jako `EXPIRED`. Domyślnie: 8 godzin (480 min). Zwiększ dla bardzo dużych woluminów EBS lub baz danych.
+
+---
+
+**Pytanie 28:** Jak chronić Backup Vault przed przypadkowym usunięciem recovery points przez admina?
+
+> Użyj **Vault Access Policy** z `Deny` na `backup:DeleteRecoveryPoint` dla wszystkich principalów oprócz dedykowanej roli. Lub włącz **Vault Lock** — Governance Mode dla elastyczności, Compliance Mode dla pełnej ochrony.
+
+---
+
+**Pytanie 29:** Czy AWS Backup obsługuje FSx for Windows z VSS?
+
+> Tak. AWS Backup dla FSx for Windows File Server obsługuje **application-consistent backups** przez VSS (Volume Shadow Copy Service). Zapewnia spójność danych dla SQL Server, Exchange działających na FSx.
+
+---
+
+**Pytanie 30:** Jak AWS Backup różni się od AWS DRS (Disaster Recovery Service)?
+
+> **AWS Backup**: kopie zapasowe zasobów (snapshoty, backupy), restore trwa minuty-godziny. **AWS DRS (CloudEndure)**: continuous replication bloków dyskowych, failover w minutach, działa jak hot standby. Backup = RPO godziny, RTO minuty-godziny. DRS = RPO sekundy, RTO ~15 min.
+
+---
+
+**Pytanie 31:** Jakie usługi obsługuje item-level restore w AWS Backup?
+
+> **DynamoDB** (table/item), **EFS** (file/directory), **FSx for Windows** (file/folder przez VSS), **S3** (object-level).
+
+---
+
+**Pytanie 32:** Jak działa Backup Selection po tagach dla nowych zasobów?
+
+> Automatycznie — gdy nowy zasób (np. EC2) zostaje uruchomiony z tagiem `BackupPolicy=daily`, AWS Backup automatycznie obejmuje go backupem. Nie trzeba ręcznie dodawać do planu. To główna zaleta tag-based selection.
+
+---
+
+**Pytanie 33:** Jaka jest minimalna częstotliwość backup w AWS Backup?
+
+> 1 godzina (cron expression lub rate expression). Dla ciągłego backupu (PITR): continuous backup dla RDS/Aurora, S3, DynamoDB.
+
+---
+
+**Pytanie 34:** Czy AWS Backup może backupować zasoby w innych regionach?
+
+> Nie — AWS Backup tworzy backupy **w tym samym regionie** gdzie są zasoby. Copy Action kopiuje Recovery Point do innego regionu *po* stworzeniu backupu. Backup musi być inicjowany z regionu zasobu.
+
+---
+
+**Pytanie 35:** Co to jest Backup Gateway i czym różni się od Storage Gateway?
+
+> **Backup Gateway**: wirtualny appliance do backupu VMware VMs do AWS Backup. **Storage Gateway**: hybrydowy storage (S3, EBS volumes, Tape) dla on-premises aplikacji. Backup Gateway = tylko backup, Storage Gateway = hybrydowy storage.
+
+---
+
+**Pytanie 36:** Jak AWS Backup obsługuje zaszyfrowane zasoby (CMK)?
+
+> Backup szyfrowanych zasobów wymaga dostępu do klucza KMS. Vault może używać innego CMK niż zasób. W cross-account backup: docelowe konto musi mieć dostęp do CMK z konta źródłowego lub użyć własnego CMK do re-encryption.
+
+---
+
+**Pytanie 37:** Jak ustawić alert gdy backup job się nie powiedzie?
+
+```bash
+# EventBridge rule na failed backup job
+aws events put-rule \
+  --name backup-failure-alert \
+  --event-pattern '{
+    "source": ["aws.backup"],
+    "detail-type": ["Backup Job State Change"],
+    "detail": {"state": ["FAILED", "EXPIRED", "ABORTED"]}
+  }'
+# Target: SNS topic → email/PagerDuty
+```
+
+---
+
+**Pytanie 38:** Czy możesz usunąć Backup Vault z recovery points w środku?
+
+> Nie — Vault musi być **pusty** (zero recovery points) przed usunięciem. Najpierw usuń wszystkie recovery points lub poczekaj na wygaśnięcie retention. Z Vault Lock Compliance Mode — nie możesz usunąć recovery points → nie możesz usunąć vaultu przed retention.
+
+---
+
+**Pytanie 39:** Czym jest `AWSBackupDefaultServiceRole`?
+
+> AWS-managed IAM role z uprawnieniami dla AWS Backup do: tworzenia/usuwania snapshotów EBS, backupów RDS, DynamoDB, EFS, FSx. Tworzona automatycznie przy pierwszym użyciu AWS Backup. Można użyć custom role z minimum permissions.
+
+---
+
+**Pytanie 40:** Jak działa retention w cold storage dla AWS Backup?
+
+> Po przeniesieniu do cold storage: **minimum 90 dni** przechowywania w cold (liczonych od przeniesienia). `DeleteAfterDays` musi być ≥ `MoveToColdStorageAfterDays + 90`.
+
+---
+
+**Pytanie 41:** Jakie usługi AWS Backup obsługuje dla compliance HIPAA?
+
+> AWS Backup jest HIPAA-eligible. Audit Manager ma wbudowany HIPAA framework. Vault Lock Compliance Mode spełnia wymóg nienaruszalności backupów. Szyfrowanie KMS CMK. Cross-account isolation backup.
+
+---
+
+**Pytanie 42:** Jak AWS Backup integruje się z AWS CloudTrail?
+
+> Wszystkie API calls AWS Backup są logowane w CloudTrail: CreateBackupJob, DeleteRecoveryPoint, StartRestoreJob, PutBackupVaultLockConfiguration. Audytowanie kto/kiedy stworzył/usunął backup.
+
+---
+
+**Pytanie 43:** Czy można tagować Recovery Points?
+
+> Tak. AWS Backup automatycznie kopiuje tagi z zasobu do Recovery Point. Można też dodać własne tagi do Recovery Points niezależnie od zasobu. Ułatwia wyszukiwanie i organizację backupów.
+
+---
+
+**Pytanie 44:** Czym jest Backup Window?
+
+> Czas (UTC) w którym AWS Backup preferuje uruchomić backup job. Definiowany przez `StartWindowMinutes` od `ScheduleExpression`. Uruchamiaj backupy poza godzinami szczytowymi produkcji.
+
+---
+
+**Pytanie 45:** Jak AWS Backup wspiera RTO/RPO?
+
+> **RPO**: Continuous backup (PITR) dla RDS/S3/DynamoDB = RPO ~sekundy. Hourly backup = RPO 1h. Daily backup = RPO 24h. **RTO**: Cross-region backup pozwala restore w DR regionie. Czas restore zależy od rozmiaru zasobu (EBS snapshot restore = natychmiastowe, RDS = minuty-godziny).
+
+---
+
+**Pytanie 46:** Czy AWS Backup może zastąpić AWS DLM (Data Lifecycle Manager)?
+
+> Częściowo. AWS Backup obsługuje EBS snapshots i EC2 AMI. DLM to prostsze, tańsze rozwiązanie tylko dla EBS/EC2 bez zarządzania cross-account/cross-service. Dla multi-service/multi-account: AWS Backup. Dla prostego EBS w jednym koncie: DLM lub AWS Backup — oba działają.
+
+---
+
+**Pytanie 47:** Jak ograniczyć kto może tworzyć backup jobs do vaultu?
+
+> Vault Access Policy — resource-based policy na vault. Możesz zezwolić tylko określonym rolom/kontom na `backup:StartBackupJob`, `backup:CopyIntoBackupVault` etc.
+
+---
+
+**Pytanie 48:** Jak AWS Backup obsługuje Aurora?
+
+> Aurora Cluster Snapshot (nie per-instance). Continuous backup (PITR do 35 dni) jeśli enabled. Cross-region copy obsługiwane. Nie możesz robić backup pojedynczego Aurora instance — tylko klaster.
+
+---
+
+**Pytanie 49:** Jak sprawdzić wszystkie zasoby bez backup planu?
+
+> AWS Backup Audit Manager → Control: `BACKUP_RESOURCES_PROTECTED_BY_BACKUP_PLAN`. Lub AWS Config rule: `backup-plan-min-frequency-and-min-retention-check`. Zwróci listę niezgodnych zasobów.
+
+---
+
+**Pytanie 50:** Czy AWS Backup obsługuje Neptune?
+
+> Tak. Neptune cluster snapshots przez AWS Backup. Cross-region i cross-account copy. Nie obsługuje item-level restore (przywraca cały klaster Neptune).
+
+---
+
+**Pytanie 51:** Co to jest "Warm Storage" i "Cold Storage" w AWS Backup?
+
+> **Warm storage**: szybki dostęp, restore w minutach/godzinach, ~$0.05/GB. **Cold storage**: tańszy (~$0.01/GB), czas do pierwszego bajtu restore dłuższy (podobny do Glacier). Lifecycle policy przenosząca do cold po N dniach oszczędza koszty przechowywania długoterminowych backupów.
+
+---
+
+**Pytanie 52:** Jak AWS Backup różni się od AWS Backup for S3 vs S3 Cross-Region Replication?
+
+> **AWS Backup for S3**: kopia zapasowa zawartości bucketu, PITR, przechowywana w Backup Vault. **S3 CRR**: synchronizacja obiektów między bucketami w czasie rzeczywistym (nie backup). CRR replikuje każdą zmianę/usunięcie — delete marker też. Backup for S3 zachowuje historię — możesz przywrócić usunięty obiekt.
+
+---
+
+**Pytanie 53:** Ile Recovery Points można przechowywać w jednym vault?
+
+> Brak twardego limitu (soft: miliony recovery points). Praktyczny limit — koszt storage. AWS zaleca jednego vault per region per account dla większości przypadków.
+
+---
+
+**Pytanie 54:** Jak działa Vault Lock cooling period?
+
+> Po wywołaniu `PutBackupVaultLockConfiguration` vault jest w stanie "pending lock" przez **3 dni** (72 godziny). W tym czasie możesz zmienić konfigurację lub usunąć lock. Po 3 dniach — lock wchodzi w życie (dla Compliance Mode: nieodwracalnie). W Governance Mode: można wyłączyć z odpowiednimi IAM uprawnieniami.
+
+---
+
+**Pytanie 55:** Jak AWS Backup obsługuje DocumentDB?
+
+> AWS Backup tworzy snapshoty DocumentDB cluster. Cross-region i cross-account copy. Restore do nowego klastra DocumentDB. Continuous backup nie jest dostępny dla DocumentDB (tylko on-demand snapshoty przez Backup Plan).
+
+---
+
+**Pytanie 56:** Czy można wykonać natychmiastowy (on-demand) backup poza harmonogramem?
+
+```bash
+aws backup start-backup-job \
+  --backup-vault-name prod-vault \
+  --resource-arn arn:aws:rds:us-east-1:123456789:db:prod-mysql \
+  --iam-role-arn arn:aws:iam::123456789:role/AWSBackupDefaultServiceRole \
+  --lifecycle '{"DeleteAfterDays": 7}'
+```
+> Tak — `start-backup-job` API. Przydatne przed dużymi zmianami (deployment, migracja).
+
+---
+
+**Pytanie 57:** Jak Backup Policies w Organizations różnią się od Backup Plans?
+
+> **Backup Plans**: tworzone i zarządzane w konkretnym koncie AWS. **Backup Policies**: definiowane na poziomie Organization (management account), automatycznie stosowane do kont/OU. Backup Policy = mechanizm dystrybucji Backup Plan do wielu kont.
+
+---
+
+**Pytanie 58:** Co sprawdza kontrola `BACKUP_RECOVERY_POINT_ENCRYPTED` w Audit Manager?
+
+> Weryfikuje czy wszystkie recovery points w vaultach są zaszyfrowane. Jeśli vault używa default AWS managed key = compliant. Jeśli vault nie ma szyfrowania = non-compliant. Ważna kontrola dla PCI DSS i HIPAA.
+
+---
+
+**Pytanie 59:** Jaka jest różnica między `backup:CreateBackupVault` a `backup:CopyIntoBackupVault`?
+
+> `CreateBackupVault`: uprawnienie do tworzenia nowych vaultów. `CopyIntoBackupVault`: uprawnienie do kopiowania Recovery Points **do** tego vaultu z innego konta/regionu. Kluczowe dla cross-account backup — konto źródłowe potrzebuje `CopyIntoBackupVault` na docelowym vaulcie.
+
+---
+
+**Pytanie 60:** Firma musi udowodnić że backupy nie były zmodyfikowane przez ostatnie 7 lat (SEC compliance). Jak skonfigurować AWS Backup?
+
+> 1. Utwórz dedykowane konto backup (oddzielone od prod). 2. Utwórz Backup Vault z KMS CMK. 3. Włącz **Vault Lock Compliance Mode** z `min-retention-days=2555` (7 lat) i `max-retention-days=2556`. 4. Poczekaj cooling period (3 dni) — lock staje się nieodwracalny. 5. Backup Policies przez Organizations wymuszają backup z kont prod do tego vault. 6. CloudTrail + Audit Manager generują raporty compliance. 7. Żaden principal nie może usunąć recovery points — spełnia SEC Rule 17a-4.
+
+---
+
+*Ostatnia aktualizacja: 2026-10-27 | Temat: AWS Backup — centralne zarządzanie backupami, Vault Lock, cross-account, Organizations, Audit Manager, SAP-C02*
+
+---
+
+# 24. AWS Snow Family — Snowcone, Snowball Edge, Snowmobile
+
+> 🧊 Fizyczne urządzenia do transferu danych i edge computingu w odizolowanych lub słabo skomunikowanych lokalizacjach.
+
+---
+
+## 24.1 Przegląd i Kontekst
+
+**AWS Snow Family** = rodzina fizycznych urządzeń do:
+1. **Offline data transfer** — przeniesienie dużych ilości danych do/z AWS bez sieci
+2. **Edge computing** — uruchomienie obliczeń w miejscach bez stałego łącza (platformy wiertnicze, statki, wojsko, fabryki)
+
+**Zasada kciuka:** jeśli transfer przez internet zajmie >1 tydzień → Snow szybszy i tańszy.
+
+**Zakres usługi:** Regionalny — urządzenia powiązane z konkretnym regionem AWS. Snowmobile dostępny tylko w USA.
+
+---
+
+## 24.2 AWS Snowcone
+
+Najmniejsze urządzenie Snow — rozmiar pudełka na buty (2 kg). Jedyne z wbudowanym DataSync.
+
+| Parametr | Snowcone HDD | Snowcone SSD |
+|----------|-------------|-------------|
+| Storage użytkowy | 8 TB HDD | 14 TB SSD |
+| vCPU | 2 | 2 |
+| RAM | 4 GB | 4 GB |
+| Sieć | 1 GbE / WiFi | 1 GbE / WiFi |
+| DataSync built-in | ✅ | ✅ |
+| EC2 on-device | ✅ (sbe2.medium) | ✅ (sbe2.medium) |
+| Lambda on-device | ❌ | ❌ |
+| Online transfer | ✅ via DataSync | ✅ via DataSync |
+
+**Use case:** IoT edge, tactical/military, space-constrained locations, small migrations <14 TB.
+
+---
+
+## 24.3 AWS Snowball Edge
+
+Główne urządzenie Snow (~22 kg). Dwa warianty:
+
+### Storage Optimized vs Compute Optimized
+
+| Parametr | Storage Optimized | Compute Optimized |
+|----------|------------------|------------------|
+| Storage użytkowy | **80 TB HDD** | **28 TB NVMe SSD** |
+| Storage dla EC2 | 1 TB SSD NVMe | 28 TB NVMe |
+| vCPU | 40 | 104 |
+| RAM | 80 GB | 416 GB |
+| GPU | ❌ | ✅ opcjonalnie (NVIDIA V100) |
+| EC2 families | sbe1, sbe-c, sbe-m | sbe-c (compute-heavy) |
+| Lambda | ✅ | ✅ |
+| IoT Greengrass | ✅ | ✅ |
+| EKS Anywhere | ✅ | ✅ |
+
+**Clustering:** do 15 urządzeń razem. Minimalne quorum = 51% aktywnych.
+
+**Use case Storage Optimized:** duże migracje danych, archiwizacja offline.
+**Use case Compute Optimized:** HPC w terenie, ML inference, video analytics, GPU workloads.
+
+---
+
+## 24.4 AWS Snowmobile
+
+Ciężarówka z opancerzonym kontenerem. 100 PB per truck.
+
+| Parametr | Wartość |
+|----------|---------|
+| Pojemność | 100 PB |
+| Transfer speed | do 1 Tb/s (dedicated fiber) |
+| Szyfrowanie | AES-256, klucze klienta |
+| Bezpieczeństwo | GPS, kamera, alarm, ochrona, eskort |
+| Dostępność | Tylko USA, zamówienie przez kontakt z AWS |
+| Edge compute | ❌ |
+
+**Kiedy:** >10 PB → Snowmobile. <10 PB → wiele Snowball Edge równolegle (tańsze, szybsze logistycznie).
+
+---
+
+## 24.5 Tabela Porównawcza — Snow Family
+
+| Parametr | Snowcone | Snowball Edge Storage | Snowball Edge Compute | Snowmobile |
+|----------|----------|----------------------|----------------------|------------|
+| **Storage** | 8/14 TB | 80 TB | 28 TB NVMe | 100 PB |
+| **vCPU** | 2 | 40 | 104 | N/A |
+| **RAM** | 4 GB | 80 GB | 416 GB | N/A |
+| **GPU** | ❌ | ❌ | ✅ opcja | N/A |
+| **EC2** | ✅ | ✅ | ✅ | ❌ |
+| **Lambda** | ❌ | ✅ | ✅ | ❌ |
+| **Clustering** | ❌ | ✅ 15 nodes | ✅ 15 nodes | N/A |
+| **DataSync** | ✅ built-in | ❌ | ❌ | ❌ |
+| **Online transfer** | ✅ | ❌ | ❌ | ❌ |
+| **Waga** | 2 kg | ~22 kg | ~22 kg | ciężarówka |
+| **Azure odpowiednik** | Data Box Disk | Data Box | Data Box Edge/Stack Edge | Data Box Heavy |
+
+---
+
+## 24.6 Edge Computing na Snow
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant Console as AWS Console
+    participant Snow as Snowball Edge
+    participant S3 as Amazon S3
+
+    Dev->>Console: Utwórz AMI + Lambda
+    Console->>Snow: Pre-load AMI przed wysyłką
+    Snow->>Snow: EC2 + Lambda on-device (bez internetu)
+    Snow->>Snow: Przetwarzaj dane lokalnie
+    Snow->>S3: Importuj wyniki po powrocie / sync online
+```
+
+**Typy instancji EC2 na Snow:**
+
+| Rodzina | Odpowiednik | Dostępność |
+|---------|------------|-----------|
+| sbe2.medium | t3-like small | Snowcone |
+| sbe1.* | m4 equivalent | Snowball Edge Storage |
+| sbe-c.* | c5 equivalent | Snowball Edge Compute |
+| sbe-m.* | m5 equivalent | Snowball Edge oba |
+
+---
+
+## 24.7 Proces Transferu Danych
+
+```
+1. Zamów job w AWS Console (import lub export)
+2. AWS wysyła urządzenie (kilka dni)
+3. Podłącz do sieci lokalnej
+4. Unlock przez OpsHub lub CLI (manifest + unlock code z Console)
+5. Kopiuj dane (S3-compatible API / NFS / CLI)
+6. Zaplombuj i odeślij do AWS
+7. AWS importuje dane do S3 (~2-3 dni)
+8. AWS bezpiecznie wymazuje urządzenie (NIST 800-88)
+9. Potwierdzenie w Console
+```
+
+```bash
+# Unlock urządzenia
+snowballEdge unlock-device \
+  --endpoint https://192.168.1.100 \
+  --manifest-file /path/manifest.bin \
+  --unlock-code 1234-ABCD-5678-EFGH
+
+# Kopiowanie przez S3-compatible API
+aws s3 cp /data/ s3://mybucket/ \
+  --endpoint-url http://192.168.1.100:8080 \
+  --recursive
+
+# NFS mount
+mount -t nfs 192.168.1.100:/mybucket /mnt/snow
+```
+
+---
+
+## 24.8 OpsHub
+
+Darmowa GUI aplikacja (Mac/Windows) — alternatywa dla CLI.
+
+| Funkcja | Opis |
+|---------|------|
+| Unlock device | Bez CLI |
+| Launch EC2 | Zarządzanie instancjami |
+| Manage files | Przeglądanie i kopiowanie |
+| Monitor | CPU/RAM/storage |
+| Configure network | IP, DNS |
+| NFS shares | Tworzenie udziałów |
+
+OpsHub łączy się bezpośrednio z urządzeniem przez LAN — nie wymaga internetu.
+
+---
+
+## 24.9 Szyfrowanie i Bezpieczeństwo
+
+| Aspekt | Szczegóły |
+|--------|-----------|
+| Algorytm | AES-256-GCM |
+| Klucze | KMS Customer Managed Keys |
+| Klucze na urządzeniu | ❌ — nigdy nie opuszczają KMS |
+| Tamper-evident | ✅ — widoczne ślady ingerencji fizycznej |
+| TPM | ✅ — hardware security chip |
+| Wymazanie po imporcie | ✅ — NIST 800-88 |
+| Bezpieczeństwo Snowmobile | GPS + kamera + alarm + eskort + opancerzony kontener |
+
+---
+
+## 24.10 Snow vs Direct Connect vs DataSync — Decision Tree
+
+| Dane | Bandwidth | Rekomendacja |
+|------|-----------|-------------|
+| <1 TB | Dowolny | Internet / S3 direct upload |
+| 1–10 TB | >100 Mbps | DataSync |
+| 1–10 TB | <10 Mbps | Snowcone |
+| 10–80 TB | Brak lub słabe | Snowball Edge Storage |
+| 10–80 TB | 10 Gbps DC | Direct Connect (szybciej) |
+| 80 TB – 10 PB | Brak | Wiele Snowball Edge |
+| >10 PB | N/A | Snowmobile |
+
+---
+
+## 24.11 Azure — Data Box Family
+
+| AWS | Azure | Pojemność | Edge Compute |
+|-----|-------|-----------|--------------|
+| Snowcone | Data Box Disk | 35 TB (5×8 TB) | ❌ |
+| Snowball Edge Storage | Data Box | 100 TB | ❌ |
+| Snowball Edge Compute | Data Box Edge / Azure Stack Edge | compute + storage | ✅ |
+| Snowmobile | Data Box Heavy | 1 PB | ❌ |
+
+**Kluczowa różnica:** AWS Snow EC2 API on-device vs Azure Stack Edge — własny system. Snowmobile 100 PB nie ma rzeczywistego odpowiednika w Azure.
+
+---
+
+## 24.12 Well-Architected Framework
+
+| Filar | Snow Family |
+|-------|-------------|
+| **Operational Excellence** | OpsHub GUI; automatyczny import; job tracking w Console |
+| **Security** | AES-256 + KMS; klucze nigdy na urządzeniu; tamper-evident; NIST 800-88 erasure; chain of custody |
+| **Reliability** | Clustering (15 nodes); DataSync retry dla Snowcone; redundantne nośniki |
+| **Performance Efficiency** | Compute Optimized + GPU dla ML/HPC w terenie; NVMe dla szybkich odczytów |
+| **Cost Optimization** | Offline transfer tańszy niż DC dla jednorazowych dużych migracji; płacisz za job nie za ciągłe łącze |
+| **Sustainability** | AWS recykluje i reużywa urządzenia; jedno urządzenie = brak tygodni transmisji sieciowej |
+
+---
+
+## 24.13 4 Domeny Egzaminacyjne SAP-C02
+
+### Domain 1: Design Solutions for Organizational Complexity
+- Multi-account migration — import do konkretnego konta S3
+- Centralized data lake — masowa migracja on-prem → S3 → Glue → Athena
+- Edge locations bez łącza — fabryki, szpitale polowe, offshore
+
+### Domain 2: Design for New Solutions
+- Edge AI/ML — Snowball Edge Compute + GPU → inference bez cloud
+- IoT data collection — Snowcone zbiera dane z sensorów
+- Hybrid architecture — Snow jako extension AWS w terenie
+
+### Domain 3: Continuous Improvement for Existing Solutions
+- Skrócenie czasu migracji — wiele Snowball Edge równolegle
+- Koszt vs czas — kalkulacja kiedy Snow tańszy od Direct Connect
+- Automatyzacja po imporcie — S3 Event → Lambda → przetwarzanie
+
+### Domain 4: Accelerate Workload Migration and Modernization
+- Lift-and-shift datacenter — Snowmobile dla całych datacenter
+- Application modernization — dane w S3 → migracja do cloud-native
+- Database migration — export DB → Snow → S3 → DMS → RDS
+
+---
+
+## 24.14 Checks — 60 Pytań z Odpowiedziami
+
+1. **Q: Ile TB ma Snowcone HDD?** A: 8 TB.
+2. **Q: Ile TB ma Snowcone SSD?** A: 14 TB.
+3. **Q: Ile TB ma Snowball Edge Storage Optimized?** A: 80 TB HDD + 1 TB SSD dla EC2.
+4. **Q: Ile TB ma Snowball Edge Compute Optimized?** A: 28 TB NVMe SSD.
+5. **Q: Ile PB mieści jeden Snowmobile?** A: 100 PB.
+6. **Q: Ile vCPU ma Snowcone?** A: 2 vCPU, 4 GB RAM.
+7. **Q: Ile vCPU ma Snowball Edge Compute Optimized?** A: 104 vCPU, 416 GB RAM.
+8. **Q: Czy Snowcone obsługuje Lambda on-device?** A: Nie — Lambda tylko Snowball Edge.
+9. **Q: Ile urządzeń Snowball Edge można połączyć w klaster?** A: Do 15.
+10. **Q: Jakie jest minimalne quorum klastra?** A: 51% urządzeń aktywnych.
+11. **Q: Czy Snowcone ma DataSync pre-installed?** A: Tak — jedyne urządzenie Snow z DataSync.
+12. **Q: Czy Snowball Edge ma DataSync built-in?** A: Nie.
+13. **Q: Jak Snowcone może wysłać dane bez fizycznej wysyłki?** A: DataSync przez internet → S3/EFS.
+14. **Q: Co to jest Snowball manifest file?** A: Plik z metadanymi do odblokowania urządzenia, pobierany z Console.
+15. **Q: Jakim algorytmem szyfrowane są dane na Snow?** A: AES-256-GCM.
+16. **Q: Czy klucze KMS są na urządzeniu?** A: Nie — nigdy nie opuszczają AWS KMS.
+17. **Q: Co się dzieje z danymi po imporcie?** A: AWS wymazuje urządzenie wg NIST 800-88.
+18. **Q: Co to jest tamper-evident?** A: Fizyczne zabezpieczenie — widoczne ślady ingerencji, urządzenie staje się nieużywalne.
+19. **Q: Ile zabezpieczeń fizycznych ma Snowmobile?** A: GPS, kamera, alarm, ochrona, pojazd eskortujący, opancerzony kontener.
+20. **Q: Jakie typy EC2 na Snowball Edge Storage?** A: sbe1.*, sbe-c.*, sbe-m.*
+21. **Q: Jakie typy EC2 na Snowcone?** A: sbe2.medium
+22. **Q: Czy można uruchomić EKS Anywhere na Snow?** A: Tak — ale tylko Snowball Edge.
+23. **Q: Czy Snowcone obsługuje IoT Greengrass?** A: Nie — Greengrass tylko Snowball Edge.
+24. **Q: Czy Snow ma S3-compatible API?** A: Tak — obydwa Snowcone i Snowball Edge.
+25. **Q: Co to jest OpsHub?** A: Darmowa GUI (Mac/Windows) do zarządzania Snow — unlock, EC2, monitoring.
+26. **Q: Czy OpsHub wymaga internetu?** A: Nie — łączy się przez LAN z urządzeniem.
+27. **Q: Kiedy Snowmobile zamiast wielu Snowball Edge?** A: Gdy dane >10 PB.
+28. **Q: Firma ma 500 TB. Co wybrać?** A: Wiele Snowball Edge (7×80TB) lub Snowmobile.
+29. **Q: Firma ma 5 TB, łącze 10 Mbps. Co wybrać?** A: Snowcone — transfer sieciowy 10 Mbps trwa 45 godzin, Snow logistycznie szybszy.
+30. **Q: Kiedy DataSync lepszy niż Snow?** A: Dane <10 TB + szybkie łącze >100 Mbps.
+31. **Q: Czy Snowball Edge działa bez internetu?** A: Tak — po odblokowaniu nie wymaga połączenia z chmurą.
+32. **Q: Czy Snowmobile dostępny globalnie?** A: Nie — tylko USA.
+33. **Q: Do jakiej usługi importowane są dane ze Snow?** A: Bezpośrednio do Amazon S3.
+34. **Q: Czy można importować ze Snow do EFS lub EBS?** A: Nie — zawsze S3, potem można kopiować dalej.
+35. **Q: Jak zamówić Snow?** A: Console → Snow Family → Create job. Snowmobile — kontakt z AWS.
+36. **Q: Czy Snow job może jednocześnie importować i eksportować?** A: Nie — job jest import albo export.
+37. **Q: Czy można eksportować dane z AWS na Snow?** A: Tak — export job: S3 → Snow → klient.
+38. **Q: Co to jest S3 Adapter for Snowball?** A: Software na Snow udostępniający S3-compatible API.
+39. **Q: Czy Snow obsługuje NFS?** A: Tak — Snowball Edge i Snowcone.
+40. **Q: Ile kosztuje Snowball Edge?** A: Opłata za job (~$300–$400 za 10 dni) + opłata dzienna po 10 dniach.
+41. **Q: Firma potrzebuje edge ML + GPU w terenie. Co wybrać?** A: Snowball Edge Compute Optimized z GPU (NVIDIA V100).
+42. **Q: Firma potrzebuje edge compute + 50 TB storage. Co wybrać?** A: Snowball Edge Storage Optimized — 80 TB + 40 vCPU.
+43. **Q: Czy Snowcone obsługuje clustering?** A: Nie — clustering tylko Snowball Edge.
+44. **Q: Po jakim czasie AWS importuje dane?** A: ~2–3 dni robocze po odebraniu urządzenia.
+45. **Q: Czy Snow używa Transfer Acceleration?** A: Nie — Snow import jest osobnym procesem.
+46. **Q: Czy urządzenie Snow należy do klienta?** A: Nie — należy do AWS, jest reużywane.
+47. **Q: Jaki limit rozmiaru obiektu S3 przez Snow?** A: Max 5 TB (jak standardowe S3 multipart upload).
+48. **Q: Czy można używać AWS Organizations z Snow?** A: Tak — job przypisany do konkretnego konta.
+49. **Q: Co to jest E-Ink display na Snow?** A: Ekran pokazujący aktualny adres IP urządzenia.
+50. **Q: Czy Snow Family jest regionalny?** A: Tak — powiązany z konkretnym regionem AWS.
+51. **Q: Firma ma 200 TB, DC 10 Gbps. Snow czy DC?** A: DC 10 Gbps = ~44h dla 200 TB. Snow = kilka dni logistyki. DC szybszy gdy dostępny.
+52. **Q: Czy pre-populated AMI jest możliwe na Snow?** A: Tak — AMI załadowane przed wysyłką pozwala uruchamiać EC2 bez internetu.
+53. **Q: Jakie protokoły sieciowe Snowball Edge?** A: 10/25 GbE (RJ45, SFP+), opcjonalnie 100 GbE (QSFP28).
+54. **Q: Co to jest TPM w kontekście Snow?** A: Trusted Platform Module — hardware security chip zapewniający integralność urządzenia.
+55. **Q: Czy Snowball Edge iSCSI?** A: Nie — używa S3-compatible API lub NFS.
+56. **Q: Kiedy wybrać Snowball Edge zamiast Storage Gateway?** A: Gdy brak internetu lub bardzo duże dane do jednorazowego transferu. Storage Gateway = ciągła synchronizacja online.
+57. **Q: Azure odpowiednik Snowball Edge Compute?** A: Azure Data Box Edge / Azure Stack Edge.
+58. **Q: Czy Snowcone obsługuje GPU?** A: Nie — GPU tylko Snowball Edge Compute Optimized.
+59. **Q: Co się dzieje jeśli nie odesłać Snow w terminie?** A: Naliczana opłata dzienna (late fee) po przekroczeniu darmowego okresu (zazwyczaj 10 dni).
+60. **Q: Czy można używać Snow bez VPC?** A: Tak — Snow działa lokalnie, nie wymaga VPC. Po imporcie dane są w S3 w wybranym regionie/koncie.
+
+---
+
+---
+
+# 25. Amazon SageMaker i AI/ML w AWS
+
+## 25.1 Przegląd i Kontekst
+
+Amazon SageMaker to w pełni zarządzana platforma ML (Machine Learning) w AWS, która pokrywa **cały cykl życia modelu** — od przygotowania danych, przez trenowanie, po wdrożenie i monitorowanie. To odpowiednik Azure Machine Learning / Azure AI Studio, Google Vertex AI lub open-source MLflow + Kubeflow.
+
+**Kiedy SageMaker, kiedy coś innego?**
+
+| Potrzeba | Usługa |
+|---|---|
+| Własny model, pełna kontrola | SageMaker (Studio, Training, Endpoints) |
+| Gotowy model AI bez ML-dev | Amazon Bedrock (LLM), Rekognition, Comprehend |
+| Małe ML na krawędzi | SageMaker Edge Manager / Neo |
+| AI w aplikacji mobilnej | Amazon Rekognition, Comprehend, Translate |
+| Generative AI / LLM | Amazon Bedrock (Claude, Llama, Titan) |
+| Proste predykcje biznesowe | Amazon Forecast, Personalize |
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    AI/ML w AWS                          │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │          WARSTWA AI (gotowe modele)             │   │
+│  │  Rekognition │ Comprehend │ Translate │ Bedrock │   │
+│  │  Polly │ Lex │ Forecast │ Personalize │ Textract│   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │          WARSTWA ML (własne modele)             │   │
+│  │        Amazon SageMaker (end-to-end)            │   │
+│  │  Studio │ Training │ Pipelines │ Endpoints       │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │          WARSTWA COMPUTE/DATA                   │   │
+│  │  EC2 (GPU) │ S3 │ EMR │ Glue │ Athena │ Redshift│   │
+│  └─────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 25.2 Amazon SageMaker — Architektura i Składniki
+
+SageMaker to **nie jedna usługa** — to rodzina usług pod wspólną marką.
+
+### Główne składniki
+
+| Składnik | Co robi | Analogia |
+|---|---|---|
+| **SageMaker Studio** | IDE/UI dla całego ML workflow | VS Code dla ML |
+| **SageMaker Studio Classic** | Poprzednia wersja Studio (Jupyter-based) | Legacy IDE |
+| **SageMaker Notebooks** | Managed Jupyter Notebooks | Azure Notebooks |
+| **SageMaker Training** | Managed distributed training | Azure ML Training |
+| **SageMaker Processing** | ETL/preprocessing jako managed jobs | Spark Batch Job |
+| **SageMaker Pipelines** | ML CI/CD — automatyzacja workflow | Azure ML Pipelines |
+| **SageMaker Experiments** | Tracking eksperymentów ML | MLflow Tracking |
+| **SageMaker Model Registry** | Wersjonowanie modeli | MLflow Model Registry |
+| **SageMaker Endpoints** | Real-time inference hosting | Azure ML Endpoints |
+| **SageMaker Batch Transform** | Bulk inference offline | Azure Batch Scoring |
+| **SageMaker Neo** | Kompilacja modeli na edge/IoT | TensorFlow Lite |
+| **SageMaker Edge Manager** | Deploy + monitor modeli na urządzeniach edge | Azure IoT Edge |
+| **SageMaker Clarify** | Bias detection + explainability | Azure Responsible AI |
+| **SageMaker Data Wrangler** | No-code data prep | Azure Data Factory |
+| **SageMaker Feature Store** | Centralne repo features ML | Feast (open-source) |
+| **SageMaker Ground Truth** | Data labeling (human-in-the-loop) | Azure ML Labeling |
+| **SageMaker Autopilot** | AutoML — automatyczne budowanie modeli | Azure AutoML |
+| **SageMaker Canvas** | No-code ML dla biznesu | Power BI ML |
+| **SageMaker JumpStart** | Gotowe modele + rozwiązania (model hub) | Azure Model Catalog |
+| **SageMaker HyperPod** | Distributed training na dużą skalę | Azure ND-series clusters |
+| **SageMaker Inference Recommender** | Doradca wyboru instancji do inference | — |
+
+---
+
+## 25.3 SageMaker Studio — Centrum Operacyjne
+
+**SageMaker Studio** to unified IDE — przeglądarka internetowa dająca dostęp do całego ekosystemu ML.
+
+### Konfiguracja Studio
+
+```bash
+# Stworzenie domeny Studio
+aws sagemaker create-domain \
+  --domain-name my-ml-domain \
+  --auth-mode IAM \
+  --default-user-settings '{
+    "ExecutionRole": "arn:aws:iam::123456789012:role/SageMakerRole",
+    "SecurityGroups": ["sg-xxxxxxxx"]
+  }' \
+  --vpc-id vpc-xxxxxxxx \
+  --subnet-ids subnet-xxxxxxxx subnet-yyyyyyyy
+
+# Dodanie user profile
+aws sagemaker create-user-profile \
+  --domain-id d-xxxxxxxxxx \
+  --user-profile-name data-scientist-1
+```
+
+### Typy przestrzeni w Studio
+
+| Typ | Opis | Kiedy używać |
+|---|---|---|
+| **JupyterServer** | Klasyczny Jupyter | Eksploracja, prototypowanie |
+| **KernelGateway** | Kernel dla notebooków | Compute-intensive work |
+| **TensorBoard** | Wizualizacja trenowania | Debugging modeli |
+| **RStudio** | IDE dla R | Analiza statystyczna |
+| **Code Editor** | VS Code-based IDE | Developerzy |
+
+### Izolacja i sieć
+
+- Studio działa **w VPC** — pełna izolacja sieciowa
+- Wspiera **VPC-only mode** — brak dostępu do internetu (tylko PrivateLink)
+- Każdy użytkownik ma własny **EFS home directory** (persistowane między sesjami)
+- **Domain-level** vs **User-level** security settings
+
+---
+
+## 25.4 SageMaker Training — Trenowanie Modeli
+
+### Jak działa Training Job
+
+```mermaid
+flowchart LR
+    S3[(S3\nTraining Data)] --> TJ[Training Job\nContainer]
+    ECR[(ECR\nCustom Image)] --> TJ
+    TJ --> S3M[(S3\nModel Artifacts)]
+    TJ --> CW[CloudWatch\nLogs & Metrics]
+    TJ --> ES[Experiments\nTracking]
+```
+
+```bash
+# Uruchomienie Training Job
+aws sagemaker create-training-job \
+  --training-job-name my-training-job \
+  --algorithm-specification '{
+    "TrainingImage": "123456789012.dkr.ecr.us-east-1.amazonaws.com/my-algo:latest",
+    "TrainingInputMode": "File"
+  }' \
+  --role-arn arn:aws:iam::123456789012:role/SageMakerRole \
+  --input-data-config '[{
+    "ChannelName": "training",
+    "DataSource": {
+      "S3DataSource": {
+        "S3DataType": "S3Prefix",
+        "S3Uri": "s3://my-bucket/training-data/",
+        "S3DataDistributionType": "FullyReplicated"
+      }
+    }
+  }]' \
+  --output-data-config '{"S3OutputPath": "s3://my-bucket/model-output/"}' \
+  --resource-config '{
+    "InstanceType": "ml.p3.2xlarge",
+    "InstanceCount": 1,
+    "VolumeSizeInGB": 50
+  }' \
+  --stopping-condition '{"MaxRuntimeInSeconds": 86400}'
+```
+
+### Tryby dystrybucji danych
+
+| Tryb | Opis | Kiedy |
+|---|---|---|
+| `FullyReplicated` | Wszystkie dane na każdym węźle | Mały dataset |
+| `ShardedByS3Key` | Każdy węzeł dostaje podzbiór | Duży dataset, distributed training |
+| `FastFile` | Streaming z S3 (bez kopiowania) | Bardzo duże pliki, niska latencja startu |
+| `Pipe` | Streaming przez FIFO pipe | Legacy, duże dane |
+
+### Typy instancji ML
+
+| Rodzina | GPU | Zastosowanie |
+|---|---|---|
+| `ml.p3.*` | NVIDIA V100 | Deep learning training |
+| `ml.p4d.*` | NVIDIA A100 | Large scale DL, Transformer |
+| `ml.p5.*` | NVIDIA H100 | Najnowsze LLM training |
+| `ml.g4dn.*` | NVIDIA T4 | Inference, cost-effective training |
+| `ml.g5.*` | NVIDIA A10G | Vision, NLP inference |
+| `ml.trn1.*` | AWS Trainium | Cost-optimized DL training |
+| `ml.inf1.*` | AWS Inferentia | Cost-optimized inference |
+| `ml.inf2.*` | AWS Inferentia2 | Gen AI inference |
+| `ml.c5.*` | CPU | Klasyczne ML (XGBoost, sklearn) |
+| `ml.m5.*` | CPU | General purpose |
+
+> **Ważne na egzamin:** AWS Trainium (trn1) = najtańszy training DL. AWS Inferentia (inf1/inf2) = najtańszy inference DL. Graviton-based `ml.c7g.*` = najtańszy CPU inference.
+
+### Distributed Training Strategies
+
+```bash
+# Distributed Data Parallel (DDP) — każdy węzeł ma pełny model, różne dane
+# Model Parallel (SMP) — model podzielony między węzły (duże modele nie mieszczą się w 1 GPU)
+
+# SageMaker Model Parallel Library
+import smdistributed.modelparallel.torch as smp
+
+smp.init({
+    "microbatches": 4,
+    "placement_strategy": "spread",
+    "pipeline": "interleaved",
+    "tensor_parallel_degree": 4,
+    "ddp": True
+})
+```
+
+---
+
+## 25.5 SageMaker Endpoints — Inference
+
+### Real-Time Inference
+
+```bash
+# Deploy model do endpoint
+aws sagemaker create-model \
+  --model-name my-model \
+  --primary-container '{
+    "Image": "382416733822.dkr.ecr.us-east-1.amazonaws.com/xgboost:1.5-1",
+    "ModelDataUrl": "s3://my-bucket/model-output/model.tar.gz"
+  }' \
+  --execution-role-arn arn:aws:iam::123456789012:role/SageMakerRole
+
+aws sagemaker create-endpoint-config \
+  --endpoint-config-name my-endpoint-config \
+  --production-variants '[{
+    "VariantName": "AllTraffic",
+    "ModelName": "my-model",
+    "InitialInstanceCount": 1,
+    "InstanceType": "ml.m5.xlarge",
+    "InitialVariantWeight": 1.0
+  }]'
+
+aws sagemaker create-endpoint \
+  --endpoint-name my-endpoint \
+  --endpoint-config-name my-endpoint-config
+```
+
+### Typy Inference
+
+| Typ | Latencja | Kiedy | Koszt |
+|---|---|---|---|
+| **Real-Time Endpoint** | Milisekundy | Aplikacje online, < 60s response | Stały (instancja zawsze działa) |
+| **Serverless Inference** | Sekundy (cold start) | Rzadki ruch, bursty | Pay-per-request |
+| **Batch Transform** | Minuty-godziny | Bulk offline scoring | Pay-per-job |
+| **Async Inference** | Sekundy-minuty | Duże payloady (video, audio) | Stały + kolejka |
+
+### A/B Testing — Multi-Variant Endpoint
+
+```bash
+# Traffic split między dwa modele
+aws sagemaker create-endpoint-config \
+  --endpoint-config-name ab-test-config \
+  --production-variants '[
+    {
+      "VariantName": "ModelA",
+      "ModelName": "model-v1",
+      "InitialInstanceCount": 1,
+      "InstanceType": "ml.m5.large",
+      "InitialVariantWeight": 0.9
+    },
+    {
+      "VariantName": "ModelB",
+      "ModelName": "model-v2",
+      "InitialInstanceCount": 1,
+      "InstanceType": "ml.m5.large",
+      "InitialVariantWeight": 0.1
+    }
+  ]'
+```
+
+### Auto Scaling Endpointów
+
+```bash
+# Application Auto Scaling dla SageMaker Endpoints
+aws application-autoscaling register-scalable-target \
+  --service-namespace sagemaker \
+  --resource-id endpoint/my-endpoint/variant/AllTraffic \
+  --scalable-dimension sagemaker:variant:DesiredInstanceCount \
+  --min-capacity 1 \
+  --max-capacity 10
+
+aws application-autoscaling put-scaling-policy \
+  --policy-name scaling-policy \
+  --service-namespace sagemaker \
+  --resource-id endpoint/my-endpoint/variant/AllTraffic \
+  --scalable-dimension sagemaker:variant:DesiredInstanceCount \
+  --policy-type TargetTrackingScaling \
+  --target-tracking-scaling-policy-configuration '{
+    "TargetValue": 70.0,
+    "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "SageMakerVariantInvocationsPerInstance"
+    }
+  }'
+```
+
+---
+
+## 25.6 SageMaker Pipelines — MLOps i CI/CD dla ML
+
+SageMaker Pipelines to **DAG-based** ML workflow orchestrator — analogia do Apache Airflow, Azure ML Pipelines, Kubeflow Pipelines.
+
+```python
+from sagemaker.workflow.pipeline import Pipeline
+from sagemaker.workflow.steps import ProcessingStep, TrainingStep
+from sagemaker.workflow.model_step import ModelStep
+
+# Krok 1: Preprocessing
+processing_step = ProcessingStep(
+    name="PreprocessData",
+    processor=sklearn_processor,
+    inputs=[...],
+    outputs=[...]
+)
+
+# Krok 2: Training
+training_step = TrainingStep(
+    name="TrainModel",
+    estimator=xgb_estimator,
+    inputs={"train": training_input}
+)
+training_step.add_depends_on([processing_step])
+
+# Krok 3: Conditional — deploy tylko jeśli accuracy > threshold
+from sagemaker.workflow.conditions import ConditionGreaterThanOrEqualTo
+from sagemaker.workflow.condition_step import ConditionStep
+
+condition = ConditionGreaterThanOrEqualTo(
+    left=JsonGet(step_name="EvaluateModel", property_file=evaluation_report, json_path="metrics.accuracy.value"),
+    right=0.85
+)
+
+condition_step = ConditionStep(
+    name="CheckAccuracy",
+    conditions=[condition],
+    if_steps=[deploy_step],
+    else_steps=[fail_step]
+)
+
+pipeline = Pipeline(
+    name="my-ml-pipeline",
+    steps=[processing_step, training_step, evaluation_step, condition_step]
+)
+pipeline.upsert(role_arn=role)
+pipeline.start()
+```
+
+### Pipeline vs Step Functions vs MWAA (Airflow)
+
+| | SageMaker Pipelines | Step Functions | MWAA (Airflow) |
+|---|---|---|---|
+| **Cel** | ML-specific workflow | Ogólny serverless workflow | Ogólny orchestration |
+| **Integracja ML** | Natywna (model registry, experiments) | Wymaga custom state | Via operators |
+| **UI** | Studio visual DAG | Step Functions console | Airflow UI |
+| **Triggerowanie** | API, EventBridge, manualnie | API, EventBridge, cron | Cron, sensors, API |
+| **Koszty** | Per step execution | Per state transition | Per environment + EC2 |
+| **Kiedy** | Typowy ML workflow | Mix ML + inne serwisy | Złożone zależności, multi-team |
+
+---
+
+## 25.7 SageMaker Feature Store
+
+**Feature Store** = centralne repozytorium obliczonych cech (features) ML — zapobiega "feature skew" między trenowaniem a inference.
+
+```mermaid
+flowchart TD
+    RAW[(Raw Data\nS3/DB)] --> FT[Feature\nTransformation\nProcessing Job]
+    FT --> OFS[Online Feature Store\nElastiCache-backed\nlow-latency]
+    FT --> OFS2[Offline Feature Store\nS3-backed\nhistorical]
+    OFS --> INF[Real-time\nInference]
+    OFS2 --> TRAIN[Model\nTraining]
+```
+
+```bash
+# Tworzenie Feature Group
+aws sagemaker create-feature-group \
+  --feature-group-name customer-features \
+  --record-identifier-feature-name customer_id \
+  --event-time-feature-name event_time \
+  --feature-definitions '[
+    {"FeatureName": "customer_id", "FeatureType": "String"},
+    {"FeatureName": "age", "FeatureType": "Integral"},
+    {"FeatureName": "purchase_amount", "FeatureType": "Fractional"},
+    {"FeatureName": "event_time", "FeatureType": "String"}
+  ]' \
+  --online-store-config '{"EnableOnlineStore": true}' \
+  --offline-store-config '{
+    "S3StorageConfig": {"S3Uri": "s3://my-bucket/feature-store/"}
+  }' \
+  --role-arn arn:aws:iam::123456789012:role/SageMakerRole
+```
+
+| Cecha | Online Store | Offline Store |
+|---|---|---|
+| **Backend** | In-memory (managed) | S3 (Parquet/Iceberg) |
+| **Latencja** | Milisekundy | Sekundy-minuty |
+| **Zastosowanie** | Real-time inference | Training, batch |
+| **Retencja** | Tylko ostatni rekord | Cała historia |
+| **Cena** | Wyższy koszt/rekord | Niski (S3) |
+
+---
+
+## 25.8 SageMaker Model Monitor — Monitorowanie Dryftu
+
+Model Monitor automatycznie wykrywa **data drift**, **model drift**, **bias drift**, **feature attribution drift**.
+
+```bash
+# Tworzenie monitoring schedule
+aws sagemaker create-monitoring-schedule \
+  --monitoring-schedule-name my-monitor \
+  --monitoring-schedule-config '{
+    "ScheduleConfig": {"ScheduleExpression": "cron(0 * ? * * *)"},
+    "MonitoringJobDefinition": {
+      "MonitoringInputs": [{
+        "EndpointInput": {
+          "EndpointName": "my-endpoint",
+          "LocalPath": "/opt/ml/processing/input/endpoint"
+        }
+      }],
+      "MonitoringOutputConfig": {
+        "MonitoringOutputs": [{
+          "S3Output": {
+            "S3Uri": "s3://my-bucket/monitoring/",
+            "LocalPath": "/opt/ml/processing/output"
+          }
+        }]
+      },
+      "MonitoringResources": {
+        "ClusterConfig": {
+          "InstanceCount": 1,
+          "InstanceType": "ml.m5.xlarge",
+          "VolumeSizeInGB": 20
+        }
+      },
+      "MonitoringAppSpecification": {
+        "ImageUri": "156813124566.dkr.ecr.us-east-1.amazonaws.com/sagemaker-model-monitor-analyzer"
+      },
+      "RoleArn": "arn:aws:iam::123456789012:role/SageMakerRole"
+    }
+  }'
+```
+
+### Typy monitoringu
+
+| Typ | Co wykrywa | Kiedy ważne |
+|---|---|---|
+| **Data Quality** | Zmiana statystyk wejściowych (mean, std, null%) | Zmiana upstream danych |
+| **Model Quality** | Degradacja accuracy, F1, AUC | Regularny model monitoring |
+| **Bias Drift** | Zmiana stronniczości modelu | Compliance, fairness |
+| **Feature Attribution Drift** | Zmiana ważności cech (SHAP) | Interpretability |
+
+---
+
+## 25.9 SageMaker Clarify — Bias i Explainability
+
+Clarify analizuje:
+- **Pre-training bias** — czy dane treningowe są stronnicze?
+- **Post-training bias** — czy model dyskryminuje grupy?
+- **Explainability** — które cechy wpływają na predykcję (SHAP values)?
+
+```python
+from sagemaker import clarify
+
+clarify_processor = clarify.SageMakerClarifyProcessor(
+    role=role,
+    instance_count=1,
+    instance_type='ml.m5.xlarge',
+    sagemaker_session=session
+)
+
+bias_config = clarify.BiasConfig(
+    label_values_or_threshold=[1],
+    facet_name='Age',
+    facet_values_or_threshold=[40]  # bias względem osób < 40
+)
+
+clarify_processor.run_bias(
+    data_config=data_config,
+    bias_config=bias_config,
+    model_config=model_config,
+    pre_training_methods='all',
+    post_training_methods='all'
+)
+```
+
+**Metryki bias (ważne na egzamin):**
+
+| Metryka | Co mierzy |
+|---|---|
+| **CI (Class Imbalance)** | Nierówna reprezentacja grup |
+| **DPL (Diff in Positive Proportions)** | Różnica w pozytywnych wynikach między grupami |
+| **AD (Accuracy Difference)** | Różnica accuracy między grupami |
+| **DPPL** | Różnica w predicted positive labels |
+
+---
+
+## 25.10 Amazon Bedrock — Generative AI
+
+Amazon Bedrock to **w pełni zarządzane** API do Foundation Models (FM) — LLM, image generation, multimodal. Nie wymaga infrastruktury ML.
+
+### Dostępne modele (2024/2025)
+
+| Provider | Model | Zastosowanie |
+|---|---|---|
+| **Anthropic** | Claude 3 (Haiku, Sonnet, Opus), Claude 3.5 | Tekst, analiza, kod |
+| **Amazon** | Titan Text, Titan Embeddings, Titan Image | Amazon-native |
+| **Meta** | Llama 3, Llama 3.1 | Open-source LLM |
+| **Mistral AI** | Mistral 7B, Mixtral 8x7B | Europejski LLM |
+| **Stability AI** | Stable Diffusion XL | Generowanie obrazów |
+| **Cohere** | Command R, Embed | RAG, embeddings |
+| **AI21 Labs** | Jamba, Jurassic | Tekst długiego kontekstu |
+
+```bash
+# Wywołanie modelu przez Bedrock
+aws bedrock-runtime invoke-model \
+  --model-id anthropic.claude-3-sonnet-20240229-v1:0 \
+  --body '{
+    "anthropic_version": "bedrock-2023-05-31",
+    "max_tokens": 1024,
+    "messages": [{
+      "role": "user",
+      "content": "Explain AWS SageMaker in 3 sentences."
+    }]
+  }' \
+  --cli-binary-format raw-in-base64-out \
+  output.json
+```
+
+### Bedrock — Kluczowe Funkcje
+
+| Funkcja | Opis |
+|---|---|
+| **Knowledge Bases** | RAG (Retrieval Augmented Generation) — własna wiedza |
+| **Agents** | Automatyczne orchestrowanie multi-step tasków |
+| **Guardrails** | Filtry bezpieczeństwa treści (PII, toxicity) |
+| **Model Evaluation** | Automatyczna ocena jakości modelu |
+| **Fine-tuning** | Dostosowanie modelu do własnych danych |
+| **Provisioned Throughput** | Dedykowany throughput (nie shared) |
+| **Model Invocation Logging** | Audyt wszystkich wywołań → S3/CloudWatch |
+
+### Bedrock Knowledge Bases — RAG Architecture
+
+```mermaid
+flowchart LR
+    DOCS[(Documents\nS3)] --> KB[Knowledge Base\nEmbedding + Vector Store]
+    KB --> OS[(OpenSearch\nServerless\nVector DB)]
+    USER[User Query] --> AG[Bedrock Agent]
+    AG --> OS
+    OS --> AG
+    AG --> FM[Foundation Model\nClaude/Titan]
+    FM --> AG
+    AG --> USER
+```
+
+```bash
+# Tworzenie Knowledge Base
+aws bedrock create-knowledge-base \
+  --name my-kb \
+  --role-arn arn:aws:iam::123456789012:role/BedrockRole \
+  --knowledge-base-configuration '{
+    "type": "VECTOR",
+    "vectorKnowledgeBaseConfiguration": {
+      "embeddingModelArn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-embed-text-v1"
+    }
+  }' \
+  --storage-configuration '{
+    "type": "OPENSEARCH_SERVERLESS",
+    "opensearchServerlessConfiguration": {
+      "collectionArn": "arn:aws:aoss:us-east-1:123456789012:collection/my-collection",
+      "vectorIndexName": "my-index",
+      "fieldMapping": {
+        "vectorField": "embedding",
+        "textField": "text",
+        "metadataField": "metadata"
+      }
+    }
+  }'
+```
+
+### Bedrock Guardrails
+
+```bash
+aws bedrock create-guardrail \
+  --name content-filter \
+  --content-policy-config '{
+    "filtersConfig": [
+      {"type": "SEXUAL", "inputStrength": "HIGH", "outputStrength": "HIGH"},
+      {"type": "VIOLENCE", "inputStrength": "MEDIUM", "outputStrength": "MEDIUM"},
+      {"type": "HATE", "inputStrength": "HIGH", "outputStrength": "HIGH"}
+    ]
+  }' \
+  --sensitive-information-policy-config '{
+    "piiEntitiesConfig": [
+      {"type": "EMAIL", "action": "ANONYMIZE"},
+      {"type": "PHONE", "action": "BLOCK"}
+    ]
+  }'
+```
+
+### Bedrock vs SageMaker vs Third-party
+
+| | Bedrock | SageMaker JumpStart | SageMaker Training |
+|---|---|---|---|
+| **Model ownership** | AWS/Partner managed | Własny fine-tune | Pełna kontrola |
+| **Infrastructure** | Bezserwerowe API | Managed endpoints | Managed + customize |
+| **Fine-tuning** | Tak (ograniczone) | Tak | Pełna dowolność |
+| **Koszt** | Pay-per-token | Pay-per-endpoint | Pay-per-training-hour |
+| **Kiedy** | Gotowe LLM szybko | Popularny model + customizacja | Własny model od zera |
+| **Azure equiv** | Azure OpenAI Service | Azure Model Catalog | Azure ML Training |
+
+---
+
+## 25.11 AI Services (Pre-built) — Gotowe Modele AWS
+
+### Amazon Rekognition — Computer Vision
+
+```bash
+# Detekcja obiektów
+aws rekognition detect-labels \
+  --image '{"S3Object": {"Bucket": "my-bucket", "Name": "photo.jpg"}}' \
+  --max-labels 10 \
+  --min-confidence 75
+
+# Rozpoznanie twarzy
+aws rekognition compare-faces \
+  --source-image '{"S3Object": {"Bucket": "my-bucket", "Name": "reference.jpg"}}' \
+  --target-image '{"S3Object": {"Bucket": "my-bucket", "Name": "unknown.jpg"}}' \
+  --similarity-threshold 90
+
+# Moderacja treści
+aws rekognition detect-moderation-labels \
+  --image '{"S3Object": {"Bucket": "my-bucket", "Name": "image.jpg"}}'
+```
+
+**Rekognition — funkcje:**
+- `DetectLabels` — obiekty, sceny, aktywności
+- `DetectFaces` — atrybuty twarzy (wiek, emocje, okulary)
+- `CompareFaces` — weryfikacja tożsamości (1:1)
+- `SearchFacesByImage` — wyszukiwanie twarzy w kolekcji (1:N)
+- `DetectText` — OCR w obrazach
+- `DetectModerationLabels` — NSFW, niebezpieczne treści
+- `RecognizeCelebrities` — rozpoznanie znanych osób
+- `StartLabelDetection` — analiza video (async)
+
+**Regionalność:** Regionalny. Dane nie opuszczają regionu.
+
+### Amazon Comprehend — NLP
+
+```bash
+# Analiza sentymentu
+aws comprehend detect-sentiment \
+  --text "AWS is absolutely amazing for machine learning!" \
+  --language-code en
+
+# Wykrywanie encji
+aws comprehend detect-entities \
+  --text "John Smith works at Amazon in Seattle." \
+  --language-code en
+
+# Detekcja PII
+aws comprehend detect-pii-entities \
+  --text "My email is john@example.com and SSN is 123-45-6789" \
+  --language-code en
+
+# Custom Classifier (własny model)
+aws comprehend create-document-classifier \
+  --document-classifier-name ticket-classifier \
+  --data-access-role-arn arn:aws:iam::123456789012:role/ComprehendRole \
+  --input-data-config '{"S3Uri": "s3://my-bucket/training-data/"}' \
+  --output-data-config '{"S3Uri": "s3://my-bucket/output/"}' \
+  --language-code en
+```
+
+**Comprehend — funkcje:**
+- Sentiment Analysis (POSITIVE/NEGATIVE/NEUTRAL/MIXED)
+- Entity Recognition (osoby, miejsca, organizacje, daty)
+- Key Phrase Extraction
+- Language Detection
+- PII Detection (GDPR compliance)
+- **Custom Classification** — własne kategorie
+- **Custom Entity Recognition** — własne encje
+- **Topic Modeling** — LDA clustering dokumentów
+- **Comprehend Medical** — encje medyczne (diagnoza, leki, dawki)
+
+### Amazon Textract — Document Analysis
+
+```bash
+# Ekstrakcja tekstu z PDF/obrazu
+aws textract detect-document-text \
+  --document '{"S3Object": {"Bucket": "my-bucket", "Name": "invoice.pdf"}}'
+
+# Ekstrakcja formularzy (key-value pairs)
+aws textract analyze-document \
+  --document '{"S3Object": {"Bucket": "my-bucket", "Name": "form.pdf"}}' \
+  --feature-types '["FORMS", "TABLES", "SIGNATURES"]'
+
+# Async dla dużych dokumentów
+aws textract start-document-analysis \
+  --document-location '{"S3Object": {"Bucket": "my-bucket", "Name": "contract.pdf"}}' \
+  --feature-types '["FORMS", "TABLES"]' \
+  --notification-channel '{"SNSTopicArn": "arn:aws:sns:...", "RoleArn": "..."}'
+```
+
+**Textract vs Rekognition DetectText:**
+
+| | Textract | Rekognition DetectText |
+|---|---|---|
+| **Cel** | Dokumenty strukturyzowane | Tekst w scenach/obrazach |
+| **Formularze** | Tak (key-value) | Nie |
+| **Tabele** | Tak | Nie |
+| **PDF** | Tak | Nie |
+| **Dokładność** | Wyższa dla dokumentów | Lepsza dla znaków ulicznych |
+
+### Amazon Polly — Text-to-Speech
+
+```bash
+# Synteza mowy
+aws polly synthesize-speech \
+  --output-format mp3 \
+  --voice-id Joanna \
+  --text "Welcome to AWS certification training" \
+  speech.mp3
+
+# SSML — kontrola wymowy
+aws polly synthesize-speech \
+  --output-format mp3 \
+  --voice-id Matthew \
+  --text-type ssml \
+  --text '<speak>The price is <say-as interpret-as="currency">$42.50</say-as></speak>' \
+  speech_ssml.mp3
+```
+
+**Polly — typy głosów:**
+- **Standard voices** — tańsze, mniej naturalne
+- **Neural voices** (NTTS) — droższe, bardziej naturalne
+- **Long-form voices** — do długich treści (audiobook)
+- **Generative voices** — generatywne AI, najbardziej naturalne
+
+### Amazon Lex — Konwersacyjne AI (Chatbot)
+
+```bash
+# Wysłanie wiadomości do Lex bota
+aws lex-runtime-v2 recognize-text \
+  --bot-id ABCDE12345 \
+  --bot-alias-id TSTALIASID \
+  --locale-id en_US \
+  --session-id session-123 \
+  --text "I want to book a flight to Warsaw"
+```
+
+**Lex architektura:**
+- **Intents** — zamiary użytkownika (BookFlight, CancelOrder)
+- **Slots** — zmienne do wypełnienia (skąd, dokąd, kiedy)
+- **Utterances** — przykładowe zdania trenujące
+- **Fulfillment** — Lambda do obsługi logiki biznesowej
+- Integracja z **Connect** (call center), **Kendra** (search)
+
+**Lex vs Bedrock Agents:**
+
+| | Lex | Bedrock Agents |
+|---|---|---|
+| **Cel** | Strukturyzowany dialog, IVR | Autonomiczne agenty AI |
+| **Model** | Custom intent/slot | Foundation Model |
+| **Flexibility** | Ograniczona | Wysoka |
+| **Kodowanie** | Mało | Lambda/API tools |
+| **Kiedy** | Call center, FAQ bot | Complex reasoning tasks |
+
+### Amazon Kendra — Intelligent Search
+
+```bash
+# Tworzenie indeksu Kendra
+aws kendra create-index \
+  --name my-knowledge-base \
+  --edition ENTERPRISE_EDITION \
+  --role-arn arn:aws:iam::123456789012:role/KendraRole
+
+# Dodanie S3 data source
+aws kendra create-data-source \
+  --index-id idx-xxxxxxxx \
+  --name s3-docs \
+  --type S3 \
+  --configuration '{
+    "S3Configuration": {
+      "BucketName": "my-docs-bucket",
+      "InclusionPrefixes": ["docs/"]
+    }
+  }' \
+  --role-arn arn:aws:iam::123456789012:role/KendraRole
+
+# Wyszukiwanie
+aws kendra query \
+  --index-id idx-xxxxxxxx \
+  --query-text "How do I reset my password?"
+```
+
+**Kendra — źródła danych:**
+- S3, SharePoint, Confluence, Salesforce, ServiceNow
+- RDS, OneDrive, Google Drive, GitHub
+- Custom connectors via API
+
+**Kendra vs OpenSearch vs Bedrock Knowledge Bases:**
+
+| | Kendra | OpenSearch | Bedrock KB |
+|---|---|---|---|
+| **Typ** | Semantic + keyword | Keyword (+ vector plugin) | Vector (semantic) |
+| **Setup** | Zarządzany, łatwy | Wymaga konfiguracji | Managed, prosty |
+| **ML** | Wbudowane NLP | Manualne | Wbudowane embeddings |
+| **Kiedy** | Enterprise search, duże org | Custom search, high-scale | RAG dla LLM |
+| **Koszt** | Wysoki ($700+/miesiąc Enterprise) | Per instance | Per query |
+
+### Amazon Forecast — Prognozowanie Szeregów Czasowych
+
+```bash
+# Import danych historycznych
+aws forecast create-dataset-import-job \
+  --dataset-import-job-name sales-import \
+  --dataset-arn arn:aws:forecast:us-east-1:123456789012:dataset/sales \
+  --data-source '{
+    "S3Config": {
+      "Path": "s3://my-bucket/historical-sales/",
+      "RoleArn": "arn:aws:iam::123456789012:role/ForecastRole"
+    }
+  }'
+
+# Trenowanie predyktora
+aws forecast create-predictor \
+  --predictor-name sales-predictor \
+  --forecast-horizon 30 \
+  --dataset-group-arn arn:aws:forecast:...:dataset-group/sales-dg \
+  --algorithm-arn arn:aws:forecast:::algorithm/Auto
+```
+
+**Obsługiwane algorytmy Forecast:**
+- `Auto` — AutoML wybiera najlepszy
+- `DeepAR+` — RNN dla wielu szeregów
+- `CNN-QR` — CNN z quantile regression
+- `ETS`, `ARIMA`, `Prophet` — klasyczne algorytmy
+- `NPTS` — Non-Parametric Time Series
+
+**Forecast vs QuickSight ML Insights vs SageMaker:**
+
+| | Forecast | QS ML Insights | SageMaker |
+|---|---|---|---|
+| **Cel** | Dedykowane forecasting | Wizualizacja + auto forecast | Własny model |
+| **ML expertise** | Nie wymagane | Nie wymagane | Wymagane |
+| **Kontrola** | Ograniczona | Minimalna | Pełna |
+
+### Amazon Personalize — Rekomendacje
+
+```bash
+# Wgranie danych interakcji user-item
+aws personalize create-dataset-import-job \
+  --job-name interactions-import \
+  --dataset-arn arn:aws:personalize:...:dataset/interactions \
+  --data-source '{"dataLocation": "s3://my-bucket/interactions.csv"}' \
+  --role-arn arn:aws:iam::123456789012:role/PersonalizeRole
+
+# Trenowanie Solution (model)
+aws personalize create-solution \
+  --name product-recommendations \
+  --dataset-group-arn arn:aws:personalize:...:dataset-group/retail-dg \
+  --recipe-arn arn:aws:personalize:::recipe/aws-user-personalization
+
+# Deployment do Campaign
+aws personalize create-campaign \
+  --name prod-recommendations \
+  --solution-version-arn arn:aws:personalize:...:solution/...:1 \
+  --min-provisioned-tps 1
+```
+
+**Personalize — przepisy (recipes):**
+
+| Recipe | Opis |
+|---|---|
+| `User-Personalization` | Top-N rekomendacje dla użytkownika |
+| `Popularity-Count` | Najpopularniejsze itemy (cold start) |
+| `HRNN-Metadata` | Z atrybutami użytkownika/itemu |
+| `Similar-Items` | "Klienci którzy kupili X kupili też..." |
+| `Personalized-Ranking` | Sortowanie listy dla użytkownika |
+
+### Amazon Translate — Tłumaczenie
+
+```bash
+aws translate translate-text \
+  --source-language-code auto \
+  --target-language-code pl \
+  --text "Machine learning is transforming every industry."
+```
+
+**Translate — funkcje:**
+- Auto-detect języka źródłowego
+- 75+ języków
+- Custom Terminology — własny słownik (terminologia techniczna)
+- Parallel Data — dostosowanie tłumaczenia stylem
+
+### Amazon Transcribe — Speech-to-Text
+
+```bash
+# Transkrypcja pliku audio
+aws transcribe start-transcription-job \
+  --transcription-job-name my-job \
+  --language-code en-US \
+  --media '{"MediaFileUri": "s3://my-bucket/audio.mp3"}' \
+  --output-bucket-name my-output-bucket \
+  --settings '{
+    "ShowSpeakerLabels": true,
+    "MaxSpeakerLabels": 5,
+    "VocabularyName": "custom-vocab"
+  }'
+```
+
+**Transcribe — funkcje:**
+- Speaker diarization (kto mówi?)
+- Custom Vocabulary (terminy techniczne/medyczne)
+- Custom Language Model (domain-specific)
+- PII Redaction (usuwanie danych osobowych z transkrypcji)
+- **Transcribe Medical** — specjalizacja dla ochrony zdrowia
+- Real-time streaming transcription
+
+---
+
+## 25.12 AWS Panorama — Edge Computer Vision
+
+Panorama = urządzenie/SDK do uruchamiania CV (computer vision) na kamerach przemysłowych bez wysyłania wideo do chmury.
+
+```
+┌─────────────┐    Model z        ┌──────────────┐
+│  IP Camera  │ ──────────────── │ Panorama     │
+│  (RTSP)     │                  │ Appliance    │
+└─────────────┘                  │ (edge device)│
+                                 └──────┬───────┘
+                                        │ Wyniki
+                                        ▼
+                                 ┌──────────────┐
+                                 │  CloudWatch  │
+                                 │  S3 (clips)  │
+                                 └──────────────┘
+```
+
+---
+
+## 25.13 Amazon Lookout — Anomaly Detection
+
+| Usługa | Cel |
+|---|---|
+| **Lookout for Metrics** | Anomalie w metrykach biznesowych (sprzedaż, ruch) |
+| **Lookout for Equipment** | Anomalie w danych przemysłowych IoT |
+| **Lookout for Vision** | Defekty wizualne na linii produkcyjnej |
+
+```bash
+# Lookout for Metrics — tworzenie alertera
+aws lookoutmetrics create-anomaly-detector \
+  --anomaly-detector-name sales-detector \
+  --anomaly-detector-config '{"AnomalyDetectorFrequency": "PT1H"}'
+```
+
+---
+
+## 25.14 Amazon CodeGuru — AI Code Review
+
+CodeGuru = AI-powered code review + profiling wydajności.
+
+| Składnik | Opis |
+|---|---|
+| **CodeGuru Reviewer** | Statyczna analiza kodu (security, bugs) — PR review |
+| **CodeGuru Profiler** | Runtime profiling (CPU hotspots, memory) |
+
+```bash
+# Asocjacja repozytorium
+aws codeguru-reviewer associate-repository \
+  --repository '{"CodeCommit": {"Name": "my-repo"}}'
+```
+
+---
+
+## 25.15 AWS DeepLearning AMIs i Containers
+
+**Deep Learning AMI (DLAMI)** — pre-konfigurowane AMI z zainstalowanymi frameworkami:
+- TensorFlow, PyTorch, MXNet
+- CUDA, cuDNN, NCCL
+- Conda environments
+
+```bash
+# Listowanie DLAMI
+aws ec2 describe-images \
+  --owners amazon \
+  --filters 'Name=name,Values=Deep Learning AMI*' \
+  --query 'Images[*].[ImageId,Name]' \
+  --output table
+```
+
+**Deep Learning Containers (DLC)** — Docker images w ECR dla SageMaker i EKS.
+
+---
+
+## 25.16 AWS Trainium i Inferentia — Custom ML Chips
+
+### AWS Trainium
+
+- Chip zaprojektowany przez AWS **wyłącznie do trenowania DL**
+- Używany w instancjach `ml.trn1.*` (SageMaker) i `trn1.*` (EC2)
+- Do 50% taniej niż GPU (p3/p4) dla tego samego workloadu
+- Obsługuje PyTorch, TensorFlow przez **AWS Neuron SDK**
+
+```bash
+# Trening na Trainium
+pip install torch-neuronx neuronx-cc
+
+# W kodzie PyTorch
+import torch_xla.core.xla_model as xm
+device = xm.xla_device()  # automatycznie używa Trainium
+```
+
+### AWS Inferentia
+
+- Chip zaprojektowany **wyłącznie do inference**
+- `inf1.*` = Inferentia 1 (starsza generacja)
+- `inf2.*` = Inferentia 2 (lepsza, nowsza)
+- Do 70% taniej niż GPU dla inference
+
+```bash
+# Kompilacja modelu dla Inferentia
+neuron-cc compile model.pb \
+  --framework TENSORFLOW \
+  --target inferentia \
+  --output compiled_model.pb
+```
+
+### Porównanie chipów ML
+
+| Chip | Producent | Instancja | Cel | Przewaga |
+|---|---|---|---|---|
+| **NVIDIA V100** | NVIDIA | p3.* | Training/Inference | Ekosystem, kompatybilność |
+| **NVIDIA A100** | NVIDIA | p4d.* | Large model training | Szybkość, NVLink |
+| **NVIDIA H100** | NVIDIA | p5.* | LLM training | Najnowszy, Transformer Engine |
+| **NVIDIA T4** | NVIDIA | g4dn.* | Inference | Tani, wydajny inference |
+| **NVIDIA A10G** | NVIDIA | g5.* | Inference, gen AI | Lepszy niż T4 |
+| **AWS Trainium** | AWS | trn1.* | Training DL | Koszt-optymalizacja |
+| **AWS Inferentia** | AWS | inf1/inf2 | Inference | Najniższy koszt inference |
+| **Graviton3** | AWS | c7g.* | CPU inference | ARM, tani CPU ML |
+
+---
+
+## 25.17 SageMaker vs Azure ML vs Google Vertex AI
+
+| Cecha | SageMaker | Azure ML | Vertex AI |
+|---|---|---|---|
+| **IDE** | Studio (Jupyter + Code Editor) | Azure ML Studio | Vertex Workbench |
+| **Pipeline** | SageMaker Pipelines | Azure ML Pipelines | Vertex Pipelines (Kubeflow) |
+| **AutoML** | Autopilot | Azure AutoML | Vertex AutoML |
+| **Feature Store** | Feature Store | Tak (preview) | Vertex Feature Store |
+| **Model Registry** | Model Registry | Model Registry | Model Registry |
+| **Monitoring** | Model Monitor | Data Drift Monitor | Model Monitoring |
+| **LLM/GenAI** | Bedrock + JumpStart | Azure OpenAI Service | Model Garden + Gemini |
+| **Custom Chips** | Trainium, Inferentia | Nie | Tensor Processing Units (TPU) |
+| **Labeling** | Ground Truth | Azure ML Labeling | Vertex Data Labeling |
+| **Zarządzanie** | Najbardziej rozbudowane | Dobra integracja z Azure | Prosty, zintegrowany GCP |
+
+---
+
+## 25.18 Bezpieczeństwo SageMaker i AI
+
+### Sieć i izolacja
+
+```bash
+# SageMaker VPC Config — training job bez dostępu do internetu
+aws sagemaker create-training-job \
+  --training-job-name secure-job \
+  --vpc-config '{
+    "SecurityGroupIds": ["sg-xxxxxxxx"],
+    "Subnets": ["subnet-xxxxxxxx", "subnet-yyyyyyyy"]
+  }' \
+  --enable-network-isolation true \
+  --enable-inter-container-traffic-encryption true \
+  ...
+```
+
+### IAM dla SageMaker
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sagemaker:CreateTrainingJob",
+        "sagemaker:DescribeTrainingJob",
+        "sagemaker:CreateModel",
+        "sagemaker:CreateEndpoint*"
+      ],
+      "Resource": "arn:aws:sagemaker:*:*:*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject"],
+      "Resource": "arn:aws:s3:::my-ml-bucket/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecr:GetAuthorizationToken"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+### Szyfrowanie
+
+| Komponent | Szyfrowanie |
+|---|---|
+| S3 (training data, model artifacts) | SSE-S3, SSE-KMS, SSE-C |
+| EBS (training volume) | KMS customer managed key |
+| EFS (Studio home dir) | KMS |
+| Inter-container traffic | TLS (enable flag) |
+| Endpoint invocations | TLS (HTTPS) |
+| Feature Store offline | S3 + KMS |
+| Feature Store online | Managed encryption |
+
+### Compliance i audyt
+
+- **CloudTrail** — wszystkie API calls SageMaker
+- **Model Cards** — dokumentacja modelu (data, bias, intended use)
+- **Model Monitor** — ciągłe monitorowanie dryfu i bias
+- **SageMaker Clarify** — bias + explainability raporty
+- **Bedrock Model Invocation Logging** — audit GenAI
+
+---
+
+## 25.19 Well-Architected Framework — AI/ML
+
+| Filar | Zasady dla AI/ML |
+|---|---|
+| **Operational Excellence** | SageMaker Pipelines (MLOps CI/CD), Model Registry z wersjonowaniem, automatyczne retrenowanie przez EventBridge, Experiments tracking |
+| **Security** | VPC isolation dla Training/Endpoints, Network Isolation mode, KMS dla danych i modeli, IAM least privilege, Bedrock Guardrails, PII detection |
+| **Reliability** | Multi-AZ endpoints, Auto Scaling dla inference, Batch Transform dla odporności na błędy, model backupu przez S3 versioning |
+| **Performance Efficiency** | Wybór właściwych instancji ML (Trainium/Inferentia dla kosztu, p5 dla wydajności), Graviton dla CPU workloads, distributed training, model quantization |
+| **Cost Optimization** | Spot instances dla training, Serverless Inference dla niskiego ruchu, Inferentia zamiast GPU, Savings Plans dla SageMaker |
+| **Sustainability** | Graviton (40% mniej energii), Trainium (wydajność/W), model pruning/quantization (mniejszy model = mniej energii), Spot instances (współdzielona infrastruktura) |
+
+---
+
+## 25.20 4 Domeny Egzaminacyjne SAP-C02
+
+### Domena 1: Design Solutions for Organizational Complexity
+
+- **Multi-account ML**: SageMaker Studio może działać cross-account przez VPC sharing + Resource Access Manager. Model Registry może być shared między kontami (cross-account model package groups).
+- **Data Governance**: AWS Lake Formation + SageMaker Feature Store dla centralnego zarządzania danymi ML. Lake Formation row/column level security.
+- **MLOps at scale**: SageMaker Pipelines + CodePipeline + CodeBuild dla CI/CD modeli. EventBridge triggeruje pipeline po nowych danych w S3.
+- **Compliance**: Model Cards dokumentują modele dla audytu. CloudTrail + S3 Access Logs dla forensics.
+
+### Domena 2: Design for New Solutions
+
+- **Wybór właściwego podejścia**:
+  - Gotowe AI: Rekognition, Comprehend, Translate → szybkie wdrożenie, zero ML expertise
+  - AutoML: SageMaker Autopilot, Canvas → dla zespołów bez DS
+  - Foundation Models: Bedrock → GenAI bez infrastruktury
+  - Custom ML: SageMaker Training + Endpoints → pełna kontrola
+- **RAG Architecture**: Bedrock Knowledge Bases + OpenSearch Serverless + S3
+- **Real-time vs Batch**: Real-Time Endpoints dla API inference, Batch Transform dla nocnych raportów, Async Inference dla video/audio
+- **Edge AI**: SageMaker Neo kompiluje modele, Edge Manager wdraża na IoT, Panorama dla kamer
+
+### Domena 3: Continuous Improvement for Existing Solutions
+
+- **Model Monitoring**: SageMaker Model Monitor → CloudWatch alarms → EventBridge → Lambda retrain trigger
+- **Drift Detection**: Data quality + model quality + bias monitoring
+- **A/B Testing**: Multi-variant endpoints z traffic splitting
+- **Inference Recommender**: automatyczna optymalizacja instancji dla inference
+- **Cost Optimization**: Analyze cost/performance tradeoff instancji (Inferentia vs GPU)
+
+### Domena 4: Accelerate Workload Migration and Modernization
+
+- **Migracja ML do AWS**: DLAMI dla szybkiego startu, DLC dla kontenerów, SageMaker Training dla managed
+- **Legacy ML modernization**: SageMaker Pipelines zastępuje cron-based retrain, Feature Store centralizuje dane
+- **On-premise to Bedrock**: API-first podejście, łatwa integracja przez SDK
+- **ML na krawędzi**: SageMaker Neo + Greengrass dla IoT → edge inference bez latencji cloud
+
+---
+
+## 25.21 Checks — 60 Pytań z Odpowiedziami
+
+1. **Q: Co to jest Amazon SageMaker?** A: Pełni zarządzana platforma ML pokrywająca cały cykl życia modelu — dane, trening, wdrożenie, monitoring.
+
+2. **Q: Jaka jest różnica między SageMaker a Amazon Bedrock?** A: SageMaker = własne modele (budowanie/trenowanie). Bedrock = gotowe Foundation Models (LLM) przez API bez infrastruktury.
+
+3. **Q: Co to jest SageMaker Studio?** A: Unified IDE (przeglądarka) dla całego workflow ML — notebooki, training, pipelines, experiments, monitoring.
+
+4. **Q: Jak izolować sieciowo SageMaker Training Job?** A: Konfiguracja VPC + `EnableNetworkIsolation: true` — brak dostępu do internetu z kontenera.
+
+5. **Q: Co to jest Feature Store?** A: Centralne repozytorium cech ML — online (niski latency, inference) + offline (historia, training).
+
+6. **Q: Różnica między Feature Store Online a Offline?** A: Online = in-memory, milisekundy, tylko aktualny rekord. Offline = S3/Parquet, historia, do trenowania.
+
+7. **Q: Co to jest SageMaker Pipelines?** A: Orchestrator ML workflow — DAG kroków (processing, training, evaluation, deploy) z wersjonowaniem i wizualizacją w Studio.
+
+8. **Q: Kiedy użyć Serverless Inference zamiast Real-Time Endpoint?** A: Gdy ruch jest rzadki/nieregularny i koszt 24/7 instancji jest za wysoki. Akceptujesz cold start kilku sekund.
+
+9. **Q: Co to jest SageMaker Autopilot?** A: AutoML — automatyczne tworzenie, trenowanie i optymalizacja modeli. Można zobaczyć wygenerowany kod (explainability AutoML).
+
+10. **Q: Co to jest SageMaker Canvas?** A: No-code ML dla biznesu — drag & drop UI, brak potrzeby kodu. Dla analityków bez DS background.
+
+11. **Q: Co to jest SageMaker JumpStart?** A: Hub gotowych modeli i rozwiązań — pretrained modele (HuggingFace, Stability AI) + one-click deploy + fine-tuning.
+
+12. **Q: Jak działa A/B testing w SageMaker?** A: Multi-variant endpoint z wagami (np. 90/10 traffic split) — TrafficRoutingPolicy per variant.
+
+13. **Q: Co to jest SageMaker Model Monitor?** A: Automatyczne monitorowanie dryfu danych i jakości modelu na produkcji — CloudWatch alarms gdy próg przekroczony.
+
+14. **Q: Jakie typy dryftu wykrywa Model Monitor?** A: Data quality drift, model quality drift, bias drift, feature attribution drift.
+
+15. **Q: Co to jest SageMaker Clarify?** A: Narzędzie do wykrywania bias i explainability (SHAP values) — przed i po trenowaniu.
+
+16. **Q: Jaka instancja jest najtańsza do trenowania DL?** A: ml.trn1.* (AWS Trainium) — do 50% taniej niż p3.
+
+17. **Q: Jaka instancja jest najtańsza do inference DL?** A: ml.inf1.* / ml.inf2.* (AWS Inferentia) — do 70% taniej niż GPU.
+
+18. **Q: Co to jest SageMaker Neo?** A: Kompiluje modele (TF, PyTorch, MXNet, ONNX) do zoptymalizowanego kodu dla docelowego hardware (edge, cloud).
+
+19. **Q: Co to jest SageMaker Ground Truth?** A: Human-in-the-loop data labeling — Mechanical Turk, prywatna workforce lub vendor workforce.
+
+20. **Q: Co to jest SageMaker HyperPod?** A: Managed klaster do distributed training bardzo dużych modeli (LLM). Automatyczne recovery węzłów.
+
+21. **Q: Jakie są 4 typy inference w SageMaker?** A: Real-Time, Serverless, Batch Transform, Async Inference.
+
+22. **Q: Kiedy Async Inference?** A: Duże payloady (video, audio, duże dokumenty) wymagające >60s przetwarzania. Wyniki do S3.
+
+23. **Q: Co to jest SageMaker Experiments?** A: Tracking eksperymentów ML — parametry, metryki, artefakty per run. Analogia MLflow.
+
+24. **Q: Czy SageMaker jest regionalny?** A: Tak — wszystkie zasoby (Studio domain, endpoints, training jobs) są regionalne.
+
+25. **Q: Jak SageMaker przechowuje notebooki w Studio?** A: EFS (Elastic File System) — persistowane między sesjami, per user.
+
+26. **Q: Co to jest Amazon Rekognition?** A: Managed CV service — detekcja obiektów, twarzy, tekstu w obrazach i wideo.
+
+27. **Q: Różnica Rekognition a Textract?** A: Rekognition = obiekty/twarze/sceny. Textract = ekstrakcja strukturyzowanego tekstu z dokumentów (tabele, formularze).
+
+28. **Q: Co to jest Amazon Comprehend?** A: Managed NLP — sentiment, entities, key phrases, PII detection, language detection.
+
+29. **Q: Co to jest Comprehend Medical?** A: Specjalizacja Comprehend dla tekstu medycznego — diagnoza, leki, dawki, procedury, anatonia.
+
+30. **Q: Co to jest Amazon Textract?** A: OCR + document understanding — wyciąga tekst, tabele i key-value pairs z PDF/obrazów.
+
+31. **Q: Jak wysłać duży dokument do Textract?** A: `StartDocumentAnalysis` (async) z SNS notification → S3 output. Dla małych: synchroniczny `AnalyzeDocument`.
+
+32. **Q: Co to jest Amazon Polly?** A: Text-to-Speech — konwertuje tekst na naturalnie brzmiącą mowę. Wspiera SSML.
+
+33. **Q: Jakie są typy głosów Polly?** A: Standard, Neural (NTTS), Long-form, Generative.
+
+34. **Q: Co to jest Amazon Lex?** A: Managed chatbot/konwersacyjne AI — intents, slots, fulfillment przez Lambda. Rdzeń Alexa.
+
+35. **Q: Kiedy Lex zamiast Bedrock dla chatbota?** A: Lex dla strukturyzowanych dialogów, IVR, call center (integracja z Connect). Bedrock dla otwartych konwersacji, LLM reasoning.
+
+36. **Q: Co to jest Amazon Kendra?** A: Managed enterprise search z NLP — semantyczne wyszukiwanie w dokumentach korporacyjnych.
+
+37. **Q: Różnica Kendra vs Bedrock Knowledge Bases?** A: Kendra = enterprise search (keyword + semantic), drogi. Bedrock KB = RAG dla LLM, tańszy, nowszy.
+
+38. **Q: Co to jest Amazon Forecast?** A: Managed time-series forecasting — predykcja popytu, zapasów, ruchu. DeepAR+ pod spodem.
+
+39. **Q: Co to jest Amazon Personalize?** A: Managed system rekomendacji — user-item interactions, real-time personalizacja jak na Amazon.com.
+
+40. **Q: Jakie przepisy (recipes) oferuje Personalize?** A: User-Personalization, Popularity-Count, HRNN-Metadata, Similar-Items, Personalized-Ranking.
+
+41. **Q: Co to jest Amazon Translate?** A: Neural Machine Translation — 75+ języków, custom terminology dla terminologii branżowej.
+
+42. **Q: Co to jest Amazon Transcribe?** A: Speech-to-Text — transkrypcja audio/video. Speaker diarization, Custom Vocabulary, PII Redaction.
+
+43. **Q: Różnica Transcribe a Transcribe Medical?** A: Transcribe Medical wyspecjalizowany w terminologii medycznej (diagnoza, leki, nazwy anatomiczne).
+
+44. **Q: Co to jest AWS Panorama?** A: Edge computer vision — urządzenie + SDK do ML inference na kamerach IP bez wysyłania wideo do chmury.
+
+45. **Q: Co to jest Amazon Lookout for Metrics?** A: Anomaly detection dla metryk biznesowych — automatycznie wykrywa anomalie bez ML expertise.
+
+46. **Q: Co to jest AWS Trainium?** A: Custom chip AWS wyłącznie do trenowania DL — do 50% taniej niż GPU p3/p4.
+
+47. **Q: Co to jest AWS Inferentia?** A: Custom chip AWS wyłącznie do inference DL — do 70% taniej niż GPU. inf1 (stary), inf2 (nowy).
+
+48. **Q: Czym różni się Inferentia od Trainium?** A: Trainium = trening. Inferentia = inference. Oba tańsze niż GPU dla DL.
+
+49. **Q: Co to jest Deep Learning AMI?** A: Pre-konfigurowane AMI z frameworkami ML (TF, PyTorch, CUDA) — szybki start bez konfiguracji.
+
+50. **Q: Co to jest SageMaker Inference Recommender?** A: Testuje model na różnych typach instancji i rekomenduje optymalny pod kątem kosztu i latencji.
+
+51. **Q: Jak zabezpieczyć dane treningowe w SageMaker?** A: S3 + KMS CMK, VPC dla dostępu do danych, EBS volume encryption, inter-container TLS.
+
+52. **Q: Co to jest Bedrock Guardrails?** A: Filtry treści dla modeli Bedrock — NSFW, hate speech, PII anonymization/blocking.
+
+53. **Q: Co to jest Bedrock Knowledge Bases?** A: Managed RAG — indeksuje dokumenty (S3), tworzy embeddings, przechowuje w vector store (OpenSearch Serverless), odpowiada na pytania przez FM.
+
+54. **Q: Jakie vector stores wspiera Bedrock Knowledge Bases?** A: OpenSearch Serverless, Pinecone, Redis Enterprise Cloud, MongoDB Atlas, Aurora PostgreSQL (pgvector).
+
+55. **Q: Co to jest Bedrock Agents?** A: Autonomiczne agenty AI — planują, wywołują narzędzia (Lambda/APIs), obsługują multi-step tasks.
+
+56. **Q: Co to jest SageMaker Model Registry?** A: Centralne repozytorium wersji modeli — approval workflow (pending/approved/rejected), cross-account sharing.
+
+57. **Q: Jak wdrożyć model zatwierdzony w Model Registry?** A: Pipeline reaction na zmianę statusu modelu → EventBridge → Lambda/Pipeline → create endpoint.
+
+58. **Q: Jak działa distributed training Data Parallel?** A: Każdy węzeł ma pełny model, różne batch danych → gradienty synchronizowane między węzłami.
+
+59. **Q: Kiedy potrzebne Model Parallel training?** A: Model za duży na 1 GPU (np. 70B parametrów) → model podzielony między kilka GPU/węzłów.
+
+60. **Q: Firma chce wykrywać uszkodzenia produktów na taśmie produkcyjnej. Najlepsza usługa?** A: Amazon Lookout for Vision — specjalizowany w detekcji defektów wizualnych w produkcji przemysłowej. Alternatywnie Rekognition Custom Labels.
+
+---

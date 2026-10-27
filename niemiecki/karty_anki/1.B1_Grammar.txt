@@ -1,0 +1,1592 @@
+stół;der Tisch, die Tische
+dzień;der Tag, die Tage
+pies;der Hund , die Hunde
+but;der Schuh , die Schuhe
+fotel;der Stuhl , die Stühle
+las;der Wald, die Wälder
+ogród;der Garten, die Gärten
+syn ; der Sohn , die Söhne
+ptak ; der Vogel , die Vögel
+jabłko ; der Apfel , die Äpfel
+drzewo ; der Baum , die Bäume
+klucz ; der Schlüssel , die Schlüssel
+kosz ; der Korb , die Körbe
+pociąg ; der Zug , die Züge
+ojciec ; der Vater , die Väter
+brat ; der Bruder , die Brüder
+ząb ; der Zahn , die Zähne
+lekarz ; der Arzt , die Ärzte
+nauczyciel ; der Lehrer , die Lehrer
+pracownik ; der Arbeiter , die Arbeiter
+kierowca ; der Fahrer , die Fahrer
+sprzedawca ; der Verkäufer , die Verkäufer
+student ; der Student , die Studenten
+kolega ; der Kollege , die Kollegen
+sąsiad ; der Nachbar , die Nachbarn
+książka ; das Buch , die Bücher
+dziecko ; das Kind , die Kinder
+dom ; das Haus , die Häuser
+jajko ; das Ei , die Eier
+okno ; das Fenster , die Fenster
+zdjęcie ; das Bild , die Bilder
+światło ; das Licht , die Lichter
+wieś ; das Dorf , die Dörfer
+biuro ; das Büro , die Büros
+samochód ; das Auto , die Autos
+radio ; das Radio , die Radios
+hotel ; das Hotel , die Hotels
+telefon ; das Handy , die Handys
+menu ; das Menü , die Menüs
+rower ; das Fahrrad , die Fahrräder
+łóżko ; das Bett , die Betten
+serce ; das Herz , die Herzen
+ucho ; das Ohr , die Ohren
+oko ; das Auge , die Augen
+muzeum ; das Museum , die Museen
+datum ; das Datum , die Daten
+studia ; das Studium , die Studien
+centrum ; das Zentrum , die Zentren
+leksykon ; das Lexikon , die Lexika
+kobieta ; die Frau , die Frauen
+lampa ; die Lampe , die Lampen
+torba ; die Tasche , die Taschen
+drzwi ; die Tür , die Türen
+ulica ; die Straße , die Straßen
+szkoła ; die Schule , die Schulen
+kuchnia ; die Küche , die Küchen
+gazeta ; die Zeitung , die Zeitungen
+sekunda ; die Sekunde , die Sekunden
+matka ; die Mutter , die Mütter
+córka ; die Tochter , die Töchter
+ręka ; die Hand , die Hände
+mysz ; die Maus , die Mäuse
+gęś ; die Gans , die Gänse
+noc ; die Nacht , die Nächte
+miasto ; die Stadt , die Städte
+firma ; die Firma , die Firmen
+kamera ; die Kamera , die Kameras
+pizza ; die Pizza , die Pizzas
+kamera internetowa ; die Webcam , die Webcams
+problem ; das Problem , die Probleme
+program ; das Programm , die Programme
+temat ; das Thema , die Themen
+atlas ; der Atlas , die Atlanten
+park ; der Park , die Parks
+komputer ; der Computer , die Computer
+rolnik ; der Bauer , die Bauern
+inżynier ; der Ingenieur , die Ingenieure
+pokój ; das Zimmer , die Zimmer
+dziewczynka ; das Mädchen , die Mädchen
+list ; der Brief , die Briefe
+zegar ; die Uhr , die Uhren
+morze ; das Meer , die Meere
+gwiazda ; der Stern , die Sterne
+kwiat ; die Blume , die Blumen
+ryba ; der Fisch , die Fische
+samolot ; das Flugzeug , die Flugzeuge
+statek ; das Schiff , die Schiffe
+góra ; der Berg , die Berge
+rzeka ; der Fluss , die Flüsse
+chmura ; die Wolke , die Wolken
+krzesło ; der Stuhl , die Stühle
+sok ; der Saft , die Säfte
+napój ; das Getränk , die Getränke
+język ; die Sprache , die Sprachen
+rodzic ; das Elternteil , die Elternteile
+rodzice ; die Eltern , die Eltern
+człowiek ; der Mensch , die Menschen
+ludzie ; die Leute , die Leute
+wakacje ; die Ferien , die Ferien
+koszt ; die Kosten , die Kosten
+dane ; die Daten , die Daten
+spodnie ; die Hose , die Hosen
+okulary ; die Brille , die Brillen
+nożyczki ; die Schere , die Scheren
+nauczyciel ; der Lehrer , die Lehrer
+kierowca ; der Fahrer , die Fahrer
+malarz ; der Maler , die Maler
+komputer ; der Computer , die Computer
+kelner ; der Kellner , die Kellner
+sportowiec ; der Sportler , die Sportler
+uczeń ; der Schüler , die Schüler
+sąsiad ; der Nachbar , die Nachbarn
+wujek ; der Onkel , die Onkel
+klucz ; der Schlüssel , die Schlüssel
+ptak ; der Vogel , die Vögel
+jabłko ; der Apfel , die Äpfel
+gwóźdź ; der Nagel , die Nägel
+brat ; der Bruder , die Brüder
+ojciec ; der Vater , die Väter
+robotnik ; der Arbeiter , die Arbeiter
+mieszkaniec ; der Bewohner , die Bewohner
+tłumacz ; der Dolmetscher , die Dolmetscher
+biznesmen ; der Unternehmer , die Unternehmer
+kuzyn ; der Vetter , die Vetter
+okno ; das Fenster , die Fenster
+dziewczynka ; das Mädchen , die Mädchen
+znak ; das Zeichen , die Zeichen
+usterka ; der Mangel , die Mängel
+młotek ; der Hammer , die Hämmer
+rowerzysta ; der Radfahrer , die Radfahrer
+mieszczanin ; der Bürger , die Bürger
+aktor ; der Schauspieler , die Schauspieler
+naukowiec ; der Forscher , die Forscher
+partner ; der Partner , die Partner
+matka ; die Mutter , die Mütter
+córka ; die Tochter , die Töchter
+ojciec ; der Vater , die Väter
+brat ; der Bruder , die Brüder
+jabłko ; der Apfel , die Äpfel
+ptak ; der Vogel , die Vögel
+gwóźdź ; der Nagel , die Nägel
+młotek ; der Hammer , die Hämmer
+ogród ; der Garten , die Gärten
+wóz ; der Wagen , die Wägen
+korzeń ; die Wurzel , die Wurzeln
+sznurek ; der Faden , die Fäden
+sklep ; der Laden , die Läden
+mężczyzna ; der Mann , die Männer
+ręka ; die Hand , die Hände
+ząb ; der Zahn , die Zähne
+gość ; der Gast , die Gäste
+noc ; die Nacht , die Nächte
+miasto ; die Stadt , die Städte
+mysz ; die Maus , die Mäuse
+gęś ; die Gans , die Gänse
+krowa ; die Kuh , die Kühe
+las ; der Wald , die Wälder
+sok ; der Saft , die Säfte
+bal ; der Ball , die Bälle
+krzesło ; der Stuhl , die Stühle
+dom ; das Haus , die Häuser
+książka ; das Buch , die Bücher
+wieś ; das Dorf , die Dörfer
+drzewo ; der Baum , die Bäume
+rodzice ; die Eltern , die Eltern
+ludzie ; die Leute , die Leute
+wakacje ; die Ferien , die Ferien
+finanse ; die Finanzen , die Finanzen
+akta ; die Akten , die Akten
+odsetki ; die Zinsen , die Zinsen
+ruiny ; die Trümmer , die Trümmer
+zasoby ; die Ressourcen , die Ressourcen
+media ; die Medien , die Medien
+siły zbrojne ; die Streitkräfte , die Streitkräfte
+Codziennie pracuję z domu, ponieważ oszczędzam czas na dojazdach.;Ich arbeite jeden Tag von zu Hause aus, weil ich Zeit beim Pendeln spare.
+Mój kolega pracuje z domu, ponieważ oszczędza czas na dojazdach.;Mein Kollege arbeitet von zu Hause aus, weil er Zeit beim Pendeln spart.
+Pracowałem z domu, ponieważ oszczędzałem czas na dojazdach (Präteritum).;Ich arbeitete von zu Hause aus, weil ich Zeit beim Pendeln sparte.
+Pracowałem z domu, ponieważ oszczędzałem czas na dojazdach (Plusquamperfekt).;Ich hatte von zu Hause aus gearbeitet, weil ich Zeit beim Pendeln gespart hatte.
+Pracowałem z domu, ponieważ oszczędzałem czas na dojazdach (Perfekt).;Ich habe von zu Hause aus gearbeitet, weil ich Zeit beim Pendeln gespart habe.
+Będę pracował z domu, ponieważ będę chciał oszczędzić czas na dojazdach.;Ich werde von zu Hause aus arbeiten, weil ich Zeit beim Pendeln sparen möchte.
+Do końca miesiąca będę już pracował z domu przez kilka tygodni.;Ich werde bis Ende des Monats schon mehrere Wochen von zu Hause aus gearbeitet haben.
+Praca z domu jest wykonywana regularnie przez wielu pracowników.;Die Arbeit von zu Hause aus wird regelmäßig von vielen Mitarbeitern erledigt.
+Pracowałbym z domu częściej, gdybym miał odpowiednie warunki.;Ich würde öfter von zu Hause aus arbeiten, wenn ich die passenden Bedingungen hätte.
+Wieczorami uczę się języka niemieckiego, aby swobodniej rozmawiać z ludźmi.;Ich lerne abends Deutsch, damit ich mich mit Menschen flüssiger unterhalten kann.
+Mój brat uczy się języka niemieckiego, aby znaleźć lepszą pracę.;Mein Bruder lernt Deutsch, um eine bessere Arbeit zu finden.
+Uczyłem się języka niemieckiego każdego wieczoru (Präteritum).;Ich lernte jeden Abend Deutsch.
+Uczyłem się języka niemieckiego przez kilka miesięcy przed przeprowadzką (Plusquamperfekt).;Ich hatte mehrere Monate Deutsch gelernt, bevor ich umgezogen war.
+Uczyłem się języka niemieckiego przez kilka miesięcy (Perfekt).;Ich habe mehrere Monate Deutsch gelernt.
+Będę się uczył języka niemieckiego codziennie przez godzinę.;Ich werde jeden Tag eine Stunde Deutsch lernen.
+Do przyszłego lata opanuję niemiecki na znacznie wyższym poziomie.;Ich werde bis zum nächsten Sommer Deutsch auf einem deutlich höheren Niveau gelernt haben.
+Język niemiecki jest uczony przez miliony ludzi na całym świecie.;Deutsch wird von Millionen Menschen auf der ganzen Welt gelernt.
+Uczyłbym się niemieckiego jeszcze intensywniej, gdybym miał więcej wolnego czasu.;Ich würde noch intensiver Deutsch lernen, wenn ich mehr Freizeit hätte.
+W weekend czytam książki historyczne, ponieważ interesuje mnie przeszłość Europy.;Am Wochenende lese ich historische Bücher, weil mich die Vergangenheit Europas interessiert.
+Mój znajomy czyta książki historyczne i często o nich opowiada.;Mein Freund liest historische Bücher und erzählt oft davon.
+Czytałem wiele książek historycznych podczas studiów (Präteritum).;Ich las während des Studiums viele historische Bücher.
+Przeczytałem już kilka książek historycznych przed rozpoczęciem kursu (Plusquamperfekt).;Ich hatte bereits mehrere historische Bücher gelesen, bevor der Kurs begann.
+Przeczytałem wiele książek historycznych w ostatnich latach (Perfekt).;Ich habe in den letzten Jahren viele historische Bücher gelesen.
+W przyszłym miesiącu przeczytam książkę o historii Niemiec.;Nächsten Monat werde ich ein Buch über die Geschichte Deutschlands lesen.
+Do końca roku przeczytam wszystkie książki z tej serii.;Bis Ende des Jahres werde ich alle Bücher dieser Reihe gelesen haben.
+Ta książka jest czytana przez studentów historii.;Dieses Buch wird von Geschichtsstudenten gelesen.
+Przeczytałbym tę książkę ponownie, gdyby była dostępna w bibliotece.;Ich würde dieses Buch noch einmal lesen, wenn es in der Bibliothek verfügbar wäre.
+Regularnie ćwiczę na siłowni, aby zachować zdrowie i dobrą kondycję.;Ich trainiere regelmäßig im Fitnessstudio, um gesund und fit zu bleiben.
+Mój kolega regularnie ćwiczy na siłowni, aby wzmocnić mięśnie.;Mein Kollege trainiert regelmäßig im Fitnessstudio, um Muskeln aufzubauen.
+Ćwiczyłem trzy razy w tygodniu przez cały rok (Präteritum).;Ich trainierte das ganze Jahr dreimal pro Woche.
+Ćwiczyłem już przez kilka miesięcy zanim zacząłem dietę (Plusquamperfekt).;Ich hatte bereits mehrere Monate trainiert, bevor ich mit der Diät begann.
+Ćwiczyłem regularnie przez ostatni rok (Perfekt).;Ich habe im letzten Jahr regelmäßig trainiert.
+Będę ćwiczył częściej, gdy kupię nowy sprzęt.;Ich werde häufiger trainieren, wenn ich neue Sportgeräte kaufe.
+Do przyszłego lata osiągnę zamierzoną wagę i formę.;Ich werde bis zum nächsten Sommer mein Zielgewicht erreicht und trainiert haben.
+Plan treningowy jest realizowany zgodnie z założeniami.;Der Trainingsplan wird planmäßig umgesetzt.
+Ćwiczyłbym codziennie, gdybym miał więcej energii po pracy.;Ich würde jeden Tag trainieren, wenn ich nach der Arbeit mehr Energie hätte.
+Po pracy często gotuję obiad, ponieważ nie lubię gotowych dań.;Nach der Arbeit koche ich oft Mittagessen, weil ich keine Fertiggerichte mag.
+Po pracy często gotuje obiad, ponieważ nie lubi gotowych dań.;Nach der Arbeit kocht er oft Mittagessen, weil er keine Fertiggerichte mag.
+Po pracy często gotowałem obiad, ponieważ nie lubiłem gotowych dań (Präteritum).;Nach der Arbeit kochte ich oft Mittagessen, weil ich keine Fertiggerichte mochte.
+Po pracy często gotowałem obiad, ponieważ nie lubiłem gotowych dań (Plusquamperfekt).;Nach der Arbeit hatte ich oft Mittagessen gekocht, weil ich keine Fertiggerichte gemocht hatte.
+Po pracy często gotowałem obiad, ponieważ nie lubiłem gotowych dań (Perfekt).;Nach der Arbeit habe ich oft Mittagessen gekocht, weil ich keine Fertiggerichte gemocht habe.
+Po pracy będę często gotował obiad, ponieważ chcę zdrowiej się odżywiać.;Nach der Arbeit werde ich oft Mittagessen kochen, weil ich mich gesünder ernähren möchte.
+Do końca miesiąca będę już przez wiele tygodni samodzielnie gotował obiady.;Bis Ende des Monats werde ich schon viele Wochen lang selbst Mittagessen gekocht haben.
+Obiad jest przygotowywany każdego dnia ze świeżych produktów.;Das Mittagessen wird jeden Tag aus frischen Zutaten zubereitet.
+Gotowałbym częściej, gdybym wracał wcześniej z pracy.;Ich würde häufiger kochen, wenn ich früher von der Arbeit zurückkommen würde.
+W każdą sobotę odwiedzam rodziców, aby spędzić z nimi trochę czasu.;Jeden Samstag besuche ich meine Eltern, um etwas Zeit mit ihnen zu verbringen.
+W każdą sobotę odwiedza rodziców, aby spędzić z nimi trochę czasu.;Jeden Samstag besucht er seine Eltern, um etwas Zeit mit ihnen zu verbringen.
+W każdą sobotę odwiedzałem rodziców, gdy mieszkałem w pobliżu (Präteritum).;Jeden Samstag besuchte ich meine Eltern, als ich in der Nähe wohnte.
+Odwiedzałem rodziców regularnie zanim przeprowadziłem się do Niemiec (Plusquamperfekt).;Ich hatte meine Eltern regelmäßig besucht, bevor ich nach Deutschland gezogen war.
+Odwiedzałem rodziców regularnie przez ostatnie lata (Perfekt).;Ich habe meine Eltern in den letzten Jahren regelmäßig besucht.
+W przyszłym tygodniu odwiedzę rodziców i zostanę u nich przez kilka dni.;Nächste Woche werde ich meine Eltern besuchen und einige Tage bei ihnen bleiben.
+Do końca roku będę odwiedził rodziców kilka razy.;Bis Ende des Jahres werde ich meine Eltern mehrere Male besucht haben.
+Moi rodzice są często odwiedzani przez rodzinę.;Meine Eltern werden oft von der Familie besucht.
+Odwiedzałbym rodziców częściej, gdybym mieszkał bliżej.;Ich würde meine Eltern häufiger besuchen, wenn ich näher wohnen würde.
+Każdego ranka jeżdżę do pracy samochodem, ponieważ komunikacja jest powolna.;Jeden Morgen fahre ich mit dem Auto zur Arbeit, weil die öffentlichen Verkehrsmittel langsam sind.
+Każdego ranka jeździ do pracy samochodem, ponieważ komunikacja jest powolna.;Jeden Morgen fährt er mit dem Auto zur Arbeit, weil die öffentlichen Verkehrsmittel langsam sind.
+Jeździłem do pracy samochodem przez kilka lat (Präteritum).;Ich fuhr mehrere Jahre lang mit dem Auto zur Arbeit.
+Jeździłem do pracy samochodem zanim przeprowadziłem się bliżej firmy (Plusquamperfekt).;Ich war mit dem Auto zur Arbeit gefahren, bevor ich näher an die Firma gezogen war.
+Jeździłem do pracy samochodem przez kilka lat (Perfekt).;Ich bin mehrere Jahre lang mit dem Auto zur Arbeit gefahren.
+W przyszłości będę jeździł do pracy rowerem.;In Zukunft werde ich mit dem Fahrrad zur Arbeit fahren.
+Do przyszłego lata będę już przez rok dojeżdżał rowerem.;Bis zum nächsten Sommer werde ich schon ein Jahr lang mit dem Fahrrad zur Arbeit gefahren sein.
+Pracownicy są codziennie dowożeni autobusem do zakładu.;Die Mitarbeiter werden täglich mit dem Bus zur Fabrik gebracht.
+Jeździłbym do pracy rowerem, gdyby pogoda była lepsza.;Ich würde mit dem Fahrrad zur Arbeit fahren, wenn das Wetter besser wäre.
+Wieczorami oglądam filmy, które polecili mi znajomi.;Abends sehe ich Filme an, die mir meine Freunde empfohlen haben.
+Wieczorami ogląda filmy, które polecili mu znajomi.;Abends sieht er Filme an, die ihm seine Freunde empfohlen haben.
+Wieczorami oglądałem filmy zamiast telewizji (Präteritum).;Abends sah ich Filme anstatt fernzusehen.
+Oglądałem już ten film zanim przeczytałem książkę (Plusquamperfekt).;Ich hatte diesen Film bereits gesehen, bevor ich das Buch gelesen hatte.
+Oglądałem wiele filmów dokumentalnych w tym roku (Perfekt).;Ich habe in diesem Jahr viele Dokumentarfilme gesehen.
+W przyszły weekend obejrzę nowy film science fiction.;Nächstes Wochenende werde ich einen neuen Science-Fiction-Film sehen.
+Do końca tygodnia obejrzę cały sezon tego serialu.;Bis Ende der Woche werde ich die ganze Staffel dieser Serie gesehen haben.
+Film jest oglądany przez miliony widzów na całym świecie.;Der Film wird von Millionen Zuschauern auf der ganzen Welt gesehen.
+Obejrzałbym ten film ponownie, gdyby był dostępny w streamingu.;Ich würde mir diesen Film noch einmal ansehen, wenn er im Streaming verfügbar wäre.
+Każdego ranka biorę prysznic, zanim zacznę pracę.;Jeden Morgen nehme ich eine Dusche, bevor ich mit der Arbeit beginne.
+Każdego ranka bierze prysznic, zanim zacznie pracę.;Jeden Morgen nimmt er eine Dusche, bevor er mit der Arbeit beginnt.
+Codziennie brałem prysznic przed pracą (Präteritum).;Jeden Morgen nahm ich eine Dusche vor der Arbeit.
+Brałem już prysznic, zanim zadzwonił telefon (Plusquamperfekt).;Ich hatte bereits eine Dusche genommen, bevor das Telefon klingelte.
+Brałem codziennie prysznic przed pracą (Perfekt).;Ich habe jeden Morgen vor der Arbeit eine Dusche genommen.
+Od przyszłego miesiąca będę brał prysznic wcześniej.;Ab dem nächsten Monat werde ich früher duschen.
+Do ósmej będę już wziął prysznic i przygotował się do wyjścia.;Bis acht Uhr werde ich geduscht und mich vorbereitet haben.
+Prysznic jest brany codziennie rano.;Es wird jeden Morgen geduscht.
+Brałbym dłuższy prysznic, gdybym miał więcej czasu.;Ich würde länger duschen, wenn ich mehr Zeit hätte.
+Po pracy spotykam się ze znajomymi w centrum miasta.;Nach der Arbeit treffe ich mich mit Freunden in der Innenstadt.
+Po pracy spotyka się ze znajomymi w centrum miasta.;Nach der Arbeit trifft er sich mit Freunden in der Innenstadt.
+Po pracy spotykałem się ze znajomymi niemal codziennie (Präteritum).;Nach der Arbeit traf ich mich fast jeden Tag mit Freunden.
+Spotykałem się z nimi regularnie przed przeprowadzką (Plusquamperfekt).;Ich hatte mich regelmäßig mit ihnen getroffen, bevor ich umzog.
+Spotykałem się ze znajomymi przez cały zeszły rok (Perfekt).;Ich habe mich das ganze letzte Jahr mit Freunden getroffen.
+W przyszłym tygodniu spotkam się ze starym kolegą ze szkoły.;Nächste Woche werde ich einen alten Schulfreund treffen.
+Do końca wakacji spotkam się ze wszystkimi bliskimi znajomymi.;Bis Ende des Sommers werde ich alle engen Freunde getroffen haben.
+Przyjaciele są często spotykani podczas lokalnych wydarzeń.;Freunde werden oft bei lokalen Veranstaltungen getroffen.
+Spotykałbym się z nimi częściej, gdybym mieszkał bliżej.;Ich würde sie häufiger treffen, wenn ich näher wohnen würde.
+Gdy mam czas, czytam wiadomości z kilku różnych źródeł.;Wenn ich Zeit habe, lese ich Nachrichten aus mehreren Quellen.
+Gdy ma czas, czyta wiadomości z kilku różnych źródeł.;Wenn er Zeit hat, liest er Nachrichten aus mehreren Quellen.
+Czytałem wiadomości codziennie podczas śniadania (Präteritum).;Ich las jeden Tag beim Frühstück Nachrichten.
+Przeczytałem już wszystkie artykuły przed rozpoczęciem spotkania (Plusquamperfekt).;Ich hatte bereits alle Artikel gelesen, bevor die Besprechung begann.
+Przeczytałem dzisiaj kilka interesujących artykułów (Perfekt).;Ich habe heute mehrere interessante Artikel gelesen.
+Wieczorem przeczytam raport, który otrzymałem od klienta.;Am Abend werde ich den Bericht lesen, den ich vom Kunden erhalten habe.
+Do jutra przeczytam wszystkie dokumenty związane z projektem.;Bis morgen werde ich alle projektrelevanten Dokumente gelesen haben.
+Raport jest czytany przez kierownictwo firmy.;Der Bericht wird von der Geschäftsleitung gelesen.
+Przeczytałbym tę książkę jeszcze raz, gdybym ją posiadał.;Ich würde dieses Buch noch einmal lesen, wenn ich es besäße.
+W ważnych sprawach zawsze podejmuję decyzję po dokładnym zastanowieniu.;In wichtigen Angelegenheiten treffe ich eine Entscheidung erst nach gründlicher Überlegung.
+W ważnych sprawach zawsze podejmuje decyzję po dokładnym zastanowieniu.;In wichtigen Angelegenheiten trifft er eine Entscheidung erst nach gründlicher Überlegung.
+Podejmowałem trudne decyzje jako kierownik zespołu (Präteritum).;Ich traf schwierige Entscheidungen als Teamleiter.
+Podjąłem już decyzję przed rozpoczęciem negocjacji (Plusquamperfekt).;Ich hatte die Entscheidung bereits getroffen, bevor die Verhandlungen begannen.
+Podjąłem decyzję po rozmowie z ekspertami (Perfekt).;Ich habe die Entscheidung nach Gesprächen mit Experten getroffen.
+Jutro podejmę ostateczną decyzję dotyczącą projektu.;Morgen werde ich die endgültige Entscheidung über das Projekt treffen.
+Do końca tygodnia podejmę wszystkie niezbędne decyzje.;Bis Ende der Woche werde ich alle notwendigen Entscheidungen getroffen haben.
+Decyzja jest podejmowana przez zarząd firmy.;Die Entscheidung wird vom Vorstand getroffen.
+Podjąłbym inną decyzję, gdybym znał wszystkie fakty.;Ich würde eine andere Entscheidung treffen, wenn ich alle Fakten kennen würde.
+Podczas spotkań często mówię po niemiecku, nawet jeśli czasami brakuje mi słów.;Während Besprechungen spreche ich oft Deutsch, auch wenn mir manchmal die Wörter fehlen.
+Podczas spotkań często mówi po niemiecku, nawet jeśli czasami brakuje mu słów.;Während Besprechungen spricht er oft Deutsch, auch wenn ihm manchmal die Wörter fehlen.
+Podczas spotkań często mówiłem po niemiecku, nawet jeśli popełniałem błędy (Präteritum).;Während Besprechungen sprach ich oft Deutsch, auch wenn ich Fehler machte.
+Mówiłem już po niemiecku, zanim rozpocząłem nową pracę (Plusquamperfekt).;Ich hatte bereits Deutsch gesprochen, bevor ich die neue Arbeit begann.
+Mówiłem dzisiaj po niemiecku z kilkoma klientami (Perfekt).;Ich habe heute mit mehreren Kunden Deutsch gesprochen.
+Od przyszłego miesiąca będę częściej mówił po niemiecku w pracy.;Ab nächstem Monat werde ich häufiger Deutsch bei der Arbeit sprechen.
+Do końca roku będę rozmawiał po niemiecku niemal codziennie.;Bis Ende des Jahres werde ich fast jeden Tag Deutsch gesprochen haben.
+Po niemiecku mówi się tutaj niemal wszędzie.;Hier wird fast überall Deutsch gesprochen.
+Mówiłbym płynniej, gdybym miał więcej okazji do ćwiczeń.;Ich würde flüssiger sprechen, wenn ich mehr Übungsmöglichkeiten hätte.
+Każdego tygodnia piszę notatki, aby lepiej zapamiętać nowe słownictwo.;Jede Woche schreibe ich Notizen, um neuen Wortschatz besser zu behalten.
+Każdego tygodnia pisze notatki, aby lepiej zapamiętać nowe słownictwo.;Jede Woche schreibt er Notizen, um neuen Wortschatz besser zu behalten.
+Pisałem szczegółowe notatki podczas każdego szkolenia (Präteritum).;Ich schrieb während jeder Schulung ausführliche Notizen.
+Napisałem już raport, zanim kierownik poprosił o jego przygotowanie (Plusquamperfekt).;Ich hatte den Bericht bereits geschrieben, bevor der Leiter darum bat.
+Napisałem dzisiaj kilka ważnych wiadomości e-mail (Perfekt).;Ich habe heute mehrere wichtige E-Mails geschrieben.
+Jutro napiszę podsumowanie całego projektu.;Morgen werde ich eine Zusammenfassung des gesamten Projekts schreiben.
+Do piątku napiszę wszystkie wymagane dokumenty.;Bis Freitag werde ich alle erforderlichen Dokumente geschrieben haben.
+Raport jest pisany przez doświadczonego specjalistę.;Der Bericht wird von einem erfahrenen Spezialisten geschrieben.
+Napisałbym książkę, gdybym miał wystarczająco dużo czasu.;Ich würde ein Buch schreiben, wenn ich genügend Zeit hätte.
+Po kilku latach przeprowadzam się do większego mieszkania.;Nach einigen Jahren ziehe ich in eine größere Wohnung um.
+Po kilku latach przeprowadza się do większego mieszkania.;Nach einigen Jahren zieht er in eine größere Wohnung um.
+Przeprowadziłem się do Niemiec siedem lat temu (Präteritum).;Ich zog vor sieben Jahren nach Deutschland.
+Przeprowadziłem się już do nowego miasta, zanim znalazłem pracę (Plusquamperfekt).;Ich war bereits in die neue Stadt gezogen, bevor ich Arbeit fand.
+Przeprowadziłem się do większego mieszkania w zeszłym roku (Perfekt).;Ich bin im letzten Jahr in eine größere Wohnung gezogen.
+Za kilka miesięcy przeprowadzę się bliżej miejsca pracy.;In einigen Monaten werde ich näher an meinen Arbeitsplatz ziehen.
+Do przyszłego lata przeprowadzę się już do nowego domu.;Bis zum nächsten Sommer werde ich bereits in das neue Haus gezogen sein.
+Nowi pracownicy są przenoszeni do innych działów.;Neue Mitarbeiter werden in andere Abteilungen versetzt.
+Przeprowadziłbym się na wieś, gdybym pracował zdalnie.;Ich würde aufs Land ziehen, wenn ich remote arbeiten würde.
+Nigdy nie tracę cierpliwości podczas rozmów z klientami.;Ich verliere bei Gesprächen mit Kunden nie die Geduld.
+Nigdy nie traci cierpliwości podczas rozmów z klientami.;Er verliert bei Gesprächen mit Kunden nie die Geduld.
+Straciłem portfel podczas podróży służbowej (Präteritum).;Ich verlor während einer Dienstreise meine Brieftasche.
+Straciłem już klucze, zanim wyszedłem z domu (Plusquamperfekt).;Ich hatte die Schlüssel bereits verloren, bevor ich das Haus verließ.
+Straciłem dziś dużo czasu przez korki (Perfekt).;Ich habe heute wegen des Verkehrs viel Zeit verloren.
+Jeśli nie będę ostrożny, stracę ważne dane.;Wenn ich nicht vorsichtig bin, werde ich wichtige Daten verlieren.
+Do końca projektu stracę zapewne jeszcze kilka godzin na poprawki.;Bis zum Ende des Projekts werde ich vermutlich noch einige Stunden verloren haben.
+Ważne dane są czasami tracone przez nieuwagę użytkowników.;Wichtige Daten werden manchmal durch Unachtsamkeit verloren.
+Nie straciłbym tyle czasu, gdybym lepiej wszystko zaplanował.;Ich würde nicht so viel Zeit verlieren, wenn ich alles besser planen würde.
+Nowy kurs zaczynam dopiero po zakończeniu obecnego.;Ich beginne den neuen Kurs erst nach dem Abschluss des aktuellen.
+Nowy kurs zaczyna dopiero po zakończeniu obecnego.;Er beginnt den neuen Kurs erst nach dem Abschluss des aktuellen.
+Rozpocząłem naukę niemieckiego wiele lat temu (Präteritum).;Ich begann vor vielen Jahren Deutsch zu lernen.
+Rozpocząłem projekt jeszcze przed podpisaniem umowy (Plusquamperfekt).;Ich hatte das Projekt begonnen, bevor der Vertrag unterschrieben wurde.
+Rozpocząłem nowy kurs programowania w tym miesiącu (Perfekt).;Ich habe diesen Monat einen neuen Programmierkurs begonnen.
+W przyszłym roku rozpocznę kolejne szkolenie zawodowe.;Im nächsten Jahr werde ich eine weitere Weiterbildung beginnen.
+Do końca marca rozpocznę wszystkie zaplanowane projekty.;Bis Ende März werde ich alle geplanten Projekte begonnen haben.
+Szkolenie jest rozpoczynane przez doświadczonych trenerów.;Die Schulung wird von erfahrenen Trainern begonnen.
+Rozpocząłbym studia, gdybym miał więcej wolnego czasu.;Ich würde ein Studium beginnen, wenn ich mehr Freizeit hätte.
+Mimo wielu obowiązków zawsze przypominam sobie o ważnych terminach.;Trotz vieler Verpflichtungen erinnere ich mich immer an wichtige Termine.
+Mimo wielu obowiązków zawsze przypomina sobie o ważnych terminach.;Trotz vieler Verpflichtungen erinnert er sich immer an wichtige Termine.
+Przypominałem sobie o tym wydarzeniu dopiero wieczorem (Präteritum).;Ich erinnerte mich erst am Abend an dieses Ereignis.
+Przypomniałem sobie jego nazwisko jeszcze przed rozpoczęciem rozmowy (Plusquamperfekt).;Ich hatte mich bereits an seinen Namen erinnert, bevor das Gespräch begann.
+Przypomniałem sobie o ważnym terminie w ostatniej chwili (Perfekt).;Ich habe mich in letzter Minute an den wichtigen Termin erinnert.
+Jutro przypomnę sobie wszystkie szczegóły tej sprawy.;Morgen werde ich mich an alle Einzelheiten dieser Angelegenheit erinnern.
+Do końca tygodnia przypomnę sobie wszystkie potrzebne informacje.;Bis Ende der Woche werde ich mich an alle notwendigen Informationen erinnert haben.
+To wydarzenie jest często wspominane przez mieszkańców.;An dieses Ereignis wird von den Bewohnern oft erinnert.
+Przypomniałbym sobie szybciej, gdybym robił lepsze notatki.;Ich würde mich schneller erinnern, wenn ich bessere Notizen machen würde.
+Każdego ranka wstaję wcześniej, aby uniknąć korków.;Jeden Morgen stehe ich früher auf, um den Stau zu vermeiden.
+Każdego ranka wstaje wcześniej, aby uniknąć korków.;Jeden Morgen steht er früher auf, um den Stau zu vermeiden.
+Wstawałem codziennie o szóstej przez wiele lat (Präteritum).;Ich stand viele Jahre lang jeden Tag um sechs Uhr auf.
+Wstałem już, zanim zadzwonił budzik (Plusquamperfekt).;Ich war bereits aufgestanden, bevor der Wecker klingelte.
+Wstałem dziś wyjątkowo wcześnie (Perfekt).;Ich bin heute außergewöhnlich früh aufgestanden.
+Od przyszłego tygodnia będę wstawał o godzinę wcześniej.;Ab nächster Woche werde ich eine Stunde früher aufstehen.
+Do poniedziałku przyzwyczaję się już do wcześniejszego wstawania.;Bis Montag werde ich bereits früher aufgestanden sein.
+W wielu firmach pracę rozpoczyna się bardzo wcześnie.;In vielen Unternehmen wird sehr früh aufgestanden.
+Wstawałbym wcześniej, gdybym nie pracował do późna.;Ich würde früher aufstehen, wenn ich nicht so lange arbeiten würde.
+Regularnie uczestniczę w spotkaniach dotyczących nowych projektów.;Ich nehme regelmäßig an Besprechungen über neue Projekte teil.
+Regularnie uczestniczy w spotkaniach dotyczących nowych projektów.;Er nimmt regelmäßig an Besprechungen über neue Projekte teil.
+Uczestniczyłem w wielu konferencjach branżowych (Präteritum).;Ich nahm an vielen Fachkonferenzen teil.
+Uczestniczyłem już w podobnym szkoleniu przed objęciem stanowiska (Plusquamperfekt).;Ich hatte bereits an einer ähnlichen Schulung teilgenommen, bevor ich die Stelle bekam.
+Uczestniczyłem dziś w bardzo interesującym webinarium (Perfekt).;Ich habe heute an einem sehr interessanten Webinar teilgenommen.
+W przyszłym miesiącu wezmę udział w międzynarodowej konferencji.;Nächsten Monat werde ich an einer internationalen Konferenz teilnehmen.
+Do końca roku wezmę udział w kilku specjalistycznych szkoleniach.;Bis Ende des Jahres werde ich an mehreren Fachschulungen teilgenommen haben.
+W szkoleniu uczestniczy wielu pracowników.;An der Schulung wird von vielen Mitarbeitern teilgenommen.
+Brałbym udział częściej, gdybym miał więcej czasu.;Ich würde häufiger teilnehmen, wenn ich mehr Zeit hätte.
+Po długim namyśle decyduję się na zmianę pracy.;Nach langer Überlegung entscheide ich mich für einen Arbeitsplatzwechsel.
+Po długim namyśle decyduje się na zmianę pracy.;Nach langer Überlegung entscheidet er sich für einen Arbeitsplatzwechsel.
+Po długim namyśle zdecydowałem się na przeprowadzkę (Präteritum).;Nach langer Überlegung entschied ich mich für einen Umzug.
+Zdecydowałem się już na ten krok przed rozmową z rodziną (Plusquamperfekt).;Ich hatte mich bereits für diesen Schritt entschieden, bevor ich mit meiner Familie sprach.
+Zdecydowałem się przyjąć nową ofertę pracy (Perfekt).;Ich habe mich entschieden, das neue Jobangebot anzunehmen.
+Wkrótce zdecyduję się na konkretny kierunek rozwoju.;Bald werde ich mich für eine konkrete Entwicklungsrichtung entscheiden.
+Do końca miesiąca podejmę ostateczną decyzję.;Bis Ende des Monats werde ich mich endgültig entschieden haben.
+O wyborze zwykle decyduje się po dokładnej analizie.;Über die Auswahl wird gewöhnlich nach gründlicher Analyse entschieden.
+Zdecydowałbym się szybciej, gdybym znał wszystkie informacje.;Ich würde mich schneller entscheiden, wenn ich alle Informationen kennen würde.
+Czasami nagle przychodzi mi do głowy bardzo dobry pomysł.;Manchmal fällt mir plötzlich eine sehr gute Idee ein.
+Czasami nagle przychodzi mu do głowy bardzo dobry pomysł.;Manchmal fällt ihm plötzlich eine sehr gute Idee ein.
+Dobry pomysł przyszedł mi do głowy podczas spaceru (Präteritum).;Eine gute Idee fiel mir während eines Spaziergangs ein.
+Ten pomysł przyszedł mi do głowy jeszcze przed rozpoczęciem projektu (Plusquamperfekt).;Diese Idee war mir bereits eingefallen, bevor das Projekt begann.
+Właśnie przyszedł mi do głowy ciekawy sposób rozwiązania problemu (Perfekt).;Mir ist gerade eine interessante Lösung für das Problem eingefallen.
+Być może jutro przyjdzie mi do głowy jeszcze lepszy pomysł.;Vielleicht wird mir morgen eine noch bessere Idee einfallen.
+Do końca tygodnia wpadnie mi do głowy odpowiednie rozwiązanie.;Bis Ende der Woche wird mir die passende Lösung eingefallen sein.
+Na to rozwiązanie często wpada się dopiero po czasie.;Auf diese Lösung wird oft erst später gekommen.
+Wpadłby mi do głowy lepszy pomysł, gdybym był bardziej wypoczęty.;Mir würde eine bessere Idee einfallen, wenn ich ausgeruhter wäre.
+Od kilku tygodni ubiegam się o nowe stanowisko w firmie.;Seit einigen Wochen bewerbe ich mich auf eine neue Stelle im Unternehmen.
+Od kilku tygodni ubiega się o nowe stanowisko w firmie.;Seit einigen Wochen bewirbt er sich auf eine neue Stelle im Unternehmen.
+Ubiegałem się o wiele stanowisk w zeszłym roku (Präteritum).;Ich bewarb mich im letzten Jahr auf viele Stellen.
+Ubiegałem się już o podobną posadę przed przeprowadzką (Plusquamperfekt).;Ich hatte mich bereits auf eine ähnliche Stelle beworben, bevor ich umzog.
+Ubiegałem się ostatnio o kilka interesujących ofert pracy (Perfekt).;Ich habe mich kürzlich auf mehrere interessante Stellen beworben.
+W przyszłym miesiącu będę się ubiegał o awans.;Im nächsten Monat werde ich mich um eine Beförderung bewerben.
+Do końca roku będę aplikował do wszystkich wybranych firm.;Bis Ende des Jahres werde ich mich bei allen ausgewählten Firmen beworben haben.
+Na to stanowisko aplikuje wielu kandydatów.;Auf diese Stelle wird von vielen Bewerbern bestanden.
+Ubiegałbym się o tę pracę, gdyby była bliżej mojego miejsca zamieszkania.;Ich würde mich auf diese Stelle bewerben, wenn sie näher an meinem Wohnort wäre.
+Nowy kurs zaczynam dopiero wtedy, gdy skończę poprzedni.;Ich fange einen neuen Kurs erst an, wenn ich den vorherigen abgeschlossen habe.
+Nowy kurs zaczyna dopiero wtedy, gdy skończy poprzedni.;Er fängt einen neuen Kurs erst an, wenn er den vorherigen abgeschlossen hat.
+Nowy kurs rozpocząłem dopiero po zakończeniu poprzedniego (Präteritum).;Ich fing einen neuen Kurs erst an, nachdem ich den vorherigen abgeschlossen hatte.
+Nowy kurs rozpocząłem już przed przeprowadzką do Niemiec (Plusquamperfekt).;Ich hatte bereits einen neuen Kurs angefangen, bevor ich nach Deutschland umzog.
+Rozpocząłem nowy kurs w zeszłym miesiącu (Perfekt).;Ich habe im letzten Monat einen neuen Kurs angefangen.
+W przyszłym roku rozpocznę szkolenie związane z zarządzaniem projektami.;Im nächsten Jahr werde ich eine Weiterbildung im Projektmanagement anfangen.
+Do końca lata rozpocznę wszystkie zaplanowane szkolenia.;Bis Ende des Sommers werde ich alle geplanten Schulungen angefangen haben.
+Nowy projekt jest rozpoczynany na początku każdego kwartału.;Das neue Projekt wird zu Beginn jedes Quartals angefangen.
+Rozpocząłbym ten kurs wcześniej, gdybym miał więcej czasu.;Ich würde diesen Kurs früher anfangen, wenn ich mehr Zeit hätte.
+Wieczorami często wychodzę na spacer, aby odpocząć po pracy.;Abends gehe ich oft spazieren, um mich nach der Arbeit zu entspannen.
+Wieczorami często wychodzi na spacer, aby odpocząć po pracy.;Abends geht er oft spazieren, um sich nach der Arbeit zu entspannen.
+Wychodziłem codziennie na spacer niezależnie od pogody (Präteritum).;Ich ging jeden Tag spazieren, unabhängig vom Wetter.
+Wyszedłem już z domu, zanim otrzymałem wiadomość (Plusquamperfekt).;Ich war bereits aus dem Haus gegangen, bevor ich die Nachricht erhielt.
+Wyszedłem dziś wcześniej z pracy (Perfekt).;Ich bin heute früher von der Arbeit gegangen.
+Jutro wieczorem wyjdę ze znajomymi do restauracji.;Morgen Abend werde ich mit Freunden ausgehen.
+Do końca tygodnia wyjdę kilka razy na świeże powietrze.;Bis Ende der Woche werde ich mehrere Male ausgegangen sein.
+Po zakończeniu zmiany wychodzi się głównym wejściem.;Nach Schichtende wird durch den Haupteingang hinausgegangen.
+Wychodziłbym częściej z domu, gdybym miał więcej wolnego czasu.;Ich würde häufiger ausgehen, wenn ich mehr Freizeit hätte.
+Na spotkania zawsze przynoszę ze sobą notatnik i długopis.;Zu Besprechungen bringe ich immer ein Notizbuch und einen Kugelschreiber mit.
+Na spotkania zawsze przynosi ze sobą notatnik i długopis.;Zu Besprechungen bringt er immer ein Notizbuch und einen Kugelschreiber mit.
+Przynosiłem ze sobą wszystkie potrzebne dokumenty (Präteritum).;Ich brachte alle notwendigen Dokumente mit.
+Przyniosłem już wszystkie materiały przed rozpoczęciem szkolenia (Plusquamperfekt).;Ich hatte bereits alle Unterlagen mitgebracht, bevor die Schulung begann.
+Przyniosłem dziś ze sobą nowy laptop (Perfekt).;Ich habe heute meinen neuen Laptop mitgebracht.
+Na następną prezentację przyniosę dodatkowe materiały.;Zur nächsten Präsentation werde ich zusätzliche Unterlagen mitbringen.
+Do końca tygodnia przyniosę wszystkie brakujące dokumenty.;Bis Ende der Woche werde ich alle fehlenden Dokumente mitgebracht haben.
+Na szkolenie są przynoszone różne materiały edukacyjne.;Zur Schulung werden verschiedene Lernmaterialien mitgebracht.
+Przyniósłbym więcej przykładów, gdybym wiedział, że będą potrzebne.;Ich würde mehr Beispiele mitbringen, wenn ich wüsste, dass sie gebraucht werden.
+Podczas spotkań często proponuję rozwiązania usprawniające pracę zespołu.;Während Besprechungen schlage ich oft Lösungen vor, die die Arbeit des Teams verbessern.
+Podczas spotkań często proponuje rozwiązania usprawniające pracę zespołu.;Während Besprechungen schlägt er oft Lösungen vor, die die Arbeit des Teams verbessern.
+Proponowałem kilka różnych rozwiązań tego problemu (Präteritum).;Ich schlug mehrere verschiedene Lösungen für dieses Problem vor.
+Zaproponowałem już to rozwiązanie przed rozpoczęciem dyskusji (Plusquamperfekt).;Ich hatte diese Lösung bereits vorgeschlagen, bevor die Diskussion begann.
+Zaproponowałem dziś nowe podejście do projektu (Perfekt).;Ich habe heute einen neuen Ansatz für das Projekt vorgeschlagen.
+W przyszłym tygodniu zaproponuję kilka dodatkowych usprawnień.;Nächste Woche werde ich mehrere zusätzliche Verbesserungen vorschlagen.
+Do końca miesiąca zaproponuję kompletny plan działania.;Bis Ende des Monats werde ich einen vollständigen Aktionsplan vorgeschlagen haben.
+Nowe rozwiązanie jest proponowane przez dział techniczny.;Die neue Lösung wird von der technischen Abteilung vorgeschlagen.
+Zaproponowałbym inne rozwiązanie, gdybym znał więcej szczegółów.;Ich würde eine andere Lösung vorschlagen, wenn ich mehr Einzelheiten kennen würde.
+Od kilku miesięcy zajmuję się automatyzacją procesów w firmie.;Seit einigen Monaten beschäftige ich mich mit der Automatisierung von Prozessen im Unternehmen.
+Od kilku miesięcy zajmuje się automatyzacją procesów w firmie.;Seit einigen Monaten beschäftigt er sich mit der Automatisierung von Prozessen im Unternehmen.
+Zajmowałem się tym tematem przez większą część roku (Präteritum).;Ich beschäftigte mich den größten Teil des Jahres mit diesem Thema.
+Zajmowałem się już podobnym projektem przed zmianą pracy (Plusquamperfekt).;Ich hatte mich bereits mit einem ähnlichen Projekt beschäftigt, bevor ich die Stelle wechselte.
+Zajmowałem się ostatnio analizą danych (Perfekt).;Ich habe mich zuletzt mit Datenanalyse beschäftigt.
+W przyszłym roku będę zajmował się nowymi technologiami.;Im nächsten Jahr werde ich mich mit neuen Technologien beschäftigen.
+Do końca roku będę zajmował się kilkoma dużymi projektami.;Bis Ende des Jahres werde ich mich mit mehreren großen Projekten beschäftigt haben.
+Tym zagadnieniem zajmuje się obecnie specjalny zespół.;Mit diesem Thema wird derzeit von einem speziellen Team beschäftigt.
+Zajmowałbym się tym częściej, gdyby było to częścią moich obowiązków.;Ich würde mich häufiger damit beschäftigen, wenn es Teil meiner Aufgaben wäre.
+Często polecam znajomym książki, które sam uznałem za wartościowe.;Ich empfehle Freunden oft Bücher, die ich selbst für wertvoll halte.
+Często poleca znajomym książki, które sam uznał za wartościowe.;Er empfiehlt Freunden oft Bücher, die er selbst für wertvoll hält.
+Często polecałem tę książkę nowym pracownikom (Präteritum).;Ich empfahl dieses Buch oft neuen Mitarbeitern.
+Poleciłem tę książkę jeszcze przed rozpoczęciem szkolenia (Plusquamperfekt).;Ich hatte dieses Buch bereits empfohlen, bevor die Schulung begann.
+Poleciłem mu kilka książek dotyczących zarządzania projektami (Perfekt).;Ich habe ihm einige Bücher über Projektmanagement empfohlen.
+W przyszłym tygodniu polecę ci bardzo interesujący podcast.;Nächste Woche werde ich dir einen sehr interessanten Podcast empfehlen.
+Do końca roku polecę wszystkim kolegom najlepsze materiały szkoleniowe.;Bis Ende des Jahres werde ich allen Kollegen die besten Schulungsunterlagen empfohlen haben.
+Nowe rozwiązanie jest polecane przez specjalistów z branży.;Die neue Lösung wird von Fachleuten empfohlen.
+Poleciłbym ten kurs każdemu, kto chce szybko robić postępy.;Ich würde diesen Kurs jedem empfehlen, der schnell Fortschritte machen möchte.
+On twierdzi, że poleca ten kurs wszystkim początkującym.;Er sagt, er empfehle diesen Kurs allen Anfängern.
+Dyrektor powiedział, że poleca ten kurs wszystkim początkującym.;Der Direktor sagte, er empfehle diesen Kurs allen Anfängern.
+Zawsze dotrzymuję obietnic, które składam współpracownikom.;Ich verspreche immer nur Dinge, die ich auch halten kann.
+Zawsze dotrzymuje obietnic, które składa współpracownikom.;Er verspricht nur Dinge, die er auch halten kann.
+Obiecałem klientowi szybką odpowiedź (Präteritum).;Ich versprach dem Kunden eine schnelle Antwort.
+Obiecałem pomoc jeszcze przed podpisaniem umowy (Plusquamperfekt).;Ich hatte meine Hilfe bereits versprochen, bevor der Vertrag unterschrieben wurde.
+Obiecałem dziś przesłać wszystkie dokumenty (Perfekt).;Ich habe heute versprochen, alle Unterlagen zu schicken.
+Jutro obiecam zespołowi dodatkowe wsparcie.;Morgen werde ich dem Team zusätzliche Unterstützung versprechen.
+Do końca tygodnia obiecam rozwiązanie wszystkich otwartych problemów.;Bis Ende der Woche werde ich die Lösung aller offenen Probleme versprochen haben.
+Klientom obiecywane są krótkie terminy realizacji.;Den Kunden werden kurze Lieferzeiten versprochen.
+Nie obiecywałbym czegoś, czego nie mogę spełnić.;Ich würde nichts versprechen, was ich nicht erfüllen kann.
+Twierdzi, że dotrzymuje każdej obietnicy.;Er sagt, er halte jedes Versprechen.
+Kierownik powiedział, że dotrzymuje każdej obietnicy.;Der Leiter sagte, er halte jedes Versprechen.
+Codziennie dowiaduję się czegoś nowego o tej technologii.;Jeden Tag erfahre ich etwas Neues über diese Technologie.
+Codziennie dowiaduje się czegoś nowego o tej technologii.;Jeden Tag erfährt er etwas Neues über diese Technologie.
+Dowiedziałem się o zmianach przypadkiem (Präteritum).;Ich erfuhr zufällig von den Änderungen.
+Dowiedziałem się o problemie jeszcze przed rozpoczęciem spotkania (Plusquamperfekt).;Ich hatte bereits von dem Problem erfahren, bevor die Besprechung begann.
+Dowiedziałem się dziś wielu interesujących rzeczy (Perfekt).;Ich habe heute viele interessante Dinge erfahren.
+Wkrótce dowiem się, czy projekt został zaakceptowany.;Bald werde ich erfahren, ob das Projekt genehmigt wurde.
+Do końca miesiąca dowiem się wszystkich szczegółów.;Bis Ende des Monats werde ich alle Einzelheiten erfahren haben.
+Nowe informacje są na bieżąco przekazywane pracownikom.;Neue Informationen werden den Mitarbeitern laufend mitgeteilt.
+Chętnie dowiedziałbym się więcej na ten temat.;Ich würde gern mehr darüber erfahren.
+Mówi, że dowiaduje się o wszystkim bardzo szybko.;Er sagt, er erfahre alles sehr schnell.
+Dyrektor powiedział, że dowiaduje się o wszystkich problemach natychmiast.;Der Direktor sagte, er erfahre von allen Problemen sofort.
+Zawsze zdaję egzamin dopiero po dokładnym przygotowaniu.;Ich bestehe Prüfungen erst nach gründlicher Vorbereitung.
+Zawsze zdaje egzamin dopiero po dokładnym przygotowaniu.;Er besteht Prüfungen erst nach gründlicher Vorbereitung.
+Zdałem egzamin za pierwszym razem (Präteritum).;Ich bestand die Prüfung beim ersten Versuch.
+Zdałem już wszystkie egzaminy przed rozpoczęciem praktyk (Plusquamperfekt).;Ich hatte bereits alle Prüfungen bestanden, bevor das Praktikum begann.
+Zdałem ostatni egzamin w zeszłym miesiącu (Perfekt).;Ich habe die letzte Prüfung im vergangenen Monat bestanden.
+Za kilka tygodni zdam certyfikat językowy.;In einigen Wochen werde ich die Sprachprüfung bestehen.
+Do końca roku zdam wszystkie wymagane egzaminy.;Bis Ende des Jahres werde ich alle erforderlichen Prüfungen bestanden haben.
+Egzaminy są zdawane przez setki kandydatów.;Die Prüfungen werden von Hunderten Bewerbern bestanden.
+Zdałbym egzamin bez problemu, gdybym miał więcej czasu na naukę.;Ich würde die Prüfung problemlos bestehen, wenn ich mehr Zeit zum Lernen hätte.
+Twierdzi, że bez problemu zdaje wszystkie egzaminy.;Er sagt, er bestehe alle Prüfungen problemlos.
+Nauczyciel powiedział, że zdaje wszystkie egzaminy bez trudności.;Der Lehrer sagte, er bestehe alle Prüfungen ohne Schwierigkeiten.
+Ten projekt udaje mi się zakończyć mimo licznych przeszkód.;Dieses Projekt gelingt mir trotz vieler Hindernisse.
+Ten projekt udaje mu się zakończyć mimo licznych przeszkód.;Dieses Projekt gelingt ihm trotz vieler Hindernisse.
+Udało mi się rozwiązać problem dopiero wieczorem (Präteritum).;Mir gelang es erst am Abend, das Problem zu lösen.
+Udało mi się zakończyć zadanie jeszcze przed terminem (Plusquamperfekt).;Mir war es bereits gelungen, die Aufgabe vor der Frist abzuschließen.
+Udało mi się dziś naprawić błąd w programie (Perfekt).;Es ist mir heute gelungen, einen Fehler im Programm zu beheben.
+W przyszłości uda mi się osiągnąć zamierzone cele.;In Zukunft wird es mir gelingen, meine Ziele zu erreichen.
+Do końca roku uda mi się wdrożyć wszystkie usprawnienia.;Bis Ende des Jahres wird es mir gelungen sein, alle Verbesserungen umzusetzen.
+Wdrożenie projektu zostało pomyślnie zrealizowane.;Das Projekt wurde erfolgreich umgesetzt.
+Udałoby mi się szybciej zakończyć projekt, gdybym miał większy zespół.;Es würde mir gelingen, das Projekt schneller abzuschließen, wenn ich ein größeres Team hätte.
+Twierdzi, że zawsze udaje mu się znaleźć rozwiązanie.;Er sagt, ihm gelinge es immer, eine Lösung zu finden.
+Kierownik powiedział, że zawsze udaje mu się znaleźć rozwiązanie.;Der Leiter sagte, ihm gelinge es immer, eine Lösung zu finden.
+Gdy jakość usług jest niska, składam reklamację.;Wenn die Servicequalität niedrig ist, beschwere ich mich.
+Gdy jakość usług jest niska, składa reklamację.;Wenn die Servicequalität niedrig ist, beschwert er sich.
+Poskarżyłem się na opóźnioną dostawę (Präteritum).;Ich beschwerte mich über die verspätete Lieferung.
+Poskarżyłem się już wcześniej na ten sam problem (Plusquamperfekt).;Ich hatte mich bereits früher über dasselbe Problem beschwert.
+Poskarżyłem się dzisiaj obsłudze klienta (Perfekt).;Ich habe mich heute beim Kundendienst beschwert.
+Jeśli sytuacja się nie poprawi, poskarżę się ponownie.;Wenn sich die Situation nicht verbessert, werde ich mich erneut beschweren.
+Do końca miesiąca zgłoszę wszystkie nieprawidłowości.;Bis Ende des Monats werde ich mich über alle Unregelmäßigkeiten beschwert haben.
+Na warunki pracy skarży się obecnie wielu pracowników.;Über die Arbeitsbedingungen wird derzeit von vielen Mitarbeitern geklagt.
+Poskarżyłbym się wcześniej, gdybym znał swoje prawa.;Ich würde mich früher beschweren, wenn ich meine Rechte kennen würde.
+Twierdzi, że regularnie składa reklamacje.;Er sagt, er beschwere sich regelmäßig.
+Klient powiedział, że regularnie składa reklamacje.;Der Kunde sagte, er beschwere sich regelmäßig.
+Twierdzi, że codziennie wstaje o piątej rano.;Er behauptet, er stehe jeden Tag um fünf Uhr auf.
+Mówi, że mieszka w Niemczech od siedmiu lat.;Er sagt, er wohne seit sieben Jahren in Deutschland.
+Twierdzi, że zna odpowiedź na to pytanie.;Er behauptet, er kenne die Antwort auf diese Frage.
+Mówi, że nie ma dziś czasu na spotkanie.;Er sagt, er habe heute keine Zeit für ein Treffen.
+Twierdzi, że jest bardzo zadowolony z wyników.;Er behauptet, er sei mit den Ergebnissen sehr zufrieden.
+Mówi, że jutro przyjdzie wcześniej do pracy.;Er sagt, er komme morgen früher zur Arbeit.
+Twierdzi, że nigdy nie popełnił takiego błędu.;Er behauptet, er habe einen solchen Fehler nie gemacht.
+Mówi, że regularnie ćwiczy na siłowni.;Er sagt, er trainiere regelmäßig im Fitnessstudio.
+Twierdzi, że już przeczytał wszystkie dokumenty.;Er behauptet, er habe bereits alle Unterlagen gelesen.
+Mówi, że sam naprawił komputer.;Er sagt, er habe den Computer selbst repariert.
+Twierdzi, że codziennie dojeżdża do pracy rowerem.;Er behauptet, er fahre jeden Tag mit dem Fahrrad zur Arbeit.
+Mówi, że niedawno przeprowadził się do nowego mieszkania.;Er sagt, er sei vor Kurzem in eine neue Wohnung gezogen.
+Twierdzi, że zna tę osobę od wielu lat.;Er behauptet, er kenne diese Person seit vielen Jahren.
+Mówi, że nigdy wcześniej tego nie widział.;Er sagt, er habe das vorher nie gesehen.
+Twierdzi, że potrafi samodzielnie rozwiązać problem.;Er behauptet, er könne das Problem selbst lösen.
+Mówi, że musi jeszcze przemyśleć swoją decyzję.;Er sagt, er müsse seine Entscheidung noch überdenken.
+Twierdzi, że w przyszłym roku zmieni pracę.;Er behauptet, er werde im nächsten Jahr den Arbeitsplatz wechseln.
+Mówi, że w dzieciństwie mieszkał na wsi.;Er sagt, er habe in seiner Kindheit auf dem Land gelebt.
+Twierdzi, że widział ten film już trzy razy.;Er behauptet, er habe diesen Film bereits dreimal gesehen.
+Mówi, że zapomniał hasła do swojego konta.;Er sagt, er habe das Passwort für sein Konto vergessen.
+Twierdzi, że zawsze dokładnie planuje swoje wydatki.;Er behauptet, er plane seine Ausgaben immer sorgfältig.
+Mówi, że dostał bardzo atrakcyjną ofertę pracy.;Er sagt, er habe ein sehr attraktives Stellenangebot erhalten.
+Twierdzi, że jego zespół zakończy projekt na czas.;Er behauptet, sein Team werde das Projekt rechtzeitig abschließen.
+Mówi, że uczestniczył w międzynarodowej konferencji.;Er sagt, er habe an einer internationalen Konferenz teilgenommen.
+Twierdzi, że nauczył się niemieckiego samodzielnie.;Er behauptet, er habe Deutsch selbst gelernt.
+Mówi, że szuka większego mieszkania.;Er sagt, er suche eine größere Wohnung.
+Twierdzi, że nie rozumie powodów tej decyzji.;Er behauptet, er verstehe die Gründe für diese Entscheidung nicht.
+Mówi, że jego firma planuje dalszy rozwój.;Er sagt, sein Unternehmen plane weiteres Wachstum.
+Twierdzi, że wszyscy zaakceptowali jego propozycję.;Er behauptet, alle hätten seinen Vorschlag angenommen.
+Mówi, że właśnie wysłał ważny raport do klienta.;Er sagt, er habe gerade einen wichtigen Bericht an den Kunden geschickt.
+Twierdzi, że od dawna interesuje się historią.;Er behauptet, er interessiere sich seit Langem für Geschichte.
+Mówi, że znalazł rozwiązanie problemu.;Er sagt, er habe eine Lösung für das Problem gefunden.
+Twierdzi, że nigdy nie pracował za granicą.;Er behauptet, er habe nie im Ausland gearbeitet.
+Mówi, że nie spodziewał się takich wyników.;Er sagt, er habe mit solchen Ergebnissen nicht gerechnet.
+Twierdzi, że jego pomysł przyniesie firmie korzyści.;Er behauptet, seine Idee bringe dem Unternehmen Vorteile.
+Mówi, że codziennie uczy się nowych słów.;Er sagt, er lerne jeden Tag neue Wörter.
+Twierdzi, że otrzymał wszystkie potrzebne informacje.;Er behauptet, er habe alle notwendigen Informationen erhalten.
+Mówi, że jego koledzy wspierają ten projekt.;Er sagt, seine Kollegen unterstützten dieses Projekt.
+Twierdzi, że nie pamięta szczegółów rozmowy.;Er behauptet, er erinnere sich nicht an die Einzelheiten des Gesprächs.
+Mówi, że zgubił klucze podczas podróży.;Er sagt, er habe während der Reise seine Schlüssel verloren.
+Twierdzi, że jego córka świetnie mówi po niemiecku.;Er behauptet, seine Tochter spreche ausgezeichnet Deutsch.
+Mówi, że jeszcze nie podjął ostatecznej decyzji.;Er sagt, er habe noch keine endgültige Entscheidung getroffen.
+Twierdzi, że projekt kosztował mniej niż zakładano.;Er behauptet, das Projekt habe weniger gekostet als erwartet.
+Mówi, że zamierza rozpocząć nowy kurs.;Er sagt, er wolle einen neuen Kurs beginnen.
+Twierdzi, że wcześniej mieszkał w Berlinie.;Er behauptet, er habe früher in Berlin gewohnt.
+Mówi, że jego syn zdał wszystkie egzaminy.;Er sagt, sein Sohn habe alle Prüfungen bestanden.
+Twierdzi, że nigdy nie słyszał o tej firmie.;Er behauptet, er habe von dieser Firma nie gehört.
+Mówi, że udało mu się naprawić błąd.;Er sagt, es sei ihm gelungen, den Fehler zu beheben.
+Twierdzi, że jego przełożony popiera ten pomysł.;Er behauptet, sein Vorgesetzter unterstütze diese Idee.
+Mówi, że będzie potrzebował więcej czasu na realizację zadania.;Er sagt, er werde mehr Zeit für die Umsetzung der Aufgabe benötigen.
+biegający pies;der laufende Hund
+śpiące dziecko;das schlafende Kind
+rosnące ceny;die steigenden Preise
+Widzę biegnącego psa w parku.;Ich sehe einen laufenden Hund im Park.
+Mijamy śpiące dziecko w wózku.;Wir gehen an einem schlafenden Kind im Kinderwagen vorbei.
+Rosnące ceny energii są problemem dla wielu rodzin.;Die steigenden Energiepreise sind für viele Familien ein Problem.
+Rozmawiający ludzie przeszkadzają mi w pracy.;Die sprechenden Menschen stören mich bei der Arbeit.
+Pracujący studenci często mają mało wolnego czasu.;Die arbeitenden Studenten haben oft wenig Freizeit.
+Płaczące dziecko obudziło wszystkich pasażerów.;Das weinende Kind weckte alle Passagiere.
+Nadjeżdżający pociąg był opóźniony.;Der ankommende Zug hatte Verspätung.
+Znikające gatunki zwierząt wymagają ochrony.;Die verschwindenden Tierarten brauchen Schutz.
+Błyszczące światła miasta były widoczne z daleka.;Die leuchtenden Lichter der Stadt waren von Weitem sichtbar.
+Nadchodząca burza wygląda groźnie.;Der kommende Sturm sieht gefährlich aus.
+Naprawiony komputer działa bez problemów.;Der reparierte Computer funktioniert ohne Probleme.
+Zgubiony klucz został odnaleziony.;Der verlorene Schlüssel wurde gefunden.
+Napisany raport został wysłany klientowi.;Der geschriebene Bericht wurde an den Kunden geschickt.
+Kupiony samochód okazał się bardzo oszczędny.;Das gekaufte Auto erwies sich als sehr sparsam.
+Zamknięte okno ogranicza hałas z ulicy.;Das geschlossene Fenster reduziert den Straßenlärm.
+Przygotowana prezentacja zrobiła dobre wrażenie.;Die vorbereitete Präsentation machte einen guten Eindruck.
+Przeczytana książka okazała się bardzo interesująca.;Das gelesene Buch war sehr interessant.
+Zapomniane hasło trzeba zresetować.;Das vergessene Passwort muss zurückgesetzt werden.
+Wybudowany most skrócił czas podróży.;Die gebaute Brücke verkürzte die Fahrzeit.
+Wysłane dokumenty dotarły na czas.;Die verschickten Dokumente kamen rechtzeitig an.
+Uśmiechając się, przywitał wszystkich uczestników.;Lächelnd begrüßte er alle Teilnehmer.
+Myśląc o problemie, spacerowałem po mieście.;Über das Problem nachdenkend ging ich durch die Stadt.
+Leżąc na kanapie, oglądał film.;Auf dem Sofa liegend sah er einen Film.
+Śpiesząc się do pracy, zapomniałem telefonu.;Sich zur Arbeit beeilend vergaß ich mein Telefon.
+Czytając gazetę, pił kawę.;Die Zeitung lesend trank er Kaffee.
+Patrząc przez okno, zauważyłem nadchodzącą burzę.;Aus dem Fenster blickend bemerkte ich den kommenden Sturm.
+Słuchając muzyki, przygotowywałem raport.;Musik hörend bereitete ich den Bericht vor.
+Czekając na pociąg, przeczytałem kilka wiadomości.;Auf den Zug wartend las ich einige Nachrichten.
+Pracując zdalnie, oszczędzam dużo czasu.;Remote arbeitend spare ich viel Zeit.
+Podróżując po Niemczech, poznałem wiele interesujących miejsc.;Durch Deutschland reisend lernte ich viele interessante Orte kennen.
+Przecież mówiłem ci o tym wcześniej.;Ich habe dir doch früher davon erzählt.
+Przecież masz już wszystkie potrzebne informacje.;Du hast doch schon alle notwendigen Informationen.
+Przecież to nie jest takie trudne.;Das ist doch nicht so schwierig.
+Przecież znasz odpowiedź.;Du kennst die Antwort doch.
+Przecież mogliśmy to przewidzieć.;Das hätten wir doch vorhersehen können.
+To jest przecież całkowicie normalne.;Das ist ja völlig normal.
+Przecież wszyscy o tym wiedzą.;Das weiß ja jeder.
+To było przecież do przewidzenia.;Das war ja abzusehen.
+Przecież jesteś specjalistą w tej dziedzinie.;Du bist ja ein Spezialist auf diesem Gebiet.
+To przecież świetna wiadomość.;Das ist ja eine großartige Nachricht.
+Pewnie wróci dopiero wieczorem.;Er kommt wohl erst am Abend zurück.
+Pewnie zapomniał o spotkaniu.;Er hat das Treffen wohl vergessen.
+To będzie pewnie kosztować więcej.;Das wird wohl mehr kosten.
+Pewnie pada teraz w Berlinie.;In Berlin regnet es wohl gerade.
+Pewnie nie zdążymy na czas.;Wir werden wohl nicht rechtzeitig ankommen.
+Tak już po prostu jest.;So ist das halt.
+Musimy to po prostu zaakceptować.;Wir müssen das eben akzeptieren.
+Sprawdź to no jeszcze raz.;Prüf das mal noch einmal.
+Właściwie skąd go znasz?;Woher kennst du ihn eigentlich?
+To po prostu część pracy.;Das gehört halt zum Job.
+Spróbuj to zrobić jeszcze raz.;Versuch das mal noch einmal.
+Takie są właśnie zasady.;So sind die Regeln eben.
+Właściwie chciałem cię o coś zapytać.;Eigentlich wollte ich dich etwas fragen.
+Musisz to po prostu zrobić.;Du musst das halt machen.
+Powiedz mi to jeszcze raz.;Sag mir das mal noch einmal.
+[ Futur II ] - Do jutra skończę pisać raport; Bis morgen werde ich den Bericht geschrieben haben.
+[ Futur II ] - Do przyszłego tygodnia zakończymy cały projekt; Bis nächste Woche werden wir das gesamte Projekt abgeschlossen haben.
+[ Futur II ] - Do czasu twojego przyjazdu przygotuję wszystkie dokumenty; Bis zu deiner Ankunft werde ich alle Dokumente vorbereitet haben.
+[ Futur II ] - Do końca miesiąca firma zwiększy sprzedaż; Bis Ende des Monats wird die Firma ihren Umsatz gesteigert haben.
+[ Futur II ] - Do wieczora przeczytam całą książkę; Bis zum Abend werde ich das ganze Buch gelesen haben.
+[ Futur II ] - Do przyszłego roku będziemy nauczyli się biegle niemieckiego; Bis nächstes Jahr werden wir Deutsch fließend gelernt haben.
+[ Futur II ] - Do czasu rozpoczęcia spotkania wszyscy zajmą swoje miejsca; Bis zum Beginn der Besprechung werden alle ihre Plätze eingenommen haben.
+[ Futur II ] - Do końca dnia przeanalizuję wszystkie dane; Bis zum Ende des Tages werde ich alle Daten analysiert haben.
+[ Futur II ] - Za dwa lata ukończy studia; In zwei Jahren wird er sein Studium abgeschlossen haben.
+[ Futur II ] - Do naszego przyjazdu oni już wyjadą; Bis zu unserer Ankunft werden sie bereits abgereist sein.
+[ Futur II ] - Do momentu kontroli usuniemy wszystkie błędy; Bis zur Kontrolle werden wir alle Fehler beseitigt haben.
+[ Futur II ] - Do końca tygodnia podejmą ostateczną decyzję; Bis Ende der Woche werden sie die endgültige Entscheidung getroffen haben.
+[ Futur II ] - Do przyszłego miesiąca znajdę nową pracę; Bis nächsten Monat werde ich einen neuen Job gefunden haben.
+[ Futur II ] - Do czasu egzaminu powtórzysz cały materiał; Bis zur Prüfung wirst du den gesamten Stoff wiederholt haben.
+[ Futur II ] - Do końca roku przedsiębiorstwo otworzy nowy oddział; Bis Ende des Jahres wird das Unternehmen eine neue Niederlassung eröffnet haben.
+[ Futur II ] - Do rana śnieg całkowicie stopnieje; Bis morgen früh wird der Schnee vollständig geschmolzen sein.
+[ Futur II ] - Do przyszłego tygodnia naprawimy wszystkie urządzenia; Bis nächste Woche werden wir alle Geräte repariert haben.
+[ Futur II ] - Do czasu rozpoczęcia kursu przeczytam wymagane materiały; Bis zum Kursbeginn werde ich die erforderlichen Materialien gelesen haben.
+[ Futur II ] - Do końca spotkania omówimy wszystkie punkty programu; Bis zum Ende des Treffens werden wir alle Tagesordnungspunkte besprochen haben.
+[ Futur II ] - Do przyszłego roku wybudują nową drogę; Bis nächstes Jahr werden sie eine neue Straße gebaut haben.
+[ Futur II ] - Do czasu zakończenia projektu zdobędziemy cenne doświadczenie; Bis zum Abschluss des Projekts werden wir wertvolle Erfahrungen gesammelt haben.
+[ Futur II ] - Do mojego powrotu dzieci pójdą już spać; Bis zu meiner Rückkehr werden die Kinder eingeschlafen sein.
+[ Futur II ] - Do końca miesiąca przetłumaczę wszystkie dokumenty; Bis Ende des Monats werde ich alle Dokumente übersetzt haben.
+[ Futur II ] - Do przyszłego tygodnia uda nam się rozwiązać ten problem; Bis nächste Woche werden wir dieses Problem gelöst haben.
+[ Futur II ] - Do godziny ósmej przygotują salę konferencyjną; Bis acht Uhr werden sie den Konferenzraum vorbereitet haben.
+[ Futur II ] - Do czasu rozpoczęcia zawodów sportowcy zakończą trening; Bis zum Beginn des Wettkampfs werden die Sportler ihr Training beendet haben.
+[ Futur II ] - Do końca dnia klient podpisze umowę; Bis zum Ende des Tages wird der Kunde den Vertrag unterschrieben haben.
+[ Futur II ] - Do jutra nauczę się wszystkich nowych słówek; Bis morgen werde ich alle neuen Vokabeln gelernt haben.
+[ Futur II ] - Do przyszłego roku przeprowadzimy się do nowego domu; Bis nächstes Jahr werden wir in ein neues Haus umgezogen sein.
+[ Futur II ] - Do czasu publikacji raportu eksperci zakończą badania; Bis zur Veröffentlichung des Berichts werden die Experten ihre Untersuchungen abgeschlossen haben.
+[ Futur I ]- W przyszłym tygodniu będziemy omawiać wyniki całego projektu; Nächste Woche werden wir die Ergebnisse des gesamten Projekts besprechen.
+[ Futur I ]- Po pracy odwiedzę rodziców, ponieważ dawno ich nie widziałem; Nach der Arbeit werde ich meine Eltern besuchen, weil ich sie lange nicht gesehen habe.
+[ Futur I ]- Za kilka miesięcy przeprowadzimy się do większego mieszkania; In einigen Monaten werden wir in eine größere Wohnung umziehen.
+[ Futur I ]- W przyszłym roku będę przygotowywał się do ważnego egzaminu językowego; Im nächsten Jahr werde ich mich auf eine wichtige Sprachprüfung vorbereiten.
+[ Futur I ]- Jeśli znajdę czas, przeczytam tę interesującą książkę; Wenn ich Zeit finde, werde ich dieses interessante Buch lesen.
+[ Futur I ]- Wkrótce firma otworzy nowy oddział w Berlinie; Bald wird die Firma eine neue Niederlassung in Berlin eröffnen.
+[ Futur I ]- Wieczorem obejrzymy film, który wszyscy nam polecali; Am Abend werden wir den Film anschauen, den uns alle empfohlen haben.
+[ Futur I ]- W przyszłości ludzie będą częściej pracować z domu; In Zukunft werden die Menschen häufiger von zu Hause aus arbeiten.
+[ Futur I ]- Mój brat będzie studiował informatykę na uniwersytecie; Mein Bruder wird Informatik an der Universität studieren.
+[ Futur I ]- Za godzinę będę rozmawiał z klientem o szczegółach umowy; In einer Stunde werde ich mit dem Kunden über die Vertragsdetails sprechen.
+[ Futur I ]- Podczas wakacji odwiedzimy kilka europejskich krajów; Während des Urlaubs werden wir mehrere europäische Länder besuchen.
+[ Futur I ]- Jutro rano naprawię komputer, który przestał działać; Morgen früh werde ich den Computer reparieren, der nicht mehr funktioniert.
+[ Futur I ]- W następnym miesiącu kupimy nowy samochód; Nächsten Monat werden wir ein neues Auto kaufen.
+[ Futur I ]- Za kilka dni otrzymasz odpowiedź na swoje pytanie; In einigen Tagen wirst du eine Antwort auf deine Frage erhalten.
+[ Futur I ]- Po ukończeniu kursu będę mówił znacznie lepiej po niemiecku; Nach Abschluss des Kurses werde ich deutlich besser Deutsch sprechen.
+[ Futur I ]- W przyszłym tygodniu spotkamy się z naszymi przyjaciółmi; Nächste Woche werden wir uns mit unseren Freunden treffen.
+[ Futur I ]- Gdy wrócisz, opowiem ci o wszystkim; Wenn du zurückkommst, werde ich dir alles erzählen.
+[ Futur I ]- Za kilka lat technologia zmieni wiele zawodów; In einigen Jahren wird die Technologie viele Berufe verändern.
+[ Futur I ]- Będziemy musieli znaleźć lepsze rozwiązanie tego problemu; Wir werden eine bessere Lösung für dieses Problem finden müssen.
+[ Futur I ]- Jutro napiszę raport dotyczący sprzedaży; Morgen werde ich einen Bericht über den Verkauf schreiben.
+[ Futur I ]- Firma będzie inwestować więcej pieniędzy w rozwój; Die Firma wird mehr Geld in die Entwicklung investieren.
+[ Futur I ]- Wkrótce poznasz nowych współpracowników; Bald wirst du neue Kollegen kennenlernen.
+[ Futur I ]- Podczas spotkania będziemy omawiać strategię firmy; Während des Treffens werden wir die Unternehmensstrategie besprechen.
+[ Futur I ]- W zimie będziemy częściej korzystać z transportu publicznego; Im Winter werden wir häufiger öffentliche Verkehrsmittel benutzen.
+[ Futur I ]- Jeśli będzie padać, zostaniemy w domu; Wenn es regnen wird, werden wir zu Hause bleiben.
+[ Futur I ]- W przyszłym roku skończę remont domu; Im nächsten Jahr werde ich die Renovierung des Hauses abschließen.
+[ Futur I ]- Po południu zadzwonię do ciebie w ważnej sprawie; Am Nachmittag werde ich dich wegen einer wichtigen Angelegenheit anrufen.
+[ Futur I ]- Za kilka tygodni rozpoczniemy nowy projekt; In einigen Wochen werden wir ein neues Projekt beginnen.
+[ Futur I ]- Wkrótce zrozumiesz znaczenie tego doświadczenia; Bald wirst du die Bedeutung dieser Erfahrung verstehen.
+[ Futur I ]- Jutro będę ćwiczył na siłowni przed pracą; Morgen werde ich vor der Arbeit im Fitnessstudio trainieren.
+[ Futur I ]- W następnym semestrze będziemy mieli więcej zajęć praktycznych; Im nächsten Semester werden wir mehr praktische Kurse haben.
+[ Futur I ]- Pod koniec dnia przeanalizuję wszystkie dane; Am Ende des Tages werde ich alle Daten analysieren.
+[ Futur I ]- Za rok będziemy mieszkać bliżej centrum miasta; In einem Jahr werden wir näher am Stadtzentrum wohnen.
+[ Futur I ]- Jeśli wszystko pójdzie dobrze, osiągniemy nasz cel; Wenn alles gut läuft, werden wir unser Ziel erreichen.
+[ Futur I ]- Przed wyjazdem spakuję wszystkie potrzebne dokumenty; Vor der Abreise werde ich alle notwendigen Dokumente einpacken.
+[ Futur I ]- Wkrótce klienci otrzymają nowe oferty; Bald werden die Kunden neue Angebote erhalten.
+[ Futur I ]- Jutro omówimy najważniejsze zagadnienia egzaminacyjne; Morgen werden wir die wichtigsten Prüfungsthemen besprechen.
+[ Futur I ]- W przyszłości sztuczna inteligencja będzie odgrywać większą rolę; In Zukunft wird die künstliche Intelligenz eine größere Rolle spielen.
+[ Futur I ]- Po pracy będziemy przygotowywać się do prezentacji; Nach der Arbeit werden wir uns auf die Präsentation vorbereiten.
+[ Futur I ]- Za kilka miesięcy znajdę nową pracę; In einigen Monaten werde ich einen neuen Job finden.
+[ Futur I ]- W przyszłym tygodniu będziesz prowadził spotkanie zespołu; Nächste Woche wirst du die Teamsitzung leiten.
+[ Futur I ]- Przed egzaminem powtórzę wszystkie notatki; Vor der Prüfung werde ich alle Notizen wiederholen.
+[ Futur I ]- Wkrótce zwiększymy poziom bezpieczeństwa systemu; Bald werden wir das Sicherheitsniveau des Systems erhöhen.
+[ Futur I ]- Za kilka dni dostarczą zamówiony sprzęt; In einigen Tagen werden sie die bestellte Ausrüstung liefern.
+[ Futur I ]- W przyszłym roku będziemy rozwijać działalność za granicą; Im nächsten Jahr werden wir unser Geschäft im Ausland ausbauen.
+[ Futur I ]- Po spotkaniu odpowiem na wszystkie pytania; Nach dem Treffen werde ich alle Fragen beantworten.
+[ Futur I ]- Wkrótce uda nam się zakończyć ten trudny etap; Bald werden wir diese schwierige Phase abschließen können.
+[ Futur I ]- Jutro będziemy pracować nad nowym rozwiązaniem technicznym; Morgen werden wir an einer neuen technischen Lösung arbeiten.
+[ Futur I ]- Za kilka lat wiele procesów będzie całkowicie zautomatyzowanych; In einigen Jahren werden viele Prozesse vollständig automatisiert sein.
+[ Futur I ]- W najbliższych dniach będę szukał mieszkania w nowym mieście; In den nächsten Tagen werde ich eine Wohnung in einer neuen Stadt suchen.
+[ Futur I ]- Po zakończeniu projektu odpoczniemy przez kilka dni; Nach Abschluss des Projekts werden wir einige Tage ausruhen.
+[ Futur I ]- W czasie konferencji będę notował najważniejsze informacje; Während der Konferenz werde ich die wichtigsten Informationen notieren.
+[ Futur I ]- Za kilka miesięcy firma zatrudni nowych specjalistów; In einigen Monaten wird die Firma neue Fachkräfte einstellen.
+[ Futur I ]- Jutro rano sprawdzę wszystkie dokumenty jeszcze raz; Morgen früh werde ich alle Dokumente noch einmal überprüfen.
+[ Futur I ]- W następnym roku nauczę się kolejnego języka obcego; Im nächsten Jahr werde ich eine weitere Fremdsprache lernen.
+[ Futur I ]- Po przyjeździe od razu skontaktujemy się z klientem; Nach der Ankunft werden wir sofort den Kunden kontaktieren.
+[ Futur I ]- Wkrótce mieszkańcy odczują skutki nowych przepisów; Bald werden die Einwohner die Auswirkungen der neuen Vorschriften spüren.
+[ Futur I ]- Jeśli będziesz systematycznie ćwiczył, osiągniesz świetne wyniki; Wenn du regelmäßig üben wirst, wirst du sehr gute Ergebnisse erzielen.
+[ Futur I ]- W przyszłości będziemy korzystać z bardziej ekologicznych źródeł energii; In Zukunft werden wir umweltfreundlichere Energiequellen nutzen.
+[ Futur I ]- Za kilka tygodni ukończę ten zaawansowany kurs; In einigen Wochen werde ich diesen fortgeschrittenen Kurs abschließen.
+[ Futur I ]- W przyszłym miesiącu będziemy negocjować warunki współpracy; Nächsten Monat werden wir die Bedingungen der Zusammenarbeit verhandeln.
+[ Futur I ]- Podczas podróży odwiedzę kilka historycznych miejsc; Während der Reise werde ich mehrere historische Orte besuchen.
+[ Futur I ]- Wkrótce uda się poprawić wydajność całego systemu; Bald wird es gelingen, die Leistung des gesamten Systems zu verbessern.
+[ Futur I ]- Jutro przygotuję szczegółowy plan działania; Morgen werde ich einen detaillierten Aktionsplan vorbereiten.
+[ Futur I ]- W przyszłym roku firma osiągnie lepsze wyniki finansowe; Im nächsten Jahr wird die Firma bessere Finanzergebnisse erzielen.
+[ Futur I ]- Po szkoleniu będziesz znał wszystkie podstawowe procedury; Nach der Schulung wirst du alle grundlegenden Verfahren kennen.
+[ Futur I ]- Za kilka dni podejmiemy ostateczną decyzję; In einigen Tagen werden wir die endgültige Entscheidung treffen.
+[ Futur I ]- Wkrótce zrealizujemy wszystkie założone cele; Bald werden wir alle gesetzten Ziele erreichen.
+[ Futur I ]- Pod koniec tygodnia przedstawię wyniki analizy; Am Ende der Woche werde ich die Ergebnisse der Analyse vorstellen.
+[ Futur I ]- W kolejnych latach liczba użytkowników będzie stale rosła; In den kommenden Jahren wird die Zahl der Nutzer stetig wachsen.
+[ Futur I ]- Po otrzymaniu informacji natychmiast zareagujemy; Nach Erhalt der Informationen werden wir sofort reagieren.
+[ Futur I ]- W przyszłości coraz więcej osób będzie pracowało zdalnie; In Zukunft werden immer mehr Menschen remote arbeiten.
+[ Futur I ]- Jutro wyślę wszystkie wymagane dokumenty; Morgen werde ich alle erforderlichen Dokumente versenden.
+[ Futur I ]- Za kilka miesięcy będziemy gotowi do wdrożenia projektu; In einigen Monaten werden wir bereit sein, das Projekt umzusetzen.
+[ Futur I ]- Wkrótce odnajdziesz właściwe rozwiązanie; Bald wirst du die richtige Lösung finden.
+[ Futur I ]- W czasie rozmowy omówię wszystkie istotne szczegóły; Während des Gesprächs werde ich alle wichtigen Einzelheiten erläutern.
+[ Futur I ]- W następnym roku zwiększymy produkcję o dwadzieścia procent; Im nächsten Jahr werden wir die Produktion um zwanzig Prozent erhöhen.
+[ Futur I ]- Za kilka dni przeprowadzę dokładną kontrolę jakości; In einigen Tagen werde ich eine gründliche Qualitätskontrolle durchführen.
+[ Futur I ]- W przyszłości będziemy podróżować szybciej niż obecnie; In Zukunft werden wir schneller reisen als heute.
+[ Futur I ]- Po zakończeniu kursu zdobędę nowy certyfikat; Nach Abschluss des Kurses werde ich ein neues Zertifikat erhalten.
+[ Futur I ]- Wkrótce przedsiębiorstwo rozszerzy działalność na nowe rynki; Bald wird das Unternehmen seine Tätigkeit auf neue Märkte ausdehnen.
+[ Futur I ]- Jutro będę analizował wyniki badań; Morgen werde ich die Untersuchungsergebnisse analysieren.
+[ Futur I ]- Za kilka lat będziemy dysponować bardziej zaawansowaną technologią; In einigen Jahren werden wir über fortschrittlichere Technologien verfügen.
+[ Futur I ]- Po spotkaniu przygotujemy wspólne stanowisko; Nach dem Treffen werden wir einen gemeinsamen Standpunkt erarbeiten.
+[ Futur I ]- W najbliższym czasie poprawię swoje umiejętności językowe; In naher Zukunft werde ich meine Sprachkenntnisse verbessern.
+[ Futur I ]- W przyszłym miesiącu rozpoczniemy nowy etap inwestycji; Nächsten Monat werden wir eine neue Phase der Investition beginnen.
+[ Futur I ]- Jutro poświęcę więcej czasu na naukę gramatyki; Morgen werde ich mehr Zeit dem Grammatiklernen widmen.
+[ Futur I ]- Za kilka tygodni będziemy znać rezultaty całego przedsięwzięcia; In einigen Wochen werden wir die Ergebnisse des gesamten Vorhabens kennen.
+[ Futur I ]- Wkrótce nauczysz się korzystać z tego programu bez problemów; Bald wirst du lernen, dieses Programm problemlos zu benutzen.
+[Partizip I] - biegnący mężczyzna minął mnie na ulicy; Der laufende Mann ging an mir auf der Straße vorbei.
+[Partizip I] - śpiewająca dziewczyna zebrała duży tłum; Das singende Mädchen versammelte eine große Menschenmenge.
+[Partizip I] - czytający student nie słyszał pytania; Der lesende Student hörte die Frage nicht.
+[Partizip I] - śpiące dziecko wyglądało bardzo spokojnie; Das schlafende Kind sah sehr friedlich aus.
+[Partizip I] - jadący pociąg zniknął za zakrętem; Der fahrende Zug verschwand hinter der Kurve.
+[Partizip I] - rozmawiający koledzy przeszkadzali nauczycielowi; Die sprechenden Kollegen störten den Lehrer.
+[Partizip I] - piszący autor pracował nad nową książką; Der schreibende Autor arbeitete an einem neuen Buch.
+[Partizip I] - stojący przy oknie mężczyzna wyglądał na zamyślonego; Der am Fenster stehende Mann wirkte nachdenklich.
+[Partizip I] - jedzący goście byli bardzo zadowoleni; Die essenden Gäste waren sehr zufrieden.
+[Partizip I] - pijący kawę klient czytał gazetę; Der Kaffee trinkende Kunde las Zeitung.
+[Partizip I] - pracujący mechanik naprawiał silnik; Der arbeitende Mechaniker reparierte den Motor.
+[Partizip I] - szukający kluczy chłopiec był zdenerwowany; Der die Schlüssel suchende Junge war nervös.
+[Partizip I] - jadący rowerzysta nie zauważył znaku; Der fahrende Radfahrer bemerkte das Schild nicht.
+[Partizip I] - śmiejąca się kobieta opowiadała historię; Die lachende Frau erzählte eine Geschichte.
+[Partizip I] - płaczące dziecko szukało matki; Das weinende Kind suchte seine Mutter.
+[Partizip I] - przychodzący gość przyniósł prezent; Der kommende Gast brachte ein Geschenk mit.
+[Partizip I] - odlatujący samolot był prawie niewidoczny; Das abfliegende Flugzeug war kaum noch sichtbar.
+[Partizip I] - przybywający pasażerowie czekali na bagaże; Die ankommenden Passagiere warteten auf ihr Gepäck.
+[Partizip I] - uciekający złodziej został zatrzymany; Der fliehende Dieb wurde festgenommen.
+[Partizip I] - obserwujący policjant niczego nie przeoczył; Der beobachtende Polizist übersah nichts.
+[Partizip I] - słuchający uczniowie robili notatki; Die zuhörenden Schüler machten Notizen.
+[Partizip I] - uczący się kursanci szybko robili postępy; Die lernenden Kursteilnehmer machten schnelle Fortschritte.
+[Partizip I] - oglądający film widzowie byli wzruszeni; Die den Film sehenden Zuschauer waren bewegt.
+[Partizip I] - prowadzący samochód ojciec śpiewał; Der Auto fahrende Vater sang.
+[Partizip I] - wracający podróżnik był zmęczony; Der zurückkehrende Reisende war müde.
+[Partizip I] - pływający chłopiec dobrze się bawił; Der schwimmende Junge hatte viel Spaß.
+[Partizip I] - tańcząca para przyciągała uwagę; Das tanzende Paar zog Aufmerksamkeit auf sich.
+[Partizip I] - gotująca kobieta słuchała radia; Die kochende Frau hörte Radio.
+[Partizip I] - sprzedający samochód mężczyzna był cierpliwy; Der das Auto verkaufende Mann war geduldig.
+[Partizip I] - kupujący klient zadawał wiele pytań; Der kaufende Kunde stellte viele Fragen.
+[Partizip I] - myślący uczeń znalazł rozwiązanie; Der denkende Schüler fand die Lösung.
+[Partizip I] - rosnące drzewo wymagało więcej miejsca; Der wachsende Baum benötigte mehr Platz.
+[Partizip I] - spadające liście pokrywały drogę; Die fallenden Blätter bedeckten den Weg.
+[Partizip I] - biegnące dzieci śmiały się głośno; Die laufenden Kinder lachten laut.
+[Partizip I] - jadący autobus był przepełniony; Der fahrende Bus war überfüllt.
+[Partizip I] - wychodzący pracownicy zamknęli drzwi; Die hinausgehenden Mitarbeiter schlossen die Tür.
+[Partizip I] - wchodzący klient przywitał się uprzejmie; Der eintretende Kunde begrüßte alle höflich.
+[Partizip I] - śledzący mecz kibice byli podekscytowani; Die das Spiel verfolgenden Fans waren aufgeregt.
+[Partizip I] - niosący walizkę turysta wyglądał na zmęczonego; Der einen Koffer tragende Tourist wirkte müde.
+[Partizip I] - czytająca gazetę kobieta czekała na pociąg; Die Zeitung lesende Frau wartete auf den Zug.
+[Partizip I] - śpiewający ptak siedział na gałęzi; Der singende Vogel saß auf einem Ast.
+[Partizip I] - prowadzący wykład profesor odpowiadał na pytania; Der den Vortrag haltende Professor beantwortete Fragen.
+[Partizip I] - jadący do Berlina pasażer wysiadł wcześniej; Der nach Berlin fahrende Passagier stieg früher aus.
+[Partizip I] - rozwiązujący zadanie uczeń był skupiony; Der die Aufgabe lösende Schüler war konzentriert.
+[Partizip I] - otwierający sklep właściciel był punktualny; Der den Laden öffnende Besitzer war pünktlich.
+[Partizip I] - wspominający młodość dziadek uśmiechał się; Der sich an seine Jugend erinnernde Großvater lächelte.
+[Partizip I] - grający na gitarze chłopak miał talent; Der Gitarre spielende Junge hatte Talent.
+[Partizip I] - podróżujący po Europie studenci zbierali doświadczenia; Die durch Europa reisenden Studenten sammelten Erfahrungen.
+[Partizip I] - prowadzący rozmowę klient wyglądał na zadowolonego; Der das Gespräch führende Kunde wirkte zufrieden.
+[Partizip I] - przynoszący wiadomość posłaniec był zdenerwowany; Der die Nachricht bringende Bote war nervös.
+[Partizip II] - napisany list leżał na biurku; Der geschriebene Brief lag auf dem Schreibtisch.
+[Partizip II] - przeczytana książka była interesująca; Das gelesene Buch war interessant.
+[Partizip II] - zjedzone ciasto bardzo wszystkim smakowało; Der gegessene Kuchen schmeckte allen sehr gut.
+[Partizip II] - wypity sok był bardzo świeży; Der getrunkene Saft war sehr frisch.
+[Partizip II] - znaleziony portfel należał do turysty; Die gefundene Geldbörse gehörte einem Touristen.
+[Partizip II] - zgubiony klucz został odnaleziony; Der verlorene Schlüssel wurde gefunden.
+[Partizip II] - sprzedany samochód miał niewielki przebieg; Das verkaufte Auto hatte wenig Kilometer.
+[Partizip II] - kupiony komputer działał bez zarzutu; Der gekaufte Computer funktionierte einwandfrei.
+[Partizip II] - napisany raport został wysłany do kierownika; Der geschriebene Bericht wurde an den Leiter geschickt.
+[Partizip II] - przeczytana gazeta leżała na stole; Die gelesene Zeitung lag auf dem Tisch.
+[Partizip II] - rozpoczęty projekt rozwijał się dobrze; Das begonnene Projekt entwickelte sich gut.
+[Partizip II] - zakończona budowa została odebrana; Der abgeschlossene Bau wurde abgenommen.
+[Partizip II] - podjęta decyzja okazała się słuszna; Die getroffene Entscheidung erwies sich als richtig.
+[Partizip II] - znaleziona odpowiedź rozwiązała problem; Die gefundene Antwort löste das Problem.
+[Partizip II] - napisane wypracowanie otrzymało dobrą ocenę; Der geschriebene Aufsatz bekam eine gute Note.
+[Partizip II] - wygrany mecz poprawił nastroje kibiców; Das gewonnene Spiel verbesserte die Stimmung der Fans.
+[Partizip II] - przegrany finał bardzo go rozczarował; Das verlorene Finale enttäuschte ihn sehr.
+[Partizip II] - widziany film okazał się świetny; Der gesehene Film war hervorragend.
+[Partizip II] - usłyszana wiadomość wszystkich zaskoczyła; Die gehörte Nachricht überraschte alle.
+[Partizip II] - przeczytany artykuł zawierał ciekawe informacje; Der gelesene Artikel enthielt interessante Informationen.
+[Partizip II] - przybyli goście zajęli miejsca; Die angekommenen Gäste nahmen Platz.
+[Partizip II] - odjechany pociąg był ostatnim tego dnia; Der abgefahrene Zug war der letzte des Tages.
+[Partizip II] - wypowiedziane słowa miały duże znaczenie; Die ausgesprochenen Worte hatten große Bedeutung.
+[Partizip II] - napisany e-mail nie dotarł do odbiorcy; Die geschriebene E-Mail erreichte den Empfänger nicht.
+[Partizip II] - przeczytane dokumenty wymagały analizy; Die gelesenen Dokumente mussten analysiert werden.
+[Partizip II] - wykonane zadanie zostało sprawdzone; Die gemachte Aufgabe wurde kontrolliert.
+[Partizip II] - zabrane dokumenty znajdowały się w teczce; Die mitgenommenen Dokumente befanden sich in der Mappe.
+[Partizip II] - otrzymana wiadomość była ważna; Die erhaltene Nachricht war wichtig.
+[Partizip II] - wybrany kandydat rozpoczął pracę; Der gewählte Kandidat begann seine Arbeit.
+[Partizip II] - zamknięte okno nie przepuszczało hałasu; Das geschlossene Fenster ließ keinen Lärm herein.
+[Partizip II] - otwarte drzwi prowadziły do ogrodu; Die geöffneten Türen führten in den Garten.
+[Partizip II] - naprawiony samochód działał idealnie; Das reparierte Auto funktionierte perfekt.
+[Partizip II] - zapomniany plecak leżał na ławce; Der vergessene Rucksack lag auf der Bank.
+[Partizip II] - przyniesione dokumenty były kompletne; Die mitgebrachten Dokumente waren vollständig.
+[Partizip II] - opisane wydarzenie miało miejsce rok wcześniej; Das beschriebene Ereignis fand ein Jahr zuvor statt.
+[Partizip II] - zbudowany most połączył dwa miasta; Die gebaute Brücke verband zwei Städte.
+[Partizip II] - przeprowadzona analiza wykazała błędy; Die durchgeführte Analyse zeigte Fehler.
+[Partizip II] - rozwiązany problem nie wrócił ponownie; Das gelöste Problem trat nicht erneut auf.
+[Partizip II] - zauważony błąd został poprawiony; Der bemerkte Fehler wurde korrigiert.
+[Partizip II] - przeczytane wiadomości nie były optymistyczne; Die gelesenen Nachrichten waren nicht optimistisch.
+[Partizip II] - narysowany obraz wzbudził zainteresowanie; Das gezeichnete Bild weckte Interesse.
+[Partizip II] - napisane książki przyniosły mu sławę; Die geschriebenen Bücher machten ihn berühmt.
+[Partizip II] - wyjechani turyści zostawili po sobie porządek; Die abgereisten Touristen hinterließen Ordnung.
+[Partizip II] - przywiezione towary zostały rozładowane; Die gebrachten Waren wurden entladen.
+[Partizip II] - przełamany rekord został wpisany do księgi; Der gebrochene Rekord wurde eingetragen.
+[Partizip II] - podjęte działania przyniosły efekty; Die ergriffenen Maßnahmen brachten Ergebnisse.
+[Partizip II] - podpisana umowa weszła w życie; Der unterschriebene Vertrag trat in Kraft.
+[Partizip II] - umyta podłoga była jeszcze mokra; Der gewaschene Boden war noch nass.
+[Partizip II] - przygotowany plan został zaakceptowany; Der vorbereitete Plan wurde genehmigt.
+[Partizip II] - napisane przez Goethego dzieło jest znane na całym świecie; Das von Goethe geschriebene Werk ist weltweit bekannt.
+[Przymiotnik] - stary dom stoi na końcu ulicy; Das alte Haus steht am Ende der Straße.
+[Przymiotnik] - nowy komputer działa bardzo szybko; Der neue Computer funktioniert sehr schnell.
+[Przymiotnik] - małe dziecko śpi spokojnie; Das kleine Kind schläft ruhig.
+[Przymiotnik] - młody nauczyciel tłumaczy wszystko dokładnie; Der junge Lehrer erklärt alles genau.
+[Przymiotnik] - wysoka kobieta czeka na autobus; Die hohe Frau wartet auf den Bus.
+[Przymiotnik] - duży pies biega po ogrodzie; Der große Hund läuft durch den Garten.
+[Przymiotnik] - piękne miasto przyciąga wielu turystów; Die schöne Stadt zieht viele Touristen an.
+[Przymiotnik] - stara książka leży na półce; Das alte Buch liegt im Regal.
+[Przymiotnik] - mądry student zdał egzamin bez problemu; Der kluge Student bestand die Prüfung ohne Probleme.
+[Przymiotnik] - czerwony samochód należy do mojego sąsiada; Das rote Auto gehört meinem Nachbarn.
+[Przymiotnik] - kupiłem nowy rower; Ich habe ein neues Fahrrad gekauft.
+[Przymiotnik] - widzę wysokiego mężczyznę; Ich sehe einen großen Mann.
+[Przymiotnik] - potrzebujemy nowego planu; Wir brauchen einen neuen Plan.
+[Przymiotnik] - znalazłem interesującą książkę; Ich habe ein interessantes Buch gefunden.
+[Przymiotnik] - rozmawiam z miłą kobietą; Ich spreche mit einer netten Frau.
+[Przymiotnik] - odwiedziliśmy piękne miasto; Wir besuchten eine schöne Stadt.
+[Przymiotnik] - kupił drogi zegarek; Er kaufte eine teure Uhr.
+[Przymiotnik] - widzę małe dziecko; Ich sehe ein kleines Kind.
+[Przymiotnik] - szukamy taniego hotelu; Wir suchen ein günstiges Hotel.
+[Przymiotnik] - mam nową pracę; Ich habe eine neue Arbeit.
+[Przymiotnik] - zimna woda była bardzo orzeźwiająca; Kaltes Wasser war sehr erfrischend.
+[Przymiotnik] - świeże bułki są już gotowe; Frische Brötchen sind schon fertig.
+[Przymiotnik] - doświadczeni pracownicy szybko rozwiązali problem; Erfahrene Mitarbeiter lösten das Problem schnell.
+[Przymiotnik] - młodzi ludzie interesują się technologią; Junge Menschen interessieren sich für Technologie.
+[Przymiotnik] - niemieckie samochody są popularne; Deutsche Autos sind beliebt.
+[Przymiotnik] - ciężka praca przynosi rezultaty; Harte Arbeit bringt Ergebnisse.
+[Przymiotnik] - dobre wiadomości poprawiły wszystkim humor; Gute Nachrichten verbesserten die Stimmung aller.
+[Przymiotnik] - długie rozmowy bywają męczące; Lange Gespräche können anstrengend sein.
+[Przymiotnik] - inteligentni uczniowie szybko zrozumieli zadanie; Intelligente Schüler verstanden die Aufgabe schnell.
+[Przymiotnik] - stare drzewa dają dużo cienia; Alte Bäume spenden viel Schatten.
+[Przymiotnik] - ten stary most wymaga remontu; Diese alte Brücke muss renoviert werden.
+[Przymiotnik] - lubię tę nową restaurację; Ich mag dieses neue Restaurant.
+[Przymiotnik] - ten mały kot jest bardzo spokojny; Diese kleine Katze ist sehr ruhig.
+[Przymiotnik] - ten interesujący artykuł warto przeczytać; Diesen interessanten Artikel sollte man lesen.
+[Przymiotnik] - ta piękna plaża jest zawsze pełna ludzi; Dieser schöne Strand ist immer voller Menschen.
+[Przymiotnik] - to nowoczesne mieszkanie znajduje się w centrum; Diese moderne Wohnung befindet sich im Zentrum.
+[Przymiotnik] - ten młody lekarz cieszy się dobrą opinią; Dieser junge Arzt hat einen guten Ruf.
+[Przymiotnik] - ci doświadczeni specjaliści pracują za granicą; Diese erfahrenen Spezialisten arbeiten im Ausland.
+[Przymiotnik] - to trudne zadanie zajęło dużo czasu; Diese schwierige Aufgabe nahm viel Zeit in Anspruch.
+[Przymiotnik] - ta stara tradycja jest nadal żywa; Diese alte Tradition lebt weiter.
+[Przymiotnik] - przeczytana książka zrobiła na mnie duże wrażenie; Das gelesene Buch beeindruckte mich sehr.
+[Przymiotnik] - napisany raport zawierał kilka błędów; Der geschriebene Bericht enthielt einige Fehler.
+[Przymiotnik] - znaleziony portfel należał do turysty; Die gefundene Geldbörse gehörte einem Touristen.
+[Przymiotnik] - kupiony samochód okazał się niezawodny; Das gekaufte Auto erwies sich als zuverlässig.
+[Przymiotnik] - utracony dokument został odnaleziony; Das verlorene Dokument wurde gefunden.
+[Przymiotnik] - zamknięte okno nie przepuszczało hałasu; Das geschlossene Fenster ließ keinen Lärm herein.
+[Przymiotnik] - otwarte drzwi prowadziły do ogrodu; Die geöffneten Türen führten in den Garten.
+[Przymiotnik] - podpisana umowa weszła już w życie; Der unterschriebene Vertrag ist bereits in Kraft getreten.
+[Przymiotnik] - rozpoczęty projekt rozwija się zgodnie z planem; Das begonnene Projekt entwickelt sich planmäßig.
+[Przymiotnik] - przeprowadzona analiza wykazała nowe problemy; Die durchgeführte Analyse zeigte neue Probleme.
+[Przymiotnik] - śpiące dziecko wyglądało bardzo spokojnie; Das schlafende Kind sah sehr friedlich aus.
+[Przymiotnik] - biegnący mężczyzna spieszył się do pracy; Der laufende Mann eilte zur Arbeit.
+[Przymiotnik] - czytająca gazetę kobieta czekała na pociąg; Die Zeitung lesende Frau wartete auf den Zug.
+[Przymiotnik] - śmiejące się dzieci bawiły się w parku; Die lachenden Kinder spielten im Park.
+[Przymiotnik] - pracujący mechanik naprawiał silnik; Der arbeitende Mechaniker reparierte den Motor.
+[Przymiotnik] - jadący autobus był przepełniony; Der fahrende Bus war überfüllt.
+[Przymiotnik] - śpiewający ptak siedział na gałęzi; Der singende Vogel saß auf einem Ast.
+[Przymiotnik] - nadchodzący tydzień będzie bardzo pracowity; Die kommende Woche wird sehr arbeitsreich sein.
+[Przymiotnik] - powracający podróżnik był zmęczony; Der zurückkehrende Reisende war müde.
+[Przymiotnik] - uczący się kursanci robili szybkie postępy; Die lernenden Kursteilnehmer machten schnelle Fortschritte.
+[Przymiotnik] - piękny nowy dom został niedawno sprzedany; Das schöne neue Haus wurde vor Kurzem verkauft.
+[Przymiotnik] - stara niemiecka książka leżała na stole; Das alte deutsche Buch lag auf dem Tisch.
+[Przymiotnik] - młody ambitny student zdobył stypendium; Der junge ehrgeizige Student erhielt ein Stipendium.
+[Przymiotnik] - mały biały pies szczekał przez całą noc; Der kleine weiße Hund bellte die ganze Nacht.
+[Przymiotnik] - długa trudna podróż bardzo ich zmęczyła; Die lange schwierige Reise ermüdete sie sehr.
+[Przymiotnik] - nowoczesny dobrze wyposażony hotel był pełny; Das moderne gut ausgestattete Hotel war ausgebucht.
+[Przymiotnik] - interesujący przeczytany artykuł wywołał dyskusję; Der interessante gelesene Artikel löste eine Diskussion aus.
+[Przymiotnik] - podpisana ważna umowa została opublikowana; Der unterschriebene wichtige Vertrag wurde veröffentlicht.
+[Przymiotnik] - spokojna młoda kobieta pracowała w bibliotece; Die ruhige junge Frau arbeitete in der Bibliothek.
+[Przymiotnik] - doświadczony starszy lekarz postawił diagnozę; Der erfahrene ältere Arzt stellte die Diagnose.
+[Przymiotnik] - pomagam staremu sąsiadowi; Ich helfe dem alten Nachbarn.
+[Przymiotnik] - dziękuję miłej nauczycielce; Ich danke der netten Lehrerin.
+[Przymiotnik] - ufam doświadczonemu kierowcy; Ich vertraue dem erfahrenen Fahrer.
+[Przymiotnik] - przyglądam się wysokiemu budynkowi; Ich schaue mir das hohe Gebäude an.
+[Przymiotnik] - pomagam młodemu studentowi; Ich helfe dem jungen Studenten.
+[Przymiotnik] - rozmawiam z inteligentną kobietą; Ich spreche mit einer intelligenten Frau.
+[Przymiotnik] - przyglądam się pięknemu miastu; Ich betrachte die schöne Stadt.
+[Przymiotnik] - ufamy nowym pracownikom; Wir vertrauen den neuen Mitarbeitern.
+[Przymiotnik] - pomagam starszym ludziom; Ich helfe alten Menschen.
+[Przymiotnik] - dziękuję życzliwym sąsiadom; Ich danke freundlichen Nachbarn.
+[Przymiotnik] - widzę dobrego przyjaciela; Ich sehe einen guten Freund.
+[Przymiotnik] - znam inteligentną studentkę; Ich kenne eine intelligente Studentin.
+[Przymiotnik] - odwiedzamy piękne miasto; Wir besuchen eine schöne Stadt.
+[Przymiotnik] - szanuję uczciwego człowieka; Ich respektiere einen ehrlichen Menschen.
+[Przymiotnik] - spotkałem interesujących ludzi; Ich traf interessante Menschen.
+[Przymiotnik] - kupiłem świeże owoce; Ich kaufte frische Früchte.
+[Przymiotnik] - słyszę głośne dźwięki; Ich höre laute Geräusche.
+[Przymiotnik] - znalazłem ważne dokumenty; Ich fand wichtige Dokumente.
+[Przymiotnik] - obserwujemy szybko rosnące ceny; Wir beobachten schnell steigende Preise.
+[Przymiotnik] - analizujemy niedawno opublikowane dane; Wir analysieren kürzlich veröffentlichte Daten.
+[Przymiotnik] - kupiliśmy nowo wybudowany dom; Wir haben ein neu gebautes Haus gekauft.
+[Przymiotnik] - podjęta trudna decyzja okazała się słuszna; Die getroffene schwierige Entscheidung erwies sich als richtig.
+[Przymiotnik] - stojący przy oknie starszy mężczyzna czytał gazetę; Der am Fenster stehende ältere Mann las Zeitung.
+[Przymiotnik] - znalezione stare dokumenty były bardzo cenne; Die gefundenen alten Dokumente waren sehr wertvoll.
+[Przymiotnik] - śmiejące się małe dzieci bawiły się na placu zabaw; Die lachenden kleinen Kinder spielten auf dem Spielplatz.
+[Przymiotnik] - niedawno zakupiony nowoczesny komputer działa bez zarzutu; Der kürzlich gekaufte moderne Computer funktioniert einwandfrei.
+[Przymiotnik] - szybko jadący czerwony samochód zniknął za zakrętem; Das schnell fahrende rote Auto verschwand hinter der Kurve.
+[Przymiotnik] - doświadczeni niemieccy inżynierowie pracują nad projektem; Erfahrene deutsche Ingenieure arbeiten an dem Projekt.
+[Przymiotnik] - piękne stare europejskie miasta przyciągają turystów; Schöne alte europäische Städte ziehen Touristen an.
+[Przymiotnik] - dobrze przygotowani młodzi kandydaci zdali egzamin; Gut vorbereitete junge Kandidaten bestanden die Prüfung.
+[Przymiotnik] - stary mężczyzna mieszka obok mnie; Der alte Mann wohnt neben mir.
+[Przymiotnik] - widzę starego mężczyznę codziennie rano; Ich sehe den alten Mann jeden Morgen.
+[Przymiotnik] - pomagam staremu mężczyźnie przy zakupach; Ich helfe dem alten Mann beim Einkaufen.
+[Przymiotnik] - samochód starego mężczyzny jest bardzo zadbany; Das Auto des alten Mannes ist sehr gepflegt.
+[Przymiotnik] - młoda kobieta pracuje w banku; Die junge Frau arbeitet in einer Bank.
+[Przymiotnik] - spotkałem młodą kobietę na dworcu; Ich traf die junge Frau am Bahnhof.
+[Przymiotnik] - dziękuję młodej kobiecie za pomoc; Ich danke der jungen Frau für ihre Hilfe.
+[Przymiotnik] - torebka młodej kobiety leży na krześle; Die Tasche der jungen Frau liegt auf dem Stuhl.
+[Przymiotnik] - małe dziecko śpi w swoim pokoju; Das kleine Kind schläft in seinem Zimmer.
+[Przymiotnik] - słyszę małe dziecko w ogrodzie; Ich höre das kleine Kind im Garten.
+[Przymiotnik] - daję małemu dziecku prezent; Ich gebe dem kleinen Kind ein Geschenk.
+[Przymiotnik] - zabawka małego dziecka jest czerwona; Das Spielzeug des kleinen Kindes ist rot.
+[Przymiotnik] - nowy nauczyciel jest bardzo cierpliwy; Der neue Lehrer ist sehr geduldig.
+[Przymiotnik] - uczniowie lubią nowego nauczyciela; Die Schüler mögen den neuen Lehrer.
+[Przymiotnik] - zadałem pytanie nowemu nauczycielowi; Ich stellte dem neuen Lehrer eine Frage.
+[Przymiotnik] - samochód nowego nauczyciela stoi przed szkołą; Das Auto des neuen Lehrers steht vor der Schule.
+[Przymiotnik] - interesująca książka leży na stole; Das interessante Buch liegt auf dem Tisch.
+[Przymiotnik] - czytam interesującą książkę; Ich lese das interessante Buch.
+[Przymiotnik] - przyglądam się interesującej książce; Ich sehe mir das interessante Buch genauer an.
+[Przymiotnik] - okładka interesującej książki jest niebieska; Das Cover des interessanten Buches ist blau.
+[Przymiotnik] - kupiłem nowy komputer; Ich habe einen neuen Computer gekauft.
+[Przymiotnik] - używam nowego komputera codziennie; Ich benutze den neuen Computer täglich.
+[Przymiotnik] - instaluję program na nowym komputerze; Ich installiere ein Programm auf dem neuen Computer.
+[Przymiotnik] - wydajność nowego komputers jest imponująca; Die Leistung des neuen Computers ist beeindruckend.
+[Przymiotnik] - potrzebuję dobrego mechanika; Ich brauche einen guten Mechaniker.
+[Przymiotnik] - znalazłem dobrego mechanika w mieście; Ich habe einen guten Mechaniker in der Stadt gefunden.
+[Przymiotnik] - ufam dobremu mechanikowi; Ich vertraue einem guten Mechaniker.
+[Przymiotnik] - warsztat dobrego mechanika jest bardzo popularny; Die Werkstatt eines guten Mechanikers ist sehr beliebt.
+[Przymiotnik] - piękna plaża znajduje się niedaleko hotelu; Ein schöner Strand liegt unweit des Hotels.
+[Przymiotnik] - odwiedzamy piękną plażę każdego lata; Wir besuchen einen schönen Strand jeden Sommer.
+[Przymiotnik] - spacerujemy po pięknej plaży o zachodzie słońca; Wir gehen an einem schönen Strand spazieren.
+[Przymiotnik] - piasek pięknej plaży jest bardzo jasny; Der Sand eines schönen Strandes ist sehr hell.
+[Przymiotnik] - zimna woda orzeźwia w upalny dzień; Kaltes Wasser erfrischt an heißen Tagen.
+[Przymiotnik] - piję zimną wodę po treningu; Ich trinke kaltes Wasser nach dem Training.
+[Przymiotnik] - dodaję cytrynę do zimnej wody; Ich füge kaltem Wasser Zitrone hinzu.
+[Przymiotnik] - smak zimnej wody jest bardzo przyjemny; Der Geschmack kalten Wassers ist sehr angenehm.
+[Przymiotnik] - doświadczeni pracownicy rozwiązali problem; Erfahrene Mitarbeiter lösten das Problem.
+[Przymiotnik] - kierownik pochwalił doświadczonych pracowników; Der Leiter lobte erfahrene Mitarbeiter.
+[Przymiotnik] - powierzono zadanie doświadczonym pracownikom; Die Aufgabe wurde erfahrenen Mitarbeitern anvertraut.
+[Przymiotnik] - wiedza doświadczonych pracowników jest bezcenna; Das Wissen erfahrener Mitarbeiter ist unbezahlbar.
+[Przymiotnik] - szybko rosnące miasto przyciąga inwestorów; Die schnell wachsende Stadt zieht Investoren an.
+[Przymiotnik] - odwiedziliśmy szybko rosnące miasto; Wir besuchten die schnell wachsende Stadt.
+[Przymiotnik] - przyglądamy się szybko rosnącemu miastu z góry; Wir betrachten die schnell wachsende Stadt von oben.
+[Przymiotnik] - rozwój szybko rosnącego miasta jest imponujący; Die Entwicklung der schnell wachsenden Stadt ist beeindruckend.
+[Przymiotnik] - niedawno kupiony samochód działa bez zarzutu; Das kürzlich gekaufte Auto funktioniert einwandfrei.
+[Przymiotnik] - sprzedałem niedawno kupiony samochód; Ich verkaufte das kürzlich gekaufte Auto.
+[Przymiotnik] - przyglądam się niedawno kupionemu samochodowi; Ich betrachte das kürzlich gekaufte Auto.
+[Przymiotnik] - kolor niedawno kupionego samochodu bardzo mi się podoba; Die Farbe des kürzlich gekauften Autos gefällt mir sehr.
+[Przymiotnik] - stojący przy oknie starszy mężczyzna czyta gazetę; Der am Fenster stehende ältere Mann liest Zeitung.
+[Przymiotnik] - widzę stojącego przy oknie starszego mężczyznę; Ich sehe den am Fenster stehenden älteren Mann.
+[Przymiotnik] - przyglądam się stojącemu przy oknie starszemu mężczyźnie; Ich betrachte den am Fenster stehenden älteren Mann.
+[Przymiotnik] - pies stojącego przy oknie starszego mężczyzny śpi; Der Hund des am Fenster stehenden älteren Mannes schläft.
+[Przymiotnik] - dobrze przygotowany młody kandydat zdał egzamin; Der gut vorbereitete junge Kandidat bestand die Prüfung.
+[Przymiotnik] - komisja pochwaliła dobrze przygotowanego młodego kandydata; Die Kommission lobte den gut vorbereiteten jungen Kandidaten.
+[Przymiotnik] - zadano pytanie dobrze przygotowanemu młodemu kandydatowi; Man stellte dem gut vorbereiteten jungen Kandidaten eine Frage.
+[Przymiotnik] - odpowiedź dobrze przygotowanego młodego kandydata była poprawna; Die Antwort des gut vorbereiteten jungen Kandidaten war richtig.
+[Przymiotnik] - stare niemieckie miasta mają wyjątkowy klimat; Alte deutsche Städte haben einen besonderen Charme.
+[Przymiotnik] - odwiedzamy stare niemieckie miasta podczas wakacji; Wir besuchen alte deutsche Städte im Urlaub.
+[Przymiotnik] - przyglądamy się starym niemieckim miastom na mapie; Wir betrachten alte deutschen Städten auf der Karte.
+[Przymiotnik] - historia starych niemieckich miast jest fascynująca; Die Geschichte alter deutscher Städte ist faszinierend.
+[Przymiotnik] - drogie włoskie samochody są bardzo popularne; Teure italienische Autos sind sehr beliebt.
+[Przymiotnik] - kolekcjoner kupuje drogie włoskie samochody; Der Sammler kauft teure italienische Autos.
+[Przymiotnik] - przyglądam się drogim włoskim samochodom na wystawie; Ich betrachte teure italienische Autos auf der Ausstellung.
+[Przymiotnik] - wartość drogich włoskich samochodów stale rośnie; Der Wert teurer italienischer Autos steigt ständig.
+[Przymiotnik] - świeże czerwone jabłka leżą na stole; Frische rote Äpfel liegen auf dem Tisch.
+[Przymiotnik] - kupuję świeże czerwone jabłka na targu; Ich kaufe frische rote Äpfel auf dem Markt.
+[Przymiotnik] - robię sok ze świeżych czerwonych jabłek; Ich mache Saft aus frischen roten Äpfeln.
+[Przymiotnik] - smak świeżych czerwonych jabłek jest doskonały; Der Geschmack frischer roter Äpfel ist ausgezeichnet.
+[Przymiotnik] - dobrze napisany raport zrobił dobre wrażenie; Der gut geschriebene Bericht machte einen guten Eindruck.
+[Przymiotnik] - przeczytałem dobrze napisany raport; Ich las den gut geschriebenen Bericht.
+[Przymiotnik] - zaufałem dobrze napisanemu raportowi; Ich vertraute dem gut geschriebenen Bericht.
+[Przymiotnik] - autor dobrze napisanego raportu otrzymał nagrodę; Der Autor des gut geschriebenen Berichts erhielt einen Preis.
+[Przymiotnik] - mały czarny kot siedzi na murze; Die kleine schwarze Katze sitzt auf der Mauer.
+[Przymiotnik] - widzę małego czarnego kota; Ich sehe die kleine schwarze Katze.
+[Przymiotnik] - daję jedzenie małemu czarnemu kotu; Ich gebe der kleinen schwarzen Katze Futter.
+[Przymiotnik] - ogon małego czarnego kota jest bardzo długi; Der Schwanz der kleinen schwarzen Katze ist sehr lang.
+[Przymiotnik] - doświadczony niemiecki inżynier kieruje międzynarodowym projektem; Der erfahrene deutsche Ingenieur leitet ein internationales Projekt.
+[Przymiotnik] - firma zatrudniła doświadczonego niemieckiego inżyniera; Die Firma stellte den erfahrenen deutschen Ingenieur ein.
+[Przymiotnik] - powierzono zadanie doświadczonemu niemieckiemu inżynierowi; Die Aufgabe wurde dem erfahrenen deutschen Ingenieur übertragen.
+[Przymiotnik] - opinia doświadczonego niemieckiego inżyniera była decydująca; Die Meinung des erfahrenen deutschen Ingenieurs war entscheidend.
+[Przymiotnik] - ambitna młoda prawniczka wygłosiła interesujący wykład; Die ehrgeizige junge Juristin hielt einen interessanten Vortrag.
+[Przymiotnik] - wszyscy słuchali ambitnej młodej prawniczki; Alle hörten der ehrgeizigen jungen Juristin zu.
+[Przymiotnik] - zaproszono ambitną młodą prawniczkę na konferencję; Man lud die ehrgeizige junge Juristin zur Konferenz ein.
+[Przymiotnik] - sukces ambitnej młodej prawniczki był imponujący; Der Erfolg der ehrgeizigen jungen Juristin war beeindruckend.
+[Przymiotnik] - niedawno opublikowany naukowy artykuł wywołał dyskusję; Der kürzlich veröffentlichte wissenschaftliche Artikel löste eine Diskussion aus.
+[Przymiotnik] - przeczytałem niedawno opublikowany naukowy artykuł; Ich las den kürzlich veröffentlichten wissenschaftlichen Artikel.
+[Przymiotnik] - wielu ekspertów ufa niedawno opublikowanemu naukowemu artykułowi; Viele Experten vertrauen dem kürzlich veröffentlichten wissenschaftlichen Artikel.
+[Przymiotnik] - autor niedawno opublikowanego naukowego artykułu otrzymał nagrodę; Der Autor des kürzlich veröffentlichten wissenschaftlichen Artikels erhielt einen Preis.
+[Przymiotnik] - szybko rozwijająca się europejska firma otworzyła nowy oddział; Die sich schnell entwickelnde europäische Firma eröffnete eine neue Niederlassung.
+[Przymiotnik] - inwestorzy wspierają szybko rozwijającą się europejską firmę; Die Investoren unterstützen die sich schnell entwickelnde europäische Firma.
+[Przymiotnik] - bank udzielił kredytu szybko rozwijającej się europejskiej firmie; Die Bank gewährte der sich schnell entwickelnden europäischen Firma einen Kredit.
+[Przymiotnik] - strategia szybko rozwijającej się europejskiej firmy okazała się skuteczna; Die Strategie der sich schnell entwickelnden europäischen Firma erwies sich als erfolgreich.
+[Przymiotnik] - wysoko wykwalifikowani młodzi specjaliści poszukują nowych wyzwań; Hoch qualifizierte junge Fachkräfte suchen neue Herausforderungen.
+[Przymiotnik] - przedsiębiorstwo zatrudniło wysoko wykwalifikowanych młodych specjalistów; Das Unternehmen stellte hoch qualifizierte junge Fachkräfte ein.
+[Przymiotnik] - powierzono projekt wysoko wykwalifikowanym młodym specjalistom; Das Projekt wurde hoch qualifizierten jungen Fachkräften anvertraut.
+[Przymiotnik] - doświadczenie wysoko wykwalifikowanych młodych specjalistów jest cenne; Die Erfahrung hoch qualifizierter junger Fachkräfte ist wertvoll.
+[Przymiotnik] - dobrze przygotowany kandydat odpowiedział na wszystkie pytania; Der gut vorbereitete Kandidat beantwortete alle Fragen.
+[Przymiotnik] - komisja pochwaliła dobrze przygotowanego kandydata; Die Kommission lobte den gut vorbereiteten Kandidaten.
+[Przymiotnik] - zadano pytanie dobrze przygotowanemu kandydatowi; Man stellte dem gut vorbereiteten Kandidaten eine Frage.
+[Przymiotnik] - odpowiedź dobrze przygotowanego kandydata była przekonująca; Die Antwort des gut vorbereiteten Kandidaten war überzeugend.
+[Przymiotnik] - niezwykle interesująca historyczna powieść stała się bestsellerem; Der äußerst interessante historische Roman wurde zum Bestseller.
+[Przymiotnik] - przeczytałem niezwykle interesującą historyczną powieść w tydzień; Ich las den äußerst interessanten historischen Roman in einer Woche.
+[Przymiotnik] - poświęcono recenzję niezwykle interesującej historycznej powieści; Man widmete dem äußerst interessanten historischen Roman eine Rezension.
+[Przymiotnik] - autor niezwykle interesującej historycznej powieści pochodzi z Austrii; Der Autor des äußerst interessanten historischen Romans stammt aus Österreich.
+[Przymiotnik] - starannie odrestaurowany średniowieczny zamek przyciąga turystów; Das sorgfältig restaurierte mittelalterliche Schloss zieht Touristen an.
+[Przymiotnik] - odwiedziliśmy starannie odrestaurowany średniowieczny zamek; Wir besichtigten das sorgfältig restaurierte mittelalterliche Schloss.
+[Przymiotnik] - przewodnik opowiadał o starannie odrestaurowanym średniowiecznym zamku; Der Reiseführer erzählte von dem sorgfältig restaurierten mittelalterlichen Schloss.
+[Przymiotnik] - historia starannie odrestaurowanego średniowiecznego zamku jest fascynująca; Die Geschichte des sorgfältig restaurierten mittelalterlichen Schlosses ist faszinierend.
+[Przymiotnik] - stale rosnące koszty energii niepokoją przedsiębiorców; Die ständig steigenden Energiekosten beunruhigen Unternehmer.
+[Przymiotnik] - rząd analizuje stale rosnące koszty energii; Die Regierung analysiert die ständig steigenden Energiekosten.
+[Przymiotnik] - poświęcono uwagę stale rosnącym kosztom energii; Man widmete den ständig steigenden Energiekosten besondere Aufmerksamkeit.
+[Przymiotnik] - przyczyną problemów są skutki stale rosnących kosztów energii; Die Ursache der Probleme sind die Folgen ständig steigender Energiekosten.
+[Przymiotnik] - nowoczesny energooszczędny budynek spełnia wszystkie normy; Das moderne energieeffiziente Gebäude erfüllt alle Normen.
+[Przymiotnik] - architekt zaprojektował nowoczesny energooszczędny budynek; Der Architekt entwarf das moderne energieeffiziente Gebäude.
+[Przymiotnik] - inwestor przyjrzał się nowoczesnemu energooszczędnemu budynkowi; Der Investor betrachtete das modernen energieeffizienten Gebäude.
+[Przymiotnik] - koszty utrzymania nowoczesnego energooszczędnego budynku są niskie; Die Betriebskosten des modernen energieeffizienten Gebäudes sind niedrig.
+[Przymiotnik] - wielokrotnie nagradzany młody reżyser zaprezentował nowy film; Der mehrfach ausgezeichnete junge Regisseur präsentierte einen neuen Film.
+[Przymiotnik] - publiczność oklaskiwała wielokrotnie nagradzanego młodego reżysera; Das Publikum applaudierte dem mehrfach ausgezeichneten jungen Regisseur.
+[Przymiotnik] - krytycy zadali pytania wielokrotnie nagradzanemu młodemu reżyserowi; Die Kritiker stellten dem mehrfach ausgezeichneten jungen Regisseur Fragen.
+[Przymiotnik] - twórczość wielokrotnie nagradzanego młodego reżysera zdobyła uznanie; Das Werk des mehrfach ausgezeichneten jungen Regisseurs fand Anerkennung.
+[Przymiotnik] - odpowiedzialny za projekt kierownik podjął szybką decyzję; Der für das Projekt verantwortliche Leiter traf eine schnelle Entscheidung.
+[Przymiotnik] - spotkałem odpowiedzialnego za projekt kierownika; Ich traf den für das Projekt verantwortlichen Leiter.
+[Przymiotnik] - przekazałem dokumenty odpowiedzialnemu za projekt kierownikowi; Ich übergab die Dokumente dem für das Projekt verantwortlichen Leiter.
+[Przymiotnik] - decyzja odpowiedzialnego za projekt kierownika okazała się trafna; Die Entscheidung des für das Projekt verantwortlichen Leiters erwies sich als richtig.
+[Przymiotnik] - mieszkający od wielu lat w Niemczech Polak mówi biegle po niemiecku; Der seit vielen Jahren in Deutschland lebende Pole spricht fließend Deutsch.
+[Przymiotnik] - poznałem mieszkającego od wielu lat w Niemczech Polaka; Ich lernte den seit vielen Jahren in Deutschland lebenden Polen kennen.
+[Przymiotnik] - zaufałem mieszkającemu od wielu lat w Niemczech Polakowi; Ich vertraute dem seit vielen Jahren in Deutschland lebenden Polen.
+[Przymiotnik] - doświadczenia mieszkającego od wielu lat w Niemczech Polaka były bardzo ciekawe; Die Erfahrungen des seit vielen Jahren in Deutschland lebenden Polen waren sehr interessant.
+[Przymiotnik] - szczegółowo przeanalizowane dane potwierdziły wcześniejsze przypuszczenia; Die detailliert analysierten Daten bestätigten frühere Vermutungen.
+[Przymiotnik] - naukowcy wykorzystali szczegółowo przeanalizowane dane; Die Wissenschaftler verwendeten die detailliert analysierten Daten.
+[Przymiotnik] - oparto się na szczegółowo przeanalizowanych danych; Man stützte sich auf die detailliert analysierten Daten.
+[Przymiotnik] - jakość szczegółowo przeanalizowanych danych była wysoka; Die Qualität der detailliert analysierten Daten war hoch.
+[Przymiotnik] - wywołujące kontrowersje nowe przepisy zostały uchwalone; Die kontroversen auslösenden neuen Vorschriften wurden verabschiedet.
+[Przymiotnik] - media omawiały wywołujące kontrowersje nowe przepisy; Die Medien diskutierten die kontroversen auslösenden neuen Vorschriften.
+[Przymiotnik] - wielu obywateli sprzeciwiało się wywołującym kontrowersje nowym przepisom; Viele Bürger widersetzten sich den kontroversen auslösenden neuen Vorschriften.
+[Przymiotnik] - skutki wywołujących kontrowersje nowych przepisów są trudne do przewidzenia; Die Folgen der kontroversen auslösenden neuen Vorschriften sind schwer vorherzusagen.
+[Przymiotnik] - wyjątkowo uzdolnione muzycznie dziecko zdobyło pierwszą nagrodę; Das außergewöhnlich musikalisch begabte Kind gewann den ersten Preis.
+[Przymiotnik] - jury wyróżniło wyjątkowo uzdolnione muzycznie dziecko; Die Jury zeichnete das außergewöhnlich musikalisch begabte Kind aus.
+[Przymiotnik] - wręczono nagrodę wyjątkowo uzdolnionemu muzycznie dziecku; Man überreichte dem außergewöhnlich musikalisch begabten Kind einen Preis.
+[Przymiotnik] - sukces wyjątkowo uzdolnionego muzycznie dziecka był szeroko komentowany; Der Erfolg des außergewöhnlich musikalisch begabten Kindes wurde breit diskutiert.
+[Przymiotnik] - dobrze płatna stabilna praca daje poczucie bezpieczeństwa; Eine gut bezahlte stabile Arbeit gibt Sicherheit.
+[Przymiotnik] - wielu ludzi szuka dobrze płatnej stabilnej pracy; Viele Menschen suchen eine gut bezahlte stabile Arbeit.
+[Przymiotnik] - marzyłem o dobrze płatnej stabilnej pracy; Ich träumte von einer gut bezahlten stabilen Arbeit.
+[Przymiotnik] - zalety dobrze płatnej stabilnej pracy są oczywiste; Die Vorteile einer gut bezahlten stabilen Arbeit sind offensichtlich.
+[Zaimki i Przyimki] - rozmawiam z nim codziennie po pracy; Ich spreche jeden Tag nach der Arbeit mit ihm.
+[Zaimki i Przyimki] - ona dała mi interesującą książkę; Sie gab mir ein interessantes Buch.
+[Zaimki i Przyimki] - widzę go bardzo często; Ich sehe ihn sehr oft.
+[Zaimki i Przyimki] - oni pomogli nam podczas przeprowadzki; Sie halfen uns beim Umzug.
+[Zaimki i Przyimki] - nie mogę sobie tego przypomnieć; Ich kann mich daran nicht erinnern.
+[Zaimki i Przyimki] - czekamy na ciebie od godziny; Wir warten seit einer Stunde auf dich.
+[Zaimki i Przyimki] - ona opowiedziała mu całą historię; Sie erzählte ihm die ganze Geschichte.
+[Zaimki i Przyimki] - czy znasz ich od dawna?; Kennst du sie schon lange?
+[Zaimki i Przyimki] - nauczyciel wyjaśnił nam to zagadnienie; Der Lehrer erklärte uns dieses Thema.
+[Zaimki i Przyimki] - nie ufam mu całkowicie; Ich vertraue ihm nicht völlig.
+[Zaimki i Przyimki] - położyłem książkę na stole; Ich legte das Buch auf den Tisch.
+[Zaimki i Przyimki] - książka leży na stole; Das Buch liegt auf dem Tisch.
+[Zaimki i Przyimki] - powiesił obraz na ścianie; Er hängte das Bild an die Wand.
+[Zaimki i Przyimki] - obraz wisi na ścianie; Das Bild hängt an der Wand.
+[Zaimki i Przyimki] - kot schował się pod łóżko; Die Katze versteckte sich unter das Bett.
+[Zaimki i Przyimki] - kot śpi pod łóżkiem; Die Katze schläft unter dem Bett.
+[Zaimki i Przyimki] - samochód stoi przed domem; Das Auto steht vor dem Haus.
+[Zaimki i Przyimki] - zaparkowałem samochód przed domem; Ich parkte das Auto vor das Haus.
+[Zaimki i Przyimki] - usiedliśmy między dwoma drzewami; Wir setzten uns zwischen zwei Bäume.
+[Zaimki i Przyimki] - siedzimy między dwoma drzewami; Wir sitzen zwischen zwei Bäumen.
+[Zaimki i Przyimki] - pracuję od poniedziałku; Ich arbeite seit Montag.
+[Zaimki i Przyimki] - od jutra zaczynam nową pracę; Ab morgen beginne ich eine neue Arbeit.
+[Zaimki i Przyimki] - wracam z pracy o szóstej; Ich komme um sechs Uhr von der Arbeit zurück.
+[Zaimki i Przyimki] - jadę do Berlina pociągiem; Ich fahre mit dem Zug nach Berlin.
+[Zaimki i Przyimki] - bez jego pomocy byłoby to niemożliwe; Ohne seine Hilfe wäre das unmöglich.
+[Zaimki i Przyimki] - mimo deszczu poszliśmy na spacer; Trotz des Regens gingen wir spazieren.
+[Zaimki i Przyimki] - podczas spotkania nie powiedział ani słowa; Während des Treffens sagte er kein Wort.
+[Zaimki i Przyimki] - z powodu choroby został w domu; Wegen einer Krankheit blieb er zu Hause.
+[Zaimki i Przyimki] - zamiast kawy zamówiłem herbatę; Statt eines Kaffees bestellte ich einen Tee.
+[Zaimki i Przyimki] - poza moim bratem nikt o tym nie wiedział; Außer meinem Bruder wusste niemand davon.
+[Zaimki i Przyimki] - człowiek, którego wczoraj widziałem, jest lekarzem; Der Mann, den ich gestern gesehen habe, ist Arzt.
+[Zaimki i Przyimki] - kobieta, z którą rozmawiałem, pochodzi z Austrii; Die Frau, mit der ich gesprochen habe, kommt aus Österreich.
+[Zaimki i Przyimki] - książka, którą czytam, jest fascynująca; Das Buch, das ich lese, ist faszinierend.
+[Zaimki i Przyimki] - student, któremu pomogłem, zdał egzamin; Der Student, dem ich geholfen habe, bestand die Prüfung.
+[Zaimki i Przyimki] - firma, dla której pracuję, znajduje się w Hamburgu; Die Firma, für die ich arbeite, befindet sich in Hamburg.
+[Zaimki i Przyimki] - kolega, którego siostra mieszka w Monachium, zmienia pracę; Der Kollege, dessen Schwester in München wohnt, wechselt den Job.
+[Zaimki i Przyimki] - kobieta, której samochód został skradziony, zgłosiła sprawę; Die Frau, deren Auto gestohlen wurde, meldete den Vorfall.
+[Zaimki i Przyimki] - dzieci, którym daliśmy prezenty, były szczęśliwe; Die Kinder, denen wir Geschenke gaben, waren glücklich.
+[Zaimki i Przyimki] - ludzie, z którymi podróżowaliśmy, byli bardzo mili; Die Leute, mit denen wir reisten, waren sehr nett.
+[Zaimki i Przyimki] - projekt, nad którym pracujemy, jest skomplikowany; Das Projekt, an dem wir arbeiten, ist kompliziert.
+[Zaimki i Przyimki] - interesuję się historią Niemiec; Ich interessiere mich für die Geschichte Deutschlands.
+[Zaimki i Przyimki] - zależy mi na dobrych wynikach; Es kommt mir auf gute Ergebnisse an.
+[Zaimki i Przyimki] - marzę o podróży do Japonii; Ich träume von einer Reise nach Japan.
+[Zaimki i Przyimki] - boję się tego egzaminu; Ich habe Angst vor dieser Prüfung.
+[Zaimki i Przyimki] - przygotowuję się do rozmowy kwalifikacyjnej; Ich bereite mich auf das Vorstellungsgespräch vor.
+[Zaimki i Przyimki] - uczestniczymy w konferencji; Wir nehmen an der Konferenz teil.
+[Zaimki i Przyimki] - dziękuję za twoją pomoc; Ich danke dir für deine Hilfe.
+[Zaimki i Przyimki] - myślę o zmianie pracy; Ich denke an einen Jobwechsel.
+[Zaimki i Przyimki] - proszę cię o cierpliwość; Ich bitte dich um Geduld.
+[Zaimki i Przyimki] - jestem dumny z mojego syna; Ich bin stolz auf meinen Sohn.
+[Zaimki i Przyimki] - przypominam sobie nasze pierwsze spotkanie; Ich erinnere mich an unser erstes Treffen.
+[Zaimki i Przyimki] - przyzwyczaiłem się do nowego środowiska; Ich habe mich an die neue Umgebung gewöhnt.
+[Zaimki i Przyimki] - skarżył się na hałas; Er beschwerte sich über den Lärm.
+[Zaimki i Przyimki] - zależymy od dobrej pogody; Wir sind von gutem Wetter abhängig.
+[Zaimki i Przyimki] - jestem odpowiedzialny za ten projekt; Ich bin für dieses Projekt verantwortlich.
+[Zaimki i Przyimki] - spotkanie zostało odwołane z powodu strajku; Das Treffen wurde wegen des Streiks abgesagt.
+[Zaimki i Przyimki] - wbrew oczekiwaniom wszystko poszło dobrze; Entgegen den Erwartungen verlief alles gut.
+[Zaimki i Przyimki] - zgodnie z umową musisz zapłacić dziś; Gemäß dem Vertrag musst du heute bezahlen.
+[Zaimki i Przyimki] - oprócz mnie wszyscy byli obecni; Außer mir waren alle anwesend.
+[Zaimki i Przyimki] - po wykładzie zadaliśmy wiele pytań; Nach dem Vortrag stellten wir viele Fragen.
+[Zaimki i Przyimki] - przed egzaminem powtórzę materiał; Vor der Prüfung werde ich den Stoff wiederholen.
+[Zaimki i Przyimki] - po egzaminie pojedziemy do restauracji; Nach der Prüfung fahren wir ins Restaurant.
+[Zaimki i Przyimki] - od dziecka interesuję się technologią; Seit meiner Kindheit interessiere ich mich für Technologie.
+[Zaimki i Przyimki] - dzięki jego doświadczeniu uniknęliśmy problemów; Dank seiner Erfahrung vermieden wir Probleme.
+[Zaimki i Przyimki] - podczas mojej nieobecności nic się nie wydarzyło; Während meiner Abwesenheit geschah nichts.
+[Zaimki i Przyimki] - pomimo trudności ukończyli projekt na czas; Trotz der Schwierigkeiten schlossen sie das Projekt rechtzeitig ab.
+[Zaimki i Przyimki] - zwróciłem się do niego z prośbą o pomoc; Ich wandte mich mit der Bitte um Hilfe an ihn.
+[Zaimki i Przyimki] - nie mogłem się z tym zgodzić; Ich konnte dem nicht zustimmen.
+[Zaimki i Przyimki] - on nie interesuje się tym; Er interessiert sich nicht dafür.
+[Zaimki i Przyimki] - cieszę się z tego; Ich freue mich darüber.
+[Zaimki i Przyimki] - zależy to od wielu czynników; Das hängt von vielen Faktoren ab.
+[Zaimki i Przyimki] - myślisz o tym zbyt często; Du denkst zu oft daran.
+[Zaimki i Przyimki] - jestem z tego zadowolony; Ich bin damit zufrieden.
+[Zaimki i Przyimki] - nie spodziewałem się tego; Damit habe ich nicht gerechnet.
+[Zaimki i Przyimki] - rozmawialiśmy o tym przez godzinę; Wir haben eine Stunde darüber gesprochen.
+[Zaimki i Przyimki] - zajmuję się tym od kilku lat; Ich beschäftige mich seit einigen Jahren damit.
+[Zaimki i Przyimki] - wszystko zależy od ciebie; Alles hängt von dir ab.
+[Zaimki i Przyimki] - ona jest starsza ode mnie; Sie ist älter als ich.
+[Zaimki i Przyimki] - między nami nie ma żadnych problemów; Zwischen uns gibt es keine Probleme.
+[Zaimki i Przyimki] - bez was nie dalibyśmy rady; Ohne euch hätten wir es nicht geschafft.
+[Zaimki i Przyimki] - oni zawsze mogą liczyć na nas; Sie können sich immer auf uns verlassen.
+[Zaimki i Przyimki] - powiedz mu prawdę; Sag ihm die Wahrheit.
+[Zaimki i Przyimki] - pokaż mi swoje notatki; Zeig mir deine Notizen.
+[Zaimki i Przyimki] - wyjaśnij nam tę regułę; Erkläre uns diese Regel.
+[Zaimki i Przyimki] - nikt poza nią tego nie rozumie; Niemand außer ihr versteht das.
+[Zaimki i Przyimki] - ten prezent jest dla ciebie; Dieses Geschenk ist für dich.
+[Zaimki i Przyimki] - czy mogę na ciebie liczyć?; Kann ich mich auf dich verlassen?
+[Zaimki i Przyimki] - zależy mi na tobie; Du bist mir wichtig.
+[Zaimki i Przyimki] - długo o niej rozmawialiśmy; Wir haben lange über sie gesprochen.
+[Zaimki i Przyimki] - nie pamiętam już jego imienia; Ich erinnere mich nicht mehr an seinen Namen.
+[Zaimki i Przyimki] - ona śmieje się ze mnie; Sie lacht über mich.
+[Zaimki i Przyimki] - martwimy się o nich; Wir sorgen uns um sie.
+[Zaimki i Przyimki] - oddałem mu wszystkie dokumenty; Ich gab ihm alle Unterlagen zurück.
+[Zaimki i Przyimki] - pożyczył mi swój samochód; Er lieh mir sein Auto.
+[Zaimki i Przyimki] - opowiedziała nam o swojej podróży; Sie erzählte uns von ihrer Reise.
+[Zaimki i Przyimki] - wysłałem do nich wiadomość; Ich schickte ihnen eine Nachricht.
+[Zaimki i Przyimki] - ona siedzi obok mnie; Sie sitzt neben mir.
+[Zaimki i Przyimki] - mieszkam niedaleko niego; Ich wohne in seiner Nähe.
+[Zaimki i Przyimki] - między nimi doszło do konfliktu; Zwischen ihnen kam es zu einem Konflikt.
+[Zaimki i Przyimki] - dzięki wam wszystko się udało; Dank euch hat alles funktioniert.
+[Präteritum] - wczoraj poszedłem do pracy pieszo; Gestern ging ich zu Fuß zur Arbeit.
+[Präteritum] - ona przeczytała całą książkę w dwa dni; Sie las das ganze Buch in zwei Tagen.
+[Präteritum] - po kolacji napisałem długi e-mail; Nach dem Abendessen schrieb ich eine lange E-Mail.
+[Präteritum] - widzieliśmy ten film w zeszłym tygodniu; Wir sahen diesen Film letzte Woche.
+[Präteritum] - dziecko zasnęło bardzo szybko; Das Kind schlief sehr schnell ein.
+[Präteritum] - on znalazł rozwiązanie problemu; Er fand die Lösung des Problems.
+[Präteritum] - moi rodzice przyjechali późnym wieczorem; Meine Eltern kamen spät am Abend an.
+[Präteritum] - pociąg odjechał punktualnie; Der Zug fuhr pünktlich ab.
+[Präteritum] - nauczyciel dał nam dodatkowe zadanie; Der Lehrer gab uns eine zusätzliche Aufgabe.
+[Präteritum] - klient wybrał najdroższą ofertę; Der Kunde wählte das teuerste Angebot.
+[Präteritum] - ona pomogła mi w trudnej sytuacji; Sie half mir in einer schwierigen Situation.
+[Präteritum] - zapomniałem jego numer telefonu; Ich vergaß seine Telefonnummer.
+[Präteritum] - podczas spotkania dużo rozmawialiśmy; Während des Treffens sprachen wir viel.
+[Präteritum] - brat przyniósł mi nową książkę; Mein Bruder brachte mir ein neues Buch.
+[Präteritum] - dziecko zjadło całe śniadanie; Das Kind aß das ganze Frühstück.
+[Präteritum] - wypił tylko jedną filiżankę kawy; Er trank nur eine Tasse Kaffee.
+[Präteritum] - szef podjął trudną decyzję; Der Chef traf eine schwierige Entscheidung.
+[Präteritum] - otrzymaliśmy ważną wiadomość; Wir erhielten eine wichtige Nachricht.
+[Präteritum] - student zrozumiał skomplikowane zagadnienie; Der Student verstand das komplizierte Thema.
+[Präteritum] - wszyscy znali odpowiedź; Alle wussten die Antwort.
+[Präteritum] - spotkanie rozpoczęło się o dziewiątej; Die Besprechung begann um neun Uhr.
+[Präteritum] - koncert zakończył się po północy; Das Konzert endete nach Mitternacht.
+[Präteritum] - od razu rozpoznałem jego głos; Ich erkannte seine Stimme sofort.
+[Präteritum] - pies przebiegł przez ulicę; Der Hund lief über die Straße.
+[Präteritum] - nagle zgasło światło; Plötzlich erlosch das Licht.
+[Präteritum] - samolot wzbił się w powietrze; Das Flugzeug stieg in die Luft.
+[Präteritum] - pacjent pozostał w szpitalu przez tydzień; Der Patient blieb eine Woche im Krankenhaus.
+[Präteritum] - turysta wspiął się na szczyt góry; Der Tourist stieg auf den Gipfel.
+[Präteritum] - z powodu śniegu autobus nie przyjechał; Wegen des Schnees kam der Bus nicht.
+[Präteritum] - policjant zatrzymał uciekającego złodzieja; Der Polizist fing den fliehenden Dieb.
+[Präteritum] - znaleźliśmy wolny stolik przy oknie; Wir fanden einen freien Tisch am Fenster.
+[Präteritum] - ona zaproponowała lepsze rozwiązanie; Sie schlug eine bessere Lösung vor.
+[Präteritum] - klient opisał cały problem bardzo dokładnie; Der Kunde beschrieb das Problem sehr genau.
+[Präteritum] - nauczyciel polecił nam tę książkę; Der Lehrer empfahl uns dieses Buch.
+[Präteritum] - dyrektor podpisał wszystkie dokumenty; Der Direktor unterschrieb alle Dokumente.
+[Präteritum] - zaprosili nas na konferencję; Sie luden uns zur Konferenz ein.
+[Präteritum] - komputer przestał działać; Der Computer funktionierte nicht mehr.
+[Präteritum] - zachowywał się bardzo dziwnie; Er verhielt sich sehr merkwürdig.
+[Präteritum] - przedsiębiorstwo odniosło wielki sukces; Das Unternehmen erzielte einen großen Erfolg.
+[Präteritum] - wielu ludzi cierpiało z powodu upałów; Viele Menschen litten unter der Hitze.
+[Präteritum] - naukowiec udowodnił swoją teorię; Der Wissenschaftler bewies seine Theorie.
+[Präteritum] - nie mogłem znaleźć kluczy; Ich konnte die Schlüssel nicht finden.
+[Präteritum] - musieliśmy długo czekać; Wir mussten lange warten.
+[Präteritum] - chciałem zadać pytanie; Ich wollte eine Frage stellen.
+[Präteritum] - powinieneś był wcześniej zadzwonić; Du solltest früher anrufen.
+[Präteritum] - nikt nie znał prawdziwego powodu; Niemand kannte den wirklichen Grund.
+[Präteritum] - dzieci mogły dłużej zostać; Die Kinder durften länger bleiben.
+[Präteritum] - on wiedział o wszystkim od początku; Er wusste von Anfang an alles.
+[Präteritum] - restauracja była całkowicie pełna; Das Restaurant war völlig voll.
+[Präteritum] - pogoda była znacznie lepsza niż przewidywano; Das Wetter war viel besser als erwartet.
+[Präteritum] - kierowca skręcił w niewłaściwą ulicę; Der Fahrer bog in die falsche Straße ein.
+[Präteritum] - pociąg przejechał obok bez zatrzymania; Der Zug fuhr ohne Halt vorbei.
+[Präteritum] - pracownik oddał raport na czas; Der Mitarbeiter gab den Bericht rechtzeitig ab.
+[Präteritum] - profesor przeprowadził interesujący eksperyment; Der Professor führte ein interessantes Experiment durch.
+[Präteritum] - wszyscy zgodzili się z jego opinią; Alle stimmten seiner Meinung zu.
+[Präteritum] - firma zatrudniła nowych specjalistów; Das Unternehmen stellte neue Fachkräfte ein.
+[Präteritum] - student wypełnił formularz poprawnie; Der Student füllte das Formular korrekt aus.
+[Präteritum] - wyłączyłem komputer przed wyjściem; Ich schaltete den Computer vor dem Verlassen aus.
+[Präteritum] - klient zwrócił uszkodzony produkt; Der Kunde gab das beschädigte Produkt zurück.
+[Präteritum] - oni odwołali spotkanie w ostatniej chwili; Sie sagten das Treffen in letzter Minute ab.
+[Präteritum] - przedstawił bardzo przekonujące argumenty; Er brachte sehr überzeugende Argumente vor.
+[Präteritum] - naukowcy odkryli nową metodę leczenia; Die Wissenschaftler entdeckten eine neue Behandlungsmethode.
+[Präteritum] - rachunek wynosił ponad sto euro; Die Rechnung betrug mehr als hundert Euro.
+[Präteritum] - kierownik omówił wyniki z całym zespołem; Der Leiter besprach die Ergebnisse mit dem ganzen Team.
+[Präteritum] - pacjent stracił przytomność; Der Patient verlor das Bewusstsein.
+[Präteritum] - ona unikała odpowiedzi na pytanie; Sie vermied die Antwort auf die Frage.
+[Präteritum] - wszyscy przestrzegali nowych zasad; Alle befolgten die neuen Regeln.
+[Präteritum] - on udzielił krótkiej odpowiedzi; Er gab eine kurze Antwort.
+[Präteritum] - sąsiad nosił ciężkie torby; Der Nachbar trug schwere Taschen.
+[Präteritum] - opowiedział nam o swoich doświadczeniach; Er erzählte uns von seinen Erfahrungen.
+[Präteritum] - dziecko ukryło się za drzwiami; Das Kind versteckte sich hinter der Tür.
+[Präteritum] - dziennikarz przeprowadził wywiad z ministrem; Der Journalist führte ein Interview mit dem Minister.
+[Präteritum] - firma rozszerzyła działalność na nowe rynki; Das Unternehmen erweiterte seine Tätigkeit auf neue Märkte.
+[Präteritum] - wielu ludzi straciło pracę; Viele Menschen verloren ihre Arbeit.
+[Präteritum] - nagle rozpoczęła się burza; Plötzlich begann ein Gewitter.
+[Präteritum] - uczestnicy dyskutowali przez kilka godzin; Die Teilnehmer diskutierten mehrere Stunden lang.
+[Präteritum] - nauczyciel poprawił wszystkie błędy; Der Lehrer korrigierte alle Fehler.
+[Präteritum] - przez długi czas nie rozumiałem problemu; Lange verstand ich das Problem nicht.
+[Präteritum] - otrzymała propozycję pracy za granicą; Sie erhielt ein Stellenangebot im Ausland.
+[Präteritum] - kierowca uniknął poważnego wypadku; Der Fahrer vermied einen schweren Unfall.
+[Präteritum] - przedsiębiorstwo odnotowało wzrost sprzedaży; Das Unternehmen verzeichnete einen Anstieg des Umsatzes.
+[Präteritum] - student oblał pierwszy egzamin; Der Student fiel durch die erste Prüfung.
+[Präteritum] - lekarz przepisał nowe lekarstwo; Der Arzt verschrieb ein neues Medikament.
+[Präteritum] - dziecko rzuciło piłkę przez płot; Das Kind warf den Ball über den Zaun.
+[Präteritum] - żołnierze bronili miasta przez wiele miesięcy; Die Soldaten verteidigten die Stadt viele Monate lang.
+[Präteritum] - klient narzekał na długi czas oczekiwania; Der Kunde beschwerte sich über die lange Wartezeit.
+[Präteritum] - sąsiad pożyczył mi drabinę; Der Nachbar lieh mir eine Leiter.
+[Präteritum] - uczestnicy podpisali końcowy dokument; Die Teilnehmer unterzeichneten das Abschlussdokument.
+[Präteritum] - długo zastanawiałem się nad odpowiedzią; Ich überlegte lange über die Antwort.
+[Präteritum] - dyrektor odrzucił propozycję; Der Direktor lehnte den Vorschlag ab.
+[Präteritum] - pracownicy domagali się wyższych wynagrodzeń; Die Mitarbeiter forderten höhere Gehälter.
+[Präteritum] - wszyscy byli zaskoczeni wynikiem; Alle waren vom Ergebnis überrascht.
+[Präteritum] - nikt nie spodziewał się takiego rozwoju wydarzeń; Niemand erwartete eine solche Entwicklung.
+[Präteritum] - rozwiązałem zadanie szybciej niż inni; Ich löste die Aufgabe schneller als die anderen.
+[Präteritum] - podróż trwała znacznie dłużej niż planowano; Die Reise dauerte viel länger als geplant.
+[Präteritum] - klient odrzucił naszą ofertę; Der Kunde lehnte unser Angebot ab.
+[Präteritum] - ostatecznie osiągnęliśmy nasz cel; Schließlich erreichten wir unser Ziel.
+[Czasy] - codziennie chodzę do pracy pieszo; Ich gehe jeden Tag zu Fuß zur Arbeit.
+[Czasy] - wczoraj poszedłem do pracy pieszo; Ich ging gestern zu Fuß zur Arbeit.
+[Czasy] - poszedłem już do pracy; Ich bin bereits zur Arbeit gegangen.
+[Czasy] - poszedłem do pracy zanim zadzwoniłeś; Ich war zur Arbeit gegangen, bevor du angerufen hast.
+[Czasy] - jutro pójdę do pracy wcześniej; Ich werde morgen früher zur Arbeit gehen.
+[Czasy] - do ósmej będę już poszedł do pracy; Bis acht Uhr werde ich zur Arbeit gegangen sein.
+[Czasy] - czytam interesującą książkę; Ich lese ein interessantes Buch.
+[Czasy] - przeczytałem wczoraj sto stron; Ich las gestern hundert Seiten.
+[Czasy] - przeczytałem już tę książkę; Ich habe dieses Buch bereits gelesen.
+[Czasy] - przeczytałem książkę zanim obejrzałem film; Ich hatte das Buch gelesen, bevor ich den Film sah.
+[Czasy] - przeczytam tę książkę w weekend; Ich werde dieses Buch am Wochenende lesen.
+[Czasy] - do niedzieli przeczytam całą książkę; Bis Sonntag werde ich das ganze Buch gelesen haben.
+[Czasy] - piszę raport dla kierownika; Ich schreibe einen Bericht für den Leiter.
+[Czasy] - napisałem raport wczoraj wieczorem; Ich schrieb den Bericht gestern Abend.
+[Czasy] - napisałem już raport; Ich habe den Bericht bereits geschrieben.
+[Czasy] - napisałem raport przed spotkaniem; Ich hatte den Bericht vor der Besprechung geschrieben.
+[Czasy] - napiszę raport jutro rano; Ich werde den Bericht morgen früh schreiben.
+[Czasy] - do jutra napiszę raport; Bis morgen werde ich den Bericht geschrieben haben.
+[Czasy] - widzę ten problem bardzo wyraźnie; Ich sehe dieses Problem sehr deutlich.
+[Czasy] - zobaczyłem go na dworcu; Ich sah ihn am Bahnhof.
+[Czasy] - widziałem już ten film; Ich habe diesen Film schon gesehen.
+[Czasy] - widziałem go wcześniej wiele razy; Ich hatte ihn schon oft gesehen.
+[Czasy] - zobaczę go jutro; Ich werde ihn morgen sehen.
+[Czasy] - do jutra zobaczę wszystkie dokumenty; Bis morgen werde ich alle Dokumente gesehen haben.
+[Czasy] - jem śniadanie; Ich esse Frühstück.
+[Czasy] - zjadłem śniadanie bardzo wcześnie; Ich aß sehr früh Frühstück.
+[Czasy] - zjadłem już śniadanie; Ich habe bereits gefrühstückt.
+[Czasy] - zjadłem śniadanie przed wyjazdem; Ich hatte vor der Abfahrt gefrühstückt.
+[Czasy] - zjem coś później; Ich werde später etwas essen.
+[Czasy] - do południa zjem już obiad; Bis Mittag werde ich zu Mittag gegessen haben.
+[Czasy] - piję codziennie dużo wody; Ich trinke jeden Tag viel Wasser.
+[Czasy] - wypiłem dwie kawy; Ich trank zwei Tassen Kaffee.
+[Czasy] - wypiłem już herbatę; Ich habe den Tee bereits getrunken.
+[Czasy] - wypiłem kawę przed spotkaniem; Ich hatte Kaffee getrunken, bevor die Besprechung begann.
+[Czasy] - wypiję coś po treningu; Ich werde nach dem Training etwas trinken.
+[Czasy] - do wieczora wypiję cały sok; Bis zum Abend werde ich den ganzen Saft getrunken haben.
+[Czasy] - znajduję rozwiązanie problemu; Ich finde die Lösung des Problems.
+[Czasy] - znalazłem klucze; Ich fand die Schlüssel.
+[Czasy] - znalazłem już odpowiedź; Ich habe die Antwort gefunden.
+[Czasy] - znalazłem rozwiązanie przed innymi; Ich hatte die Lösung vor den anderen gefunden.
+[Czasy] - znajdę lepsze rozwiązanie; Ich werde eine bessere Lösung finden.
+[Czasy] - do jutra znajdę sposób na naprawę błędu; Bis morgen werde ich einen Weg gefunden haben.
+[Czasy] - daję mu ważny dokument; Ich gebe ihm ein wichtiges Dokument.
+[Czasy] - dałem mu wszystkie informacje; Ich gab ihm alle Informationen.
+[Czasy] - dałem mu już odpowiedź; Ich habe ihm bereits geantwortet.
+[Czasy] - dałem mu znać przed spotkaniem; Ich hatte ihm vor dem Treffen Bescheid gegeben.
+[Czasy] - dam mu dokument jutro; Ich werde ihm das Dokument morgen geben.
+[Czasy] - do jutra dam mu wszystkie materiały; Bis morgen werde ich ihm alle Unterlagen gegeben haben.
+[Czasy] - pomagam nowym pracownikom; Ich helfe den neuen Mitarbeitern.
+[Czasy] - pomogłem mu wczoraj; Ich half ihm gestern.
+[Czasy] - pomogłem już wszystkim klientom; Ich habe bereits allen Kunden geholfen.
+[Czasy] - pomogłem mu zanim przyjechał kierownik; Ich hatte ihm geholfen, bevor der Leiter ankam.
+[Czasy] - pomogę ci jutro; Ich werde dir morgen helfen.
+[Czasy] - do końca tygodnia pomogę wszystkim uczestnikom; Bis Ende der Woche werde ich allen Teilnehmern geholfen haben.
+[Czasy] - rozumiem to zagadnienie; Ich verstehe dieses Thema.
+[Czasy] - zrozumiałem problem natychmiast; Ich verstand das Problem sofort.
+[Czasy] - zrozumiałem już twoje stanowisko; Ich habe deinen Standpunkt verstanden.
+[Czasy] - zrozumiałem wszystko przed końcem prezentacji; Ich hatte alles verstanden, bevor die Präsentation endete.
+[Czasy] - zrozumiem to po szkoleniu; Ich werde es nach der Schulung verstehen.
+[Czasy] - do jutra zrozumiem wszystkie szczegóły; Bis morgen werde ich alle Einzelheiten verstanden haben.
+[Czasy] - wiem o tej sytuacji; Ich weiß über diese Situation Bescheid.
+[Czasy] - wiedziałem o tym wcześniej; Ich wusste das vorher.
+[Czasy] - dowiedziałem się już o zmianach; Ich habe bereits von den Änderungen erfahren.
+[Czasy] - wiedziałem o problemach przed spotkaniem; Ich hatte vor dem Treffen von den Problemen gewusst.
+[Czasy] - będę wiedział więcej jutro; Ich werde morgen mehr wissen.
+[Czasy] - do końca tygodnia będę znał wszystkie fakty; Bis Ende der Woche werde ich alle Fakten erfahren haben.
+[Czasy] - przychodzę punktualnie do biura; Ich komme pünktlich ins Büro.
+[Czasy] - przyszedłem za późno; Ich kam zu spät.
+[Czasy] - przyszedłem już do biura; Ich bin bereits ins Büro gekommen.
+[Czasy] - przyszedłem przed wszystkimi innymi; Ich war vor allen anderen gekommen.
+[Czasy] - przyjdę jutro wcześniej; Ich werde morgen früher kommen.
+[Czasy] - do ósmej przyjdę do biura; Bis acht Uhr werde ich ins Büro gekommen sein.
+[Czasy] - jadę pociągiem do Berlina; Ich fahre mit dem Zug nach Berlin.
+[Czasy] - pojechałem tam w zeszłym roku; Ich fuhr dort letztes Jahr hin.
+[Czasy] - pojechałem już do Berlina; Ich bin bereits nach Berlin gefahren.
+[Czasy] - pojechałem tam przed rozpoczęciem projektu; Ich war vor Projektbeginn nach Berlin gefahren.
+[Czasy] - pojadę tam ponownie; Ich werde noch einmal dorthin fahren.
+[Czasy] - do końca miesiąca pojadę do Berlina; Bis Ende des Monats werde ich nach Berlin gefahren sein.
+[Czasy] - staję się coraz lepszy w niemieckim; Ich werde immer besser in Deutsch.
+[Czasy] - zostałem kierownikiem zespołu; Ich wurde Teamleiter.
+[Czasy] - zostałem już poinformowany; Ich bin bereits informiert worden.
+[Czasy] - zostałem wybrany przed rokiem; Ich war vor einem Jahr gewählt worden.
+[Czasy] - zostanę kierownikiem projektu; Ich werde Projektleiter werden.
+[Czasy] - do końca roku zostanę awansowany; Bis Ende des Jahres werde ich befördert worden sein.
+[Präteritum] - poszedłem do pracy bardzo wcześnie; Ich ging sehr früh zur Arbeit.
+[Präteritum] - przyjechał do Berlina późnym wieczorem; Er kam spät am Abend nach Berlin.
+[Präteritum] - pojechaliśmy nad morze podczas wakacji; Wir fuhren im Urlaub ans Meer.
+[Präteritum] - przeczytałem cały raport w jeden dzień; Ich las den ganzen Bericht an einem Tag.
+[Präteritum] - napisała długi e-mail do klienta; Sie schrieb eine lange E-Mail an den Kunden.
+[Präteritum] - zobaczyliśmy piękny zachód słońca; Wir sahen einen schönen Sonnenuntergang.
+[Präteritum] - zjadł wszystkie kanapki; Er aß alle Sandwiches.
+[Präteritum] - wypiłem dwie filiżanki kawy; Ich trank zwei Tassen Kaffee.
+[Präteritum] - znalazłem rozwiązanie problemu; Ich fand die Lösung des Problems.
+[Präteritum] - dała mi bardzo dobrą radę; Sie gab mir einen sehr guten Rat.
+[Präteritum] - pomogłeś mi w trudnej sytuacji; Du halfst mir in einer schwierigen Situation.
+[Präteritum] - rozumieliśmy wszystkie polecenia; Wir verstanden alle Anweisungen.
+[Präteritum] - wiedział o tym od początku; Er wusste davon von Anfang an.
+[Präteritum] - wybrałem najtańszą ofertę; Ich wählte das günstigste Angebot.
+[Präteritum] - zabrał ze sobą wszystkie dokumenty; Er nahm alle Dokumente mit.
+[Präteritum] - spałem tylko pięć godzin; Ich schlief nur fünf Stunden.
+[Präteritum] - pozostał w biurze do północy; Er blieb bis Mitternacht im Büro.
+[Präteritum] - rozpoczęli projekt w maju; Sie begannen das Projekt im Mai.
+[Präteritum] - przyniosła świeże pieczywo; Sie brachte frische Brötchen mit.
+[Präteritum] - spotkaliśmy klienta na targach; Wir trafen den Kunden auf der Messe.
+[Präteritum] - otrzymałem ważną wiadomość; Ich erhielt eine wichtige Nachricht.
+[Präteritum] - stracił portfel na dworcu; Er verlor seine Geldbörse am Bahnhof.
+[Präteritum] - poleciła mi tę książkę; Sie empfahl mir dieses Buch.
+[Präteritum] - opisał całe zdarzenie bardzo dokładnie; Er beschrieb das Ereignis sehr genau.
+[Präteritum] - podpisałem umowę bez wahania; Ich unterschrieb den Vertrag ohne Zögern.
+[Präteritum] - lekarz przepisał nowe lekarstwo; Der Arzt verschrieb ein neues Medikament.
+[Präteritum] - zaprosili nas na konferencję; Sie luden uns zur Konferenz ein.
+[Präteritum] - rzucił piłkę przez płot; Er warf den Ball über den Zaun.
+[Präteritum] - pływałem codziennie rano; Ich schwamm jeden Morgen.
+[Präteritum] - wspiął się na wysoką górę; Er stieg auf einen hohen Berg.
+[Präteritum] - odjechaliśmy przed świtem; Wir fuhren vor Tagesanbruch ab.
+[Präteritum] - wsiadła do pierwszego wagonu; Sie stieg in den ersten Wagen ein.
+[Präteritum] - zaproponował interesujące rozwiązanie; Er schlug eine interessante Lösung vor.
+[Präteritum] - zadzwonił do mnie po południu; Er rief mich am Nachmittag an.
+[Präteritum] - rozpoczęło się silne oberwanie chmury; Ein starkes Unwetter brach aus.
+[Präteritum] - zamknął wszystkie okna; Er schloss alle Fenster.
+[Präteritum] - postanowiłem zmienić pracę; Ich beschloss, den Job zu wechseln.
+[Präteritum] - udowodnił swoją teorię; Er bewies seine Theorie.
+[Präteritum] - uniknęliśmy poważnego błędu; Wir vermieden einen schweren Fehler.
+[Präteritum] - prowadził samochód bardzo ostrożnie; Er fuhr sehr vorsichtig Auto.
+[Präteritum] - ciągnął ciężką walizkę przez lotnisko; Er zog den schweren Koffer durch den Flughafen.
+[Präteritum] - doradziła nam cierpliwość; Sie riet uns zur Geduld.
+[Präteritum] - uczestnicy zgodzili się z propozycją; Die Teilnehmer stimmten dem Vorschlag zu.
+[Präteritum] - wstałem o szóstej rano; Ich stand um sechs Uhr auf.
+[Präteritum] - wszedł do pokoju bez pukania; Er trat ohne zu klopfen ins Zimmer.
+[Präteritum] - firma zatrudniła nowych specjalistów; Die Firma stellte neue Fachkräfte ein.
+[Präteritum] - oddałem książkę do biblioteki; Ich gab das Buch in die Bibliothek zurück.
+[Präteritum] - komputer przestał działać; Der Computer fiel aus.
+[Präteritum] - naukowcy odkryli nową metodę; Die Wissenschaftler erfanden eine neue Methode.
+[Präteritum] - samolot wystartował punktualnie; Das Flugzeug hob pünktlich ab.
+[Perfekt] - poszedłem do pracy bardzo wcześnie; Ich bin sehr früh zur Arbeit gegangen.
+[Perfekt] - przyjechał do Berlina późnym wieczorem; Er ist spät am Abend nach Berlin gekommen.
+[Perfekt] - pojechaliśmy nad morze podczas wakacji; Wir sind im Urlaub ans Meer gefahren.
+[Perfekt] - przeczytałem cały raport w jeden dzień; Ich habe den ganzen Bericht an einem Tag gelesen.
+[Perfekt] - napisała długi e-mail do klienta; Sie hat eine lange E-Mail an den Kunden geschrieben.
+[Perfekt] - zobaczyliśmy piękny zachód słońca; Wir haben einen schönen Sonnenuntergang gesehen.
+[Perfekt] - zjadł wszystkie kanapki; Er hat alle Sandwiches gegessen.
+[Perfekt] - wypiłem dwie filiżanki kawy; Ich habe zwei Tassen Kaffee getrunken.
+[Perfekt] - znalazłem rozwiązanie problemu; Ich habe die Lösung des Problems gefunden.
+[Perfekt] - dała mi bardzo dobrą radę; Sie hat mir einen sehr guten Rat gegeben.
+[Perfekt] - pomogłeś mi w trudnej sytuacji; Du hast mir in einer schwierigen Situation geholfen.
+[Perfekt] - zrozumieliśmy wszystkie polecenia; Wir haben alle Anweisungen verstanden.
+[Perfekt] - dowiedział się o tym od początku; Er hat davon von Anfang an gewusst.
+[Perfekt] - wybrałem najtańszą ofertę; Ich habe das günstigste Angebot gewählt.
+[Perfekt] - zabrał ze sobą wszystkie dokumenty; Er hat alle Dokumente mitgenommen.
+[Perfekt] - spałem tylko pięć godzin; Ich habe nur fünf Stunden geschlafen.
+[Perfekt] - pozostał w biurze do północy; Er ist bis Mitternacht im Büro geblieben.
+[Perfekt] - rozpoczęli projekt w maju; Sie haben das Projekt im Mai begonnen.
+[Perfekt] - przyniosła świeże pieczywo; Sie hat frische Brötchen mitgebracht.
+[Perfekt] - spotkaliśmy klienta na targach; Wir haben den Kunden auf der Messe getroffen.
+[Perfekt] - otrzymałem ważną wiadomość; Ich habe eine wichtige Nachricht erhalten.
+[Perfekt] - stracił portfel na dworcu; Er hat seine Geldbörse am Bahnhof verloren.
+[Perfekt] - poleciła mi tę książkę; Sie hat mir dieses Buch empfohlen.
+[Perfekt] - opisał całe zdarzenie bardzo dokładnie; Er hat das Ereignis sehr genau beschrieben.
+[Perfekt] - podpisałem umowę bez wahania; Ich habe den Vertrag ohne Zögern unterschrieben.
+[Perfekt] - lekarz przepisał nowe lekarstwo; Der Arzt hat ein neues Medikament verschrieben.
+[Perfekt] - zaprosili nas na konferencję; Sie haben uns zur Konferenz eingeladen.
+[Perfekt] - rzucił piłkę przez płot; Er hat den Ball über den Zaun geworfen.
+[Perfekt] - pływałem codziennie rano; Ich bin jeden Morgen geschwommen.
+[Perfekt] - wspiął się na wysoką górę; Er ist auf einen hohen Berg gestiegen.
+[Perfekt] - odjechaliśmy przed świtem; Wir sind vor Tagesanbruch abgefahren.
+[Perfekt] - wsiadła do pierwszego wagonu; Sie ist in den ersten Wagen eingestiegen.
+[Perfekt] - zaproponował interesujące rozwiązanie; Er hat eine interessante Lösung vorgeschlagen.
+[Perfekt] - zadzwonił do mnie po południu; Er hat mich am Nachmittag angerufen.
+[Perfekt] - rozpoczęło się silne oberwanie chmury; Ein starkes Unwetter ist ausgebrochen.
+[Perfekt] - zamknął wszystkie okna; Er hat alle Fenster geschlossen.
+[Perfekt] - postanowiłem zmienić pracę; Ich habe beschlossen, den Job zu wechseln.
+[Perfekt] - udowodnił swoją teorię; Er hat seine Theorie bewiesen.
+[Perfekt] - uniknęliśmy poważnego błędu; Wir haben einen schweren Fehler vermieden.
+[Perfekt] - prowadził samochód bardzo ostrożnie; Er hat sehr vorsichtig Auto gefahren.
+[Perfekt] - ciągnął ciężką walizkę przez lotnisko; Er hat den schweren Koffer durch den Flughafen gezogen.
+[Perfekt] - doradziła nam cierpliwość; Sie hat uns zur Geduld geraten.
+[Perfekt] - uczestnicy zgodzili się z propozycją; Die Teilnehmer haben dem Vorschlag zugestimmt.
+[Perfekt] - wstałem o szóstej rano; Ich bin um sechs Uhr aufgestanden.
+[Perfekt] - wszedł do pokoju bez pukania; Er ist ohne zu klopfen ins Zimmer eingetreten.
+[Perfekt] - firma zatrudniła nowych specjalistów; Die Firma hat neue Fachkräfte eingestellt.
+[Perfekt] - oddałem książkę do biblioteki; Ich habe das Buch in die Bibliothek zurückgegeben.
+[Perfekt] - komputer przestał działać; Der Computer ist ausgefallen.
+[Perfekt] - naukowcy odkryli nową metodę; Die Wissenschaftler haben eine neue Methode erfunden.
+[Perfekt] - samolot wystartował punktualnie; Das Flugzeug ist pünktlich abgehoben.
+[Perfekt] - zabrałem głos podczas spotkania; Ich habe während der Besprechung das Wort ergriffen.
+[Perfekt] - przedsiębiorstwo osiągnęło wielki sukces; Das Unternehmen hat einen großen Erfolg erzielt.
+[Perfekt] - wielu ludzi cierpiało z powodu upałów; Viele Menschen haben unter der Hitze gelitten.
+[Perfekt] - klient odrzucił naszą ofertę; Der Kunde hat unser Angebot abgelehnt.
+[Perfekt] - rozwiązałem zadanie szybciej niż inni; Ich habe die Aufgabe schneller als die anderen gelöst.
+[Perfekt] - lekarz zbadał pacjenta; Der Arzt hat den Patienten untersucht.
+[Perfekt] - uczestnicy omówili wszystkie punkty; Die Teilnehmer haben alle Punkte besprochen.
+[Perfekt] - dyrektor zaakceptował projekt; Der Direktor hat das Projekt genehmigt.
+[Perfekt] - zespół opracował nową strategię; Das Team hat eine neue Strategie entwickelt.
+[Perfekt] - klient zwrócił uszkodzony produkt; Der Kunde hat das beschädigte Produkt zurückgegeben.
+[Perfekt] - policjant zatrzymał kierowcę; Der Polizist hat den Fahrer angehalten.
+[Perfekt] - kursanci nauczyli się nowych słówek; Die Kursteilnehmer haben neue Vokabeln gelernt.
+[Perfekt] - sąsiad pożyczył mi drabinę; Der Nachbar hat mir eine Leiter geliehen.
+[Perfekt] - student zdał egzamin; Der Student hat die Prüfung bestanden.
+[Perfekt] - student oblał pierwszy egzamin; Der Student ist durch die erste Prüfung gefallen.
+[Perfekt] - wszyscy śmiali się z żartu; Alle haben über den Witz gelacht.
+[Perfekt] - turysta zwiedził stare miasto; Der Tourist hat die Altstadt besichtigt.
+[Perfekt] - nauczyciel poprawił wszystkie błędy; Der Lehrer hat alle Fehler korrigiert.
+[Perfekt] - dziecko ukryło się za drzwiami; Das Kind hat sich hinter der Tür versteckt.
+[Perfekt] - wysłałem dokumenty do klienta; Ich habe die Unterlagen an den Kunden geschickt.
+[Perfekt] - otrzymała zaproszenie na konferencję; Sie hat eine Einladung zur Konferenz bekommen.
+[Perfekt] - kierownik przeprowadził rozmowę kwalifikacyjną; Der Leiter hat ein Vorstellungsgespräch geführt.
+[Perfekt] - pracownicy domagali się wyższych płac; Die Mitarbeiter haben höhere Löhne gefordert.
+[Perfekt] - przedsiębiorstwo rozszerzyło działalność; Das Unternehmen hat seine Tätigkeit erweitert.
+[Perfekt] - pasażer zgubił bilet; Der Fahrgast hat seine Fahrkarte verloren.
+[Perfekt] - naukowcy przeprowadzili badania; Die Wissenschaftler haben Untersuchungen durchgeführt.
+[Perfekt] - klient zareklamował produkt; Der Kunde hat das Produkt reklamiert.
+[Perfekt] - sąsiad naprawił rower; Der Nachbar hat das Fahrrad repariert.
+[Perfekt] - policja wyjaśniła sprawę; Die Polizei hat den Fall aufgeklärt.
+[Perfekt] - burza zniszczyła wiele drzew; Das Unwetter hat viele Bäume zerstört.
+[Perfekt] - zespół wygrał mecz; Die Mannschaft hat das Spiel gewonnen.
+[Perfekt] - drużyna przegrała finał; Die Mannschaft hat das Finale verloren.
+[Perfekt] - kierowca uniknął wypadku; Der Fahrer hat einen Unfall vermieden.
+[Perfekt] - kolega zapomniał kluczy; Der Kollege hat die Schlüssel vergessen.
+[Perfekt] - wreszcie osiągnęliśmy nasz cel; Wir haben schließlich unser Ziel erreicht.
+[Perfekt] - uczestnicy podpisali dokument końcowy; Die Teilnehmer haben das Abschlussdokument unterzeichnet.
+[Perfekt] - firma zwiększyła sprzedaż; Die Firma hat ihren Umsatz gesteigert.
+[Perfekt] - właściciel sprzedał dom; Der Eigentümer hat das Haus verkauft.
+[Perfekt] - klient kupił nowy samochód; Der Kunde hat ein neues Auto gekauft.
+[Perfekt] - podróż trwała dłużej niż planowano; Die Reise hat länger als geplant gedauert.
+[Perfekt] - technik zainstalował nowe oprogramowanie; Der Techniker hat neue Software installiert.
+[Perfekt] - nauczyciel wyjaśnił trudne zagadnienie; Der Lehrer hat ein schwieriges Thema erklärt.
+[Perfekt] - student odpowiedział na wszystkie pytania; Der Student hat alle Fragen beantwortet.
+[Perfekt] - koledzy dyskutowali o nowym projekcie; Die Kollegen haben über das neue Projekt diskutiert.
+[Perfekt] - uczestnicy ukończyli szkolenie; Die Teilnehmer haben die Schulung abgeschlossen.
+[Perfekt] - projekt okazał się sukcesem; Das Projekt hat sich als Erfolg erwiesen.
+[Perfekt] - klienci byli zadowoleni z usługi; Die Kunden sind mit der Dienstleistung zufrieden gewesen.
+[Indirekte Rede] - on mówi, że przyjdzie jutro; Er sagt, er komme morgen.
+[Indirekte Rede] - ona twierdzi, że zna odpowiedź; Sie behauptet, sie kenne die Antwort.
+[Indirekte Rede] - klient mówi, że otrzymał wiadomość; Der Kunde sagt, er habe die Nachricht erhalten.
+[Indirekte Rede] - nauczyciel twierdzi, że egzamin będzie trudny; Der Lehrer sagt, die Prüfung werde schwierig sein.
+[Indirekte Rede] - on mówi, że mieszka w Berlinie; Er sagt, er wohne in Berlin.
+[Indirekte Rede] - ona twierdzi, że przeczytała książkę; Sie sagt, sie habe das Buch gelesen.
+[Indirekte Rede] - dyrektor mówi, że projekt został ukończony; Der Direktor sagt, das Projekt sei abgeschlossen worden.
+[Indirekte Rede] - kolega twierdzi, że nie ma czasu; Der Kollege sagt, er habe keine Zeit.
+[Indirekte Rede] - klient mówi, że zapłaci jutro; Der Kunde sagt, er werde morgen bezahlen.
+[Indirekte Rede] - ona mówi, że jedzie do Hamburga; Sie sagt, sie fahre nach Hamburg.
+[Indirekte Rede] - on twierdzi, że widział ten film; Er behauptet, er habe diesen Film gesehen.
+[Indirekte Rede] - nauczyciel mówi, że wszyscy zdali egzamin; Der Lehrer sagt, alle hätten die Prüfung bestanden.
+[Indirekte Rede] - ona twierdzi, że zna niemiecki bardzo dobrze; Sie sagt, sie beherrsche Deutsch sehr gut.
+[Indirekte Rede] - on mówi, że musi wcześniej wyjść; Er sagt, er müsse früher gehen.
+[Indirekte Rede] - klient twierdzi, że zgubił fakturę; Der Kunde sagt, er habe die Rechnung verloren.
+[Indirekte Rede] - sąsiad mówi, że sprzedał samochód; Der Nachbar sagt, er habe sein Auto verkauft.
+[Indirekte Rede] - kierownik twierdzi, że wyniki są bardzo dobre; Der Leiter sagt, die Ergebnisse seien sehr gut.
+[Indirekte Rede] - ona mówi, że nie rozumie pytania; Sie sagt, sie verstehe die Frage nicht.
+[Indirekte Rede] - on twierdzi, że znalazł rozwiązanie; Er behauptet, er habe eine Lösung gefunden.
+[Indirekte Rede] - firma informuje, że otworzy nowy oddział; Die Firma teilt mit, sie werde eine neue Niederlassung eröffnen.
+[Indirekte Rede] - student twierdzi, że przygotował raport; Der Student sagt, er habe den Bericht vorbereitet.
+[Indirekte Rede] - lekarz mówi, że pacjent jest zdrowy; Der Arzt sagt, der Patient sei gesund.
+[Indirekte Rede] - klient twierdzi, że wysłał dokumenty; Der Kunde sagt, er habe die Unterlagen geschickt.
+[Indirekte Rede] - ona mówi, że nie może przyjść; Sie sagt, sie könne nicht kommen.
+[Indirekte Rede] - on twierdzi, że będzie pracował z domu; Er sagt, er werde von zu Hause arbeiten.
+[Indirekte Rede] - uczestnicy mówią, że szkolenie było interesujące; Die Teilnehmer sagen, die Schulung sei interessant gewesen.
+[Indirekte Rede] - nauczyciel twierdzi, że uczniowie zrobili postępy; Der Lehrer sagt, die Schüler hätten Fortschritte gemacht.
+[Indirekte Rede] - klient mówi, że potrzebuje więcej czasu; Der Kunde sagt, er benötige mehr Zeit.
+[Indirekte Rede] - ona twierdzi, że wszystko rozumie; Sie sagt, sie verstehe alles.
+[Indirekte Rede] - on mówi, że kupił nowy komputer; Er sagt, er habe einen neuen Computer gekauft.
+[Indirekte Rede] - kierownik twierdzi, że decyzja była słuszna; Der Leiter sagt, die Entscheidung sei richtig gewesen.
+[Indirekte Rede] - ona mówi, że nie otrzymała e-maila; Sie sagt, sie habe keine E-Mail erhalten.
+[Indirekte Rede] - klient twierdzi, że już zapłacił; Der Kunde sagt, er habe bereits bezahlt.
+[Indirekte Rede] - on mówi, że musi wyjechać służbowo; Er sagt, er müsse dienstlich verreisen.
+[Indirekte Rede] - firma informuje, że ceny wzrosną; Die Firma teilt mit, die Preise würden steigen.
+[Indirekte Rede] - ona twierdzi, że była w Austrii; Sie sagt, sie sei in Österreich gewesen.
+[Indirekte Rede] - student mówi, że zda egzamin; Der Student sagt, er werde die Prüfung bestehen.
+[Indirekte Rede] - on twierdzi, że wszystko przygotował; Er sagt, er habe alles vorbereitet.
+[Indirekte Rede] - klient mówi, że chce anulować zamówienie; Der Kunde sagt, er wolle die Bestellung stornieren.
+[Indirekte Rede] - nauczyciel twierdzi, że temat został omówiony; Der Lehrer sagt, das Thema sei behandelt worden.
+[Indirekte Rede] - ona mówi, że przeprowadzi się do Monachium; Sie sagt, sie werde nach München umziehen.
+[Indirekte Rede] - on twierdzi, że nie zna tej osoby; Er sagt, er kenne diese Person nicht.
+[Indirekte Rede] - klient twierdzi, że otrzymał uszkodzony produkt; Der Kunde sagt, er habe ein beschädigtes Produkt erhalten.
+[Indirekte Rede] - sąsiad mówi, że remont zakończy się w przyszłym tygodniu; Der Nachbar sagt, die Renovierung werde nächste Woche abgeschlossen.
+[Indirekte Rede] - ona twierdzi, że nie popełniła błędu; Sie sagt, sie habe keinen Fehler gemacht.
+[Indirekte Rede] - kierownik mówi, że projekt przebiega zgodnie z planem; Der Leiter sagt, das Projekt verlaufe planmäßig.
+[Indirekte Rede] - student twierdzi, że zdał wszystkie egzaminy; Der Student sagt, er habe alle Prüfungen bestanden.
+[Indirekte Rede] - klient mówi, że skontaktuje się później; Der Kunde sagt, er werde sich später melden.
+[Indirekte Rede] - ona twierdzi, że może nam pomóc; Sie sagt, sie könne uns helfen.
+[Indirekte Rede] - on mówi, że wszystko będzie gotowe jutro; Er sagt, morgen werde alles fertig sein.
+[Konjunktiv II] - gdybym miał więcej czasu, uczyłbym się codziennie niemieckiego; Wenn ich mehr Zeit hätte, würde ich jeden Tag Deutsch lernen.
+[Konjunktiv II] - pojechałbym do Berlina, gdybym miał wolny weekend; Ich würde nach Berlin fahren, wenn ich ein freies Wochenende hätte.
+[Konjunktiv II] - kupiłbym ten samochód, gdyby był tańszy; Ich würde dieses Auto kaufen, wenn es günstiger wäre.
+[Konjunktiv II] - chętnie pomógłbym ci w tym projekcie; Ich würde dir gern bei diesem Projekt helfen.
+[Konjunktiv II] - gdyby znał odpowiedź, powiedziałby nam ją; Wenn er die Antwort wüsste, würde er sie uns sagen.
+[Konjunktiv II] - gdybyśmy wcześniej wyjechali, zdążylibyśmy na pociąg; Wenn wir früher losgefahren wären, hätten wir den Zug erreicht.
+[Konjunktiv II] - na twoim miejscu zaakceptowałbym ofertę; An deiner Stelle würde ich das Angebot annehmen.
+[Konjunktiv II] - gdyby nie padało, poszlibyśmy na spacer; Wenn es nicht regnen würde, gingen wir spazieren.
+[Konjunktiv II] - chciałbym pracować zdalnie; Ich würde gern im Homeoffice arbeiten.
+[Konjunktiv II] - gdybym był bogaty, podróżowałbym po świecie; Wenn ich reich wäre, würde ich um die Welt reisen.
+[Konjunktiv II] - moglibyśmy rozwiązać ten problem szybciej; Wir könnten dieses Problem schneller lösen.
+[Konjunktiv II] - powinieneś wcześniej zadzwonić; Du hättest früher anrufen sollen.
+[Konjunktiv II] - czy mógłbyś mi pomóc?; Könntest du mir helfen?
+[Konjunktiv II] - chciałbym zadać jedno pytanie; Ich würde gern eine Frage stellen.
+[Konjunktiv II] - gdyby miał samochód, odwiedzałby nas częściej; Wenn er ein Auto hätte, würde er uns häufiger besuchen.
+[Konjunktiv II] - gdybym wygrał na loterii, kupiłbym dom nad morzem; Wenn ich im Lotto gewinnen würde, würde ich ein Haus am Meer kaufen.
+[Konjunktiv II] - wolałbym zostać w domu; Ich würde lieber zu Hause bleiben.
+[Konjunktiv II] - gdybyś mnie zapytał, pomógłbym ci; Wenn du mich gefragt hättest, hätte ich dir geholfen.
+[Konjunktiv II] - bez jego pomocy nie osiągnęlibyśmy celu; Ohne seine Hilfe hätten wir das Ziel nicht erreicht.
+[Konjunktiv II] - gdybyśmy znali drogę, nie zgubilibyśmy się; Wenn wir den Weg kennen würden, würden wir uns nicht verirren.
+[Konjunktiv II] - chciałbym kiedyś mieszkać w górach; Ich würde gern einmal in den Bergen wohnen.
+[Konjunktiv II] - czy miałby pan chwilę czasu?; Hätten Sie einen Moment Zeit?
+[Konjunktiv II] - gdyby komputer działał poprawnie, skończyłbym pracę wcześniej; Wenn der Computer richtig funktionieren würde, wäre ich früher fertig.
+[Konjunktiv II] - moglibyśmy zacząć wcześniej; Wir könnten früher anfangen.
+[Konjunktiv II] - gdyby mnie posłuchał, uniknąłby problemów; Wenn er auf mich hören würde, würde er Probleme vermeiden.
+[Konjunktiv II] - byłbym wdzięczny za odpowiedź; Ich wäre für eine Antwort dankbar.
+[Konjunktiv II] - gdyby pogoda była lepsza, pojechalibyśmy nad jezioro; Wenn das Wetter besser wäre, würden wir an den See fahren.
+[Konjunktiv II] - nie zrobiłbym tego na twoim miejscu; Ich würde das an deiner Stelle nicht tun.
+[Konjunktiv II] - chciałbym zamówić kawę; Ich möchte einen Kaffee bestellen.
+[Konjunktiv II] - gdyby miał więcej doświadczenia, dostałby tę pracę; Wenn er mehr Erfahrung hätte, würde er die Stelle bekommen.
+[Konjunktiv II] - czy moglibyśmy przełożyć spotkanie?; Könnten wir die Besprechung verschieben?
+[Konjunktiv II] - gdyby nie korek, bylibyśmy już na miejscu; Ohne den Stau wären wir schon angekommen.
+[Konjunktiv II] - powiedziałbym to inaczej; Ich würde das anders formulieren.
+[Konjunktiv II] - gdybyś więcej ćwiczył, mówiłbyś lepiej po niemiecku; Wenn du mehr üben würdest, würdest du besser Deutsch sprechen.
+[Konjunktiv II] - czy byłbyś zainteresowany współpracą?; Wärst du an einer Zusammenarbeit interessiert?
+[Konjunktiv II] - gdybym miał wybór, wybrałbym spokojniejsze miejsce; Wenn ich die Wahl hätte, würde ich einen ruhigeren Ort wählen.
+[Konjunktiv II] - chciałbym uzyskać więcej informacji; Ich würde gern weitere Informationen erhalten.
+[Konjunktiv II] - gdyby firma zaoferowała lepsze warunki, zostałbym; Wenn die Firma bessere Bedingungen anbieten würde, bliebe ich.
+[Konjunktiv II] - moglibyśmy osiągnąć lepsze wyniki; Wir könnten bessere Ergebnisse erzielen.
+[Konjunktiv II] - gdybyś przyszedł wcześniej, spotkałbyś dyrektora; Wenn du früher gekommen wärst, hättest du den Direktor getroffen.
+[Konjunktiv II] - byłoby lepiej zaczekać; Es wäre besser zu warten.
+[Konjunktiv II] - gdyby samolot nie miał opóźnienia, bylibyśmy już w domu; Wenn das Flugzeug keine Verspätung gehabt hätte, wären wir schon zu Hause.
+[Konjunktiv II] - pożyczyłbym ci pieniądze; Ich würde dir Geld leihen.
+[Konjunktiv II] - gdyby klient zaakceptował ofertę, podpisalibyśmy umowę; Wenn der Kunde das Angebot angenommen hätte, hätten wir den Vertrag unterschrieben.
+[Konjunktiv II] - mogłoby to być dobre rozwiązanie; Das könnte eine gute Lösung sein.
+[Konjunktiv II] - gdybyśmy mieli więcej danych, podjęlibyśmy lepszą decyzję; Wenn wir mehr Daten hätten, würden wir eine bessere Entscheidung treffen.
+[Konjunktiv II] - chętnie zostałbym dłużej; Ich würde gern länger bleiben.
+[Konjunktiv II] - gdybym mógł, natychmiast bym przyjechał; Wenn ich könnte, würde ich sofort kommen.
+[Konjunktiv II] - czy byłby pan tak uprzejmy i podpisał dokument?; Würden Sie bitte das Dokument unterschreiben?
+[Konjunktiv II] - gdyby wszystko poszło zgodnie z planem, zakończylibyśmy projekt wcześniej; Wenn alles nach Plan verlaufen wäre, hätten wir das Projekt früher abgeschlossen.
+

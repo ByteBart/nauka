@@ -1,0 +1,1145 @@
+[Konjunktiv II] Wenn ich mehr Zeit ________, würde ich mehr Deutsch lernen.;hätte <br> Konjunktiv II od haben = hätte
+
+[Konjunktiv II] Wenn ich reich ________, würde ich ein Haus in Bayern kaufen.;wäre <br> Konjunktiv II od sein = wäre
+
+[Konjunktiv II] Wenn ich die Antwort ________, würde ich sie nennen.;wüsste <br> Konjunktiv II od wissen = wüsste
+
+[Konjunktiv II] Wenn er früher gekommen wäre, ________ er den Chef getroffen.;hätte <br> Plusquamperfekt Konjunktiv II: hätte getroffen
+
+[Konjunktiv II] Ohne deine Hilfe ________ ich das nicht geschafft.;hätte <br> sytuacja nierealna w przeszłości
+
+[Konjunktiv II] An deiner Stelle ________ ich diese Stelle annehmen.;würde <br> rada
+
+[Konjunktiv II] Wir ________ das Problem schneller lösen können.;hätten <br> nierealna przeszłość
+
+[Konjunktiv II] Wenn sie Deutsch besser ________, könnte sie hier arbeiten.;könnte <br> Konjunktiv II od können
+
+[Konjunktiv II] Ich ________ gern einen Kaffee bestellen.;möchte <br> grzeczne życzenie
+
+[Konjunktiv II] Könnten Sie mir bitte ________ ?;helfen <br> grzeczna prośba
+
+[Konjunktiv II] Wenn das Wetter besser wäre, ________ wir grillen.;würden <br> nierealny warunek
+
+[Konjunktiv II] Wenn ich Auto fahren könnte, ________ ich dich abholen.;würde <br> warunek
+
+[Konjunktiv II] Du ________ mehr lernen.;solltest <br> rada
+
+[Konjunktiv II] Er ________ gern in Deutschland arbeiten.;würde <br> życzenie
+
+[Konjunktiv II] Wir ________ die Wohnung kaufen, wenn sie billiger wäre.;würden <br> hipotetyczna sytuacja
+
+[Konjunktiv II] Wenn ich Zeit hätte, ________ ich dieses Buch lesen.;würde <br> przypuszczenie
+
+[Konjunktiv II] Ohne den Stau ________ wir pünktlich angekommen.;wären <br> nierealna przeszłość
+
+[Konjunktiv II] Wenn er mehr Erfahrung hätte, ________ er die Stelle bekommen.;würde <br> przypuszczenie
+
+[Konjunktiv II] Das ________ eine gute Idee.;wäre <br> ocena, przypuszczenie
+
+[Konjunktiv II] Wenn wir mehr Geld hätten, ________ wir reisen.;würden <br> sytuacja hipotetyczna
+
+[Indirekte Rede] Er sagt: "Ich komme morgen." → Er sagt, er ________ morgen.;komme <br> Konjunktiv I od kommen
+
+[Indirekte Rede] Sie sagt: "Ich habe keine Zeit." → Sie sagt, sie ________ keine Zeit.;habe <br> Konjunktiv I od haben
+
+[Indirekte Rede] Er sagt: "Ich bin krank." → Er sagt, er ________ krank.;sei <br> Konjunktiv I od sein
+
+[Indirekte Rede] Der Lehrer sagt: "Die Prüfung wird schwer." → Der Lehrer sagt, die Prüfung ________ schwer.;werde <br> Konjunktiv I od werden
+
+[Indirekte Rede] Er sagt: "Ich kann kommen." → Er sagt, er ________ kommen.;könne <br> Konjunktiv I od können
+
+[Indirekte Rede] Sie sagt: "Ich muss arbeiten." → Sie sagt, sie ________ arbeiten.;müsse <br> Konjunktiv I od müssen
+
+[Indirekte Rede] Er sagt: "Ich will nach Berlin fahren." → Er sagt, er ________ nach Berlin fahren.;wolle <br> Konjunktiv I od wollen
+
+[Indirekte Rede] Er sagt: "Ich weiß das." → Er sagt, er ________ das.;wisse <br> Konjunktiv I od wissen
+
+[Indirekte Rede] Sie sagt: "Ich darf früher gehen." → Sie sagt, sie ________ früher gehen.;dürfe <br> Konjunktiv I od dürfen
+
+[Indirekte Rede] Er sagt: "Ich lese das Buch." → Er sagt, er ________ das Buch.;lese <br> Konjunktiv I
+
+[Indirekte Rede] Sie sagt: "Ich schreibe einen Bericht." → Sie sagt, sie ________ einen Bericht.;schreibe <br> Konjunktiv I
+
+[Indirekte Rede] Er sagt: "Ich finde eine Lösung." → Er sagt, er ________ eine Lösung.;finde <br> Konjunktiv I
+
+[Indirekte Rede] Sie sagt: "Ich gehe nach Hause." → Sie sagt, sie ________ nach Hause.;gehe <br> Konjunktiv I
+
+[Indirekte Rede] Er sagt: "Ich fahre nach Hamburg." → Er sagt, er ________ nach Hamburg.;fahre <br> Konjunktiv I
+
+[Indirekte Rede] Der Kunde sagt: "Ich habe bezahlt." → Der Kunde sagt, er ________ bezahlt.;habe <br> Perfekt w mowie zależnej
+
+[Indirekte Rede] Der Student sagt: "Ich habe bestanden." → Der Student sagt, er ________ bestanden.;habe <br> Perfekt + Konjunktiv I
+
+[Indirekte Rede] Sie sagt: "Ich werde anrufen." → Sie sagt, sie ________ anrufen.;werde <br> Futur w mowie zależnej
+
+[Indirekte Rede] Er sagt: "Ich verstehe alles." → Er sagt, er ________ alles.;verstehe <br> Konjunktiv I
+
+[Indirekte Rede] Sie sagt: "Ich kenne ihn." → Sie sagt, sie ________ ihn.;kenne <br> Konjunktiv I
+
+[Indirekte Rede] Er sagt: "Ich nehme das Angebot an." → Er sagt, er ________ das Angebot an.;nehme <br> Konjunktiv I
+
+[Rozpoznaj] Er sagt, er sei krank.;Konjunktiv I <br> mowa zależna
+
+[Rozpoznaj] Wenn ich mehr Geld hätte, würde ich reisen.;Konjunktiv II <br> warunek nierealny
+
+[Rozpoznaj] Sie behauptet, sie habe keine Zeit.;Konjunktiv I <br> relacjonowanie wypowiedzi
+
+[Rozpoznaj] An deiner Stelle würde ich das nicht machen.;Konjunktiv II <br> rada
+
+[Rozpoznaj] Der Lehrer sagt, die Prüfung werde schwer.;Konjunktiv I <br> mowa zależna
+
+[Rozpoznaj] Könntest du mir helfen?;Konjunktiv II <br> grzeczna prośba
+
+[Rozpoznaj] Er sagt, er wisse die Antwort.;Konjunktiv I <br> mowa zależna
+
+[Rozpoznaj] Wenn ich du wäre, würde ich lernen.;Konjunktiv II <br> sytuacja hipotetyczna
+
+[Rozpoznaj] Sie sagt, sie komme später.;Konjunktiv I <br> relacja wypowiedzi
+
+[Rozpoznaj] Das wäre besser.;Konjunktiv II <br> przypuszczenie
+
+[Transformacja] Ich bin krank. → Indirekte Rede;Er sagt, er sei krank. <br> sein → sei
+
+[Transformacja] Ich habe keine Zeit. → Indirekte Rede;Er sagt, er habe keine Zeit. <br> haben → habe
+
+[Transformacja] Ich komme morgen. → Indirekte Rede;Er sagt, er komme morgen. <br> kommen → komme
+
+[Transformacja] Ich kann helfen. → Indirekte Rede;Er sagt, er könne helfen. <br> können → könne
+
+[Transformacja] Ich muss arbeiten. → Indirekte Rede;Er sagt, er müsse arbeiten. <br> müssen → müsse
+
+[Transformacja] Ich will fahren. → Indirekte Rede;Er sagt, er wolle fahren. <br> wollen → wolle
+
+[Transformacja] Ich weiß es. → Indirekte Rede;Er sagt, er wisse es. <br> wissen → wisse
+
+[Transformacja] Ich darf gehen. → Indirekte Rede;Er sagt, er dürfe gehen. <br> dürfen → dürfe
+
+[Transformacja] Ich werde bezahlen. → Indirekte Rede;Er sagt, er werde bezahlen. <br> werden → werde
+
+[Transformacja] Ich lese das Buch. → Indirekte Rede;Er sagt, er lese das Buch. <br> lesen → lese
+
+[Forma] Konjunktiv II od haben;hätte <br> najważniejsza forma
+
+[Forma] Konjunktiv II od sein;wäre <br> najważniejsza forma
+
+[Forma] Konjunktiv II od können;könnte <br> bardzo częsta forma
+
+[Forma] Konjunktiv II od müssen;müsste <br> obowiązek hipotetyczny
+
+[Forma] Konjunktiv II od dürfen;dürfte <br> przypuszczenie lub pozwolenie
+
+[Forma] Konjunktiv II od wissen;wüsste <br> nieregularna forma
+
+[Forma] Konjunktiv II od finden;fände <br> nieregularna forma
+
+[Forma] Konjunktiv II od kommen;käme <br> nieregularna forma
+
+[Forma] Konjunktiv II od gehen;ginge <br> nieregularna forma
+
+[Forma] Konjunktiv II od werden;würde <br> najczęstsza konstrukcja
+
+[Forma] Konjunktiv I od sein;sei <br> najważniejsza forma Indirekte Rede
+
+[Forma] Konjunktiv I od haben;habe <br> najważniejsza forma Indirekte Rede
+
+[Forma] Konjunktiv I od werden;werde <br> Futur w Indirekte Rede
+
+[Forma] Konjunktiv I od können;könne <br> często w mediach
+
+[Forma] Konjunktiv I od müssen;müsse <br> często w mediach
+
+[Forma] Konjunktiv I od wollen;wolle <br> często w gazetach
+
+[Forma] Konjunktiv I od dürfen;dürfe <br> często w gazetach
+
+[Forma] Konjunktiv I od wissen;wisse <br> klasyczna forma
+
+[Forma] Konjunktiv I od kommen;komme <br> regularny wzorzec
+
+[Forma] Konjunktiv I od gehen;gehe <br> regularny wzorzec
+
+[Pułapka B2] Er sagt, er ________ krank.;sei <br> Konjunktiv I od sein
+
+[Pułapka B2] Wenn er mehr Zeit ________, würde er mehr lesen.;hätte <br> Konjunktiv II
+
+[Pułapka B2] Sie sagt, sie ________ morgen kommen.;werde <br> Futur w Indirekte Rede
+
+[Pułapka B2] Wenn ich du ________, würde ich zustimmen.;wäre <br> typowa konstrukcja egzaminacyjna
+
+[Pułapka B2] Er behauptet, er ________ die Antwort gefunden.;habe <br> Perfekt w Indirekte Rede
+
+[Pułapka B2] Das ________ eine interessante Lösung.;wäre <br> przypuszczenie
+
+[Pułapka B2] Sie sagt, sie ________ alles verstanden.;habe <br> Konjunktiv I + Perfekt
+
+[Pułapka B2] Ich ________ gerne nach Österreich fahren.;würde <br> życzenie
+
+[Pułapka B2] Er behauptet, er ________ Deutsch perfekt.;könne <br> relacja wypowiedzi
+
+[Pułapka B2] Wenn wir mehr Zeit hätten, ________ wir das Projekt abschließen.;würden <br> warunek hipotetyczny
+
+[Past Tenses] Ich ______ nach Berlin gefahren.;bin <br> fahren + zmiana miejsca → sein
+
+[Past Tenses] Wir ______ das Buch gelesen.;haben <br> lesen tworzy Perfekt z haben
+
+[Past Tenses] Er ______ gestern sehr spät nach Hause.;kam <br> Präteritum od kommen
+
+[Past Tenses] Sie ______ den Bericht geschrieben.;hat <br> schreiben → haben geschrieben
+
+[Past Tenses] Partizip II od gehen;gegangen <br> gehen-ging-gegangen
+
+[Past Tenses] Präteritum od fahren;fuhr <br> fahren-fuhr-gefahren
+
+[Past Tenses] Ich ______ den Schlüssel gefunden.;habe <br> finden → haben gefunden
+
+[Past Tenses] Wir ______ um sechs Uhr aufgestanden.;sind <br> aufstehen → sein
+
+[Past Tenses] Er ______ die Antwort gewusst.;hat <br> wissen → haben gewusst
+
+[Past Tenses] Präteritum od lesen;las <br> lesen-las-gelesen
+
+[Past Tenses] Partizip II od sehen;gesehen <br> sehen-sah-gesehen
+
+[Past Tenses] Sie ______ die E-Mail erhalten.;hat <br> erhalten → haben erhalten
+
+[Past Tenses] Präteritum od geben;gab <br> geben-gab-gegeben
+
+[Past Tenses] Ich ______ ihm geholfen.;habe <br> helfen → haben geholfen
+
+[Past Tenses] Partizip II od helfen;geholfen <br> helfen-half-geholfen
+
+[Past Tenses] Er ______ das Fenster geschlossen.;hat <br> schließen → haben geschlossen
+
+[Past Tenses] Wir ______ am Bahnhof angekommen.;sind <br> ankommen → sein
+
+[Past Tenses] Präteritum od finden;fand <br> finden-fand-gefunden
+
+[Past Tenses] Partizip II od schreiben;geschrieben <br> schreiben-schrieb-geschrieben
+
+[Past Tenses] Sie ______ ihren Pass verloren.;hat <br> verlieren → haben verloren
+
+[Past Tenses] Präteritum od schlafen;schlief <br> schlafen-schlief-geschlafen
+
+[Past Tenses] Ich ______ nur vier Stunden geschlafen.;habe <br> schlafen → haben
+
+[Past Tenses] Partizip II od essen;gegessen <br> essen-aß-gegessen
+
+[Past Tenses] Er ______ das ganze Brot gegessen.;hat <br> essen → haben
+
+[Past Tenses] Präteritum od trinken;trank <br> trinken-trank-getrunken
+
+[Past Tenses] Wir ______ zwei Liter Wasser getrunken.;haben <br> trinken → haben
+
+[Past Tenses] Partizip II od bleiben;geblieben <br> bleiben-blieb-geblieben
+
+[Past Tenses] Er ______ zu Hause geblieben.;ist <br> bleiben → sein
+
+[Past Tenses] Präteritum od nehmen;nahm <br> nehmen-nahm-genommen
+
+[Past Tenses] Sie ______ viele Fotos gemacht.;hat <br> machen → haben
+
+[Past Tenses] Partizip II od nehmen;genommen <br> nehmen-nahm-genommen
+
+[Past Tenses] Ich ______ den Zug verpasst.;habe <br> verpassen → haben
+
+[Past Tenses] Präteritum od beginnen;begann <br> beginnen-begann-begonnen
+
+[Past Tenses] Das Meeting ______ um neun Uhr.;begann <br> Präteritum
+
+[Past Tenses] Partizip II od beginnen;begonnen <br> beginnen-begann-begonnen
+
+[Past Tenses] Wir ______ das Projekt begonnen.;haben <br> beginnen → haben
+
+[Past Tenses] Präteritum od kommen;kam <br> kommen-kam-gekommen
+
+[Past Tenses] Er ______ zu spät gekommen.;ist <br> kommen → sein
+
+[Past Tenses] Partizip II od fahren;gefahren <br> fahren-fuhr-gefahren
+
+[Past Tenses] Ich ______ nach Hamburg gefahren.;bin <br> ruch → sein
+
+[Past Tenses] Präteritum od sehen;sah <br> sehen-sah-gesehen
+
+[Past Tenses] Sie ______ einen Unfall gesehen.;hat <br> sehen → haben
+
+[Past Tenses] Partizip II od sprechen;gesprochen <br> sprechen-sprach-gesprochen
+
+[Past Tenses] Wir ______ lange über Politik gesprochen.;haben <br> sprechen → haben
+
+[Past Tenses] Präteritum od gewinnen;gewann <br> gewinnen-gewann-gewonnen
+
+[Past Tenses] Er ______ das Spiel gewonnen.;hat <br> gewinnen → haben
+
+[Past Tenses] Partizip II od verlieren;verloren <br> verlieren-verlor-verloren
+
+[Past Tenses] Sie ______ ihre Tasche verloren.;hat <br> verlieren → haben
+
+[Past Tenses] Präteritum od helfen;half <br> helfen-half-geholfen
+
+[Past Tenses] Er ______ mir bei der Arbeit.;half <br> Präteritum
+
+[Past Tenses] Partizip II od finden;gefunden <br> finden-fand-gefunden
+
+[Past Tenses] Wir ______ eine Lösung gefunden.;haben <br> finden → haben
+
+[Past Tenses] Präteritum od stehen;stand <br> stehen-stand-gestanden
+
+[Past Tenses] Das Auto ______ vor dem Haus.;stand <br> Präteritum
+
+[Past Tenses] Partizip II od stehen;gestanden <br> stehen-stand-gestanden
+
+[Past Tenses] Er ______ lange in der Schlange gestanden.;hat <br> stehen → haben
+
+[Past Tenses] Präteritum od sitzen;saß <br> sitzen-saß-gesessen
+
+[Past Tenses] Ich ______ drei Stunden dort gesessen.;habe <br> sitzen → haben
+
+[Past Tenses] Partizip II od sitzen;gesessen <br> sitzen-saß-gesessen
+
+[Past Tenses] Präteritum od laufen;lief <br> laufen-lief-gelaufen
+
+[Past Tenses] Er ______ fünf Kilometer gelaufen.;ist <br> laufen → sein
+
+[Past Tenses] Partizip II od laufen;gelaufen <br> laufen-lief-gelaufen
+
+[Past Tenses] Präteritum od entscheiden;entschied <br> entscheiden-entschied-entschieden
+
+[Past Tenses] Wir ______ uns schnell entschieden.;haben <br> entscheiden → haben
+
+[Past Tenses] Partizip II od entscheiden;entschieden <br> entschieden
+
+[Past Tenses] Präteritum od beschreiben;beschrieb <br> beschreiben-beschrieb-beschrieben
+
+[Past Tenses] Er ______ das Problem genau beschrieben.;hat <br> beschreiben → haben
+
+[Past Tenses] Partizip II od beschreiben;beschrieben <br> forma nieregularna
+
+[Past Tenses] Präteritum od empfehlen;empfahl <br> empfehlen-empfahl-empfohlen
+
+[Past Tenses] Der Lehrer ______ dieses Buch empfohlen.;hat <br> empfehlen → haben
+
+[Past Tenses] Partizip II od empfehlen;empfohlen <br> nieregularny
+
+[Past Tenses] Präteritum od treffen;traf <br> treffen-traf-getroffen
+
+[Past Tenses] Wir ______ den Direktor getroffen.;haben <br> treffen → haben
+
+[Past Tenses] Partizip II od treffen;getroffen <br> treffen-traf-getroffen
+
+[Past Tenses] Präteritum od ziehen;zog <br> ziehen-zog-gezogen
+
+[Past Tenses] Er ______ nach München gezogen.;ist <br> umziehen/ziehen miejsce → sein
+
+[Past Tenses] Partizip II od ziehen;gezogen <br> ziehen-zog-gezogen
+
+[Past Tenses] Präteritum od fallen;fiel <br> fallen-fiel-gefallen
+
+[Past Tenses] Der Baum ______ um.;fiel <br> Präteritum
+
+[Past Tenses] Der Baum ______ umgefallen.;ist <br> umfallen → sein
+
+[Past Tenses] Partizip II od fallen;gefallen <br> fallen-fiel-gefallen
+
+[Past Tenses] Präteritum od aufstehen;stand auf <br> czasownik rozdzielny
+
+[Past Tenses] Ich ______ um sechs Uhr aufgestanden.;bin <br> aufstehen → sein
+
+[Past Tenses] Partizip II od aufstehen;aufgestanden <br> czasownik rozdzielny
+
+[Past Tenses] Präteritum od ankommen;kam an <br> czasownik rozdzielny
+
+[Past Tenses] Der Zug ______ pünktlich angekommen.;ist <br> ankommen → sein
+
+[Past Tenses] Partizip II od ankommen;angekommen <br> rozdzielny
+
+[Past Tenses] Präteritum od einsteigen;stieg ein <br> rozdzielny
+
+[Past Tenses] Sie ______ in den Bus eingestiegen.;ist <br> einsteigen → sein
+
+[Past Tenses] Partizip II od einsteigen;eingestiegen <br> stieg ein
+
+[Past Tenses] Präteritum od zurückkommen;kam zurück <br> rozdzielny
+
+[Past Tenses] Er ______ spät zurückgekommen.;ist <br> zurückkommen → sein
+
+[Past Tenses] Partizip II od zurückkommen;zurückgekommen <br> ruch
+
+[Past Tenses] Präteritum od mitbringen;brachte mit <br> rozdzielny
+
+[Past Tenses] Sie ______ einen Kuchen mitgebracht.;hat <br> mitbringen → haben
+
+[Past Tenses] Partizip II od mitbringen;mitgebracht <br> forma nieregularna
+
+[Past Tenses] Präteritum od anrufen;rief an <br> rozdzielny
+
+[Past Tenses] Er ______ mich gestern angerufen.;hat <br> anrufen → haben
+
+[Past Tenses] Partizip II od anrufen;angerufen <br> rief an
+
+[Past Tenses] Präteritum od einschlafen;schlief ein <br> rozdzielny
+
+[Past Tenses] Das Kind ______ sofort eingeschlafen.;ist <br> einschlafen → sein
+
+[Past Tenses] Partizip II od einschlafen;eingeschlafen <br> schlief ein
+[Past Tenses] Präteritum od beweisen;bewies <br> beweisen-bewies-bewiesen
+
+[Past Tenses] Der Wissenschaftler ______ seine Theorie.;bewies <br> Präteritum
+
+[Past Tenses] Der Wissenschaftler hat seine Theorie ______.;bewiesen <br> Partizip II
+
+[Past Tenses] Präteritum od verschweigen;verschwieg <br> verschweigen-verschwieg-verschwiegen
+
+[Past Tenses] Er ______ wichtige Informationen.;verschwieg <br> Präteritum
+
+[Past Tenses] Er hat wichtige Informationen ______.;verschwiegen <br> Perfekt
+
+[Past Tenses] Präteritum od betrügen;betrog <br> betrügen-betrog-betrogen
+
+[Past Tenses] Der Verkäufer ______ den Kunden.;betrog <br> Präteritum
+
+[Past Tenses] Der Verkäufer hat den Kunden ______.;betrogen <br> Perfekt
+
+[Past Tenses] Präteritum od erziehen;erzog <br> erziehen-erzog-erzogen
+
+[Past Tenses] Seine Eltern ______ ihn streng.;erzogen <br> Perfekt
+
+[Past Tenses] Seine Eltern ______ ihn streng.;erzogen? Nein → Erzogen = Partizip II, Präteritum = erzogen NICHT! <br> Uwaga: ich erzog, du erzogst
+
+[Past Tenses] Präteritum od ziehen;zog <br> ziehen-zog-gezogen
+
+[Past Tenses] Er ______ nach Köln.;zog <br> Präteritum
+
+[Past Tenses] Er ist nach Köln ______.;gezogen <br> Perfekt
+
+[Past Tenses] Präteritum od fliehen;floh <br> fliehen-floh-geflohen
+
+[Past Tenses] Der Dieb ______ ins Ausland.;floh <br> Präteritum
+
+[Past Tenses] Der Dieb ist ins Ausland ______.;geflohen <br> Perfekt
+
+[Past Tenses] Präteritum od frieren;fror <br> frieren-fror-gefroren
+
+[Past Tenses] Ich ______ den ganzen Tag.;fror <br> Präteritum
+
+[Past Tenses] Ich habe den ganzen Tag ______.;gefroren <br> Perfekt
+
+[Past Tenses] Präteritum od riechen;roch <br> riechen-roch-gerochen
+
+[Past Tenses] Das Essen ______ sehr gut.;roch <br> Präteritum
+
+[Past Tenses] Das Essen hat sehr gut ______.;gerochen <br> Perfekt
+
+[Past Tenses] Präteritum od kriechen;kroch <br> kriechen-kroch-gekrochen
+
+[Past Tenses] Das Tier ______ unter den Tisch.;kroch <br> Präteritum
+
+[Past Tenses] Das Tier ist unter den Tisch ______.;gekrochen <br> Perfekt
+
+[Past Tenses] Präteritum od schieben;schob <br> schieben-schob-geschoben
+
+[Past Tenses] Er ______ das Auto in die Garage.;schob <br> Präteritum
+
+[Past Tenses] Er hat das Auto in die Garage ______.;geschoben <br> Perfekt
+
+[Past Tenses] Präteritum od schießen;schoss <br> schießen-schoss-geschossen
+
+[Past Tenses] Der Spieler ______ ein Tor.;schoss <br> Präteritum
+
+[Past Tenses] Der Spieler hat ein Tor ______.;geschossen <br> Perfekt
+
+[Past Tenses] Präteritum od genießen;genoss <br> genießen-genoss-genossen
+
+[Past Tenses] Wir ______ unseren Urlaub.;genossen <br> Perfekt
+
+[Past Tenses] Wir ______ unseren Urlaub.;genossen? Nein → Präteritum = genossen? Nie. <br> Poprawnie: wir genossen
+
+[Past Tenses] Präteritum od verderben;verdarb <br> verderben-verdarb-verdorben
+
+[Past Tenses] Das schlechte Wetter ______ unseren Ausflug.;verdarb <br> Präteritum
+
+[Past Tenses] Das schlechte Wetter hat unseren Ausflug ______.;verdorben <br> Perfekt
+
+[Past Tenses] Präteritum od erschrecken (intransitiv);erschrak <br> erschrecken-erschrak-erschrocken
+
+[Past Tenses] Das Kind ______ plötzlich.;erschrak <br> Präteritum
+
+[Past Tenses] Das Kind ist plötzlich ______.;erschrocken <br> Perfekt
+
+[Past Tenses] Präteritum od treiben;trieb <br> treiben-trieb-getrieben
+
+[Past Tenses] Der Wind ______ das Boot ab.;trieb <br> Präteritum
+
+[Past Tenses] Der Wind hat das Boot abgetrieben.;abgetrieben <br> Partizip II rozdzielnego
+
+[Past Tenses] Präteritum od vermeiden;vermied <br> vermeiden-vermied-vermieden
+
+[Past Tenses] Wir ______ einen Fehler.;vermieden? Nein → Perfekt <br> Präteritum = vermieden? Nie
+
+[Past Tenses] Wir ______ einen Fehler.;vermieden <br> Perfekt mit haben
+
+[Past Tenses] Präteritum od weisen;wies <br> weisen-wies-gewiesen
+
+[Past Tenses] Der Lehrer ______ auf den Fehler hin.;wies <br> Präteritum
+
+[Past Tenses] Der Lehrer hat auf den Fehler hingewiesen.;hingewiesen <br> rozdzielny
+
+[Past Tenses] Präteritum od beißen;biss <br> beißen-biss-gebissen
+
+[Past Tenses] Der Hund ______ den Postboten.;biss <br> Präteritum
+
+[Past Tenses] Der Hund hat den Postboten ______.;gebissen <br> Perfekt
+
+[Past Tenses] Präteritum od gleiten;glitt <br> gleiten-glitt-geglitten
+
+[Past Tenses] Das Flugzeug ______ durch die Wolken.;glitt <br> Präteritum
+
+[Past Tenses] Das Flugzeug ist durch die Wolken ______.;geglitten <br> Perfekt
+
+[Past Tenses] Präteritum od kneifen;kniff <br> kneifen-kniff-gekniffen
+
+[Past Tenses] Er ______ die Augen zusammen.;kniff <br> Präteritum
+
+[Past Tenses] Er hat die Augen zusammengekniffen.;zusammengekniffen <br> rozdzielny
+
+[Past Tenses] Präteritum od greifen;griff <br> greifen-griff-gegriffen
+
+[Past Tenses] Er ______ nach dem Handy.;griff <br> Präteritum
+
+[Past Tenses] Er hat nach dem Handy ______.;gegriffen <br> Perfekt
+
+[Past Tenses] Präteritum od werfen;warf <br> werfen-warf-geworfen
+
+[Past Tenses] Sie ______ den Ball weit.;warf <br> Präteritum
+
+[Past Tenses] Sie hat den Ball weit ______.;geworfen <br> Perfekt
+
+[Past Tenses] Präteritum od laden;lud <br> laden-lud-geladen
+
+[Past Tenses] Er ______ uns ein.;lud ein <br> rozdzielny
+
+[Past Tenses] Er hat uns ______.;eingeladen <br> Perfekt
+
+[Past Tenses] Präteritum od empfehlen;empfahl <br> empfehlen-empfahl-empfohlen
+
+[Past Tenses] Der Arzt ______ mehr Bewegung.;empfahl <br> Präteritum
+
+[Past Tenses] Der Arzt hat mehr Bewegung ______.;empfohlen <br> Perfekt
+
+[Past Tenses] Präteritum od aussehen;sah aus <br> rozdzielny
+
+[Past Tenses] Er ______ müde aus.;sah <br> rozdzielny
+
+[Past Tenses] Er hat müde ______.;ausgesehen <br> Perfekt
+
+[Past Tenses] Präteritum od stattfinden;fand statt <br> rozdzielny
+
+[Past Tenses] Das Konzert ______ gestern.;fand statt <br> Präteritum
+
+[Past Tenses] Das Konzert hat gestern ______.;stattgefunden <br> Perfekt
+
+[Past Tenses] Präteritum od übernehmen;übernahm <br> übernehmen-übernahm-übernommen
+
+[Past Tenses] Sie ______ die Verantwortung.;übernahm <br> Präteritum
+
+[Past Tenses] Sie hat die Verantwortung ______.;übernommen <br> Perfekt
+
+[Past Tenses] Präteritum od unternehmen;unternahm <br> unternehmen-unternahm-unternommen
+
+[Past Tenses] Wir ______ eine Reise.;unternahmen <br> Präteritum liczba mnoga
+
+[Past Tenses] Wir haben eine Reise ______.;unternommen <br> Perfekt
+
+[Past Tenses] Präteritum od gewinnen;gewann <br> gewinnen-gewann-gewonnen
+
+[Past Tenses] Die Mannschaft ______ das Spiel.;gewann <br> Präteritum
+
+[Past Tenses] Die Mannschaft hat das Spiel ______.;gewonnen <br> Perfekt
+
+[Past Tenses] Präteritum od verlieren;verlor <br> verlieren-verlor-verloren
+
+[Past Tenses] Der Kunde ______ seine Karte.;verlor <br> Präteritum
+
+[Past Tenses] Der Kunde hat seine Karte ______.;verloren <br> Perfekt
+
+[Past Tenses] Präteritum od ausfallen;fiel aus <br> rozdzielny
+
+[Past Tenses] Der Unterricht ______ gestern.;fiel aus <br> Präteritum
+
+[Past Tenses] Der Unterricht ist gestern ______.;ausgefallen <br> Perfekt z sein
+
+[Past Tenses] Präteritum od stattfinden;fand statt <br> bardzo częsty na B2
+
+[Past Tenses] Partizip II od stattfinden;stattgefunden <br> forma egzaminacyjna
+
+[Past Tenses] Präteritum od zurückziehen;zog zurück <br> rozdzielny
+
+[Past Tenses] Die Firma ______ ihr Angebot zurück.;zog <br> Präteritum
+
+[Past Tenses] Die Firma hat ihr Angebot ______.;zurückgezogen <br> Perfekt
+
+[Past Tenses] Präteritum od einschließen;schloss ein <br> rozdzielny
+
+[Past Tenses] Er ______ die Tür ein.;schloss <br> Präteritum
+
+[Past Tenses] Er hat die Tür ______.;eingeschlossen <br> Perfekt
+
+[Past Tenses] Präteritum od verschreiben;verschrieb <br> verschreiben-verschrieb-verschrieben
+
+[Past Tenses] Der Arzt ______ ein Medikament.;verschrieb <br> Präteritum
+
+[Past Tenses] Der Arzt hat ein Medikament ______.;verschrieben <br> Perfekt
+
+[Past Tenses] Präteritum od beweisen;bewies <br> bardzo częsty B2/C1
+
+[Past Tenses] Partizip II od beweisen;bewiesen <br> bardzo częsty B2/C1
+
+[Rodzajniki i końcówki] Ich sehe ______ alt___ Mann.;den alten <br> Akkusativ męski po rodzajniku określonym
+
+[Rodzajniki i końcówki] Das Auto ______ neu___ Lehrers steht vor dem Haus.;des neuen <br> Genitiv męski
+
+[Rodzajniki i końcówki] Ich helfe ______ freundlich___ Frau.;der freundlichen <br> Dativ żeński
+
+[Rodzajniki i końcówki] Wir besuchen ______ schön___ Stadt.;die schöne <br> Akkusativ żeński
+
+[Rodzajniki i końcówki] Das ist ______ interessant___ Buch.;ein interessantes <br> Nominativ nijaki po ein
+
+[Rodzajniki i końcówki] Ich lese ______ interessant___ Buch.;das interessante <br> Akkusativ nijaki po der-Artikeln
+
+[Rodzajniki i końcówki] Wir helfen ______ klein___ Kind.;dem kleinen <br> Dativ nijaki
+
+[Rodzajniki i końcówki] Das Spielzeug ______ klein___ Kindes ist teuer.;des kleinen <br> Genitiv nijaki
+
+[Rodzajniki i końcówki] ______ neu___ Computer funktioniert sehr schnell.;Der neue <br> Nominativ męski
+
+[Rodzajniki i końcówki] Ich habe ______ neu___ Computer gekauft.;einen neuen <br> Akkusativ męski po ein
+
+[Rodzajniki i końcówki] Das ist die Tasche ______ alt___ Dame.;der alten <br> Genitiv żeński
+
+[Rodzajniki i końcówki] Er arbeitet mit ______ deutsch___ Kunden.;dem deutschen <br> Dativ męski
+
+[Rodzajniki i końcówki] Sie kauft ______ rot___ Kleid.;ein rotes <br> Akkusativ nijaki po ein
+
+[Rodzajniki i końcówki] Wir wohnen in ______ groß___ Haus.;einem großen <br> Dativ nijaki
+
+[Rodzajniki i końcówki] Das Dach ______ groß___ Hauses ist neu.;des großen <br> Genitiv nijaki
+
+[Rodzajniki i końcówki] ______ alt___ Häuser wurden renoviert.;Die alten <br> Nominativ liczba mnoga
+
+[Rodzajniki i końcówki] Ich sehe ______ alt___ Häuser.;die alten <br> Akkusativ liczba mnoga
+
+[Rodzajniki i końcówki] Wir helfen ______ alt___ Menschen.;den alten <br> Dativ liczba mnoga
+
+[Rodzajniki i końcówki] Die Geschichte ______ alt___ Häuser ist interessant.;der alten <br> Genitiv liczba mnoga
+
+[Rodzajniki i końcówki] Ich trinke ______ kalt___ Wasser.;kaltes <br> brak rodzajnika, Nominativ/Akkusativ nijaki
+
+[Rodzajniki i końcówki] ______ frisch___ Brot schmeckt gut.;Frisches <br> brak rodzajnika
+
+[Rodzajniki i końcówki] Ich esse ______ frisch___ Brot.;frisches <br> brak rodzajnika Akkusativ
+
+[Rodzajniki i końcówki] Wir kaufen ______ teuer___ Wein.;teuren <br> brak rodzajnika, Akkusativ męski
+
+[Rodzajniki i końcówki] ______ deutsch___ Autos sind beliebt.;Deutsche <br> liczba mnoga bez rodzajnika
+
+[Rodzajniki i końcówki] Er spricht mit ______ jung___ Kollegen.;einem jungen <br> Dativ męski
+
+[Rodzajniki i końcówki] Ich kenne ______ jung___ Kollegen.;einen jungen <br> Akkusativ
+
+[Rodzajniki i końcówki] Das Auto ______ jung___ Kollegen ist rot.;des jungen <br> Genitiv
+
+[Rodzajniki i końcówki] Sie arbeitet mit ______ erfahren___ Ingenieur.;einem erfahrenen <br> Dativ po ein
+
+[Rodzajniki i końcówki] ______ erfahren___ Ingenieur leitet das Projekt.;Der erfahrene <br> Nominativ
+
+[Rodzajniki i końcówki] Wir sehen ______ erfahren___ Ingenieur.;den erfahrenen <br> Akkusativ
+
+[Rodzajniki i końcówki] Ich brauche ______ gut___ Handy.;ein gutes <br> Akkusativ nijaki
+
+[Rodzajniki i końcówki] Das ist ______ gut___ Handy.;ein gutes <br> Nominativ nijaki
+
+[Rodzajniki i końcówki] Die Qualität ______ gut___ Handys ist hoch.;des guten <br> Genitiv
+
+[Rodzajniki i końcówki] Er wohnt neben ______ klein___ Schule.;der kleinen <br> Dativ żeński
+
+[Rodzajniki i końcówki] Wir betreten ______ klein___ Schule.;die kleine <br> Akkusativ żeński
+
+[Rodzajniki i końcówki] ______ klein___ Schule wurde renoviert.;Die kleine <br> Nominativ żeński
+
+[Rodzajniki i końcówki] Ich habe mit ______ interessant___ Leuten gesprochen.;interessanten <br> Dativ liczba mnoga bez rodzajnika
+
+[Rodzajniki i końcówki] ______ interessant___ Leute kamen aus Österreich.;Interessante <br> liczba mnoga bez rodzajnika
+
+[Rodzajniki i końcówki] Er traf ______ interessant___ Leute.;interessante <br> Akkusativ liczba mnoga bez rodzajnika
+
+[Rodzajniki i końcówki] Sie kauft ______ blau___ Jacke.;eine blaue <br> Akkusativ żeński
+
+[Rodzajniki i końcówki] Das ist ______ blau___ Jacke.;eine blaue <br> Nominativ żeński
+
+[Rodzajniki i końcówki] Die Farbe ______ blau___ Jacke gefällt mir.;der blauen <br> Genitiv
+
+[Rodzajniki i końcówki] Ich arbeite mit ______ neu___ Programm.;einem neuen <br> Dativ nijaki
+
+[Rodzajniki i końcówki] ______ neu___ Programm ist stabil.;Das neue <br> Nominativ nijaki
+
+[Rodzajniki i końcówki] Wir installieren ______ neu___ Programm.;das neue <br> Akkusativ nijaki
+
+[Rodzajniki i końcówki] ______ schwier___ Aufgabe war kompliziert.;Die schwierige <br> Nominativ żeński
+
+[Rodzajniki i końcówki] Ich löse ______ schwier___ Aufgabe.;die schwierige <br> Akkusativ
+
+[Rodzajniki i końcówki] Die Lösung ______ schwierig___ Aufgabe war nicht einfach.;der schwierigen <br> Genitiv
+
+[Rodzajniki i końcówki] Junge, motivierte Mitarbeiter brauchen ______ gut___ Führungskraft.;eine gute <br> Akkusativ
+
+[Rodzajniki i końcówki] ______ gut___ Führungskraft motiviert das Team.;Eine gute <br> Nominativ
+
+[Rodzajniki i końcówki] Das Team vertraut ______ gut___ Führungskraft.;einer guten <br> Dativ
+
+[Rodzajniki i końcówki] Wir analysieren ______ veröffentlicht___ Bericht.;den veröffentlichten <br> Partizip II + Akkusativ
+
+[Rodzajniki i końcówki] ______ veröffentlicht___ Bericht sorgte für Diskussionen.;Der veröffentlichte <br> Partizip II + Nominativ
+
+[Rodzajniki i końcówki] Die Ergebnisse ______ veröffentlicht___ Berichts waren überraschend.;des veröffentlichten <br> Genitiv
+
+[Rodzajniki i końcówki] ______ steigend___ Preise beunruhigen viele Menschen.;Steigende <br> liczba mnoga bez rodzajnika
+
+[Rodzajniki i końcówki] Wir beobachten ______ steigend___ Preise.;steigende <br> Akkusativ plural
+
+[Rodzajniki i końcówki] Wegen ______ steigend___ Preise kaufen viele Menschen weniger.;steigender <br> Genitiv plural bez rodzajnika
+
+[Rodzajniki i końcówki] ______ neu gebaut___ Haus kostet eine Million Euro.;Das neu gebaute <br> Partizip II, Nominativ
+
+[Rodzajniki i końcówki] Ich besichtige ______ neu gebaut___ Haus.;das neu gebaute <br> Akkusativ
+
+[Rodzajniki i końcówki] Die Garage ______ neu gebaut___ Hauses ist groß.;des neu gebauten <br> Genitiv
+
+[Rodzajniki i końcówki] ______ in Deutschland hergestellt___ Produkte sind gefragt.;Die in Deutschland hergestellten <br> Partizip II rozszerzony
+
+[Rodzajniki i końcówki] Wir exportieren ______ in Deutschland hergestellt___ Produkte.;die in Deutschland hergestellten <br> Akkusativ plural
+
+[Rodzajniki i końcówki] Die Qualität ______ in Deutschland hergestellt___ Produkte ist hoch.;der in Deutschland hergestellten <br> Genitiv plural
+
+[Rodzajniki i końcówki] Er spricht mit ______ für das Projekt verantwortlich___ Leiter.;dem für das Projekt verantwortlichen <br> Dativ
+
+[Rodzajniki i końcówki] ______ für das Projekt verantwortlich___ Leiter traf die Entscheidung.;Der für das Projekt verantwortliche <br> Nominativ
+
+[Rodzajniki i końcówki] Ich kenne ______ für das Projekt verantwortlich___ Leiter.;den für das Projekt verantwortlichen <br> Akkusativ
+
+[Rodzajniki i końcówki] ______ seit Jahren in Deutschland lebend___ Pole spricht perfekt Deutsch.;Der seit Jahren in Deutschland lebende <br> Partizip I
+
+[Rodzajniki i końcówki] Ich traf ______ seit Jahren in Deutschland lebend___ Polen.;den seit Jahren in Deutschland lebenden <br> Akkusativ
+
+[Rodzajniki i końcówki] Die Erfahrungen ______ seit Jahren in Deutschland lebend___ Polen waren interessant.;des seit Jahren in Deutschland lebenden <br> Genitiv
+
+[Rodzajniki i końcówki] ______ alt___ Wein schmeckt oft besser.;Alter <br> Nominativ bez rodzajnika
+
+[Rodzajniki i końcówki] Ich kaufe ______ alt___ Wein.;alten <br> Akkusativ bez rodzajnika
+
+[Rodzajniki i końcówki] Die Qualität ______ alt___ Weins ist hervorragend.;alten <br> Genitiv bez rodzajnika
+
+[Rodzajniki i końcówki] ______ klein___ Kinder lernen schnell.;Kleine <br> plural bez rodzajnika
+
+[Rodzajniki i końcówki] Wir helfen ______ klein___ Kindern.;kleinen <br> Dativ plural bez rodzajnika
+
+[Rodzajniki i końcówki] Die Eltern ______ klein___ Kinder sind hier.;kleiner <br> Genitiv plural bez rodzajnika
+
+[Rodzajniki i końcówki] Er arbeitet trotz ______ schwer___ Problems weiter.;des schweren <br> Genitiv po trotz
+
+[Rodzajniki i końcówki] Wegen ______ schlecht___ Wetters blieben wir zu Hause.;des schlechten <br> Genitiv
+
+[Rodzajniki i końcówki] Während ______ lang___ Reise las ich ein Buch.;der langen <br> Genitiv
+
+[Rodzajniki i końcówki] Dank ______ gut___ Vorbereitung bestand er die Prüfung.;der guten <br> Dativ po dank
+
+[Rodzajniki i końcówki] Gegenüber ______ neu___ Kollegen war er freundlich.;dem neuen <br> Dativ
+
+[Rodzajniki i końcówki] Seit ______ letzt___ Woche lerne ich täglich.;letzter <br> Dativ bez rodzajnika
+
+[Rodzajniki i końcówki] Aus ______ beruflich___ Gründen sagte er ab.;beruflichen <br> Dativ plural
+
+[Rodzajniki i końcówki] Mit ______ groß___ Interesse las ich den Artikel.;großem <br> Dativ nijaki bez rodzajnika
+
+[Rodzajniki i końcówki] Trotz ______ erheblich___ Schwierigkeiten erreichten wir das Ziel.;erheblicher <br> Genitiv plural bez rodzajnika
+
+[Rodzajniki i końcówki] Er arbeitet in ______ international___ Unternehmen.;einem internationalen <br> Dativ
+
+[Rodzajniki i końcówki] Die Mitarbeiter ______ international___ Unternehmens sprechen Englisch.;des internationalen <br> Genitiv
+
+[Rodzajniki i końcówki] Wir besuchen ______ international___ Unternehmen.;das internationale <br> Akkusativ
+
+[Rekcja czasownika] Ich interessiere mich ______ Deutsch.;für <br> sich interessieren für + Akk.
+
+[Rekcja czasownika] Wir warten ______ den Bus.;auf <br> warten auf + Akk.
+
+[Rekcja czasownika] Denkst du oft ______ deine Kindheit?;an <br> denken an + Akk.
+
+[Rekcja czasownika] Die Studenten sprechen ______ das Problem.;über <br> sprechen über + Akk.
+
+[Rekcja czasownika] Ich träume ______ einem Haus am Meer.;von <br> träumen von + Dat.
+
+[Rekcja czasownika] Er nimmt ______ der Konferenz teil.;an <br> teilnehmen an + Dat.
+
+[Rekcja czasownika] Erinnerst du dich ______ den Film?;an <br> sich erinnern an + Akk.
+
+[Rekcja czasownika] Ich freue mich ______ den Urlaub.;auf <br> przyszłość
+
+[Rekcja czasownika] Wir freuen uns ______ das Ergebnis.;über <br> fakt dokonany
+
+[Rekcja czasownika] Sie hat Angst ______ Spinnen.;vor <br> Angst haben vor + Dat.
+
+[Rekcja czasownika] Das hängt ______ vielen Faktoren ab.;von <br> abhängen von + Dat.
+
+[Rekcja czasownika] Ich bitte dich ______ Hilfe.;um <br> bitten um + Akk.
+
+[Rekcja czasownika] Er bedankt sich ______ seine Unterstützung.;für <br> sich bedanken für + Akk.
+
+[Rekcja czasownika] Der Lehrer gratuliert ihm ______ Erfolg.;zum <br> gratulieren zu + Dat.
+
+[Rekcja czasownika] Ich beschäftige mich ______ deutscher Grammatik.;mit <br> sich beschäftigen mit + Dat.
+
+[Rekcja czasownika] Sie kümmert sich ______ ihre Kinder.;um <br> sich kümmern um + Akk.
+
+[Rekcja czasownika] Glaubst du ______ Gott?;an <br> glauben an + Akk.
+
+[Rekcja czasownika] Wir verzichten ______ Alkohol.;auf <br> verzichten auf + Akk.
+
+[Rekcja czasownika] Er beginnt ______ der Arbeit.;mit <br> beginnen mit + Dat.
+
+[Rekcja czasownika] Hör bitte ______ dem Rauchen auf.;mit <br> aufhören mit + Dat.
+
+[Rekcja czasownika] Sie leidet ______ starken Kopfschmerzen.;an <br> leiden an + Dat.
+
+[Rekcja czasownika] Das Publikum besteht ______ jungen Leuten.;aus <br> bestehen aus + Dat.
+
+[Rekcja czasownika] Ich rechne nicht ______ diesem Problem.;mit <br> rechnen mit + Dat.
+
+[Rekcja czasownika] Er bereitet sich ______ die Prüfung vor.;auf <br> sich vorbereiten auf + Akk.
+
+[Rekcja czasownika] Wir sprechen ______ dem Chef.;mit <br> sprechen mit + Dat.
+
+[Rekcja czasownika] Die Lösung basiert ______ neuen Daten.;auf <br> basieren auf + Dat.
+
+[Rekcja czasownika] Ich erinnere mich nicht mehr ______ seinen Namen.;an <br> erinnern an + Akk.
+
+[Rekcja czasownika] Sie diskutieren ______ Politik.;über <br> diskutieren über + Akk.
+
+[Rekcja czasownika] Er sorgt sich ______ seine Zukunft.;um <br> sich sorgen um + Akk.
+
+[Rekcja czasownika] Ich zweifle ______ seiner Ehrlichkeit.;an <br> zweifeln an + Dat.
+
+[Rekcja czasownika] Die Kinder freuen sich ______ Weihnachten.;auf <br> przyszłe wydarzenie
+
+[Rekcja czasownika] Er beschwert sich ______ den Lärm.;über <br> sich beschweren über + Akk.
+
+[Rekcja czasownika] Ich erinnere dich ______ den Termin.;an <br> erinnern an + Akk.
+
+[Rekcja czasownika] Wir kämpfen ______ bessere Bedingungen.;für <br> kämpfen für + Akk.
+
+[Rekcja czasownika] Das Unternehmen investiert ______ neue Technologien.;in <br> investieren in + Akk.
+
+[Rekcja czasownika] Sie glaubt ______ seinen Erfolg.;an <br> glauben an + Akk.
+
+[Rekcja czasownika] Ich bitte ______ Geduld.;um <br> bitten um + Akk.
+
+[Rekcja czasownika] Er träumt ______ Erfolg.;von <br> träumen von + Dat.
+
+[Rekcja czasownika] Wir verfügen ______ ausreichende Mittel.;über <br> verfügen über + Akk.
+
+[Rekcja czasownika] Sie interessiert sich ______ Geschichte.;für <br> interessieren für + Akk.
+
+[Rekcja czasownika] Ich denke oft ______ meine Familie.;an <br> denken an + Akk.
+
+[Rekcja czasownika] Er wartet ______ eine Antwort.;auf <br> warten auf + Akk.
+
+[Rekcja czasownika] Wir hoffen ______ gutes Wetter.;auf <br> hoffen auf + Akk.
+
+[Rekcja czasownika] Ich arbeite ______ einem neuen Projekt.;an <br> arbeiten an + Dat.
+
+[Rekcja czasownika] Sie nimmt ______ einem Sprachkurs teil.;an <br> teilnehmen an + Dat.
+
+[Rekcja czasownika] Ich entschuldige mich ______ den Fehler.;für <br> sich entschuldigen für + Akk.
+
+[Rekcja czasownika] Er bedankt sich ______ das Geschenk.;für <br> für + Akk.
+
+[Rekcja czasownika] Wir gratulieren ihr ______ Geburtstag.;zum <br> zu dem
+
+[Rekcja czasownika] Ich habe mich ______ den neuen Job gewöhnt.;an <br> sich gewöhnen an + Akk.
+
+[Rekcja czasownika] Sie erinnert sich ______ ihre Schulzeit.;an <br> erinnern an + Akk.
+
+[Rekcja czasownika] Er spricht ______ seine Erfahrungen.;über <br> sprechen über + Akk.
+
+[Rekcja czasownika] Wir träumen ______ einer Weltreise.;von <br> von + Dat.
+
+[Rekcja czasownika] Ich verlasse mich ______ meinen Freund.;auf <br> sich verlassen auf + Akk.
+
+[Rekcja czasownika] Er kümmert sich ______ die Kunden.;um <br> kümmern um + Akk.
+
+[Rekcja czasownika] Wir danken dir ______ deine Hilfe.;für <br> danken für + Akk.
+
+[Rekcja czasownika] Ich glaube ______ diese Theorie.;an <br> glauben an + Akk.
+
+[Rekcja czasownika] Er leidet ______ Stress.;unter <br> leiden unter + Dat.
+
+[Rekcja czasownika] Sie denkt ______ die Zukunft.;an <br> denken an + Akk.
+
+[Rekcja czasownika] Wir sprechen ______ dem Ergebnis.;über <br> sprechen über + Akk.
+
+[Rekcja czasownika] Ich rechne ______ Schwierigkeiten.;mit <br> rechnen mit + Dat.
+
+[Rekcja czasownika] Er interessiert sich ______ Autos.;für <br> interessieren für + Akk.
+
+[Rekcja czasownika] Die Firma spezialisiert sich ______ Software.;auf <br> sich spezialisieren auf + Akk.
+
+[Rekcja czasownika] Ich konzentriere mich ______ die Aufgabe.;auf <br> sich konzentrieren auf + Akk.
+
+[Rekcja czasownika] Sie zweifelt ______ seinen Aussagen.;an <br> zweifeln an + Dat.
+
+[Rekcja czasownika] Wir profitieren ______ der Zusammenarbeit.;von <br> profitieren von + Dat.
+
+[Rekcja czasownika] Er schützt sich ______ der Kälte.;vor <br> schützen vor + Dat.
+
+[Rekcja czasownika] Ich informiere mich ______ neue Gesetze.;über <br> informieren über + Akk.
+
+[Rekcja czasownika] Sie überzeugt ihn ______ ihrer Idee.;von <br> überzeugen von + Dat.
+
+[Rekcja czasownika] Wir diskutieren ______ die Lösung.;über <br> über + Akk.
+
+[Rekcja czasownika] Er besteht ______ seiner Meinung.;auf <br> bestehen auf + Dat.
+
+[Rekcja czasownika] Ich bitte dich ______ Verständnis.;um <br> um + Akk.
+
+[Rekcja czasownika] Sie wartet ______ den Beginn des Konzerts.;auf <br> auf + Akk.
+
+[Rekcja czasownika] Wir arbeiten ______ dem Bericht.;an <br> an + Dat.
+
+[Rekcja czasownika] Er denkt ______ seine Karriere.;an <br> an + Akk.
+
+[Rekcja czasownika] Ich erinnere mich ______ den Namen.;an <br> an + Akk.
+
+[Rekcja czasownika] Sie freut sich ______ den Erfolg.;über <br> fakt dokonany
+
+[Rekcja czasownika] Wir freuen uns ______ die Reise.;auf <br> przyszłość
+
+[Rekcja czasownika] Er interessiert sich ______ Politik.;für <br> für + Akk.
+
+[Rekcja czasownika] Ich danke ihm ______ seine Unterstützung.;für <br> für + Akk.
+
+[Rekcja czasownika] Sie leidet ______ Schlafmangel.;unter <br> unter + Dat.
+
+[Rekcja czasownika] Wir verzichten ______ Luxus.;auf <br> auf + Akk.
+
+[Rekcja czasownika] Er kümmert sich ______ das Projekt.;um <br> um + Akk.
+
+[Rekcja czasownika] Ich träume ______ einem besseren Job.;von <br> von + Dat.
+
+[Rekcja czasownika] Sie bereitet sich ______ das Gespräch vor.;auf <br> auf + Akk.
+
+[Rekcja czasownika] Wir glauben ______ den Erfolg.;an <br> an + Akk.
+
+[Rekcja czasownika] Er beschäftigt sich ______ künstlicher Intelligenz.;mit <br> mit + Dat.
+
+[Rekcja czasownika] Ich rechne ______ einem Anruf.;mit <br> mit + Dat.
+
+[Rekcja czasownika] Sie denkt ______ ihre Freunde.;an <br> an + Akk.
+
+[Rekcja czasownika] Wir sprechen ______ den Kunden.;mit <br> mit + Dat.
+
+[Rekcja czasownika] Er sorgt ______ seine Familie.;für <br> sorgen für + Akk.
+
+[Rekcja czasownika] Ich hoffe ______ eine schnelle Antwort.;auf <br> hoffen auf + Akk.
+
+[Rekcja czasownika] Das hängt ______ dir ab.;von <br> abhängen von + Dat.
+
+[Rekcja czasownika] Sie klagt ______ starke Schmerzen.;über <br> klagen über + Akk.
+
+[Rekcja czasownika] Wir bitten ______ weitere Informationen.;um <br> um + Akk.
+
+[Rekcja czasownika] Er hat sich ______ die neue Umgebung gewöhnt.;an <br> gewöhnen an + Akk.
+
+[Szyk zdania podrzędnego] Ich lerne Deutsch, weil ich in Deutschland ______.;wohne <br> po weil czasownik na końcu
+
+[Szyk zdania podrzędnego] Er sagt, dass er morgen ______.;kommt <br> po dass czasownik na końcu
+
+[Szyk zdania podrzędnego] Wenn ich Zeit ______, besuche ich dich.;habe <br> po wenn czasownik na końcu
+
+[Szyk zdania podrzędnego] Obwohl es stark ______, gehen wir spazieren.;regnet <br> obwohl + czasownik na końcu
+
+[Szyk zdania podrzędnego] Ich weiß nicht, ob er heute ______.;kommt <br> ob + czasownik na końcu
+
+[Szyk zdania podrzędnego] Sie bleibt zu Hause, weil sie krank ______.;ist <br> sein na końcu
+
+[Szyk zdania podrzędnego] Nachdem er nach Hause ______ war, rief er mich an.;gekommen <br> Perfekt/Plusquamperfekt na końcu
+
+[Szyk zdania podrzędnego] Bevor wir anfangen, müssen alle angekommen ______.;sein <br> bezokolicznik na końcu
+
+[Szyk zdania podrzędnego] Ich arbeite viel, damit ich die Prüfung ______.;bestehe <br> damit + czasownik na końcu
+
+[Szyk zdania podrzędnego] Seitdem er hier ______, spricht er besser Deutsch.;wohnt <br> seitdem + czasownik na końcu
+
+[Szyk zdania podrzędnego] Ich glaube, dass sie die Antwort ______.;kennt <br> dass + koniec
+
+[Szyk zdania podrzędnego] Weil wir kein Geld ______, bleiben wir zu Hause.;haben <br> weil
+
+[Szyk zdania podrzędnego] Sie fragte, ob ich morgen ______.;komme <br> ob + koniec
+
+[Szyk zdania podrzędnego] Wenn du mehr lernst, ______ du die Prüfung.;bestehst <br> zdanie główne
+
+[Szyk zdania podrzędnego] Obwohl er müde ______, arbeitet er weiter.;ist <br> chociaż
+
+[Szyk zdania podrzędnego] Ich freue mich, dass du gekommen ______.;bist <br> Perfekt
+
+[Szyk zdania podrzędnego] Der Lehrer sagt, dass wir mehr lernen ______.;müssen <br> modalny na końcu
+
+[Szyk zdania podrzędnego] Weil ich keine Zeit ______, kann ich nicht kommen.;habe <br> weil
+
+[Szyk zdania podrzędnego] Bevor du gehst, ______ bitte die Tür.;schließe <br> zdanie główne
+
+[Szyk zdania podrzędnego] Wenn es morgen ______, bleiben wir zu Hause.;regnet <br> wenn
+
+[Szyk zdania podrzędnego] Ich glaube, dass er sehr gut Deutsch ______.;spricht <br> dass
+
+[Szyk zdania podrzędnego] Obwohl die Aufgabe schwierig ______, habe ich sie gelöst.;war <br> Präteritum
+
+[Szyk zdania podrzędnego] Weil das Wetter schlecht ______, fahren wir nicht.;ist <br> weil
+
+[Szyk zdania podrzędnego] Er sagte, dass er später kommen ______.;werde <br> Futur
+
+[Szyk zdania podrzędnego] Ich weiß nicht, wann der Bus ______.;ankommt <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Sie fragt, warum du nicht ______.;kommst <br> warum
+
+[Szyk zdania podrzędnego] Kannst du mir sagen, wo er ______?;wohnt <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Ich erinnere mich nicht, wann wir uns getroffen ______.;haben <br> Perfekt
+
+[Szyk zdania podrzędnego] Nachdem wir gegessen ______, gingen wir spazieren.;hatten <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Während sie arbeitet, ______ sie Musik.;hört <br> główne zdanie
+
+[Szyk zdania podrzędnego] Obwohl ich keine Lust ______, gehe ich mit.;habe <br> obwohl
+
+[Szyk zdania podrzędnego] Der Chef sagt, dass das Projekt erfolgreich ______.;ist <br> sein
+
+[Szyk zdania podrzędnego] Falls du Hilfe ______, ruf mich an.;brauchst <br> falls
+
+[Szyk zdania podrzędnego] Solange du hier ______, kannst du bleiben.;wohnst <br> solange
+
+[Szyk zdania podrzędnego] Seitdem wir umgezogen ______, sind wir glücklicher.;sind <br> Perfekt
+
+[Szyk zdania podrzędnego] Ich glaube, dass er das Buch gelesen ______.;hat <br> Perfekt
+
+[Szyk zdania podrzędnego] Obwohl ich ihn angerufen ______, antwortete er nicht.;habe <br> Perfekt
+
+[Szyk zdania podrzędnego] Weil sie lange gearbeitet ______, war sie müde.;hatte <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Ich frage mich, ob sie mich verstanden ______.;hat <br> Perfekt
+
+[Szyk zdania podrzędnego] Nachdem der Zug abgefahren ______, kamen wir an.;war <br> Plusquamperfekt z sein
+
+[Szyk zdania podrzędnego] Er lernt viel, damit er die Prüfung bestehen ______.;kann <br> modalny
+
+[Szyk zdania podrzędnego] Ich weiß nicht, warum er das gemacht ______.;hat <br> Perfekt
+
+[Szyk zdania podrzędnego] Bevor wir fahren, müssen wir tanken ______.;gehen <br> bezokolicznik na końcu
+
+[Szyk zdania podrzędnego] Obwohl sie krank ______, kam sie zur Arbeit.;war <br> Präteritum
+
+[Szyk zdania podrzędnego] Weil das Auto kaputt ______, nahmen wir den Zug.;war <br> Präteritum
+
+[Szyk zdania podrzędnego] Ich glaube nicht, dass er recht ______.;hat <br> czasownik na końcu
+
+[Szyk zdania podrzędnego] Der Arzt sagt, dass ich mehr schlafen ______.;soll <br> modalny
+
+[Szyk zdania podrzędnego] Wenn du fertig ______, können wir gehen.;bist <br> sein
+
+[Szyk zdania podrzędnego] Ich verstehe nicht, warum er so spät ______.;kommt <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Sie erklärt, dass das nicht möglich ______.;ist <br> dass
+
+[Szyk zdania podrzędnego] Da es spät ______, gingen wir nach Hause.;war <br> da działa jak weil
+
+[Szyk zdania podrzędnego] Weil er kein Auto ______, fährt er Fahrrad.;hat <br> weil
+
+[Szyk zdania podrzędnego] Obwohl wir verloren ______, waren wir zufrieden.;haben <br> Perfekt
+
+[Szyk zdania podrzędnego] Ich weiß nicht, wo meine Schlüssel ______.;sind <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Nachdem ich angekommen ______ war, rief ich dich an.;bin <br> Perfekt z sein
+
+[Szyk zdania podrzędnego] Bis du fertig ______, warte ich hier.;bist <br> bis
+
+[Szyk zdania podrzędnego] Während ich esse, ______ ich fern.;sehe <br> główne zdanie
+
+[Szyk zdania podrzędnego] Ich hoffe, dass das Wetter besser ______.;wird <br> Futur
+
+[Szyk zdania podrzędnego] Falls es regnen ______, nehmen wir einen Schirm mit.;sollte <br> Konjunktiv II
+
+[Szyk zdania podrzędnego] Obwohl er viel Geld ______, ist er nicht glücklich.;hat <br> obwohl
+
+[Szyk zdania podrzędnego] Ich glaube, dass sie morgen kommen ______.;wird <br> Futur
+
+[Szyk zdania podrzędnego] Wenn wir früher losfahren, ______ wir pünktlich an.;kommen <br> główne zdanie
+
+[Szyk zdania podrzędnego] Nachdem die Gäste gegangen ______ waren, räumten wir auf.;weg <br> gegangen waren
+
+[Szyk zdania podrzędnego] Der Lehrer fragt, ob wir alles verstanden ______.;haben <br> Perfekt
+
+[Szyk zdania podrzędnego] Weil ich arbeiten ______, konnte ich nicht kommen.;musste <br> modalny
+
+[Szyk zdania podrzędnego] Obwohl er viel gelernt ______, bestand er die Prüfung nicht.;hatte <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Ich weiß nicht, welche Antwort richtig ______.;ist <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Er erklärt, warum das Problem entstanden ______.;ist <br> Perfekt
+
+[Szyk zdania podrzędnego] Nachdem sie umgezogen ______ war, änderte sie ihre Adresse.;umgezogen <br> Partizip + sein
+
+[Szyk zdania podrzędnego] Wenn ich reich ______, würde ich reisen.;wäre <br> Konjunktiv II
+
+[Szyk zdania podrzędnego] Er fragt, wann wir ankommen ______.;werden <br> Futur
+
+[Szyk zdania podrzędnego] Obwohl die Arbeit schwer ______, machte sie Spaß.;war <br> Präteritum
+
+[Szyk zdania podrzędnego] Weil er krank ______, blieb er im Bett.;war <br> Präteritum
+
+[Szyk zdania podrzędnego] Ich hoffe, dass du Erfolg haben ______.;wirst <br> Futur
+
+[Szyk zdania podrzędnego] Sobald er fertig ______, fährt er nach Hause.;ist <br> sobald
+
+[Szyk zdania podrzędnego] Da wir keine Tickets ______, konnten wir nicht hinein.;hatten <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Ich glaube, dass alles gut gehen ______.;wird <br> Futur
+
+[Szyk zdania podrzędnego] Bevor wir bestellen, lesen wir die Speisekarte ______.;durch <br> rozdzielny bezokolicznik
+
+[Szyk zdania podrzędnego] Obwohl ich wenig geschlafen ______, arbeite ich heute.;habe <br> Perfekt
+
+[Szyk zdania podrzędnego] Er sagt, dass er mich nicht verstanden ______.;hat <br> Perfekt
+
+[Szyk zdania podrzędnego] Ich weiß nicht, wer das gemacht ______.;hat <br> pytanie zależne
+
+[Szyk zdania podrzędnego] Weil wir gewonnen ______, feierten wir.;hatten <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Nachdem ich die E-Mail gelesen ______ hatte, antwortete ich.;hatte <br> Plusquamperfekt
+
+[Szyk zdania podrzędnego] Wenn du Hilfe brauchst, ______ mich an.;ruf <br> rozkaźnik
+
+[Szyk zdania podrzędnego] Obwohl niemand gekommen ______, begann das Meeting.;war <br> Perfekt z sein
+
+[Szyk zdania podrzędnego] Ich denke, dass das eine gute Idee ______.;ist <br> dass
+
+[Szyk zdania podrzędnego] Der Kunde sagt, dass er die Rechnung bezahlt ______.;hat <br> Perfekt
+
+[Szyk zdania podrzędnego] Falls du früher fertig ______, können wir gehen.;bist <br> falls
+
+[Szyk zdania podrzędnego] Seitdem wir hier wohnen, ______ wir viele Freunde gefunden.;haben <br> Perfekt w zdaniu głównym
+
+[Szyk zdania podrzędnego] Obwohl die Preise gestiegen ______, kaufen die Leute weiter.;sind <br> Perfekt
+
+[Szyk zdania podrzędnego] Ich bin sicher, dass er die Antwort kennen ______.;wird <br> Futur
+
+[Szyk zdania podrzędnego] Bevor ich schlafen gehe, ______ ich die Tür ab.;schließe <br> główne zdanie
+
+[Szyk zdania podrzędnego] Während wir warteten, ______ der Zug an.;kam <br> główne zdanie
+
